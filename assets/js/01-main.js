@@ -2,22 +2,22 @@
 try{(function(){
   var nav=document.getElementById('nav');
   function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40)}
-  try{window.addEventListener('scroll',onScroll,{passive:true});try{}catch(_e){console.warn("sezione",_e&&_e.message)}onScroll();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  try{window.addEventListener('scroll',onScroll,{passive:true});try{}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}onScroll();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   var hero=document.getElementById('hero')||document.createElement('div');
   function heroLay(){var r=hero.getBoundingClientRect();hero.classList.toggle('stack',r.width<820||r.width/r.height<.95)}
-  try{heroLay();try{}catch(_e){console.warn("sezione",_e&&_e.message)}window.addEventListener('resize',heroLay);}catch(_e){console.warn("sezione",_e&&_e.message)}
+  try{heroLay();try{}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}window.addEventListener('resize',heroLay);}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   var cnS=[].slice.call(hero.querySelectorAll('.cn-sl')),cnNum=document.getElementById('cnNum')||document.createElement('b'),cnLabE=document.getElementById('cnLab')||document.createElement('em'),cnD=[].slice.call(document.querySelectorAll('#cnDots button')),cnT=3200,cnI=-1,cnTm,CNL=['Visione','Strategia','Utile'];
-  function cnGo(n){n=(n+cnS.length)%cnS.length;if(n===cnI)return;
+  function cnGo(n){if(!cnS.length)return;n=(n+cnS.length)%cnS.length;if(n===cnI)return;
     cnS.forEach(function(x,k){x.classList.remove('past');if(k===cnI){x.classList.remove('on');x.classList.add('past');x.style.zIndex=1}else if(k!==n){x.classList.remove('on');x.style.zIndex=0}});
     var el=cnS[n];el.style.zIndex=2;el.classList.remove('on');void el.offsetWidth;el.classList.add('on');cnI=n;
     cnNum.classList.add('fade');cnLabE.classList.add('fade');setTimeout(function(){cnNum.textContent='0'+(n+1);cnLabE.textContent=CNL[n];cnNum.classList.remove('fade');cnLabE.classList.remove('fade')},250);
     cnD.forEach(function(d,k){d.classList.remove('on');d.classList.toggle('past',k<n)});var a=cnD[n];if(a){a.style.setProperty('--t',cnT+'ms');void a.offsetWidth;a.classList.add('on')}
     clearTimeout(cnTm);cnTm=setTimeout(function(){cnGo(cnI+1)},cnT)}
-  try{cnD.forEach(function(d,k){d.addEventListener('click',function(){cnGo(k)})});}catch(_e){console.warn("sezione",_e&&_e.message)}
+  try{cnD.forEach(function(d,k){d.addEventListener('click',function(){cnGo(k)})});}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   function cnStart(){cnI=-1;cnS.forEach(function(x){x.classList.remove('on','past')});hero.classList.add('in');cnGo(0)}
   function replay(){clearTimeout(cnTm);hero.classList.add('reset');hero.classList.remove('in');void hero.offsetWidth;hero.classList.remove('reset');requestAnimationFrame(function(){requestAnimationFrame(cnStart)})}
-  try{setTimeout(cnStart,120);}catch(_e){console.warn("sezione",_e&&_e.message)}
-  try{document.getElementById('hxReplay').addEventListener('click',replay);}catch(_e){console.warn("sezione",_e&&_e.message)}
+  try{setTimeout(cnStart,120);}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
+  try{document.getElementById('hxReplay').addEventListener('click',replay);}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== ICEBERG LOSANGA ===== */
   var ice=document.getElementById('ice');
   try{(function(){
@@ -29,7 +29,7 @@ try{(function(){
     }
     lay();window.addEventListener('resize',lay);
     new IntersectionObserver(function(es){if(es[0].isIntersecting)ice.classList.add('in')},{threshold:.35}).observe(ice);
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* KPI: calcolo dal vivo */
   try{(function(){
 var M=['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'];
@@ -80,10 +80,10 @@ function Asel(i){if(i===Acur)return;Acur=i;Ai.forEach(function(x,j){x.classList.
 Ai.forEach(function(x,i){x.addEventListener('mouseenter',function(){Ahov=true;Asel(i)});x.addEventListener('mouseleave',function(){Ahov=false});x.addEventListener('click',function(){Asel(i)})});
 sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function(){if(!Ahov)Asel((Acur+1)%4)},6000)});
 
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* per chi: reveal on view */
-  try{(function(){var g=document.querySelector('.pc-grid'),dots=[].slice.call(document.querySelectorAll('#pcSwipe i'));g.addEventListener('scroll',function(){var c=g.querySelector('.pc'),w=c.getBoundingClientRect().width+12,k=Math.round(g.scrollLeft/w);dots.forEach(function(d,i){d.classList.toggle('on',i===Math.min(k,3))})},{passive:true})})();}catch(_e){console.warn("sezione",_e&&_e.message)}
-  try{(function(){var sec=document.getElementById('per-chi');new IntersectionObserver(function(es){if(es[0].isIntersecting)sec.classList.add('in')},{threshold:.25}).observe(sec)})();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  try{(function(){var g=document.querySelector('.pc-grid'),dots=[].slice.call(document.querySelectorAll('#pcSwipe i'));g.addEventListener('scroll',function(){var c=g.querySelector('.pc'),w=c.getBoundingClientRect().width+12,k=Math.round(g.scrollLeft/w);dots.forEach(function(d,i){d.classList.toggle('on',i===Math.min(k,3))})},{passive:true})})();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
+  try{(function(){var sec=document.getElementById('per-chi');new IntersectionObserver(function(es){if(es[0].isIntersecting)sec.classList.add('in')},{threshold:.25}).observe(sec)})();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* servizi: measured layout + hover/tap panels */
   try{(function(){
     var sec=document.getElementById('servizi'),box=document.getElementById('svcPanels'),head=sec.querySelector('.svc-head'),ps=[].slice.call(box.querySelectorAll('.sv'));
@@ -110,7 +110,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     window.__svcLay=lay;lay();window.addEventListener('resize',lay);
     new IntersectionObserver(function(es){if(es[0].isIntersecting)sec.classList.add('in')},{threshold:.25}).observe(sec);
     document.getElementById('svcReplay').addEventListener('click',function(){sec.classList.add('reset');sec.classList.remove('in');act(ps[0]);void sec.offsetWidth;sec.classList.remove('reset');requestAnimationFrame(function(){requestAnimationFrame(function(){sec.classList.add('in')})})});
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* new sections: generic reveal + replay */
   function sx(id,thr,onIn){var sec=document.getElementById(id);if(!sec)return null;new IntersectionObserver(function(es){if(es[0].isIntersecting&&!sec.classList.contains('in')){sec.classList.add('in');onIn&&onIn()}},{threshold:0,rootMargin:'0px 0px -30% 0px'}).observe(sec);return sec}
   function rp(sec,btn,onIn){if(!sec||!document.getElementById(btn))return;document.getElementById(btn).addEventListener('click',function(){sec.classList.add('reset');sec.classList.remove('in');onIn&&onIn(true);void sec.offsetWidth;sec.classList.remove('reset');requestAnimationFrame(function(){requestAnimationFrame(function(){sec.classList.add('in');onIn&&onIn()})})})}
@@ -122,14 +122,14 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       cw=setTimeout(function(){e1.classList.add('cyc');ci=0;cs[0].classList.add('on');ct=setInterval(function(){if(hov)return;cs[ci].classList.remove('on');ci=(ci+1)%4;cs[ci].classList.add('on')},2400)},3300)}
     cs.forEach(function(c,i){c.addEventListener('mouseenter',function(){if(!e1.classList.contains('cyc'))return;hov=true;cs.forEach(function(x){x.classList.remove('on')});c.classList.add('on');ci=i});c.addEventListener('mouseleave',function(){hov=false})});
     var sec=sx('metodo',.3,cyc);rp(sec,'mtReplay',cyc);
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* chi siamo: measured columns + counters */
   try{(function(){
     var g=document.getElementById('csGrid');if(!g)return;function lay(){g.classList.toggle('one',g.getBoundingClientRect().width<900)}lay();window.addEventListener('resize',lay);
     var cs=[].slice.call(document.querySelectorAll('#chi-siamo .cnt'));
     function count(reset){cs.forEach(function(c,i){var to=+c.dataset.to;if(reset){c.textContent='0';return}var t0=null,dl=450+150*i,du=1400;c.textContent='0';function f(t){if(!t0)t0=t;var k=Math.min(1,Math.max(0,(t-t0-dl)/du));c.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)})}
     var sec=sx('chi-siamo',.3,count);rp(sec,'csReplay',count);
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* faq: editoriale */
   try{(function(){
     var g=document.getElementById('fqGrid');function lay(){g.classList.toggle('one',g.getBoundingClientRect().width<860)}lay();window.addEventListener('resize',lay);
@@ -158,8 +158,8 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     form.addEventListener('submit',function(e){e.preventDefault();var v=inp.value;inp.value='';ask(v)});
     log.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a||a.getAttribute('href')==='#contatti')return;e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)window.scrollTo({top:t.getBoundingClientRect().top+scrollY,behavior:'smooth'})});
     sx('faq',.2);
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
-  try{(function(){var sec=sx('inizia',.35);rp(sec,'ctaReplay')})();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
+  try{(function(){var sec=sx('inizia',.35);rp(sec,'ctaReplay')})();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== V2: menu + logo parallax ===== */
   try{(function(){
     var root=document.documentElement,bt=document.getElementById('burger'),mn=document.getElementById('mnu'),toast=document.getElementById('toast'),tt;
@@ -168,7 +168,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false)});
     mn.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a||a.hasAttribute('data-soon'))return;var t=document.querySelector(a.getAttribute('href'));e.preventDefault();e.stopPropagation();setOpen(false);if(t)setTimeout(function(){if(window.__lenis)window.__lenis.start();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY,behavior:'smooth'})},60)});
     document.addEventListener('click',function(e){var a=e.target.closest('[data-soon]');if(!a)return;e.preventDefault();e.stopPropagation();toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},1800)},true);
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
 
 
   /* ===== WOW 3: pagina Apertura nuova struttura ===== */
@@ -190,7 +190,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       var esc=function(t){return t.replace(/</g,'&lt;')};
       $('apOkTx').innerHTML='Grazie <b>'+esc(el.nome.value.trim())+'</b>. Ti ricontattiamo al <b>'+esc(el.tel.value.trim())+'</b> per la prima chiamata sul progetto. Nella tua email trovi il messaggio già compilato per info@ricavia.com: premi Invia per completarlo';
       f.style.display='none';$('apOk').classList.add('on')});
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== WOW 3: pagine servizio, animazioni e layout misurato ===== */
   try{(function(){
     ['apertura','revenue-management','consulenza','pg-metodo','pg-chi-siamo','pg-partner','pg-pagella','pg-osservatorio','pg-indicatori','pg-privacy','pg-cookie'].forEach(function(id){
@@ -205,7 +205,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
         rules.forEach(function(r){el.classList.remove(r[0])});var hit=null;rules.forEach(function(r){if(w<r[1])hit=r[0]});if(hit)el.classList.add(hit)})}
       new ResizeObserver(lay).observe(pg);lay();
     });
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
 
   /* ===== WOW 3: calcolatore RevPAR e iscrizione Osservatorio ===== */
   try{(function(){
@@ -219,14 +219,14 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){$('osMsg').textContent="Controlla l'indirizzo email";return}
       window.location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Iscrizione Osservatorio Ricavia')+'&body='+encodeURIComponent('Vorrei ricevere le analisi dell\'Osservatorio a questo indirizzo: '+v);
       $('osMsg').textContent='Grazie: nella tua email trovi la richiesta già pronta per info@ricavia.com, premi Invia per completarla';this.email.value=''});
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
 
   /* ===== WOW 3: foto riusate nelle pagine + parallasse leggera ===== */
   try{(function(){
     var CAT={"n009":"Reception con banco in marmo e pareti azzurre","n068":"Camera matrimoniale simmetrica con boiserie","n069":"Ristorante dell'hotel con statua classica","n087":"Colosseo e centro di Roma dall'alto","n074":"Coppia al check-in in reception","n055":"Tre manager confrontano i dati sul tablet","n091":"Tetti di Roma con la cupola di San Pietro","n004":"Camera con pareti azzurre e marmo","n062":"Team dell'hotel al lavoro sul tablet","n080":"Cameriera ai piani con il carrello nel corridoio","n079":"Cameriera ai piani prepara gli asciugamani","n013":"Lobby con reception e salotto","n008":"Camera con vista sulla cupola","n075":"Ospite in arrivo nella lobby","n090":"Colosseo all'alba","n083":"Receptionist al telefono","n060":"Manager consultano un documento","n086":"Stretta di mano nella lobby","n078":"Cameriera ai piani rifà il letto","n081":"Receptionist con il tablet","n089":"Colosseo, dettaglio","n049":"Bagno in marmo con vasca","n088":"Piazza San Pietro dall'alto","n014":"Camera con pareti verde salvia","n005":"Camera con dettagli rosa antico","n010":"Ospite al banco della reception","n007":"Camera in marmo e blu","s001":"Suite elegante con pareti grigie e dettagli dorati","s002":"Camera d'albergo con boiserie in legno","s003":"Camera con finestra e tende","s004":"Camera con lampada a sospensione e panca","s005":"Camera con poltrona rossa e scrivania","s006":"Responsabile e cameriera ai piani controllano una camera","s007":"Responsabile e cameriera ai piani con il tablet","s008":"Ospite al telefono con la valigia nella hall","s009":"Castel Sant'Angelo, Roma","s010":"Ospiti al check-in in reception","s011":"Ospiti in arrivo con le valigie","s012":"Ospite con la valigia nella hall","s013":"Receptionist consegna la chiave","s014":"Ospiti in arrivo davanti alla reception","s015":"Receptionist accoglie un ospite","s016":"Corte con piscina e facciata in pietra","s017":"Camera matrimoniale moderna","s018":"Receptionist al telefono","s019":"Manager con tablet e smartphone","s021":"Receptionist consegna la chiave della camera","s022":"Castel Sant'Angelo al tramonto","s024":"Manager sorridente alla scrivania","s025":"Cameriera ai piani con gli asciugamani","s026":"Manager al telefono con il tablet","s027":"Tetti di Roma con San Pietro","s028":"Fontana di Trevi, Roma","s029":"Stretta di mano tra colleghe","s032":"Colosseo, Roma","s033":"Cameriera ai piani sistema i cuscini","s034":"Due receptionist al banco","s035":"Cupola di San Pietro, Roma","s023":"Ospite con la valigia al banco della reception","s020":"Persone in movimento in un ufficio","biancheria-guanti": "Biancheria piegata con guanti bianchi", "camera-blu-fiori": "Camera con lenzuola blu e fiori", "camera-boiserie-legno": "Camera con boiserie in legno e finestra sul giardino", "camera-classica-cuscino-arancio": "Camera classica, letto frontale con cuscino arancio", "camera-grigia-elegante": "Camera grigia elegante, letto frontale", "camera-poltrona-parquet": "Camera con poltrona e parquet a spina", "camera-storica-balcone": "Camera storica con stucchi e balcone sulla città", "cameriera-piani-plumeau": "Cameriera ai piani con il piumino", "coppia-accappatoio-caffe": "Coppia in accappatoio con caffè", "cortesia-asciugamani": "Asciugamani e prodotti di cortesia", "firenze-duomo-panorama": "Panorama di Firenze con il Duomo", "manager-telefono-scrivania": "Manager al telefono alla scrivania", "ospite-reception-telefono": "Ospite alla reception con lo smartphone", "ospite-reception-valigia": "Ospite con valigia alla reception", "receptionist-hall": "Receptionist nella hall", "roma-colosseo": "Colosseo, Roma", "roma-fontana-trevi": "Fontana di Trevi, Roma", "roma-trevi-dettaglio": "Fontana di Trevi, dettaglio", "roma-viaggiatrice-cappello": "Viaggiatrice con cappello in una strada di Roma", "suite-legno-chiaro": "Suite in legno chiaro con scrivania in marmo", "suite-moderna-panca": "Suite moderna con panca e divano"};[].forEach.call(document.querySelectorAll('img[data-photo]'),function(i){var k=i.dataset.photo,src=document.querySelector('#photoLib img[data-k="'+k+'"]');if(src){i.src=src.src;i.decoding='async';if(!i.classList.contains('hero-bg'))i.alt=CAT[k]||''}});
     [].forEach.call(document.querySelectorAll('.app'),function(pg){var bands=pg.querySelectorAll('.phb'),tk=false;if(!bands.length)return;
       (window.__MP?window:pg).addEventListener('scroll',function(){if(tk)return;tk=true;requestAnimationFrame(function(){tk=false;[].forEach.call(bands,function(b){var r=b.getBoundingClientRect();b.style.setProperty('--py',(-(r.top/(window.__MP?innerHeight:pg.clientHeight))*60).toFixed(1)+'px')})})},{passive:true})});
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
 
   /* ===== PROVA: pagella interattiva Osservatorio ===== */
   try{(function(){
@@ -235,7 +235,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       $('pgRows').innerHTML=S.map(function(n,k){var v=d[2][k];return '<div class="pg-rw" style="--c:'+C[k]+';--w:'+v*10+'%;animation-delay:'+(k*.06)+'s"><span>'+n+'</span><i><u></u></i><b>'+f(v)+'</b></div>'}).join('');$('pgA').textContent=f(a);
       [].forEach.call(document.querySelectorAll('#osTT .tt-r'),function(r){r.classList.toggle('on',+r.dataset.i===i)})}
     document.getElementById('osTT').addEventListener('click',function(e){var r=e.target.closest('.tt-r');if(r)show(+r.dataset.i)});show(0);
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== WOW 3: pagina Contatti ===== */
   try{(function(){
     var root=document.documentElement,pg=document.getElementById('contatti'),$=function(i){return document.getElementById(i)};
@@ -300,7 +300,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       $('ctOkTx').innerHTML='Chiamata richiesta per <b>'+giorno+'</b>, <b>'+slot.toLowerCase()+'</b>. Ti chiamiamo al <b>'+tel.replace(/</g,'&lt;')+'</b> e ti scriviamo a <b>'+mail.replace(/</g,'&lt;')+'</b> per confermare l\'orario. Nella tua email trovi la richiesta già compilata per info@ricavia.com: premi Invia per completarla';
       $('ctBookWrap').style.display='none';$('ctOk').classList.add('on')});
     $('ctAgain').addEventListener('click',function(){$('ctOk').classList.remove('on');$('ctBookWrap').style.display='';sel=null;slot=null;[].forEach.call($('slots').children,function(c){c.classList.remove('sel')});draw();pick()});
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== LIVELLI: separation on scroll ===== */
   try{(function(){
     var svg=document.getElementById('stxSvg'),g=document.getElementById('stxGrid'),tk=false;
@@ -308,7 +308,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     function upd(){tk=false}
     window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(upd)}},{passive:true});upd();
     var stxS=sx('storia',.2);rp(stxS,'stxReplay');
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== SIMULATORE + PLANNER ===== */
   try{(function(){
     var $=function(i){return document.getElementById(i)};
@@ -392,7 +392,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       c.addEventListener('mouseenter',on);c.addEventListener('click',on);c.addEventListener('mouseleave',function(){tip.classList.remove('on')})});
     outs();paint();results();show(0);setPlay(false);
     sx('simulatore',.3,function(){setTimeout(function(){show(30)},500)});
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== CALENDARIO ===== */
   try{(function(){
     var eur=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0});
@@ -423,7 +423,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     set(50);var sw;
     function sweep(){var t0=null;set(92);(function f(t){if(!t0)t0=t;var k=Math.min(1,Math.max(0,(t-t0-600)/1800)),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;set(92-(92-8)*e<8?8:92-84*e);if(k<1){sw=requestAnimationFrame(f)}else{var t1=null;(function g(t){if(!t1)t1=t;var k2=Math.min(1,(t-t1)/900),e2=1-Math.pow(1-k2,3);set(8+42*e2);if(k2<1)sw=requestAnimationFrame(g)})(performance.now())}})(performance.now())}
     sx('calendario',.35,sweep);
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== POLISH: smooth scroll, cursor, magnetic ===== */
   try{(function(){
     var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches,rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -434,9 +434,9 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     document.querySelectorAll('.btn,.sv-more,.mt-foot a,.pc-new-cta').forEach(function(b){b.classList.add('mag');
       b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.25)+'px '+((e.clientY-r.top-r.height/2)*.35)+'px'});
       b.addEventListener('mouseleave',function(){b.style.translate='0 0'})});
-  })();}catch(_e){console.warn("sezione",_e&&_e.message)}
-  try{document.getElementById('iceReplay').addEventListener('click',function(){ice.classList.add('reset');ice.classList.remove('in');void ice.offsetWidth;ice.classList.remove('reset');requestAnimationFrame(function(){ice.classList.add('in')})});}catch(_e){console.warn("sezione",_e&&_e.message)}
+  })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
+  try{document.getElementById('iceReplay').addEventListener('click',function(){ice.classList.add('reset');ice.classList.remove('in');void ice.offsetWidth;ice.classList.remove('reset');requestAnimationFrame(function(){ice.classList.add('in')})});}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* if the page was already open when updated, play the intro again */
   if(window.claude&&window.claude.hot&&window.claude.hot.ready){try{window.claude.hot.ready(function(){replay()})}catch(e){}}
-  try{(document.getElementById('form')||document.createElement('form')).addEventListener('submit',function(e){e.preventDefault();document.getElementById('form-msg').textContent=this.checkValidity()?'Grazie. In questa anteprima il modulo è dimostrativo: al lancio la richiesta arriverà al team Ricavia.':'Compila tutti i campi, con un indirizzo email valido, e accetta l\'informativa.'});}catch(_e){console.warn("sezione",_e&&_e.message)}
-})();}catch(_e){console.warn("sezione",_e&&_e.message)}
+  try{(document.getElementById('form')||document.createElement('form')).addEventListener('submit',function(e){e.preventDefault();document.getElementById('form-msg').textContent=this.checkValidity()?'Grazie. In questa anteprima il modulo è dimostrativo: al lancio la richiesta arriverà al team Ricavia.':'Compila tutti i campi, con un indirizzo email valido, e accetta l\'informativa.'});}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
+})();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}

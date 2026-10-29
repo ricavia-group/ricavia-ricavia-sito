@@ -139,7 +139,7 @@ def og_image(pid):
     return DOMAIN + '/assets/img/og.jpg'
 
 
-PRE = '''<script>window.__MP=true;(function(){var h=location.hash.slice(1),U=%s;if(U[h]&&location.pathname==='/')location.replace(U[h]);})();</script>''' % json.dumps({k: v for k, v in URL.items() if v != '/'})
+PRE = '''<script>window.__MP=true;window.__DBG=/[?&]debug/.test(location.search);(function(){var h=location.hash.slice(1),U=%s;if(U[h]&&location.pathname==='/')location.replace(U[h]);})();</script>''' % json.dumps({k: v for k, v in URL.items() if v != '/'})
 SHIM = '''<script>
 (function(){
   /* pagina interna: "Torna alla home" e ancore nella pagina */
@@ -185,7 +185,7 @@ def page(pid, slug, title):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">'''.format(t=html.escape(title), d=html.escape(desc, quote=True), u=url, i=og_image(pid))
     h = fix_assets(head)
-    doc = '<!doctype html>\n<html lang="it" class="%s">\n<head>\n%s\n%s\n%s\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (cls, h.strip(), meta, PRE if is_home else '<script>window.__MP=true</script>', parts)
+    doc = '<!doctype html>\n<html lang="it" class="%s">\n<head>\n%s\n%s\n%s\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (cls, h.strip(), meta, PRE if is_home else '<script>window.__MP=true;window.__DBG=/[?&]debug/.test(location.search)</script>', parts)
     d = os.path.join(OUT, slug)
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(doc)
