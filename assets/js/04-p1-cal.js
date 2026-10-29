@@ -1,0 +1,3 @@
+(function(){var row=document.querySelector('#calendario .cal-row');if(!row)return;var st=document.getElementById('calStage'),nt=row.querySelector('.cal-notes');
+function fit(){if(row.classList.contains('one')){nt.style.height='';return}nt.style.height=st.offsetHeight+'px'}
+fit();window.addEventListener('resize',function(){setTimeout(fit,30)});if('ResizeObserver' in window)new ResizeObserver(fit).observe(st);})();
