@@ -1,4 +1,4 @@
-(function(){try{[].forEach.call(document.querySelectorAll('.pgv,#mnu'),function(e){e.setAttribute('data-lenis-prevent','')})}catch(e){}})();
+(function(){try{[].forEach.call(document.querySelectorAll(window.__MP?'#mnu':'.pgv,#mnu'),function(e){e.setAttribute('data-lenis-prevent','')})}catch(e){}})();
 (function(){
 try{
 var revs=[].slice.call(document.querySelectorAll('.z-rev'));

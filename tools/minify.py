@@ -53,8 +53,12 @@ def _needed(selector, used):
     return all(name in used for _, name in _TOKEN.findall(s))
 
 
+# classi aggiunte da librerie esterne (non presenti nel nostro HTML/JS): non vanno mai tolte
+SAFE = {'lenis', 'lenis-smooth', 'lenis-scrolling', 'lenis-stopped', 'lenis-autoToggle'}
+
+
 def purge_css(css, corpus):
-    used = set(re.findall(r'[-_a-zA-Z][\w-]*', corpus))
+    used = set(re.findall(r'[-_a-zA-Z][\w-]*', corpus)) | SAFE
     css = _strip_comments(css)
 
     def walk(text):
