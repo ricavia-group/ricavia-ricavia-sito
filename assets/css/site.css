@@ -5081,3 +5081,14 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 #pg-indicatori .ndx-split li.sp-g b{background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 #pg-indicatori .ndx-mul{justify-content:flex-start}
 #pg-indicatori .ndx-mul .ix-mul{margin:auto 0!important}
+
+/* GOPPAR (sezione scura): i due riquadri bianchi diventano neri con bordo */
+#pg-indicatori .ndx-s.dk .ndx-white{background:#0B0D12!important;border:1px solid rgba(255,255,255,.16)!important;color:#fff}
+#pg-indicatori .ndx-s.dk .ndx-white.ndx-big small{color:rgba(255,255,255,.6)}
+#pg-indicatori .ndx-s.dk .ndx-white.ndx-big b{color:#fff;-webkit-text-fill-color:#fff}
+#pg-indicatori .ndx-s.dk .ndx-white.ndx-big span{color:rgba(255,255,255,.7)}
+#pg-indicatori .ndx-s.dk .ndx-year-f span{background:rgba(255,255,255,.06)}
+#pg-indicatori .ndx-s.dk .ndx-year-f span b{color:#fff}
+#pg-indicatori .ndx-s.dk .ndx-year-f span em{color:rgba(255,255,255,.55)}
+#pg-indicatori .ndx-s.dk .ndx-year-f span.hl{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+#pg-indicatori .ndx-s.dk .ndx-year-f i,#pg-indicatori .ndx-s.dk .ndx-year p{color:rgba(255,255,255,.55)}
