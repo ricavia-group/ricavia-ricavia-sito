@@ -4848,3 +4848,14 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 
 /* loghi partner: maschera definita qui, così il percorso è sempre relativo a questo file */
 .plm-081581f05e{--m:url(../img/081581f05e.svg)}.plm-6e77288938{--m:url(../img/6e77288938.svg)}.plm-7ecd7ffb66{--m:url(../img/7ecd7ffb66.svg)}.plm-c1f887b82b{--m:url(../img/c1f887b82b.svg)}.plm-cd149fb049{--m:url(../img/cd149fb049.svg)}
+
+/* Animazioni d'ingresso: Partner tecnologici, Osservatorio, Per chi lavoriamo (09-reveal.js) */
+.zx-ready .zx-up{opacity:0;transform:translateY(28px);transition:opacity 1s var(--zease),transform 1.2s var(--zease);transition-delay:var(--zd,0s)}
+.zx-ready .zx-on .zx-up,.zx-ready .zx-on.zx-up{opacity:1;transform:none}
+.zx-lines .zx-l{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.16em}
+.zx-lines .zx-l>span{display:inline-block}
+.zx-ready .zx-lines .zx-l>span{transform:translateY(110%);transition:transform 1.3s var(--zease);transition-delay:var(--zd,0s)}
+.zx-ready .zx-on .zx-lines .zx-l>span{transform:none}
+#osservatorio-home .ho2-tag::before{transform-origin:left}
+.zx-ready #osservatorio-home .ho2-tag::before{transform:scaleX(0);transition:transform 1s var(--zease) .25s}
+.zx-ready #osservatorio-home .zx-on .ho2-tag::before{transform:none}
