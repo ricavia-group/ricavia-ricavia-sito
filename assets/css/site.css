@@ -4813,3 +4813,48 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .mx .phb.mx-ph>img{scale:1.14;transition:scale 2.2s var(--zease)}
 .mx .phb.mx-ph.mx-in>img{scale:1}
 @media (prefers-reduced-motion:reduce){.mx .mx-ln>span{transform:none!important;transition:none!important}.mx .mx-ph{clip-path:none!important;opacity:1!important}.mx .phb.mx-ph>img{scale:1!important}}
+
+/* Home · tre card "Risultati misurabili / Persone / Strategia": chip + mini grafico al posto delle icone */
+.z-pill3.zp li{gap:0;justify-content:flex-start}
+.zp-chip{align-self:flex-start;display:inline-flex;align-items:center;padding:7px 14px;border-radius:99px;border:1px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--zgr) border-box;font-family:var(--zf);font-size:12px;font-weight:600;line-height:1}
+.zp-chip span{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.zp-v{margin:clamp(22px,2.4vw,34px) 0 clamp(20px,2.2vw,30px)}
+.zp-v svg{display:block;width:100%;max-width:300px;height:auto;overflow:visible}
+.z-pill3.zp .z-pw{margin-top:auto}
+.zp-grid{fill:none;stroke:rgba(0,0,0,.07);stroke-width:1;stroke-dasharray:3 5}
+.zp-ln{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.8s var(--zease) .35s}
+.zp-area{opacity:0;transition:opacity 1.2s ease 1.2s}
+.zp-dot,.zp-halo{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.3);transition:opacity .5s ease 1.9s,transform .7s var(--zease) 1.9s}
+.zp-halo{fill:#3CCDFA;fill-opacity:.18}
+.z-on .zp-ln{stroke-dashoffset:0}
+.z-on .zp-area,.z-on .zp-dot{opacity:1;transform:none}
+.z-on .zp-halo{opacity:1;transform:none;animation:zpPulse 2.4s ease-in-out 2.6s infinite}
+@keyframes zpPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.25}}
+.zp-av{opacity:0;transform:translateX(-18px);transition:opacity .7s ease,transform .9s var(--zease);transition-delay:calc(.35s + var(--k)*.12s)}
+.z-on .zp-av{opacity:1;transform:none}
+.zp-guide{fill:none;stroke:rgba(0,0,0,.12);stroke-width:2;stroke-dasharray:2 6;stroke-linecap:round}
+.zp-ms{fill:#fff;stroke:#1F2DD0;stroke-width:2;opacity:0;transition:opacity .4s ease .4s}
+.zp-ms2{transition-delay:1.2s}
+.z-on .zp-ms{opacity:1}
+.zp-tg circle{transform-box:fill-box;transform-origin:center}
+.zp-r1{fill:none;stroke:rgba(0,0,0,.08);stroke-width:1.5}
+.zp-r2{fill:none;stroke:rgba(31,45,208,.28);stroke-width:1.5}
+.zp-tg{opacity:0;transition:opacity .6s ease 1.6s}
+.zp-tg circle{transform:scale(.4);transition:transform .9s var(--zease) 1.6s}
+.z-on .zp-tg{opacity:1}
+.z-on .zp-tg circle{transform:none}
+.z-pill3.zp li:hover .zp-halo{fill-opacity:.3}
+@media(max-width:820px){.z-pill3.zp li{flex-direction:column;align-items:stretch;gap:0}.zp-v svg{max-width:260px}}
+@media(prefers-reduced-motion:reduce){.zp-ln{stroke-dashoffset:0!important;transition:none!important}.zp-area,.zp-dot,.zp-halo,.zp-av,.zp-ms,.zp-tg,.zp-tg circle{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}}
+
+/* Strategia: mese dopo mese, costi (grigio) e utile (gradiente) */
+.zp-mm{display:flex;align-items:flex-end;gap:10px;height:118px;width:100%;max-width:300px}
+.zp-mm-s{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:3px;height:100%}
+.zp-mm-s i{display:block;height:var(--h);transform:scaleY(0);transition:transform .9s var(--zease)}
+.zp-mm-c{background:#DCDFE8;border-radius:3px 3px 9px 9px;transform-origin:bottom;transition-delay:calc(.3s + var(--k)*.09s)!important}
+.zp-mm-u{background:linear-gradient(180deg,#3CCDFA,#1F2DD0 70%,#724AF8);border-radius:9px 9px 3px 3px;transform-origin:bottom;transition-delay:calc(.75s + var(--k)*.11s)!important}
+.z-on .zp-mm-s i{transform:none}
+@media(prefers-reduced-motion:reduce){.zp-mm-s i{transform:none!important;transition:none!important}}
+/* testo in gradiente: spazio per le lettere con discendenti (g, p, q) */
+.z-pw.z-g{padding-bottom:.14em;margin-bottom:-.14em}
+@media(prefers-reduced-motion:reduce){.zp-rg,.zp-arw{opacity:1!important;transform:none!important;transition:none!important}.zp-tg2{animation:none!important}}

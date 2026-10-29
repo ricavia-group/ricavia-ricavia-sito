@@ -1,0 +1,3 @@
+/* Sito multipagina: le pagine interne non sono più finestre sovrapposte ma pagine vere */
+html.mp-in .pgv{position:relative!important;inset:auto!important;z-index:auto!important;overflow:visible!important;height:auto!important;max-height:none!important;visibility:visible!important;opacity:1!important;transform:none!important;overscroll-behavior:auto!important}
+html.mp-in body{overflow-x:hidden}
