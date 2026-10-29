@@ -4847,11 +4847,11 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 @media(max-width:820px){.z-pill3.zp li{flex-direction:column;align-items:stretch;gap:0}.zp-v svg{max-width:260px}}
 @media(prefers-reduced-motion:reduce){.zp-ln{stroke-dashoffset:0!important;transition:none!important}.zp-area,.zp-dot,.zp-halo,.zp-av,.zp-ms,.zp-tg,.zp-tg circle{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}}
 
-/* Strategia: matrice impatto/priorità al posto del percorso */
-.zp-q{fill:#F5F5F7;opacity:0;transition:opacity .6s ease;transition-delay:calc(.3s + var(--k)*.1s)}
-.zp-q.zp-hot{fill:url(#zpG3b);stroke:url(#zpG3);stroke-width:1.5}
-.zp-pt{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(0);transition:opacity .4s ease,transform .7s var(--zease);transition-delay:calc(.8s + var(--k)*.09s)}
-.zp-tx{font-family:var(--zf);font-size:11px;font-weight:600;letter-spacing:.02em;fill:url(#zpG3);opacity:0;transition:opacity .6s ease 1.7s}
-.z-on .zp-q,.z-on .zp-tx{opacity:1}
-.z-on .zp-pt{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.zp-q,.zp-pt,.zp-tx{opacity:1!important;transform:none!important;transition:none!important}}
+/* Strategia: bersaglio */
+.zp-rg{fill:none;stroke:rgba(0,0,0,.09);stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.6);transition:opacity .6s ease,transform 1s var(--zease);transition-delay:calc(.3s + var(--k)*.15s)}
+.zp-rg3{stroke-width:2}
+.zp-bull{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(0);transition:opacity .4s ease 1.3s,transform .8s var(--zease) 1.3s}
+.zp-arw path{fill:none;stroke-width:3;stroke-linecap:round}
+.zp-arw{opacity:0;transform:translate(34px,-17px);transition:opacity .4s ease .9s,transform .5s cubic-bezier(.2,.9,.3,1.2) .9s}
+.z-on .zp-rg,.z-on .zp-bull,.z-on .zp-arw{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.zp-rg,.zp-bull,.zp-arw{opacity:1!important;transform:none!important;transition:none!important}}
