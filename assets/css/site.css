@@ -4891,3 +4891,8 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .mx .phb.mx-ph>img,.mx figure.bt.mx-ph>img{scale:1.08;transition:scale 1.4s cubic-bezier(.22,1,.36,1)}
 .mx .phb.mx-ph.mx-in>img,.mx figure.bt.mx-ph.mx-in>img{scale:1}
 @media (prefers-reduced-motion:reduce){.mx figure.bt.mx-ph>img{scale:1!important}}
+
+/* Osservatorio · Top 10: intestazione con il gradiente del brand al posto del nero */
+#pg-osservatorio .tt-h{background:var(--zgr)!important;border-bottom:0!important}
+#pg-osservatorio .tt-h b{color:#fff}
+#pg-osservatorio .tt-h small{color:rgba(255,255,255,.82)}
