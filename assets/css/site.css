@@ -5118,3 +5118,10 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .z-pill3.zp .zp-mm{max-width:236px;height:116px}
 .z-pill3.zp .z-pw{font-size:clamp(36px,3.9vw,58px)}
 @media(max-width:820px){.z-pill3.zp .zp-v svg,.z-pill3.zp .zp-mm{max-width:220px}.z-pill3.zp .z-pw{font-size:clamp(34px,9vw,44px)}}
+
+/* Home · tre card in stile essenziale: niente grafici, solo etichetta e titolo grande */
+.z-pill3.zp-min .zp-v{display:none}
+.z-pill3.zp-min li{min-height:clamp(220px,19vw,280px);justify-content:space-between}
+.z-pill3.zp-min .zp-chip{padding:0;border:0;background:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.z-pill3.zp-min .z-pw{font-size:clamp(40px,4.4vw,68px);letter-spacing:-.055em;line-height:.98}
+@media(max-width:820px){.z-pill3.zp-min li{min-height:180px;gap:40px}.z-pill3.zp-min .z-pw{font-size:clamp(38px,11vw,52px)}}
