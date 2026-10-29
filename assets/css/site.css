@@ -4885,3 +4885,9 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .plg-g{fill:url(#lgG);opacity:0}
 .pl.w .plg-b{fill:#fff}
 .z-plogos a:hover .plg-g,#pg-partner .pnk:hover .plg-g,#pg-partner .eco-t:hover .plg-g{opacity:1}
+
+/* Foto delle pagine interne: apertura più rapida e fluida, anche per le foto nelle griglie (figure.bt) */
+.mx .mx-ph{transition:clip-path 1.1s cubic-bezier(.22,1,.36,1),opacity .5s ease}
+.mx .phb.mx-ph>img,.mx figure.bt.mx-ph>img{scale:1.08;transition:scale 1.4s cubic-bezier(.22,1,.36,1)}
+.mx .phb.mx-ph.mx-in>img,.mx figure.bt.mx-ph.mx-in>img{scale:1}
+@media (prefers-reduced-motion:reduce){.mx figure.bt.mx-ph>img{scale:1!important}}

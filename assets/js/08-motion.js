@@ -18,7 +18,7 @@
     var hs=[].slice.call(pg.querySelectorAll('h2')).filter(function(h){return !h.closest('.ctp-ok,.ap-ok,details,footer')&&h.textContent.trim().length>2});
     hs.forEach(function(h){wrapLines(h,.05,.1);h.classList.add('mx-h');h.classList.remove('ar')});
     /* 3. foto: si aprono con un leggero zoom */
-    var ph=[].slice.call(pg.querySelectorAll('.phb,.hero-bg'));ph.forEach(function(p){p.classList.add('mx-ph')});
+    var ph=[].slice.call(pg.querySelectorAll('.phb,.hero-bg,figure.bt'));ph.forEach(function(p){p.classList.add('mx-ph');p.classList.remove('ar');p.style.removeProperty('--d')});
     /* 4. Contatti: aggiunge le entrate che mancavano */
     if(id==='contatti'){
       [].forEach.call(pg.querySelectorAll('.ctp-back,.tg,.ctp-sub'),function(e,i){e.classList.add('ar');e.style.setProperty('--d',(i*.08)+'s')});
@@ -33,9 +33,12 @@
     });
     /* osservatore: titoli, foto e (per Contatti) gli elementi .ar */
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mx-in');if(id==='contatti'&&e.target.classList.contains('ar'))e.target.classList.add('in');io.unobserve(e.target)}})},{root:id==='contatti'?null:pg,threshold:.15});
+    /* foto: partono appena iniziano a entrare nello schermo, senza ritardi */
+    var iop=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mx-in');iop.unobserve(e.target)}})},{root:id==='contatti'?null:pg,threshold:0,rootMargin:'0px 0px 6% 0px'});
     function start(){
       pg.classList.remove('mx-go');
-      hs.concat(ph).forEach(function(e){e.classList.remove('mx-in');io.observe(e)});
+      hs.forEach(function(e){e.classList.remove('mx-in');io.observe(e)});
+      ph.forEach(function(e){e.classList.remove('mx-in');iop.observe(e)});
       if(id==='contatti')[].forEach.call(pg.querySelectorAll('.ar'),function(e){e.classList.remove('in');io.observe(e)});
       void pg.offsetWidth;
       requestAnimationFrame(function(){requestAnimationFrame(function(){pg.classList.add('mx-go')})});
