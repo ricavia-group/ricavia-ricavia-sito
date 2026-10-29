@@ -4,6 +4,9 @@ Sito statico di Ricavia (revenue management e consulenza per hotel e strutture r
 Leggi anche README.md per struttura e indirizzi delle pagine.
 
 ## Come è fatto
+- `index.html` è il sorgente unico (funziona anche da solo come sito a pagina unica). `python3 tools/build.py` genera `site/` con un indirizzo vero per pagina (`/consulenza/`, `/metodo/`…), titoli e descrizioni per Google, sitemap e foto caricate solo quando servono. Dopo ogni modifica: lancia il build e controlla le pagine in `site/`.
+- Negli script, `window.__MP` è vero nel sito multipagina: il codice che usa lo scorrimento della pagina interna deve funzionare in entrambi i modi.
+- Foto nuove: in `assets/img/`, poi `python3 tools/optimize_images.py` (WebP).
 - Tutte le pagine sono in `index.html`. Le pagine interne sono `div.pgv` con id (`#revenue-management`, `#consulenza`, `#apertura`, `#contatti`, `#pg-metodo`, `#pg-chi-siamo`, `#pg-partner`, `#pg-pagella`, `#pg-osservatorio`, `#pg-indicatori`, `#pg-privacy`, `#pg-cookie`) aperte via hash.
 - Stili tutti in `assets/css/site.css`. L'ordine delle regole conta: le regole in fondo al file sovrascrivono quelle prima. Le regole delle pagine interne usano il prefisso `:is(#revenue-management,#consulenza,…)`.
 - Variabili principali: `--zink` (nero testo/tasti), `--zgr` (gradiente brand), `--zf` (carattere Geist).

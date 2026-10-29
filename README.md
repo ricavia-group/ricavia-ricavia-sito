@@ -2,7 +2,7 @@
 
 Sito di Ricavia Group S.r.l. (revenue management e consulenza per l'ospitalità, Roma).
 
-È un sito statico: nessun build, nessuna dipendenza da installare.
+Sito statico leggero: nessuna dipendenza da installare. `index.html` è il sorgente unico; lo script `tools/build.py` (solo Python 3) genera in `site/` il sito vero, con un indirizzo per ogni pagina.
 
 ## Struttura
 
@@ -30,18 +30,27 @@ Le pagine interne stanno tutte in `index.html` e si aprono con l'ancora nell'ind
 | Indicatori | `/#pg-indicatori` |
 | Privacy / Cookie | `/#pg-privacy` · `/#pg-cookie` |
 
-## Vedere il sito in locale
+## Indirizzi del sito pubblicato
 
-Dalla cartella del progetto:
+`/` · `/revenue-management/` · `/consulenza/` · `/nuova-apertura/` · `/metodo/` · `/chi-siamo/` · `/partner/` · `/contatti/` · `/osservatorio/` · `/hotel-score/` · `/indicatori/` · `/privacy/` · `/cookie/`
+I vecchi link con l'ancora (es. `/#consulenza`) portano in automatico al nuovo indirizzo.
+
+## Costruire e vedere il sito in locale
 
 ```
-npx serve .
+python3 tools/build.py
+cd site && python3 -m http.server 8000
 ```
+poi apri http://localhost:8000.
 
-poi apri l'indirizzo che compare (di solito http://localhost:3000).
-In alternativa: `python -m http.server 8000` e apri http://localhost:8000.
+## Foto nuove
 
-## Pubblicazione
+Metti la foto (JPG o PNG) in `assets/img/`, usala in `index.html`, poi lancia `python3 tools/optimize_images.py` (serve Pillow): la converte in WebP leggero e aggiorna i riferimenti.
 
-Qualsiasi hosting statico va bene (Vercel, Netlify, Cloudflare Pages, hosting tradizionale):
-si carica la cartella così com'è, `index.html` è la pagina iniziale.
+## Pubblicazione (Cloudflare Pages)
+
+- Build command: `python3 tools/build.py`
+- Build output directory: `site`
+- Production branch: `main`
+
+Ogni modifica salvata su `main` va online da sola; gli altri rami hanno un indirizzo di anteprima.
