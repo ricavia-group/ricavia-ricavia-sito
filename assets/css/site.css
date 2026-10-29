@@ -4974,3 +4974,110 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 #pg-indicatori .ndx-cmp .ix-bar.hi b{background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;justify-self:end}
 #pg-indicatori .ndx-mul .ix-mul b{white-space:nowrap}
 @media(max-width:520px){#pg-indicatori .ndx-mul .ix-mul{flex-wrap:nowrap;gap:6px}#pg-indicatori .ndx-mul .ix-mul>span{padding:12px 4px!important}#pg-indicatori .ndx-mul .ix-mul b{font-size:19px!important}#pg-indicatori .ndx-mul .ix-mul small{font-size:9px!important;letter-spacing:.04em!important}}
+
+/* ===== Indicatori · varianti dei riquadri e grafici ===== */
+#pg-indicatori .ndx-lb{display:inline-block;font-family:var(--zf);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;margin-bottom:18px}
+#pg-indicatori .ndx-s.dk .ndx-lb,#pg-indicatori .ndx-ink .ndx-lb{background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff);-webkit-background-clip:text;background-clip:text}
+/* senza sfondo */
+#pg-indicatori .ndx-none{background:none!important;border:0!important;box-shadow:none!important;padding-left:clamp(8px,1vw,14px);padding-right:clamp(8px,1vw,14px)}
+/* nero su bianco (sezioni chiare) e bianco su nero (sezioni scure) */
+#pg-indicatori .ndx-ink{background:#0B0D12!important;border-color:#0B0D12!important;color:#fff}
+#pg-indicatori .ndx-s.dk .ndx-ink{background:var(--zpn)!important;border-color:rgba(255,255,255,.07)!important}
+#pg-indicatori .ndx-white{background:#fff!important;border:0!important;color:var(--zink)}
+#pg-indicatori .ndx-plain{background:var(--zsf)!important;border:0!important;box-shadow:none!important}
+#pg-indicatori .ndx-plainbg{background:#fff!important}
+/* citazione senza sfondo */
+#pg-indicatori .ndx-qt{display:flex;flex-direction:column;justify-content:center;font-style:normal;font-size:clamp(26px,2.6vw,40px);font-weight:600;letter-spacing:-.045em;line-height:1.12;color:var(--zink);padding-top:clamp(30px,3vw,44px)}
+#pg-indicatori .ndx-qt::before{content:"";display:block;width:44px;height:4px;border-radius:4px;background:var(--zgr);margin-bottom:20px}
+#pg-indicatori .ndx-qw{font-size:clamp(30px,3.6vw,56px);max-width:22ch;padding-top:clamp(16px,2vw,28px);padding-bottom:clamp(8px,1vw,14px)}
+/* ADR: i quattro fattori */
+#pg-indicatori .ndx-drv ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+#pg-indicatori .ndx-drv li{display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid rgba(0,0,0,.08);font-size:17px;font-weight:600;letter-spacing:-.02em;color:var(--zink)}
+#pg-indicatori .ndx-drv li:first-child{border-top:0;padding-top:4px}
+#pg-indicatori .ndx-drv li span{flex:none;font-size:12px;font-weight:600;color:var(--zmu);width:22px}
+/* ADR: 11 camere vendute a 120 € */
+#pg-indicatori .ndx-adr-r{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:6px;margin-bottom:20px}
+#pg-indicatori .ndx-adr-r i{position:relative;aspect-ratio:3/4;border-radius:8px;background:linear-gradient(180deg,#3CCDFA,#1F2DD0 70%,#724AF8);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .7s cubic-bezier(.16,1,.3,1);transition-delay:calc(.2s + var(--k)*.05s)}
+#pg-indicatori .ndx-adr-r em{position:absolute;inset:auto 0 8px;text-align:center;font-style:normal;font-size:10px;font-weight:600;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg);left:50%;translate:-50% 0;bottom:8px;width:auto}
+#pg-indicatori .ndx-adr.in .ndx-adr-r i{opacity:1;transform:none}
+#pg-indicatori .ndx-adr p,#pg-indicatori .ndx-r15 p{margin:0;font-size:15px;line-height:1.5;color:rgba(255,255,255,.72)}
+#pg-indicatori .ndx-adr p b,#pg-indicatori .ndx-r15 p b{color:#fff}
+/* RevPAR: numero grande senza sfondo */
+#pg-indicatori .ndx-big{display:flex;flex-direction:column;justify-content:center;gap:12px}
+#pg-indicatori .ndx-big small{font-family:var(--zf);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+#pg-indicatori .ndx-big b{font-size:clamp(84px,9vw,140px);font-weight:600;letter-spacing:-.065em;line-height:.88;background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.06em}
+#pg-indicatori .ndx-big span{font-size:15px;color:rgba(255,255,255,.7)}
+#pg-indicatori .ndx-white.ndx-big small{color:var(--zmu)}
+#pg-indicatori .ndx-white.ndx-big b{background:none;color:var(--zink);-webkit-text-fill-color:var(--zink);font-size:clamp(64px,6.6vw,104px)}
+#pg-indicatori .ndx-white.ndx-big span{color:var(--zmu)}
+/* RevPAR: 15 camere */
+#pg-indicatori .ndx-r15-g{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:20px}
+#pg-indicatori .ndx-r15-g i{aspect-ratio:1.4;border-radius:10px;border:1.5px dashed rgba(255,255,255,.22);opacity:0;transition:opacity .5s ease;transition-delay:calc(.2s + var(--k)*.04s)}
+#pg-indicatori .ndx-r15-g i.on{border:0;background:linear-gradient(135deg,#3CCDFA,#1F2DD0 70%,#724AF8)}
+#pg-indicatori .ndx-r15.in .ndx-r15-g i{opacity:1}
+/* RevPAR: il dilemma */
+#pg-indicatori .ndx-dil{display:flex;flex-direction:column;gap:22px}
+#pg-indicatori .ndx-dil>p{margin:0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.8)}
+#pg-indicatori .ndx-dil-g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#pg-indicatori .ndx-dil-g>div{display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+#pg-indicatori .ndx-dil-g small{font-family:var(--zf);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+#pg-indicatori .ndx-dil-g span{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:#fff}
+#pg-indicatori .ndx-dil-g span b{font-weight:500}
+#pg-indicatori .ndx-dil-g i{font-style:normal;font-size:18px;font-weight:600;width:30px;height:30px;border-radius:9px;display:grid;place-items:center}
+#pg-indicatori .ndx-dil-g i.up{background:linear-gradient(135deg,#3CCDFA,#1F2DD0 70%,#724AF8);color:#fff}
+#pg-indicatori .ndx-dil-g i.dn{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)}
+/* GOP: ripartizione del ricavo */
+#pg-indicatori .ndx-split-b{display:flex;gap:4px;height:58px;border-radius:14px;overflow:hidden;margin-bottom:22px}
+#pg-indicatori .ndx-split-b i{width:0;height:100%;transition:width 1.2s cubic-bezier(.16,1,.3,1);transition-delay:calc(.25s + var(--k)*.18s)}
+#pg-indicatori .ndx-split.in .ndx-split-b i{width:var(--w)}
+#pg-indicatori .ndx-split-b i.sp-c{background:rgba(255,255,255,.22)}
+#pg-indicatori .ndx-split-b i.sp-o{background:rgba(255,255,255,.42)}
+#pg-indicatori .ndx-split-b i.sp-g{background:linear-gradient(90deg,#3CCDFA,#1F2DD0 70%,#724AF8)}
+#pg-indicatori .ndx-split ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#pg-indicatori .ndx-split li{display:flex;flex-direction:column;gap:4px;padding-left:12px;border-left:3px solid rgba(255,255,255,.22)}
+#pg-indicatori .ndx-split li.sp-o{border-left-color:rgba(255,255,255,.42)}
+#pg-indicatori .ndx-split li.sp-g{border-image:linear-gradient(180deg,#3CCDFA,#724AF8) 1}
+#pg-indicatori .ndx-split li span{font-size:13px;color:rgba(255,255,255,.62)}
+#pg-indicatori .ndx-split li b{font-size:clamp(20px,1.8vw,26px);font-weight:600;letter-spacing:-.03em;color:#fff}
+#pg-indicatori .ndx-split li em{font-style:normal;font-size:12px;color:rgba(255,255,255,.5)}
+/* GOPPAR: +17,65 senza sfondo */
+#pg-indicatori .ndx-plus2{display:flex;flex-direction:column;justify-content:center;gap:12px}
+#pg-indicatori .ndx-plus2 small{font-family:var(--zf);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+#pg-indicatori .ndx-plus2 b{font-size:clamp(64px,6.8vw,104px);font-weight:600;letter-spacing:-.06em;line-height:.9;background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.06em}
+#pg-indicatori .ndx-plus2 span{font-size:16px;line-height:1.55;color:rgba(255,255,255,.78)}
+/* GOPPAR: lo stesso calcolo su un anno */
+#pg-indicatori .ndx-year{display:flex;flex-direction:column;justify-content:center}
+#pg-indicatori .ndx-year-f{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+#pg-indicatori .ndx-year-f span{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:16px;background:var(--zsf)}
+#pg-indicatori .ndx-year-f span b{font-size:clamp(20px,1.9vw,28px);font-weight:600;letter-spacing:-.03em;color:var(--zink)}
+#pg-indicatori .ndx-year-f span em{font-style:normal;font-size:12px;color:var(--zmu)}
+#pg-indicatori .ndx-year-f span.hl{background:#0B0D12}
+#pg-indicatori .ndx-year-f span.hl b{background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#pg-indicatori .ndx-year-f span.hl em{color:rgba(255,255,255,.6)}
+#pg-indicatori .ndx-year-f i{font-style:normal;font-size:18px;color:var(--zmu)}
+#pg-indicatori .ndx-year p{margin:16px 0 0;font-size:12px;color:var(--zmu)}
+/* GOPPAR: 12 e 40 camere */
+#pg-indicatori .ndx-size{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center}
+#pg-indicatori .ndx-size-t p{margin:0;font-size:clamp(18px,1.6vw,22px);line-height:1.5;color:rgba(255,255,255,.86);letter-spacing:-.01em}
+#pg-indicatori .ndx-size-v{display:grid;grid-template-columns:.6fr 1fr;gap:20px;align-items:end}
+#pg-indicatori .ndx-size-v>div{display:flex;flex-direction:column;gap:10px}
+#pg-indicatori .ndx-size-v span{font-size:13px;color:rgba(255,255,255,.6)}
+#pg-indicatori .ndx-sq{display:grid;gap:5px}
+#pg-indicatori .ndx-sq.s12{grid-template-columns:repeat(4,minmax(0,1fr))}
+#pg-indicatori .ndx-sq.s40{grid-template-columns:repeat(8,minmax(0,1fr))}
+#pg-indicatori .ndx-sq i{aspect-ratio:1;border-radius:5px;background:linear-gradient(135deg,#3CCDFA,#1F2DD0 70%,#724AF8);opacity:.9}
+@media(max-width:900px){
+ #pg-indicatori .ndx-size{grid-template-columns:minmax(0,1fr)}
+ #pg-indicatori .ndx-qt,#pg-indicatori .ndx-none{padding-left:4px;padding-right:4px}
+}
+@media(max-width:520px){
+ #pg-indicatori .ndx-dil-g{grid-template-columns:minmax(0,1fr)}
+ #pg-indicatori .ndx-split ul{grid-template-columns:minmax(0,1fr)}
+ #pg-indicatori .ndx-adr-r{gap:4px}
+ #pg-indicatori .ndx-adr-r em{display:none}
+ #pg-indicatori .ndx-big b{font-size:84px}
+}
+@media(prefers-reduced-motion:reduce){#pg-indicatori .ndx-adr-r i,#pg-indicatori .ndx-r15-g i{opacity:1!important;transform:none!important;transition:none!important}#pg-indicatori .ndx-split-b i{width:var(--w)!important;transition:none!important}}
+#pg-indicatori .ndx-split li.sp-g b{background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#pg-indicatori .ndx-mul{justify-content:flex-start}
+#pg-indicatori .ndx-mul .ix-mul{margin:auto 0!important}
