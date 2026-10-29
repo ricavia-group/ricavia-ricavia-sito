@@ -4896,3 +4896,7 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 #pg-osservatorio .tt-h{background:var(--zgr)!important;border-bottom:0!important}
 #pg-osservatorio .tt-h b{color:#fff}
 #pg-osservatorio .tt-h small{color:rgba(255,255,255,.82)}
+
+/* Indicatori: riquadro del GOP nell'equazione con il gradiente del brand, non blu pieno */
+#pg-indicatori .ix-eq span.hl{background:var(--zgr)!important;background-origin:border-box!important;border-color:transparent!important;box-shadow:0 20px 40px -22px rgba(31,45,208,.55)!important}
+#pg-indicatori .ix-eq span.hl b,#pg-indicatori .ix-eq span.hl small{color:#fff!important;-webkit-text-fill-color:#fff!important}
