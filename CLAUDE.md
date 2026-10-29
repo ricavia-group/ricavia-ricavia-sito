@@ -26,3 +26,4 @@ Leggi anche README.md per struttura e indirizzi delle pagine.
 - Niente verbi colloquiali ("vanno", "coprono", "resta/restano", "finiscono altrove", "prendono strade"), niente metafore deboli ("bussola", "cruscotto", "a portata di mano"), niente "Così" a inizio frase.
 - Registro serio e professionale. Non inventare dati: se un numero o un calcolo non torna, segnalalo invece di correggerlo.
 - Gli elenchi "Da ricordare" hanno frasi brevi, parallele, con la stessa costruzione.
+- Nessun punto alla fine dei testi (titoli, sottotitoli, paragrafi, voci di elenco, didascalie, citazioni): il punto resta solo dentro il testo, tra una frase e l'altra.
