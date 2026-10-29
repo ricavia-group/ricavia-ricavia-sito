@@ -4847,18 +4847,15 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 @media(max-width:820px){.z-pill3.zp li{flex-direction:column;align-items:stretch;gap:0}.zp-v svg{max-width:260px}}
 @media(prefers-reduced-motion:reduce){.zp-ln{stroke-dashoffset:0!important;transition:none!important}.zp-area,.zp-dot,.zp-halo,.zp-av,.zp-ms,.zp-tg,.zp-tg circle{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}}
 
-/* Strategia: colonne costi (grafite) e utile (gradiente), prima e dopo */
-.zp-cu{width:100%;max-width:300px}
-.zp-cu-b{display:flex;align-items:flex-end;gap:8px;height:116px}
-.zp-cu-b i{flex:1;height:var(--h);border-radius:9px;transform:scaleY(0);transform-origin:bottom;transition:transform 1s var(--zease);transition-delay:calc(.3s + var(--k)*.1s)}
-.zp-cu-b i:nth-child(2n){margin-right:10px}
-.zp-cu-b i:last-child{margin-right:0}
-.zp-c{background:linear-gradient(180deg,#4a4d58,#1D1D1F)}
-.zp-u{background:linear-gradient(180deg,#3CCDFA,#1F2DD0 70%,#724AF8)}
-.zp-cu-l{display:flex;justify-content:space-between;margin-top:10px}
-.zp-cu-l small{font-family:var(--zf);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;line-height:1.2;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-.z-on .zp-cu-b i{transform:none}
-@media(prefers-reduced-motion:reduce){.zp-cu-b i{transform:none!important;transition:none!important}}
+/* Strategia: tre passi a scala */
+.zp-steps{display:flex;flex-direction:column;gap:10px;width:100%;max-width:300px}
+.zp-steps span{align-self:flex-start;margin-left:calc(var(--x)*clamp(26px,2.6vw,40px));display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 18px 0 8px;border-radius:99px;background:var(--zsf);font-family:var(--zf);font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--zink);line-height:1;opacity:0;transform:translateX(-16px);transition:opacity .6s ease,transform .9s var(--zease);transition-delay:calc(.3s + var(--k)*.16s)}
+.zp-steps b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#fff;font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--zink)}
+.zp-steps .zp-on{background:linear-gradient(100deg,#3CCDFA,#1F2DD0 70%,#724AF8);color:#fff;box-shadow:0 14px 30px -14px rgba(31,45,208,.55)}
+.zp-steps .zp-on b{background:rgba(255,255,255,.2);color:#fff}
+.zp-steps svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.z-on .zp-steps span{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.zp-steps span{opacity:1!important;transform:none!important;transition:none!important}}
 /* testo in gradiente: spazio per le lettere con discendenti (g, p, q) */
 .z-pw.z-g{padding-bottom:.14em;margin-bottom:-.14em}
 @media(prefers-reduced-motion:reduce){.zp-rg,.zp-arw{opacity:1!important;transform:none!important;transition:none!important}.zp-tg2{animation:none!important}}
