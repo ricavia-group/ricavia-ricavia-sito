@@ -5112,3 +5112,9 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 @media(max-width:520px){#pg-indicatori .ndx-ab-r{grid-template-columns:76px minmax(0,1fr) 70px;gap:10px}#pg-indicatori .ndx-ab-r b{font-size:16px}}
 @media(prefers-reduced-motion:reduce){#pg-indicatori .ndx-ab-r i::after{width:var(--w);transition:none}}
 #pg-indicatori .ndx-adr2 p b{white-space:nowrap}
+
+/* Home · tre card: grafici un po' più piccoli, titoli più grandi */
+.z-pill3.zp .zp-v svg{max-width:236px}
+.z-pill3.zp .zp-mm{max-width:236px;height:116px}
+.z-pill3.zp .z-pw{font-size:clamp(36px,3.9vw,58px)}
+@media(max-width:820px){.z-pill3.zp .zp-v svg,.z-pill3.zp .zp-mm{max-width:220px}.z-pill3.zp .z-pw{font-size:clamp(34px,9vw,44px)}}
