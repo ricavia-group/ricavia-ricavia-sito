@@ -210,5 +210,15 @@ open(os.path.join(OUT, 'sitemap.xml'), 'w').write(
     ''.join('  <url><loc>%s</loc></url>\n' % u for u in urls) + '</urlset>\n')
 open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n' % DOMAIN)
 shutil.copy(os.path.join(ROOT, 'tools', 'headers'), os.path.join(OUT, '_headers'))
+# pagina 404: intestazione e piè di pagina della Home, messaggio semplice
+home_doc = open(os.path.join(OUT, 'index.html'), encoding='utf-8').read()
+ft = re.search(r'<footer class="ft z-ft".*?</footer>', home_doc, re.S)
+nf = home_doc.split('<main id="top"')[0] + """<main style="min-height:70vh;display:grid;place-items:center;text-align:center;padding:160px 24px 80px">
+<div><p class="z-eyebrow-b">Errore 404</p><h1 style="font:600 clamp(40px,6vw,84px)/1 var(--zf);letter-spacing:-.05em;margin:18px 0 0">Pagina <em class="z-g">non trovata</em></h1>
+<p style="color:var(--zmu);font-size:19px;margin:24px auto 0;max-width:30em">L'indirizzo che hai aperto non esiste o è stato spostato.</p>
+<a class="z-btn" href="/" style="margin-top:36px">Torna alla home <span class="arr">→</span></a></div></main>
+""" + (ft.group(0) if ft else '') + home_doc[home_doc.find('<script src="https://cdn.jsdelivr.net/npm/lenis'):]
+nf = nf.replace('<link rel="canonical" href="https://ricavia.com/">', '<meta name="robots" content="noindex">')
+open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(nf)
 nf = open(os.path.join(OUT, 'index.html'), encoding='utf-8').read()
 print('pagine', len(urls), '->', OUT)
