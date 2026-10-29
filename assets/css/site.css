@@ -4848,10 +4848,10 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 @media(prefers-reduced-motion:reduce){.zp-ln{stroke-dashoffset:0!important;transition:none!important}.zp-area,.zp-dot,.zp-halo,.zp-av,.zp-ms,.zp-tg,.zp-tg circle{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}}
 
 /* Strategia: prima e dopo, costi e utile */
-.zp-cmp{display:flex;align-items:flex-end;gap:clamp(22px,2.4vw,34px)}
-.zp-bars{display:flex;align-items:flex-end;gap:14px}
-.zp-col{display:flex;flex-direction:column;align-items:center;gap:8px}
-.zp-stk{width:clamp(48px,4.4vw,62px);height:104px;display:flex;flex-direction:column;justify-content:flex-end;gap:3px}
+.zp-cmp{display:flex;align-items:flex-end}
+.zp-bars{display:flex;align-items:flex-end;gap:clamp(24px,3vw,40px);width:100%;max-width:300px}
+.zp-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px}
+.zp-stk{width:100%;height:112px;display:flex;flex-direction:column;justify-content:flex-end;gap:3px}
 .zp-stk span{display:block;height:var(--h);transform:scaleY(0);transform-origin:bottom;transition:transform .9s var(--zease);transition-delay:calc(.35s + var(--k)*.22s)}
 .zp-c{background:#DCDFE8;border-radius:4px 4px 8px 8px}
 .zp-u{background:linear-gradient(180deg,#3CCDFA,#1F2DD0 75%,#724AF8);border-radius:10px 10px 4px 4px}
