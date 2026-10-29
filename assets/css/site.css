@@ -5092,3 +5092,5 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 #pg-indicatori .ndx-s.dk .ndx-year-f span em{color:rgba(255,255,255,.55)}
 #pg-indicatori .ndx-s.dk .ndx-year-f span.hl{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
 #pg-indicatori .ndx-s.dk .ndx-year-f i,#pg-indicatori .ndx-s.dk .ndx-year p{color:rgba(255,255,255,.55)}
+#pg-indicatori .ndx-size{display:block}
+#pg-indicatori .ndx-size-t p{max-width:none;font-size:clamp(20px,1.9vw,28px);line-height:1.4;letter-spacing:-.02em}
