@@ -220,5 +220,26 @@ nf = home_doc.split('<main id="top"')[0] + """<main style="min-height:70vh;displ
 """ + (ft.group(0) if ft else '') + home_doc[home_doc.find('<script src="https://cdn.jsdelivr.net/npm/lenis'):]
 nf = nf.replace('<link rel="canonical" href="https://ricavia.com/">', '<meta name="robots" content="noindex">')
 open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(nf)
-nf = open(os.path.join(OUT, 'index.html'), encoding='utf-8').read()
+# alleggerimento: CSS senza regole inutilizzate e compresso, HTML senza spazi superflui
+import sys
+if os.environ.get('RICAVIA_NO_MIN'):
+    print('pagine', len(urls), '->', OUT, '(senza alleggerimento)'); sys.exit(0)
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
+import minify
+htmls = []
+for d, _, fs in os.walk(OUT):
+    for f in fs:
+        if f.endswith('.html'):
+            htmls.append(os.path.join(d, f))
+corpus = ''.join(open(x, encoding='utf-8').read() for x in htmls)
+corpus += ''.join(open(os.path.join(OUT, 'assets', 'js', f), encoding='utf-8').read() for f in os.listdir(os.path.join(OUT, 'assets', 'js')))
+css_p = os.path.join(OUT, 'assets', 'css', 'site.css')
+css0 = open(css_p, encoding='utf-8').read() + '\n' + open(os.path.join(OUT, 'assets', 'css', 'mp.css'), encoding='utf-8').read()
+css = minify.minify_css(minify.purge_css(css0, corpus))
+open(css_p, 'w', encoding='utf-8').write(css)
+os.remove(os.path.join(OUT, 'assets', 'css', 'mp.css'))
+for x in htmls:
+    h = open(x, encoding='utf-8').read().replace('<link rel="stylesheet" href="/assets/css/mp.css">\n', '')
+    open(x, 'w', encoding='utf-8').write(minify.minify_html(h))
+print('CSS', len(css0) // 1024, 'KB ->', len(css) // 1024, 'KB')
 print('pagine', len(urls), '->', OUT)
