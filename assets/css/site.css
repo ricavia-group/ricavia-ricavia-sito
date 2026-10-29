@@ -4846,8 +4846,6 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 /* testo in gradiente: spazio per le lettere con discendenti (g, p, q) */
 .z-pw.z-g{padding-bottom:.14em;margin-bottom:-.14em}
 
-/* loghi partner: maschera definita qui, così il percorso è sempre relativo a questo file */
-.plm-081581f05e{--m:url(../img/081581f05e.svg)}.plm-6e77288938{--m:url(../img/6e77288938.svg)}.plm-7ecd7ffb66{--m:url(../img/7ecd7ffb66.svg)}.plm-c1f887b82b{--m:url(../img/c1f887b82b.svg)}.plm-cd149fb049{--m:url(../img/cd149fb049.svg)}
 
 /* Animazioni d'ingresso: Partner tecnologici, Osservatorio, Per chi lavoriamo (09-reveal.js) */
 .zx-ready .zx-up{opacity:0;transform:translateY(28px);transition:opacity 1s var(--zease),transform 1.2s var(--zease);transition-delay:var(--zd,0s)}
@@ -4877,3 +4875,13 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 #pg-partner .pn-eco:not(.in) .eco-bg path{stroke-dashoffset:100}
 #pg-partner .pn-eco.in .eco-bg path{animation:ecoDraw 1.1s ease-out backwards;animation-delay:calc(.5s + var(--k)*.08s)}
 @media(prefers-reduced-motion:reduce){#pg-partner .pn-eco .eco-t,#pg-partner .pn-eco .eco-core{opacity:1!important;animation:none!important}#pg-partner .eco-bg path{stroke-dashoffset:0!important;animation:none!important}}
+
+/* Loghi partner disegnati direttamente nella pagina (niente maschere CSS né file esterni: si vedono sempre) */
+.z-pl,#pg-partner .pl,.pl.w{-webkit-mask:none!important;mask:none!important;background:none!important}
+.z-pl::after,#pg-partner .pl::after{display:none!important}
+.plg{display:block;width:100%;height:100%;overflow:visible}
+.plg use{transition:opacity .4s}
+.plg-b{fill:#2a2a2d}
+.plg-g{fill:url(#lgG);opacity:0}
+.pl.w .plg-b{fill:#fff}
+.z-plogos a:hover .plg-g,#pg-partner .pnk:hover .plg-g,#pg-partner .eco-t:hover .plg-g{opacity:1}

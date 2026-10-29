@@ -8,6 +8,7 @@ Leggi anche README.md per struttura e indirizzi delle pagine.
 - Stili tutti in `assets/css/site.css`. L'ordine delle regole conta: le regole in fondo al file sovrascrivono quelle prima. Le regole delle pagine interne usano il prefisso `:is(#revenue-management,#consulenza,…)`.
 - Variabili principali: `--zink` (nero testo/tasti), `--zgr` (gradiente brand), `--zf` (carattere Geist).
 - Script in `assets/js/`, caricati nell'ordine numerico.
+- Loghi dei partner: sono disegnati nella pagina (sprite `<svg class="lg-sprite">` in cima al body, simboli `#lg-…`, richiamati con `<svg class="plg"><use …></svg>`). Non usare maschere CSS o file SVG esterni per i loghi: in alcuni ambienti non si caricano e i loghi spariscono.
 
 ## Regole di brand (vincolanti)
 - Logo: o la scritta RICAVIA con il simbolo integrato, o solo il simbolo. **Mai simbolo + scritta affiancati.**
