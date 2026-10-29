@@ -4850,9 +4850,9 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 /* Strategia: bersaglio bold */
 .zp-tgt svg{max-width:300px}
 .zp-rg{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);transition:opacity .5s ease,transform 1s var(--zease);transition-delay:calc(.25s + var(--k)*.12s)}
-.zp-sh{fill:none;stroke:#1D1D1F;stroke-width:5;stroke-linecap:round}
-.zp-hd{fill:#1D1D1F;stroke:#1D1D1F;stroke-width:2;stroke-linejoin:round}
-.zp-arw{opacity:0;transform:translate(46px,-19px);transition:opacity .25s ease 1s,transform .45s cubic-bezier(.2,.9,.25,1.25) 1s}
+.zp-sh{fill:none;stroke:#1D1D1F;stroke-width:2.6;stroke-linecap:round}
+.zp-hd{fill:#1D1D1F;stroke:#1D1D1F;stroke-width:1.4;stroke-linejoin:round}
+.zp-arw{opacity:0;transform:translate(30px,-13px);transition:opacity .25s ease 1s,transform .45s cubic-bezier(.2,.9,.25,1.25) 1s}
 .z-on .zp-rg,.z-on .zp-arw{opacity:1;transform:none}
 .z-on .zp-tg2{animation:zpHit .5s ease 1.4s}
 @keyframes zpHit{0%,100%{transform:none}35%{transform:translateX(2px)}70%{transform:translateX(-1.5px)}}
