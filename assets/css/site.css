@@ -5094,3 +5094,21 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 #pg-indicatori .ndx-s.dk .ndx-year-f i,#pg-indicatori .ndx-s.dk .ndx-year p{color:rgba(255,255,255,.55)}
 #pg-indicatori .ndx-size{display:block}
 #pg-indicatori .ndx-size-t p{max-width:none;font-size:clamp(20px,1.9vw,28px);line-height:1.4;letter-spacing:-.02em}
+
+/* ADR: 120 o 132, confronto a barre */
+#pg-indicatori .ndx-adr2{display:flex;flex-direction:column;justify-content:center}
+#pg-indicatori .ndx-ab{display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+#pg-indicatori .ndx-ab-r{display:grid;grid-template-columns:96px minmax(0,1fr) 84px;align-items:center;gap:16px}
+#pg-indicatori .ndx-ab-r span{font-size:14px;color:rgba(255,255,255,.7)}
+#pg-indicatori .ndx-ab-r i{display:block;height:14px;border-radius:99px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
+#pg-indicatori .ndx-ab-r i::after{content:"";position:absolute;inset:0 auto 0 0;width:0;border-radius:99px;background:rgba(255,255,255,.38);transition:width 1.3s cubic-bezier(.16,1,.3,1) .25s}
+#pg-indicatori .ndx-ab-r.hi i::after{background:linear-gradient(90deg,#3CCDFA,#1F2DD0 70%,#724AF8);transition-delay:.45s}
+#pg-indicatori .ndx-adr2.in .ndx-ab-r i::after{width:var(--w)}
+#pg-indicatori .ndx-ab-r b{justify-self:end;font-size:20px;font-weight:600;letter-spacing:-.03em;color:#fff}
+#pg-indicatori .ndx-ab-r.hi span{color:#fff;font-weight:600}
+#pg-indicatori .ndx-ab-r.hi b{background:linear-gradient(100deg,#3CCDFA,#6f7bff 60%,#9a7bff);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#pg-indicatori .ndx-adr2 p{margin:0;font-size:16px;line-height:1.5;color:rgba(255,255,255,.72)}
+#pg-indicatori .ndx-adr2 p b{color:#fff}
+@media(max-width:520px){#pg-indicatori .ndx-ab-r{grid-template-columns:76px minmax(0,1fr) 70px;gap:10px}#pg-indicatori .ndx-ab-r b{font-size:16px}}
+@media(prefers-reduced-motion:reduce){#pg-indicatori .ndx-ab-r i::after{width:var(--w);transition:none}}
+#pg-indicatori .ndx-adr2 p b{white-space:nowrap}
