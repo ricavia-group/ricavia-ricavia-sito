@@ -63,8 +63,9 @@
       location.href='mailto:info@ricavia.com?subject='+encodeURIComponent(subject)+'&body='+all.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');
       done&&done('mail',sc)}
     if(!ep||!window.fetch){mail();return}
-    fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(r){if(!r.ok)throw 0;done&&done('sent',sc)})
+    /* text/plain: richiesta semplice, senza controllo preliminare CORS (necessario per Google Apps Script) */
+    fetch(ep,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+      .then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;done&&done('sent',sc)})
       .catch(mail);
   }
 

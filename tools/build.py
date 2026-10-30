@@ -68,7 +68,7 @@ main_js = read('assets/js/01-main.js')
 cat = re.search(r'CAT=(\{.*?\});', main_js, re.S)
 CAT = json.loads(cat.group(1)) if cat else {}
 
-scripts_at = body.find('<script src="https://cdn.jsdelivr.net/npm/lenis')
+scripts_at = body.find('<script src="assets/js/00-lenis')
 scripts = body[scripts_at:]
 home = body[body.find('<main id="top"'):scripts_at]
 
@@ -331,7 +331,7 @@ nf = home_doc.split('<main id="top"')[0] + """<main style="min-height:70vh;displ
 <div><p class="z-eyebrow-b">Errore 404</p><h1 style="font:600 clamp(40px,6vw,84px)/1 var(--zf);letter-spacing:-.05em;margin:18px 0 0">Pagina <em class="z-g">non trovata</em></h1>
 <p style="color:var(--zmu);font-size:19px;margin:24px auto 0;max-width:30em">L'indirizzo che hai aperto non esiste o è stato spostato.</p>
 <a class="z-btn" href="/" style="margin-top:36px">Torna alla home <span class="arr">→</span></a></div></main>
-""" + (ft.group(0) if ft else '') + home_doc[home_doc.find('<script src="https://cdn.jsdelivr.net/npm/lenis'):]
+""" + (ft.group(0) if ft else '') + home_doc[home_doc.find('<script src="assets/js/00-lenis'):]
 nf = nf.replace('<link rel="canonical" href="https://ricavia.com/">', '<meta name="robots" content="noindex">')
 open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(nf)
 # alleggerimento: CSS senza regole inutilizzate e compresso, HTML senza spazi superflui
