@@ -5,8 +5,10 @@
  * "Esegui come: me", "Chi ha accesso: Chiunque". L'indirizzo che termina con /exec va nel sito.
  *
  * Ogni richiesta inviata dal sito diventa una riga del foglio "Lead"
+ * e arriva un'email di avviso (GmailApp: MailApp non consegna le email inviate a se stessi)
  * e arriva un'email di avviso a info@ricavia.com con fascia e punteggio.
  */
+var FOGLIO_ID = '1B1HQNdCeofg3bBPHrGdRHbyI3HKrfm-u69AEWBKQcxI';
 var AVVISO_A = 'info@ricavia.com';
 var NOMI = {'chiamata': 'Call conoscitiva', 'hotel-score': 'Hotel Score', 'apertura': 'Nuova apertura', 'osservatorio': 'Osservatorio'};
 
@@ -41,18 +43,19 @@ function doPost(e) {
       (p.motivi || []).join(', '),
       ''
     ];
-    var sh = SpreadsheetApp.getActive().getSheetByName('Lead');
+    var ss = SpreadsheetApp.openById(FOGLIO_ID);
+    var sh = ss.getSheetByName('Lead');
     // i valori che iniziano con = + - @ restano testo, non formule
     riga = riga.map(function (x) { return (typeof x === 'string' && /^[=+\-@]/.test(x)) ? "'" + x : x; });
     sh.appendRow(riga);
 
     var nome = v('Nome') || v('Email');
-    MailApp.sendEmail({
+    GmailApp.sendEmail({
       to: AVVISO_A,
       subject: 'Nuovo lead ' + (p.fascia || '') + ' · ' + (NOMI[d.tipo] || d.tipo) + ' · ' + nome,
       body: (d.oggetto || '') + '\n\nPunteggio: ' + (p.punti || 0) + '/100, fascia ' + (p.fascia || '') +
         '\n\n' + Object.keys(c).map(function (k) { return k + ': ' + c[k]; }).join('\n') +
-        '\n\nFoglio: ' + SpreadsheetApp.getActive().getUrl()
+        '\n\nFoglio: ' + ss.getUrl()
     });
     return risposta({ok: true});
   } catch (err) {
