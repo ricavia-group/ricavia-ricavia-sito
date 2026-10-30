@@ -352,8 +352,15 @@ css0 = open(css_p, encoding='utf-8').read() + '\n' + open(os.path.join(OUT, 'ass
 css = minify.minify_css(minify.purge_css(css0, corpus))
 open(css_p, 'w', encoding='utf-8').write(css)
 os.remove(os.path.join(OUT, 'assets', 'css', 'mp.css'))
+# versione nei link a CSS e JS: i file in /assets/ hanno cache di un anno, cosi ogni modifica arriva subito ai visitatori
+import hashlib
+def _ver(m):
+    f = os.path.join(OUT, m.group(2).lstrip('/'))
+    v = hashlib.md5(open(f, 'rb').read()).hexdigest()[:8] if os.path.exists(f) else ''
+    return m.group(1) + m.group(2) + ('?v=' + v if v else '') + '"'
 for x in htmls:
     h = open(x, encoding='utf-8').read().replace('<link rel="stylesheet" href="/assets/css/mp.css">\n', '')
+    h = re.sub(r'((?:src|href)=")(/assets/(?:js|css)/[^"?]+)"', _ver, h)
     open(x, 'w', encoding='utf-8').write(minify.minify_html(h))
 print('CSS', len(css0) // 1024, 'KB ->', len(css) // 1024, 'KB')
 print('pagine', len(urls), '->', OUT)
