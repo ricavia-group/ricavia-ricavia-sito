@@ -5159,3 +5159,7 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .ctp-q{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
 .ctp-q label{min-width:0}
 .ctp-f .ctp-q :is(select,input){align-self:stretch;width:100%;box-sizing:border-box}
+#pg-pagella .hs-f .hs-chk input{width:20px!important;height:20px!important;min-width:20px;padding:0!important;margin:1px 0 0!important;border:1.5px solid rgba(11,11,18,.4)!important;border-radius:5px!important;background:#fff!important;cursor:pointer}
+#pg-pagella .hs-f .hs-chk input:checked{background:var(--zink)!important;border-color:var(--zink)!important}
+#pg-pagella .hs-f .hs-chk input:checked::after{content:"";width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+#pg-pagella .hs-f .hs-chk{cursor:pointer;user-select:none}
