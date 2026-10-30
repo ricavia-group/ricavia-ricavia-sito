@@ -5231,3 +5231,10 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 @media(max-width:560px){.ck{flex-direction:column;align-items:stretch;gap:12px;padding:16px;bottom:12px}.ck button{width:100%}}
 /* banner più compatto su telefono: non deve coprire i tasti della pagina */
 @media(max-width:560px){.ck{flex-direction:row!important;align-items:center!important;gap:12px!important;padding:10px 10px 10px 14px!important;bottom:10px!important;border-radius:16px}.ck p{font-size:12px;line-height:1.35}.ck button{width:auto!important;height:36px;padding:0 14px;font-size:13px}}
+
+/* ===== Contatti: come funziona la prenotazione ===== */
+.ctp-how .ctp-step+p{margin:6px 0 20px 34px;font-size:15px;line-height:1.5;color:var(--zmu,#6e6e73)}
+.ctp-how .ctp-step+p:last-child{margin-bottom:0}
+.ctp-book.one .ctp-how{order:2;margin-top:8px;padding-top:24px;border-top:1px solid var(--zln,rgba(11,11,18,.1))}
+.ctp-book.one #ctForm{order:1}
+.ctp-book:not(.one) #ctForm{margin-top:34px}
