@@ -32,9 +32,9 @@
       if(sib.length>=3)sib.forEach(function(c,i){c.style.setProperty('--d',Math.min(i*.08,.48).toFixed(2)+'s')});
     });
     /* osservatore: titoli, foto e (per Contatti) gli elementi .ar */
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mx-in');if(id==='contatti'&&e.target.classList.contains('ar'))e.target.classList.add('in');io.unobserve(e.target)}})},{root:id==='contatti'?null:pg,threshold:.15});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mx-in');if(id==='contatti'&&e.target.classList.contains('ar'))e.target.classList.add('in');io.unobserve(e.target)}})},{root:(id==='contatti'||window.__MP)?null:pg,threshold:.15});
     /* foto: partono appena iniziano a entrare nello schermo, senza ritardi */
-    var iop=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mx-in');iop.unobserve(e.target)}})},{root:id==='contatti'?null:pg,threshold:0,rootMargin:'0px 0px 6% 0px'});
+    var iop=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mx-in');iop.unobserve(e.target)}})},{root:(id==='contatti'||window.__MP)?null:pg,threshold:0,rootMargin:'0px 0px 6% 0px'});
     function start(){
       pg.classList.remove('mx-go');
       hs.forEach(function(e){e.classList.remove('mx-in');io.observe(e)});

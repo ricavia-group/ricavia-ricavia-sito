@@ -1,0 +1,12 @@
+/* Sito multipagina: le pagine interne non sono più finestre sovrapposte ma pagine vere */
+html.mp-in .pgv{position:relative!important;inset:auto!important;z-index:auto!important;overflow:visible!important;height:auto!important;max-height:none!important;visibility:visible!important;opacity:1!important;transform:none!important;overscroll-behavior:auto!important}
+html.mp-in body{overflow-x:hidden}
+/* pagine articolo del Journal */
+html.mp-art body{background:#fbfaf7}
+.jr-pgm{padding:clamp(110px,12vw,150px) 0 clamp(40px,6vw,80px)}
+.jr-back{display:block;max-width:760px;margin:0 auto;padding:0 16px;font-size:14px;font-weight:500;color:var(--zmu);text-decoration:none}
+.jr-back:hover{color:var(--zink)}
+.jr-pgm .jr-art{padding-top:clamp(20px,3vw,32px)}
+.jr-h1{margin:16px 0 18px;font-size:clamp(32px,4.6vw,58px);line-height:1.02;letter-spacing:-.05em;font-weight:700}
+.jr-cta{max-width:760px;margin:clamp(32px,4vw,48px) auto 0;padding:28px 16px 0;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.jr-cta p{margin:0;font-size:20px;font-weight:600;letter-spacing:-.03em}

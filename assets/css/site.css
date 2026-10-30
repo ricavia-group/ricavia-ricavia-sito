@@ -1,3 +1,6 @@
+/* Geist ospitato sul sito (unico carattere del brand) */
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/geist-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(../fonts/geist-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 
 /* Layout: hero a tutto schermo con la A di vetro in 3D al centro, logo e payoff sotto. Poi la frase su bianco e l'Hotel Score. */
 :root{
@@ -9,8 +12,8 @@
   --line:rgba(206,212,255,.12);
   --line-2:rgba(206,212,255,.22);
   --grad:linear-gradient(95deg,#3CCDFA 0%,#1F2DD0 50%,#724AF8 100%);
-  --f:"Inter","Helvetica Neue",Arial,sans-serif;
-  --f-logo:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --f:"Geist","Helvetica Neue",Arial,sans-serif;
+  --f-logo:"Geist","Helvetica Neue",Arial,sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -1202,7 +1205,7 @@ html.ap-open .nav{background:#000}
 .ap-ok p b{color:#0b0b12}
 .ap-foot{background:#000;padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
 .ap-foot .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:12.5px;color:#8a90aa}
-.ap-foot .pay{font-family:"Montserrat",var(--f);letter-spacing:.32em;font-weight:500;background:linear-gradient(90deg,#3CCDFA,#1F2DD0 55%,#724AF8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ap-foot .pay{font-family:var(--f);letter-spacing:.32em;font-weight:500;background:linear-gradient(90deg,#3CCDFA,#1F2DD0 55%,#724AF8);-webkit-background-clip:text;background-clip:text;color:transparent}
 @media (prefers-reduced-motion:reduce){.app{transition:opacity .2s,visibility 0s .2s;transform:none}html.ap-open #apertura{transition:opacity .2s}.ar{transform:none;transition:opacity .3s}.ap-row,.ap-row .ck,.ap-last{transition-duration:.2s}}
 /* ===== WOW 3: pagine servizio (Revenue management, Consulenza) ===== */
 .app.on{visibility:visible;opacity:1;transform:none;transition:opacity .45s ease,transform .6s cubic-bezier(.16,1,.3,1)}
@@ -1734,14 +1737,14 @@ html.pg-open .nav{background:#000}
 #revenue-management .ix-blk{background:#fff;padding:clamp(22px,3vw,40px);border:1px solid rgba(31,45,208,.12);box-shadow:0 30px 60px -45px rgba(31,45,208,.5)}
 #revenue-management .ix.dk .ix-blk{background:#0d1224;border-color:rgba(60,205,250,.18)}
 #revenue-management .ix-blk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#3CCDFA,#1F2DD0,#724AF8)}
-#revenue-management .ix-n{border-radius:999px;width:auto;padding:0 14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;letter-spacing:.06em}
+#revenue-management .ix-n{border-radius:999px;width:auto;padding:0 14px;font-family:var(--zf);font-variant-numeric:tabular-nums;font-size:13px;letter-spacing:.06em}
 #revenue-management .ix-n::before{content:"KPI ";opacity:.7}
 #revenue-management .ix-cards{grid-template-columns:repeat(4,minmax(0,1fr))}
 #revenue-management .ix-c{border-top:0;border-left:3px solid var(--c);background:#fff}
-#revenue-management .ix-c b{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(17px,1.5vw,21px)}
+#revenue-management .ix-c b{font-family:var(--zf);font-variant-numeric:tabular-nums;font-size:clamp(17px,1.5vw,21px)}
 #revenue-management .ix-drop{float:none;display:inline;font-size:1em;margin:0;-webkit-text-fill-color:currentColor;color:#0b0b12;background:none}
 #revenue-management .ix-lead{padding-left:22px;border-left:3px solid #1F2DD0;font-size:clamp(18px,1.5vw,22px)}
-#revenue-management .ix-res b,#revenue-management .ix-k4 b{font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:-.02em}
+#revenue-management .ix-res b,#revenue-management .ix-k4 b{font-family:var(--zf);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 @media (max-width:760px){#revenue-management .ix-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* 2 Consulenza: bilancio a due colonne */
@@ -2039,7 +2042,7 @@ html.ct-open .nav{background:#000}
 .ctp-ok p{margin-top:10px;color:#4a4e63;line-height:1.55;font-size:15px}
 .ctp-ok p b{color:#0b0b12}
 .ctp-foot{margin-top:clamp(26px,5vh,50px);padding-top:18px;border-top:1px solid rgba(11,11,18,.08);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:12.5px;color:#8a8ea6}
-.ctp-foot .pay{font-family:"Montserrat",var(--f);letter-spacing:.32em;font-weight:500;background:linear-gradient(90deg,#3CCDFA,#1F2DD0 55%,#724AF8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ctp-foot .pay{font-family:var(--f);letter-spacing:.32em;font-weight:500;background:linear-gradient(90deg,#3CCDFA,#1F2DD0 55%,#724AF8);-webkit-background-clip:text;background-clip:text;color:transparent}
 @media (prefers-reduced-motion:reduce){.ctp{transition:opacity .2s,visibility 0s .2s;transform:none}html.ct-open .ctp{transition:opacity .2s}}
 
 
@@ -2452,7 +2455,7 @@ html.ct-open .nav{background:#000}
 
 
 :root{--zbg:#FBFBFD;--zink:#1D1D1F;--zmu:#6E6E73;--zln:#D2D2D7;--zsf:#F5F5F7;--znt:#0B0D12;--zpn:#15181F;--zbl:#1F2DD0;--zcy:#3CCDFA;--zvi:#724AF8;
---zgr:linear-gradient(100deg,#3CCDFA,#1F2DD0 70%,#724AF8);--zf:'Geist','Inter',system-ui,-apple-system,sans-serif;--zm:'Geist Mono',ui-monospace,monospace;--zease:cubic-bezier(.16,1,.3,1)}
+--zgr:linear-gradient(100deg,#3CCDFA,#1F2DD0 70%,#724AF8);--zf:'Geist',system-ui,-apple-system,sans-serif;--zm:'Geist',ui-monospace,monospace;--zease:cubic-bezier(.16,1,.3,1)}
 html{background:var(--zbg)}
 body{background:var(--zbg)!important}
 .z-main,.z-nav,.z-ft,.mnu{font-family:var(--zf);color:var(--zink);-webkit-font-smoothing:antialiased}
@@ -4796,7 +4799,7 @@ html body #osservatorio-home .ho2-ins b,html body #calendario .dyn .cd b,html bo
 html body #calendario .cal-h span{background-color:#fff!important;background-image:var(--zgr),linear-gradient(#fff,#fff)!important;-webkit-background-clip:text,padding-box!important;background-clip:text,padding-box!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
 
 /* === Testi piccoli: via il monospace, carattere Geist + gradiente === */
-:root{--zm:'Geist','Inter',system-ui,-apple-system,sans-serif!important}
+:root{--zm:'Geist',system-ui,-apple-system,sans-serif!important}
 :is(html,#_x#_y) body *{font-variant-numeric:tabular-nums}
 :is(html,#_x#_y) body .ap-tag,:is(html,#_x#_y) body .tg,:is(html,#_x#_y) body .z-eyebrow,:is(html,#_x#_y) body .z-eyebrow-b,:is(html,#_x#_y) body .ho2-tag,:is(html,#_x#_y) body .ix-box small,:is(html,#_x#_y) body .ix-get small,:is(html,#_x#_y) body .ix-mem small,:is(html,#_x#_y) body .ctp-step,:is(html,#_x#_y) body .ap-lbl,:is(html,#_x#_y) body .mt-h i,:is(html,#_x#_y) body .pb-h,:is(html,#_x#_y) body .pc2 small,:is(html,#_x#_y) body .pl-st small,:is(html,#_x#_y) body .pl-head small,:is(html,#_x#_y) body .z-cap,:is(html,#_x#_y) body .cal-tag,:is(html,#_x#_y) body .mnu-col h3,:is(html,#_x#_y) body .z-hint,:is(html,#_x#_y) body .z-scroll,:is(html,#_x#_y) body .z-replay,:is(html,#_x#_y) body .cal-tot dl span,:is(html,#_x#_y) body .cal-tot>span,:is(html,#_x#_y) body .dyn-t span,:is(html,#_x#_y) body .ho2-grade span,:is(html,#_x#_y) body .ix-eq em,:is(html,#_x#_y) body .ix-rh small,:is(html,#_x#_y) body .ho2-c i,:is(html,#_x#_y) body .ho2-c em,:is(html,#_x#_y) body .cs-tg small,:is(html,#_x#_y) body .ix-res small,:is(html,#_x#_y) body .z-feature-tx small,:is(html,#_x#_y) body .ap-trk small,:is(html,#_x#_y) body .zx-road small,:is(html,#_x#_y) body .tmc small,:is(html,#_x#_y) body .pn-p small,:is(html,#_x#_y) body .pn-fl em{font-family:var(--zf)!important;font-weight:600!important;letter-spacing:.08em!important;background-image:var(--zgr)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
 :is(html,#_x#_y) body .ctp-step i{-webkit-text-fill-color:#fff!important;color:#fff!important}
@@ -5125,3 +5128,34 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .z-pill3.zp-min .zp-chip{padding:0;border:0;background:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
 .z-pill3.zp-min .z-pw{font-size:clamp(40px,4.4vw,68px);letter-spacing:-.055em;line-height:.98}
 @media(max-width:820px){.z-pill3.zp-min li{min-height:180px;gap:40px}.z-pill3.zp-min .z-pw{font-size:clamp(38px,11vw,52px)}}
+
+/* ===== Moduli: campi di qualificazione e consenso ===== */
+.ctp-q{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+.ctp-f input[type=number],.ctp-f select{font:inherit;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--zink,#0b0b12);border:0;border-bottom:1px solid var(--zln,rgba(11,11,18,.2));border-radius:0;padding:10px 0;outline:0;background:transparent;width:100%;min-width:0;transition:border-color .3s}
+.ctp-f select{-webkit-appearance:none;appearance:none;cursor:pointer;padding-right:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%237a7f99' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 4px center}
+.ctp-f select:invalid,.ctp-f select option[value=""]{color:#7a7f99}
+.ctp-f :is(input[type=number],select):focus{border-bottom-color:var(--zbl,#1F2DD0)}
+.ctp-f input[type=number]::placeholder,.ctp-f input::placeholder{color:#a3a7bb}
+.ctp-f input[type=number]{-moz-appearance:textfield}
+.ctp-f input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+#pg-pagella .hs-f input[type=number]{-moz-appearance:textfield}
+#pg-pagella .hs-f .hs-chk,.os-chk{display:flex!important;flex-direction:row;align-items:flex-start;gap:10px;font-size:13px;line-height:1.45;font-weight:500;letter-spacing:0;text-transform:none;cursor:pointer}
+#pg-pagella .hs-f .hs-chk{color:var(--zmu,#4a4e63)}
+#pg-pagella .hs-f .hs-chk b{font-weight:500}
+.hs-chk a,.os-chk a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.hs-chk input,.os-chk input{-webkit-appearance:none;appearance:none;margin:1px 0 0;width:18px;height:18px!important;padding:0!important;flex:0 0 auto;border-radius:4px!important;border:1.5px solid rgba(11,11,18,.35);background:#fff;cursor:pointer;display:grid;place-items:center}
+.hs-chk input:checked,.os-chk input:checked{background:var(--zink,#0b0b12);border-color:var(--zink,#0b0b12)}
+.hs-chk input:checked::after,.os-chk input:checked::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+.os-chk{flex:1 0 100%;order:3;margin:12px 0 2px;color:inherit;opacity:.75}
+.os-chk input{border-color:currentColor;background:transparent}
+.os-chk input:checked{background:currentColor;border-color:currentColor}
+.os-f .os-m{flex:1 0 100%;order:4}
+@media(max-width:560px){.ctp-q{grid-template-columns:1fr}}
+:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-chk{position:absolute;left:20px;right:20px;top:calc(100% + 14px);margin:0;opacity:1;color:rgba(255,255,255,.7)}
+:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-chk input{flex:0 0 18px!important;width:18px!important;height:18px!important;padding:0!important;border:1.5px solid rgba(255,255,255,.5)!important;border-radius:4px!important;background:transparent!important}
+:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-chk input:checked{background:var(--zgr)!important;border-color:transparent!important}
+:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-m{top:calc(100% + 48px)}
+:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f{margin-bottom:64px}
+.ctp-q{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.ctp-q label{min-width:0}
+.ctp-f .ctp-q :is(select,input){align-self:stretch;width:100%;box-sizing:border-box}
