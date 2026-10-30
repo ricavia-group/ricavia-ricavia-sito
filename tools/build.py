@@ -230,7 +230,9 @@ def page(pid, slug, title):
     parts = links(parts, pid)
     parts = fix_assets(parts)
     if not is_home:
-        parts = parts.replace(scripts.split('\n')[0], SHIM + '\n' + scripts.split('\n')[0], 1)
+        first = fix_assets(scripts.split('\n')[0])
+        assert first in parts, 'SHIM: primo script non trovato'
+        parts = parts.replace(first, SHIM + '\n' + first, 1)
         parts += START
     url = DOMAIN + URL[pid]
     desc = describe(pid)
@@ -297,6 +299,8 @@ def art_page(aid, art):
         '<div class="jr-cta"><p>Vuoi applicare questi dati al tuo hotel?</p><a class="z-btn" href="/contatti/">Prenota una call conoscitiva <span class="arr">→</span></a></div></main>' + \
         (ft.group(0) if ft else '') + scripts
     parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-osservatorio'))
+    # ancore che negli articoli puntano a sezioni dell'Osservatorio
+    parts = re.sub(r'href="#(osForm|os-zone|os-top10|os-journal)"', r'href="/osservatorio/#\1"', parts)
     t = '%s · Ricavia' % title
     meta = '''<title>{t}</title>
 <meta name="description" content="{d}">
