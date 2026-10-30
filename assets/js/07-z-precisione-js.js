@@ -52,7 +52,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[data-hs]
 var f=document.getElementById('hsForm');if(f)f.addEventListener('submit',function(e){e.preventDefault();var n=f.n.value.trim(),c=f.c.value.trim(),m=f.e.value.trim(),o=f.querySelector('.hs-m');
 if(!n||!c||!/^\S+@\S+\.\S+$/.test(m)){o.textContent='Compila nome della struttura ricettiva, città ed email';o.className='hs-m bad';return}
 if(f.privacy&&!f.privacy.checked){o.textContent='Per procedere serve il consenso all’informativa privacy';o.className='hs-m bad';return}
-var k=f.k?f.k.value.trim():'',L=[['Struttura ricettiva',n],['Città',c],['Camere',k||'Da indicare'],['Email',m]];
+o.className='hs-m';o.textContent='Invio in corso…';var k=f.k?f.k.value.trim():'',L=[['Struttura ricettiva',n],['Città',c],['Camere',k||'Da indicare'],['Email',m]];
 var fin=function(md){o.className='hs-m ok';o.textContent=md==='sent'?'Richiesta registrata: ti rispondiamo con l’Hotel Score':'Si apre la tua email: invia il messaggio e ti rispondiamo con l’Hotel Score'};
 if(window.RK)RK.deliver('hotel-score','Richiesta Hotel Score · '+n,L,{tipo:'hotel',camere:k,citta:c},fin);
 else{location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Richiesta Hotel Score · '+n)+'&body='+L.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');fin('mail')}});

@@ -51,7 +51,17 @@
   }
 
   /* lines: [[etichetta, valore], …]; done(mode): 'sent' se archiviata, 'mail' se si apre l'email */
+  var busy={},last={};
   function deliver(kind,subject,lines,f,done){
+    /* niente doppioni: un invio alla volta e la stessa richiesta non parte due volte entro 10 minuti */
+    var key=kind+'|'+JSON.stringify(lines);
+    if(busy[kind])return;
+    if(last[key]&&Date.now()-last[key]<600000){done&&done(last[key+'m']||'sent');return}
+    busy[kind]=1;
+    [].forEach.call(document.querySelectorAll('form button[type=submit]'),function(b){b.disabled=true;b.style.opacity=.6});
+    var _done=done;done=function(m){busy[kind]=0;last[key]=Date.now();last[key+'m']=m;
+      [].forEach.call(document.querySelectorAll('form button[type=submit]'),function(b){b.disabled=false;b.style.opacity=''});
+      _done&&_done.apply(null,arguments)};
     if(kind==='chiamata')S.call=1;if(kind==='hotel-score')S.hs=1;if(kind==='osservatorio')S.os=1;save();
     var sc=score(kind,f),
         payload={tipo:kind,oggetto:subject,campi:Object.fromEntries?Object.fromEntries(lines):lines,punteggio:sc,
