@@ -176,7 +176,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     var pg=document.getElementById('apertura'),$=function(i){return document.getElementById(i)};
     var pick={};[].forEach.call(pg.querySelectorAll('.ap-pick'),function(g){g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(g.children,function(c){c.classList.remove('sel')});b.classList.add('sel');pick[g.dataset.k]=b.textContent;$('apErr').textContent=''})});
     var f=$('apForm'),sent=0;
-    f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err='',re=/^[^\s@]+@[^\s@]+\.[^\s@]{2}$/;if(el.sito.value)return;
+    f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err='',re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;if(el.sito.value)return;
       [el.nome,el.tel,el.email].forEach(function(x){x.classList.remove('bad')});f.querySelector('.chk').classList.remove('bad');
       if(el.nome.value.trim().length<2){err='Scrivi nome e cognome';el.nome.classList.add('bad')}
       else if(el.tel.value.replace(/[^0-9]/g,'').length<8){err='Controlla il numero di telefono';el.tel.classList.add('bad')}
@@ -217,7 +217,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       var box=$('kcRooms'),m=Math.min(r,60),k=Math.round(n/r*m),h='';for(var i=0;i<m;i++)h+='<i'+(i<k?' class="on"':'')+'></i>';box.innerHTML=h;box.title=r>60?'Una casella ogni '+(r/60).toFixed(1)+' camere':''}
     if($('kcR')){['kcR','kcV','kcA'].forEach(function(i){$(i).addEventListener('input',calc)});calc()}
     if($('osForm'))$('osForm').addEventListener('submit',function(e){e.preventDefault();var v=this.email.value.trim();
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2}$/.test(v)){$('osMsg').textContent="Controlla l'indirizzo email";return}
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){$('osMsg').textContent="Controlla l'indirizzo email";return}
       if(this.privacy&&!this.privacy.checked){$('osMsg').textContent="Per iscriverti serve il consenso all'informativa privacy";return}
       var fm=this,fin=function(m){var ok=$('osOk');if(m==='sent'&&ok){$('osOkTx').textContent='Ti inviamo la prossima edizione dell’Osservatorio a '+v;fm.classList.add('is-off');$('osMsg').textContent='';ok.classList.add('on')}else{$('osMsg').textContent='Grazie: nella tua email trovi la richiesta già pronta per info@ricavia.com, premi Invia per completarla'}fm.email.value=''};
       if(window.RK)RK.deliver('osservatorio','Iscrizione Osservatorio Ricavia',[['Email',v]],{},fin);
@@ -287,7 +287,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     draw();pick();
     /* modulo */
     var f=$('ctForm'),sent=0;
-    f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err='',re=/^[^\s@]+@[^\s@]+\.[^\s@]{2}$/;
+    f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err='',re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       if(el.sito.value)return;
       [el.nome,el.tel,el.email].forEach(function(x){x.classList.remove('bad')});f.querySelector('.chk').classList.remove('bad');
       if(!sel)err='Scegli il giorno dal calendario';else if(!slot)err='Scegli mattina o pomeriggio';
