@@ -187,7 +187,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       var L=[['Struttura',pick.tipo||'Da indicare'],['Fase',pick.fase||'Da indicare'],['Nome',el.nome.value.trim()],['Città o zona',el.citta.value.trim()||'Da indicare'],['Telefono',el.tel.value.trim()],['Email',el.email.value.trim()],['Progetto',el.msg.value.trim()||'Da raccontare in chiamata']];
       if(el.camere&&el.camere.value)L.splice(4,0,['Camere previste',el.camere.value]);
       var esc=function(t){return t.replace(/</g,'&lt;')},head='Grazie <b>'+esc(el.nome.value.trim())+'</b>. Ti ricontattiamo al <b>'+esc(el.tel.value.trim())+'</b> per la prima chiamata sul progetto';
-      var fin=function(m){$('apOkTx').innerHTML=head+(m==='sent'?'. La richiesta è stata registrata':'. Nella tua email trovi il messaggio già compilato per info@ricavia.com: premi Invia per completarlo');f.style.display='none';$('apOk').classList.add('on')};
+      var fin=function(m){var h3=$('apOk').querySelector('h3');if(h3)h3.textContent=m==='sent'?'Grazie, progetto ricevuto':'Progetto pronto da inviare';$('apOkTx').innerHTML=head+(m==='sent'?'. La richiesta è stata registrata':'. Nella tua email trovi il messaggio già compilato per info@ricavia.com: premi Invia per completarlo');f.style.display='none';$('apOk').classList.add('on')};
       var fs={tipo:pick.tipo||'',camere:el.camere&&el.camere.value,citta:el.citta.value,apertura12m:/lavori|vicina/i.test(pick.fase||'')};
       if(window.RK)RK.deliver('apertura','Apertura nuova struttura ricettiva: '+el.nome.value.trim(),L,fs,fin);
       else{location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Apertura nuova struttura ricettiva: '+el.nome.value.trim())+'&body='+L.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');fin('mail')}});
@@ -219,7 +219,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     if($('osForm'))$('osForm').addEventListener('submit',function(e){e.preventDefault();var v=this.email.value.trim();
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2}$/.test(v)){$('osMsg').textContent="Controlla l'indirizzo email";return}
       if(this.privacy&&!this.privacy.checked){$('osMsg').textContent="Per iscriverti serve il consenso all'informativa privacy";return}
-      var fm=this,fin=function(m){$('osMsg').textContent=m==='sent'?'Iscrizione registrata: riceverai le prossime analisi a questo indirizzo':'Grazie: nella tua email trovi la richiesta già pronta per info@ricavia.com, premi Invia per completarla';fm.email.value=''};
+      var fm=this,fin=function(m){var ok=$('osOk');if(m==='sent'&&ok){$('osOkTx').textContent='Ti inviamo la prossima edizione dell’Osservatorio a '+v;fm.classList.add('is-off');$('osMsg').textContent='';ok.classList.add('on')}else{$('osMsg').textContent='Grazie: nella tua email trovi la richiesta già pronta per info@ricavia.com, premi Invia per completarla'}fm.email.value=''};
       if(window.RK)RK.deliver('osservatorio','Iscrizione Osservatorio Ricavia',[['Email',v]],{},fin);
       else{location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Iscrizione Osservatorio Ricavia')+'&body='+encodeURIComponent('Email: '+v);fin('mail')}});
   })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
@@ -301,7 +301,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       var q=function(n){return el[n]&&el[n].value?el[n].value.trim():''};
       var L=[['Giorno',giorno],['Momento',slot],['Nome',nome],['Telefono',tel],['Email',mail],['Tipo di struttura ricettiva',q('tipo')||'Da indicare'],['Camere',q('camere')||'Da indicare'],['Ruolo',q('ruolo')||'Da indicare'],['Città',q('citta')||'Da indicare']];
       var head='Chiamata richiesta per <b>'+giorno+'</b>, <b>'+slot.toLowerCase()+'</b>. Ti chiamiamo al <b>'+tel.replace(/</g,'&lt;')+'</b> e ti scriviamo a <b>'+mail.replace(/</g,'&lt;')+'</b> per confermare l\'orario';
-      var fin=function(m){$('ctOkTx').innerHTML=head+(m==='sent'?'':'. Nella tua email trovi la richiesta già compilata per info@ricavia.com: premi Invia per completarla');$('ctBookWrap').style.display='none';$('ctOk').classList.add('on')};
+      var fin=function(m){var h3=$('ctOk').querySelector('h3');if(h3)h3.textContent=m==='sent'?'Grazie, chiamata prenotata':'Richiesta pronta';$('ctOkTx').innerHTML=head+(m==='sent'?'':'. Nella tua email trovi la richiesta già compilata per info@ricavia.com: premi Invia per completarla');$('ctBookWrap').style.display='none';$('ctOk').classList.add('on')};
       var fs={tipo:q('tipo'),camere:q('camere'),ruolo:q('ruolo'),citta:q('citta'),apertura12m:/apertura/i.test(q('tipo'))};
       if(window.RK)RK.deliver('chiamata','Prenotazione call conoscitiva: '+giorno,L,fs,fin);
       else{location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Prenotazione call conoscitiva: '+giorno)+'&body='+L.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');fin('mail')}});

@@ -53,7 +53,10 @@ var f=document.getElementById('hsForm');if(f)f.addEventListener('submit',functio
 if(!n||!c||!/^\S+@\S+\.\S+$/.test(m)){o.textContent='Compila nome della struttura ricettiva, città ed email';o.className='hs-m bad';return}
 if(f.privacy&&!f.privacy.checked){o.textContent='Per procedere serve il consenso all’informativa privacy';o.className='hs-m bad';return}
 o.className='hs-m';o.textContent='Invio in corso…';var k=f.k?f.k.value.trim():'',L=[['Struttura ricettiva',n],['Città',c],['Camere',k||'Da indicare'],['Email',m]];
-var fin=function(md){o.className='hs-m ok';o.textContent=md==='sent'?'Richiesta registrata: ti rispondiamo con l’Hotel Score':'Si apre la tua email: invia il messaggio e ti rispondiamo con l’Hotel Score'};
+var fin=function(md){var ok=document.getElementById('hsOk'),tx=document.getElementById('hsOkTx'),e=function(t){return t.replace(/</g,'&lt;')};
+if(!ok){o.className='hs-m ok';o.textContent=md==='sent'?'Grazie, richiesta ricevuta: ti contattiamo presto':'Si apre la tua email: invia il messaggio e ti rispondiamo con l’Hotel Score';return}
+tx.innerHTML=md==='sent'?'Prepariamo l’Hotel Score di <b>'+e(n)+'</b> e te lo inviamo a <b>'+e(m)+'</b>. Ecco i prossimi passi':'Si è aperta la tua email con la richiesta già compilata per info@ricavia.com: premi <b>Invia</b> per completarla. Poi prepariamo l’Hotel Score di <b>'+e(n)+'</b>';
+f.style.display='none';o.textContent='';ok.classList.add('on');var y=ok.getBoundingClientRect().top+scrollY-140;if(window.__lenis)window.__lenis.scrollTo(y);else if(window.__MP)scrollTo({top:y,behavior:'smooth'});else ok.scrollIntoView({behavior:'smooth',block:'center'})};
 if(window.RK)RK.deliver('hotel-score','Richiesta Hotel Score · '+n,L,{tipo:'hotel',camere:k,citta:c},fin);
 else{location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Richiesta Hotel Score · '+n)+'&body='+L.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');fin('mail')}});
 })()}catch(e){}
