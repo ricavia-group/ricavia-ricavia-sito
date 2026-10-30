@@ -163,7 +163,7 @@ def describe(pid):
 def og_image(pid):
     seg = pages[pid]
     m = re.search(r'<img[^>]*class="hero-bg"[^>]*data-photo="([^"]+)"', seg) or re.search(r'data-photo="([^"]+)"', seg)
-    return DOMAIN + '/assets/img/og-ricavia.jpg'
+    return DOMAIN + '/assets/img/og-simbolo.jpg'
 
 
 PRE = '''<script>window.__MP=true;window.__DBG=/[?&]debug/.test(location.search);(function(){var h=location.hash.slice(1),U=%s;if(U[h]&&location.pathname==='/')location.replace(U[h]);})();</script>''' % json.dumps({k: v for k, v in URL.items() if v != '/'})
@@ -183,7 +183,7 @@ START = '''<script>(function(){function go(){setTimeout(function(){var pg=docume
 ORG = {
     "@type": ["Organization", "ProfessionalService"], "@id": DOMAIN + "/#org",
     "name": "Ricavia", "legalName": "Ricavia Group S.r.l.", "url": DOMAIN + "/",
-    "logo": DOMAIN + "/assets/img/c3ed5d4eee.svg", "image": DOMAIN + "/assets/img/og-ricavia.jpg",
+    "logo": DOMAIN + "/assets/img/c3ed5d4eee.svg", "image": DOMAIN + "/assets/img/og-simbolo.jpg",
     "email": "info@ricavia.com", "vatID": "IT17726801008",
     "description": "Revenue management e consulenza per hotel e strutture ricettive indipendenti",
     "address": {"@type": "PostalAddress", "addressLocality": "Roma", "addressCountry": "IT"},
@@ -310,7 +310,7 @@ def art_page(aid, art):
 <meta property="og:image" content="{i}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{ld}</script>'''.format(t=html.escape(t), d=html.escape(desc, quote=True), u=url, i=DOMAIN + '/assets/img/og-ricavia.jpg', ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
+<script type="application/ld+json">{ld}</script>'''.format(t=html.escape(t), d=html.escape(desc, quote=True), u=url, i=DOMAIN + '/assets/img/og-simbolo.jpg', ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
     doc = '<!doctype html>\n<html lang="it" class="mp mp-in mp-art">\n<head>\n%s\n%s\n<script>window.__MP=true</script>\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (fix_assets(head).strip(), meta, SHIM + parts)
     d = os.path.join(OUT, ART_URL[aid].strip('/'))
     os.makedirs(d, exist_ok=True)
