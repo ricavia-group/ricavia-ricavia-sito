@@ -5183,3 +5183,17 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .os-ok b{display:block;font-size:18px;font-weight:600;letter-spacing:-.02em}
 .os-ok span{display:block;margin-top:4px;font-size:14.5px;color:rgba(255,255,255,.7);word-break:break-word}
 :is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f.is-off,.os-f.is-off{display:none!important}
+
+/* ===== Loghi partner in Home: misure esplicite (Safari su iPhone ingrandiva i loghi) ===== */
+.z-pl{width:calc(var(--h)*25px*var(--ar));max-width:100%;overflow:hidden}
+.z-pl .plg{position:absolute;inset:0;width:100%!important;height:100%!important;overflow:hidden}
+@media(max-width:1200px){.z-pl{width:calc(var(--h)*20px*var(--ar))}}
+@media(max-width:900px){.z-pl{width:calc(var(--h)*22px*var(--ar))}}
+@media(max-width:520px){
+ .z-plogos{padding:30px 22px!important;gap:28px 18px!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .z-plogos li{min-width:0;overflow:hidden;display:flex;justify-content:center}
+ .z-plogos li:last-child{grid-column:1/-1}
+ .z-pl{height:calc(var(--h)*16px);width:calc(var(--h)*16px*var(--ar))}
+}
+#pg-partner .pl{overflow:hidden}
+#pg-partner .pl .plg{position:absolute;inset:0;width:100%!important;height:100%!important;overflow:hidden}
