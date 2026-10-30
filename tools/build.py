@@ -53,6 +53,10 @@ def text(x):
 
 
 src = read('index.html')
+# footer unico: un solo file in parti/footer.html, inserito qui in tutte le pagine
+_ft = read('parti/footer.html').split('-->', 1)[1].strip()
+src = src.replace('<!--#footer pg-->', _ft.replace('{{classe}}', ' z-ft-pg')).replace('<!--#footer-->', _ft.replace('{{classe}}', ''))
+assert '<!--#footer' not in src
 head = src[src.find('<head>') + 6:src.find('</head>')]
 head = re.sub(r'\s*<title>.*?</title>', '', head, flags=re.S)
 head = re.sub(r'\s*<meta name="description"[^>]*>', '', head)
