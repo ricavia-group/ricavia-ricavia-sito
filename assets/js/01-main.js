@@ -262,50 +262,30 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     new ResizeObserver(lay).observe(pg);lay();
     $('ctCopy').addEventListener('click',function(){var b=this;function ok(){b.textContent='Indirizzo copiato ✓';setTimeout(function(){b.textContent="Copia l'indirizzo"},1800)}
       if(navigator.clipboard)navigator.clipboard.writeText('info@ricavia.com').then(ok,ok);else ok()});
-    /* calendario */
-    var MESI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'],GG=['L','M','M','G','V','S','D'],
-        GIORNI=['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
-    var today=new Date();today.setHours(0,0,0,0);var max=new Date(today);max.setDate(max.getDate()+60);
-    var view=new Date(today.getFullYear(),today.getMonth(),1),sel=null,slot=null;
-    function fmt(d){return GIORNI[d.getDay()]+' '+d.getDate()+' '+MESI[d.getMonth()]+' '+d.getFullYear()}
-    function draw(){
-      $('calM').textContent=MESI[view.getMonth()]+' '+view.getFullYear();
-      var h=GG.map(function(x){return '<span>'+x+'</span>'}).join(''),first=(view.getDay()+6)%7,n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
-      for(var i=0;i<first;i++)h+='<i></i>';
-      for(var d=1;d<=n;d++){var dt=new Date(view.getFullYear(),view.getMonth(),d),wd=dt.getDay(),off=dt<=today||dt>max||wd===0||wd===6;
-        h+='<button type="button" data-d="'+dt.getTime()+'"'+(off?' disabled':'')+(sel&&+sel===+dt?' class="sel"':'')+' aria-label="'+fmt(dt)+'">'+d+'</button>'}
-      $('calG').innerHTML=h;
-      $('calPrev').disabled=view<=new Date(today.getFullYear(),today.getMonth(),1);
-      $('calNext').disabled=new Date(view.getFullYear(),view.getMonth()+1,1)>max;
-    }
-    function pick(){$('st1').classList.toggle('done',!!sel);$('st2').classList.toggle('done',!!slot);
-      $('calPick').innerHTML=sel?'Hai scelto <b>'+fmt(sel)+'</b>'+(slot?', <b>'+slot.toLowerCase()+'</b>':': ora scegli mattina o pomeriggio'):'Scegli un giorno dal calendario'}
-    $('calG').addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;sel=new Date(+b.dataset.d);draw();pick();$('ctErr').textContent=''});
-    $('calPrev').addEventListener('click',function(){view.setMonth(view.getMonth()-1);draw()});
-    $('calNext').addEventListener('click',function(){view.setMonth(view.getMonth()+1);draw()});
-    $('slots').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(c){c.classList.remove('sel')});b.classList.add('sel');slot=b.dataset.v;pick();$('ctErr').textContent=''});
-    draw();pick();
-    /* modulo */
+    /* prenotazione: i dati arrivano nel foglio dei lead, giorno e orario si scelgono nel calendario Google (orari liberi veri) */
+    var BOOK=(document.querySelector('meta[name="ricavia-booking"]')||{}).content||($('ctCal')&&$('ctCal').href);
     var f=$('ctForm'),sent=0;
     f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err='',re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       if(el.sito.value)return;
       [el.nome,el.tel,el.email].forEach(function(x){x.classList.remove('bad')});f.querySelector('.chk').classList.remove('bad');
-      if(!sel)err='Scegli il giorno dal calendario';else if(!slot)err='Scegli mattina o pomeriggio';
-      else if(el.nome.value.trim().length<2){err='Scrivi nome e cognome';el.nome.classList.add('bad')}
+      if(el.nome.value.trim().length<2){err='Scrivi nome e cognome';el.nome.classList.add('bad')}
       else if(el.tel.value.replace(/[^0-9]/g,'').length<8){err='Controlla il numero di telefono';el.tel.classList.add('bad')}
       else if(!re.test(el.email.value.trim())){err="Controlla l'indirizzo email";el.email.classList.add('bad')}
       else if(!el.privacy.checked){err="Per procedere serve il consenso all'informativa privacy";f.querySelector('.chk').classList.add('bad')}
       else if(sent>=3){err='Hai già inviato più richieste: ti ricontattiamo noi'}
       $('ctErr').textContent=err;if(err)return;sent++;
-      var nome=el.nome.value.trim(),tel=el.tel.value.trim(),mail=el.email.value.trim(),giorno=fmt(sel);
+      /* il calendario si apre subito, nello stesso clic, così il browser non lo blocca */
+      var w=null;try{w=window.open(BOOK,'_blank','noopener')}catch(_){}
+      var nome=el.nome.value.trim(),tel=el.tel.value.trim(),mail=el.email.value.trim();
       var q=function(n){return el[n]&&el[n].value?el[n].value.trim():''};
-      var L=[['Giorno',giorno],['Momento',slot],['Nome',nome],['Telefono',tel],['Email',mail],['Tipo di struttura ricettiva',q('tipo')||'Da indicare'],['Camere',q('camere')||'Da indicare'],['Ruolo',q('ruolo')||'Da indicare'],['Città',q('citta')||'Da indicare']];
-      var head='Chiamata richiesta per <b>'+giorno+'</b>, <b>'+slot.toLowerCase()+'</b>. Ti chiamiamo al <b>'+tel.replace(/</g,'&lt;')+'</b> e ti scriviamo a <b>'+mail.replace(/</g,'&lt;')+'</b> per confermare l\'orario';
-      var fin=function(m){var h3=$('ctOk').querySelector('h3');if(h3)h3.textContent=m==='sent'?'Grazie, chiamata prenotata':'Richiesta pronta';$('ctOkTx').innerHTML=head+(m==='sent'?'':'. Nella tua email trovi la richiesta già compilata per info@ricavia.com: premi Invia per completarla');$('ctBookWrap').style.display='none';$('ctOk').classList.add('on')};
+      var L=[['Nome',nome],['Telefono',tel],['Email',mail],['Tipo di struttura ricettiva',q('tipo')||'Da indicare'],['Camere',q('camere')||'Da indicare'],['Ruolo',q('ruolo')||'Da indicare'],['Città',q('citta')||'Da indicare'],['Giorno e orario','Scelti nel calendario Google']];
+      var esc=function(t){return t.replace(/</g,'&lt;')};
+      var fin=function(m){$('ctOk').querySelector('h3').textContent="Ultimo passo: scegli giorno e orario";
+        $('ctOkTx').innerHTML='Grazie <b>'+esc(nome)+'</b>. Nel calendario che si è aperto scegli l\'orario che preferisci: ricevi subito a <b>'+esc(mail)+'</b> l\'invito con il link della videochiamata. Se il calendario non si è aperto, usa il tasto qui sotto'+(m==='sent'?'':'. Nella tua email trovi anche la richiesta già compilata per info@ricavia.com: premi Invia per completarla');
+        $('ctBookWrap').style.display='none';$('ctOk').classList.add('on')};
       var fs={tipo:q('tipo'),camere:q('camere'),ruolo:q('ruolo'),citta:q('citta'),apertura12m:/apertura/i.test(q('tipo'))};
-      if(window.RK)RK.deliver('chiamata','Prenotazione call conoscitiva: '+giorno,L,fs,fin);
-      else{location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Prenotazione call conoscitiva: '+giorno)+'&body='+L.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');fin('mail')}});
-    $('ctAgain').addEventListener('click',function(){$('ctOk').classList.remove('on');$('ctBookWrap').style.display='';sel=null;slot=null;[].forEach.call($('slots').children,function(c){c.classList.remove('sel')});draw();pick()});
+      if(window.RK)RK.deliver('chiamata','Prenotazione call conoscitiva: '+nome,L,fs,fin);
+      else fin('sent')});
   })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== LIVELLI: separation on scroll ===== */
   try{(function(){
