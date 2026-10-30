@@ -5197,3 +5197,25 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 }
 #pg-partner .pl{overflow:hidden}
 #pg-partner .pl .plg{position:absolute;inset:0;width:100%!important;height:100%!important;overflow:hidden}
+
+/* ===== Simulatore in Home: calendario intero su telefono, senza scorrimento laterale ===== */
+@media(max-width:600px){
+ #simulatore .pl-dow,#simulatore .pl-days{min-width:0!important;gap:3px}
+ #simulatore .pl-dow{font-size:8.5px;letter-spacing:.06em}
+ #simulatore .pl-card{overflow:hidden!important;padding:12px 8px!important}
+ #simulatore .pd{aspect-ratio:1/1.45!important;border-radius:7px!important}
+ #simulatore .pd .n{display:none}
+ #simulatore .pd .p{left:0;right:0;top:4px;text-align:center;font-size:8.5px;letter-spacing:-.02em}
+ #simulatore .pd .r{font-size:9.5px!important;letter-spacing:-.03em;transform:translateY(-30%)}
+ #simulatore .pd .s{font-size:8px;bottom:3px;letter-spacing:-.02em}
+ #simulatore .pd .ev{width:4px;height:4px;right:3px;bottom:auto;top:3px}
+ #simulatore .pd.out .n{display:block;font-size:9px;left:4px;top:3px}
+}
+@media(max-width:600px){#apertura .ap-f2{align-items:end}}
+@media(max-width:600px){
+ #simulatore .pd .n{display:none!important}
+ #simulatore .pd.out .n{display:block!important;font-size:9px!important;left:4px!important;top:3px!important}
+ #simulatore .pd .p{left:0!important;right:0!important;top:5px!important;text-align:center!important;font-size:8.5px!important;letter-spacing:-.03em!important}
+ #simulatore .pd .r{left:0!important;right:0!important;text-align:center!important;top:50%!important;transform:translateY(-40%)!important;font-size:10px!important;letter-spacing:-.04em!important}
+ #simulatore .pd .s{left:0!important;right:0!important;text-align:center!important;bottom:4px!important;font-size:8px!important;letter-spacing:-.03em!important}
+}

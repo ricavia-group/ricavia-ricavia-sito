@@ -10,3 +10,6 @@ html.mp-art body{background:#fbfaf7}
 .jr-h1{margin:16px 0 18px;font-size:clamp(32px,4.6vw,58px);line-height:1.02;letter-spacing:-.05em;font-weight:700}
 .jr-cta{max-width:760px;margin:clamp(32px,4vw,48px) auto 0;padding:28px 16px 0;border-top:1px solid rgba(0,0,0,.08);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
 .jr-cta p{margin:0;font-size:20px;font-weight:600;letter-spacing:-.03em}
+/* pagine articolo: testo scuro su fondo chiaro (il Journal nasceva su fondo scuro) */
+html.mp-art .jr-h1,html.mp-art .jr-by b,html.mp-art .jr-ah b,html.mp-art .jr-cta,html.mp-art .jr-cta p{color:var(--zink,#1d1d1f)!important;-webkit-text-fill-color:currentColor}
+html.mp-art .jr-cta .z-btn{color:#fff!important;-webkit-text-fill-color:#fff}
