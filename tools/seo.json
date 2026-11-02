@@ -50,8 +50,14 @@
       "title": "Aprire un hotel a Roma: zone e posizionamento · Ricavia",
       "related_intro": "Per valutare un nuovo progetto, approfondisci",
       "related": [
-        {"label": "business plan e apertura di un hotel", "url": "/nuova-apertura/"},
-        {"label": "consulenza alberghiera a Roma", "url": "/consulenza/"}
+        {
+          "label": "business plan e apertura di un hotel",
+          "url": "/nuova-apertura/"
+        },
+        {
+          "label": "consulenza alberghiera a Roma",
+          "url": "/consulenza/"
+        }
       ]
     },
     "a2": {
@@ -59,8 +65,14 @@
       "title": "Stagionalità hotel a Roma: calendario della domanda · Ricavia",
       "related_intro": "Per trasformare il calendario in decisioni tariffarie, approfondisci",
       "related": [
-        {"label": "revenue management per hotel a Roma", "url": "/revenue-management/"},
-        {"label": "ADR, RevPAR, GOP e GOPPAR", "url": "/indicatori/"}
+        {
+          "label": "revenue management per hotel a Roma",
+          "url": "/revenue-management/"
+        },
+        {
+          "label": "ADR, RevPAR, GOP e GOPPAR",
+          "url": "/indicatori/"
+        }
       ]
     },
     "a3": {
@@ -68,8 +80,14 @@
       "title": "Hotel a Roma dopo il Giubileo: domanda nel 2026 · Ricavia",
       "related_intro": "Per leggere i risultati del tuo hotel, approfondisci",
       "related": [
-        {"label": "consulenza alberghiera su costi e margine", "url": "/consulenza/"},
-        {"label": "gli indicatori economici di un hotel", "url": "/indicatori/"}
+        {
+          "label": "consulenza alberghiera su costi e margine",
+          "url": "/consulenza/"
+        },
+        {
+          "label": "gli indicatori economici di un hotel",
+          "url": "/indicatori/"
+        }
       ]
     },
     "a4": {
@@ -77,8 +95,14 @@
       "title": "Prezzi degli hotel a Roma: tre errori da evitare · Ricavia",
       "related_intro": "Per lavorare su prezzi e canali, approfondisci",
       "related": [
-        {"label": "il servizio di revenue management", "url": "/revenue-management/"},
-        {"label": "l'Hotel Score gratuito", "url": "/hotel-score/"}
+        {
+          "label": "il servizio di revenue management",
+          "url": "/revenue-management/"
+        },
+        {
+          "label": "l'Hotel Score gratuito",
+          "url": "/hotel-score/"
+        }
       ]
     },
     "a5": {
@@ -86,8 +110,14 @@
       "title": "Affitti brevi a Roma: adempimenti da verificare · Ricavia",
       "related_intro": "Per avviare e organizzare una struttura ricettiva, approfondisci",
       "related": [
-        {"label": "la consulenza per una nuova apertura", "url": "/nuova-apertura/"},
-        {"label": "l'analisi di costi e margine", "url": "/consulenza/"}
+        {
+          "label": "la consulenza per una nuova apertura",
+          "url": "/nuova-apertura/"
+        },
+        {
+          "label": "l'analisi di costi e margine",
+          "url": "/consulenza/"
+        }
       ]
     },
     "a6": {
@@ -95,9 +125,38 @@
       "title": "Voli su Roma e domanda hotel: Fiumicino e Ciampino · Ricavia",
       "related_intro": "Per collegare domanda e prezzi, approfondisci",
       "related": [
-        {"label": "il revenue management per hotel", "url": "/revenue-management/"},
-        {"label": "il metodo Ricavia", "url": "/metodo/"}
+        {
+          "label": "il revenue management per hotel",
+          "url": "/revenue-management/"
+        },
+        {
+          "label": "il metodo Ricavia",
+          "url": "/metodo/"
+        }
       ]
     }
+  },
+  "osservatorio_blocks": {
+    "_nota": "Articoli mostrati nel blocco «Dall'Osservatorio» prima delle domande frequenti",
+    "home": [
+      "a4",
+      "a3",
+      "a6"
+    ],
+    "revenue-management": [
+      "a4",
+      "a2",
+      "a6"
+    ],
+    "consulenza": [
+      "a3",
+      "a5",
+      "a2"
+    ],
+    "apertura": [
+      "a1",
+      "a5",
+      "a3"
+    ]
   }
 }

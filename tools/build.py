@@ -234,6 +234,33 @@ def jsonld(pid, title, url, content, crumbs=None):
     return '<script type="application/ld+json">%s</script>' % json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
 
 
+# blocco «Dall'Osservatorio»: tre articoli pertinenti prima delle domande frequenti
+OS_BLOCKS = {k: v for k, v in SEO.get('osservatorio_blocks', {}).items() if not k.startswith('_')}
+OS_CARDS = {}
+for m in re.finditer(r'<article class="jr-(?:cd|ft) ar"[^>]*><button type="button" class="jr-hit" data-art="(a\d+)".*?</article>', pages['pg-osservatorio'], re.S):
+    card = re.sub(r'^<article class="jr-ft ', '<article class="jr-cd ', m.group(0))
+    card = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
+                  lambda x: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (x.group(1), ART_URL[x.group(1)], x.group(2)), card)
+    OS_CARDS[m.group(1)] = card.replace('Leggi l’articolo →', 'Leggi →')
+
+
+def os_block(pid, content):
+    cards = ''.join(OS_CARDS[a] for a in OS_BLOCKS[pid])
+    sec = ('<section class="ap-sec ap-light ix rs-w rs os-rel"><div class="wrap"><div class="rs-th">'
+           '<span class="ap-tag ar">Dall\'Osservatorio</span><h2 class="ar">Dati e analisi sul mercato di Roma</h2></div>'
+           '<div class="os-rel-g">%s</div><p class="os-rel-all"><a class="z-btn" href="/osservatorio/">Tutti gli articoli <span class="arr">→</span></a></p></div></section>') % cards
+    if pid == 'home':
+        # in Home le animazioni di comparsa usano un altro sistema: il blocco resta visibile
+        sec = re.sub(r'class="([^"]*?) ?\bar\b', lambda m: 'class="%s' % m.group(1), sec).replace(' class=""', '')
+    i = content.find('class="ix-faq"')
+    at = content.rfind('<section', 0, i) if i >= 0 else -1
+    if at < 0:
+        at = content.find('<footer class="ft')
+    if at < 0:
+        raise ValueError('Posizione del blocco Osservatorio non trovata in %s' % pid)
+    return content[:at] + sec + content[at:]
+
+
 def page(pid, slug, title):
     is_home = pid == 'home'
     content = pages[pid]
@@ -246,6 +273,8 @@ def page(pid, slug, title):
     if pid == 'pg-osservatorio':
         content = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
                          lambda m: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (m.group(1), ART_URL.get(m.group(1), '#'), m.group(2)), content)
+    if pid in OS_BLOCKS:
+        content = os_block(pid, content)
     parts = chrome + content + scripts
     parts = resolve_photos(parts)
     parts = lazy(parts)

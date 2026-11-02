@@ -5244,3 +5244,16 @@ html body form p.rk-note,:is(#revenue-management,#consulenza,#apertura,#contatti
 .os-chk .rk-note{display:block;font-family:var(--zf);font-size:12px;line-height:1.45;font-weight:400;opacity:.8;margin-top:6px}
 :is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-m{top:calc(100% + 96px)}
 @media(min-width:700px){:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-m{top:calc(100% + 72px)}}
+/* blocco «Dall'Osservatorio» nelle pagine dei servizi e in Home */
+.os-rel .rs-th{margin-bottom:clamp(24px,3vw,40px)}
+.os-rel-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,28px)}
+.os-rel-g .jr-cd{grid-column:auto!important;min-width:0}
+.os-rel-all{margin:clamp(24px,3vw,36px) 0 0}
+@media (max-width:900px){
+  .os-rel-g{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;gap:14px;margin:0 -24px;padding:4px 24px 22px;scroll-padding:0 24px;scrollbar-width:none}
+  .os-rel-g::-webkit-scrollbar{display:none}
+  .os-rel-g .jr-cd{flex:0 0 82%;scroll-snap-align:start}
+}
+@media (max-width:900px) and (min-width:620px){.os-rel-g .jr-cd{flex-basis:46%}}
+@media (max-width:900px){html:not(.mp-in) .os-rel-g{margin:0 -16px;padding-left:16px;padding-right:16px;scroll-padding:0 16px}}
+.os-rel .jr-k{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
