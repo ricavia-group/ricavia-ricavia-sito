@@ -42,6 +42,9 @@
     },
     "pg-cookie": {
       "description": "Cookie e tecnologie simili usati sul sito di Ricavia"
+    },
+    "pg-termini": {
+      "description": "Termini di servizio del sito ricavia.com e degli strumenti di Ricavia Group S.r.l.: uso del sito, proprietà intellettuale, pubblicazione sui social e responsabilità"
     }
   },
   "articles": {

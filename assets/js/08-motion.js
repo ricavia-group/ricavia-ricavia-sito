@@ -3,7 +3,7 @@
    foto che si aprono con un leggero zoom. Si riavviano a ogni apertura della pagina. */
 (function(){
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var IDS=['revenue-management','consulenza','apertura','contatti','pg-metodo','pg-chi-siamo','pg-partner','pg-pagella','pg-osservatorio','pg-indicatori','pg-privacy','pg-cookie'];
+  var IDS=['revenue-management','consulenza','apertura','contatti','pg-metodo','pg-chi-siamo','pg-partner','pg-pagella','pg-osservatorio','pg-indicatori','pg-privacy','pg-cookie','pg-termini'];
   function wrapLines(h,base,step){
     if(h.dataset.mx)return;h.dataset.mx='1';
     var parts=h.innerHTML.split(/<br\s*\/?>/i);
