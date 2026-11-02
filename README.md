@@ -59,6 +59,7 @@ Le anteprime dei rami usano `npx wrangler preview`: il blocco vuoto `previews` i
 | Hotel Score | `/hotel-score/` |
 | Indicatori | `/indicatori/` |
 | Privacy e cookie | `/privacy/` · `/cookie/` |
+| Termini di servizio | `/termini/` |
 
 Le sei pagine articolo sono sotto `/osservatorio/`; sitemap e redirect vengono generati dalla build. I vecchi hash della Home sono conservati come collegamenti compatibili.
 

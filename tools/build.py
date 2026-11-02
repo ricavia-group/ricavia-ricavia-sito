@@ -28,6 +28,7 @@ PAGES = [
     ('pg-indicatori', 'indicatori', 'ADR, RevPAR, GOP e GOPPAR spiegati · Ricavia'),
     ('pg-privacy', 'privacy', 'Informativa privacy · Ricavia'),
     ('pg-cookie', 'cookie', 'Cookie policy · Ricavia'),
+    ('pg-termini', 'termini', 'Termini di servizio · Ricavia'),
 ]
 PAGES = [(pid, slug, SEO['pages'].get(pid, {}).get('title', title)) for pid, slug, title in PAGES]
 if set(SEO['pages']) != {pid for pid, _, _ in PAGES}:

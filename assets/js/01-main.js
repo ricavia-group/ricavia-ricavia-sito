@@ -194,7 +194,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
   })();}catch(_e){window.__DBG&&console.warn("sezione",_e&&_e.message)}
   /* ===== WOW 3: pagine servizio, animazioni e layout misurato ===== */
   try{(function(){
-    ['apertura','revenue-management','consulenza','pg-metodo','pg-chi-siamo','pg-partner','pg-pagella','pg-osservatorio','pg-indicatori','pg-privacy','pg-cookie'].forEach(function(id){
+    ['apertura','revenue-management','consulenza','pg-metodo','pg-chi-siamo','pg-partner','pg-pagella','pg-osservatorio','pg-indicatori','pg-privacy','pg-cookie','pg-termini'].forEach(function(id){
       var pg=document.getElementById(id);if(!pg)return;var go=pg.querySelector('[data-go]')||document.createElement('i');
       var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{root:window.__MP?null:pg,threshold:.12});
       pg.addEventListener('pgopen',function(){[].forEach.call(pg.querySelectorAll('.ar'),function(el){el.classList.remove('in');io.observe(el)});go.classList.remove('go');setTimeout(function(){go.classList.add('go')},250)});
@@ -242,7 +242,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
   /* ===== WOW 3: pagina Contatti ===== */
   try{(function(){
     var root=document.documentElement,pg=document.getElementById('contatti'),$=function(i){return document.getElementById(i)};
-    var PG={contatti:'ct-open',apertura:'ap-open','revenue-management':'rm-open',consulenza:'cs-open','pg-metodo':'x-open','pg-chi-siamo':'x-open','pg-partner':'x-open','pg-pagella':'x-open','pg-osservatorio':'x-open','pg-indicatori':'x-open','pg-privacy':'x-open','pg-cookie':'x-open'},cur=null;
+    var PG={contatti:'ct-open',apertura:'ap-open','revenue-management':'rm-open',consulenza:'cs-open','pg-metodo':'x-open','pg-chi-siamo':'x-open','pg-partner':'x-open','pg-pagella':'x-open','pg-osservatorio':'x-open','pg-indicatori':'x-open','pg-privacy':'x-open','pg-cookie':'x-open','pg-termini':'x-open'},cur=null;
     function open(id,push){var el=$(id);if(!el)return;if(window.__menu)window.__menu(false);if(cur&&cur!==id)hide(cur);cur=id;root.classList.add(PG[id],'pg-open');el.classList.add('on');el.setAttribute('aria-hidden','false');el.scrollTop=0;if(window.__lenis)window.__lenis.stop();
       if(push!==false&&location.hash!=='#'+id)try{history.pushState(null,'','#'+id)}catch(_){};el.dispatchEvent(new CustomEvent('pgopen'));setTimeout(function(){var f=el.querySelector('[data-ct-close]');if(f)f.focus({preventScroll:true})},350)}
     function hide(id){root.classList.remove(PG[id],'pg-open');$(id).classList.remove('on');$(id).setAttribute('aria-hidden','true')}
