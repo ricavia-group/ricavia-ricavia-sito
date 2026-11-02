@@ -311,7 +311,14 @@ def art_page(aid, art):
     if related:
         anchors = ['<a href="%s">%s</a>' % (html.escape(x['url'], quote=True), html.escape(x['label'])) for x in related]
         body_html += '<div class="jr-body"><p data-related-services>%s: %s</p></div>' % (html.escape(SEO['articles'][aid]['related_intro']), ' · '.join(anchors))
-    image_url = DOMAIN + img.group(1).replace('assets/', '/assets/', 1).replace('//assets', '/assets') if img else og_image('pg-osservatorio')
+    # anteprima per i social: JPG 1200x630 ricavato dalla foto dell'articolo (tools/og_articoli.py)
+    og_jpg = '/assets/img/og/%s.jpg' % ART_URL[aid].strip('/').split('/')[-1]
+    if os.path.exists(os.path.join(ROOT, og_jpg.lstrip('/'))):
+        image_url = DOMAIN + og_jpg
+    elif img:
+        image_url = DOMAIN + img.group(1).replace('assets/', '/assets/', 1).replace('//assets', '/assets')
+    else:
+        image_url = og_image('pg-osservatorio')
     ldata = {"@context": "https://schema.org", "@graph": [
         {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title,
          'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
