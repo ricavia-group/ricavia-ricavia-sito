@@ -1,0 +1,103 @@
+{
+  "pages": {
+    "home": {
+      "description": "Revenue management e consulenza per hotel a Roma e nel Lazio: tariffe, canali, costi e margine operativo. Scopri il metodo Ricavia e richiedi una call"
+    },
+    "revenue-management": {
+      "title": "Revenue management hotel a Roma e nel Lazio · Ricavia",
+      "description": "Revenue management per hotel indipendenti a Roma e nel Lazio: strategia tariffaria, distribuzione, domanda e report. Richiedi una call con Ricavia"
+    },
+    "consulenza": {
+      "title": "Consulenza alberghiera a Roma e nel Lazio · Ricavia",
+      "description": "Consulenza alberghiera a Roma e nel Lazio: analisi dei costi, commissioni, riclassificazione USALI, GOP e GOPPAR. Parla con il team Ricavia"
+    },
+    "apertura": {
+      "title": "Aprire un hotel a Roma: business plan e consulenza · Ricavia",
+      "description": "Vuoi aprire un hotel a Roma o nel Lazio? Ricavia ti affianca con studio di fattibilità, business plan, posizionamento, prezzi di lancio e tecnologia"
+    },
+    "pg-metodo": {
+      "description": "Il metodo Ricavia per hotel indipendenti: ascolto, analisi di tariffe e costi, interventi prioritari e verifica dei risultati su GOP e GOPPAR"
+    },
+    "pg-chi-siamo": {
+      "description": "Conosci George Ghimici e Andrea Martella, fondatori di Ricavia: esperienza nell'ospitalità e nella distribuzione online al servizio degli hotel"
+    },
+    "pg-partner": {
+      "description": "Le tecnologie utilizzate da Ricavia per gli hotel: PMS, channel manager, rate intelligence e pagamenti, scelti in funzione della strategia e del margine"
+    },
+    "contatti": {
+      "description": "Parla con Ricavia del tuo hotel a Roma o nel Lazio: prenota una call conoscitiva su tariffe, distribuzione e costi oppure scrivi a info@ricavia.com"
+    },
+    "pg-osservatorio": {
+      "description": "Analisi del mercato alberghiero di Roma per chi gestisce un hotel: domanda, stagionalità, quartieri, voli e prezzi. Leggi il Journal di Ricavia"
+    },
+    "pg-pagella": {
+      "title": "Hotel Score gratuito per hotel a Roma e nel Lazio · Ricavia",
+      "description": "Richiedi l'Hotel Score gratuito di Ricavia per il tuo hotel a Roma o nel Lazio: sei aree di valutazione e tre priorità su cui intervenire"
+    },
+    "pg-indicatori": {
+      "description": "Come calcolare ADR, RevPAR, GOP e GOPPAR di un hotel: formule, esempi e calcolatore interattivo per leggere ricavi, occupazione e margine operativo"
+    },
+    "pg-privacy": {
+      "description": "Informativa sul trattamento dei dati personali di Ricavia Group S.r.l."
+    },
+    "pg-cookie": {
+      "description": "Cookie e tecnologie simili usati sul sito di Ricavia"
+    }
+  },
+  "articles": {
+    "a1": {
+      "slug": "conviene-avere-struttura-ricettiva-roma-guida",
+      "title": "Aprire un hotel a Roma: zone e posizionamento · Ricavia",
+      "related_intro": "Per valutare un nuovo progetto, approfondisci",
+      "related": [
+        {"label": "business plan e apertura di un hotel", "url": "/nuova-apertura/"},
+        {"label": "consulenza alberghiera a Roma", "url": "/consulenza/"}
+      ]
+    },
+    "a2": {
+      "slug": "calendario-roma-dodici-mesi-domanda-letti",
+      "title": "Stagionalità hotel a Roma: calendario della domanda · Ricavia",
+      "related_intro": "Per trasformare il calendario in decisioni tariffarie, approfondisci",
+      "related": [
+        {"label": "revenue management per hotel a Roma", "url": "/revenue-management/"},
+        {"label": "ADR, RevPAR, GOP e GOPPAR", "url": "/indicatori/"}
+      ]
+    },
+    "a3": {
+      "slug": "roma-dopo-giubileo-cambia-chi-ospita",
+      "title": "Hotel a Roma dopo il Giubileo: domanda nel 2026 · Ricavia",
+      "related_intro": "Per leggere i risultati del tuo hotel, approfondisci",
+      "related": [
+        {"label": "consulenza alberghiera su costi e margine", "url": "/consulenza/"},
+        {"label": "gli indicatori economici di un hotel", "url": "/indicatori/"}
+      ]
+    },
+    "a4": {
+      "slug": "tre-errori-prezzo-vediamo-settimana-strutture",
+      "title": "Prezzi degli hotel a Roma: tre errori da evitare · Ricavia",
+      "related_intro": "Per lavorare su prezzi e canali, approfondisci",
+      "related": [
+        {"label": "il servizio di revenue management", "url": "/revenue-management/"},
+        {"label": "l'Hotel Score gratuito", "url": "/hotel-score/"}
+      ]
+    },
+    "a5": {
+      "slug": "affitti-brevi-extralberghiero-roma-lista-controllo",
+      "title": "Affitti brevi a Roma: adempimenti da verificare · Ricavia",
+      "related_intro": "Per avviare e organizzare una struttura ricettiva, approfondisci",
+      "related": [
+        {"label": "la consulenza per una nuova apertura", "url": "/nuova-apertura/"},
+        {"label": "l'analisi di costi e margine", "url": "/consulenza/"}
+      ]
+    },
+    "a6": {
+      "slug": "guardare-voli-calendario-leggiamo-fiumicino-ciampino",
+      "title": "Voli su Roma e domanda hotel: Fiumicino e Ciampino · Ricavia",
+      "related_intro": "Per collegare domanda e prezzi, approfondisci",
+      "related": [
+        {"label": "il revenue management per hotel", "url": "/revenue-management/"},
+        {"label": "il metodo Ricavia", "url": "/metodo/"}
+      ]
+    }
+  }
+}

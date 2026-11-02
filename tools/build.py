@@ -10,6 +10,8 @@ import html, json, os, re, shutil
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'site')
 DOMAIN = 'https://ricavia.com'
+with open(os.path.join(ROOT, 'tools', 'seo.json'), encoding='utf-8') as f:
+    SEO = json.load(f)
 
 # id nel sorgente, indirizzo, titolo della scheda
 PAGES = [
@@ -27,6 +29,9 @@ PAGES = [
     ('pg-privacy', 'privacy', 'Informativa privacy · Ricavia'),
     ('pg-cookie', 'cookie', 'Cookie policy · Ricavia'),
 ]
+PAGES = [(pid, slug, SEO['pages'].get(pid, {}).get('title', title)) for pid, slug, title in PAGES]
+if set(SEO['pages']) != {pid for pid, _, _ in PAGES}:
+    raise ValueError('Le pagine in tools/seo.json devono corrispondere a PAGES')
 URL = {pid: '/' + (slug + '/' if slug else '') for pid, slug, _ in PAGES}
 URL['chi-siamo'] = URL['pg-chi-siamo']  # vecchio link
 OPEN_CLASS = {'contatti': 'ct-open', 'apertura': 'ap-open', 'revenue-management': 'rm-open', 'consulenza': 'cs-open'}
@@ -80,17 +85,16 @@ for pid, _, _ in PAGES[1:]:
     pages[pid] = element(body, at)
 
 
-def slugify(t):
-    import unicodedata
-    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode().lower()
-    t = re.sub(r'[^a-z0-9]+', '-', t).strip('-')
-    stop = {'a', 'ad', 'al', 'alla', 'che', 'come', 'con', 'cosa', 'da', 'del', 'della', 'di', 'dove', 'e', 'ed', 'i', 'il', 'in', 'la', 'le', 'lo', 'nel', 'nelle', 'ogni', 'per', 'prima', 'un', 'una'}
-    w = [x for x in t.split('-') if x not in stop]
-    return '-'.join(w[:6])
-
-
 ARTS = re.findall(r'<template id="jr-t-(a\d+)">(.*?)</template>', pages['pg-osservatorio'], re.S)
-ART_URL = {a: '/osservatorio/%s/' % slugify(text(re.search(r'<h2>(.*?)</h2>', x, re.S).group(1))) for a, x in ARTS}
+# Gli indirizzi pubblicati non devono cambiare quando viene ritoccato un titolo.
+ART_URL = {}
+for aid, _ in ARTS:
+    slug = SEO['articles'].get(aid, {}).get('slug', '')
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
+        raise ValueError('Aggiungere uno slug stabile per %s in tools/seo.json' % aid)
+    ART_URL[aid] = '/osservatorio/%s/' % slug
+if len(set(ART_URL.values())) != len(ART_URL):
+    raise ValueError('Gli slug degli articoli devono essere univoci')
 
 
 def resolve_photos(h):
@@ -143,22 +147,11 @@ def fix_assets(h):
     return re.sub(r'url\((["\']?|&quot;)assets/', r'url(\1/assets/', h)
 
 
-DESC = {
-    'home': "Revenue management e consulenza per hotel e strutture ricettive indipendenti a Roma: tariffe, distribuzione e margine, misurati su GOP e GOPPAR",
-    'consulenza': "Consulenza per hotel e strutture ricettive: riclassificazione USALI, costi operativi e commissioni di distribuzione, risultati misurati su GOP e GOPPAR",
-    'contatti': "Prenota una call conoscitiva di 30 minuti con Ricavia: analizziamo tariffe, canali e margine del tuo hotel. Roma e tutta Italia",
-    'pg-privacy': "Informativa sul trattamento dei dati personali di Ricavia Group S.r.l.",
-    'pg-cookie': "Cookie e tecnologie simili usati sul sito di Ricavia",
-}
-
-
 def describe(pid):
-    seg = pages[pid]
-    p = re.search(r'<p class="(?:ap-lead|ctp-sub|lead|z-lead)[^"]*"[^>]*>(.*?)</p>', seg, re.S)
-    if pid in DESC:
-        return DESC[pid]
-    d = text(p.group(1)) if p else ''
-    return d if len(d) <= 160 else d[:157].rsplit(' ', 1)[0] + '…'
+    desc = SEO['pages'][pid].get('description', '').strip()
+    if not desc:
+        raise ValueError('Aggiungere la descrizione di %s in tools/seo.json' % pid)
+    return desc
 
 
 def og_image(pid):
@@ -187,14 +180,32 @@ ORG = {
     "logo": DOMAIN + "/assets/img/c3ed5d4eee.svg", "image": DOMAIN + "/assets/img/og-simbolo.jpg",
     "email": "info@ricavia.com", "vatID": "IT17726801008",
     "description": "Revenue management e consulenza per hotel e strutture ricettive indipendenti",
-    "address": {"@type": "PostalAddress", "addressLocality": "Roma", "addressCountry": "IT"},
+    # Sede legale già pubblicata nell'informativa privacy: nessun orario o recapito inventato.
+    "address": {"@type": "PostalAddress", "streetAddress": "Via Francesco Gentile 135",
+                "postalCode": "00173", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
     "areaServed": {"@type": "Country", "name": "Italia"},
     "knowsAbout": ["Revenue management alberghiero", "GOP", "GOPPAR", "USALI", "Distribuzione alberghiera"],
 }
 
+SERVICES = {
+    'revenue-management': ('Revenue management per hotel', 'Revenue management alberghiero'),
+    'consulenza': ('Consulenza alberghiera', 'Analisi di costi, distribuzione e margine operativo'),
+    'apertura': ('Consulenza per nuove aperture', 'Studio di fattibilità e business plan per strutture ricettive'),
+}
+
+
+def web_page(pid, title, url, desc):
+    kind = {'contatti': 'ContactPage', 'pg-chi-siamo': 'AboutPage', 'pg-osservatorio': 'CollectionPage'}.get(pid, 'WebPage')
+    data = {'@type': kind, '@id': url + '#webpage', 'url': url, 'name': title,
+            'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
+            'about': {'@id': DOMAIN + '/#org'}}
+    if pid in SERVICES:
+        data['mainEntity'] = {'@id': url + '#service'}
+    return data
+
 
 def jsonld(pid, title, url, content, crumbs=None):
-    g = []
+    g = [web_page(pid, title, url, describe(pid))]
     if pid == 'home':
         g.append(ORG)
         g.append({"@type": "WebSite", "@id": DOMAIN + "/#web", "url": DOMAIN + "/", "name": "Ricavia", "inLanguage": "it-IT", "publisher": {"@id": DOMAIN + "/#org"}})
@@ -202,6 +213,12 @@ def jsonld(pid, title, url, content, crumbs=None):
         items = [("Home", DOMAIN + "/")] + (crumbs or []) + [(title.split(' · ')[0], url)]
         g.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]})
+    if pid in SERVICES:
+        name, service_type = SERVICES[pid]
+        g.append({'@type': 'Service', '@id': url + '#service', 'name': name,
+                  'serviceType': service_type, 'url': url, 'description': describe(pid),
+                  'provider': {'@id': DOMAIN + '/#org'},
+                  'areaServed': [{'@type': 'City', 'name': 'Roma'}, {'@type': 'AdministrativeArea', 'name': 'Lazio'}]})
     qa = []
     for m in re.finditer(r'<details\b[^>]*>\s*<summary>(.*?)</summary>(.*?)</details>', content, re.S):
         q, a = text(m.group(1)), text(m.group(2))
@@ -239,6 +256,7 @@ def page(pid, slug, title):
     desc = describe(pid)
     meta = '''<title>{t}</title>
 <meta name="description" content="{d}">
+<meta name="robots" content="max-image-preview:large">
 <link rel="canonical" href="{u}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ricavia">
@@ -289,11 +307,19 @@ def art_page(aid, art):
     ART_DATE[ART_URL[aid]] = iso
     url = DOMAIN + ART_URL[aid]
     img = re.search(r'<img[^>]*src="([^"]+)"', body_html)
+    related = SEO['articles'][aid].get('related', [])
+    if related:
+        anchors = ['<a href="%s">%s</a>' % (html.escape(x['url'], quote=True), html.escape(x['label'])) for x in related]
+        body_html += '<div class="jr-body"><p data-related-services>%s: %s</p></div>' % (html.escape(SEO['articles'][aid]['related_intro']), ' · '.join(anchors))
+    image_url = DOMAIN + img.group(1).replace('assets/', '/assets/', 1).replace('//assets', '/assets') if img else og_image('pg-osservatorio')
     ldata = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Article", "headline": title, "description": desc, "inLanguage": "it-IT", "mainEntityOfPage": url,
+        {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title,
+         'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
+         'mainEntity': {'@id': url + '#article'}},
+        {"@type": "Article", "@id": url + '#article', "url": url, "headline": title, "description": desc, "inLanguage": "it-IT", "mainEntityOfPage": {'@id': url + '#webpage'},
          "author": {"@type": "Organization", "name": "Redazione Ricavia", "url": DOMAIN + "/"},
          "publisher": {"@id": DOMAIN + "/#org", "@type": "Organization", "name": "Ricavia", "logo": {"@type": "ImageObject", "url": DOMAIN + "/assets/img/c3ed5d4eee.svg"}},
-         **({"datePublished": iso} if iso else {}), **({"image": DOMAIN + img.group(1).replace('assets/', '/assets/', 1).replace('//assets', '/assets')} if img else {})},
+         **({"datePublished": iso} if iso else {}), "image": image_url},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN + "/"},
             {"@type": "ListItem", "position": 2, "name": "Osservatorio", "item": DOMAIN + "/osservatorio/"},
@@ -305,9 +331,10 @@ def art_page(aid, art):
     parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-osservatorio'))
     # ancore che negli articoli puntano a sezioni dell'Osservatorio
     parts = re.sub(r'href="#(osForm|os-zone|os-top10|os-journal)"', r'href="/osservatorio/#\1"', parts)
-    t = '%s · Ricavia' % title
+    t = SEO['articles'][aid].get('title', '%s · Ricavia' % title)
     meta = '''<title>{t}</title>
 <meta name="description" content="{d}">
+<meta name="robots" content="max-image-preview:large">
 <link rel="canonical" href="{u}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Ricavia">
@@ -318,7 +345,7 @@ def art_page(aid, art):
 <meta property="og:image" content="{i}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{ld}</script>'''.format(t=html.escape(t), d=html.escape(desc, quote=True), u=url, i=DOMAIN + '/assets/img/og-simbolo.jpg', ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
+<script type="application/ld+json">{ld}</script>'''.format(t=html.escape(t), d=html.escape(desc, quote=True), u=url, i=image_url, ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
     doc = '<!doctype html>\n<html lang="it" class="mp mp-in mp-art">\n<head>\n%s\n%s\n<script>window.__MP=true</script>\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (fix_assets(head).strip(), meta, SHIM + parts)
     d = os.path.join(OUT, ART_URL[aid].strip('/'))
     os.makedirs(d, exist_ok=True)
@@ -350,8 +377,15 @@ nf = home_doc.split('<main id="top"')[0] + """<main style="min-height:70vh;displ
 <div><p class="z-eyebrow-b">Errore 404</p><h1 style="font:600 clamp(40px,6vw,84px)/1 var(--zf);letter-spacing:-.05em;margin:18px 0 0">Pagina <em class="z-g">non trovata</em></h1>
 <p style="color:var(--zmu);font-size:19px;margin:24px auto 0;max-width:30em">L'indirizzo che hai aperto non esiste o è stato spostato.</p>
 <a class="z-btn" href="/" style="margin-top:36px">Torna alla home <span class="arr">→</span></a></div></main>
-""" + (ft.group(0) if ft else '') + home_doc[home_doc.find('<script src="assets/js/00-lenis'):]
+""" + (ft.group(0) if ft else '')
+scripts_start = home_doc.find('<script src="/assets/js/00-lenis')
+if scripts_start < 0:
+    raise ValueError('Script della pagina 404 non trovati')
+nf += home_doc[scripts_start:]
 nf = nf.replace('<link rel="canonical" href="https://ricavia.com/">', '<meta name="robots" content="noindex">')
+nf = nf.replace('<meta name="robots" content="max-image-preview:large">', '')
+nf = re.sub(r'<title>.*?</title>', '<title>Pagina non trovata · Ricavia</title>', nf, count=1)
+nf = re.sub(r'<script type="application/ld\+json">.*?</script>', '', nf, flags=re.S)
 open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(nf)
 # alleggerimento: CSS senza regole inutilizzate e compresso, HTML senza spazi superflui
 import sys

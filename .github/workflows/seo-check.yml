@@ -1,0 +1,19 @@
+name: Controlli SEO
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Genera le pagine statiche
+        run: python3 tools/build.py
+      - name: Verifica metadati, sitemap, link e dati strutturati
+        run: python3 tools/check_seo.py
