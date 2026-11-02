@@ -12,6 +12,16 @@ Search Console è configurata e la proprietà del dominio è stata consultata. A
 
 La sitemap `https://ricavia.com/sitemap.xml` risulta inviata e letta il 30 ottobre 2026, con stato «Riuscita» e 19 pagine rilevate. Pagine rilevate non significa pagine indicizzate. Il riepilogo Indicizzazione è ancora in elaborazione e i Core Web Vitals non hanno dati sufficienti. Le richieste HTTP e la versione con www reindirizzano verso HTTPS senza www; HTTP con www passa attraverso due redirect permanenti. I risultati di un operatore `site:` non vengono usati come conteggio delle pagine indicizzate.
 
+Controllo URL effettuato il 2 novembre:
+
+| URL | Riscontro di Google | Azione completata |
+|---|---|---|
+| `https://ricavia.com/` | La pagina è indicizzata | Verificata la presenza su Google |
+| `https://ricavia.com/revenue-management/` | URL sconosciuto all'indice; il test in tempo reale conferma che è disponibile per Google | Richiesta di indicizzazione accettata |
+| `https://ricavia.com/consulenza/` | URL sconosciuto all'indice | Richiesta di indicizzazione accettata dopo la verifica di idoneità |
+
+Le richieste riguardano le pagine già online: Google le ha inserite in una coda di scansione, non ha confermato l'indicizzazione. Questo riscontro non viene esteso alle altre pagine non ispezionate singolarmente.
+
 La chiamata pubblica all'API PageSpeed ha restituito HTTP 429, quota esaurita. Non vengono assegnati punteggi Lighthouse o dichiarati Core Web Vitals superati senza un rapporto disponibile.
 
 ## Prima modifica tecnica proposta
@@ -27,6 +37,8 @@ La chiamata pubblica all'API PageSpeed ha restituito HTTP 429, quota esaurita. N
 - Anteprime Cloudflare abilitate nel file Wrangler: la prima build remota ha generato correttamente le 19 pagine, ma il comando di anteprima non trovava il blocco `previews`
 
 I dati strutturati descrivono ciò che esiste: non sono una promessa di posizionamento o di risultati avanzati. Non sono stati aggiunti voti, recensioni, numeri di telefono, orari o risultati economici inventati.
+
+Build e controlli SEO hanno superato anche l'esecuzione su GitHub. La build e la pubblicazione dell'anteprima Cloudflare sono riuscite dopo l'aggiunta del blocco `previews`. L'anteprima restituisce `X-Robots-Tag: noindex`; le pagine mantengono canonical sul dominio ufficiale. Un URL inesistente restituisce correttamente HTTP 404, ma nell'anteprima Cloudflare usa una risposta generica: il file personalizzato `/404.html` è presente e verificato separatamente. Dopo la pubblicazione verificare che il dominio ufficiale utilizzi la pagina personalizzata, come avviene nella versione attuale.
 
 ## Mappa degli intenti
 
@@ -126,3 +138,4 @@ Queste sono fasi operative, non scadenze garantite per il posizionamento. Non so
 - [Google: attività locali e dati strutturati](https://developers.google.com/search/docs/appearance/structured-data/local-business)
 - [Google: contenuti generati con AI](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content/)
 - [Google: aggiornamenti della documentazione](https://developers.google.com/search/updates) — i risultati avanzati FAQ non vengono più mostrati dal 7 maggio 2026; la presenza di FAQPage nel codice non va presentata come una promessa di quel formato
+- [Cloudflare: configurazione delle anteprime](https://developers.cloudflare.com/workers/previews/configuration/) — blocco `previews` esplicito per il comando di anteprima dei rami
