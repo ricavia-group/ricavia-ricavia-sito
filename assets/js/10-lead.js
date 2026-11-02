@@ -67,15 +67,17 @@
         payload={tipo:kind,oggetto:subject,campi:Object.fromEntries?Object.fromEntries(lines):lines,punteggio:sc,
           pagine:S.pages,minuti:Math.round((Date.now()-S.t0)/60000),pagina:location.pathname+location.hash,inviato:new Date().toISOString()},
         all=lines.concat([['Punteggio lead',sc.punti+'/100 · fascia '+sc.fascia],['Dettaglio',sc.motivi.join(', ')||'—'],['Pagine viste',S.pages.join(' ')]]);
-    track('Lead',{tipo:kind,fascia:sc.fascia,punti:sc.punti});
+    /* eventi distinti: tentativo di invio, richiesta archiviata, ripiego sull'email (che non prova l'invio) */
+    var ev={tipo:kind,fascia:sc.fascia,punti:sc.punti};
+    track('Invio modulo',ev);
     var ep=meta('ricavia-lead-endpoint');
     function mail(){
       location.href='mailto:info@ricavia.com?subject='+encodeURIComponent(subject)+'&body='+all.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');
-      done&&done('mail',sc)}
+      track('Lead email',ev);done&&done('mail',sc)}
     if(!ep||!window.fetch){mail();return}
     /* text/plain: richiesta semplice, senza controllo preliminare CORS (necessario per Google Apps Script) */
     fetch(ep,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
-      .then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;done&&done('sent',sc)})
+      .then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;track('Lead',ev);done&&done('sent',sc)})
       .catch(mail);
   }
 
