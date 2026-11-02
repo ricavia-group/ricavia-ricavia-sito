@@ -31,6 +31,8 @@ Aprire `http://127.0.0.1:8000/`. Il controllo automatico verifica gli HTML in si
 
 Cloudflare pubblica la cartella `site`, con build `python tools/build.py` e deploy tramite la configurazione Wrangler. Gli aggiornamenti al ramo di produzione diventano pubblici secondo il collegamento Git configurato in Cloudflare.
 
+Le anteprime dei rami usano `npx wrangler preview`: il blocco vuoto `previews` in `wrangler.jsonc` abilita il comando per questo sito statico. Gli asset restano nella configurazione principale; le anteprime servono a verificare una proposta prima di unirla a `main`.
+
 ## Modificare pagine e articoli
 
 - I testi e gli elementi visuali sono in `index.html`; gli articoli sono i template `jr-t-a1`, `jr-t-a2`, ecc.

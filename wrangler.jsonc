@@ -2,6 +2,8 @@
   // Pubblicazione su Cloudflare: il sito statico generato in ./site
   "name": "ricavia",
   "compatibility_date": "2026-10-01",
+  // Consente a Cloudflare di creare le anteprime dei rami senza pubblicare su ricavia.com
+  "previews": {},
   "assets": {
     "directory": "./site",
     "html_handling": "auto-trailing-slash",

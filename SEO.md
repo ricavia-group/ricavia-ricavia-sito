@@ -8,7 +8,9 @@ La scansione pubblica ha verificato 19 URL in sitemap: 13 pagine e 6 articoli. T
 
 Questa è la versione attuale: i rilievi della prima analisi dello ZIP non descrivono più lo stato del sito. La pubblicazione usa un generatore Python, non Astro; una migrazione di framework non è necessaria per questi interventi SEO.
 
-Search Console è configurata, come confermato dal titolare. La sessione di questa revisione non ha ancora accesso alla proprietà: impressioni, clic, query, pagine indicizzate e conversioni non sono stati misurati. I risultati di un operatore `site:` non vengono usati come conteggio delle pagine indicizzate.
+Search Console è configurata e la proprietà del dominio è stata consultata. Alla verifica del 2 novembre, la vista Rendimento selezionata su tre mesi mostra dati dal 29 al 31 ottobre 2026: 2 clic, 7 impressioni, CTR 28,6% e posizione media 6,1. L'unica riga della tabella Pagine è `http://www.ricavia.com/`; la tabella Query non espone righe. Il campione è troppo piccolo per valutare domanda commerciale e posizionamento: non rappresenta una prova di visibilità per «revenue management Roma».
+
+La sitemap `https://ricavia.com/sitemap.xml` risulta inviata e letta il 30 ottobre 2026, con stato «Riuscita» e 19 pagine rilevate. Pagine rilevate non significa pagine indicizzate. Il riepilogo Indicizzazione è ancora in elaborazione e i Core Web Vitals non hanno dati sufficienti. Le richieste HTTP e la versione con www reindirizzano verso HTTPS senza www; HTTP con www passa attraverso due redirect permanenti. I risultati di un operatore `site:` non vengono usati come conteggio delle pagine indicizzate.
 
 La chiamata pubblica all'API PageSpeed ha restituito HTTP 429, quota esaurita. Non vengono assegnati punteggi Lighthouse o dichiarati Core Web Vitals superati senza un rapporto disponibile.
 
@@ -22,6 +24,7 @@ La chiamata pubblica all'API PageSpeed ha restituito HTTP 429, quota esaurita. N
 - Immagini social degli articoli coerenti con la foto del contenuto e autorizzazione alle anteprime immagine grandi
 - Titolo e navigazione della pagina 404 corretti, mantenendo noindex e nessun canonical verso la Home
 - Controlli automatici su metadati, sitemap, link, immagini e JSON-LD a ogni proposta di modifica
+- Anteprime Cloudflare abilitate nel file Wrangler: la prima build remota ha generato correttamente le 19 pagine, ma il comando di anteprima non trovava il blocco `previews`
 
 I dati strutturati descrivono ciò che esiste: non sono una promessa di posizionamento o di risultati avanzati. Non sono stati aggiunti voti, recensioni, numeri di telefono, orari o risultati economici inventati.
 
@@ -88,7 +91,7 @@ Gli agenti possono assistere nella raccolta, nella normalizzazione e nella prepa
 
 ## Misurazione prima di valutare i risultati
 
-Esportare dalla proprietà Search Console le ultime settimane disponibili, separando query di marca e query commerciali. Osservare per pagina impressioni, clic, CTR e posizione media, annotando la data delle modifiche. Per un sito nuovo può non esserci ancora uno storico utile.
+La baseline iniziale è quella riportata sopra. Quando lo storico sarà sufficiente, esportare dalla proprietà Search Console le ultime settimane disponibili, separando query di marca e query commerciali. Osservare per pagina impressioni, clic, CTR e posizione media, annotando la data delle modifiche.
 
 Il codice `RK.track` è predisposto, ma nel sorgente esaminato non è installato un raccoglitore GA4/Plausible. Inoltre l'evento `Lead` parte prima della conferma di archiviazione: oggi non equivale a una richiesta ricevuta. Prima di usarlo come KPI, distinguere:
 
