@@ -4,6 +4,9 @@ Sito statico di Ricavia (revenue management e consulenza per hotel e strutture r
 Leggi anche README.md per struttura e indirizzi delle pagine.
 
 ## Come è fatto
+- Il sorgente resta `index.html`, ma il sito pubblicato è multipagina: `python tools/build.py` genera `site/`, pubblicata da Cloudflare Workers
+- Prima di proporre una pubblicazione eseguire `python tools/check_seo.py`; gli URL pubblicati sono in README.md
+- Titoli e descrizioni SEO e gli slug degli articoli sono in `tools/seo.json`: uno slug pubblicato non cambia quando viene riscritto un titolo
 - Tutte le pagine sono in `index.html`. Le pagine interne sono `div.pgv` con id (`#revenue-management`, `#consulenza`, `#apertura`, `#contatti`, `#pg-metodo`, `#pg-chi-siamo`, `#pg-partner`, `#pg-pagella`, `#pg-osservatorio`, `#pg-indicatori`, `#pg-privacy`, `#pg-cookie`) aperte via hash.
 - Stili tutti in `assets/css/site.css`. L'ordine delle regole conta: le regole in fondo al file sovrascrivono quelle prima. Le regole delle pagine interne usano il prefisso `:is(#revenue-management,#consulenza,…)`.
 - Variabili principali: `--zink` (nero testo/tasti), `--zgr` (gradiente brand), `--zf` (carattere Geist).
