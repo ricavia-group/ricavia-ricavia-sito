@@ -5238,3 +5238,9 @@ html body #calendario .cal-h span{background-color:#fff!important;background-ima
 .ctp-book.one .ctp-how{order:2;margin-top:8px;padding-top:24px;border-top:1px solid var(--zln,rgba(11,11,18,.1))}
 .ctp-book.one #ctForm{order:1}
 .ctp-book:not(.one) #ctForm{margin-top:34px}
+/* nota sui dati di navigazione inviati con i moduli */
+html body form p.rk-note,:is(#revenue-management,#consulenza,#apertura,#contatti,#pg-pagella,#pg-osservatorio) form p.rk-note{font-family:var(--zf);font-size:12px;line-height:1.45;opacity:.62;margin:8px 0 0;max-width:100%;overflow-wrap:anywhere;grid-column:1/-1;flex-basis:100%;letter-spacing:0;text-transform:none;padding:0}
+#contatti .ctp-card p.rk-note{font-size:12px!important;line-height:1.45!important;margin:8px 0 0!important}
+.os-chk .rk-note{display:block;font-family:var(--zf);font-size:12px;line-height:1.45;font-weight:400;opacity:.8;margin-top:6px}
+:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-m{top:calc(100% + 96px)}
+@media(min-width:700px){:is(#pg-osservatorio,#pg-pagella,#pg-indicatori) .rs-f .os-m{top:calc(100% + 72px)}}
