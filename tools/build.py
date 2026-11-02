@@ -4,6 +4,7 @@ Ogni pagina interna diventa un indirizzo vero (es. /consulenza/), con titolo,
 descrizione e anteprima social propri. Nessuna dipendenza: solo Python 3.
 Uso: python3 tools/build.py
 """
+import subprocess
 import html, json, os, re, shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -283,6 +284,9 @@ def art_page(aid, art):
     iso = '%s-%02d-%02d' % (date.group(3), MESI.index(date.group(2)) + 1, int(date.group(1))) if date and date.group(2) in MESI else None
     body_html = art.replace('<h2>', '<h1 class="jr-h1">', 1).replace('</h2>', '</h1>', 1)
     body_html = resolve_photos(body_html)
+    # sottotitoli dell'articolo come H2 (stesso aspetto degli H3 di prima)
+    body_html = re.sub(r'<h3>(.*?)</h3>', r'<h2 class="jr-sh">\1</h2>', body_html, flags=re.S)
+    ART_DATE[ART_URL[aid]] = iso
     url = DOMAIN + ART_URL[aid]
     img = re.search(r'<img[^>]*src="([^"]+)"', body_html)
     ldata = {"@context": "https://schema.org", "@graph": [
@@ -322,10 +326,21 @@ def art_page(aid, art):
     return url
 
 
+ART_DATE = {}
 urls += [art_page(a, x) for a, x in ARTS]
+# data dell'ultima modifica: per gli articoli la data di pubblicazione, per le pagine l'ultimo salvataggio del sito
+try:
+    LAST = subprocess.run(['git', 'log', '-1', '--format=%cs'], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+except Exception:
+    LAST = ''
+def lastmod(u):
+    d = ART_DATE.get(u.replace(DOMAIN, '')) or LAST
+    return '<lastmod>%s</lastmod>' % d if d else ''
 open(os.path.join(OUT, 'sitemap.xml'), 'w').write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    ''.join('  <url><loc>%s</loc></url>\n' % u for u in urls) + '</urlset>\n')
+    ''.join('  <url><loc>%s</loc>%s</url>\n' % (u, lastmod(u)) for u in urls) + '</urlset>\n')
+# indirizzi senza barra finale: reindirizzamento permanente (301) invece del 307 automatico
+open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % (u.replace(DOMAIN, '').rstrip('/'), u.replace(DOMAIN, '')) for u in urls if u.replace(DOMAIN, '') != '/'))
 open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n' % DOMAIN)
 shutil.copy(os.path.join(ROOT, 'tools', 'headers'), os.path.join(OUT, '_headers'))
 # pagina 404: intestazione e piè di pagina della Home, messaggio semplice
