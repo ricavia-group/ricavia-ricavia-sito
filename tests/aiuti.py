@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def costruisci(journal_dir):
     """Lancia tools/build.py (senza minificazione) leggendo gli articoli da journal_dir; restituisce il percorso di site/."""
-    env = dict(os.environ, RICAVIA_JOURNAL=journal_dir, RICAVIA_NO_MIN='1')
+    env = dict(os.environ, RICAVIA_JOURNAL=journal_dir, RICAVIA_NO_MIN='1', PYTHONIOENCODING='utf-8')
     r = subprocess.run([sys.executable, os.path.join('tools', 'build.py')], cwd=ROOT, env=env,
                        capture_output=True, text=True, encoding='utf-8')
     assert r.returncode == 0, 'build fallita:\n' + r.stderr

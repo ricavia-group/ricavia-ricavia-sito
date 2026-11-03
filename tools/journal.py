@@ -110,6 +110,24 @@ def carica(cartella, slug_esistenti, titoli_esistenti):
     return voci
 
 
+def ritirati(cartella):
+    """Slug degli articoli ritirati da ritirati.json (file assente = nessuno)."""
+    path = os.path.join(cartella, 'ritirati.json')
+    if not os.path.isfile(path):
+        return []
+    try:
+        with open(path, encoding='utf-8') as f:
+            slugs = json.load(f)
+    except ValueError as e:
+        raise ArticoloError('ritirati.json: non è JSON valido (%s)' % e)
+    if not isinstance(slugs, list) or not all(isinstance(s, str) and SLUG_RE.fullmatch(s) for s in slugs):
+        raise ArticoloError('ritirati.json: deve essere una lista di slug (minuscole, numeri, trattini)')
+    for nome in os.listdir(cartella):
+        if os.path.isdir(os.path.join(cartella, nome)) and DATA_RE.fullmatch(nome[:10]) and nome[11:] in slugs:
+            raise ArticoloError('ritirati.json: "%s" ha ancora la cartella %s' % (nome[11:], nome))
+    return slugs
+
+
 def _e(x):
     return html.escape(x, quote=True)
 

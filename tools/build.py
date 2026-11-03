@@ -103,6 +103,10 @@ if len(set(ART_URL.values())) != len(ART_URL):
 # Articoli nuovi: una cartella journal/AAAA-MM-GG-<slug>/ ciascuno, chiave 'j-<slug>'
 NUOVI = journal.carica(JOURNAL, {u.split('/')[2] for u in ART_URL.values()},
                        {v.get('title') for v in SEO['articles'].values()})
+RITIRATI = journal.ritirati(JOURNAL)
+for _s in RITIRATI:
+    if _s in {u.split('/')[2] for u in ART_URL.values()}:
+        raise journal.ArticoloError('ritirati.json: "%s" è uno slug storico' % _s)
 for _a in NUOVI:
     _k = 'j-' + _a['slug']
     SEO['articles'][_k] = journal.voce_seo(_a)
@@ -479,7 +483,8 @@ open(os.path.join(OUT, 'sitemap.xml'), 'w').write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     ''.join('  <url><loc>%s</loc>%s</url>\n' % (u, lastmod(u)) for u in urls) + '</urlset>\n')
 # indirizzi senza barra finale: reindirizzamento permanente (301) invece del 307 automatico
-open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % (u.replace(DOMAIN, '').rstrip('/'), u.replace(DOMAIN, '')) for u in urls if u.replace(DOMAIN, '') != '/'))
+open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % (u.replace(DOMAIN, '').rstrip('/'), u.replace(DOMAIN, '')) for u in urls if u.replace(DOMAIN, '') != '/') +
+    ''.join('/osservatorio/%s/ /osservatorio/ 301\n/osservatorio/%s /osservatorio/ 301\n' % (s, s) for s in RITIRATI))
 open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n' % DOMAIN)
 shutil.copy(os.path.join(ROOT, 'tools', 'headers'), os.path.join(OUT, '_headers'))
 # pagina 404: intestazione e piè di pagina della Home, messaggio semplice
