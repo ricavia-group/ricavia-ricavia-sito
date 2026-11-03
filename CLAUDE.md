@@ -13,6 +13,10 @@ Leggi anche README.md per struttura e indirizzi delle pagine.
 - Script in `assets/js/`, caricati nell'ordine numerico.
 - Loghi dei partner: sono disegnati nella pagina (sprite `<svg class="lg-sprite">` in cima al body, simboli `#lg-…`, richiamati con `<svg class="plg"><use …></svg>`). Non usare maschere CSS o file SVG esterni per i loghi: in alcuni ambienti non si caricano e i loghi spariscono.
 
+## Journal automatico
+- Gli articoli nuovi vanno in `journal/AAAA-MM-GG-<slug>/` (formato in README.md), mai in `index.html`; i 6 articoli storici restano in `index.html`
+- Prima di proporre un articolo: `python -m unittest discover tests -v`, `python tools/build.py`, `python tools/check_seo.py`
+
 ## Regole di brand (vincolanti)
 - Logo: o la scritta RICAVIA con il simbolo integrato, o solo il simbolo. **Mai simbolo + scritta affiancati.**
 - Gradiente brand: `linear-gradient(100deg,#3CCDFA,#1F2DD0 70%,#724AF8)` (variabile `--zgr`). Niente sfumature rosse o colori fuori palette.

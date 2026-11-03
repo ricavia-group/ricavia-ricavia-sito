@@ -5257,3 +5257,13 @@ html body form p.rk-note,:is(#revenue-management,#consulenza,#apertura,#contatti
 @media (max-width:900px) and (min-width:620px){.os-rel-g .jr-cd{flex-basis:46%}}
 @media (max-width:900px){html:not(.mp-in) .os-rel-g{margin:0 -16px;padding-left:16px;padding-right:16px;scroll-padding:0 16px}}
 .os-rel .jr-k{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+/* archivio mensile del Journal */
+.jr-arch{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:8px 20px;margin:clamp(28px,3.5vw,44px) 0 0;font-family:var(--zf)}
+.jr-arch span{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.jr-arch a{font-size:14.5px;font-weight:600;color:var(--zink);text-decoration:none}
+.jr-arch a:hover{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.jr-arp{max-width:1180px;margin:0 auto;padding:clamp(20px,3vw,32px) 24px 0}
+.jr-arp .jr-h1{margin:0 0 clamp(24px,3vw,40px);font-family:var(--zf);font-weight:750;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-.04em}
+@media (max-width:620px){.jr-arp{padding-left:16px;padding-right:16px}}
+.jr-arp .jr-back{max-width:none;margin:0 0 clamp(16px,2vw,24px);padding:0}
+.jr-arp .jr-k{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
