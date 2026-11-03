@@ -1,4 +1,5 @@
 """Lettura e validazione degli articoli del Journal da cartelle journal/AAAA-MM-GG-<slug>/."""
+import datetime
 import html
 import json
 import os
@@ -15,7 +16,13 @@ OBBLIGATORI = ['slug', 'data', 'categoria', 'titolo', 'sottotitolo', 'title_seo'
                'related_intro', 'related', 'alt']
 SLUG_RE = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*')
 DATA_RE = re.compile(r'\d{4}-\d{2}-\d{2}')
-VIETATI = re.compile(r'<script|<iframe|<h1|<h2|\bon\w+\s*=|javascript:', re.I)
+VIETATI = re.compile(
+    r'<(?:script|iframe|h1|h2|object|embed|style|base|meta|form|link)\b|\bon\w+\s*=|\bsrcdoc\b'
+    r'|javascript\s*:|vbscript\s*:|\b(?:href|src|action|formaction)\s*=\s*["\']?\s*data\s*:'
+    # entità dentro href/src: nasconderebbero lo schema (&#106;avascript:)
+    r'|\b(?:href|src)\s*=\s*(?:"[^"]*|\'[^\']*|[^\s>"\']*)&(?:#|[a-z]+;)', re.I)
+# percorso interno: "/..." ma non "//" né "/\"
+URL_INTERNO_RE = re.compile(r'/(?![/\\])')
 
 
 class ArticoloError(ValueError):
@@ -35,8 +42,14 @@ def _valida(nome, base, meta, corpo, slug_visti, titoli_visti):
             err('campo mancante "%s"' % k)
         if k != 'related' and (not isinstance(meta[k], str) or not meta[k].strip()):
             err('campo "%s" vuoto o non testuale' % k)
-    if not DATA_RE.fullmatch(meta['data']):
+    try:
+        if not DATA_RE.fullmatch(meta['data']):
+            raise ValueError
+        datetime.date.fromisoformat(meta['data'])
+    except ValueError:
         err('data non valida (AAAA-MM-GG)')
+    if 'autore' in meta and (not isinstance(meta['autore'], str) or not meta['autore'].strip()):
+        err('autore deve essere un testo non vuoto')
     if nome != meta['data'] + '-' + meta['slug']:
         err('il nome della cartella deve essere data-slug')
     if not SLUG_RE.fullmatch(meta['slug']):
@@ -55,8 +68,9 @@ def _valida(nome, base, meta, corpo, slug_visti, titoli_visti):
         err('description di 140-160 caratteri, senza "…" e senza punto finale (ora %d)' % len(d))
     r = meta['related']
     if not isinstance(r, list) or not r or not all(
-            isinstance(x, dict) and x.get('label') and str(x.get('url', '')).startswith('/') for x in r):
-        err('related deve essere una lista non vuota di {label, url} con url che inizia con "/"')
+            isinstance(x, dict) and isinstance(x.get('label'), str) and x['label'].strip()
+            and isinstance(x.get('url'), str) and URL_INTERNO_RE.match(x['url']) for x in r):
+        err('related deve essere una lista non vuota di {label, url} con url di un percorso interno ("/..." ma non "//" né "/\\")')
     if not os.path.isfile(os.path.join(base, 'hero.webp')):
         err('hero.webp mancante')
     m = VIETATI.search(corpo)
@@ -71,7 +85,11 @@ def carica(cartella, slug_esistenti, titoli_esistenti):
     for nome in sorted(os.listdir(cartella)):
         base = os.path.join(cartella, nome)
         mp, ap = os.path.join(base, 'meta.json'), os.path.join(base, 'articolo.html')
-        if nome[0] in '_.' or not (os.path.isfile(mp) and os.path.isfile(ap)):
+        if nome[0] in '_.' or not os.path.isdir(base):
+            continue
+        if os.path.isfile(mp) != os.path.isfile(ap):
+            raise ArticoloError('%s: serve sia meta.json sia articolo.html' % nome)
+        if not os.path.isfile(mp):
             continue
         try:
             with open(mp, encoding='utf-8') as f:

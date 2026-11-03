@@ -131,6 +131,57 @@ class TestJournal(unittest.TestCase):
                 os.makedirs(self.r)
                 self.rifiuta(corpo=corpo)
 
+    def test_related_url_non_interno(self):
+        for url in ('//evil.com', '/\evil.com'):
+            with self.subTest(url=url):
+                shutil.rmtree(self.r)
+                os.makedirs(self.r)
+                self.rifiuta(related=[{'label': 'x', 'url': url}])
+
+    def test_related_label_non_testo(self):
+        self.rifiuta(related=[{'label': 5, 'url': '/ok/'}])
+
+    def test_corpo_vietato_varianti(self):
+        for corpo in ('<SCRIPT>1</SCRIPT>', '<p onclick = "x">a</p>', '<a href="JaVaScript:x()">a</a>',
+                      '<a href="&#106;avascript:alert(1)">a</a>', '<a href="jav&#x09;ascript:x">a</a>',
+                      '<a href="&colon;x">a</a>', '<style>p{}</style>', '<a href="data:text/html,x">a</a>',
+                      '<object data=x></object>', '<embed src=x>', '<base href=x>', '<meta http-equiv=refresh>',
+                      '<form action=x></form>', '<link rel=x>', '<iframe srcdoc="x"></iframe>',
+                      '<a href="vbscript:x">a</a>'):
+            with self.subTest(corpo=corpo):
+                shutil.rmtree(self.r)
+                os.makedirs(self.r)
+                self.rifiuta(corpo=corpo)
+
+    def test_corpo_con_data_in_prosa_ammesso(self):
+        crea_articolo(self.r, corpo='<p>La data: 3 novembre, <a href="/revenue-management/">link</a></p>')
+        self.assertEqual(len(self.carica()), 1)
+
+    def test_data_impossibile(self):
+        for data in ('2026-13-01', '2026-00-10', '2026-02-31'):
+            with self.subTest(data=data):
+                shutil.rmtree(self.r)
+                os.makedirs(self.r)
+                crea_articolo(self.r, data=data)
+                with self.assertRaisesRegex(journal.ArticoloError, '^' + data):
+                    self.carica()
+
+    def test_autore_non_valido(self):
+        self.rifiuta(autore='  ')
+        shutil.rmtree(self.r)
+        os.makedirs(self.r)
+        self.rifiuta(autore=7)
+
+    def test_file_mancante_non_silenzioso(self):
+        for nome in ('meta.json', 'articolo.html'):
+            with self.subTest(nome=nome):
+                shutil.rmtree(self.r)
+                os.makedirs(self.r)
+                d = crea_articolo(self.r)
+                os.remove(os.path.join(d, nome))
+                with self.assertRaisesRegex(journal.ArticoloError, '^2026-11-03-'):
+                    self.carica()
+
     def test_escape(self):
         crea_articolo(self.r, titolo='Concerti & "tutto esaurito" <Roma> l’estate')
         a = self.carica()[0]
