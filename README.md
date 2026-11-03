@@ -61,7 +61,7 @@ Il nome della cartella deve essere `data-slug`. Le cartelle che iniziano con `_`
 
 Campi obbligatori di `meta.json` (tutti testi non vuoti, salvo `related`):
 
-- `slug`: minuscole, numeri e trattini; unico e stabile dopo la pubblicazione
+- `slug`: minuscole, numeri e trattini; unico e stabile dopo la pubblicazione; `archivio` è riservato
 - `data`: `AAAA-MM-GG`, uguale al prefisso della cartella
 - `categoria`: una tra `zone`, `mercato`, `prezzi`, `regole`, `dati`, `eventi`, `trasporti`, `macro`
 - `titolo`: unico tra tutti gli articoli (come lo `slug`)
@@ -74,7 +74,7 @@ Campi obbligatori di `meta.json` (tutti testi non vuoti, salvo `related`):
 
 Facoltativo: `autore` (predefinito `Tito · Redazione Ricavia`). Altri campi (per esempio `mood`, `tesi`, `fonti`, `verbale`) sono ignorati dalla build.
 
-Il corpo non può contenere `script`, `iframe`, `h1`, `h2`, `object`, `embed`, `style`, `base`, `meta`, `form`, `link`, attributi `on...`, `srcdoc`, schemi `javascript:`/`vbscript:`, valori `data:` in `href`/`src`/`action`/`formaction` o entità dentro `href`/`src`. Titoli di sezione con `h3`.
+Il corpo ammette solo i tag `a`, `b`, `blockquote`, `div`, `h3`, `li`, `ol`, `p`, `small`, `ul`, `strong`, `em`, `i`, `br`, `span`, `figure`, `figcaption`, `img` e gli attributi `class`, `alt`, `href` (su `a`: percorso interno `/...`, ancora `#...` o `https://...`), `src` (su `img`: solo percorsi interni `/...`) e `data-jr-go` senza valore su `a`. Commenti, dichiarazioni e tag non chiusi fanno fallire la build. Titoli di sezione con `h3`.
 
 Per ritirare un articolo: aggiungere lo slug a `journal/ritirati.json` e cancellare la sua cartella; l'URL risponde con redirect 301 a `/osservatorio/`. La build fallisce se la cartella esiste ancora.
 

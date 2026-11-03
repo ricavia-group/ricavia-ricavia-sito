@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -132,7 +133,7 @@ class TestJournal(unittest.TestCase):
                 self.rifiuta(corpo=corpo)
 
     def test_related_url_non_interno(self):
-        for url in ('//evil.com', '/\evil.com'):
+        for url in ('//evil.com', r'/\evil.com', '/\t/evil.example', '/ok/\n'):
             with self.subTest(url=url):
                 shutil.rmtree(self.r)
                 os.makedirs(self.r)
@@ -152,6 +153,54 @@ class TestJournal(unittest.TestCase):
                 shutil.rmtree(self.r)
                 os.makedirs(self.r)
                 self.rifiuta(corpo=corpo)
+
+    def test_corpo_allowlist_rifiuta(self):
+        for corpo in ('<a href="jav\tascript:x()">a</a>', '<a href="java\nscript:x()">a</a>',
+                      '<svg><set attributeName="href" to="&#106;avascript:alert(1)"/></svg>',
+                      '<button formaction="javascript:x">a</button>', '<p>a</p><!-- commento non chiuso',
+                      '<p>a</p><!-- commento -->', '<plaintext>', '<textarea>a</textarea>', '<p>a</p></main>',
+                      '<p style="position:fixed;top:0">a</p>', '<img src="https://tracker.example/p.gif" alt="">',
+                      '<img src="//tracker.example/p.gif" alt="">', '<p id="x">a</p>', '<a href="/x" target="_blank">a</a>',
+                      '<p>a', '<p>a</b>', '<p>a</p><b', '<p>a</p></x', '<p>a</p><a href="/x"', '<!DOCTYPE html><p>a</p>', '<?xml x?><p>a</p>', '<p hidden>a</p>',
+                      '<a href="http://example.com/">a</a>', '<a href="">a</a>', '<p src="/x.webp">a</p>'):
+            with self.subTest(corpo=corpo):
+                shutil.rmtree(self.r)
+                os.makedirs(self.r)
+                self.rifiuta(corpo=corpo)
+
+    def test_corpo_legittimo_ammesso(self):
+        corpo = (
+            '<p class="jr-lede">Apertura dell’articolo</p>\n<h3>Un titolo di sezione</h3>\n'
+            '<ol class="jr-ol"><li><b>Primo</b> punto</li><li><b>Secondo</b> punto</li></ol>\n'
+            '<blockquote class="jr-q">Una citazione<br>su due righe</blockquote>\n'
+            '<div class="jr-box"><small>Da ricordare</small><ul><li>Uno</li><li>Due</li></ul></div>\n'
+            '<p>Vedi la <a href="/consulenza/">consulenza</a>, le <a href="#os-zone">zone</a> e la '
+            '<a href="https://www.istat.it/dati?a=1&amp;b=2">fonte</a> <strong>forte</strong> <em>e</em> '
+            '<i>corsivo</i> <span class="x">testo</span> a &lt; b</p>\n'
+            '<figure><img src="/osservatorio/x/grafico.webp" alt="Grafico"><figcaption>Didascalia</figcaption></figure>')
+        crea_articolo(self.r, corpo=corpo)
+        self.assertEqual(len(self.carica()), 1)
+
+    def test_corpo_storici_ammessi(self):
+        with open(os.path.join(ROOT, 'index.html'), encoding='utf-8') as f:
+            storici = re.findall(r'<template id="jr-t-a\d+">.*?<div class="jr-body">(.*?)</div>\s*</template>',
+                                 f.read(), re.S)
+        self.assertEqual(len(storici), 6)
+        for i, corpo in enumerate(storici):
+            with self.subTest(storico=i):
+                shutil.rmtree(self.r)
+                os.makedirs(self.r)
+                crea_articolo(self.r, corpo=corpo)
+                self.assertEqual(len(self.carica()), 1)
+
+    def test_slug_archivio_riservato(self):
+        self.rifiuta(slug='archivio')
+
+    def test_ritirati_archivio_riservato(self):
+        with open(os.path.join(self.r, 'ritirati.json'), 'w', encoding='utf-8') as f:
+            json.dump(['archivio'], f)
+        with self.assertRaisesRegex(journal.ArticoloError, '^ritirati.json: .*archivio'):
+            journal.ritirati(self.r)
 
     def test_corpo_con_data_in_prosa_ammesso(self):
         crea_articolo(self.r, corpo='<p>La data: 3 novembre, <a href="/revenue-management/">link</a></p>')

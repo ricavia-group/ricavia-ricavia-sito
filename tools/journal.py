@@ -4,6 +4,7 @@ import html
 import json
 import os
 import re
+from html.parser import HTMLParser
 
 CATEGORIE = {
     'zone': 'Zone di Roma', 'mercato': 'Mercato', 'prezzi': 'Prezzi', 'regole': 'Regole',
@@ -16,13 +17,78 @@ OBBLIGATORI = ['slug', 'data', 'categoria', 'titolo', 'sottotitolo', 'title_seo'
                'related_intro', 'related', 'alt']
 SLUG_RE = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*')
 DATA_RE = re.compile(r'\d{4}-\d{2}-\d{2}')
-VIETATI = re.compile(
-    r'<(?:script|iframe|h1|h2|object|embed|style|base|meta|form|link)\b|\bon\w+\s*=|\bsrcdoc\b'
-    r'|javascript\s*:|vbscript\s*:|\b(?:href|src|action|formaction)\s*=\s*["\']?\s*data\s*:'
-    # entità dentro href/src: nasconderebbero lo schema (&#106;avascript:)
-    r'|\b(?:href|src)\s*=\s*(?:"[^"]*|\'[^\']*|[^\s>"\']*)&(?:#|[a-z]+;)', re.I)
-# percorso interno: "/..." ma non "//" né "/\"
-URL_INTERNO_RE = re.compile(r'/(?![/\\])')
+# percorso interno: "/..." ma non "//" né "/\", senza spazi né caratteri di controllo
+URL_INTERNO_RE = re.compile(r'/(?![/\\])[^\x00-\x20]*')
+HREF_RE = re.compile(r'(?:/(?![/\\])|#|https://)[^\x00-\x20]*')
+SLUG_RISERVATI = {'archivio'}
+TAG_AMMESSI = {'a', 'b', 'blockquote', 'div', 'h3', 'li', 'ol', 'p', 'small', 'ul', 'strong', 'em', 'i', 'br',
+               'span', 'figure', 'figcaption', 'img'}
+TAG_VUOTI = {'br', 'img'}
+# attributo -> tag su cui è ammesso (None = tutti i tag ammessi); data-jr-go (senza valore) è usato dagli
+# articoli storici per lo scorrimento verso un'ancora interna (assets/js/02-jr-js.js)
+ATTR_AMMESSI = {'class': None, 'alt': None, 'href': 'a', 'src': 'img', 'data-jr-go': 'a'}
+
+
+class _Corpo(HTMLParser):
+    """Allowlist del corpo: solleva ValueError al primo elemento non ammesso."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.pila, self.testo = [], ''
+
+    def handle_starttag(self, tag, attrs):
+        self.testo = ''
+        if tag not in TAG_AMMESSI:
+            raise ValueError('tag <%s> non ammesso' % tag)
+        for k, v in attrs:
+            if k not in ATTR_AMMESSI or ATTR_AMMESSI[k] not in (None, tag):
+                raise ValueError('attributo "%s" non ammesso su <%s>' % (k, tag))
+            if k == 'data-jr-go' and v:
+                raise ValueError('data-jr-go non accetta valori')
+            if k in ('href', 'src'):
+                # HTMLParser restituisce i valori già decodificati; unescape di nuovo non allarga nulla
+                u = html.unescape(v or '')
+                if not (HREF_RE if k == 'href' else URL_INTERNO_RE).fullmatch(u):
+                    raise ValueError('%s "%s" non ammesso' % (k, v))
+        if tag not in TAG_VUOTI:
+            self.pila.append(tag)
+
+    handle_startendtag = handle_starttag  # <p/> apre comunque un <p> nel browser
+
+    def handle_endtag(self, tag):
+        self.testo = ''
+        if not self.pila or self.pila.pop() != tag:
+            raise ValueError('chiusura </%s> senza apertura corrispondente' % tag)
+
+    def handle_data(self, data):
+        # Python 3.12 restituisce come testo, anche spezzati in più pezzi, i "<!--" o "<tag" rimasti aperti
+        self.testo += data
+        m = re.search(r'<[!/?a-zA-Z]', self.testo)
+        if m:
+            raise ValueError('markup non chiuso "%s"' % self.testo[m.start():m.start() + 30])
+
+    def handle_comment(self, data):
+        raise ValueError('commenti non ammessi')
+
+    def handle_decl(self, decl):
+        raise ValueError('dichiarazioni non ammesse')
+
+    handle_pi = unknown_decl = handle_decl
+
+    def close(self):
+        # markup incompleto a fine corpo: nella pagina inghiottirebbe il </div> che segue
+        if re.search(r'<[!/?a-zA-Z]', self.rawdata):
+            raise ValueError('markup non chiuso "%s"' % self.rawdata[:30])
+        super().close()
+        if self.pila:
+            raise ValueError('tag <%s> non chiuso' % self.pila[-1])
+
+
+def verifica_corpo(corpo):
+    """Solleva ValueError se il corpo esce dall'allowlist di tag e attributi."""
+    p = _Corpo()
+    p.feed(corpo)
+    p.close()
 
 
 class ArticoloError(ValueError):
@@ -54,6 +120,8 @@ def _valida(nome, base, meta, corpo, slug_visti, titoli_visti):
         err('il nome della cartella deve essere data-slug')
     if not SLUG_RE.fullmatch(meta['slug']):
         err('slug non valido')
+    if meta['slug'] in SLUG_RISERVATI:
+        err('slug "%s" riservato' % meta['slug'])
     if meta['slug'] in slug_visti:
         err('slug già in uso')
     if meta['titolo'] in titoli_visti:
@@ -69,13 +137,14 @@ def _valida(nome, base, meta, corpo, slug_visti, titoli_visti):
     r = meta['related']
     if not isinstance(r, list) or not r or not all(
             isinstance(x, dict) and isinstance(x.get('label'), str) and x['label'].strip()
-            and isinstance(x.get('url'), str) and URL_INTERNO_RE.match(x['url']) for x in r):
+            and isinstance(x.get('url'), str) and URL_INTERNO_RE.fullmatch(x['url']) for x in r):
         err('related deve essere una lista non vuota di {label, url} con url di un percorso interno ("/..." ma non "//" né "/\\")')
     if not os.path.isfile(os.path.join(base, 'hero.webp')):
         err('hero.webp mancante')
-    m = VIETATI.search(corpo)
-    if m:
-        err('il corpo contiene "%s", non ammesso' % m.group(0))
+    try:
+        verifica_corpo(corpo)
+    except ValueError as e:
+        err('corpo: %s' % e)
 
 
 def carica(cartella, slug_esistenti, titoli_esistenti):
@@ -122,6 +191,8 @@ def ritirati(cartella):
         raise ArticoloError('ritirati.json: non è JSON valido (%s)' % e)
     if not isinstance(slugs, list) or not all(isinstance(s, str) and SLUG_RE.fullmatch(s) for s in slugs):
         raise ArticoloError('ritirati.json: deve essere una lista di slug (minuscole, numeri, trattini)')
+    for s in SLUG_RISERVATI.intersection(slugs):
+        raise ArticoloError('ritirati.json: "%s" è uno slug riservato' % s)
     for nome in os.listdir(cartella):
         if os.path.isdir(os.path.join(cartella, nome)) and DATA_RE.fullmatch(nome[:10]) and nome[11:] in slugs:
             raise ArticoloError('ritirati.json: "%s" ha ancora la cartella %s' % (nome[11:], nome))
