@@ -21,7 +21,8 @@ def costruisci(journal_dir):
 
 def sha(path):
     with open(path, 'rb') as f:
-        return hashlib.sha256(f.read()).hexdigest()
+        # build.py scrive in modalità testo: CRLF su Windows, LF su Linux (CI e Cloudflare)
+        return hashlib.sha256(f.read().replace(b'\r\n', b'\n')).hexdigest()
 
 
 DESCRIPTION_DI_DEFAULT = ('Una descrizione di prova per l’articolo, scritta per superare i controlli di lunghezza '
