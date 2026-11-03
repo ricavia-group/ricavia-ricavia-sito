@@ -54,3 +54,8 @@ class TestBuildJournal(unittest.TestCase):
         with open(STORICI, encoding='utf-8') as f:
             for slug, h in json.load(f).items():
                 self.assertEqual(sha(os.path.join(site, 'osservatorio', slug, 'index.html')), h, slug)
+
+    def test_titolo_storico_rifiutato_dalla_build(self):
+        crea_articolo(self.r, slug='concerto-test', titolo='Roma dopo il Giubileo: cosa cambia per chi ospita nel 2026')
+        with self.assertRaisesRegex(AssertionError, '2026-11-03-concerto-test: titolo già in uso'):
+            costruisci(self.r)

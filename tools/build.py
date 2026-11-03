@@ -102,7 +102,7 @@ if len(set(ART_URL.values())) != len(ART_URL):
 
 # Articoli nuovi: una cartella journal/AAAA-MM-GG-<slug>/ ciascuno, chiave 'j-<slug>'
 NUOVI = journal.carica(JOURNAL, {u.split('/')[2] for u in ART_URL.values()},
-                       {v.get('title') for v in SEO['articles'].values()})
+                       {text(re.search(r'<h2>(.*?)</h2>', x, re.S).group(1)) for _, x in ARTS})
 RITIRATI = journal.ritirati(JOURNAL)
 for _s in RITIRATI:
     if _s in {u.split('/')[2] for u in ART_URL.values()}:
