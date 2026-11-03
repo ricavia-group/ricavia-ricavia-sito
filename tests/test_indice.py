@@ -38,6 +38,8 @@ class TestIndice(unittest.TestCase):
         self.assertIn('/osservatorio/nov/', leggi(site, 'osservatorio/archivio/2026-11/index.html'))
         self.assertIn('<h1 class="jr-h1">Il Journal di ottobre 2026</h1>', a10)
         self.assertIn('<title>Journal di ottobre 2026 · Ricavia</title>', a10)
+        self.assertIn('<footer class="ft z-ft', a10)
+        self.assertIn('<div class="jr-arp"><a class="jr-back"', a10)
         sm = leggi(site, 'sitemap.xml')
         self.assertIn('/osservatorio/archivio/2026-10/</loc><lastmod>2026-10-31', sm)
         self.assertIn('/osservatorio/archivio/2026-11/', sm)

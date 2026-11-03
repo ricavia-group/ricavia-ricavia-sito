@@ -439,8 +439,8 @@ def archive_page(mese, articoli):
             {"@type": "ListItem", "position": 2, "name": "Osservatorio", "item": DOMAIN + "/osservatorio/"},
             {"@type": "ListItem", "position": 3, "name": h1, "item": url}]}]}
     ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-osservatorio'], re.S)
-    parts = chrome + '<main class="jr-pgm"><a class="jr-back" href="/osservatorio/">← Osservatorio · Il Journal</a>' + \
-        '<div class="jr-arp"><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div></main>' % (
+    parts = chrome + '<main class="jr-pgm">' + \
+        '<div class="jr-arp"><a class="jr-back" href="/osservatorio/">← Osservatorio · Il Journal</a><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div></main>' % (
             html.escape(h1), ''.join(journal.scheda(a) for a in articoli)) + (ft.group(0) if ft else '') + scripts
     parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-osservatorio'))
     meta = '''<title>{t}</title>
