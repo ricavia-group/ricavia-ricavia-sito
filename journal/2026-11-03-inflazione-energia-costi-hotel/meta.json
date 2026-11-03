@@ -1,0 +1,159 @@
+{
+  "titolo": "Inflazione al 5,4% per l'ISTAT: l'energia pesa sul margine degli hotel prima dei ricavi",
+  "tesi": "L'inflazione di ottobre al 5,4%, trainata dall'energia, colpisce gli hotel prima nei costi operativi che nei ricavi, con un effetto che dipende dal contratto di fornitura di ciascun hotel (il dato ISTAT misura i prezzi pagati dalle famiglie): nei mesi di bassa stagione il costo dell'energia per camera venduta sale e riduce GOP e GOPPAR, per cui conviene verificare il proprio contratto, calcolare una tariffa minima per data e organizzare l'operatività invece di alzare o tagliare le tariffe in modo generalizzato",
+  "tema": "inflazione-energia-costi-hotel",
+  "categoria": "macro",
+  "fonti": [
+    {
+      "titolo": "Prezzi al consumo, dati provvisori, ottobre 2026",
+      "editore": "ISTAT",
+      "url": "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "ISTAT, inflazione oltre le attese a ottobre con caro energia",
+      "editore": "Teleborsa",
+      "url": "https://www.teleborsa.it/News/2026/10/30/istat-inflazione-oltre-le-attese-a-ottobre-con-caro-energia-77.html",
+      "data": "2026-11-03"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Dato primario ISTAT di 4 giorni fa con effetto diretto sui costi operativi dei mesi di bassa stagione, letto sul conto economico e non come cronaca di mercato",
+      "correzioni": [],
+      "segnalazioni": [
+        "La notizia è del 30 ottobre, quattro giorni fa: appena fuori dalla finestra di 72 ore del manuale; il dato definitivo esce il 17 novembre e può cambiare le cifre",
+        "L'effetto sulla domanda leisure italiana è una lettura condizionata, senza dato a supporto: l'articolo lo dichiara",
+        "Nessuna stima Ricavia numerica: manca un dato con fonte sul peso dell'energia nei costi di un hotel romano"
+      ],
+      "ruolo_ricavia": "Ricavia riclassifica il conto economico secondo lo standard USALI e rivede contratti e consumi di energia con i numeri alla mano, per misurare quanto GOP si perde in bassa stagione prima di toccare le tariffe"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Meccanismo sui costi corretto e azioni utili; numeri verificati su ISTAT e Teleborsa; ho tolto dalla tesi il +59,5% dei beni regolamentati, che riguarda le famiglie e non i contratti degli hotel",
+      "correzioni": [
+        "Tesi: tolto il riferimento all'energia regolamentata al +59,5%, che è un prezzo al consumo delle famiglie e non misura il costo dell'energia di un hotel; aggiunto che l'effetto dipende dal contratto di fornitura",
+        "Impatto: aggiunta la voce costi operativi (energia), con intensità distinta tra contratti a prezzo variabile o in scadenza e contratti a prezzo fisso; GOP e GOPPAR uniti in una voce",
+        "Impatto: occupazione da '↓ bassa' a '?' da monitorare, perché l'effetto sulla domanda non ha un dato a supporto (lo dice anche il testo); ADR da '= o ↑ bassa' a '=' (una sola direzione); RevPAR '?' coerente con occupazione incerta e ADR stabile",
+        "Cosa fare adesso: da 5 a 3 azioni; unite lettura del contratto e calcolo del costo per camera venduta, tolta 'rileggere il dato il 17 novembre', già detta nel testo e non un'azione sull'hotel"
+      ],
+      "segnalazioni": [
+        "Numeri ISTAT e consenso Teleborsa verificati il 3 novembre: tornano tutti; il comunicato ISTAT indica il 17 novembre come prossima diffusione",
+        "Nel comunicato ISTAT l'aggregato 'beni energetici' ha valori diversi da quelli dei soli non regolamentati (+31,4% contro +29,4%): l'articolo usa correttamente i due sottoinsiemi, nessuna correzione",
+        "La sezione 'Il lato della domanda' resta una lettura condizionata senza dato: il capo redattore valuti se accorciarla"
+      ],
+      "ruolo_ricavia": "Ricavia legge l'aumento dell'energia nel conto economico riclassificato secondo lo standard USALI, mese per mese, e rivede contratti e consumi con i numeri alla mano prima di toccare le tariffe"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo: nessun articolo su inflazione o costi dell'energia nel registro, in journal/ o tra i 6 storici; l'articolo sui tre errori di prezzo parla di tariffe, non di costi, quindi la tesi è diversa",
+      "correzioni": [
+        "Compilati slug, title_seo (60 caratteri), description (158 caratteri), keyword, categoria, related_intro e related",
+        "Corpo: \"<h3>Dove colpisce il conto economico di un hotel</h3>\" diventa \"<h3>Inflazione ed energia: dove colpisce il conto economico di un hote\""
+      ],
+      "segnalazioni": [
+        "La keyword compariva nel lede solo in parole separate: ho aggiunto \"Inflazione ed energia\" a un h3",
+        "Un solo collegamento interno naturale nel corpo (consulenza, in chiusura): sufficiente per il manuale, il secondo è in related",
+        "Il 5,4% nella description viene dal comunicato ISTAT citato in fonti: se il dato definitivo del 17 novembre cambia, la description va riletta prima della pubblicazione"
+      ],
+      "ruolo_ricavia": "Per chi cerca come proteggere il margine, il passo successivo naturale è la pagina sulla consulenza: riclassificazione USALI del conto economico e revisione di contratti e consumi"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "Mood serio dalla matrice, titolo di tipo dato forte con fonte, mantenuto dal corpo, con frase citabile già conforme",
+      "correzioni": [
+        "Titolo riscritto (87 caratteri) con taglio dato forte con fonte; sostituisce il titolo provvisorio del giornalista",
+        "Aggiunti sottotitolo e 3 alternative con tagli diversi (domanda, dato con fonte, conseguenza)",
+        "Frase citabile: confermata, senza punto finale, senza numeri né nomi"
+      ],
+      "segnalazioni": [
+        "Il 5,4% è una stima preliminare ISTAT: se il dato definitivo del 17 novembre cambia, il titolo va riletto prima della pubblicazione",
+        "Titolo e sottotitolo non dicono che il dato misura i prezzi delle famiglie; lo dice il corpo, nella sezione sul dato ISTAT"
+      ],
+      "ruolo_ricavia": "Ricavia calcola per ogni data la tariffa minima che copre costi di energia e operatività per camera venduta, prima di toccare le tariffe"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Soggetto sull'energia che si consuma negli spazi di un hotel, senza persone; scelta tra più soggetti possibili perché è l'unico interno e diverso dalla banchina e dalle facciate; mood serio dalla matrice; riserva: camera con boiserie in marmo e lampade accese (n106)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Soggetto in luce calda e fredda insieme: l'editore verifichi che il generatore non porti il caldo verso toni rossi o arancio dominanti",
+        "Il corridoio con prospettiva simmetrica può produrre numeri di camera illeggibili o inventati: il prompt li esclude, controllare il risultato"
+      ],
+      "ruolo_ricavia": "Visivamente Ricavia fa vedere il costo operativo dentro un hotel, luce e spazi comuni, perché il suo lavoro è riclassificare il conto economico prima di toccare le tariffe"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: effetto sui costi, tariffa minima per data, nessun aumento generalizzato)",
+        "[x] Ogni numero ha fonte o è stima Ricavia come intervallo (tutte le cifre ricontrollate sul comunicato ISTAT del 30 ottobre; consenso 4,6% da Teleborsa)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, massimo 2 paragrafi, utile e non pubblicitario (un paragrafo, voci 4.1 n. 9, 11 e 12)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate",
+        "[x] Tono coerente con la matrice del mood (serio: dato economico provvisorio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Da 700 a 1.100 parole, struttura completa (937 parole, 5 h3, struttura completa)"
+      ],
+      "correzioni": [
+        "Impatto, RevPAR: definizione riportata a quella completa del glossario",
+        "Paragrafo Ricavia riscritto per non ripetere quello della bozza 1: aggiunta la voce 4.1 n. 12 (report mensile con GOP e GOPPAR) e una frase iniziale sul conto economico del singolo hotel, collegamento a /consulenza/"
+      ],
+      "segnalazioni": [
+        "Per l'editore: il 5,4% è una stima preliminare; il definitivo ISTAT esce il 17 novembre. Se cambia prima del merge, titolo, description e In breve vanno riletti (regole comuni 9 bis)",
+        "Unico articolo macro della giornata; la parola 'geopolitico' compare solo come citazione dell'ISTAT, nessun tono da cronaca"
+      ],
+      "ruolo_ricavia": "Un aumento dell'energia si misura nel conto economico del singolo hotel: Ricavia lo riclassifica secondo lo standard USALI, rivede contratti e consumi e riporta GOP e GOPPAR nel report mensile"
+    }
+  ],
+  "slug": "inflazione-energia-costi-hotel",
+  "title_seo": "Inflazione ed energia: costi e margine degli hotel · Ricavia",
+  "description": "Inflazione di ottobre al 5,4% e costo dell'energia: come cambiano GOP e GOPPAR in bassa stagione e come fissare una tariffa minima per ogni data del tuo hotel",
+  "keyword": {
+    "principale": "inflazione energia hotel",
+    "secondarie": [
+      "costi energia hotel",
+      "GOP e GOPPAR",
+      "tariffa minima hotel"
+    ]
+  },
+  "related_intro": "Per leggere costi e margine del tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "analisi dei costi e riclassificazione USALI",
+      "url": "/consulenza/"
+    },
+    {
+      "label": "GOP e GOPPAR di un hotel",
+      "url": "/indicatori/"
+    }
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dato economico (stima preliminare ISTAT sui prezzi): la matrice ammette serio o provocatorio. Il dato è provvisorio, misura i prezzi pagati dalle famiglie e non i contratti degli hotel, e la sezione sulla domanda è solo una lettura condizionata: una provocazione sarebbe più forte di ciò che l'articolo dimostra. Nel dubbio serio"
+  },
+  "alternative_titolo": [
+    "Inflazione e bassa stagione: quanto costa all'hotel l'energia per ogni camera venduta?",
+    "ISTAT, inflazione di ottobre al 5,4%: il livello di agosto 2023, trainato dall'energia",
+    "L'energia più cara riduce il margine degli hotel prima di toccare le tariffe"
+  ],
+  "sottotitolo": "Cosa dice la stima preliminare ISTAT, dove l'energia incide sul margine e come calcolare una tariffa minima per ogni data",
+  "immagine": {
+    "fonte": "libreria",
+    "scheda": "Soggetto: corridoio di hotel vuoto con una fila di applique accese, nessuna persona né porte numerate leggibili\nInquadratura: prospettiva centrale, applique lungo le pareti che guidano verso il centro\nLuce: calda e bassa delle applique contro la luce fredda di una finestra in fondo\nPalette: neutri chiari, finestra azzurro #3CCDFA, ombre blu #1F2DD0, riflesso viola #724AF8 sul marmo\nAtmosfera: seria, silenziosa, il costo che non si vede",
+    "prompt": "Empty luxury hotel corridor in the evening, no people, a row of softly glowing wall sconces on both sides leading toward the center, cool cyan daylight from a tall window at the far end, polished light marble floor with a faint violet reflection, deep blue shadows, symmetrical static composition, no door numbers. Photorealistic 16:9 cover photograph, natural light, clean composition with generous negative space, main subject kept in the central horizontal band with clear margin above and below so a 1200x630 crop stays safe. No text, no signage, no logos or brands, no recognizable people. Palette of cool cyan (#3CCDFA), deep blue (#1F2DD0) and soft violet (#724AF8) as light and small accents on clean neutrals, no red tones, no heavy color filter.",
+    "libreria": "assets/img/941717e0f5.webp",
+    "testo_sovrapposto": null
+  },
+  "alt": "Corridoio d'hotel vuoto con una fila di lampade accese lungo le pareti",
+  "data": "2026-11-03",
+  "autore": "Tito · Redazione Ricavia"
+}
