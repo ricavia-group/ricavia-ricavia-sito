@@ -5,10 +5,12 @@ descrizione e anteprima social propri. Nessuna dipendenza: solo Python 3.
 Uso: python3 tools/build.py
 """
 import subprocess
-import html, json, os, re, shutil
+import html, json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'site')
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
+import journal
 DOMAIN = 'https://ricavia.com'
 JOURNAL = os.environ.get('RICAVIA_JOURNAL', os.path.join(ROOT, 'journal'))
 with open(os.path.join(ROOT, 'tools', 'seo.json'), encoding='utf-8') as f:
@@ -97,6 +99,16 @@ for aid, _ in ARTS:
     ART_URL[aid] = '/osservatorio/%s/' % slug
 if len(set(ART_URL.values())) != len(ART_URL):
     raise ValueError('Gli slug degli articoli devono essere univoci')
+
+# Articoli nuovi: una cartella journal/AAAA-MM-GG-<slug>/ ciascuno, chiave 'j-<slug>'
+NUOVI = journal.carica(JOURNAL, {u.split('/')[2] for u in ART_URL.values()},
+                       {v.get('title') for v in SEO['articles'].values()})
+for _a in NUOVI:
+    _k = 'j-' + _a['slug']
+    SEO['articles'][_k] = journal.voce_seo(_a)
+    ART_URL[_k] = '/osservatorio/%s/' % _a['slug']
+    ARTS.append((_k, journal.template(_a)))
+NUOVI_PER_CHIAVE = {'j-' + _a['slug']: _a for _a in NUOVI}
 
 
 def resolve_photos(h):
@@ -328,6 +340,7 @@ def art_page(aid, art):
     sub = re.search(r'<p class="jr-sub">(.*?)</p>', art, re.S)
     desc = text(sub.group(1)) if sub else title
     desc = desc if len(desc) <= 160 else desc[:157].rsplit(' ', 1)[0] + '…'
+    desc = SEO['articles'][aid].get('description', desc)
     date = re.search(r'<small>(\d{1,2}) (\w+) (\d{4})', art)
     MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
     iso = '%s-%02d-%02d' % (date.group(3), MESI.index(date.group(2)) + 1, int(date.group(1))) if date and date.group(2) in MESI else None
@@ -344,7 +357,12 @@ def art_page(aid, art):
         body_html += '<div class="jr-body"><p data-related-services>%s: %s</p></div>' % (html.escape(SEO['articles'][aid]['related_intro']), ' · '.join(anchors))
     # anteprima per i social: JPG 1200x630 ricavato dalla foto dell'articolo (tools/og_articoli.py)
     og_jpg = '/assets/img/og/%s.jpg' % ART_URL[aid].strip('/').split('/')[-1]
-    if os.path.exists(os.path.join(ROOT, og_jpg.lstrip('/'))):
+    nuovo = NUOVI_PER_CHIAVE.get(aid)
+    if nuovo and os.path.isfile(os.path.join(nuovo['percorso'], 'social.jpg')):
+        image_url = url + 'social.jpg'
+    elif nuovo and img:
+        image_url = DOMAIN + img.group(1)
+    elif os.path.exists(os.path.join(ROOT, og_jpg.lstrip('/'))):
         image_url = DOMAIN + og_jpg
     elif img:
         image_url = DOMAIN + img.group(1).replace('assets/', '/assets/', 1).replace('//assets', '/assets')
@@ -355,7 +373,7 @@ def art_page(aid, art):
          'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
          'mainEntity': {'@id': url + '#article'}},
         {"@type": "Article", "@id": url + '#article', "url": url, "headline": title, "description": desc, "inLanguage": "it-IT", "mainEntityOfPage": {'@id': url + '#webpage'},
-         "author": {"@type": "Organization", "name": "Redazione Ricavia", "url": DOMAIN + "/"},
+         "author": {"@type": "Organization", "name": SEO['articles'][aid].get('author', 'Redazione Ricavia'), "url": DOMAIN + "/"},
          "publisher": {"@id": DOMAIN + "/#org", "@type": "Organization", "name": "Ricavia", "logo": {"@type": "ImageObject", "url": DOMAIN + "/assets/img/c3ed5d4eee.svg"}},
          **({"datePublished": iso} if iso else {}), "image": image_url},
         {"@type": "BreadcrumbList", "itemListElement": [
@@ -388,6 +406,10 @@ def art_page(aid, art):
     d = os.path.join(OUT, ART_URL[aid].strip('/'))
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(doc)
+    if nuovo:
+        for f in ('hero.webp', 'social.jpg'):
+            if os.path.isfile(os.path.join(nuovo['percorso'], f)):
+                shutil.copy(os.path.join(nuovo['percorso'], f), os.path.join(d, f))
     return url
 
 
@@ -426,10 +448,8 @@ nf = re.sub(r'<title>.*?</title>', '<title>Pagina non trovata · Ricavia</title>
 nf = re.sub(r'<script type="application/ld\+json">.*?</script>', '', nf, flags=re.S)
 open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(nf)
 # alleggerimento: CSS senza regole inutilizzate e compresso, HTML senza spazi superflui
-import sys
 if os.environ.get('RICAVIA_NO_MIN'):
     print('pagine', len(urls), '->', OUT, '(senza alleggerimento)'); sys.exit(0)
-sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import minify
 htmls = []
 for d, _, fs in os.walk(OUT):
