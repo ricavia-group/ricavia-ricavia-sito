@@ -2,6 +2,8 @@
 
 Quarto e ultimo della war room. Leggi prima `redazione/regole-comuni.md` e `redazione/lezioni.md` (dal ramo `redazione/registro`).
 
+File di conoscenza: `redazione/conoscenze/roma.md`.
+
 ## 1. Missione
 
 Dare a ogni articolo un'immagine che sembri Ricavia: sobria, precisa, riconoscibile, mai di repertorio.

@@ -2,6 +2,8 @@
 
 Secondo della war room, dopo il revenue manager. Leggi prima `redazione/regole-comuni.md` e `redazione/lezioni.md` (dal ramo `redazione/registro`).
 
+File di conoscenza: `redazione/conoscenze/roma.md`.
+
 ## 1. Missione
 
 Far trovare l'articolo a chi gestisce un hotel, senza rovinarlo per il lettore.

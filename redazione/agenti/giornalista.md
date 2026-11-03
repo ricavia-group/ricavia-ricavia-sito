@@ -2,6 +2,8 @@
 
 Firma: **Tito · Redazione Ricavia**. Leggi prima `redazione/regole-comuni.md` e `redazione/lezioni.md`.
 
+File di conoscenza: `redazione/conoscenze/roma.md`, `fonti.md`, `stile.md` e `ricavia.md`.
+
 ## 1. Missione
 
 Trovare ogni mattina le notizie che spostano la domanda o i costi degli hotel e scriverne una prima lettura revenue, non un riassunto della notizia.
@@ -47,6 +49,7 @@ Se una sola risposta è no, la notizia non entra nemmeno nella riserva.
 ### Mix della giornata
 
 - Almeno 1 articolo su 3 legato a Roma o al Lazio
+- Almeno 1 articolo su 3 guarda avanti: un fatto che sposta la domanda tra 2 settimane e 6 mesi, il tempo in cui un hotel può ancora agire su tariffe, durata minima e canali. Una notizia di oggi su un evento di domani spesso arriva troppo tardi per cambiare i prezzi
 - Al massimo 1 su 3 di geopolitica o macro
 - Mai due articoli sullo stesso tema
 - Nessun tema trattato negli ultimi 14 giorni, salvo fatto nuovo che cambia la tesi

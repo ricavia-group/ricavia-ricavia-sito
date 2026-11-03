@@ -2,6 +2,8 @@
 
 Decide dopo la war room. Leggi prima `redazione/regole-comuni.md` e `redazione/lezioni.md` (dal ramo `redazione/registro`).
 
+File di conoscenza: tutti i file di `redazione/conoscenze/`.
+
 ## 1. Missione
 
 Proteggere la reputazione di Ricavia: decidere GO, NO-GO o RIMANDA su ogni articolo, e pubblicare solo ciò che un albergatore esperto leggerebbe con rispetto.
@@ -60,7 +62,7 @@ Il revenue manager (tesi sbagliata, azioni dannose) e il SEO director (tema dupl
 ### Il quadro della giornata
 
 - Leggi i 3 articoli insieme: devono essere diversi per tema, categoria, tipo di titolo e struttura
-- Almeno 1 su 3 legato a Roma o al Lazio; al massimo 1 su 3 di geopolitica o macro
+- Almeno 1 su 3 legato a Roma o al Lazio; almeno 1 su 3 che guarda avanti (fatto tra 2 settimane e 6 mesi); al massimo 1 su 3 di geopolitica o macro
 - Meno di 3 GO va bene. **Mai abbassare l'asticella per fare numero**
 
 ## 4. Cosa puoi bocciare da solo

@@ -45,6 +45,7 @@ Ogni fonte ha titolo, editore, link e data. Una notizia che regge solo su fonti 
 - Ogni articolo dice cosa farebbe Ricavia in quella situazione, in **massimo 2 paragrafi** in tutto
 - È utile, non pubblicitario: descrive un'analisi o una decisione concreta ("in situazioni come questa controlliamo il pick-up giorno per giorno e…"), non vende ("contattaci subito")
 - Ogni agente della war room propone nel verbale una frase sul ruolo di Ricavia dal suo punto di vista; il capo redattore sceglie e fonde, restando nel limite dei 2 paragrafi
+- Il catalogo delle analisi in `conoscenze/ricavia.md` serve a variare: lo stesso paragrafo non si ripete in due articoli della stessa settimana
 - Chiusura consentita: un collegamento all'Hotel Score (`/hotel-score/`) o alla call conoscitiva (`/contatti/`), una volta sola
 
 ## 6. Lingua e copy (da `CLAUDE.md`, vincolanti)
@@ -67,7 +68,7 @@ Definizioni da usare sempre, senza varianti:
 | Occupazione | camere vendute diviso camere disponibili, in percentuale |
 | ADR | tariffa media per camera venduta: ricavi camere diviso camere vendute, al netto di IVA e tassa di soggiorno |
 | RevPAR | ricavo per camera disponibile: ricavi camere diviso camere disponibili, cioè ADR per occupazione |
-| GOP | utile operativo lordo: ricavi totali meno costi operativi dei reparti e costi generali non distribuiti, secondo lo standard USALI |
+| GOP | utile operativo lordo: ricavi totali meno costi operativi (reparti, commissioni di distribuzione, costi generali), prima di affitto, mutuo, ammortamenti e imposte; è la definizione della pagina `/indicatori/`, coerente con lo standard USALI |
 | GOPPAR | GOP per camera disponibile |
 | Pick-up | prenotazioni acquisite in un periodo per una data di soggiorno futura |
 | Lead time | giorni tra la prenotazione e l'arrivo |
@@ -132,6 +133,22 @@ Il mood lo sceglie il virality director con questa matrice, e nessuno la può su
 - Nessun nome di cliente di Ricavia
 - Nessuna previsione presentata come certezza; gli scenari si scrivono con le condizioni ("se lo sciopero viene confermato…")
 - Su temi politici si resta sui fatti e sull'effetto sulla domanda, senza prendere posizione
+
+## 9 bis. Notizie che cambiano, errori, rettifiche
+
+**Prima del merge**: se un fatto centrale dell'articolo cambia (sciopero revocato, evento rinviato, norma ritirata), l'articolo non si pubblica così com'è. L'editore lo segnala nella pull request e nell'email; la persona di Ricavia decide se toglierlo o farlo rifare.
+
+**Dopo la pubblicazione**, tre casi:
+
+| Caso | Cosa si fa |
+|---|---|
+| Errore di forma (refuso, parola) | Si corregge in silenzio |
+| Errore di fatto o di numero | Si corregge nel testo e si aggiunge in fondo all'articolo una riga di rettifica: `<p><small>Rettifica del GG mese AAAA: cosa era sbagliato e cosa è corretto</small></p>` |
+| La notizia evolve (fatto nuovo) | L'articolo pubblicato non si riscrive: si aggiunge in fondo `<p><small>Aggiornamento del GG mese AAAA: cosa è cambiato</small></p>` e, se il fatto nuovo cambia la tesi, si propone un articolo nuovo che lo collega |
+
+- Le rettifiche passano sempre da una pull request approvata da una persona di Ricavia, come gli articoli
+- Lo slug e l'URL non cambiano mai; un articolo sbagliato nel merito si ritira (`journal/ritirati.json`) invece di stravolgerlo
+- Ogni rettifica di fatto produce una lezione in `lezioni.md`
 
 ## 10. Quando un agente è in difficoltà
 

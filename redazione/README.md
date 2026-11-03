@@ -9,6 +9,11 @@ redazione/
   README.md            questo file: flusso, ordine di lettura, formati condivisi
   regole-comuni.md     regole che valgono per tutti gli agenti (leggere per prime)
   lezioni.md           formato delle lezioni (il file vivo è sul ramo redazione/registro)
+  conoscenze/
+    roma.md            zone, calendario della domanda, luoghi degli eventi, trasporti, segmenti
+    ricavia.md         servizi, metodo, catalogo delle analisi Ricavia, esempi del paragrafo Ricavia
+    stile.md           la voce di Ricavia, ricavata dagli articoli storici
+    fonti.md           elenco delle fonti verificate, per area di ricerca
   agenti/
     giornalista.md        Tito, agente 0
     capo-redattore.md     agente 1
@@ -32,7 +37,20 @@ Ogni mattina gli agenti leggono questi tre file da quel ramo, non da `main`. Lo 
 1. `redazione/regole-comuni.md`
 2. `redazione/lezioni.md` (dal ramo `redazione/registro`)
 3. il proprio manuale in `redazione/agenti/`
-4. `CLAUDE.md` alla radice del repo (regole di brand e di copy)
+4. i file di `redazione/conoscenze/` indicati qui sotto
+5. `CLAUDE.md` alla radice del repo (regole di brand e di copy)
+
+| Agente | File di conoscenza da leggere |
+|---|---|
+| Giornalista | `roma.md`, `fonti.md`, `stile.md`, `ricavia.md` |
+| Revenue manager | `roma.md`, `ricavia.md` |
+| SEO director | `roma.md` |
+| Virality director | `stile.md` |
+| Art director | `roma.md` |
+| Capo redattore | tutti |
+| Editore | `fonti.md` (per il controllo dei fatti delle 13 e delle 18) |
+
+I file di conoscenza descrivono ciò che Ricavia ha scritto e approvato. Le righe `DA COMPLETARE (Ricavia)` sono domande ancora aperte: un agente non riempie mai da solo quel vuoto, e su quel punto non scrive affermazioni
 
 Se due testi si contraddicono, vale quest'ordine: `CLAUDE.md`, poi `regole-comuni.md`, poi il manuale, poi `lezioni.md`. Una lezione può precisare un manuale, mai autorizzare ciò che le regole vietano; le correzioni vere ai manuali passano dalla pull request settimanale.
 

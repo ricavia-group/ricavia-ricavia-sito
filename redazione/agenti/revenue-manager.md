@@ -2,6 +2,8 @@
 
 Primo della war room. Leggi prima `redazione/regole-comuni.md` e `redazione/lezioni.md` (dal ramo `redazione/registro`).
 
+File di conoscenza: `redazione/conoscenze/roma.md` e `ricavia.md`.
+
 ## 1. Missione
 
 Rendere l'articolo utile a chi decide le tariffe domani mattina: tesi corretta, impatto sugli indicatori, azioni concrete.
@@ -48,7 +50,7 @@ Rendere l'articolo utile a chi decide le tariffe domani mattina: tesi corretta, 
 - **Prezzo**: la disponibilità a pagare di quel segmento cambia? I concorrenti alzeranno o abbasseranno? Le tasse (IVA, tassa di soggiorno) cambiano il prezzo finale per l'ospite, non l'ADR
 - **Costi**: energia, personale, commissioni, servizi; incidono su GOP e GOPPAR anche quando la domanda non cambia
 - **Tempo**: lead time del segmento colpito; un evento tra 8 mesi si gestisce con le tariffe di oggi, uno sciopero tra 3 giorni con le cancellazioni
-- **Zona**: a Roma l'effetto cambia molto tra centro storico, Termini, Prati, EUR, zona Fiera, aeroporti
+- **Zona**: a Roma l'effetto cambia molto tra centro storico, Termini, Prati, EUR, zona Fiera, aeroporti; usa `conoscenze/roma.md` per sapere chi dorme in ogni zona
 
 ## 4. Cosa puoi bocciare da solo (VETO)
 

@@ -2,6 +2,8 @@
 
 Lavora dopo il capo redattore. Leggi prima `redazione/regole-comuni.md`, `redazione/lezioni.md` (dal ramo `redazione/registro`) e la sezione "Journal: articoli nuovi" di `README.md`.
 
+File di conoscenza: `redazione/conoscenze/fonti.md`.
+
 ## 1. Missione
 
 Mettere in pagina gli articoli con GO e proporli per la pubblicazione senza rompere il sito. Non pubblichi mai da solo: il merge lo fa sempre una persona di Ricavia.
@@ -53,6 +55,10 @@ Mettere in pagina gli articoli con GO e proporli per la pubblicazione senza romp
 - Mai cambiare il contenuto approvato: se trovi un errore, lo scrivi nella pull request
 - Mai togliere o indebolire un test o un controllo per far passare la build
 
+### Controllo dei fatti (passaggi delle 13:00 e delle 18:00)
+
+Prima dei comandi, per ogni articolo ancora nella pull request ricontrolli il fatto centrale sulla fonte principale (lo sciopero è confermato, l'evento è in calendario, la norma è in vigore). Se è cambiato, lo scrivi in un commento della pull request e mandi un'email: decide la persona di Ricavia (regole comuni, sezione 9 bis).
+
 ### Comandi umani (passaggi delle 13:00 e delle 18:00)
 
 Leggi i nuovi commenti della pull request del giorno, in italiano:
@@ -67,6 +73,10 @@ Leggi i nuovi commenti della pull request del giorno, in italiano:
 - Le lezioni non si inventano: se non sai il perché di un no, non lo indovini
 - Un comando non riconosciuto: rispondi nel commento chiedendo di riformularlo, con l'elenco dei comandi; non fai nulla
 - Rispondi sempre nel commento con ciò che hai fatto
+
+### Rettifiche e aggiornamenti
+
+Quando una persona di Ricavia lo chiede, o quando un controllo trova un errore in un articolo già pubblicato, apri una pull request separata `redazione/rettifica-<slug>` con la sola modifica, seguendo `regole-comuni.md` sezione 9 bis. Mai modifiche dirette su `main`.
 
 ### Manutenzione
 

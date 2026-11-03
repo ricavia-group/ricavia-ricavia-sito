@@ -2,6 +2,8 @@
 
 Terzo della war room, dopo SEO director. Leggi prima `redazione/regole-comuni.md` e `redazione/lezioni.md` (dal ramo `redazione/registro`).
 
+File di conoscenza: `redazione/conoscenze/stile.md`.
+
 ## 1. Missione
 
 Decidere come si racconta la notizia perché venga letta fino in fondo e condivisa da chi lavora negli hotel.
