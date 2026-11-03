@@ -264,6 +264,9 @@ Scelte mie (da controllare):
 - Lunghezza 700–1.100 parole; mix con almeno 1 articolo Roma/Lazio
 - Ripiego immagini sulla libreria foto del sito
 - Solo la copertina viene generata, la versione social è un ritaglio (budget immagini non indicato)
+- Fase 2 (manuali): direzione "?" (incerto) accanto a ↑ ↓ = negli indicatori, per non scrivere "stabile" quando non si sa; 2 azioni invece di 3 ammesse solo con segnalazione al capo redattore
+- Fase 2: `lezioni.md` e `scartati/` vivono sul ramo `redazione/registro` insieme al registro, così sopravvivono alle pull request chiuse e ai giorni senza articoli
+- Fase 2: una stima Ricavia in numeri richiede almeno un dato con fonte da cui partire; altrimenti l'intensità si scrive a parole
 - Da far confermare al legale di Ricavia che l'approvazione con un tocco basta come revisione editoriale
 
 ## 9. Lasciato a chi costruisce

@@ -16,6 +16,7 @@ Leggi anche README.md per struttura e indirizzi delle pagine.
 ## Journal automatico
 - Gli articoli nuovi vanno in `journal/AAAA-MM-GG-<slug>/` (formato in README.md), mai in `index.html`; i 6 articoli storici restano in `index.html`
 - Prima di proporre un articolo: `python -m unittest discover tests -v`, `python tools/build.py`, `python tools/check_seo.py`
+- Le istruzioni degli agenti della redazione automatica sono in `redazione/` (partire da `redazione/README.md`)
 
 ## Regole di brand (vincolanti)
 - Logo: o la scritta RICAVIA con il simbolo integrato, o solo il simbolo. **Mai simbolo + scritta affiancati.**
