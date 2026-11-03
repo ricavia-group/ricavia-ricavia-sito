@@ -43,6 +43,52 @@ Le anteprime dei rami usano `npx wrangler preview`: il blocco vuoto `previews` i
 - Per aggiungere una pagina commerciale, aggiornare `PAGES` in `tools/build.py` e i metadati in `tools/seo.json`.
 - Non modificare direttamente `site/`: la build la ricrea. Non usare `tools/optimize_images.py` come parte della build: è uno strumento una tantum per convertire foto sorgenti.
 
+## Journal: articoli nuovi
+
+Gli articoli nuovi stanno in `journal/`, uno per cartella; i sei articoli storici restano in `index.html` (elenco in `tests/storici.json`).
+
+```text
+journal/
+  ritirati.json                  slug ritirati (lista JSON, anche vuota)
+  AAAA-MM-GG-<slug>/
+    meta.json                    metadati (vedi sotto)
+    articolo.html                corpo dell'articolo
+    hero.webp                    immagine di apertura (obbligatoria)
+    social.jpg                   anteprima social (facoltativa)
+```
+
+Il nome della cartella deve essere `data-slug`. Le cartelle che iniziano con `_` o `.` sono ignorate. `meta.json` e `articolo.html` vanno insieme.
+
+Campi obbligatori di `meta.json` (tutti testi non vuoti, salvo `related`):
+
+- `slug`: minuscole, numeri e trattini; unico e stabile dopo la pubblicazione
+- `data`: `AAAA-MM-GG`, uguale al prefisso della cartella
+- `categoria`: una tra `zone`, `mercato`, `prezzi`, `regole`, `dati`, `eventi`, `trasporti`, `macro`
+- `titolo`, `sottotitolo`: unici tra tutti gli articoli
+- `title_seo`: termina con ` · Ricavia`, al massimo 60 caratteri
+- `description`: 140-160 caratteri, senza `…` e senza punto finale
+- `related_intro`: frase introduttiva dei collegamenti correlati
+- `related`: lista non vuota di `{"label": "...", "url": "/..."}` con percorsi interni (non `//` né `/\`)
+- `alt`: testo alternativo di `hero.webp`
+
+Facoltativo: `autore` (predefinito `Tito · Redazione Ricavia`). Altri campi (per esempio `mood`, `tesi`, `fonti`, `verbale`) sono ignorati dalla build.
+
+Il corpo non può contenere `script`, `iframe`, `h1`, `h2`, `object`, `embed`, `style`, `base`, `meta`, `form`, `link`, attributi `on...`, `srcdoc`, schemi `javascript:`/`vbscript:`/`data:` o entità dentro `href`/`src`. Titoli di sezione con `h3`.
+
+Per ritirare un articolo: aggiungere lo slug a `journal/ritirati.json` e cancellare la sua cartella; l'URL risponde con redirect 301 a `/osservatorio/`. La build fallisce se la cartella esiste ancora.
+
+`/osservatorio/` mostra i 12 articoli nuovi più recenti; gli altri sono nell'archivio mensile `/osservatorio/archivio/AAAA-MM/`. Una cartella con errori fa fallire la build con un messaggio che inizia dal nome della cartella.
+
+Variabili d'ambiente: `RICAVIA_JOURNAL` usa un'altra cartella al posto di `journal/` (usata dai test); `RICAVIA_NO_MIN` salta la minificazione.
+
+## Test e controlli automatici
+
+```sh
+python -m unittest discover tests -v
+```
+
+Su GitHub il workflow `.github/workflows/controlli.yml` (job `controlli`) esegue test, `python tools/build.py` e `python tools/check_seo.py` a ogni pull request e a ogni push su `main`.
+
 ## Indirizzi pubblicati
 
 | Pagina | URL |
