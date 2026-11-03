@@ -10,6 +10,7 @@ import html, json, os, re, shutil
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'site')
 DOMAIN = 'https://ricavia.com'
+JOURNAL = os.environ.get('RICAVIA_JOURNAL', os.path.join(ROOT, 'journal'))
 with open(os.path.join(ROOT, 'tools', 'seo.json'), encoding='utf-8') as f:
     SEO = json.load(f)
 
