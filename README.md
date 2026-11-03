@@ -64,7 +64,8 @@ Campi obbligatori di `meta.json` (tutti testi non vuoti, salvo `related`):
 - `slug`: minuscole, numeri e trattini; unico e stabile dopo la pubblicazione
 - `data`: `AAAA-MM-GG`, uguale al prefisso della cartella
 - `categoria`: una tra `zone`, `mercato`, `prezzi`, `regole`, `dati`, `eventi`, `trasporti`, `macro`
-- `titolo`, `sottotitolo`: unici tra tutti gli articoli
+- `titolo`: unico tra tutti gli articoli (come lo `slug`)
+- `sottotitolo`: testo non vuoto
 - `title_seo`: termina con ` · Ricavia`, al massimo 60 caratteri
 - `description`: 140-160 caratteri, senza `…` e senza punto finale
 - `related_intro`: frase introduttiva dei collegamenti correlati
@@ -73,7 +74,7 @@ Campi obbligatori di `meta.json` (tutti testi non vuoti, salvo `related`):
 
 Facoltativo: `autore` (predefinito `Tito · Redazione Ricavia`). Altri campi (per esempio `mood`, `tesi`, `fonti`, `verbale`) sono ignorati dalla build.
 
-Il corpo non può contenere `script`, `iframe`, `h1`, `h2`, `object`, `embed`, `style`, `base`, `meta`, `form`, `link`, attributi `on...`, `srcdoc`, schemi `javascript:`/`vbscript:`/`data:` o entità dentro `href`/`src`. Titoli di sezione con `h3`.
+Il corpo non può contenere `script`, `iframe`, `h1`, `h2`, `object`, `embed`, `style`, `base`, `meta`, `form`, `link`, attributi `on...`, `srcdoc`, schemi `javascript:`/`vbscript:`, valori `data:` in `href`/`src`/`action`/`formaction` o entità dentro `href`/`src`. Titoli di sezione con `h3`.
 
 Per ritirare un articolo: aggiungere lo slug a `journal/ritirati.json` e cancellare la sua cartella; l'URL risponde con redirect 301 a `/osservatorio/`. La build fallisce se la cartella esiste ancora.
 
