@@ -109,6 +109,8 @@ for _a in NUOVI:
     ART_URL[_k] = '/osservatorio/%s/' % _a['slug']
     ARTS.append((_k, journal.template(_a)))
 NUOVI_PER_CHIAVE = {'j-' + _a['slug']: _a for _a in NUOVI}
+MESI_IT = journal.MESI
+MESI_NUOVI = sorted({a['data'][:7] for a in NUOVI}, reverse=True)
 
 
 def resolve_photos(h):
@@ -283,6 +285,13 @@ def page(pid, slug, title):
     if pid == 'pg-osservatorio':
         content = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
                          lambda m: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (m.group(1), ART_URL.get(m.group(1), '#'), m.group(2)), content)
+    if pid == 'pg-osservatorio' and NUOVI:
+        lista = '<div class="jr-list">' + journal.scheda(NUOVI[0], True) + (
+            '<div class="jr-grid">' + ''.join(journal.scheda(a) for a in NUOVI[1:12]) + '</div>' if NUOVI[1:] else '') + '</div>\n    '
+        content = content.replace('<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', lista + '<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', 1)
+        arch = '<nav class="jr-arch" aria-label="Archivio del Journal"><span>Archivio</span>' + ''.join(
+            '<a href="/osservatorio/archivio/%s/">%s %s</a>' % (m, MESI_IT[int(m[5:]) - 1].capitalize(), m[:4]) for m in MESI_NUOVI) + '</nav>\n    '
+        content = content.replace('<div class="jz ar" id="os-zone">', arch + '<div class="jz ar" id="os-zone">', 1)
     if pid in OS_BLOCKS:
         content = os_block(pid, content)
     parts = chrome + content + scripts
@@ -342,8 +351,7 @@ def art_page(aid, art):
     desc = desc if len(desc) <= 160 else desc[:157].rsplit(' ', 1)[0] + '…'
     desc = SEO['articles'][aid].get('description', desc)
     date = re.search(r'<small>(\d{1,2}) (\w+) (\d{4})', art)
-    MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
-    iso = '%s-%02d-%02d' % (date.group(3), MESI.index(date.group(2)) + 1, int(date.group(1))) if date and date.group(2) in MESI else None
+    iso = '%s-%02d-%02d' % (date.group(3), MESI_IT.index(date.group(2)) + 1, int(date.group(1))) if date and date.group(2) in MESI_IT else None
     body_html = art.replace('<h2>', '<h1 class="jr-h1">', 1).replace('</h2>', '</h1>', 1)
     body_html = resolve_photos(body_html)
     # sottotitoli dell'articolo come H2 (stesso aspetto degli H3 di prima)
@@ -413,8 +421,52 @@ def art_page(aid, art):
     return url
 
 
+def archive_page(mese, articoli):
+    """Pagina d'archivio di un mese ('AAAA-MM'); restituisce l'URL assoluto."""
+    nome = '%s %s' % (MESI_IT[int(mese[5:]) - 1], mese[:4])
+    h1 = 'Il Journal di ' + nome
+    title = 'Journal di %s · Ricavia' % nome
+    desc = ('Gli articoli dell’Osservatorio Ricavia di %s: eventi, trasporti, mercato e prezzi '
+            'letti in chiave revenue per chi gestisce un hotel') % nome
+    path = '/osservatorio/archivio/%s/' % mese
+    url = DOMAIN + path
+    ART_DATE[path] = max(a['data'] for a in articoli)
+    ldata = {"@context": "https://schema.org", "@graph": [
+        {'@type': 'CollectionPage', '@id': url + '#webpage', 'url': url, 'name': h1, 'description': desc,
+         'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'}},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Osservatorio", "item": DOMAIN + "/osservatorio/"},
+            {"@type": "ListItem", "position": 3, "name": h1, "item": url}]}]}
+    ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-osservatorio'], re.S)
+    parts = chrome + '<main class="jr-pgm"><a class="jr-back" href="/osservatorio/">← Osservatorio · Il Journal</a>' + \
+        '<div class="jr-arp"><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div></main>' % (
+            html.escape(h1), ''.join(journal.scheda(a) for a in articoli)) + (ft.group(0) if ft else '') + scripts
+    parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-osservatorio'))
+    meta = '''<title>{t}</title>
+<meta name="description" content="{d}">
+<meta name="robots" content="max-image-preview:large">
+<link rel="canonical" href="{u}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ricavia">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="{t}">
+<meta property="og:description" content="{d}">
+<meta property="og:url" content="{u}">
+<meta property="og:image" content="{i}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{ld}</script>'''.format(t=html.escape(title), d=html.escape(desc, quote=True), u=url, i=og_image('pg-osservatorio'), ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
+    doc = '<!doctype html>\n<html lang="it" class="mp mp-in mp-art">\n<head>\n%s\n%s\n<script>window.__MP=true</script>\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (fix_assets(head).strip(), meta, SHIM + parts)
+    d = os.path.join(OUT, path.strip('/'))
+    os.makedirs(d, exist_ok=True)
+    open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(doc)
+    return url
+
+
 ART_DATE = {}
 urls += [art_page(a, x) for a, x in ARTS]
+urls += [archive_page(m, [a for a in NUOVI if a['data'].startswith(m)]) for m in MESI_NUOVI]
 # data dell'ultima modifica: per gli articoli la data di pubblicazione, per le pagine l'ultimo salvataggio del sito
 try:
     LAST = subprocess.run(['git', 'log', '-1', '--format=%cs'], cwd=ROOT, capture_output=True, text=True).stdout.strip()
