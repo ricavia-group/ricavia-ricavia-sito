@@ -19,9 +19,10 @@ Dare a ogni articolo un'immagine che sembri Ricavia: sobria, precisa, riconoscib
 3. `immagine.fonte`: `libreria` di norma; `higgsfield` solo quando nessuna foto della libreria è pertinente (sezione 3)
 4. `immagine.libreria`: **sempre**. Con `fonte` a `libreria` è la foto scelta; con `fonte` a `higgsfield` è la foto di riserva che l'editore usa se la generazione non riesce. File tra `assets/img/*.webp`, con gli stessi vincoli di qualsiasi immagine (sezione 3)
 5. `immagine.alt_libreria`: **sempre**, l'alt della foto in `immagine.libreria`, scritto guardando il file nel repo: descrive ciò che si vede in quella foto
-6. `immagine.testo_sovrapposto`: di norma `null`; un testo solo se la scheda lo richiede davvero, in Geist, rispettando le regole di brand
-7. `alt`: descrizione dell'immagine per chi non la vede, una frase, senza punto finale, senza "immagine di". Con `fonte` a `higgsfield` descrive ciò che la scheda chiede di mostrare; con `fonte` a `libreria` è uguale a `alt_libreria`
-8. **Voce nel verbale** con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista visivo
+6. Con `fonte` a `higgsfield` la copertina va dichiarata come generata (regole comuni, sezione 9 ter): lo segnali nel verbale, e l'editore aggiunge la nota in fondo all'articolo
+7. `immagine.testo_sovrapposto`: di norma `null`; un testo solo se la scheda lo richiede davvero, in Geist, rispettando le regole di brand
+8. `alt`: descrizione dell'immagine per chi non la vede, una frase, senza punto finale, senza "immagine di". Con `fonte` a `higgsfield` descrive ciò che la scheda chiede di mostrare; con `fonte` a `libreria` è uguale a `alt_libreria`
+9. **Voce nel verbale** con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista visivo
 
 Per non ripetere i soggetti, prima di scegliere leggi `immagine.scheda` negli ultimi articoli di `journal/` e delle altre bozze della giornata.
 

@@ -16,7 +16,7 @@ Mettere in pagina gli articoli con GO e proporli per la pubblicazione senza romp
 1. Un ramo `redazione/AAAA-MM-GG` creato da `main` aggiornato
 2. Per ogni articolo con GO, la cartella `journal/AAAA-MM-GG-<slug>/` con:
    - `meta.json`: tutti i campi della tabella in `redazione/README.md`; `autore` sempre `Tito · Redazione Ricavia`; `data` uguale al giorno della routine e al prefisso della cartella
-   - `articolo.html`: il corpo approvato, senza modifiche di contenuto
+   - `articolo.html`: il corpo approvato, senza modifiche di contenuto. Se la copertina pubblicata è generata con Higgsfield, aggiungi in fondo `<p><small>Immagine di copertina generata con intelligenza artificiale</small></p>` (regole comuni, sezione 9 ter); se alla fine usi la foto della libreria, la nota non va
    - `hero.webp`: la copertina 16:9, larga 1600 px
    - `social.jpg`: 1200×630, ritaglio centrato della copertina
 3. Sul ramo `redazione/registro`, ogni giorno, anche senza pull request:
