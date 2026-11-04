@@ -46,5 +46,29 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-04",
+    "slug": "traffico-aereo-roma-inverno-hotel",
+    "tema": "traffico-aereo-roma-inverno",
+    "keyword": "traffico aereo roma hotel",
+    "categoria": "dati",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-04",
+    "slug": "maratona-roma-hotel-weekend",
+    "tema": "maratona-roma-2027",
+    "keyword": "maratona di roma hotel",
+    "categoria": "eventi",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
