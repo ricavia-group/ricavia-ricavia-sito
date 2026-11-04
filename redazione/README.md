@@ -7,6 +7,7 @@ Qui vivono le istruzioni della redazione automatica che ogni giorno propone fino
 ```text
 redazione/
   README.md            questo file: flusso, ordine di lettura, formati condivisi
+  routine.md           istruzioni per la routine cloud (mattina, comandi, settimana)
   regole-comuni.md     regole che valgono per tutti gli agenti (leggere per prime)
   lezioni.md           formato delle lezioni (il file vivo è sul ramo redazione/registro)
   conoscenze/
