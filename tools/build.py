@@ -485,6 +485,9 @@ open(os.path.join(OUT, 'sitemap.xml'), 'w').write(
 # indirizzi senza barra finale: reindirizzamento permanente (301) invece del 307 automatico
 open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % (u.replace(DOMAIN, '').rstrip('/'), u.replace(DOMAIN, '')) for u in urls if u.replace(DOMAIN, '') != '/') +
     ''.join('/osservatorio/%s/ /osservatorio/ 301\n/osservatorio/%s /osservatorio/ 301\n' % (s, s) for s in RITIRATI))
+# chiave IndexNow (Bing e altri motori): il file deve restare raggiungibile alla radice del sito
+INDEXNOW_KEY = '77a8078505659e943f2e417aafa1d9db'
+open(os.path.join(OUT, INDEXNOW_KEY + '.txt'), 'w').write(INDEXNOW_KEY)
 open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n' % DOMAIN)
 shutil.copy(os.path.join(ROOT, 'tools', 'headers'), os.path.join(OUT, '_headers'))
 # pagina 404: intestazione e piè di pagina della Home, messaggio semplice
