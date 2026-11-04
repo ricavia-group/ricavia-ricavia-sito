@@ -1,0 +1,380 @@
+{
+  "titolo": "Maratona di Roma: il pettorale si ritira entro sabato e sposta la domanda sul 13 marzo",
+  "tesi": "La Maratona di Roma 2027 si corre domenica 14 marzo e il pettorale si ritira solo di persona all'Expo del Circo Massimo, aperto da giovedì 11 a sabato 13 alle 18, senza spedizione: per chi corre e arriva da fuori Roma la notte di sabato è quasi obbligata e quelle di giovedì e venerdì sono possibili notti di arrivo, mentre lo stesso sabato Italia-Galles porta domanda intorno all'Olimpico; poiché l'edizione 2026 era già esaurita a inizio dicembre con 36 mila iscritti, il 70-75% dall'estero, chi gestisce un hotel vicino all'Expo e alla metro B deve controllare subito le prenotazioni già acquisite per l'11, il 12 e il 13 marzo, prezzare il sabato sopra il venerdì e distinguere la tariffa del giovedì da un giovedì ordinario solo se il pick-up di quella notte si muove",
+  "tema": "maratona-roma-2027",
+  "categoria": "eventi",
+  "slug": "maratona-roma-hotel-weekend",
+  "title_seo": "Maratona di Roma e hotel: la notte prima del via · Ricavia",
+  "description": "Maratona di Roma del 14 marzo 2027: il pettorale si ritira di persona entro sabato e fissa le notti di arrivo. Come controllare prenotazioni e prezzi",
+  "keyword": {
+    "principale": "Maratona di Roma hotel",
+    "secondarie": [
+      "tariffe hotel Maratona di Roma",
+      "Maratona di Roma 14 marzo 2027",
+      "pick-up weekend eventi Roma"
+    ]
+  },
+  "related_intro": "Per prezzare notte per notte le date di un grande evento, approfondisci",
+  "related": [
+    {
+      "label": "il calendario della domanda di Roma",
+      "url": "/osservatorio/calendario-roma-dodici-mesi-domanda-letti/"
+    },
+    {
+      "label": "occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "fonti": [
+    {
+      "titolo": "32ª edizione Run Rome The Marathon, domenica 14 marzo 2027: regolamento",
+      "editore": "Run Rome The Marathon",
+      "url": "https://www.runromethemarathon.com/wp-content/uploads/2026/04/RRTM27-regolamento-italiano-23-4-2026.pdf",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Expo village",
+      "editore": "Run Rome The Marathon",
+      "url": "https://www.runromethemarathon.com/en/expo-village-2/",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Run Rome The Marathon, nuova data 14 marzo 2027",
+      "editore": "Corriere dello Sport",
+      "url": "https://www.corrieredellosport.it/news/altri-sport/running/maratona-di-roma/2026/04/23-148141969/run_rome_the_marathon_nuova_data_14_marzo_2027_infront_italy_e_corriere_dello_sport_stadio_si_aggiudicano_il_bando_per_l_",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Maratona di Roma sold out, record di 36mila partecipanti",
+      "editore": "ANSA",
+      "url": "https://www.ansa.it/amp/sito/notizie/sport/altrisport/2025/12/04/maratona-di-roma-sold-out-record-di-36mila-partecipanti_a2bb20c5-3b8a-4bf8-aad1-fca211c4cd11.html",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Roma record, 36mila in maratona da 166 Paesi",
+      "editore": "FIDAL",
+      "url": "https://www.fidal.it/content/Roma-record-36mila-in-maratona-da-166-Paesi/183003",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Run Rome The Marathon 2027 (home page)",
+      "editore": "Run Rome The Marathon",
+      "url": "https://www.runromethemarathon.com/",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Guinness Sei Nazioni Maschile 2027",
+      "editore": "Federazione Italiana Rugby",
+      "url": "https://www.federugby.it/gm6n/",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Sei Nazioni, ufficiale il calendario dell'edizione 2027: l'Italrugby esordirà in trasferta",
+      "editore": "Corriere dello Sport",
+      "url": "https://www.corrieredellosport.it/news/altri-sport/rugby/sei-nazioni/2026/03/09-147163805/sei_nazioni_ufficiale_il_calendario_dell_edizione_2027_l_italrugby_esordir_in_trasferta",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Run Rome The Marathon 2027 (home page in inglese)",
+      "editore": "Run Rome The Marathon",
+      "url": "https://www.runromethemarathon.com/en/",
+      "data": "2026-11-04"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Evento a 4 mesi annunciato dall'organizzatore, non trattato da nessun articolo; il precedente del 2026 (pettorali esauriti a inizio dicembre) colloca nelle prossime settimane il momento in cui un hotel può ancora agire sul prezzo",
+      "correzioni": [
+        "Tolta la partenza dai Fori Imperiali per il 2027: il regolamento non indica il luogo, è il percorso 2026",
+        "Quota di stranieri: 70% attribuito all'ANSA e 75% al Corriere dello Sport, entrambi letti; tolto il link Askanews, che riporta solo la cifra di Onorato (oltre 25mila stranieri)",
+        "Stato delle iscrizioni 2027 riscritto come non chiaro (home italiana 'iscriviti ora', pagina inglese 'waiting list')",
+        "Ritiro del pettorale di persona e senza spedizione, confermato dal regolamento; aggiunta la fermata Circo Massimo della metro B a 50 metri dall'Expo",
+        "Bando: assegnato da Roma Capitale per le edizioni 2027-2031 (Corriere dello Sport); 166 Paesi attribuiti alla FIDAL"
+      ],
+      "segnalazioni": [
+        "Fonti aperte e lette direttamente il 4 novembre (curl): regolamento 2027, pagina Expo, home dell'organizzazione, ANSA, FIDAL, Askanews, Corriere dello Sport. Confermati: data e orario di partenza (regolamento), ritiro di persona senza spedizione (regolamento), Expo al Circo Massimo 11-13 marzo con sabato fino alle 18 (pagina Expo), edizione 2026 esaurita a più di tre mesi dalla gara con 36 mila iscritti (ANSA, confermato da FIDAL: 'sold out da quattro mesi')",
+        "Non confermato: lo stato delle iscrizioni 2027. La home italiana invita a iscriversi, la pagina inglese dell'Expo ha un pulsante 'waiting list' verso la stessa piattaforma, che non mostra lo stato senza JavaScript. Il testo lo scrive come incerto; la tesi regge in entrambi i casi",
+        "Non confermato: il luogo di partenza 2027 (il regolamento dice solo 'a Roma'); il testo non lo nomina. La pagina Expo non scrive l'anno, ma i giorni della settimana corrispondono al 2027",
+        "Quota di stranieri 2026 diversa tra fonti: 70% (ANSA, dicembre 2025) e 75% (Corriere dello Sport, aprile 2026), citate entrambe. Il Corriere dello Sport è anche socio dell'organizzazione",
+        "La home dell'organizzazione ha una sezione di offerte di alloggio per i corridori vicino alla partenza: canale non citato nel testo, il revenue manager valuta se serve",
+        "Zone: il testo parla di hotel 'a distanza di cammino o di metro dall'Expo e dal percorso' senza nominare quartieri, perché le zone che beneficiano del Circo Massimo sono DA COMPLETARE in roma.md",
+        "Somiglianza con il Sei Nazioni pubblicato il 3 novembre: stessa categoria e sabato 13 marzo in comune. Tesi, zone e titolo diversi; il SEO director verifica il duplicato; se lo giudica tale, la riserva parte dal candidato 6",
+        "Nessun numero di camere o presenze attese per il 2027: intensità scritta a parole",
+        "Azione 3 (colazione anticipata la domenica) è un consiglio operativo senza fonte: il revenue manager decide se tenerlo",
+        "Collegamenti interni nel corpo: 2 (Sei Nazioni, calendario di Roma) più /revenue-management/ nel paragrafo Ricavia; voce 4.1 n. 5"
+      ],
+      "ruolo_ricavia": "Su un weekend con domanda nota da mesi Ricavia lavora sul mix dei canali e sulla parità tra sito e OTA, perché ogni notte venduta in diretto sulle date più richieste porta una commissione in meno"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta: il ritiro obbligatorio del pettorale entro sabato alle 18 e la partenza domenica alle 8.30 fissano la notte di sabato per chi arriva da fuori Roma, e la sovrapposizione con Italia-Galles la rende la notte più compressa del weekend; azioni riviste per non ripetere quelle del Sei Nazioni del 3 novembre",
+      "correzioni": [
+        "tesi: aggiunti il controllo immediato delle prenotazioni già acquisite e il sabato prezzato sopra il venerdì. Perché: le iscrizioni 2027 sono aperte da aprile e la pagina inglese rimanda a una lista d'attesa, quindi una parte della domanda può essere già in casa",
+        "Corpo, sezione Expo: 'Per chi corre la notte di sabato è quasi obbligata' diventa 'Per chi corre e arriva da fuori Roma': i corridori residenti non generano notti",
+        "Impatto, ADR: motivazione riscritta (prima ricalcava quasi parola per parola la voce ADR dell'articolo sul Sei Nazioni del 3 novembre); aggiunto il segmento",
+        "Impatto, RevPAR: motivazione riscritta per lo stesso motivo",
+        "Impatto, Pick-up: finestra 'da adesso a gennaio' e notti 'dall'11 al 13 marzo'; aggiunta la lista d'attesa come segnale che una parte delle prenotazioni può essere già acquisita",
+        "Cosa fare, azione 1 nuova: controllo adesso delle prenotazioni già acquisite per l'11, il 12 e il 13 marzo, confrontate con un weekend di marzo senza eventi",
+        "Cosa fare, azioni 1 e 2 della bozza unite nella nuova azione 2 (tariffa propria con il sabato sopra il venerdì, niente non rimborsabili scontate, soggiorno minimo con verifica a fine gennaio): la bozza ripeteva titolo e costruzione delle azioni 1 e 2 dell'articolo sul Sei Nazioni. Tolta la nota sulla domenica 14, che non richiede un'azione",
+        "Cosa fare, azione 3: tolto 'in inglese' dal titolo (già usato nel Sei Nazioni); tenuta la colazione anticipata: è un consiglio operativo, non un fatto, e non richiede fonte"
+      ],
+      "segnalazioni": [
+        "Intensità 'alta' sull'occupazione di sabato 13: scritta a parole, senza dati sulle camere; si regge sui 36 mila iscritti del 2026 con il 70-75% dall'estero (fonti citate) più la partita. Nessuna fonte dà la dimensione del 2027",
+        "Somiglianza con il Sei Nazioni: anche dopo la riscrittura il soggiorno minimo di due notti sul sabato 13 compare in entrambi gli articoli, perché è l'azione giusta per quella notte; il SEO director e il capo redattore valutino il duplicato sull'insieme",
+        "Corpo, sezione 'Sabato 13 marzo', secondo paragrafo: 'Per gli hotel a distanza di cammino o di metro dall'Expo... più domanda del solito in tutta la città' mescola zona vicina e città intera; non è un errore di meccanismo, lo lascio al capo redattore. Le zone che beneficiano del Circo Massimo sono DA COMPLETARE in roma.md: nessuna zona nominata",
+        "Mix di canale: la home dell'organizzazione ha una sezione di alloggi per i corridori (fonti.md, voce 3). Non l'ho verificata né usata: se l'organizzatore vende pacchetti con hotel convenzionati, una parte della domanda passa da quel canale. Non entra nell'Impatto senza una lettura della pagina",
+        "Azioni: 3, eseguibili da un hotel indipendente; nessuna consiglia ribassi"
+      ],
+      "ruolo_ricavia": "Sulle notti del 12 e 13 marzo Ricavia decide quante camere lasciare a ciascun canale e a quale costo e tiene la parità tra sito e OTA, perché su date richieste con mesi di anticipo una prenotazione diretta in più è una commissione in meno"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Non è un duplicato del Sei Nazioni del 3 novembre: evento, pubblico, keyword e tesi diversi (il ritiro del pettorale entro sabato alle 18 fissa la notte di sabato in tutta la città, con il precedente dei pettorali esauriti a dicembre); la partita del 13 marzo entra come contesto e rimanda all'articolo pubblicato invece di ripeterlo",
+      "correzioni": [
+        "Compilati slug (maratona-roma-hotel-weekend, 4 parole, senza date), title_seo (58 caratteri), description (152 caratteri), keyword, related_intro e related; lunghezze contate con Python. Categoria 'eventi' confermata",
+        "Primo h3: 'Maratona di Roma 2027: date, Expo e partenza' diventa 'Maratona di Roma 2027: date, Expo e partenza per chi gestisce un hotel', per avere la keyword completa in un h3 senza riprendere l'h3 del Sei Nazioni ('le date che contano per gli hotel')",
+        "Collegamento al Sei Nazioni: testo del link spostato da 'Journal ha già analizzato' a 'tre weekend di rugby del Sei Nazioni', che descrive la pagina di arrivo; aggiunto 'del Sei Nazioni', nessun fatto cambiato",
+        "title_seo, description e related_intro scritti con una costruzione diversa da quelli del Sei Nazioni ('X a Roma: tariffe hotel nei weekend'; 'le notti di partita da prezzare... il soggiorno minimo...'; 'Per preparare in anticipo i prezzi delle date di evento')",
+        "related: articolo sui tre errori di prezzo (soggiorni minimi mai tolti, sconti dell'ultimo minuto) e /indicatori/; non ripetono i collegamenti del corpo (Sei Nazioni, calendario di Roma, /revenue-management/ in chiusura)"
+      ],
+      "segnalazioni": [
+        "Confronto con il Sei Nazioni (3 novembre, dentro i 14 giorni): keyword 'Sei Nazioni hotel Roma' contro 'Maratona di Roma hotel'; tesi 'sei notti di partita da prezzare a Flaminio e Parioli' contro 'notte di sabato fissata dal ritiro del pettorale, in tutta la città'. In comune: sabato 13 marzo, categoria 'eventi', il soggiorno minimo di due notti sul sabato e la struttura delle sezioni. Non è un duplicato SEO, ma il rischio di articolo fotocopia (regole-comuni, sezione 2, punto 2) resta al capo redattore",
+        "Keyword nell'apertura: 'Maratona di Roma' nella prima frase, 'hotel' nella seconda, che non tocco (stesso schema del Sei Nazioni); la keyword completa è nel primo h3",
+        "Collegamenti interni naturali nel corpo: 2 (Sei Nazioni, calendario di Roma), più /revenue-management/ in chiusura; tutti esistenti su main; nessun collegamento alla bozza 1",
+        "Title, slug e description confrontati con tools/seo.json, con le 3 cartelle di journal/ e con la bozza 1: nessuna coincidenza",
+        "Keyword scelta senza dati di volume di ricerca: 'Maratona di Roma hotel' attira anche il corridore che cerca camera; title e description la spostano sull'albergatore con 'prenotazioni e prezzi'; le secondarie evitano 'soggiorno minimo hotel', già secondaria del Sei Nazioni",
+        "La description contiene la data della gara (14 marzo 2027, dal regolamento ufficiale): è un dato confermato, non provvisorio; se l'organizzatore cambia la data prima della pubblicazione, la description va riletta",
+        "Il sottotitolo e l'alt non sono ancora compilati (virality director e art director)"
+      ],
+      "ruolo_ricavia": "Per chi cerca come gestire le notti di un grande evento, il passo successivo naturale è la pagina del revenue management, dove Ricavia descrive mix dei canali e parità tra sito e OTA sulle date più richieste"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "La bozza ha un racconto proprio, diverso dal Sei Nazioni: una regola dell'organizzatore (il pettorale si ritira di persona entro sabato) che decide la notte dei corridori; titolo di tipo conseguenza, diverso dal contrasto del Sei Nazioni e dal dato della bozza 1",
+      "correzioni": [
+        "Titolo: da 'Maratona di Roma il 14 marzo 2027: il sabato prima è la notte più contesa del mese' (superlativo che l'articolo non dimostra: nessuna fonte confronta le notti di marzo) a 'Maratona di Roma: il pettorale si ritira entro sabato e sposta la domanda sul 13 marzo' (86 caratteri). Tipo: conseguenza (una regola di ritiro che sposta la domanda sulla notte prima della gara), fatto confermato dal regolamento e dalla pagina Expo",
+        "Tipo di titolo diverso da quello del Sei Nazioni del 3 novembre ('si gioca il sabato, ma le notti di partita si prezzano adesso', contrasto tra giorno della partita e giorno della decisione) e da quello della bozza 1 (dato con fonte). Evitate anche 'si prezza adesso' e la costruzione 'X e Y nello stesso weekend' delle alternative del Sei Nazioni",
+        "Sottotitolo nuovo (174 caratteri, due parti in una frase), senza punto finale: dice cosa trova il lettore (date ed Expo, precedente 2026, tre azioni sulle notti del 12 e 13 marzo)",
+        "Alternative con tre tagli diversi: domanda, dato con fonte nominata (ANSA), contrasto tra pubblici e zone; tutte entro 90 caratteri, contate con Python. Il contrasto tra pubblici resta solo come alternativa, non come titolo, perché è lo stesso tipo del Sei Nazioni",
+        "Mood: serio",
+        "Frase citabile: 'Il corridore sceglie la data mesi prima. L'hotel che la prezza a febbraio arriva dopo di lui' diventa 'Il pettorale non si spedisce. Per chi arriva da fuori, la notte di sabato è parte della gara'. Perché: la vecchia frase ricalcava la citazione del Sei Nazioni (contrasto tra il momento dell'evento e i mesi prima in cui si decide il prezzo) e diceva che il corridore sceglie la data, che invece fissa l'organizzatore. La nuova frase porta il meccanismo proprio di questo articolo (ritiro di persona, senza spedizione: regolamento), limita la tesi a chi arriva da fuori come ha chiesto il revenue manager, non ha numeri né nomi"
+      ],
+      "segnalazioni": [
+        "Al capo redattore: il soggiorno minimo di due notti sul sabato 13 resta in comune con il Sei Nazioni (già segnalato da revenue manager e SEO director); titolo, sottotitolo, alternative e citazione ora non lo nominano, per non ripetere quell'articolo nella parte più visibile",
+        "La frase citabile arriva dopo la sezione sul sabato; il meccanismo che dimostra (ritiro senza spedizione) è nella prima sezione, la conseguenza sulle notti nella sezione appena prima della citazione: posizione accettabile",
+        "Titolo, alternative e frase citabile confrontati con i 6 storici, i 3 articoli di journal/, tools/seo.json, registro e bozza 1: nessuna coincidenza"
+      ],
+      "ruolo_ricavia": "Su una notte che i corridori decidono mesi prima, il racconto si chiude bene con il canale: Ricavia guarda da quale canale arrivano le prenotazioni del 12 e 13 marzo e tiene la parità tra sito e OTA, perché su quelle notti una prenotazione diretta in più è una commissione in meno"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Immagine generata con Higgsfield: la libreria non ha soggetti di maratona, di corsa o del Circo Massimo; le foto di Roma disponibili (Colosseo dall'alto) mostrano il luogo in generale ma non fanno capire il tema, e il percorso 2027 non è pubblicato. Riserva: la veduta del Colosseo non usata negli ultimi articoli",
+      "correzioni": [
+        "immagine compilata: fonte higgsfield, scheda, prompt in inglese con la frase sulla fotografia a tutto campo, testo_sovrapposto null",
+        "immagine.libreria: assets/img/0e01261517.webp (n087, Colosseo e centro di Roma dall'alto), guardata con Read; non usata come copertina né come riserva negli ultimi 9 articoli; nessuna persona riconoscibile, nessun logo",
+        "alt e alt_libreria compilati, senza punto finale e senza 'immagine di'; l'alt della generazione descrive ciò che si vede e non nomina il Circo Massimo né il percorso, perché la scheda chiede un luogo non riconoscibile",
+        "Soggetto scelto per non ripetere la copertina del Sei Nazioni del 3 novembre (oggetto sportivo sul letto di una camera con vista): qui esterno, strada e transenne, persone solo lontane, sfocate e di spalle"
+      ],
+      "segnalazioni": [
+        "Crediti: seconda generazione della giornata (il massimo è 2), giustificata perché la libreria non ha soggetti sportivi o di corsa. Da ampliare la libreria con strade di Roma all'alba, transenne, corridori lontani senza pettorali leggibili, Circo Massimo",
+        "La riserva 0e01261517 è quasi la stessa inquadratura di bb5d2ac53b, riserva dell'articolo sullo sciopero dei treni del 3 novembre (non pubblicata come copertina): se l'editore la usa, la copertina non ripete nessuna copertina pubblicata, ma il soggetto è vicino. Il Colosseo non va letto come luogo di partenza 2027, che il regolamento non indica; l'alt non lo dice",
+        "Soggetto con persone: se la generazione rende i corridori riconoscibili, con pettorali o numeri leggibili, o con maglie rosse o arancio in evidenza, l'editore rigenera una volta e poi passa alla riserva",
+        "Mood serio rispettato: luce fredda, composizione statica, nessun dettaglio ironico, anche se la matrice per lo sport ammetterebbe divertente o ironico"
+      ],
+      "ruolo_ricavia": "La strada con le transenne è la domanda che arriva in città con mesi di anticipo; Ricavia la traduce notte per notte in prezzo e canale, con il sabato 13 separato dal venerdì e la parità tra sito e OTA"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "RIMANDA",
+      "motivo": "Forma (struttura, azioni e frasi troppo vicine all'articolo sul Sei Nazioni del 3 novembre): una riscrittura con le istruzioni di rimanda-2.md; se non passa la war room diventa NO-GO",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: il ritiro del pettorale di persona entro sabato alle 18 e la partenza di domenica alle 8.30 fissano la notte di sabato per chi arriva da fuori Roma)",
+        "[ ] Ogni numero ha fonte linkata (data di Italia-Galles e calcio d'inizio alle 15.10 senza fonte in 'fonti' e senza link esterno nel testo, solo il rimando all'articolo del 3 novembre; intensità 'alta' sul sabato senza alcun dato sul 2027)",
+        "[x] Fonti citate con link per i fatti della maratona (regolamento, pagina Expo, ANSA, FIDAL, Corriere dello Sport riletti; stato iscrizioni ricontrollato il 4 novembre: home italiana 'ISCRIVITI ORA', home inglese 'REGISTER NOW', pagina Expo inglese 'WAITING LIST', tutti verso la stessa piattaforma); nessuna copia di testi altrui",
+        "[ ] Ruolo di Ricavia (non scritto: si scrive solo con GO; le frasi dei 4 agenti puntano alla voce 4.1 n. 5, utilizzabile)",
+        "[ ] Regole di copy e anti-obiettivo 2 (articoli fotocopia): una frase riprende quasi alla lettera l'articolo sul Sei Nazioni ('Chi la apre con la tariffa di un normale sabato di marzo rischia di venderla presto e al prezzo più basso, a chi prenota per primo'); l'azione 2 ripete le azioni 1 e 2 del Sei Nazioni (tariffa propria, niente non rimborsabili scontate, soggiorno minimo di due notti con data di verifica) sulla stessa notte del 13 marzo; stessa sequenza di sezioni e stessa chiusura 'il prezzo si fissa adesso'",
+        "[x] Tono serio, coerente con la matrice",
+        "[x] Tema non ripetuto secondo il SEO director (APPROVED: evento, keyword e tesi diversi); la somiglianza è di struttura e di azioni, non di tema, quindi la motivazione è di forma e non 'Tema già trattato'",
+        "[x] Nessuna affermazione negativa su persone o aziende",
+        "[ ] Lunghezza e struttura: circa 1.090 parole con numeri e simboli, al limite dei 1.100; struttura completa ma ricalcata sul Sei Nazioni"
+      ],
+      "correzioni": [],
+      "segnalazioni": [
+        "Non è GO: anche con le correzioni del revenue manager, un lettore che ha letto ieri il Sei Nazioni ritrova la stessa notte, le stesse azioni e la stessa conclusione. La parte nuova (ritiro del pettorale che fissa le notti, Expo da giovedì, sabato sopra il venerdì, prenotazioni già in casa, annunci per chi corre) regge da sola e va messa al centro: correzione che richiede una riscrittura, non ritocchi, quindi RIMANDA",
+        "Non è NO-GO per 'Tema già trattato': il veto non c'è e il SEO director non ha sbagliato in modo dimostrabile; la maratona non è stata trattata",
+        "Stato delle iscrizioni 2027: resta non confermato, ma la tesi regge in entrambi i casi; il testo riscritto deve descriverlo con precisione (istruzione 9)",
+        "Pagina Expo: giorni e orari senza anno; i giorni della settimana coincidono con il 2027 e la home inglese mostra ancora l'Expo 2026 (19-21 marzo). Fatto che regge la tesi: l'editore lo ricontrolla prima della pull request",
+        "Il Corriere dello Sport, fonte della quota del 75% e della data, è anche tra gli organizzatori (regolamento): va detto nel testo",
+        "Sostituzioni usate oggi: 0 su 2. La riscrittura non è una sostituzione"
+      ],
+      "ruolo_ricavia": "Da scrivere solo con GO dopo la riscrittura: voce 4.1 n. 5 (mix dei canali e parità tra sito e OTA sulle notti dell'11, 12 e 13 marzo), non usata negli articoli della settimana"
+    },
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Riscrittura unica dopo RIMANDA (Forma) del capo redattore, seguendo solo le 18 istruzioni di rimanda-2.md; tesi centrata sul ritiro del pettorale e sulle notti di arrivo, senza ripetere il Sei Nazioni",
+      "correzioni": [
+        "1. Apertura: tolta la chiusura sulla tempistica del prezzo; chiude sul ritiro di persona all'Expo entro sabato alle 18, senza spedizione, e sulla notte prima obbligata",
+        "2. Primo h3: 'Maratona di Roma e hotel: il ritiro del pettorale all'Expo'",
+        "3. Prima sezione: aggiunta la lettura del calendario dell'Expo (possibili notti di arrivo 11, 12 e 13, sabato quasi obbligato), dichiarata come lettura e non come dato sugli arrivi",
+        "4. Tolta la frase 'Chi la apre con la tariffa di un normale sabato di marzo…'",
+        "5. Separate le due domande: la partita intorno all'Olimpico, la maratona intorno all'Expo, al percorso e alla metro B; tolto 'in tutta la città'; nessun quartiere nominato",
+        "6. Sezione 'Sabato 13 marzo' ridotta a 86 parole, con il rimando all'articolo del 3 novembre; tolto anche il collegamento al calendario di Roma per stare nella lunghezza (resta un collegamento interno nel corpo)",
+        "7. Data di Italia-Galles collegata alla pagina FIR, riaperta con curl il 4 novembre ('Italia v Galles 13.03.27'); aggiunta a fonti e fonti.md",
+        "8. Orario delle 15.10 attribuito nel testo al Corriere dello Sport, pagina del calendario del 9 marzo 2026 riaperta con curl; aggiunta a fonti",
+        "9. Stato delle iscrizioni riscritto con ciò che le pagine mostrano: 'ISCRIVITI ORA' e 'REGISTER NOW' sulle home, lista d'attesa sulla pagina Expo inglese, stessa piattaforma, nessuna conclusione sul tutto esaurito",
+        "10. Aggiunto che il Corriere dello Sport è tra gli organizzatori della gara, come indica il regolamento",
+        "11. Occupazione: 'media' su venerdì 12 e su sabato 13, con la frase sul dato 2027 mancante; nessuna fonte dell'organizzatore dà iscritti 2027 o numero massimo",
+        "12. ADR: tolta la condizione del Sei Nazioni; motivazione legata alla differenza di valore tra sabato (notte quasi obbligata) e venerdì (solo chi arriva prima)",
+        "13. Azione 2 ridotta a 'Il sabato 13 prezzato sopra il venerdì 12', con il perché; tolti soggiorno minimo con data di verifica e tariffe non rimborsabili scontate, mezza frase di rimando all'articolo del 3 novembre",
+        "14. Nuova azione 3: giovedì 11 e venerdì 12 come notti di arrivo per il ritiro del pettorale, con la tariffa del giovedì distinta solo se il pick-up si muove. La pagina 'Accomodation & tour operator' è stata letta ma riguarda ancora l'edizione 2026, quindi non è citata; tolta l'azione su annunci e colazione",
+        "15. In breve: 'Il prezzo del weekend si fissa adesso' sostituita con 'Le prenotazioni già acquisite si controllano adesso'",
+        "16. Corpo a 964 parole contate con gli spazi, tag esclusi (prima 1.093)",
+        "17. Tolto il paragrafo Ricavia finale: lo scrive il capo redattore in caso di GO; ruolo_ricavia resta sulla voce 4.1 n. 5",
+        "18. Tesi in meta.json aggiornata: senza soggiorno minimo, con le notti di arrivo e la domanda separata per zona"
+      ],
+      "segnalazioni": [
+        "Virality director: il sottotitolo attuale parla di 'tre azioni sulle notti del 12 e 13 marzo'; dopo la riscrittura le azioni riguardano l'11, il 12 e il 13 marzo. Il sottotitolo non l'ho toccato, perché non è del mio ruolo",
+        "Pick-up: tolto dalla motivazione il rimando alla lista d'attesa, per coerenza con l'istruzione 9 (nessuna conclusione sul tutto esaurito)",
+        "Non confermato: lo stato delle iscrizioni 2027, i giorni dell'Expo scritti senza l'anno (coincidono con il 2027) e il luogo di partenza 2027, che il testo non nomina",
+        "Collegamenti interni nel corpo: 1 (Sei Nazioni); il calendario di Roma è stato tolto per la lunghezza. Il SEO director può aggiungerne uno se lo ritiene utile, nei limiti delle 1.000 parole",
+        "L'azione 1 sul controllo delle prenotazioni già acquisite è rimasta come nella versione rivista dalla war room"
+      ],
+      "ruolo_ricavia": "Su un weekend con domanda nota da mesi Ricavia lavora sul mix dei canali e sulla parità tra sito e OTA, perché ogni notte venduta in diretto sulle date più richieste porta una commissione in meno"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Bozza riscritta: tesi confermata, centrata sul ritiro del pettorale che fissa le notti di chi arriva da fuori Roma; le tre azioni non ripetono più quelle del Sei Nazioni e l'intensità dell'occupazione (media su entrambe le notti) è coerente con i dati citati",
+      "correzioni": [
+        "Apertura, ultima frase: 'deve quindi dormire in città' diventa 'deve quindi, nella maggior parte dei casi, dormire in città': chi arriva da fuori Roma ma da vicino può ritirare il pettorale e tornare a casa; il corpo dice già 'quasi obbligata'",
+        "Impatto, ADR: intensità scritta per data ('↑ bassa la notte di venerdì 12, media la notte di sabato 13') invece di 'media, notte di sabato più del venerdì', come vuole il formato del manuale; motivazione legata al confronto con un weekend ordinario di marzo invece che alla sola differenza tra le due notti, che era circolare",
+        "Impatto, Pick-up: 'indica che una parte dei corridori prenota' diventa 'suggerisce che una parte dei corridori prenoti', con la precisazione che il dato 2026 riguarda le iscrizioni, non le camere",
+        "tesi confermata senza modifiche; corpo a 982 parole dopo le correzioni"
+      ],
+      "segnalazioni": [
+        "Azioni: nessuna ripete quelle del Sei Nazioni. Azione 1 (controllo delle prenotazioni già acquisite), azione 2 (sabato sopra il venerdì) e azione 3 (giovedì come notte di arrivo, tariffa distinta solo se il pick-up si muove) sono proprie della maratona; nessuna consiglia ribassi o svendite",
+        "Azione 2, mezza frase sul soggiorno minimo che rimanda al Sei Nazioni: quelle indicazioni erano scritte per gli hotel di Flaminio e Parioli, mentre questa bozza parla degli hotel vicini all'Expo e alla metro B. Il rimando regge come principio, ma il capo redattore valuti se precisarlo o togliere la mezza frase",
+        "Coerenza degli indicatori: occupazione media su venerdì e sabato, ADR bassa il venerdì e media il sabato, RevPAR media su entrambe le notti; nessuna voce sulla notte di giovedì 11, coerente con l'azione 3 che la condiziona al pick-up",
+        "Al virality director (già segnalato dal giornalista): il sottotitolo parla di 'notti del 12 e 13 marzo', le azioni ora toccano anche l'11",
+        "Zone: 'hotel vicini all'Expo e alla metro B' non nomina quartieri, coerente con roma.md (Circo Massimo DA COMPLETARE)"
+      ],
+      "ruolo_ricavia": "Sulle notti dall'11 al 13 marzo Ricavia decide quante camere lasciare a ciascun canale e a quale costo e tiene la parità tra sito e OTA, perché su date richieste con mesi di anticipo una prenotazione diretta in più è una commissione in meno"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Bozza riscritta: non è un duplicato del Sei Nazioni del 3 novembre e ora se ne distingue anche nella forma; keyword, evento e tesi (il ritiro del pettorale di persona fissa le notti di arrivo dall'11 al 13 marzo) sono diversi, la partita resta contesto con il rimando all'articolo pubblicato e il soggiorno minimo non è più un'azione dell'articolo",
+      "correzioni": [
+        "description: da 'Maratona di Roma del 14 marzo 2027: il ritiro del pettorale fissa la notte di sabato, la stessa di Italia-Galles. Come controllare prenotazioni e prezzi' a 'Maratona di Roma del 14 marzo 2027: il pettorale si ritira di persona entro sabato e fissa le notti di arrivo. Come controllare prenotazioni e prezzi' (149 caratteri, contati con Python): segue il nuovo centro dell'articolo (notti di arrivo dall'11 al 13) e non mette in vetrina la notte già promessa dal Sei Nazioni",
+        "related_intro: da 'Per decidere prezzo e soggiorno minimo delle date più richieste, approfondisci' a 'Per prezzare notte per notte le date di un grande evento, approfondisci': il soggiorno minimo è uscito dalle azioni",
+        "related: l'articolo sui tre errori di prezzo (soggiorni minimi, sconti dell'ultimo minuto, ora poco pertinente) sostituito con il calendario di Roma, che cita la maratona tra gli appuntamenti di marzo ed è uscito dal corpo per la lunghezza; resta /indicatori/ (occupazione, ADR, RevPAR, pick-up e lead time usati nell'impatto). Nessuna voce ripete il collegamento del corpo",
+        "Corpo: nessuna modifica. Il primo h3 della riscrittura ('Maratona di Roma e hotel: il ritiro del pettorale all'Expo', istruzione 2 del capo redattore) contiene la keyword completa e sostituisce il mio h3 precedente; 'Maratona di Roma' resta nella prima frase dell'apertura"
+      ],
+      "segnalazioni": [
+        "Confronto con il Sei Nazioni dopo la riscrittura: keyword diverse ('Maratona di Roma hotel' contro 'Sei Nazioni hotel Roma'); title_seo, description, h3, related_intro e related con costruzioni diverse; in comune restano sabato 13 marzo come contesto e la categoria 'eventi'. Nessun veto",
+        "Collegamenti interni naturali nel corpo: 1 (Sei Nazioni, esistente su main), dentro il limite di 1 o 2; non ne aggiungo un secondo per non allungare il corpo (circa 950-980 parole). Il collegamento di chiusura arriverà con il paragrafo Ricavia del capo redattore: se è /revenue-management/ non ripete nessuna voce di related",
+        "title_seo invariato ('Maratona di Roma e hotel: la notte prima del via · Ricavia', 58 caratteri): resta corretto, la notte di sabato è ancora quella quasi obbligata; slug, categoria e keyword invariati",
+        "Keyword nell'apertura: 'Maratona di Roma' nella prima frase, 'hotel' nella seconda, come nella versione precedente; keyword completa nel primo h3. 'Maratona di Roma' compare 2 volte nel corpo: nessuna ripetizione forzata",
+        "Al capo redattore (non è del mio ambito): la mezza frase dell'azione 2 che rimanda al soggiorno minimo del Sei Nazioni, scritto per Flaminio e Parioli, già segnalata dal revenue manager; e il sottotitolo che parla ancora di 'notti del 12 e 13 marzo' (virality director)",
+        "Title, description e slug riconfrontati con tools/seo.json, journal/ e la bozza 1: nessuna coincidenza"
+      ],
+      "ruolo_ricavia": "Per chi cerca come gestire le notti di arrivo di un grande evento, il passo successivo naturale è la pagina del revenue management, dove Ricavia descrive mix dei canali e parità tra sito e OTA sulle date più richieste"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "Bozza riscritta: il racconto ora è tutto della maratona (il pettorale non si spedisce e fissa le notti di arrivo); titolo e frase citabile reggono senza modifiche, sottotitolo allineato alle azioni sull'11, 12 e 13 marzo, un'alternativa cambiata perché riprendeva il taglio tolto dal corpo",
+      "correzioni": [
+        "Sottotitolo: da 'Date, Expo e ritiro del pettorale, il precedente dell'edizione 2026 esaurita a dicembre e tre azioni sulle notti del 12 e 13 marzo, a partire dalle prenotazioni già acquisite' a 'Il ritiro del pettorale all'Expo, il precedente dell'edizione 2026 esaurita a dicembre e tre azioni sulle notti dall'11 al 13 marzo, a partire dalle prenotazioni già acquisite' (175 caratteri, senza punto finale): le azioni ora riguardano le notti dall'11 al 13 marzo (azione 3 sul giovedì 11), come segnalato da giornalista, revenue manager e SEO director; 'Date, Expo e ritiro del pettorale' diventa 'Il ritiro del pettorale all'Expo', che è il nuovo primo h3",
+        "Alternativa di tipo domanda: da 'Corridori e tifosi di rugby nella stessa notte: con quale tariffa aprire il 13 marzo?' a 'Pettorale da ritirare di persona all'Expo: quali notti di marzo contano per gli hotel?' (86 caratteri): la vecchia metteva al centro la sovrapposizione con Italia-Galles e il prezzo di apertura del sabato, cioè la parte che il capo redattore ha ridotto a contesto perché vicina al Sei Nazioni",
+        "Mood: serio confermato, motivazione aggiornata (tolto il soggiorno minimo, uscito dalle azioni)",
+        "Titolo confermato ('Maratona di Roma: il pettorale si ritira entro sabato e sposta la domanda sul 13 marzo', 86 caratteri): tipo conseguenza, diverso dal dato con fonte della bozza 1 e dal contrasto del Sei Nazioni; ogni elemento si trova nel corpo riscritto (ritiro entro sabato alle 18, sabato notte quasi obbligata)",
+        "Frase citabile confermata ('Il pettorale non si spedisce. Per chi arriva da fuori, la notte di sabato è parte della gara'): il meccanismo è ancora il centro dell'apertura e della prima sezione, senza numeri né nomi, senza punto finale",
+        "Altre due alternative confermate: dato con fonte (ANSA) e contrasto tra pubblici e zone, ora coerente con la sezione che separa la domanda intorno all'Olimpico da quella intorno all'Expo e alla metro B"
+      ],
+      "segnalazioni": [
+        "Al capo redattore: la frase citabile arriva dopo la sezione sul sabato, che ora parla delle due domande in zone diverse; il meccanismo che la dimostra (ritiro senza spedizione) è in apertura e nella prima sezione. Posizione accettabile; se si preferisce, il blockquote può salire alla fine della prima sezione, spostamento che non è del mio ambito",
+        "Al capo redattore (già segnalata da revenue manager e SEO director): la mezza frase dell'azione 2 che rimanda al soggiorno minimo del Sei Nazioni, scritto per Flaminio e Parioli. Titolo, sottotitolo, alternative e citazione non nominano il soggiorno minimo",
+        "Titolo, sottotitolo, alternative e citazione riconfrontati con i 6 storici, journal/, tools/seo.json e la bozza 1 (titolo di tipo dato con fonte): nessuna coincidenza, tipi diversi"
+      ],
+      "ruolo_ricavia": "Il racconto delle notti di arrivo si chiude bene sul canale: Ricavia guarda da quale canale arrivano le prenotazioni dall'11 al 13 marzo e tiene la parità tra sito e OTA, perché su notti che i corridori decidono mesi prima una prenotazione diretta in più è una commissione in meno"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Bozza riscritta: immagine aggiornata al nuovo centro dell'articolo, cioè il ritiro del pettorale all'Expo del Circo Massimo e le notti di arrivo dall'11 al 13 marzo, non più la mattina della gara; resta una generazione Higgsfield perché la libreria non ha Circo Massimo, villaggi di evento o soggetti di corsa, con la stessa riserva",
+      "correzioni": [
+        "immagine.scheda e immagine.prompt riscritti: dalla strada con transenne e corridori all'alba, che raccontava il giorno di gara, al villaggio dell'Expo in una valle erbosa sul modello del Circo Massimo, con tende bianche senza scritte e pochi visitatori lontani, uno con la valigia, per il ritiro del pettorale e l'arrivo in città",
+        "alt: da 'Strada lastricata di Roma all'alba tra pini e rovine antiche, con transenne ai lati e pochi corridori lontani' a 'Lunga valle erbosa di Roma con una fila di tende bianche allestite e pochi visitatori lontani, uno con la valigia', senza punto finale; non nomina il Circo Massimo, perché la generazione può non renderlo riconoscibile",
+        "Confermati: fonte higgsfield, riserva assets/img/0e01261517.webp (Colosseo dall'alto, la foto della libreria più vicina all'area dell'Expo) e alt_libreria, testo_sovrapposto null, frase sulla fotografia a tutto campo nel prompt",
+        "Nessuna modifica al corpo"
+      ],
+      "segnalazioni": [
+        "Crediti: la copertina della bozza 1 è già generata; questa è la seconda e ultima generazione della giornata. La versione precedente della scheda non è stata generata, quindi l'aggiornamento non costa una generazione in più",
+        "Villaggio e tende: se la generazione mostra scritte, loghi di sponsor, bandiere, tende colorate o rosse, persone riconoscibili o pettorali leggibili, l'editore rigenera una volta e poi passa alla riserva, copiando alt_libreria in alt",
+        "Se la valle generata somiglia chiaramente al Circo Massimo, l'editore può precisare l'alt con il nome del luogo; finché non è verificato, l'alt resta generico",
+        "Riserva: 0e01261517 è quasi la stessa inquadratura di bb5d2ac53b, riserva (non pubblicata) dello sciopero dei treni del 3 novembre; il Colosseo non va letto come luogo di partenza 2027, che il regolamento non indica",
+        "Libreria da ampliare: Circo Massimo, villaggi di evento senza marchi, arrivi con valigia in città senza persone riconoscibili"
+      ],
+      "ruolo_ricavia": "Il villaggio dell'Expo è il punto da cui partono le notti di arrivo; Ricavia lo traduce notte per notte, dal giovedì 11 al sabato 13, in prezzo e canale, con la parità tra sito e OTA sulle date richieste con mesi di anticipo"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED sulla riscrittura: il ritiro del pettorale di persona, da giovedì 11 a sabato 13 alle 18 e senza spedizione, fissa le notti di arrivo; il sabato vale più del venerdì; il giovedì si distingue solo se il pick-up si muove)",
+        "[x] Ogni numero ha fonte linkata: data e partenza dal regolamento, Expo dalla pagina ufficiale, 36 mila e 70% da ANSA, 166 Paesi da FIDAL, 75% dal Corriere dello Sport, che il testo indica tra gli organizzatori; Italia-Galles del 13 marzo dalla FIR e calcio d'inizio alle 15.10 dal Corriere dello Sport, entrambi riletti con curl il 4 novembre; intensità a parole, occupazione media per prudenza",
+        "[x] Fonti citate con link, nessuna copia; stato delle iscrizioni 2027 descritto com'è sulle pagine, senza conclusioni",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voce 4.1 n. 5 (mix dei canali e parità tra sito e OTA), diverso dalla bozza 1 (competitive set e Hotel Score) e dagli articoli della settimana; collegamento unico a /revenue-management/, che non ripete related",
+        "[x] Regole di brand e di copy rispettate dopo le correzioni (nessun punto finale, sigle con glossa breve, OTA spiegata alla prima menzione, nessun quartiere nominato)",
+        "[x] Tono serio, coerente con la matrice",
+        "[x] Tema non ripetuto (SEO director APPROVED); dopo la riscrittura e la correzione dell'azione 2 nessuna azione, frase o chiusura ripete il Sei Nazioni del 3 novembre: il sabato 13 è solo contesto con il rimando all'articolo",
+        "[x] Nessuna affermazione negativa su persone o aziende",
+        "[x] Circa 1.050 parole contate con gli spazi, tag esclusi; 5 h3, apertura, impatto, 3 azioni, In breve, paragrafo Ricavia"
+      ],
+      "correzioni": [
+        "Azione 2: tolta la mezza frase 'Per il soggiorno minimo valgono le indicazioni già date nell'articolo sul Sei Nazioni per lo stesso sabato'. Quelle indicazioni erano scritte per gli hotel di Flaminio e Parioli, mentre qui si parla degli hotel vicini all'Expo e alla metro B: il rimando poteva far credere a un consiglio che l'articolo non argomenta, e riportava il soggiorno minimo che il RIMANDA chiedeva di non ripetere. Segnalazione comune di revenue manager, SEO director e virality director",
+        "Apertura, ultima frase: 'deve quindi, nella maggior parte dei casi, dormire in città almeno la notte prima' diventa 'la notte prima in città diventa quindi quasi obbligata'. 'Nella maggior parte dei casi' suggeriva una quota non sostenuta da fonti; ora la frase coincide con quella del corpo ('una sola notte quasi obbligata')",
+        "Paragrafo Ricavia finale aggiunto, fondendo le frasi dei 4 agenti (voce 4.1 n. 5): canale di ogni prenotazione e parità tra sito e OTA dall'11 al 13 marzo, chiusura su /revenue-management/ con costruzione diversa da quella dell'articolo sullo sciopero del 3 novembre"
+      ],
+      "segnalazioni": [
+        "Per l'editore: la pagina Expo indica giorni e orari senza l'anno (i giorni della settimana coincidono con il 2027, la home inglese mostra ancora l'Expo 2026): è il fatto che regge la tesi, da riaprire prima della pull request insieme al regolamento 2027",
+        "Per l'editore: stato delle iscrizioni 2027 da riaprire (home italiana 'ISCRIVITI ORA', home inglese 'REGISTER NOW', pagina Expo 'WAITING LIST'); se un'organizzazione annuncia il tutto esaurito prima del merge, la frase va aggiornata",
+        "Per l'editore: calcio d'inizio alle 15.10 da una sola testata, attribuita nel testo, fatto di contorno che non regge la tesi; data della partita confermata dalla FIR",
+        "Frase citabile dopo la sezione sul sabato: posizione accettabile, non spostata",
+        "Collegamenti interni naturali nel corpo: 1 (Sei Nazioni), nel limite",
+        "Sostituzioni usate oggi: 0 su 2"
+      ],
+      "ruolo_ricavia": "Sulle notti di arrivo dall'11 al 13 marzo Ricavia lavora sul mix dei canali e sulla parità tra sito e OTA, perché ogni camera venduta in diretto al posto di un'OTA è una commissione di distribuzione in meno"
+    }
+  ],
+  "sottotitolo": "Il ritiro del pettorale all'Expo, il precedente dell'edizione 2026 esaurita a dicembre e tre azioni sulle notti dall'11 al 13 marzo, a partire dalle prenotazioni già acquisite",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Evento sportivo senza vittime: la matrice ammette serio, divertente o ironico. Il corpo riscritto ha un registro serio (prenotazioni già acquisite, tariffa del sabato sopra il venerdì, notti di arrivo condizionate al pick-up) e il manuale chiede di seguirlo; il 3 novembre il capo redattore ha portato a serio il Sei Nazioni per lo stesso motivo. Serio"
+  },
+  "alternative_titolo": [
+    "Pettorale da ritirare di persona all'Expo: quali notti di marzo contano per gli hotel?",
+    "Maratona di Roma 2026 esaurita a dicembre per l'ANSA: il pick-up di marzo si controlla ora",
+    "Corridori verso il Circo Massimo, tifosi verso l'Olimpico: due pubblici, la stessa notte"
+  ],
+  "alt": "Lunga valle erbosa di Roma con una fila di tende bianche allestite e pochi visitatori lontani, uno con la valigia",
+  "immagine": {
+    "fonte": "higgsfield",
+    "scheda": "Soggetto: una lunga valle erbosa di Roma, sul modello del Circo Massimo, con una fila di padiglioni e tende bianche semplici allestiti per un villaggio di evento, il giorno prima della gara; pochi visitatori lontani, piccoli e di spalle, uno con una valigia trolley; pini marittimi e rovine basse in pietra chiara sullo sfondo; nessuna scritta, nessuno striscione, nessun pettorale, nessun arco di arrivo\nInquadratura: frontale, statica, da lontano e leggermente dall'alto, padiglioni nella fascia centrale, ampio cielo sopra e prato sotto per il ritaglio social\nLuce: mattino di fine inverno, luce fredda e uniforme, un primo chiarore caldo solo come accento sulla pietra\nPalette: cielo da azzurro #3CCDFA a blu #1F2DD0, tende bianche e neutri, riflesso viola #724AF8 appena accennato sulle coperture, verde spento del prato e dei pini; niente mattoni rossi, niente bandiere o tende colorate\nAtmosfera: seria e ordinata, l'attesa dei giorni di ritiro del pettorale; nessun riferimento al giorno di gara né alla partita, diversa dal pallone in camera del Sei Nazioni del 3 novembre",
+    "prompt": "A long, wide grassy valley in Rome in the style of the Circus Maximus, seen from a distance and slightly above, on a late winter morning. Along the valley floor a single orderly row of plain white event pavilions and simple white tents is set up for a race expo village the day before a marathon. A few visitors far away, small, seen from behind, walking slowly toward the tents, one pulling a plain dark rolling suitcase; no faces, no race bibs, no numbers. Umbrella pines and low ancient ruins of pale travertine stone in the background. No banners, no flags, no sponsor panels, no inflatable arch, no finish line, no writing anywhere. Frontal, static composition, the pavilions in the central horizontal band, wide clear sky above, a band of muted green grass below. Cold even morning light, sky from soft cyan to deep blue, white tents and neutral tones, a faint violet reflection on the tent roofs, only a subtle warm glow on the stone as an accent. No red brick, no colored tents, no bright clothing. Calm, serious, orderly mood. Full-bleed photograph, edge to edge, no frame, no border, no mockup, no picture inside a picture, no wall or poster around the image. Photorealistic 16:9 cover photograph, natural light, clean composition with generous negative space, main subject kept in the central horizontal band with clear margin above and below so a 1200x630 crop stays safe. No text, no signage, no readable numbers, no logos or brands, no recognizable people. Palette of cool cyan (#3CCDFA), deep blue (#1F2DD0) and soft violet (#724AF8) as light and small accents on clean neutrals, no red tones, no orange cast, no heavy color filter.",
+    "libreria": "assets/img/0e01261517.webp",
+    "alt_libreria": "Veduta aerea del Colosseo e del centro di Roma, con l'Arco di Costantino in primo piano e le colline sullo sfondo",
+    "testo_sovrapposto": null
+  },
+  "data": "2026-11-04",
+  "autore": "Tito · Redazione Ricavia"
+}
