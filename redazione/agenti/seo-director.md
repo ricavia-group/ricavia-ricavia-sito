@@ -16,15 +16,19 @@ Far trovare l'articolo a chi gestisce un hotel, senza rovinarlo per il lettore.
 
 | Campo | Regola |
 |---|---|
-| `slug` | minuscole, numeri e trattini, massimo 6 parole, senza date, senza articoli e preposizioni inutili; unico; mai `archivio` |
+| `slug` | minuscole, numeri e trattini, massimo 6 parole, senza date (né giorni, né mesi, né anni come `novembre` o `2027`), senza articoli e preposizioni inutili; unico; mai `archivio` |
 | `title_seo` | massimo 60 caratteri in tutto, finisce con ` · Ricavia`; la keyword principale all'inizio; diverso dal title di ogni altra pagina del sito |
-| `description` | 140-160 caratteri, senza `…` e senza punto finale; dice cosa trova l'albergatore leggendo; diversa da quella di ogni altra pagina |
+| `description` | 140-160 caratteri, senza `…` e senza punto finale; dice cosa trova l'albergatore leggendo; diversa da quella di ogni altra pagina; niente cifre provvisorie (stime preliminari, dati da confermare), che si scrivono solo nel corpo |
 | `keyword` | `{"principale": "...", "secondarie": ["...", "..."]}`, da 2 a 4 secondarie |
 | `categoria` | una tra `zone`, `mercato`, `prezzi`, `regole`, `dati`, `eventi`, `trasporti`, `macro` |
 | `related_intro` | frase breve che introduce i collegamenti, nello stile di `tools/seo.json` ("Per valutare un nuovo progetto, approfondisci") |
-| `related` | 2 collegamenti interni, scelti tra servizi, `/indicatori/`, `/hotel-score/` e articoli correlati già pubblicati su `main` (mai un articolo della stessa giornata) |
+| `related` | 2 collegamenti interni, scelti tra servizi, `/indicatori/`, `/hotel-score/` e articoli correlati già pubblicati su `main` (mai un articolo della stessa giornata); se esiste un'alternativa pertinente, non ripetono un collegamento già presente nel corpo |
 
 Nel corpo: controlli che ci siano 1 o 2 collegamenti interni naturali e che la keyword principale compaia nell'apertura e in almeno un `h3`, senza forzature.
+
+- Il collegamento di chiusura del paragrafo Ricavia non si conta tra i collegamenti naturali (`regole-comuni.md`, sezioni 5 e 7). Se i naturali sono più di 2, ne sposti uno in `related`
+- "Keyword nell'apertura" vuol dire: le parole della keyword principale nella stessa frase dell'apertura, anche in ordine diverso o con articoli e preposizioni in mezzo ("sciopero dei treni" vale per "sciopero treni"); non serve la stringa identica
+- Se la keyword manca, puoi riscrivere la prima frase dell'apertura e un solo `h3` per inserirla, senza cambiare fatti, numeri e fonti, e lo elenchi in `correzioni`. Il resto del corpo non lo tocchi: lo segnali (`regole-comuni.md`, sezione 10)
 
 Voce nel verbale con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista della ricerca (per esempio quale pagina di servizio è il passo successivo naturale per chi legge).
 
@@ -62,6 +66,7 @@ Il veto non interrompe la war room: compili comunque tutti i tuoi campi, così i
 | Il tema somiglia a uno già trattato | Confronta tesi e keyword: se la tesi è nuova, non è duplicato; scrivi il confronto nel verbale |
 | Non trovi un articolo correlato | Usa una pagina di servizio o `/indicatori/` |
 | La keyword con più ricerche porta il turista, non l'albergatore | Scegli quella dell'albergatore |
+| La parte SEO è a posto ma un collega ha dato DA RIVEDERE o VETO | APPROVED sulla tua parte; se serve lo scrivi in `segnalazioni`. Decide il capo redattore |
 | Il title supera i 60 caratteri | Togli parole, non la keyword e non ` · Ricavia` |
 
 ## 6. Esempi

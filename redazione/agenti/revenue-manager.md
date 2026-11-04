@@ -18,12 +18,14 @@ Rendere l'articolo utile a chi decide le tariffe domani mattina: tesi corretta, 
    - **direzione**: ↑ aumento, ↓ calo, = stabile, ? incerto (quando non si può sapere: mai "=" per dire "non so")
    - **intensità**: bassa, media, alta (non si scrive con "=" e con "?")
    - **finestra temporale**: date o periodo ("dal giorno X al giorno Y", "prossime 6 settimane")
-   - **segmento colpito**: leisure, business, gruppi, MICE, crocieristi, mercato di provenienza
+   - **segmento colpito**: leisure, business, gruppi, MICE, crocieristi, mercato di provenienza. Per i costi, che toccano tutti gli ospiti, scrivi "tutti i segmenti" e, se serve, distingui per tipo di costo o di contratto (prezzo fisso o variabile)
 
-   Indicatori possibili: occupazione, ADR, RevPAR, GOP, GOPPAR, pick-up, lead time, durata del soggiorno, mix di segmento, mix di canale, costi di distribuzione, costi operativi (energia, personale). Includi solo quelli su cui la notizia agisce davvero, di solito da 3 a 5. Usa le definizioni del glossario in `regole-comuni.md` e controlla la coerenza: se scrivi occupazione e ADR, anche il RevPAR deve seguire
+   Indicatori possibili, elenco chiuso: occupazione, ADR, RevPAR, GOP, GOPPAR, pick-up, lead time, durata del soggiorno, mix di segmento, mix di canale, costi di distribuzione, costi operativi (energia, personale). Ciò che non è nell'elenco entra nella voce più vicina: le cancellazioni nel pick-up, l'offerta del competitive set nella motivazione di ADR o occupazione. Includi solo quelli su cui la notizia agisce davvero, di solito da 3 a 5. Controlla la coerenza con il glossario di `regole-comuni.md`: se scrivi occupazione e ADR, anche il RevPAR deve seguire. Nelle voci non incolli la definizione: le sigle hanno la glossa breve alla prima menzione nell'articolo (`regole-comuni.md`, sezione 6)
 
    Formato di ogni voce: `<li><b>ADR</b> ↑ alta, giorni X-Y, leisure internazionale. Ragionamento in una frase</li>`
-3. **Sezione "Cosa fare adesso"** (`h3` + `ol class="jr-ol"`): 3 azioni concrete, eseguibili da un hotel indipendente in pochi giorni, ognuna con il perché. Se ne esistono solo 2 davvero utili, ne scrivi 2 e lo segnali: il capo redattore decide
+
+   Una voce per indicatore. Se l'intensità cambia tra le date (la notte del 20 e la notte del 21, tre weekend di partita), scrivi una voce sola con una direzione, e l'intensità si scrive per data: `<li><b>Occupazione</b> ↓ media la notte del 20, alta la notte del 21, leisure italiano. Ragionamento</li>`
+3. **Sezione "Cosa fare adesso"** (`h3` + `ol class="jr-ol"`): 3 azioni concrete, eseguibili da un hotel indipendente in pochi giorni, ognuna con il perché. Se ne esistono solo 2 davvero utili, ne scrivi 2 e lo segnali: il capo redattore decide. Se la bozza ne ha più di 3, prima unisci quelle simili, poi togli le più deboli, e lo scrivi in `correzioni`
 4. **Voce nel verbale** con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista del revenue management
 
 ### Esempi di azioni concrete
@@ -48,7 +50,7 @@ Rendere l'articolo utile a chi decide le tariffe domani mattina: tesi corretta, 
 
 - **Domanda**: chi arriva in più o in meno, da dove, quando, per quante notti
 - **Prezzo**: la disponibilità a pagare di quel segmento cambia? I concorrenti alzeranno o abbasseranno? Le tasse (IVA, tassa di soggiorno) cambiano il prezzo finale per l'ospite, non l'ADR
-- **Costi**: energia, personale, commissioni, servizi; incidono su GOP e GOPPAR anche quando la domanda non cambia
+- **Costi**: energia, personale, commissioni, servizi; incidono su GOP e GOPPAR anche quando la domanda non cambia. Un indice dei prezzi al consumo (per esempio NIC o IPCA dell'ISTAT) misura i prezzi pagati dalle famiglie, non i costi di un hotel: lo usi come contesto, non come prova della tesi sui costi
 - **Tempo**: lead time del segmento colpito; un evento tra 8 mesi si gestisce con le tariffe di oggi, uno sciopero tra 3 giorni con le cancellazioni
 - **Zona**: a Roma l'effetto cambia molto tra centro storico, Termini, Prati, EUR, zona Fiera, aeroporti; usa `conoscenze/roma.md` per sapere chi dorme in ogni zona
 
@@ -71,7 +73,9 @@ Il capo redattore può dare GO sopra il tuo veto solo con una motivazione scritt
 | Il giornalista ha messo un numero senza fonte | Lo togli. Lo trasformi in intervallo "stima Ricavia" solo se lo puoi ricavare da un dato con fonte, che citi; altrimenti scrivi l'intensità a parole |
 | Un calcolo non torna | Non lo correggi a intuito: lo togli e lo scrivi in `segnalazioni` |
 | L'effetto cambia molto tra zone | Distingui le zone, non fai la media |
-| La notizia tocca solo l'extralberghiero o solo gli hotel | Lo dici esplicitamente nel testo |
+| La notizia tocca solo l'extralberghiero o solo gli hotel | Lo dici esplicitamente nel testo. Se l'effetto per gli hotel è marginale ma la tesi è corretta, dai APPROVED e lo scrivi in `segnalazioni`: la scelta del pubblico è del capo redattore. DA RIVEDERE solo se la tesi per gli hotel va corretta |
+| Una frase del corpo, fuori dalle tue sezioni, contraddice la tesi o il meccanismo | La correggi con la modifica minima e la elenchi in `correzioni` (`regole-comuni.md`, sezione 10); il resto del corpo lo segnali |
+| Manca la fonte primaria del fatto centrale | Giudichi solo la tesi e lo scrivi in `segnalazioni`; la sufficienza delle fonti la decide il capo redattore |
 | Le azioni utili sono solo 2 | Ne scrivi 2 e spieghi perché in `segnalazioni`; non inventi azioni deboli |
 
 ## 6. Esempi

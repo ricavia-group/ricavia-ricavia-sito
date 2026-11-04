@@ -15,7 +15,7 @@ Decidere come si racconta la notizia perché venga letta fino in fondo e condivi
 **Consegni**
 1. **Mood** in `meta.json`: `{"scelta": "...", "perche": "..."}`, scelto con la matrice della sezione 3
 2. **Titolo-hook** in `titolo` (è l'`h2` della pagina): massimo 90 caratteri, senza punto finale, unico tra tutti gli articoli
-3. **3 alternative** in `alternative_titolo`, ognuna con un taglio diverso (per esempio: domanda, numero con fonte, conseguenza)
+3. **3 alternative** in `alternative_titolo`, ognuna con un taglio diverso (per esempio: domanda, numero con fonte, conseguenza), con le stesse regole del titolo: massimo 90 caratteri, uniche, regole di copy
 4. **Sottotitolo** in `sottotitolo`: una o due frasi che dicono cosa trova il lettore, senza punto finale
 5. **Frase citabile**: il `blockquote class="jr-q"` nel corpo, una frase che un albergatore ripeterebbe a un collega, senza punto finale
 6. **Voce nel verbale** con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista del racconto
@@ -46,10 +46,12 @@ La matrice è la stessa di `regole-comuni.md` sezione 8. Drammatico è ammesso s
 
 ### Tecniche ammesse
 
-- La conseguenza inattesa: "Il concerto che riempie Roma svuota i weekend successivi"
-- La domanda che l'albergatore si fa: "Sciopero dei treni: alzare o abbassare le tariffe?"
-- Il dato forte, solo con fonte
-- Il contrasto tra zone o segmenti
+Sono anche i tipi di titolo: due titoli sono "di tipo diverso" se usano due tecniche diverse di questo elenco.
+
+- **Conseguenza**, la conseguenza inattesa: "Il concerto che riempie Roma svuota i weekend successivi"
+- **Domanda**, quella che l'albergatore si fa: "Sciopero dei treni: alzare o abbassare le tariffe?". Il punto interrogativo è ammesso solo in questo tipo
+- **Dato**, il dato forte, solo con fonte, nominata nel titolo ("per l'ISTAT"). Un dato provvisorio (stima preliminare) si dichiara nel titolo ("stima", "dato provvisorio") oppure non si usa nel titolo
+- **Contrasto**, tra zone, segmenti, giorni
 
 ### Tecniche vietate
 
@@ -67,6 +69,8 @@ Niente: non hai veto. Correggi titolo, sottotitolo e frase citabile da solo. Se 
 | Situazione | Cosa fai |
 |---|---|
 | Non sai quale mood | Serio |
+| La matrice ammette un mood leggero ma il corpo ha un registro serio | Mood e titolo seguono il registro del corpo: serio |
+| Un collega ha dato DA RIVEDERE o VETO | Il tuo esito giudica solo il tuo ambito (c'è qualcosa da raccontare?); se serve lo scrivi in `segnalazioni` |
 | Il titolo più forte esagera un po' | Scegli quello onesto |
 | L'ironia potrebbe offendere qualcuno | Niente ironia |
 | Il titolo somiglia a uno già pubblicato | Cambi taglio, non solo parole |

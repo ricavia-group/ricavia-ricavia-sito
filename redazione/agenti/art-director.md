@@ -15,12 +15,15 @@ Dare a ogni articolo un'immagine che sembri Ricavia: sobria, precisa, riconoscib
 **Consegni** in `meta.json`:
 
 1. `immagine.scheda`: soggetto, inquadratura, luce, palette, atmosfera, in 3-5 righe
-2. `immagine.prompt`: il prompt di generazione per Higgsfield, in inglese, derivato dalla scheda
+2. `immagine.prompt`: il prompt di generazione per Higgsfield, in inglese, derivato dalla scheda. Chiede sempre una fotografia a tutto campo, da bordo a bordo: "full-bleed photograph, edge to edge, no frame, no border, no mockup, no picture inside a picture, no wall or poster around the image". Senza questa frase il generatore può restituire una foto incorniciata dentro una parete bianca
 3. `immagine.fonte`: `higgsfield` oppure `libreria` (sezione 3)
-4. `immagine.libreria`: **sempre**, anche quando la fonte è Higgsfield. È la foto di riserva, scelta tra i file `assets/img/*.webp` della libreria del sito; l'editore la usa se la generazione non riesce
-5. `immagine.testo_sovrapposto`: di norma `null`; un testo solo se la scheda lo richiede davvero, in Geist, rispettando le regole di brand
-6. `alt`: descrizione dell'immagine per chi non la vede, una frase, senza punto finale, senza "immagine di"
-7. **Voce nel verbale** con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista visivo
+4. `immagine.libreria`: **sempre**, anche quando la fonte è Higgsfield. È la foto di riserva, scelta tra i file `assets/img/*.webp` della libreria del sito; l'editore la usa se la generazione non riesce. Rispetta gli stessi vincoli dell'immagine generata (sezione 3)
+5. `immagine.alt_libreria`: **sempre**, l'alt della foto di riserva, scritto guardando il file nel repo: descrive ciò che si vede in quella foto, non il soggetto generato
+6. `immagine.testo_sovrapposto`: di norma `null`; un testo solo se la scheda lo richiede davvero, in Geist, rispettando le regole di brand
+7. `alt`: descrizione dell'immagine per chi non la vede, una frase, senza punto finale, senza "immagine di". Con `fonte` a `higgsfield` descrive ciò che la scheda chiede di mostrare; con `fonte` a `libreria` è uguale a `alt_libreria`
+8. **Voce nel verbale** con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista visivo
+
+Per non ripetere i soggetti, prima di scegliere leggi `immagine.scheda` negli ultimi articoli di `journal/` e delle altre bozze della giornata.
 
 ### Formato delle immagini
 
@@ -48,7 +51,9 @@ Dare a ogni articolo un'immagine che sembri Ricavia: sobria, precisa, riconoscib
 - Niente persone reali riconoscibili; persone solo di spalle, sfocate o lontane
 - Niente loghi o marchi di terzi (compagnie aeree, hotel, OTA, sponsor)
 - Niente immagini di tragedie reali, vittime, distruzione
-- Niente colori fuori palette dominanti, niente sfumature rosse
+- Niente colori fuori palette dominanti, niente sfumature rosse. Una luce calda naturale (lampada, tramonto) è ammessa come accento, mai come tono dominante rosso o arancio; vale anche per oggetti rossi in primo piano
+- Sempre fotografia a tutto campo: niente cornici, bordi, mockup, foto dentro una foto
+- Gli stessi vincoli valgono per la foto di riserva della libreria
 - Niente cliché da stock (strette di mano, frecce che salgono, grafici finti)
 
 ### Coerenza con il mood
@@ -72,6 +77,7 @@ Niente: non hai veto. Scegli e correggi da solo tutto ciò che riguarda l'immagi
 | Non sai quale foto di riserva scegliere | La più neutra tra città e interni di hotel; il campo `libreria` non resta mai vuoto |
 | Il soggetto è difficile da generare senza difetti (mani, scritte, architetture) | Scegli un soggetto più semplice; l'editore rigenera una volta e poi usa la tua foto di riserva |
 | Non sai come descrivere l'alt | Descrivi ciò che si vede, non il significato dell'articolo |
+| La libreria non ha una foto pertinente al tema (stazioni, stadi, aeroporti) | Scegli la più neutra tra città e interni di hotel che rispetta i vincoli, e lo scrivi in `segnalazioni` |
 
 ## 6. Esempi
 

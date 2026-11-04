@@ -28,7 +28,7 @@ Fonti: solo le pagine del sito in `index.html`, i 6 articoli storici, `tools/seo
 - Anche le strutture ricettive piccole: "è proprio nelle strutture ricettive piccole che ogni notte venduta al prezzo giusto si vede subito nel risultato" (pagina: Revenue management)
 - Il lettore degli articoli è chi decide tariffe, disponibilità e costi: proprietario, direttore, revenue manager, gestore extralberghiero (`regole-comuni.md`, sezione 1)
 
-Terminologia: a Roma il nome ufficiale è "contributo di soggiorno" (articolo: Affitti brevi); `regole-comuni.md` usa "tassa di soggiorno". Si intende la stessa imposta (conoscenza generale, da verificare): negli articoli su Roma si scrive "contributo di soggiorno" e si spiega una volta che è la tassa di soggiorno
+Terminologia: a Roma il nome ufficiale è "contributo di soggiorno" (articolo: Affitti brevi); "tassa di soggiorno" è il nome generale. La regola è nel glossario di `regole-comuni.md` (sezione 6 bis): negli articoli su Roma si scrive "contributo di soggiorno" e si spiega una volta, alla prima menzione, che è la tassa di soggiorno di Roma
 
 ## 2. Servizi: cosa fanno in concreto
 
@@ -178,7 +178,7 @@ Note d'uso:
 
 ## 5. Paragrafi Ricavia di esempio
 
-**Esempi di stile, non da copiare.** Le situazioni sono inventate e non contengono fatti: in un articolo vero ogni dettaglio viene dalla notizia e dalle sue fonti. Ogni pratica attribuita a Ricavia viene dalla sezione 4.1. Massimo 3 frasi, nessun punto finale.
+**Esempi di stile, non da copiare.** Le situazioni sono inventate e non contengono fatti: in un articolo vero ogni dettaglio viene dalla notizia e dalle sue fonti. Ogni pratica attribuita a Ricavia viene dalla sezione 4.1. Massimo 3 frasi, nessun punto finale. "Non da copiare" vuol dire: nessuna frase di un esempio si riprende, nemmeno con poche parole cambiate; le pratiche possono essere le stesse, parole e costruzione no. Il "Collegamento adatto" è il collegamento di chiusura (`regole-comuni.md`, sezione 5).
 
 **Evento** (concerto o partita annunciati)
 
