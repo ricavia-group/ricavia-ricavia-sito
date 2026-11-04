@@ -1,0 +1,171 @@
+{
+  "titolo": "Sciopero treni del 20 e 21 novembre: ridurre le tariffe o contare prima le prenotazioni?",
+  "tesi": "Lo sciopero ferroviario CUB-SGB dalle 21 di venerdì 20 alle 20 di sabato 21 novembre, insieme allo sciopero generale CGIL del 20, mette a rischio soprattutto gli arrivi in treno del sabato e del venerdì sera: chi a Roma lavora con ospiti italiani e di lavoro che arrivano in treno deve contare ora le prenotazioni esposte e allineare le condizioni di cancellazione, rinviando la decisione sul prezzo a ridosso della data invece di anticipare sconti",
+  "tema": "sciopero-trasporti-20-21-novembre-2026",
+  "categoria": "trasporti",
+  "fonti": [
+    {
+      "titolo": "Scioperi (calendario, aggiornato al 03/11/2026)",
+      "editore": "Ministero delle Infrastrutture e dei Trasporti",
+      "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "Sciopero treni novembre 2026: Italo il 9, poi 23 ore di stop il 20 e 21, fasce garantite e rimborso",
+      "editore": "Quotidiano Motori",
+      "url": "https://www.quotidianomotori.com/mobilita-urbana/sciopero-treni-novembre-2026-date-fasce-garantite-rimborso/",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "Roma Arte in Nuvola 2026",
+      "editore": "Turismo Roma (Roma Capitale)",
+      "url": "https://turismoroma.it/it/eventi/roma-arte-nuvola-2026",
+      "data": "2026-11-03"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Fatto con fonte primaria (calendario MIT aggiornato al 3 novembre), date certe a 17 giorni, meccanismo per segmento e canale di arrivo senza attribuzioni di zona",
+      "correzioni": [],
+      "segnalazioni": [
+        "Le fasce garantite e il rimborso Trenitalia vengono da una testata (Quotidiano Motori), non dalla pagina Trenitalia: da confermare sulla fonte primaria prima della pubblicazione",
+        "Il calendario della Commissione di garanzia (cgsse.it) letto oggi non mostrava ancora gli scioperi di novembre: controllo incrociato fatto solo con il MIT",
+        "Non risulta un'adesione specifica di ATAC (metro e bus di Roma) allo sciopero generale: l'articolo lo dice e rimanda alle comunicazioni delle aziende",
+        "Nessuna attribuzione dell'effetto a Termini o ad altre zone: roma.md lo lascia DA COMPLETARE"
+      ],
+      "ruolo_ricavia": "Ricavia separa le notti con prenotazioni esposte da quelle che lo sciopero non tocca e aggiorna ogni giorno tariffe e disponibilità in base all'andamento delle prenotazioni"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta e utile per le tariffe del weekend, numeri verificati sul calendario MIT e sulle fonti citate; ho precisato quali arrivi sono davvero esposti e ridotto le azioni a tre",
+      "correzioni": [
+        "Tesi precisata: lo sciopero ferroviario inizia alle 21 di venerdì, quindi il rischio maggiore è sugli arrivi del sabato e del venerdì sera; il calendario MIT non indica effetti dello sciopero generale sui treni di venerdì di giorno",
+        "Impatto: occupazione e RevPAR distinti per notte (media il 21, bassa il 20) invece di 'bassa o media'; ADR scritto come '=' con segmento e finestra",
+        "Impatto: tolta la voce 'Cancellazioni', che non è tra gli indicatori del manuale; l'effetto è ora dentro il pick-up, con finestra dal 13 al 21 novembre",
+        "Cosa fare adesso: da 5 a 3 azioni come chiede il manuale; unite estrazione e contatto degli ospiti, unite revisione del prezzo e soggiorno minimo, aggiunto il vincolo dei contratti con le OTA sulle condizioni di cancellazione"
+      ],
+      "segnalazioni": [
+        "Confermo la segnalazione del giornalista: fasce garantite e rimborso vengono da Quotidiano Motori, che non chiarisce se il sabato 21 rientri nelle fasce feriali di Trenitalia; da confermare sulla pagina Trenitalia",
+        "Il lede dice che i due scioperi 'cadono sulle notti di venerdì e sabato': corretto, ma non è confermato che lo sciopero generale fermi i treni di venerdì di giorno; il capo redattore valuti se precisarlo nel testo",
+        "Roma Arte in Nuvola si tiene all'EUR, zona DA COMPLETARE in roma.md: non ho attribuito effetti di zona"
+      ],
+      "ruolo_ricavia": "Nei giorni a rischio sciopero Ricavia aggiorna ogni giorno tariffe e disponibilità guardando il pick-up delle notti coinvolte, e decide il prezzo a ridosso della data invece di anticipare sconti"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo: nessun articolo su scioperi o trasporti nel registro, in journal/ o tra i 6 storici; keyword dell'albergatore (prenotazioni e cancellazioni), non del turista (orari)",
+      "correzioni": [
+        "Compilati slug, title_seo (57 caratteri), description (151 caratteri), keyword, categoria, related_intro e related",
+        "Corpo: \"Un weekend di novembre rischia di perdere una parte dei suoi\" diventa \"Lo sciopero treni di novembre rischia di far perdere a un weekend una \"",
+        "Corpo: \"<h3>Le due proclamazioni: orari e perimetro</h3>\" diventa \"<h3>Sciopero treni: le due proclamazioni, orari e perimetro</h3>\""
+      ],
+      "segnalazioni": [
+        "Il lede e un h3 non contenevano la keyword: ho aggiunto \"sciopero treni\" in entrambi senza cambiare i fatti",
+        "Fasce garantite e rimborso vengono ancora da Quotidiano Motori e non da Trenitalia: confermo la segnalazione del giornalista e del revenue manager, la verifica resta al capo redattore",
+        "Collegamenti interni nel corpo: due articoli già pubblicati e il servizio nella chiusura, tutti esistenti su main"
+      ],
+      "ruolo_ricavia": "Per chi cerca come gestire uno sciopero, il passo successivo naturale è la pagina sul revenue management: pick-up per notte e decisione sul prezzo a ridosso della data"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "Mood serio dalla matrice, titolo di tipo domanda, mantenuto dal corpo, con frase citabile già conforme",
+      "correzioni": [
+        "Titolo riscritto (88 caratteri) con taglio domanda; sostituisce il titolo provvisorio del giornalista",
+        "Aggiunti sottotitolo e 3 alternative con tagli diversi (domanda, dato con fonte, conseguenza)",
+        "Frase citabile: confermata, senza punto finale, senza numeri né nomi"
+      ],
+      "segnalazioni": [
+        "Il titolo è una domanda: la risposta (prima le prenotazioni, poi il prezzo) è nella sezione 'Perché lo sconto non è la prima mossa' e nella prima azione",
+        "Resta aperta la verifica di fasce garantite e rimborso sulla pagina Trenitalia, già segnalata dagli agenti precedenti: il titolo non le cita"
+      ],
+      "ruolo_ricavia": "Ricavia separa le prenotazioni esposte allo sciopero da quelle che non lo sono, guardando provenienza e canale, e decide il prezzo solo a ridosso della data"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Soggetto simbolico per uno sciopero senza vittime: banchina vuota, nessuna persona, nessun luogo colpito; mood serio, luce neutra e composizione statica; foto di riserva neutra di città (Colosseo dall'alto, n108) perché la libreria non ha una stazione",
+      "correzioni": [
+        "Scelta come riserva n108 e non n111 (terminal con viaggiatori): nel frame domina un cappotto rosso, fuori palette"
+      ],
+      "segnalazioni": [
+        "La libreria non contiene foto di stazioni o binari: la riserva non racconta il tema, resta una vista di Roma",
+        "Se la generazione fallisce due volte l'editore usa la riserva: l'alt della riserva va riscritto su ciò che si vede (Colosseo e centro di Roma dall'alto)"
+      ],
+      "ruolo_ricavia": "Visivamente Ricavia mostra il fatto con sobrietà, una banchina vuota e nessuna enfasi, perché il suo lavoro è leggere i numeri delle prenotazioni e non drammatizzare lo sciopero"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; tesi verificata sul calendario MIT del 3 novembre)",
+        "[x] Ogni numero ha fonte o è stima Ricavia come intervallo (date e orari MIT; fasce garantite e rimborso attribuiti a Quotidiano Motori nel testo; 140 gallerie da Turismo Roma)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, massimo 2 paragrafi, utile e non pubblicitario (un paragrafo, voci 4.1 n. 1 e 2)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (nessun punto finale, nessun verbo colloquiale, nessuna 'struttura' da sola)",
+        "[x] Tono coerente con la matrice del mood (serio: sciopero senza vittime, impatto non certo)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Da 700 a 1.100 parole, struttura completa (1.053 parole, 5 h3, apertura, impatto, 3 azioni, In breve)"
+      ],
+      "correzioni": [
+        "Apertura: 'rischia di far perdere a un weekend una parte dei suoi arrivi' diventa 'può togliere a un weekend di Roma una parte dei suoi arrivi'",
+        "Impatto, occupazione: 'per i treni di venerdì di giorno il calendario del ministero non indica effetti dello sciopero generale' diventa 'il calendario non indica fasce orarie specifiche per i treni; l'effetto sulle partenze di giorno si conosce solo dalle comunicazioni delle imprese ferroviarie' (controllato sul MIT: lo sciopero generale copre settori pubblici e privati per l'intera giornata, senza orari per il ferroviario; la frase originale poteva far credere a treni regolari)",
+        "Impatto, RevPAR: definizione riportata a quella completa del glossario",
+        "Paragrafo Ricavia riscritto: tolto 'separa le notti con prenotazioni esposte', che non è una pratica dichiarata in ricavia.md 4.1; ora voci 4.1 n. 1 e 2, collegamento a /revenue-management/"
+      ],
+      "segnalazioni": [
+        "Per l'editore: fasce garantite e rimborso sono attribuiti a Quotidiano Motori; prima del merge ricontrollare il calendario MIT (revoche) e, se disponibile, la pagina Trenitalia",
+        "Riserva: il candidato 8 (Roma Arte in Nuvola) non si propone come articolo a sé, è già contesto qui"
+      ],
+      "ruolo_ricavia": "Nelle notti toccate da uno sciopero il segnale da seguire è il ritmo delle prenotazioni: Ricavia aggiorna ogni giorno tariffe e disponibilità e controlla ogni settimana pick-up e occupazione a 90 giorni"
+    }
+  ],
+  "slug": "sciopero-treni-hotel-roma-prenotazioni",
+  "title_seo": "Sciopero treni e hotel a Roma: cosa controllare · Ricavia",
+  "description": "Sciopero dei treni del 20 e 21 novembre: quali arrivi del weekend sono esposti, come allineare le cancellazioni e quando decidere il prezzo delle notti",
+  "keyword": {
+    "principale": "sciopero treni hotel Roma",
+    "secondarie": [
+      "cancellazioni hotel sciopero",
+      "pick-up weekend",
+      "condizioni di cancellazione OTA"
+    ]
+  },
+  "related_intro": "Per gestire prenotazioni e tariffe nelle notti a rischio, approfondisci",
+  "related": [
+    {
+      "label": "il servizio di revenue management",
+      "url": "/revenue-management/"
+    },
+    {
+      "label": "occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Notizia di trasporti e scioperi senza vittime: la matrice ammette serio o drammatico. Drammatico richiede impatto alto e certo: qui le proclamazioni possono essere revocate, l'adesione nei servizi di Roma non è nota e l'effetto sugli ospiti dipende dal singolo hotel. Impatto non certo, quindi serio"
+  },
+  "alternative_titolo": [
+    "Sciopero dei treni a Roma: quali prenotazioni del weekend sono davvero esposte?",
+    "23 ore di sciopero ferroviario dal 20 novembre: le notti da controllare",
+    "Sciopero treni di novembre: prima le prenotazioni esposte, poi la decisione sul prezzo"
+  ],
+  "sottotitolo": "Le due proclamazioni, gli arrivi in treno davvero esposti e le tre azioni da fare prima di pensare agli sconti",
+  "immagine": {
+    "fonte": "higgsfield",
+    "scheda": "Soggetto: banchina ferroviaria vuota di una grande stazione, senza treni e senza persone, nessuna scritta leggibile\nInquadratura: frontale, simmetrica, prospettiva dei binari verso il centro, spazio negativo in alto\nLuce: alba, luce fredda e uniforme\nPalette: azzurro #3CCDFA nella luce del cielo, blu #1F2DD0 nelle ombre, neutri grigi\nAtmosfera: seria, statica, attesa senza dramma",
+    "prompt": "Empty railway platform of a large European station at dawn, no train, no people, parallel tracks converging toward the center of the frame, cold diffused cyan morning light, deep blue shadows, polished concrete and steel, large empty space above, calm and static composition, shot at eye level. Photorealistic 16:9 cover photograph, natural light, clean composition with generous negative space, main subject kept in the central horizontal band with clear margin above and below so a 1200x630 crop stays safe. No text, no signage, no logos or brands, no recognizable people. Palette of cool cyan (#3CCDFA), deep blue (#1F2DD0) and soft violet (#724AF8) as light and small accents on clean neutrals, no red tones, no heavy color filter.",
+    "libreria": "assets/img/bb5d2ac53b.webp",
+    "testo_sovrapposto": null
+  },
+  "alt": "Banchina ferroviaria vuota all'alba, con i binari che convergono al centro",
+  "data": "2026-11-03",
+  "autore": "Tito · Redazione Ricavia"
+}
