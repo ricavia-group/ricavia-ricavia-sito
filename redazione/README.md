@@ -1,6 +1,6 @@
 # Redazione dell'Osservatorio
 
-Qui vivono le istruzioni della redazione automatica che ogni giorno propone fino a 3 articoli per il Journal di ricavia.com. Il progetto approvato è in `docs/superpowers/specs/2026-11-03-redazione-osservatorio-design.md`.
+Qui vivono le istruzioni della redazione automatica che ogni giorno propone fino a 2 articoli per il Journal di ricavia.com. Il progetto approvato è in `docs/superpowers/specs/2026-11-03-redazione-osservatorio-design.md`.
 
 ## Cosa c'è in questa cartella
 
@@ -59,7 +59,7 @@ Se due testi si contraddicono, vale quest'ordine: `CLAUDE.md`, poi `regole-comun
 ## Il flusso di ogni giorno
 
 ```text
-06:00  Giornalista: 8-12 candidati, sceglie 3, scrive 3 bozze con scheda fonti
+06:00  Giornalista: 6-10 candidati, sceglie 2, scrive 2 bozze con scheda fonti
        War room, per ogni bozza in quest'ordine:
          Revenue manager -> SEO director -> Virality director -> Art director
        Capo redattore: GO / NO-GO / RIMANDA per ogni bozza
@@ -107,7 +107,7 @@ Campi di lavoro (ignorati dalla build, ma obbligatori per la redazione):
 | `keyword` | SEO director | `{"principale": "...", "secondarie": ["...", "..."]}` |
 | `mood` | Virality director | `{"scelta": "serio", "perche": "..."}` |
 | `alternative_titolo` | Virality director | 3 titoli alternativi |
-| `immagine` | Art director | `{"fonte": "higgsfield" o "libreria", "prompt": "...", "scheda": "...", "libreria": "assets/img/xxxxxxxxxx.webp", "alt_libreria": "...", "testo_sovrapposto": null}`; `libreria` e `alt_libreria` sono sempre compilati: sono la foto di riserva e la sua descrizione |
+| `immagine` | Art director | `{"fonte": "libreria" (di norma) o "higgsfield", "prompt": "...", "scheda": "...", "libreria": "assets/img/xxxxxxxxxx.webp", "alt_libreria": "...", "testo_sovrapposto": null}`; `libreria` e `alt_libreria` sono sempre compilati: sono la foto di riserva e la sua descrizione |
 | `fonti` | Giornalista | lista di `{"titolo": "...", "editore": "...", "url": "https://...", "data": "AAAA-MM-GG"}`; `data` è il giorno in cui la pagina è stata letta; la data di pubblicazione, se c'è, va in `fonti.md` |
 | `verbale` | ogni agente | vedi sotto |
 

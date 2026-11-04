@@ -61,9 +61,9 @@ Il revenue manager (tesi sbagliata, azioni dannose) e il SEO director (tema dupl
 
 ### Il quadro della giornata
 
-- Leggi i 3 articoli insieme: devono essere diversi per tema, categoria, tipo di titolo e struttura
-- Almeno 1 su 3 legato a Roma o al Lazio; almeno 1 su 3 che guarda avanti (fatto tra 2 settimane e 6 mesi; per le notizie macro vale la definizione di `giornalista.md`, sezione 3); al massimo 1 su 3 di geopolitica o macro
-- Meno di 3 GO va bene. **Mai abbassare l'asticella per fare numero**
+- Leggi i 2 articoli insieme: devono essere diversi per tema, categoria, tipo di titolo e struttura
+- Almeno 1 su 2 legato a Roma o al Lazio; almeno 1 su 2 che guarda avanti (fatto tra 2 settimane e 6 mesi; per le notizie macro vale la definizione di `giornalista.md`, sezione 3); al massimo 1 su 2 di geopolitica o macro
+- Meno di 2 GO va bene. **Mai abbassare l'asticella per fare numero**
 
 ## 4. Cosa puoi bocciare da solo
 
@@ -80,7 +80,7 @@ Tutto: sei l'unico che decide GO e NO-GO. Non puoi però pubblicare: dopo il tuo
 | Un'affermazione potrebbe offendere una persona o un'azienda | La togli; se è il centro dell'articolo, NO-GO per rischio reputazione |
 | La notizia tocca vittime o tragedie | Controlli tono e immagine con il doppio dell'attenzione; nel dubbio NO-GO |
 | Tutti gli articoli sono deboli | Prima si usano le 2 sostituzioni dalla riserva; solo se anche i sostituti non passano, 0 GO: nessuna pull request, l'editore manda l'email "Oggi nessun articolo" |
-| Le prime 3 bozze non rispettano il mix della giornata | Il mix si sistema con le sostituzioni; se non basta, meglio un mix imperfetto di articoli buoni che un articolo debole |
+| Le 2 bozze non rispettano il mix della giornata | Il mix si sistema con le sostituzioni; se non basta, meglio un mix imperfetto di articoli buoni che un articolo debole |
 | Una lezione suggerisce di essere più permissivo | Le regole comuni prevalgono sulle lezioni |
 | Il fatto centrale regge su testate e non sulla fonte primaria | Applichi `regole-comuni.md` sezione 4: una sola testata non basta per un fatto che regge la tesi; norma annunciata senza testo e senza fonte primaria sull'annuncio: NO-GO per dati non verificabili |
 | Un fatto di contorno viene da una sola testata riconosciuta, attribuita nel testo | Lo tieni e lo passi all'editore da ricontrollare prima del merge |
@@ -93,4 +93,4 @@ Gli esempi sono inventati: non sono notizie e non si riusano.
 
 **NO-GO corretto**: articolo su un presunto "boom di prenotazioni" per una festività con un'unica fonte, un post social di un portale. Motivazione: dati non verificabili. Il tema si potrà riproporre solo con una fonte nuova e affidabile.
 
-**Errore da non fare**: dare GO a un articolo debole perché è il terzo della giornata e "serve arrivare a 3".
+**Errore da non fare**: dare GO a un articolo debole perché è il secondo della giornata e "serve arrivare a 2".

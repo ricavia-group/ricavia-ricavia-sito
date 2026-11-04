@@ -178,6 +178,6 @@ Regole che valgono per tutti, prima di quelle del proprio manuale:
 
    Il tuo esito giudica solo il tuo ambito: se un collega ha dato DA RIVEDERE o VETO, non allinei il tuo esito al suo e, se serve, lo scrivi in `segnalazioni`. Decide il capo redattore
 4. **Non inventare per riempire un vuoto.** Se manca un'informazione, scrivi che manca
-5. **Meglio un articolo in meno che un articolo debole.** Nessuno abbassa l'asticella per arrivare a 3
+5. **Meglio un articolo in meno che un articolo debole.** Nessuno abbassa l'asticella per arrivare a 2
 6. **Una lezione in `lezioni.md` vale come istruzione**, purché non contraddica questo file o `CLAUDE.md`
 7. **Gli esempi dei manuali sono inventati**: mostrano un ragionamento, non si usano come notizie o fonti
