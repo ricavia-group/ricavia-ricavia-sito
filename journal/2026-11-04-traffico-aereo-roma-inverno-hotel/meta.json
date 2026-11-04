@@ -1,0 +1,222 @@
+{
+  "titolo": "Fiumicino +0,6%, Italia +6,5% per Assaeroporti: l'inverno degli hotel parte dal pick-up",
+  "tesi": "A settembre il traffico aereo italiano è cresciuto del 6,5% e quello di Roma dello 0,5% (Fiumicino +0,6%, Ciampino −1,2%) su un settembre 2025 di Giubileo, con la crescita di Fiumicino trainata dal lungo raggio, che pesa meno in inverno, mentre Ryanair ha annunciato un inverno 2026 su Roma senza nuovi posti: da novembre a febbraio gli hotel di Roma non hanno, nelle fonti lette, segnali di domanda aggiuntiva dai voli brevi, quindi budget e prezzi dei weekend d'inverno si costruiscono sul proprio pick-up, con un confronto che per novembre e dicembre tiene conto del Giubileo del 2025, e senza sconti anticipati per inseguire una crescita nazionale che a Roma non si vede negli arrivi",
+  "tema": "traffico-aereo-roma-inverno",
+  "categoria": "dati",
+  "slug": "traffico-aereo-roma-inverno-hotel",
+  "title_seo": "Traffico aereo su Roma: l'inverno degli hotel · Ricavia",
+  "description": "Traffico aereo: Roma cresce meno dell'Italia e Ryanair non aggiunge posti su Roma per l'inverno. Come fissare budget e prezzi dei weekend sul proprio pick-up",
+  "keyword": {
+    "principale": "traffico aereo Roma hotel",
+    "secondarie": [
+      "passeggeri Fiumicino Ciampino",
+      "Ryanair inverno Roma",
+      "budget hotel inverno",
+      "pick-up weekend inverno"
+    ]
+  },
+  "related_intro": "Per costruire il budget d'inverno sui numeri del tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "perché il 2025 non è un buon termine di paragone",
+      "url": "/osservatorio/roma-dopo-giubileo-cambia-chi-ospita/"
+    },
+    {
+      "label": "il servizio di revenue management",
+      "url": "/revenue-management/"
+    }
+  ],
+  "fonti": [
+    {
+      "titolo": "Dati di Traffico Settembre 2026 – Nota di commento",
+      "editore": "Aeroporti 2030",
+      "url": "https://www.aeroporti2030.it/dati-di-traffico-aeroportuale/dati-di-traffico-settembre-2026-nota-di-commento-2/",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Dati di traffico, settembre 2026",
+      "editore": "Assaeroporti",
+      "url": "https://assaeroporti.com/statistiche/",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Aeroporti italiani: estate 2026, sfiorati i 100 milioni di passeggeri",
+      "editore": "Assaeroporti",
+      "url": "https://assaeroporti.com/aeroporti-italiani-estate-2026-sfiorati-i-100-milioni-di-passeggeri/",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Ryanair annuncia l'operativo invernale 2026 su Roma senza crescita",
+      "editore": "Ryanair",
+      "url": "https://corporate.ryanair.com/novita/ryanair-annuncia-loperativo-invernale-2026-su-roma-senza-crescita-a-causa-del-limite-impostoai-voli-di-ciampino-delle-tasse-elevate-e-dellaumento-delle-tariffe-aeroportuali/",
+      "data": "2026-11-04"
+    },
+    {
+      "titolo": "Aeroporti italiani, settembre a +6,5%: la panoramica da cui partire per leggere le differenze",
+      "editore": "WEtravel News",
+      "url": "https://www.wetravel.biz/2026/10/30/aeroporti-italiani-settembre-a-65-la-panoramica-da-cui-partire-per-leggere-le-differenze/",
+      "data": "2026-11-04"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Dato di traffico pubblicato il 30 ottobre, dentro i 7 giorni, con il dato di ottobre atteso a fine novembre; Roma, guarda avanti sull'inverno con azioni per gennaio-marzo; tema non trattato da nessun articolo",
+      "correzioni": [
+        "Attribuzione della nota di commento: da Aeroporti di Roma ad Aeroporti 2030 (tre punti del corpo)",
+        "Traffico point-to-point: definizione allineata a quella della nota",
+        "fonti.md e fonti in meta.json aggiornati con la lettura diretta del 4 novembre"
+      ],
+      "segnalazioni": [
+        "Fonti primarie aperte e lette direttamente il 4 novembre (curl): nota di Aeroporti 2030, tabella e comunicato Assaeroporti, comunicato Ryanair. Tutti i numeri del testo coincidono con le pagine: Italia 23.928.672 passeggeri +6,5%; Fiumicino 4.903.208 +0,6%; Ciampino 322.991 −1,2%; sistema di Roma 5,2 milioni +0,5%; Nord America +6%; Estremo Oriente +16,8%; collegamenti diretti 4,2 milioni +1,2%; giugno-settembre 98,8 milioni +6,3%; Ryanair 16 aerei, 57 rotte, crescita zero, comunicato del 1° ottobre",
+        "Corretti dopo la lettura diretta: la nota non è di Aeroporti di Roma ma di Aeroporti 2030, associazione di gestori da cui Assaeroporti riprende i dati di Fiumicino e Ciampino; il traffico point-to-point è definito dalla nota come collegamenti diretti senza scali intermedi, non come chi comincia o finisce il viaggio a Roma. Date di pubblicazione lette: nota e comunicato Assaeroporti 30 ottobre, Ryanair 1° ottobre",
+        "Ambiguità di sigla: Aeroporti di Roma si abbrevia ADR, come la tariffa media. Nel testo il gestore è sempre scritto per esteso; la sigla ADR indica solo la tariffa. Da mantenere in titolo, description e alt",
+        "La lettura sull'inverno (lungo raggio che pesa meno da novembre a febbraio) è una deduzione da due articoli pubblicati di Ricavia, scritta nel testo come lettura e non come dato: nessuna fonte dà la quota di lungo raggio per mese a Roma",
+        "Comunicato Ryanair: uso solo il fatto (nessuna crescita, 16 aerei, 57 rotte) e i motivi attribuiti alla compagnia; tolte le cifre di parte su tariffe future, studio sui 115 voli e piano da 4 miliardi, per non prendere posizione tra compagnia, gestore e governo",
+        "Il comunicato Ryanair è del 1° ottobre, oltre i 7 giorni: entra come contesto, non regge da solo la tesi",
+        "Le 4 voci dell'impatto usano = e ? senza intensità, come vuole il manuale del revenue manager; da verificare se serve una voce sul mix di segmento",
+        "Collegamenti interni nel corpo: 2 (storico sui voli, calendario di Roma) più /metodo/ nel paragrafo Ricavia; voce 4.1 n. 6, non usata negli articoli del 3 novembre"
+      ],
+      "ruolo_ricavia": "Ricavia confronta tariffe, calendario e mix dei canali di ogni hotel con un competitive set di tre o quattro concorrenti comparabili: con una domanda aerea ferma è il confronto che distingue un problema di mercato da un problema di prezzo"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta nel nesso (dato nazionale che non è domanda per Roma, nessuno sconto anticipato), dopo aver ristretto l'assenza di nuova capacità a Ryanair, l'unica fonte che la sostiene, e tolto lo scorso inverno come unico termine di confronto, perché novembre e dicembre 2025 erano mesi di Giubileo",
+      "correzioni": [
+        "tesi: 'non ricevono domanda aggiuntiva dai voli brevi' diventa 'non hanno segnali di domanda aggiuntiva'; aggiunto il confronto che per novembre e dicembre tiene conto del Giubileo. Perché: il comunicato Ryanair riguarda solo l'operativo Ryanair (riletto il 4 novembre), nessuna fonte letta parla delle altre compagnie; e il 2025 non è un buon termine di paragone (roma.md, Calendario religioso)",
+        "Apertura, seconda frase: 'i posti in arrivo sulla città' diventa 'i passeggeri degli scali della città': il dato è di passeggeri (arrivi e partenze), non di posti offerti",
+        "Sezione 'Cosa cambia per l'inverno', secondo paragrafo: 'non ha nuova capacità' diventa 'non riceve nuova capacità da Ryanair'; 'non può contare su ospiti in più portati da nuovi voli' diventa 'non ha segnali di ospiti in più'; 'quella dello scorso inverno' diventa 'quella degli inverni precedenti'",
+        "In breve, terza voce: 'I voli brevi su Roma non aumentano questo inverno' diventa 'Ryanair non aumenta i posti su Roma questo inverno' (stessa ragione: la fonte riguarda una sola compagnia)",
+        "Impatto, Occupazione: segmento esteso a 'leisure italiano ed europeo con voli brevi' (l'operativo Ryanair comprende rotte nazionali); motivazione riscritta con 'da monitorare sul pick-up' al posto di 'la base è quella dello scorso anno'",
+        "Impatto, Pick-up: confronto con le stesse settimane degli anni precedenti, con l'avvertenza sul Giubileo per novembre e dicembre",
+        "Cosa fare, azione 1: mesi allineati alla finestra dell'articolo (dicembre-febbraio invece di gennaio-marzo; marzo ha eventi propri e Ryanair non è l'unico fattore); tolto lo scorso inverno come unico riferimento, aggiunto il 2024 per dicembre",
+        "Cosa fare, azione 2: 'posti sui voli brevi fermi' diventa 'posti Ryanair su Roma fermi'; 'sotto il ritmo dell'anno scorso' diventa 'sotto il ritmo di prenotazione atteso'",
+        "Cosa fare, azione 3: tolto il consiglio sulle lingue degli annunci (poco legato all'inverno e già usato nell'articolo sul Sei Nazioni del 3 novembre); sostituito con il confronto tra mercati in crescita negli aeroporti e provenienza del proprio pick-up"
+      ],
+      "segnalazioni": [
+        "Titolo di lavoro ('si prepara senza nuovi voli'): dopo la correzione della tesi è troppo assoluto. La nota di Aeroporti 2030 cita nuove rotte a settembre verso l'Europa dell'Est e Tripoli, e il fatto sull'inverno riguarda solo Ryanair. Al virality director: titolo, sottotitolo e frase citabile ('Le riempiono i posti che atterrano in città') da tenere sul passaggio Ryanair, non su 'nessun nuovo volo'. Al SEO director: lo stesso per description e keyword",
+        "Base di confronto: il +0,5% di Roma si misura su settembre 2025, mese di Giubileo. La lettura 'Roma quasi ferma' resta corretta come fatto, ma il capo redattore valuti una mezza frase nel corpo (fuori dal mio ambito) per dire che il confronto è con un anno eccezionale",
+        "Contesto non usato nel testo, dalla stessa nota di Aeroporti 2030 riletta oggi: a Fiumicino l'Europa UE cresce dell'1,6%; nella tabella Assaeroporti i passeggeri nazionali di Fiumicino calano del 3,5% (fonti.md). Il quadro 'cresce solo il lungo raggio' è quindi una semplificazione: il calo è soprattutto nazionale. Non cambia la tesi sull'inverno",
+        "Azioni: 3, tutte eseguibili da un hotel indipendente senza strumenti da catena; nessuna consiglia ribassi"
+      ],
+      "ruolo_ricavia": "Con una domanda aerea che non cresce, Ricavia confronta tariffe, calendario e mix dei canali dell'hotel con tre o quattro concorrenti davvero comparabili, per distinguere un pick-up debole dovuto al mercato da uno dovuto al proprio prezzo prima di toccare le tariffe d'inverno"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo: nessun articolo sul traffico aereo di Roma nel registro, in journal/ o negli ultimi 14 giorni; lo storico sui voli (7 settembre) spiega un metodo di lettura, questa bozza commenta i dati di settembre e l'operativo invernale, quindi la tesi è diversa e l'articolo storico è collegato nel corpo",
+      "correzioni": [
+        "Compilati slug (traffico-aereo-roma-inverno-hotel, 5 parole, senza date), title_seo (55 caratteri), description (157 caratteri), keyword, related_intro e related; lunghezze contate con Python. Categoria 'dati' confermata: la causa della notizia è la pubblicazione dei dati di traffico",
+        "title_seo e description senza 'senza nuovi voli': la description attribuisce a Ryanair, e solo a Ryanair, l'assenza di posti aggiunti su Roma per l'inverno, come chiesto dal revenue manager; nessuna cifra nella description; 'Aeroporti di Roma' mai abbreviato",
+        "Apertura, prima frase: 'A settembre gli aeroporti italiani hanno trasportato il 6,5% di passeggeri in più rispetto a un anno prima, quelli di Roma lo 0,5%' diventa 'A settembre il traffico aereo degli aeroporti italiani è cresciuto del 6,5% in passeggeri rispetto a un anno prima, quello di Roma dello 0,5%': stessi fatti, numeri e fonti, con la keyword",
+        "Terzo h3: 'Cosa cambia per l'inverno degli hotel di Roma' diventa 'Traffico aereo e inverno degli hotel di Roma: cosa cambia', per avere la keyword completa in un h3",
+        "related: articolo 'Roma dopo il Giubileo' (il corpo e l'azione 1 dicono che il 2025 non è un buon termine di paragone) e /revenue-management/; nessuna delle due voci ripete i collegamenti del corpo (storico sui voli, calendario di Roma, /metodo/ in chiusura)"
+      ],
+      "segnalazioni": [
+        "Keyword nell'apertura: 'traffico aereo' e 'Roma' sono nella prima frase, 'hotel' nella seconda, che non tocco (stesso schema dell'articolo sul Sei Nazioni); aggiungere 'hotel' alla prima frase lo avrebbe ripetuto due volte di seguito",
+        "Al virality director: il titolo di lavoro dice ancora 'si prepara senza nuovi voli', troppo assoluto (la fonte riguarda solo Ryanair e la nota di Aeroporti 2030 cita nuove rotte); title_seo e description sono già allineati alla tesi corretta",
+        "Al capo redattore: nel corpo la frase 'Da novembre a febbraio un hotel di Roma non ha segnali di ospiti in più portati da nuovi voli' resta vicina al 'senza nuovi voli' del titolo di lavoro; fuori dal mio ambito, la segnalo",
+        "Collegamenti interni naturali nel corpo: 2 (storico sui voli, calendario di Roma), più /metodo/ in chiusura; tutti esistenti su main; nessun collegamento all'altra bozza della giornata",
+        "Title, slug e description confrontati con tools/seo.json, con le 3 cartelle di journal/ e con la bozza 2 di oggi: nessuna coincidenza; costruzione del title diversa da quelle del 3 novembre e da quella della bozza 2",
+        "Keyword scelta senza dati di volume di ricerca: 'traffico aereo Roma' attira anche chi segue il settore aereo; title e description la spostano sull'albergatore con 'hotel', 'budget' e 'pick-up'",
+        "Il sottotitolo e l'alt non sono ancora compilati (virality director e art director)"
+      ],
+      "ruolo_ricavia": "Per chi cerca come leggere i dati di traffico aereo, il passo successivo naturale è la pagina del metodo, dove Ricavia descrive il confronto con tre o quattro concorrenti comparabili prima di toccare le tariffe; il revenue management è in related per chi vuole passare al budget d'inverno"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è un racconto concreto per l'albergatore (il dato nazionale non è domanda per Roma, il budget d'inverno parte dal proprio pick-up): titolo di tipo dato con fonte nominata, senza l'assoluto 'senza nuovi voli', e frase citabile riscritta sulla tesi corretta",
+      "correzioni": [
+        "Titolo: da 'Fiumicino cresce dello 0,6%, l'Italia del 6,5%: l'inverno degli hotel di Roma si prepara senza nuovi voli' (103 caratteri, oltre il limite di 90, e assoluto: la fonte sull'inverno riguarda solo Ryanair e la nota di Aeroporti 2030 cita nuove rotte) a 'Fiumicino +0,6%, Italia +6,5% per Assaeroporti: l'inverno degli hotel parte dal pick-up' (87 caratteri). Tipo: dato, con la fonte nominata nel titolo; entrambi i numeri sono nella tabella Assaeroporti (righe di Fiumicino con fonte Aeroporti 2030); il titolo non dice nulla sui voli nuovi",
+        "Tipo di titolo diverso da quello della bozza 2 (conseguenza) e dagli articoli vicini per tema: domanda per lo sciopero dei treni (trasporti) e contrasto per il Sei Nazioni; il dato con fonte del 3 novembre riguardava l'inflazione, tema e categoria diversi",
+        "Sottotitolo nuovo (156 caratteri), senza punto finale: dice cosa trova il lettore (dati di settembre, composizione della crescita di Fiumicino, operativo Ryanair, tre azioni)",
+        "Alternative con tre tagli diversi: domanda, conseguenza (attribuita solo a Ryanair), contrasto tra Italia e Roma; tutte entro 90 caratteri, contate con Python, nessuna con 'senza nuovi voli'",
+        "Mood: serio",
+        "Frase citabile: 'Un record nazionale non riempie le camere di Roma. Le riempiono i posti che atterrano in città' diventa 'Il traffico aereo nazionale descrive il Paese. La domanda di un hotel si legge nel suo pick-up'. Perché: la seconda frase andava oltre la tesi (legava la domanda ai posti in arrivo, cioè alla capacità aerea, su cui le fonti dicono solo che Ryanair non cresce), 'record' non è un termine delle fonti lette, e 'Roma' era un nome. La nuova frase è un contrasto (Paese e hotel, traffico e pick-up), senza numeri né nomi, e chiude il paragrafo sul rischio di budget e sconti costruiti sulla crescita nazionale"
+      ],
+      "segnalazioni": [
+        "Al capo redattore: l'apertura parla di 'record nazionale'. Nella scheda fonti nessuna pagina letta usa la parola record per settembre (Assaeroporti titola sull'estate 'sfiorati i 100 milioni'); se la fonte non lo dice, 'record' è da togliere o da attribuire. Fuori dal mio ambito, non lo tocco",
+        "Al capo redattore: la frase del corpo 'Da novembre a febbraio un hotel di Roma non ha segnali di ospiti in più portati da nuovi voli' resta vicina all'assoluto tolto dal titolo (già segnalata dal SEO director); con il nuovo titolo e la nuova frase citabile nessun testo del mio ambito la riprende",
+        "Il titolo usa 'Fiumicino' e non nomina Aeroporti di Roma: nessuna ambiguità con la sigla ADR",
+        "Titolo, alternative e frase citabile confrontati con i 6 storici, i 3 articoli di journal/, tools/seo.json, registro e bozza 2: nessuna coincidenza; la frase citabile non riprende quella dello storico sui voli ('Il volo è la prima prenotazione del viaggio. La camera arriva dopo')"
+      ],
+      "ruolo_ricavia": "Il racconto regge se la chiusura passa dal dato del Paese al singolo hotel: Ricavia confronta il pick-up dell'hotel con tre o quattro concorrenti comparabili, ed è quel confronto, non la media italiana, a dire se un inverno debole dipende dal mercato o dal prezzo"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Immagine generata con Higgsfield: la libreria ha un solo soggetto aeroportuale (cb8c5b135f, terminal con viaggiatori), già copertina dello storico sui voli del 7 settembre, dentro gli ultimi 10 articoli, e con un cappotto rosso in primo piano, escluso dai vincoli; riserva neutra tra gli interni di hotel non usati di recente",
+      "correzioni": [
+        "immagine compilata: fonte higgsfield, scheda (soggetto, inquadratura, luce, palette, atmosfera), prompt in inglese con la frase sulla fotografia a tutto campo chiesta dalla lezione del 3 novembre, testo_sovrapposto null",
+        "immagine.libreria: assets/img/dd641d2c79.webp (n101, suite con pannelli azzurri), guardata con Read; non usata da nessuno dei 9 articoli pubblicati (6 storici e 3 di journal/) né come riserva; palette fredda in tono con il brand, nessuna persona, nessun logo, nessun rosso",
+        "alt e alt_libreria compilati, senza punto finale e senza 'immagine di'; l'alt non usa la sigla ADR né 'Aeroporti di Roma', come chiesto dal giornalista",
+        "Soggetto scelto per non ripetere la copertina del 3 novembre sullo sciopero dei treni (banchina vuota, prospettiva convergente all'alba): qui vista laterale dalla vetrata, aerei presenti, traffico calmo e non deserto, coerente con 'non è un calo' del corpo"
+      ],
+      "segnalazioni": [
+        "Crediti: una generazione, giustificata perché la libreria non ha aeroporti o aerei utilizzabili. Da ampliare la libreria con piazzali, piste, aerei senza livrea, vetrate di terminal senza persone in primo piano",
+        "La foto di riserva è un interno di hotel, non racconta il tema: se l'editore la usa, la copertina è neutra ma corretta; in quel caso copia alt_libreria in alt",
+        "Soggetto con aerei: se la generazione mostra loghi, scritte, numeri di registrazione o colori di compagnia sulla coda, l'editore rigenera una volta e poi passa alla riserva",
+        "All'editore, fuori dalle bozze di oggi: nell'articolo pubblicato il 3 novembre sull'inflazione (journal/2026-11-03-inflazione-energia-costi-hotel) hero.webp è la camera della libreria 941717e0f5, ma alt dice 'Corridoio d'hotel vuoto con una fila di lampade accese lungo le pareti' (descrive la scheda della generazione, non la foto pubblicata). Correzione di forma da proporre: 'Camera d'hotel con letto matrimoniale, pareti in marmo chiaro e armadi grigi'"
+      ],
+      "ruolo_ricavia": "L'aeroporto è il segnale, la camera è la decisione: Ricavia legge il traffico degli scali accanto al pick-up dell'hotel e a tre o quattro concorrenti comparabili, e solo dopo tocca le tariffe d'inverno"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; il dato nazionale non è domanda per Roma, budget d'inverno sul proprio pick-up, nessuno sconto anticipato; dopo le correzioni l'assenza di nuova capacità è attribuita solo a Ryanair e il confronto di settembre dichiara il Giubileo 2025)",
+        "[x] Ogni numero ha fonte linkata nel testo (riletti con curl il 4 novembre: tabella Assaeroporti 23.928.672 +6,5%, Fiumicino 4.903.208 +0,6%, Ciampino 322.991 −1,2%; nota Aeroporti 2030 5,2 milioni +0,5%, Nord America +6%, Estremo Oriente +16,8%, 4,2 milioni +1,2%; comunicato Assaeroporti 98,8 milioni +6,3%, ora linkato; Ryanair 16 aerei, 57 rotte, limite di 65 voli); nessuna stima",
+        "[x] Fonti citate con link, nessuna copia: la definizione dei collegamenti diretti è breve e riformulata; del comunicato Ryanair entrano solo i fatti e i motivi attribuiti",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voci 4.1 n. 6 e 7, diverso dagli articoli della settimana, collegamento unico all'Hotel Score",
+        "[x] Regole di brand e di copy rispettate (nessun punto finale, nessun verbo o metafora vietati, sigle con glossa breve, 'Aeroporti di Roma' mai abbreviato)",
+        "[x] Tono serio, coerente con la matrice (dati economici e trasporti senza vittime)",
+        "[x] Tema non ripetuto (SEO director APPROVED; lo storico sui voli spiega un metodo, questa bozza commenta i dati di settembre)",
+        "[x] Nessuna affermazione negativa: le critiche del comunicato Ryanair a gestore e governo non entrano, i motivi sono attribuiti alla compagnia",
+        "[x] Circa 1.090 parole contate con gli spazi, tag esclusi (circa 1.060 senza numeri e simboli); 5 h3, apertura, impatto, 3 azioni, In breve"
+      ],
+      "correzioni": [
+        "Apertura: 'conta più del record nazionale' diventa 'conta più della crescita nazionale': nessuna fonte letta usa 'record' per il settembre italiano (la nota di Aeroporti 2030 lo usa solo per Venezia), ricontrollato con curl",
+        "Prima sezione, secondo paragrafo: aggiunta la frase 'Il confronto è con settembre 2025, mese del Giubileo: per Roma non è un termine di paragone ordinario'. Precisione di una frase vera ('Roma quasi ferma') che senza il contesto poteva far credere a un mercato debole; il Giubileo 2025 è già nel corpo (Pick-up, azione 1) e nel calendario di roma.md, nessun fatto nuovo",
+        "Stesso paragrafo: collegato 'sempre secondo Assaeroporti' al comunicato sull'estate (già in fonti): il dato 98,8 milioni +6,3% non è nella pagina /statistiche/ linkata prima, verificato con curl",
+        "Stesso paragrafo: 'non si vede negli arrivi' diventa 'non si vede nel traffico degli scali': il dato è di passeggeri in arrivo e in partenza",
+        "Terza sezione, secondo paragrafo: 'Da novembre a febbraio un hotel di Roma non ha segnali di ospiti in più portati da nuovi voli' diventa 'Le fonti lette non danno l'operativo invernale delle altre compagnie: un hotel di Roma non ha elementi per contare su ospiti in più portati da nuovi voli'. L'assoluto è ristretto a ciò che le fonti dicono; la nota di Aeroporti 2030 cita nuove rotte di altre compagnie a settembre",
+        "Impatto, Occupazione: 'le fonti lette non indicano nuova capacità di altre compagnie' diventa 'le fonti lette non danno l'operativo invernale delle altre compagnie', per lo stesso motivo",
+        "tesi: aggiunti 'su un settembre 2025 di Giubileo' e 'nelle fonti lette', allineata al corpo",
+        "Paragrafo Ricavia riscritto fondendo le frasi dei 4 agenti (voce 4.1 n. 6, confronto con il competitive set per separare mercato e prezzo) e chiuso sull'Hotel Score (voce 4.1 n. 7): /metodo/ non è tra i collegamenti di chiusura ammessi da regole-comuni.md, sezione 5; nessuna ripresa degli esempi di ricavia.md né della chiusura del Sei Nazioni"
+      ],
+      "segnalazioni": [
+        "Per l'editore: ricontrollare prima della pull request che la tabella Assaeroporti, la nota di Aeroporti 2030, il comunicato sull'estate e il comunicato Ryanair siano ancora online con gli stessi numeri; se Assaeroporti pubblica il dato di ottobre prima del merge, l'articolo resta sul dato di settembre ma l'azione 3 va letta con quel calendario",
+        "Per l'editore: conteggio parole vicino al massimo (circa 1.090 con numeri e simboli): non aggiungere testo; check_seo.py e build come da README",
+        "Per l'editore: con la foto di riserva (dd641d2c79, suite d'hotel) copiare alt_libreria in alt; con l'immagine generata controllare che non compaiano loghi, livree o registrazioni sulle code",
+        "Fuori da questa bozza, già segnalato dall'art director: alt dell'articolo del 3 novembre sull'inflazione da correggere (descrive la scheda generata, non la foto pubblicata)",
+        "Contesto non usato, segnalato dal revenue manager: a Fiumicino i passeggeri nazionali calano del 3,5%. Non cambia la tesi sull'inverno e non entra nel testo"
+      ],
+      "ruolo_ricavia": "Con un traffico aereo che cresce poco, Ricavia confronta tariffe, calendario, mix dei canali, recensioni e conto economico dell'hotel con un competitive set di tre o quattro concorrenti, per separare un pick-up debole dovuto al mercato da uno dovuto al proprio prezzo; primo passo, l'Hotel Score sui dati pubblici"
+    }
+  ],
+  "sottotitolo": "I dati di traffico aereo di settembre, dove cresce Fiumicino, l'operativo invernale di Ryanair su Roma e tre azioni su budget e prezzi dei weekend d'inverno",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dati di traffico aereo e operativo di una compagnia: rientra nelle righe dati economici (serio o provocatorio) e trasporti senza vittime (serio o drammatico); vale la più restrittiva comune, serio. Il drammatico non è ammesso perché l'impatto non è alto né certo (occupazione =, ADR e RevPAR ?), e la provocazione spingerebbe verso il 'senza nuovi voli' che la tesi corretta esclude"
+  },
+  "alternative_titolo": [
+    "Roma cresce meno dell'Italia negli aeroporti: su quali numeri fare il budget d'inverno?",
+    "Ryanair senza crescita su Roma per l'inverno: lo sconto anticipato non porta ospiti in più",
+    "Aeroporti italiani in crescita, Roma quasi ferma: l'inverno degli hotel si prezza per data"
+  ],
+  "alt": "Aerei bianchi senza livrea fermi sul piazzale di un aeroporto all'alba d'inverno, visti dalla vetrata di un terminal",
+  "immagine": {
+    "fonte": "higgsfield",
+    "scheda": "Soggetto: piazzale di un grande aeroporto visto dalla vetrata di un terminal, tre aerei bianchi senza livrea fermi ai gate, pista lontana sullo sfondo, nessuna persona, nessuna scritta\nInquadratura: frontale e statica, vetrata quasi invisibile, aerei nella fascia centrale, ampio cielo sopra e pavimento neutro sotto per il ritaglio social; laterale, non la prospettiva convergente della banchina del 3 novembre\nLuce: alba d'inverno, luce fredda e diffusa, nessun sole diretto\nPalette: cielo da azzurro #3CCDFA a blu #1F2DD0, riflesso viola #724AF8 appena accennato sul vetro, asfalto e fusoliere in neutri grigi e bianchi\nAtmosfera: seria, ordinata, traffico regolare ma calmo: un mercato quasi fermo, non un aeroporto vuoto o in crisi",
+    "prompt": "View through the tall glass wall of a large airport terminal at winter dawn, looking onto the apron: three plain white commercial aircraft with no livery, no tail logos, no markings and no registration letters parked at the gates in a calm row, a runway and flat land far in the background, no people, no ground vehicles with writing, no jet bridge signage. Frontal, static, horizontal composition, aircraft in the central horizontal band, wide clean sky above, a strip of neutral polished terminal floor below, the glass almost invisible with only a faint violet reflection. Cold diffused morning light, sky from soft cyan to deep blue, grey asphalt, white fuselages. Calm, orderly, serious mood, not deserted, not dramatic. Full-bleed photograph, edge to edge, no frame, no border, no mockup, no picture inside a picture, no wall or poster around the image. Photorealistic 16:9 cover photograph, natural light, clean composition with generous negative space, main subject kept in the central horizontal band with clear margin above and below so a 1200x630 crop stays safe. No text, no signage, no readable numbers, no logos or brands, no recognizable people. Palette of cool cyan (#3CCDFA), deep blue (#1F2DD0) and soft violet (#724AF8) as light and small accents on clean neutrals, no red tones, no orange cast, no heavy color filter.",
+    "libreria": "assets/img/dd641d2c79.webp",
+    "alt_libreria": "Suite d'hotel con letto matrimoniale, pareti chiare e pannelli azzurri, una cupola di Roma oltre la vetrata",
+    "testo_sovrapposto": null
+  },
+  "data": "2026-11-04",
+  "autore": "Tito · Redazione Ricavia"
+}
