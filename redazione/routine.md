@@ -40,7 +40,7 @@ Ordine fisso:
 5. **RIMANDA**: il giornalista riscrive una volta seguendo `rimanda-N.md`, la bozza rifà la war room, il capo redattore decide in modo definitivo
 6. **Editore**: lo fa questa sessione, seguendo `redazione/agenti/editore.md` alla lettera:
    - ramo `redazione/AAAA-MM-GG` da `origin/main`
-   - immagini: prima la libreria; Higgsfield (connettore) solo se l'art director ha scelto `higgsfield`. Ogni immagine si guarda prima di usarla
+   - immagini, nell'ordine scelto dall'art director: libreria del sito, foto vera dall'archivio stock di Magnific (connettore `magnific`), generazione AI (`magnific` o `higsfield`) solo come ultima strada e con la nota in fondo all'articolo. Ogni immagine si guarda prima di usarla
    - cartelle `journal/AAAA-MM-GG-<slug>/` con `meta.json`, `articolo.html`, `hero.webp` (1600×900), `social.jpg` (1200×630)
    - `python -m unittest discover tests -v`, `python tools/build.py`, `python tools/check_seo.py`: tutti verdi, altrimenti si segue la tabella "in dubbio" del manuale
    - commit, push, pull request verso `main` con il formato del manuale (articoli numerati, tesi, verbale, scartati, comandi). Il link all'anteprima Cloudflare arriva in un commento pochi minuti dopo il push: si copia nel corpo della pull request

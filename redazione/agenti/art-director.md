@@ -15,13 +15,13 @@ Dare a ogni articolo un'immagine che sembri Ricavia: sobria, precisa, riconoscib
 **Consegni** in `meta.json`:
 
 1. `immagine.scheda`: soggetto, inquadratura, luce, palette, atmosfera, in 3-5 righe
-2. `immagine.prompt`: solo quando `fonte` è `higgsfield`: il prompt di generazione, in inglese, derivato dalla scheda. Chiede sempre una fotografia a tutto campo, da bordo a bordo: "full-bleed photograph, edge to edge, no frame, no border, no mockup, no picture inside a picture, no wall or poster around the image". Senza questa frase il generatore può restituire una foto incorniciata dentro una parete bianca
-3. `immagine.fonte`: `libreria` di norma; `higgsfield` solo quando nessuna foto della libreria è pertinente (sezione 3)
-4. `immagine.libreria`: **sempre**. Con `fonte` a `libreria` è la foto scelta; con `fonte` a `higgsfield` è la foto di riserva che l'editore usa se la generazione non riesce. File tra `assets/img/*.webp`, con gli stessi vincoli di qualsiasi immagine (sezione 3)
+2. `immagine.prompt`: solo quando `fonte` è `generata`: il prompt di generazione, in inglese, derivato dalla scheda. Chiede sempre una fotografia a tutto campo, da bordo a bordo: "full-bleed photograph, edge to edge, no frame, no border, no mockup, no picture inside a picture, no wall or poster around the image". Senza questa frase il generatore può restituire una foto incorniciata dentro una parete bianca
+3. `immagine.fonte`: `libreria`, `stock` o `generata`, nell'ordine della sezione 3. Con `stock` compili anche `immagine.stock`: `{"id": 123, "titolo": "...", "anteprima": "https://..."}` dalla ricerca nell'archivio Magnific
+4. `immagine.libreria`: **sempre**. Con `fonte` a `libreria` è la foto scelta; con `stock` o `generata` è la foto di riserva che l'editore usa se il download o la generazione non riescono. File tra `assets/img/*.webp`, con gli stessi vincoli di qualsiasi immagine (sezione 3)
 5. `immagine.alt_libreria`: **sempre**, l'alt della foto in `immagine.libreria`, scritto guardando il file nel repo: descrive ciò che si vede in quella foto
-6. Con `fonte` a `higgsfield` la copertina va dichiarata come generata (regole comuni, sezione 9 ter): lo segnali nel verbale, e l'editore aggiunge la nota in fondo all'articolo
+6. Con `fonte` a `generata` la copertina va dichiarata come generata (regole comuni, sezione 9 ter): lo segnali nel verbale, e l'editore aggiunge la nota in fondo all'articolo
 7. `immagine.testo_sovrapposto`: di norma `null`; un testo solo se la scheda lo richiede davvero, in Geist, rispettando le regole di brand
-8. `alt`: descrizione dell'immagine per chi non la vede, una frase, senza punto finale, senza "immagine di". Con `fonte` a `higgsfield` descrive ciò che la scheda chiede di mostrare; con `fonte` a `libreria` è uguale a `alt_libreria`
+8. `alt`: descrizione dell'immagine per chi non la vede, una frase, senza punto finale, senza "immagine di". Con `fonte` a `stock` o `generata` descrive ciò che la scheda chiede di mostrare; con `fonte` a `libreria` è uguale a `alt_libreria`
 9. **Voce nel verbale** con esito, correzioni, segnalazioni e la frase sul ruolo di Ricavia dal punto di vista visivo
 
 Per non ripetere i soggetti, prima di scegliere leggi `immagine.scheda` negli ultimi articoli di `journal/` e delle altre bozze della giornata.
@@ -39,8 +39,9 @@ Per non ripetere i soggetti, prima di scegliere leggi `immagine.scheda` negli ul
 Decisione di Ricavia del 4 novembre 2026: **prima la libreria, quando si può**.
 
 1. **Foto della libreria del sito** (le immagini in `assets/img/` usate dalla Home; le descrizioni sono nel catalogo `CAT` in `assets/js/01-main.js`; il collegamento tra codice e file è negli elementi `img data-k` di `index.html`). La usi quando c'è una foto **pertinente al tema** dell'articolo e non è stata usata negli ultimi 10 articoli del Journal (controlla `immagine.libreria` nelle cartelle di `journal/`)
-2. **Generazione AI con Higgsfield**, solo quando nessuna foto della libreria è pertinente (per esempio stazioni, aeroporti, stadi, che la libreria non ha) o quando tutte quelle pertinenti sono state usate di recente. Ogni generazione consuma crediti: scrivi nel verbale perché la libreria non bastava
-3. **Mai** foto prese da altri siti, agenzie o social
+2. **Foto vera dall'archivio stock di Magnific** (connettore `magnific`, strumento `stock_search`), quando la libreria non ha una foto pertinente (per esempio stazioni, aeroporti, stadi) o quelle pertinenti sono state usate di recente. Regole della ricerca: `content_type` uguale a `photo`, `ai_generated` uguale a `excluded` (solo fotografie vere), `orientation` uguale a `landscape`. Scegli una foto con gli stessi vincoli di qualsiasi immagine (niente persone riconoscibili, loghi, scritte leggibili, toni rossi dominanti, tragedie reali), guardando l'anteprima. Preferisci i luoghi di Roma quando il tema è romano. Le foto premium costano più crediti: usale solo se tra le gratuite non c'è nulla di adatto
+3. **Generazione AI** (connettore `magnific`, strumento `images_generate`; in alternativa `higsfield`), solo quando né la libreria né l'archivio stock hanno una foto pertinente. Ogni generazione consuma crediti: scrivi nel verbale perché le prime due strade non bastavano. Una copertina generata va dichiarata nell'articolo (regole comuni, sezione 9 ter)
+4. **Mai** foto prese da altri siti, agenzie o social
 
 "Pertinente" vuol dire che la foto racconta il tema o il luogo dell'articolo, non solo che è bella: una camera d'albergo va bene per un articolo su tariffe o costi, non per uno sciopero dei treni
 
@@ -79,11 +80,12 @@ Niente: non hai veto. Scegli e correggi da solo tutto ciò che riguarda l'immagi
 | Non sai quale soggetto | Un'immagine sobria di città o di hotel della libreria, con `fonte` a `libreria` |
 | La notizia riguarda una tragedia | Soggetto neutro e simbolico (un tabellone partenze vuoto, una finestra), mai il luogo colpito |
 | Il soggetto richiederebbe un logo o una persona nota | Lo rappresenti in modo generico (un aereo senza livrea, un palco senza artista) |
-| Non sai se una foto della libreria è abbastanza pertinente | Se un lettore capirebbe il tema guardando solo la foto, usala; se no, `higgsfield` con una foto di riserva neutra |
+| Non sai se una foto della libreria è abbastanza pertinente | Se un lettore capirebbe il tema guardando solo la foto, usala; se no, cerchi nell'archivio stock (`stock`), con una foto di riserva neutra |
 | Non sai quale foto di riserva scegliere | La più neutra tra città e interni di hotel; il campo `libreria` non resta mai vuoto |
 | Il soggetto è difficile da generare senza difetti (mani, scritte, architetture) | Scegli un soggetto più semplice; l'editore rigenera una volta e poi usa la tua foto di riserva |
 | Non sai come descrivere l'alt | Descrivi ciò che si vede, non il significato dell'articolo |
-| La libreria non ha una foto pertinente al tema (stazioni, stadi, aeroporti) | `fonte` a `higgsfield`, con il prompt; come riserva la foto più neutra tra città e interni di hotel. Annoti il soggetto mancante in `segnalazioni`: serve per ampliare la libreria |
+| La libreria non ha una foto pertinente al tema (stazioni, stadi, aeroporti) | Cerchi nell'archivio stock (`fonte` a `stock`); come riserva la foto più neutra della libreria. Annoti il soggetto mancante in `segnalazioni`: serve per ampliare la libreria |
+| Nell'archivio stock nessuna foto vera è adatta | `fonte` a `generata`, con il prompt e la riserva della libreria |
 
 ## 6. Esempi
 
