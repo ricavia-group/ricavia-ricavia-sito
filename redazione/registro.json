@@ -34,5 +34,17 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": true,
     "pubblicato": false
+  },
+  {
+    "data": "2026-11-03",
+    "slug": "sei-nazioni-hotel-roma-tariffe",
+    "tema": "sei-nazioni-2027-roma",
+    "keyword": "sei nazioni hotel roma",
+    "categoria": "eventi",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
