@@ -1,0 +1,165 @@
+{
+  "titolo": "Cedolare al 5%: gli appartamenti che potrebbero uscire competono meno con gli hotel",
+  "tesi": "Il disegno di legge di bilancio 2027 dimezza la cedolare secca sui canoni concordati (dal 10% al 5%, 1% per gli inquilini più giovani) e, secondo una sola testata, lascia invariato il fisco degli affitti brevi: la scelta riguarda soprattutto chi gestisce appartamenti turistici, che deve confrontare i rendimenti netti delle due formule; per gli hotel di Roma l'effetto atteso è una riduzione marginale dell'offerta concorrente dal 2027, concentrata sulle unità con occupazione turistica debole, da monitorare nel competitive set senza anticipare aumenti di tariffa",
+  "tema": "bilancio-2027-cedolare-concordato-affitti-brevi",
+  "categoria": "regole",
+  "fonti": [
+    {
+      "titolo": "Manovra 2027, cedolare secca al 5% e all'1%: così cambiano gli affitti concordati",
+      "editore": "Informazione Fiscale",
+      "url": "https://www.informazionefiscale.it/manovra-2027-cedolare-secca-5-per-cento-affitti-canone-concordato",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "Cedolare secca all'1% e mercato ricettivo: gli effetti della Manovra sugli Affitti Brevi",
+      "editore": "Direzione Hotel",
+      "url": "https://www.direzionehotel.it/affitti-brevi-manovra-bilancio-2027/",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "Cosa prevede la manovra 2027",
+      "editore": "L'Espresso",
+      "url": "https://lespresso.it/c/economia/2026/10/29/cosa-prevede-la-manovra-2027/65621",
+      "data": "2026-11-03"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Norma approvata dal governo il 28 ottobre con effetto dal 2027 sull'offerta concorrente degli hotel di Roma; tesi scritta come scenario condizionato",
+      "correzioni": [],
+      "segnalazioni": [
+        "Nessuna fonte primaria letta: il comunicato del Consiglio dei ministri su governo.it ha dato 404 all'indirizzo provato e il testo del disegno di legge non risulta ancora pubblicato; tutte le cifre vengono da testate (Informazione Fiscale, Direzione Hotel, L'Espresso)",
+        "Le fonti non concordano sulla soglia d'età per l'aliquota all'1% (under 36 per Informazione Fiscale, under 35 per Direzione Hotel): l'articolo cita entrambe",
+        "La conferma del regime delle locazioni brevi (21%, 26%, partita IVA dalla terza unità) regge su una sola testata di settore, Direzione Hotel: da confermare sul testo",
+        "Il titolo di Direzione Hotel è stato ricavato dall'indirizzo della pagina: da verificare"
+      ],
+      "ruolo_ricavia": "Ricavia confronta ogni hotel con un competitive set di tre o quattro concorrenti davvero comparabili: se nel 2027 una zona perde appartamenti turistici, è lì che l'effetto si vede per primo"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "DA RIVEDERE",
+      "motivo": "Tesi corretta ma con effetto marginale per gli hotel; manca la fonte primaria e il regime degli affitti brevi regge su una sola testata",
+      "correzioni": [
+        "Tesi: il testo diceva che a cambiare formula sarebbero soprattutto le unità con occupazione turistica debole, ma poi che la pressione sui prezzi cala nelle zone più affollate di offerta, dove l'occupazione è alta; ho corretto la frase del meccanismo e la tesi: l'effetto per gli hotel è marginale e riguarda prima l'extralberghiero",
+        "Impatto: tolta la voce 'Offerta del competitive set', che non è un indicatore del manuale; il motivo è ora dentro la voce occupazione, che dice esplicitamente che la misura agisce prima sull'extralberghiero",
+        "Impatto: ADR da '↑ bassa' a '=', perché una riduzione marginale dell'offerta non giustifica tariffe più alte; RevPAR '↑ bassa' coerente con occupazione in lieve aumento e ADR stabile",
+        "Cosa fare adesso: da 4 a 3 azioni; 'seguire l'iter del testo' unita a 'costruire le tariffe 2027 sulla domanda'",
+        "meta.json: titolo della fonte Direzione Hotel corretto con quello letto sulla pagina ('Cedolare secca all'1% e mercato ricettivo: gli effetti della Manovra sugli Affitti Brevi'); fonti.md riporta ancora il titolo ricavato dall'indirizzo"
+      ],
+      "segnalazioni": [
+        "Nessuna fonte primaria: il testo del disegno di legge non è pubblicato. Le cifre tornano con Informazione Fiscale e Direzione Hotel (letti il 3 novembre), ma un RIMANDA in attesa del testo è una scelta ragionevole",
+        "La conferma del regime degli affitti brevi (21%, 26%, partita IVA dalla terza unità) regge solo su Direzione Hotel",
+        "Utilità per chi decide le tariffe di un hotel domani mattina: bassa; l'articolo è più utile ai gestori extralberghieri. Il capo redattore valuti se il pubblico è quello giusto per la giornata"
+      ],
+      "ruolo_ricavia": "Ricavia confronta ogni hotel con un competitive set di tre o quattro concorrenti davvero comparabili, osservato giorno per giorno: è lì che si misura se nel 2027 l'offerta extralberghiera della zona cambia davvero, prima di toccare le tariffe"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Non è duplicato: l'articolo del 14 settembre sugli affitti brevi (lista di controllo) tratta gli adempimenti ed è fuori dai 14 giorni; qui la tesi è l'effetto della manovra sull'offerta concorrente, con keyword e title diversi",
+      "correzioni": [
+        "Compilati slug, title_seo (56 caratteri), description (153 caratteri), keyword, categoria, related_intro e related",
+        "Corpo: \"<h3>Cosa cambia per chi gestisce appartamenti turistici</h3>\" diventa \"<h3>Affitti brevi e hotel: cosa cambia per chi gestisce appartamenti t\""
+      ],
+      "segnalazioni": [
+        "Sul piano SEO l'articolo è a posto, ma il revenue manager ha dato DA RIVEDERE: la tesi per gli hotel è debole (effetto di bassa intensità, solo 2027, su una norma ancora disegno di legge); la decisione resta al capo redattore",
+        "Rischio di cannibalizzazione con l'articolo di settembre sulla keyword \"affitti brevi\": mitigato da title e slug distinti, da riconfrontare se esce un altro articolo sugli affitti brevi",
+        "La keyword con più ricerche (\"cedolare secca affitti brevi\") porta il proprietario di appartamenti, non l'albergatore: ho scelto \"affitti brevi hotel Roma\""
+      ],
+      "ruolo_ricavia": "Per chi legge, il passo successivo naturale è l'Hotel Score: confronto con il competitive set della zona prima di cambiare le tariffe"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "Mood serio dalla matrice, titolo di tipo contrasto, conseguenza, mantenuto dal corpo, con frase citabile già conforme",
+      "correzioni": [
+        "Titolo riscritto (83 caratteri) con taglio contrasto, conseguenza; sostituisce il titolo provvisorio del giornalista",
+        "Aggiunti sottotitolo e 3 alternative con tagli diversi (domanda, dato con fonte, conseguenza)",
+        "Frase citabile: confermata, senza punto finale, senza numeri né nomi"
+      ],
+      "segnalazioni": [
+        "Il titolo è condizionato ('potrebbero uscire') perché il testo è un disegno di legge e la norma può cambiare; se il capo redattore decide RIMANDA in attesa del testo, il titolo va rifatto",
+        "Per il revenue manager l'utilità per gli hotel è bassa: dal punto di vista del racconto c'è un contrasto interessante (le unità che escono sono quelle che competono meno), quindi non do DA RIVEDERE"
+      ],
+      "ruolo_ricavia": "Ricavia confronta nel competitive set le tariffe e il calendario degli appartamenti turistici comparabili e ripete il controllo nel tempo, senza anticipare nel budget una minore concorrenza"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Soggetto diverso dai due precedenti e coerente con il tema degli appartamenti; non mostra chiavi, cartelli o piattaforme (nessun marchio); mood serio per un disegno di legge non approvato; riserva: facciate del centro di Roma con persiane (n112)",
+      "correzioni": [],
+      "segnalazioni": [
+        "La riserva n112 è molto ravvicinata e la statua è un elemento religioso: va bene come dettaglio di città, ma non racconta un appartamento"
+      ],
+      "ruolo_ricavia": "Visivamente Ricavia rappresenta il tema con gli edifici in cui si decide l'offerta, senza proporre vittorie o sconfitte, perché il suo lavoro è misurare nel competitive set se la concorrenza cambia davvero"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "NO-GO",
+      "motivo": "Dati non verificabili",
+      "griglia": [
+        "[ ] Tesi revenue chiara e corretta: revenue manager DA RIVEDERE, motivo non risolto (effetto marginale per gli hotel, nessuna fonte primaria)",
+        "[ ] Ogni numero ha fonte: le cifre hanno una testata, ma il fatto che regge la tesi (regime degli affitti brevi invariato nel disegno di legge 2027) regge solo su Direzione Hotel, che a sua volta non cita il testo; testo del disegno di legge non pubblicato, comunicato del governo non raggiungibile (404); una ricerca il 3 novembre non ha trovato conferme indipendenti",
+        "[x] Fonti citate con link; nessuna copia",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voce 4.1 n. 6",
+        "[x] Regole di brand e di copy rispettate",
+        "[x] Tono serio, coerente con la matrice",
+        "[x] Tema non ripetuto (SEO director APPROVED)",
+        "[x] Nessuna affermazione negativa",
+        "[x] 899 parole, struttura completa"
+      ],
+      "correzioni": [
+        "Impatto, RevPAR: definizione riportata a quella completa del glossario (la bozza non si pubblica, ma va in scartati corretta)"
+      ],
+      "segnalazioni": [
+        "Due motivazioni possibili: dati non verificabili e tesi revenue debole. Scelta quella con la conseguenza più pesante sul registro (capo-redattore.md, sezione 5): fonte_nuova_richiesta true",
+        "Il tema si può riproporre solo con una fonte nuova: il testo del disegno di legge di bilancio 2027 pubblicato (Senato, Camera o Gazzetta Ufficiale) o la relazione tecnica, che confermi il regime delle locazioni brevi",
+        "Si riparte dalla riserva: candidato 4, Sei Nazioni 2027 (Italia-Irlanda 13 febbraio, Italia-Francia 6 marzo, Italia-Galles 13 marzo all'Olimpico, fonte Turismo Roma). Rifà tutta la war room; sostituzioni usate oggi: 1 su 2",
+        "Per la riscrittura del Sei Nazioni: titolo di tipo diverso dai due GO (non domanda, non dato con fonte), struttura diversa"
+      ],
+      "ruolo_ricavia": "Ricavia confronta tariffe, calendario, mix dei canali e recensioni di ogni hotel con un competitive set di tre o quattro concorrenti davvero comparabili: è lì che si misura se l'offerta della zona cambia"
+    }
+  ],
+  "slug": "affitti-brevi-cedolare-hotel-roma",
+  "title_seo": "Affitti brevi e hotel a Roma: effetto cedolare · Ricavia",
+  "description": "Bilancio 2027: la cedolare al 5% sui canoni concordati e il fisco invariato degli affitti brevi. Cosa può cambiare per la concorrenza degli hotel di Roma",
+  "keyword": {
+    "principale": "affitti brevi hotel Roma",
+    "secondarie": [
+      "cedolare secca canone concordato",
+      "appartamenti turistici Roma",
+      "concorrenza extralberghiero"
+    ]
+  },
+  "related_intro": "Per confrontare il tuo hotel con la concorrenza della zona, approfondisci",
+  "related": [
+    {
+      "label": "l'Hotel Score gratuito",
+      "url": "/hotel-score/"
+    },
+    {
+      "label": "la lista di controllo sugli affitti brevi a Roma",
+      "url": "/osservatorio/affitti-brevi-extralberghiero-roma-lista-controllo/"
+    }
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Normativa (disegno di legge di bilancio, non ancora approvato): la matrice ammette serio o provocatorio. Il regime degli affitti brevi regge su una sola testata, il revenue manager ha dato DA RIVEDERE e l'effetto per gli hotel è una condizione, non un fatto: un tono provocatorio sarebbe fuori misura. Serio"
+  },
+  "alternative_titolo": [
+    "Cedolare al 5% sui canoni concordati: meno concorrenti per gli hotel di Roma nel 2027?",
+    "Cedolare dal 10% al 5%: cosa cambia per gli appartamenti turistici di Roma",
+    "Bilancio 2027: la cedolare premia il contratto lungo, con effetti ridotti sugli hotel"
+  ],
+  "sottotitolo": "Cosa prevede il disegno di legge, perché l'effetto per gli hotel è incerto e cosa mappare prima di costruire le tariffe 2027",
+  "immagine": {
+    "fonte": "higgsfield",
+    "scheda": "Soggetto: facciata di un palazzo residenziale romano con persiane chiuse, una sola finestra illuminata\nInquadratura: frontale, leggermente dal basso, facciata nella fascia centrale, cielo e strada ai margini\nLuce: tramonto, luce morbida\nPalette: intonaco neutro caldo-chiaro, cielo azzurro #3CCDFA verso viola #724AF8, ombre blu #1F2DD0\nAtmosfera: seria, discreta, appartamenti che competono poco",
+    "prompt": "Facade of an ordinary Roman residential building at dusk, ochre plaster, rows of closed gray shutters, a single softly lit window, no people, no balcony signs, sky fading from cyan to soft violet, deep blue shadows, calm frontal composition slightly from below. Photorealistic 16:9 cover photograph, natural light, clean composition with generous negative space, main subject kept in the central horizontal band with clear margin above and below so a 1200x630 crop stays safe. No text, no signage, no logos or brands, no recognizable people. Palette of cool cyan (#3CCDFA), deep blue (#1F2DD0) and soft violet (#724AF8) as light and small accents on clean neutrals, no red tones, no heavy color filter.",
+    "libreria": "assets/img/db705b531a.webp",
+    "testo_sovrapposto": null
+  },
+  "alt": "Facciata di un palazzo residenziale romano con le persiane chiuse e una sola finestra accesa"
+}

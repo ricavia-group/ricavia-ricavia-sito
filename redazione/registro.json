@@ -1,0 +1,38 @@
+[
+  {
+    "data": "2026-11-03",
+    "slug": "sciopero-treni-hotel-roma-prenotazioni",
+    "tema": "sciopero-treni-novembre",
+    "keyword": "sciopero treni roma hotel",
+    "categoria": "trasporti",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-03",
+    "slug": "inflazione-energia-costi-hotel",
+    "tema": "inflazione-energia-costi",
+    "keyword": "inflazione energia costi hotel",
+    "categoria": "macro",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-03",
+    "slug": "affitti-brevi-cedolare-hotel-roma",
+    "tema": "bilancio-2027-cedolare-affitti-brevi",
+    "keyword": "affitti brevi cedolare hotel",
+    "categoria": "regole",
+    "esito": "NO-GO",
+    "motivo": "Dati non verificabili",
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": true,
+    "pubblicato": false
+  }
+]
