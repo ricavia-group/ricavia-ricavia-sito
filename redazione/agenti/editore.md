@@ -16,7 +16,7 @@ Mettere in pagina gli articoli con GO e proporli per la pubblicazione senza romp
 1. Un ramo `redazione/AAAA-MM-GG` creato da `main` aggiornato
 2. Per ogni articolo con GO, la cartella `journal/AAAA-MM-GG-<slug>/` con:
    - `meta.json`: tutti i campi della tabella in `redazione/README.md`; `autore` sempre `Tito · Redazione Ricavia`; `data` uguale al giorno della routine e al prefisso della cartella
-   - `articolo.html`: il corpo approvato, senza modifiche di contenuto. Se la copertina pubblicata è generata con Higgsfield, aggiungi in fondo `<p><small>Immagine di copertina generata con intelligenza artificiale</small></p>` (regole comuni, sezione 9 ter); se alla fine usi la foto della libreria, la nota non va
+   - `articolo.html`: il corpo approvato, senza modifiche di contenuto. Se la copertina pubblicata è generata con l'intelligenza artificiale (`immagine.fonte` uguale a `generata`), aggiungi in fondo `<p><small>Immagine di copertina generata con intelligenza artificiale</small></p>` (regole comuni, sezione 9 ter); se alla fine usi la foto della libreria, la nota non va
    - `hero.webp`: la copertina 16:9, larga 1600 px
    - `social.jpg`: 1200×630, ritaglio centrato della copertina
 3. Sul ramo `redazione/registro`, ogni giorno, anche senza pull request:
@@ -30,7 +30,7 @@ Mettere in pagina gli articoli con GO e proporli per la pubblicazione senza romp
 
 ### Sequenza fissa
 
-1. **Immagini**: se `immagine.fonte` è `libreria`, usi la foto indicata, la **guardi** e controlli che `alt` la descriva. Se è `higgsfield`, generi la copertina dal prompt dell'art director e la **guardi** prima di usarla: deve essere una fotografia a tutto campo, senza cornice, bordo, parete o mockup intorno (nessuna foto dentro una foto), senza testo, loghi, persone riconoscibili, toni rossi dominanti. Se è difettosa rigeneri una volta; se è ancora difettosa, o Higgsfield non è disponibile o i crediti sono finiti, usa la foto di riserva in `immagine.libreria`, porti `immagine.fonte` a `libreria`, copi `immagine.alt_libreria` in `alt` e lo scrivi nella pull request. In entrambi i casi, con Pillow ritagli l'immagine al centro in 16:9, la porti a 1600 px di larghezza e la salvi come `hero.webp`; poi ritagli `social.jpg` a 1200×630, e guardi anche il ritaglio
+1. **Immagini**: se `immagine.fonte` è `libreria`, usi la foto indicata, la **guardi** e controlli che `alt` la descriva. Se è `stock`, scarichi la foto con `stock_download` del connettore `magnific` usando `immagine.stock.id`, controlli che non sia generata con AI e la **guardi**; se il download non riesce, usi la riserva della libreria. Se è `generata`, generi la copertina dal prompt dell'art director (`images_generate` di `magnific`, oppure `higsfield`) e la **guardi** prima di usarla: deve essere una fotografia a tutto campo, senza cornice, bordo, parete o mockup intorno (nessuna foto dentro una foto), senza testo, loghi, persone riconoscibili, toni rossi dominanti. Se è difettosa rigeneri una volta; se è ancora difettosa, o la generazione non è disponibile o i crediti sono finiti, usa la foto di riserva in `immagine.libreria`, porti `immagine.fonte` a `libreria`, copi `immagine.alt_libreria` in `alt` e lo scrivi nella pull request. In entrambi i casi, con Pillow ritagli l'immagine al centro in 16:9, la porti a 1600 px di larghezza e la salvi come `hero.webp`; poi ritagli `social.jpg` a 1200×630, e guardi anche il ritaglio
 2. **File**: crea le cartelle e i file. Il nome della cartella è `data-slug`. Prima, ricontrolli i punti che il capo redattore ti ha passato nelle `segnalazioni` ("Per l'editore": revoche di uno sciopero, dati provvisori, orari da confermare); se un fatto centrale è cambiato, segui `regole-comuni.md` sezione 9 bis
 3. **Controlli**, in quest'ordine, tutti obbligatori:
    ```sh
@@ -94,7 +94,7 @@ Niente sul contenuto: le decisioni editoriali sono del capo redattore. Puoi e de
 |---|---|
 | Test, build o `check_seo` falliscono per un articolo | Leggi il messaggio (inizia con il nome della cartella). Se l'errore è solo di lunghezza di `title_seo` o `description`, accorci quel campo senza cambiarne il senso e lo scrivi nella pull request; per qualsiasi altro errore (slug, titolo duplicato, contenuto) togli l'articolo e lo segnali |
 | Falliscono per un motivo che non capisci | Non pubblichi nulla: nessuna pull request da unire, email con l'errore completo |
-| Higgsfield non risponde o i crediti sono finiti | Foto della libreria con `alt` preso da `immagine.alt_libreria`; non è un no-go, lo scrivi nella pull request |
+| Magnific o Higgsfield non rispondono o i crediti sono finiti | Foto della libreria con `alt` preso da `immagine.alt_libreria`; non è un no-go, lo scrivi nella pull request |
 | Manca `immagine.alt_libreria` e devi usare la riserva | Guardi la foto e scrivi un alt su ciò che si vede, una frase senza punto finale, e lo dici nella pull request |
 | La build di Cloudflare fallisce sul ramo `redazione/registro` | È previsto: quel ramo non contiene il sito, Cloudflare compila ogni ramo. Non è un errore da correggere; conta solo la build del ramo `redazione/AAAA-MM-GG` |
 | 0 articoli con GO | Nessuna pull request; email "Oggi nessun articolo" con scartati e motivazioni |

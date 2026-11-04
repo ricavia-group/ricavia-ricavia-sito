@@ -108,7 +108,7 @@ Campi di lavoro (ignorati dalla build, ma obbligatori per la redazione):
 | `keyword` | SEO director | `{"principale": "...", "secondarie": ["...", "..."]}` |
 | `mood` | Virality director | `{"scelta": "serio", "perche": "..."}` |
 | `alternative_titolo` | Virality director | 3 titoli alternativi |
-| `immagine` | Art director | `{"fonte": "libreria" (di norma) o "higgsfield", "prompt": "...", "scheda": "...", "libreria": "assets/img/xxxxxxxxxx.webp", "alt_libreria": "...", "testo_sovrapposto": null}`; `libreria` e `alt_libreria` sono sempre compilati: sono la foto di riserva e la sua descrizione |
+| `immagine` | Art director | `{"fonte": "libreria", "stock" o "generata", "stock": {"id": 123, "titolo": "...", "anteprima": "https://..."}, "prompt": "...", "scheda": "...", "libreria": "assets/img/xxxxxxxxxx.webp", "alt_libreria": "...", "testo_sovrapposto": null}`; `libreria` e `alt_libreria` sono sempre compilati: sono la foto di riserva e la sua descrizione |
 | `fonti` | Giornalista | lista di `{"titolo": "...", "editore": "...", "url": "https://...", "data": "AAAA-MM-GG"}`; `data` è il giorno in cui la pagina è stata letta; la data di pubblicazione, se c'è, va in `fonti.md` |
 | `verbale` | ogni agente | vedi sotto |
 
