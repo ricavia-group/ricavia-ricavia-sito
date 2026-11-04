@@ -148,6 +148,20 @@ Il mood lo sceglie il virality director con questa matrice, e nessuno la può su
 - Nessuna previsione presentata come certezza; gli scenari si scrivono con le condizioni ("se lo sciopero viene confermato…")
 - Su temi politici si resta sui fatti e sull'effetto sulla domanda, senza prendere posizione
 
+## 9 ter. Rischi legali: regole vincolanti
+
+Il parere legale di Ricavia è positivo a queste condizioni. Ogni agente le applica nel suo ruolo; il capo redattore le controlla prima del GO.
+
+1. **Prezzi e concorrenza (antitrust).** Un articolo letto da molti hotel della stessa zona non deve sembrare un invito ad allinearsi sui prezzi. Vietato: indicare livelli di prezzo o percentuali di aumento da applicare ("alzate del 20%", "sotto i 150 euro non si scende"), scrivere che "gli hotel della zona" o "tutti" devono alzare o tenere le tariffe, suggerire di concordare condizioni con i concorrenti. Ammesso: spiegare come cambia la domanda e indicare cosa ogni hotel valuta con i **propri** dati (pick-up, occupazione, competitive set). Le azioni si scrivono sempre per il singolo hotel
+2. **Immagini generate con l'intelligenza artificiale.** Una copertina generata (`immagine.fonte` uguale a `higgsfield`) che mostra luoghi, oggetti o ambienti realistici va dichiarata: in fondo a `articolo.html` si aggiunge `<p><small>Immagine di copertina generata con intelligenza artificiale</small></p>`. Le foto della libreria non hanno bisogno della nota
+3. **Testi.** Gli articoli non portano diciture AI perché ognuno è letto e approvato da una persona di Ricavia, che ne ha la responsabilità editoriale. Per questo il merge vale solo dopo la lettura vera degli articoli in anteprima
+4. **Diritto d'autore.** Niente copia né parafrasi stretta; citazioni brevi, tra virgolette, con fonte e link; mai immagini, grafici o tabelle presi da altri siti
+5. **Diffamazione.** Nessun giudizio negativo su persone, hotel, aziende o istituzioni nominate (sezione 9); i fatti sempre con fonte
+6. **Consigli legali e fiscali.** Su norme, tasse, contributo di soggiorno, CIN e adempimenti l'articolo spiega cosa cambia e rimanda alla fonte ufficiale; non dice cosa deve fare il singolo dal punto di vista legale o fiscale. Quando serve, una frase: "per il caso specifico conviene il parere del proprio consulente"
+7. **Dati personali.** Nessun nome di privati cittadini né di clienti; le persone pubbliche solo nel loro ruolo pubblico
+8. **Marchi.** Nomi di compagnie, OTA e aziende solo per descrivere fatti; mai loghi, mai giudizi sui loro prodotti
+9. **Mercati finanziari.** Le notizie di borsa si usano solo per l'effetto sulla domanda turistica; mai consigli di investimento o previsioni su titoli
+
 ## 9 bis. Notizie che cambiano, errori, rettifiche
 
 **Prima del merge**: se un fatto centrale dell'articolo cambia (sciopero revocato, evento rinviato, norma ritirata), l'articolo non si pubblica così com'è. L'editore lo segnala nella pull request e nell'email; la persona di Ricavia decide se toglierlo o farlo rifare.

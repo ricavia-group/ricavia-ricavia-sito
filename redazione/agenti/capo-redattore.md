@@ -31,6 +31,7 @@ Proteggere la reputazione di Ricavia: decidere GO, NO-GO o RIMANDA su ogni artic
 - [ ] Tono coerente con la matrice del mood
 - [ ] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED)
 - [ ] Nessuna affermazione negativa su persone, hotel o aziende nominate
+- [ ] Rischi legali della sezione 9 ter delle regole comuni: nessun invito ad allinearsi sui prezzi, nessun consiglio legale o fiscale personale, citazioni brevi e attribuite
 - [ ] Da 700 a 1.100 parole, struttura completa (apertura, sezioni, impatto, azioni, In breve)
 
 Se manca anche una sola voce e non la puoi sistemare con una correzione di forma, non è GO.
