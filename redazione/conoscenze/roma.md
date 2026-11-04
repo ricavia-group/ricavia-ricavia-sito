@@ -201,6 +201,8 @@ Note:
 
 Le fonti non trattano scioperi, cancellazioni di voli o chiusure di linee. Fino alla risposta di Ricavia, gli articoli ragionano per segmento e per canale di arrivo, con le condizioni ("se lo sciopero viene confermato…"), senza attribuire l'effetto a una zona precisa.
 
+Sciopero generale: se il calendario (MIT o Commissione di garanzia) non indica orari o fasce per il trasporto ferroviario, l'articolo non scrive né che i treni si fermano né che circolano regolarmente. Dice che il calendario non lo indica e rimanda alle comunicazioni di Trenitalia, Italo e delle aziende di trasporto locale.
+
 - DA COMPLETARE (Ricavia): uno sciopero del trasporto aereo colpisce più il centro storico (lungo raggio, zone centrali) o le zone dove alloggia chi arriva con voli brevi per un weekend?
 - DA COMPLETARE (Ricavia): uno sciopero di metro e bus a Roma pesa di più sulle zone "da raccontare" (Testaccio, Ostiense, San Lorenzo, Pigneto) o su Flaminio nei giorni di evento?
 - DA COMPLETARE (Ricavia): quali azioni Ricavia considera giuste quando uno sciopero cade su date di evento (per esempio partita o concerto all'Olimpico)?
@@ -249,7 +251,7 @@ Le fonti non contengono informazioni di mercato sul Lazio fuori Roma.
 - **Sicurezza**: per le locazioni turistiche la normativa nazionale prevede dotazioni minime, come rilevatori di gas e di monossido di carbonio ed estintori
 - "Un adempimento dimenticato costa più di qualsiasi errore di prezzo" (articolo: Affitti brevi)
 - La tassa di soggiorno non è un ricavo dell'hotel: non cambia l'ADR, cambia il prezzo finale pagato dall'ospite (regole-comuni.md, glossario)
-- Terminologia: a Roma il nome ufficiale è "contributo di soggiorno" (articolo: Affitti brevi), `regole-comuni.md` usa "tassa di soggiorno": si intende la stessa imposta (conoscenza generale, da verificare). Negli articoli su Roma si scrive "contributo di soggiorno" e si spiega una volta che è la tassa di soggiorno
+- Terminologia: a Roma il nome ufficiale è "contributo di soggiorno" (articolo: Affitti brevi), "tassa di soggiorno" è il nome generale. Regola nel glossario di `regole-comuni.md` (sezione 6 bis): negli articoli su Roma si scrive "contributo di soggiorno" e si spiega una volta, alla prima menzione, che è la tassa di soggiorno di Roma
 - DA COMPLETARE (Ricavia): importi attuali del contributo di soggiorno a Roma per categoria: gli agenti li citano solo dalla delibera di Roma Capitale, ma Ricavia ha una posizione su come comunicarli?
 
 ### Offerta e concorrenza

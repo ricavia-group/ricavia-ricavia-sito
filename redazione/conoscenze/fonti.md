@@ -18,10 +18,10 @@ Per ogni fonte: nome, editore, URL, a cosa serve, frequenza di aggiornamento, li
 
 1. **Fonte primaria per prima.** Si parte dalla fonte di livello 1 che ha generato il fatto (il calendario scioperi, il gestore dell'aeroporto, l'ente che emette il dato). Una testata o un report si usano per il contesto, non al posto della fonte primaria quando questa esiste ed è raggiungibile.
 2. **Regola del controllo incrociato** (regola proposta da questo elenco, più severa di `regole-comuni.md`; DA COMPLETARE (Ricavia): confermarla come regola della redazione). Ogni fatto che regge una tesi dell'articolo va confermato da almeno una seconda fonte indipendente. Un dato numerico richiede la fonte primaria; se due fonti danno numeri diversi si citano entrambe, oppure si usa la più autorevole dicendo quale (`regole-comuni.md`, sezione 3).
-3. **Data di accesso.** Nel campo `fonti` dell'articolo si registrano titolo, editore, link e data (`regole-comuni.md`, sezione 4). La data da scrivere è quella in cui la pagina è stata letta, non quella di questo elenco.
+3. **Data di accesso.** Nel campo `fonti` dell'articolo si registrano titolo, editore, link e data (`regole-comuni.md`, sezione 4). La data da scrivere è quella in cui la pagina è stata letta, non quella di questo elenco; la data di pubblicazione, se la pagina la indica, va nella scheda `fonti.md` della bozza.
 4. **Il link nel testo è quello della pagina del dato**, non la home dell'editore. Gli URL qui sotto sono pagine di partenza: la pagina specifica si cerca da lì.
 5. **Niente copia.** Si legge, si chiude, si scrive con parole nostre; citazioni letterali brevi, tra virgolette e attribuite.
-6. **Fonte irraggiungibile o pagina cambiata.** Si segnala al capo redattore; non si ripiega su una fonte di livello più basso senza dirlo.
+6. **Fonte irraggiungibile o pagina cambiata.** Si segnala al capo redattore; non si ripiega su una fonte di livello più basso senza dirlo. Quando bastano le testate di livello 2 (fonte primaria che non si apre, norma annunciata ma non pubblicata) lo dice `regole-comuni.md`, sezione 4.
 
 ## Fonti da non usare da sole
 

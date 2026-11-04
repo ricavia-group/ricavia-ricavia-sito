@@ -27,7 +27,7 @@ Non si aggiunge nessuna dicitura "generato con AI": ogni articolo è rivisto e a
 - Una **stima Ricavia** è ammessa solo se parte da almeno un dato con fonte, citato accanto: si scrive come **intervallo**, con il ragionamento in una frase. Esempio inventato: "secondo [fonte] una quota X degli arrivi a Roma usa il treno; se lo sciopero viene confermato, stima Ricavia: tra Y e Z camere su 100 a rischio nelle notti coinvolte"
 - Se non c'è nessun dato con fonte da cui partire, **niente numeri**: si scrive l'intensità a parole (bassa, media, alta) e il perché
 - Mai un numero preciso inventato, mai un decimale su una stima
-- Se due fonti danno numeri diversi, si citano entrambe o si usa la più autorevole dicendo quale
+- Se due fonti danno numeri diversi, si citano entrambe o si usa la più autorevole dicendo quale. Lo stesso vale per soglie, condizioni, date e orari (per esempio una soglia d'età diversa tra due testate)
 - Se un numero o un calcolo non torna, si segnala al capo redattore invece di correggerlo a intuito
 
 ## 4. Fonti
@@ -38,6 +38,12 @@ Non si aggiunge nessuna dicitura "generato con AI": ogni articolo è rivisto e a
 
 Ogni fonte ha titolo, editore, link e data. Una notizia che regge solo su fonti non affidabili si scarta.
 
+**Quando basta una testata (livello 2)**
+
+- Un fatto di contorno, che non regge la tesi (un orario, una fascia garantita, un dettaglio di contesto), può venire da una sola testata riconosciuta, attribuita nel testo ("secondo [testata]") e segnalata nel verbale
+- Un fatto che regge la tesi si legge sulla fonte primaria. Se la fonte primaria esiste ma oggi non si apre (errore 403 o 404, paywall), sono ammesse almeno due testate riconosciute e indipendenti che riportano lo stesso fatto, attribuite nel testo e segnalate al capo redattore. Una sola testata non basta
+- **Fonte primaria non ancora pubblicata** (disegno di legge, decreto annunciato, delibera in discussione): l'articolo si scrive solo come scenario condizionato ("se il testo confermerà…") e solo se esiste almeno una fonte primaria sull'annuncio (comunicato del Consiglio dei ministri, del ministero o dell'ente). Se il fatto regge solo su testate, non si propone; se arriva al capo redattore, è NO-GO per dati non verificabili, riproponibile quando il testo è pubblicato
+
 **Niente copia**: si legge la fonte, si chiude, si scrive con parole nostre e con la nostra lettura revenue. Le citazioni letterali sono brevi, tra virgolette e attribuite.
 
 ## 5. Il ruolo di Ricavia
@@ -46,7 +52,8 @@ Ogni fonte ha titolo, editore, link e data. Una notizia che regge solo su fonti 
 - È utile, non pubblicitario: descrive un'analisi o una decisione concreta ("in situazioni come questa controlliamo il pick-up giorno per giorno e…"), non vende ("contattaci subito")
 - Ogni agente della war room propone nel verbale una frase sul ruolo di Ricavia dal suo punto di vista; il capo redattore sceglie e fonde, restando nel limite dei 2 paragrafi
 - Il catalogo delle analisi in `conoscenze/ricavia.md` serve a variare: lo stesso paragrafo non si ripete in due articoli della stessa settimana
-- Chiusura consentita: un collegamento all'Hotel Score (`/hotel-score/`) o alla call conoscitiva (`/contatti/`), una volta sola
+- Chiusura consentita: un solo collegamento nel paragrafo Ricavia, verso una pagina di servizio (`/revenue-management/`, `/consulenza/`, `/nuova-apertura/`), l'Hotel Score (`/hotel-score/`) o la call conoscitiva (`/contatti/`). Non rientra nei 1 o 2 collegamenti interni naturali del corpo (sezione 7)
+- Il paragrafo Ricavia si scrive solo per le bozze che arrivano al GO: per una bozza con NO-GO non serve
 
 ## 6. Lingua e copy (da `CLAUDE.md`, vincolanti)
 
@@ -56,28 +63,33 @@ Ogni fonte ha titolo, editore, link e data. Una notizia che regge solo su fonti 
 - Niente verbi colloquiali ("vanno", "coprono", "resta/restano", "finiscono altrove", "prendono strade"), niente metafore deboli ("bussola", "cruscotto", "a portata di mano"), niente "Così" a inizio frase
 - Registro serio e professionale, frasi chiare, una idea per frase
 - Gli elenchi "In breve" hanno frasi brevi, parallele, con la stessa costruzione
-- Sigle spiegate la prima volta, con le definizioni del glossario (sezione 6 bis)
+- Sigle spiegate la prima volta con una glossa breve, di massimo 6 parole circa, tra parentesi: "ADR (tariffa media per camera venduta)". La glossa è la prima parte della definizione del glossario (sezione 6 bis); la definizione completa non si incolla nell'articolo, vive solo nel glossario e nella pagina `/indicatori/`. Gli indicatori che non sono sigle (occupazione, pick-up, lead time) non hanno bisogno di glossa
 - Nel testo non si scrivono i simboli minore e maggiore: si scrive "meno di" e "più di"
 
 ## 6 bis. Glossario degli indicatori
 
-Definizioni da usare sempre, senza varianti:
+Definizioni di riferimento, senza varianti. Nell'articolo si usa solo la glossa breve della sezione 6 (la parte prima dei due punti); la definizione completa è solo qui:
 
 | Sigla | Definizione |
 |---|---|
 | Occupazione | camere vendute diviso camere disponibili, in percentuale |
-| ADR | tariffa media per camera venduta: ricavi camere diviso camere vendute, al netto di IVA e tassa di soggiorno |
+| ADR | tariffa media per camera venduta: ricavi camere diviso camere vendute, al netto di IVA e tassa di soggiorno (a Roma "contributo di soggiorno") |
 | RevPAR | ricavo per camera disponibile: ricavi camere diviso camere disponibili, cioè ADR per occupazione |
 | GOP | utile operativo lordo: ricavi totali meno costi operativi (reparti, commissioni di distribuzione, costi generali), prima di affitto, mutuo, ammortamenti e imposte; è la definizione della pagina `/indicatori/`, coerente con lo standard USALI |
 | GOPPAR | GOP per camera disponibile |
 | Pick-up | prenotazioni acquisite in un periodo per una data di soggiorno futura |
 | Lead time | giorni tra la prenotazione e l'arrivo |
 | Costi di distribuzione | commissioni delle OTA e degli altri intermediari, costi dei canali |
+| Costi operativi | costi di gestione dell'hotel: reparti, personale, energia, forniture, commissioni di distribuzione e costi generali; sono i costi che il GOP sottrae ai ricavi |
+
+Indicatori fuori glossario: nella sezione "Impatto sugli indicatori" si usano solo le voci dell'elenco del revenue manager (`agenti/revenue-manager.md`, sezione 2). Ciò che non è nell'elenco entra nella voce più vicina: le cancellazioni nel pick-up, l'offerta del competitive set nella motivazione di ADR o occupazione, i costi dell'energia o del personale nei costi operativi
+
+Terminologia: "tassa di soggiorno" è il nome generale; negli articoli su Roma si scrive "contributo di soggiorno", il nome usato da Roma Capitale, con una spiegazione alla prima menzione: "contributo di soggiorno (la tassa di soggiorno di Roma)"
 
 Regole di coerenza:
 
 - La direzione del RevPAR segue occupazione e ADR: occupazione in calo con ADR stabile vuol dire RevPAR in calo; se occupazione e ADR vanno in direzioni opposte, il RevPAR è "?" salvo un dato con fonte
-- La tassa di soggiorno non è un ricavo dell'hotel: non cambia l'ADR, cambia il prezzo finale pagato dall'ospite
+- La tassa di soggiorno (a Roma il contributo di soggiorno) non è un ricavo dell'hotel: non cambia l'ADR, cambia il prezzo finale pagato dall'ospite
 - GOP e GOPPAR solo quando la notizia tocca costi o margini, non come sinonimi di ricavo
 
 ## 7. Markup del corpo (`articolo.html`)
@@ -103,6 +115,8 @@ Struttura di ogni articolo, in quest'ordine:
 
 - Da 3 a 5 sezioni `h3` in tutto, comprese "Impatto sugli indicatori" e "Cosa fare adesso"
 - Le fonti si linkano nel testo, sulla parola giusta: `<a href="https://...">secondo ENIT</a>`
+- Collegamenti interni nel corpo: 1 o 2 naturali, verso articoli o pagine pertinenti, più il collegamento di chiusura del paragrafo Ricavia (sezione 5), che non si conta. Le voci di `related` non ripetono un collegamento già presente nel corpo, se esiste un'alternativa pertinente
+- Due bozze della stessa giornata possono citare lo stesso fatto come contesto, ma un fatto usato come contesto in una bozza non diventa un articolo a sé nella stessa giornata
 - Collegamenti interni solo verso pagine che esistono: `/revenue-management/`, `/consulenza/`, `/nuova-apertura/`, `/metodo/`, `/indicatori/`, `/hotel-score/`, `/contatti/`, `/osservatorio/` e gli articoli già pubblicati su `main`. Mai verso un altro articolo della stessa giornata: se viene tolto, il collegamento si rompe e la build fallisce
 
 ## 8. Tono e mood
@@ -156,8 +170,14 @@ Regole che valgono per tutti, prima di quelle del proprio manuale:
 
 1. **Prima i dati, poi la reputazione, poi l'utilità per l'albergatore, poi la SEO, poi la viralità.** Se due esigenze si scontrano, vince quella più in alto
 2. **Nel dubbio, la scelta prudente**: meno affermazioni, più condizioni, tono più serio
-3. **Correggi ciò che è del tuo ruolo, segnala il resto.** Non riscrivere le parti degli altri agenti: se qualcosa fuori dal tuo ruolo non va, scrivilo in `segnalazioni`
+3. **Correggi ciò che è del tuo ruolo, segnala il resto.** Non riscrivere le parti degli altri agenti: se qualcosa fuori dal tuo ruolo non va, scrivilo in `segnalazioni`. Sul corpo (`articolo.html`) la war room tocca solo questo, con ogni modifica elencata in `correzioni`:
+   - revenue manager: "Impatto sugli indicatori", "Cosa fare adesso" e le singole frasi del corpo che descrivono in modo sbagliato il meccanismo della tesi
+   - SEO director: per inserire la keyword, la prima frase dell'apertura e un solo `h3`, senza cambiare fatti, numeri e fonti; i collegamenti interni
+   - virality director: la frase citabile (`blockquote`)
+   - art director: nulla
+
+   Il tuo esito giudica solo il tuo ambito: se un collega ha dato DA RIVEDERE o VETO, non allinei il tuo esito al suo e, se serve, lo scrivi in `segnalazioni`. Decide il capo redattore
 4. **Non inventare per riempire un vuoto.** Se manca un'informazione, scrivi che manca
-5. **Meglio un articolo in meno che un articolo debole.** Nessuno abbassa l'asticella per arrivare a 3
+5. **Meglio un articolo in meno che un articolo debole.** Nessuno abbassa l'asticella per arrivare a 2
 6. **Una lezione in `lezioni.md` vale come istruzione**, purché non contraddica questo file o `CLAUDE.md`
 7. **Gli esempi dei manuali sono inventati**: mostrano un ragionamento, non si usano come notizie o fonti

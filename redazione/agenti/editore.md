@@ -30,8 +30,8 @@ Mettere in pagina gli articoli con GO e proporli per la pubblicazione senza romp
 
 ### Sequenza fissa
 
-1. **Immagini**: genera la copertina con Higgsfield dal prompt dell'art director; se non è disponibile o resta difettosa dopo un secondo tentativo, usa la foto di riserva in `immagine.libreria`. Se `immagine.fonte` è già `libreria`, salti la generazione. Con Pillow ritagli l'immagine al centro in 16:9, la porti a 1600 px di larghezza e la salvi come `hero.webp`; poi ritagli `social.jpg` a 1200×630. Se Higgsfield non era disponibile, lo scrivi nella pull request
-2. **File**: crea le cartelle e i file. Il nome della cartella è `data-slug`
+1. **Immagini**: se `immagine.fonte` è `libreria`, usi la foto indicata, la **guardi** e controlli che `alt` la descriva. Se è `higgsfield`, generi la copertina dal prompt dell'art director e la **guardi** prima di usarla: deve essere una fotografia a tutto campo, senza cornice, bordo, parete o mockup intorno (nessuna foto dentro una foto), senza testo, loghi, persone riconoscibili, toni rossi dominanti. Se è difettosa rigeneri una volta; se è ancora difettosa, o Higgsfield non è disponibile o i crediti sono finiti, usa la foto di riserva in `immagine.libreria`, porti `immagine.fonte` a `libreria`, copi `immagine.alt_libreria` in `alt` e lo scrivi nella pull request. In entrambi i casi, con Pillow ritagli l'immagine al centro in 16:9, la porti a 1600 px di larghezza e la salvi come `hero.webp`; poi ritagli `social.jpg` a 1200×630, e guardi anche il ritaglio
+2. **File**: crea le cartelle e i file. Il nome della cartella è `data-slug`. Prima, ricontrolli i punti che il capo redattore ti ha passato nelle `segnalazioni` ("Per l'editore": revoche di uno sciopero, dati provvisori, orari da confermare); se un fatto centrale è cambiato, segui `regole-comuni.md` sezione 9 bis
 3. **Controlli**, in quest'ordine, tutti obbligatori:
    ```sh
    python -m unittest discover tests -v
@@ -44,7 +44,7 @@ Mettere in pagina gli articoli con GO e proporli per la pubblicazione senza romp
    - link all'anteprima della pagina: Cloudflare lo pubblica in un commento della pull request pochi minuti dopo il push; lo copi nel corpo. Se dopo 30 minuti non c'è, scrivi "anteprima non disponibile" e prosegui
    - verbale riassunto: esito di ogni agente e decisione del capo redattore
    - gli scartati con la motivazione
-   - gli articoli numerati 1, 2, 3 nell'ordine del corpo: i numeri restano fissi per tutta la giornata, anche se un articolo viene tolto
+   - gli articoli numerati 1 e 2 nell'ordine del corpo: i numeri restano fissi per tutta la giornata, anche se un articolo viene tolto
    - in fondo, i comandi che la persona può scrivere nei commenti (sezione "Comandi umani")
 6. **Ramo `redazione/registro`**: aggiungi una voce per ogni articolo proposto (GO e NO-GO) in `redazione/registro.json`, con `bloccato_fino` calcolato dalla tabella del capo redattore; salva gli scartati e le lezioni. Esiti umani: `togli il N`, `no a tutto` e NO-GO dopo `rifai il N` diventano `esito: "NO-GO"`, `motivo: "no umano"`, `bloccato_fino: null`; una pull request scaduta diventa `esito: "SCADUTO"`, senza blocco
 7. **Email** a info@ricavia.com: oggetto `Redazione Ricavia · AAAA-MM-GG · N articoli da approvare`; nel testo titoli, tesi, link all'anteprima, link alla pull request, scartati con motivo, e due righe su come approvare (aprire la pull request, guardare l'anteprima, Merge)
@@ -94,7 +94,9 @@ Niente sul contenuto: le decisioni editoriali sono del capo redattore. Puoi e de
 |---|---|
 | Test, build o `check_seo` falliscono per un articolo | Leggi il messaggio (inizia con il nome della cartella). Se l'errore è solo di lunghezza di `title_seo` o `description`, accorci quel campo senza cambiarne il senso e lo scrivi nella pull request; per qualsiasi altro errore (slug, titolo duplicato, contenuto) togli l'articolo e lo segnali |
 | Falliscono per un motivo che non capisci | Non pubblichi nulla: nessuna pull request da unire, email con l'errore completo |
-| Higgsfield non risponde | Foto della libreria; non è un no-go, lo scrivi nella pull request |
+| Higgsfield non risponde o i crediti sono finiti | Foto della libreria con `alt` preso da `immagine.alt_libreria`; non è un no-go, lo scrivi nella pull request |
+| Manca `immagine.alt_libreria` e devi usare la riserva | Guardi la foto e scrivi un alt su ciò che si vede, una frase senza punto finale, e lo dici nella pull request |
+| La build di Cloudflare fallisce sul ramo `redazione/registro` | È previsto: quel ramo non contiene il sito, Cloudflare compila ogni ramo. Non è un errore da correggere; conta solo la build del ramo `redazione/AAAA-MM-GG` |
 | 0 articoli con GO | Nessuna pull request; email "Oggi nessun articolo" con scartati e motivazioni |
 | Il ramo del giorno esiste già | Non lo sovrascrivi: lo aggiorni con nuovi commit |
 | Lo slug esiste già nel Journal | Errore della war room: togli l'articolo e lo segnali, non rinomini da solo |

@@ -1,12 +1,13 @@
 # Redazione dell'Osservatorio
 
-Qui vivono le istruzioni della redazione automatica che ogni giorno propone fino a 3 articoli per il Journal di ricavia.com. Il progetto approvato è in `docs/superpowers/specs/2026-11-03-redazione-osservatorio-design.md`.
+Qui vivono le istruzioni della redazione automatica che ogni giorno propone fino a 2 articoli per il Journal di ricavia.com. Il progetto approvato è in `docs/superpowers/specs/2026-11-03-redazione-osservatorio-design.md`.
 
 ## Cosa c'è in questa cartella
 
 ```text
 redazione/
   README.md            questo file: flusso, ordine di lettura, formati condivisi
+  routine.md           istruzioni per la routine cloud (mattina, comandi, settimana)
   regole-comuni.md     regole che valgono per tutti gli agenti (leggere per prime)
   lezioni.md           formato delle lezioni (il file vivo è sul ramo redazione/registro)
   conoscenze/
@@ -30,7 +31,7 @@ redazione/
 - `redazione/lezioni.md`: le lezioni di ogni no-go
 - `redazione/scartati/AAAA-MM-GG-<slug>/`: gli articoli con NO-GO, con bozza e verbale
 
-Ogni mattina gli agenti leggono questi tre file da quel ramo, non da `main`. Lo aggiorna solo l'editore, ogni giorno.
+Ogni mattina gli agenti leggono questi tre file da quel ramo, non da `main`. Lo aggiorna solo l'editore, ogni giorno. Se il ramo o un file non esiste ancora (il primo giorno), si considera vuoto: l'agente lo scrive nel verbale e prosegue, confrontandosi solo con `tools/seo.json`, `journal/` e i 6 articoli storici.
 
 ## Ordine di lettura per ogni agente
 
@@ -59,7 +60,7 @@ Se due testi si contraddicono, vale quest'ordine: `CLAUDE.md`, poi `regole-comun
 ## Il flusso di ogni giorno
 
 ```text
-06:00  Giornalista: 8-12 candidati, sceglie 3, scrive 3 bozze con scheda fonti
+06:00  Giornalista: 6-10 candidati, sceglie 2, scrive 2 bozze con scheda fonti
        War room, per ogni bozza in quest'ordine:
          Revenue manager -> SEO director -> Virality director -> Art director
        Capo redattore: GO / NO-GO / RIMANDA per ogni bozza
@@ -86,16 +87,16 @@ Campi letti dalla build (obbligatori, testi non vuoti):
 
 | Campo | Chi lo scrive | Regola |
 |---|---|---|
-| `slug` | SEO director | minuscole, numeri e trattini, massimo 6 parole, senza date, unico; `archivio` è riservato |
+| `slug` | SEO director | minuscole, numeri e trattini, massimo 6 parole, senza date (né giorni, né mesi, né anni), unico; `archivio` è riservato |
 | `data` | Editore | `AAAA-MM-GG`, uguale al prefisso della cartella |
 | `categoria` | SEO director | una tra `zone`, `mercato`, `prezzi`, `regole`, `dati`, `eventi`, `trasporti`, `macro` |
-| `titolo` | Virality director | il titolo-hook (h2), unico tra tutti gli articoli |
+| `titolo` | Virality director | il titolo-hook (h2), unico tra tutti gli articoli; il giornalista vi scrive un titolo di lavoro, che il virality director sostituisce |
 | `sottotitolo` | Virality director | una o due frasi, senza punto finale |
 | `title_seo` | SEO director | finisce con ` · Ricavia`, al massimo 60 caratteri in tutto |
 | `description` | SEO director | 140-160 caratteri, senza `…` e senza punto finale |
 | `related_intro` | SEO director | frase che introduce i collegamenti, stile di `tools/seo.json` |
 | `related` | SEO director | 2 voci `{"label": "...", "url": "/..."}` verso pagine interne |
-| `alt` | Art director | descrizione dell'immagine di apertura |
+| `alt` | Art director; l'editore se usa la foto di riserva | descrizione dell'immagine pubblicata; se l'editore passa alla foto di riserva, ci copia `immagine.alt_libreria` |
 
 Campi di lavoro (ignorati dalla build, ma obbligatori per la redazione):
 
@@ -107,8 +108,8 @@ Campi di lavoro (ignorati dalla build, ma obbligatori per la redazione):
 | `keyword` | SEO director | `{"principale": "...", "secondarie": ["...", "..."]}` |
 | `mood` | Virality director | `{"scelta": "serio", "perche": "..."}` |
 | `alternative_titolo` | Virality director | 3 titoli alternativi |
-| `immagine` | Art director | `{"fonte": "higgsfield" o "libreria", "prompt": "...", "scheda": "...", "libreria": "assets/img/xxxxxxxxxx.webp", "testo_sovrapposto": null}`; `libreria` è sempre compilato: è la foto di riserva |
-| `fonti` | Giornalista | lista di `{"titolo": "...", "editore": "...", "url": "https://...", "data": "AAAA-MM-GG"}` |
+| `immagine` | Art director | `{"fonte": "libreria" (di norma) o "higgsfield", "prompt": "...", "scheda": "...", "libreria": "assets/img/xxxxxxxxxx.webp", "alt_libreria": "...", "testo_sovrapposto": null}`; `libreria` e `alt_libreria` sono sempre compilati: sono la foto di riserva e la sua descrizione |
+| `fonti` | Giornalista | lista di `{"titolo": "...", "editore": "...", "url": "https://...", "data": "AAAA-MM-GG"}`; `data` è il giorno in cui la pagina è stata letta; la data di pubblicazione, se c'è, va in `fonti.md` |
 | `verbale` | ogni agente | vedi sotto |
 
 ### Verbale della war room
@@ -126,9 +127,10 @@ Campi di lavoro (ignorati dalla build, ma obbligatori per la redazione):
 }
 ```
 
-- `esito` per la war room: `APPROVED`, `DA RIVEDERE` o `VETO`; il veto è possibile solo per il revenue manager (tesi sbagliata o azioni dannose) e per il SEO director (tema duplicato)
+- `esito` per il giornalista: sempre `CONSEGNATA`; dubbi e fatti da confermare si scrivono in `segnalazioni`
+- `esito` per la war room: `APPROVED`, `DA RIVEDERE` o `VETO`, ciascuno solo sul proprio ambito (`regole-comuni.md`, sezione 10); il veto è possibile solo per il revenue manager (tesi sbagliata o azioni dannose) e per il SEO director (tema duplicato)
 - Il veto è un segnale per il capo redattore, non interrompe la war room: la bozza passa comunque da tutti e quattro gli agenti, così il capo redattore decide su un articolo completo
-- `esito` per il capo redattore: `GO`, `NO-GO` o `RIMANDA`, con `motivo` scelto dalla lista di `capo-redattore.md`
+- `esito` per il capo redattore: `GO`, `NO-GO` o `RIMANDA`, con `motivo` scelto dalla lista di `capo-redattore.md`; con GO `motivo` è `null`. La voce del capo redattore ha in più il campo `griglia`: le voci della griglia del GO, una per riga, con `[x]` o `[ ]` e una nota tra parentesi
 - `segnalazioni` vuota quando non c'è nulla da passare
 
 ### Registro (`redazione/registro.json` sul ramo `redazione/registro`)

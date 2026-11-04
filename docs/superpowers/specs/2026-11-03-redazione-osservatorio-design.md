@@ -14,7 +14,7 @@ Obiettivi per Ricavia: autorevolezza (l'Osservatorio diventa la fonte che un alb
 ## 2. Obiettivi, non-obiettivi, anti-obiettivi
 
 **Obiettivi**
-- 3 articoli al giorno, ognuno con una tesi revenue chiara e un impatto stimato sugli indicatori
+- 2 articoli al giorno (decisione del 4 novembre 2026; il progetto partiva da 3), ognuno con una tesi revenue chiara e un impatto stimato sugli indicatori
 - Ogni articolo passa da una war room di 5 ruoli e riceve go / no-go dal capo redattore
 - Pubblicazione nel Journal dell'Osservatorio con pagina propria, SEO completa e immagine
 - Ogni articolo mostra il ruolo di Ricavia in quella situazione, senza diventare pubblicità
@@ -38,8 +38,8 @@ Obiettivi per Ricavia: autorevolezza (l'Osservatorio diventa la fonte che un alb
 ```
 06:00  Routine cloud parte
   │
-  ├─ 1. GIORNALISTA: ricerca notizie (ultime 24–72 h) → 8–12 candidati → sceglie i 3 migliori
-  │      scrive 3 bozze complete + scheda fonti
+  ├─ 1. GIORNALISTA: ricerca notizie (ultime 24–72 h) → 6–10 candidati → sceglie i 2 migliori
+  │      scrive 2 bozze complete + scheda fonti
   │
   ├─ 2. WAR ROOM (per ogni bozza, in quest'ordine):
   │      Revenue manager → SEO director → Virality director → Art director
@@ -50,14 +50,14 @@ Obiettivi per Ricavia: autorevolezza (l'Osservatorio diventa la fonte che un alb
   │      RIMANDA: una sola riscrittura, poi GO o NO-GO definitivo
   │
   ├─ 4. EDITORE: genera immagini, file dell'articolo, build, controlli SEO
-  │      apre una pull request su GitHub con i 3 articoli
+  │      apre una pull request su GitHub con i 2 articoli
   │
   └─ 5. Cloudflare crea l'anteprima del ramo
          Sempre: una persona di Ricavia legge e fa merge = pubblicazione
          (dopo il primo mese basta un tocco dall'app GitHub, i controlli automatici sono già passati)
 ```
 
-Se a fine giornata ci sono meno di 3 articoli con GO, se ne pubblicano meno. **Mai abbassare l'asticella per fare numero.**
+Se a fine giornata ci sono meno di 2 articoli con GO, se ne pubblicano meno. **Mai abbassare l'asticella per fare numero.**
 
 ### 3.1 Regole del no-go (approvate il 3 novembre 2026)
 
@@ -71,7 +71,7 @@ Se a fine giornata ci sono meno di 3 articoli con GO, se ne pubblicano meno. **M
 | Tema già trattato | NO-GO | 14 giorni |
 | Rischio per la reputazione | NO-GO | 30 giorni |
 
-- Dopo un NO-GO il giornalista prende il candidato successivo della riserva (8–12 scelti all'inizio); il sostituto rifà tutta la war room. Massimo 2 sostituzioni al giorno
+- Dopo un NO-GO il giornalista prende il candidato successivo della riserva (6–10 scelti all'inizio); il sostituto rifà tutta la war room. Massimo 2 sostituzioni al giorno
 - Gli articoli scartati si salvano in `redazione/scartati/AAAA-MM-GG-<slug>/` con motivazione e verbale; non si pubblicano
 
 **War room**: ogni agente corregge da solo ciò che riguarda il suo ruolo e segnala al capo redattore solo ciò che non può sistemare. Veto del revenue manager (tesi sbagliata) e del SEO director (tema duplicato): il capo redattore può dare GO sopra un veto solo con motivazione scritta nel verbale.
@@ -111,7 +111,7 @@ Di seguito il contenuto che ogni manuale dovrà sviluppare.
 2. Posso spiegare il meccanismo in una frase ("chiusura spazio aereo X → meno arrivi da Y → Roma perde Z% della domanda da quel mercato")?
 3. Un albergatore può fare qualcosa di concreto dopo averla letta?
 
-**Mix giornaliero**: almeno 1 su 3 legato a Roma/Lazio; massimo 1 su 3 di geopolitica/macro; mai due articoli sullo stesso tema; niente tema già trattato negli ultimi 14 giorni salvo fatto nuovo (controlla `redazione/registro.json`).
+**Mix giornaliero**: almeno 1 su 2 legato a Roma/Lazio; massimo 1 su 2 di geopolitica/macro; mai due articoli sullo stesso tema; niente tema già trattato negli ultimi 14 giorni salvo fatto nuovo (controlla `redazione/registro.json`).
 
 **Consegna**: bozza 700–1.100 parole nel formato del Journal (lede, 3–5 sezioni con h3, box "In breve"), scheda fonti con link e data, tesi revenue in una frase.
 
@@ -159,7 +159,7 @@ Di seguito il contenuto che ogni manuale dovrà sviluppare.
 
 **Consegna**: scheda visiva (soggetto, inquadratura, luce, palette coerente con il gradiente `--zgr`, nessun testo nell'immagine salvo indicazione), prompt di generazione, alt, eventuale testo sovrapposto (Geist, regole di brand). Si genera solo la copertina 16:9; l'immagine social 1200×630 si ricava ritagliandola (3 immagini al giorno, non 6).
 
-**Fonte immagine**, in ordine: 1) generazione AI (Higgsfield); 2) foto della libreria esistente del sito (`data-photo`); mai foto prese da altri siti.
+**Fonte immagine**, in ordine (decisione del 4 novembre 2026): 1) foto della libreria esistente del sito, quando ce n'è una pertinente; 2) generazione AI (Higgsfield) solo se la libreria non basta; in origine l'ordine era: 1) generazione AI; 2) foto della libreria esistente del sito (`data-photo`); mai foto prese da altri siti.
 
 **Vincoli**: niente persone riconoscibili reali, niente loghi di terzi, niente immagini di tragedie reali; colori solo in palette.
 
@@ -228,7 +228,7 @@ La pagina `/osservatorio/` oggi carica tutti gli articoli in una sola pagina: va
 
 - **Routine programmata di Claude Code nel cloud**, ogni giorno alle 06:00 ora di Roma, sul repo `ricavia-group/ricavia-ricavia-sito`
 - Ricerca con la ricerca web disponibile nella routine
-- Immagini con Higgsfield se raggiungibile dalla routine; altrimenti libreria foto del sito
+- Immagini: prima la libreria del sito; Higgsfield solo quando la libreria non ha una foto pertinente
 - Uscita: un ramo `redazione/AAAA-MM-GG` e una pull request
 - Anteprima: `wrangler.jsonc` abilita le anteprime, ma il README le descrive come lanciate a mano (`npx wrangler preview`). Prima verifica della fase 1: se Cloudflare non costruisce da solo i rami, la routine lancia wrangler con un token Cloudflare salvato come segreto e scrive il link nella pull request
 - Approvazione: account GitHub di Ricavia (organizzazione `ricavia-group`), con merge della pull request anche dall'app GitHub
@@ -239,7 +239,7 @@ La pagina `/osservatorio/` oggi carica tutti gli articoli in una sola pagina: va
 
 1. **Sito pronto**: nuovo formato articoli in `build.py`, indice con paginazione, registro. Verifica che i 6 articoli storici restino identici e agli stessi URL
 2. **Manuali**: i 7 manuali in `redazione/agenti/`, più `redazione/regole-comuni.md` (brand, copy, fonti, anti-obiettivi)
-3. **Settimana di prova**: la routine produce ogni giorno 3 articoli in pull request, nessuna pubblicazione. Si correggono i manuali sugli errori veri
+3. **Settimana di prova**: la routine produce ogni giorno 2 articoli in pull request, nessuna pubblicazione. Si correggono i manuali sugli errori veri
 4. **Primo mese**: si pubblica solo con merge umano
 5. **Regime**: la persona di Ricavia non rilegge più tutto ma approva con un tocco; i controlli automatici e il GO del capo redattore sono già passati. Possibilità di ritirare un articolo
 
@@ -247,20 +247,20 @@ La pagina `/osservatorio/` oggi carica tutti gli articoli in una sola pagina: va
 
 Dall'utente:
 - 7 agenti con i ruoli descritti; il capo redattore dà go / no-go al giornalista
-- 3 articoli al giorno, pubblicati nel Journal della pagina Osservatorio
+- 2 articoli al giorno (dal 4 novembre 2026; prima 3), pubblicati nel Journal della pagina Osservatorio
 - Ogni agente inserisce il ruolo di Ricavia dal proprio punto di vista
 - Manuali approfonditi perché ogni agente sappia decidere quando è in difficoltà
 - Una persona di Ricavia approva sempre la pubblicazione (opzione B): mantiene la responsabilità editoriale umana prevista dall'AI Act (art. 50), quindi nessuna dicitura "generato con AI"
 - Firma degli articoli: "Tito · Redazione Ricavia"
 - Notizie da tutto il mondo, ma ogni articolo chiude con cosa significa per un hotel indipendente in Italia, se possibile Roma
 - Nessun dato inventato; stime dichiarate con fonte e ragionamento
-- Immagini con Higgsfield
+- Immagini: prima la libreria del sito, Higgsfield quando serve (dal 4 novembre 2026)
 
 Scelte mie (da controllare):
 - Notifica giornaliera via Gmail a info@ricavia.com (GitHub non notifica le azioni del proprio account)
 - Approvazione tramite merge della pull request (funziona anche dall'app GitHub sul telefono) invece di un'email con tasto
 - Ordine della war room in sequenza: revenue → SEO → viralità → arte, poi capo redattore
-- Massimo 2 sostituzioni e 1 riscrittura per giorno; meno di 3 articoli se non c'è qualità
+- Massimo 2 sostituzioni e 1 riscrittura per giorno; meno di 2 articoli se non c'è qualità
 - Lunghezza 700–1.100 parole; mix con almeno 1 articolo Roma/Lazio
 - Ripiego immagini sulla libreria foto del sito
 - Solo la copertina viene generata, la versione social è un ritaglio (budget immagini non indicato)
