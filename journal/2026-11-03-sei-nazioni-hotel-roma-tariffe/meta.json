@@ -1,0 +1,189 @@
+{
+  "titolo": "Sei Nazioni all'Olimpico: si gioca il sabato, ma le notti di partita si prezzano adesso",
+  "tesi": "Le tre partite casalinghe dell'Italia nel Sei Nazioni 2027 (13 febbraio, 6 marzo e 13 marzo, Stadio Olimpico, sabato alle 15.10) concentrano la domanda di tifosi irlandesi, francesi e gallesi sulle notti di venerdì e sabato in una parte dell'anno senza grandi picchi: chi gestisce un hotel tra Flaminio e Parioli deve preparare ora una tariffa per ciascuna delle sei notti e un soggiorno minimo con una data di verifica, invece di aprire le date con le tariffe di un normale sabato d'inverno",
+  "tema": "sei-nazioni-2027-olimpico",
+  "categoria": "eventi",
+  "fonti": [
+    {
+      "titolo": "Guinness Sei Nazioni Maschile 2027",
+      "editore": "Federazione Italiana Rugby",
+      "url": "https://www.federugby.it/gm6n/",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "Guinness 6 Nations Rugby 2027",
+      "editore": "Turismo Roma (Roma Capitale)",
+      "url": "https://turismoroma.it/it/node/175801",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "Rugby Sei Nazioni (offerta Speciale Eventi)",
+      "editore": "Trenitalia",
+      "url": "https://www.trenitalia.com/it/offerte/rugby-sei-nazioni.html",
+      "data": "2026-11-03"
+    },
+    {
+      "titolo": "Sei Nazioni, ufficiale il calendario dell'edizione 2027: l'Italrugby esordirà in trasferta",
+      "editore": "Corriere dello Sport",
+      "url": "https://www.corrieredellosport.it/news/altri-sport/rugby/sei-nazioni/2026/03/09-147163805/sei_nazioni_ufficiale_il_calendario_dell_edizione_2027_l_italrugby_esordir_in_trasferta",
+      "data": "2026-11-03"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Sostituzione 1 di 2 dopo il NO-GO della bozza 3: date confermate dall'organizzatore (FIR), sede confermata da Turismo Roma e Trenitalia, orari da una testata nazionale; evento a 3-4 mesi, dentro la finestra in cui un hotel può ancora agire su tariffe e soggiorno minimo",
+      "correzioni": [],
+      "segnalazioni": [
+        "La pagina FIR elenca date e prezzi dei biglietti ma non indica lo stadio partita per partita: la sede Olimpico viene da Turismo Roma e Trenitalia, concordi; nessuna delle tre pagine indica una data di pubblicazione",
+        "L'orario delle 15.10 viene solo dal Corriere dello Sport (9 marzo 2026): il sito ufficiale del torneo (sixnationsrugby.com) non mostrava il calendario nella lettura automatica",
+        "Notizia annunciata a marzo 2026, non nelle ultime 72 ore: è un evento futuro, la vendita dei biglietti è in corso; lo stesso dubbio era già in candidati.md",
+        "Nessun numero di tifosi o di presenze: nessuna fonte aperta lo riporta, l'intensità è scritta a parole",
+        "Zone: solo Flaminio e Parioli, come in roma.md; Prati e Ponte Milvio sono DA COMPLETARE e non sono citati",
+        "Il link al calendario di Roma compare anche nella bozza 1: è un articolo pubblicato, non un articolo della giornata, quindi ammesso",
+        "Prezzi dei biglietti per settore letti sulla pagina FIR e non usati nel testo: non servono alla tesi"
+      ],
+      "ruolo_ricavia": "Ricavia inserisce le tre partite nelle previsioni della domanda e prepara in anticipo i prezzi delle sei notti, leggendo il traffico aereo di Fiumicino e Ciampino come segnale anticipato insieme ai prezzi della zona"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi confermata: evento con data certa dell'organizzatore, meccanismo fonte → tifosi stranieri su una o due notti → prezzo per evento a Flaminio e Parioli, coerente con roma.md; azioni eseguibili da un hotel indipendente e senza svendite",
+      "correzioni": [
+        "Pick-up: tolte le due intensità nella stessa voce (bassa e più marcata); ora ↑ bassa con una sola finestra, da novembre a fine gennaio, e la lettura dei voli brevi come motivazione",
+        "Azione 1: aggiunto di non aprire tariffe non rimborsabili scontate sulle sei notti di partita",
+        "Tesi confermata senza modifiche; fonti FIR e Trenitalia riaperte oggi: date, sede Olimpico (Trenitalia) e sconto fino al 75% tornano"
+      ],
+      "segnalazioni": [
+        "Intensità media di occupazione e ADR scritta a parole: nessuna fonte sul numero di tifosi; resta una lettura prudente",
+        "Domenica notte esclusa dalle notti da prezzare: è una scelta di calendario, non un dato; se il pick-up della domenica si muove va riletta",
+        "Prati citato in roma.md tra le zone dei tifosi (tabella segmenti) ma non nell'articolo: il giornalista lo ha escluso per prudenza, d'accordo",
+        "Orario delle 15.10 solo dal Corriere dello Sport: non cambia la tesi, che regge anche con un orario diverso"
+      ],
+      "ruolo_ricavia": "Ricavia definisce la strategia tariffaria seguendo stagionalità e picchi e controlla ogni settimana pick-up e occupazione a 90 giorni: il weekend del 13 febbraio entra in quella finestra a metà novembre, ed è da lì che le sei notti si leggono separate dal resto di febbraio e marzo"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Nessuna cannibalizzazione: nessun articolo sul Sei Nazioni nei 6 storici, nel journal (2 GO di oggi su sciopero e inflazione) o negli ultimi 14 giorni; il calendario di Roma lo cita in una riga, la tesi qui è nuova (prezzo delle singole notti di partita)",
+      "correzioni": [
+        "slug sei-nazioni-hotel-roma-tariffe (5 parole, senza anno: il 2027 invecchia)",
+        "title_seo di 55 caratteri, contati con Python, keyword all'inizio, costruzione diversa da quella della bozza 1 ('X e hotel a Roma:')",
+        "description di 153 caratteri, contati con Python, senza punto finale",
+        "Lede: aggiunto 'del Sei Nazioni 2027' nella prima frase, che parlava solo di rugby all'Olimpico",
+        "Primo h3: da 'Sei Nazioni 2027: le tre partite di Roma' a 'Sei Nazioni a Roma: le date che contano per gli hotel', per avere la keyword in un h3",
+        "Tolto il link interno all'articolo sui voli nel corpo (erano 3 collegamenti naturali più la chiusura sull'Hotel Score): la frase resta, l'articolo passa in related"
+      ],
+      "segnalazioni": [
+        "Title, slug e description confrontati con tools/seo.json e con le 2 cartelle del journal di oggi: nessuna coincidenza",
+        "Keyword scelta senza volumi di ricerca: 'Sei Nazioni hotel Roma' attira anche il tifoso; title e description la spostano sull'albergatore con 'tariffe', 'soggiorno minimo' e 'pick-up'"
+      ],
+      "ruolo_ricavia": "Per chi cerca come prezzare le notti di un grande evento, il passo successivo naturale è la pagina del revenue management, dove Ricavia descrive come anticipa eventi e festività e prepara i prezzi delle date coinvolte"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "Notizia leggera con date certe e una tesi concreta: c'è un racconto (si gioca il sabato, si decide adesso) che regge il tono leggero senza promettere più di quanto l'articolo dimostra",
+      "correzioni": [
+        "Titolo: da 'Sei Nazioni 2027 all'Olimpico: sei notti da prezzare prima che arrivino i tifosi' a 'Sei Nazioni all'Olimpico: si gioca il sabato, ma la notte del venerdì si prezza adesso' (86 caratteri): taglio di contrasto tra il giorno della partita e il giorno della decisione, diverso dalla domanda della bozza 1 e dal dato con fonte della bozza 2",
+        "Alternative con tre tagli diversi: domanda, contrasto tra pubblici nello stesso weekend (San Valentino), conseguenza concreta per zona; tutte entro 90 caratteri, contati con Python",
+        "Sottotitolo nuovo (142 caratteri), senza punto finale: dice cosa trova il lettore (date, pubblici, azioni)",
+        "Mood divertente invece di serio implicito: ammesso dalla matrice per lo sport",
+        "Frase citabile confermata senza modifiche: contrasto pomeriggio e mesi, nessun numero, nessun nome, arriva dopo il paragrafo che la dimostra"
+      ],
+      "segnalazioni": [
+        "Il titolo dice 'la notte del venerdì': il corpo e le azioni la trattano insieme al sabato; se il capo redattore preferisce non isolare il venerdì, l'alternativa 3 dice la stessa cosa in modo neutro",
+        "Il titolo è più leggero del corpo, che ha un registro serio: va bene per la matrice, ma l'art director deve tenerne conto per l'immagine"
+      ],
+      "ruolo_ricavia": "Il racconto che Ricavia può portare è il calendario: un evento annunciato mesi prima è la prova che il prezzo si prepara in anticipo, e Ricavia anticipa partite, concerti e festività prima che arrivino le prenotazioni"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Soggetto che lega l'evento alla camera da vendere, generabile senza persone, loghi o scritte, coerente con il mood divertente (dettaglio inatteso, accento di palette sulle luci dello stadio) e diverso dalle immagini delle bozze 1 (banchina) e 2 (corridoio)",
+      "correzioni": [
+        "Compilati scheda, prompt in inglese, fonte higgsfield, libreria e alt (la bozza non aveva il campo immagine)"
+      ],
+      "segnalazioni": [
+        "Riserva n114 (Camera d'hotel luminosa con vista sui tetti di Roma): data-k n114 → assets/img/a17d5675f3.webp in index.html, file presente (1600×900, 16:9), nessuna persona e nessun rosso; diversa dalle riserve delle bozze 1, 2 e 3. La libreria non ha stadi né immagini di sport",
+        "Se si usa la riserva, l'alt va cambiato: proposta 'Camera d'hotel luminosa con letto matrimoniale e vista sui tetti di Roma'",
+        "Il pallone senza cuciture e senza marchi può uscire innaturale: se la prima generazione mostra loghi o scritte, l'editore rigenera una volta e poi usa la riserva",
+        "Lo stadio è generico e lontano, non riconoscibile come l'Olimpico: scelta voluta per evitare architetture con scritte e marchi degli sponsor"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo Ricavia mette al centro la camera, non lo stadio: l'evento conta per quello che fa alla notte venduta, ed è quella che Ricavia prezza in anticipo"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: prezzo per singola notte di evento e soggiorno minimo con data di verifica, coerente con roma.md su Flaminio e Parioli)",
+        "[x] Ogni numero ha fonte: date dalla FIR, confermate da Turismo Roma, Trenitalia e Corriere dello Sport; sconto fino al 75% da Trenitalia; 15.10 attribuito nel testo al Corriere dello Sport; 'sei notti' dichiarato come conteggio di calendario; nessun numero di tifosi, intensità a parole",
+        "[x] Fonti citate con link, nessuna copia",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voci 4.1 n. 3, 4 e 8, diverso dalle bozze 1 e 2, collegamento unico all'Hotel Score",
+        "[x] Regole di brand e di copy rispettate dopo le correzioni ('va letto' e 'dal canto suo' tolti)",
+        "[x] Tono coerente con la matrice: serio, ammesso per lo sport",
+        "[x] Tema non ripetuto (SEO director APPROVED)",
+        "[x] Nessuna affermazione negativa",
+        "[x] 1.045 parole, 4 h3, apertura, impatto, 3 azioni, In breve"
+      ],
+      "correzioni": [
+        "Titolo: 'la notte del venerdì si prezza adesso' diventa 'le notti di partita si prezzano adesso' (87 caratteri): il corpo e le azioni trattano venerdì e sabato insieme, e il titolo non deve isolare il venerdì",
+        "Mood da divertente a serio: corpo e foto di riserva hanno un registro serio, e nel dubbio si sceglie serio",
+        "Immagine: fonte da higgsfield a libreria (crediti Higgsfield finiti, comunicazione dell'editore); alt riscritto sulla foto n114 vista nel repo: 'Camera d'hotel luminosa con letto matrimoniale e vista sui tetti di Roma'",
+        "Pick-up: 'va letto accanto' diventa 'si legge accanto' (verbo vietato da stile.md)",
+        "Secondo paragrafo: 'Trenitalia, dal canto suo, propone' diventa 'Trenitalia propone'",
+        "Paragrafo Ricavia riscritto: la versione della bozza riprendeva quasi alla lettera l'esempio 'Evento' di ricavia.md, che non si copia; ora voci 4.1 n. 3, 4 e 8"
+      ],
+      "segnalazioni": [
+        "Orario delle 15.10: una sola testata nazionale (livello 2), attribuita nel testo; la ricerca del 4 novembre non ha trovato smentite. Non regge la tesi, che vale con qualsiasi orario di sabato pomeriggio. Per l'editore: se il sito ufficiale del torneo diventa leggibile, conferma prima del merge",
+        "Keyword 'Sei Nazioni hotel Roma': può attirare anche il tifoso, ma title, description e corpo parlano all'albergatore (tariffe, soggiorno minimo, pick-up); la SEO viene dopo dati, reputazione e utilità, nessuna modifica",
+        "Sostituzioni usate oggi: 1 su 2"
+      ],
+      "ruolo_ricavia": "Tre partite note con mesi di anticipo lasciano il tempo di separare le sei notti dal resto di febbraio e marzo: Ricavia prepara in anticipo i prezzi delle date di evento e segue le rotte come segnale anticipato della domanda"
+    }
+  ],
+  "slug": "sei-nazioni-hotel-roma-tariffe",
+  "title_seo": "Sei Nazioni a Roma: tariffe hotel nei weekend · Ricavia",
+  "description": "Sei Nazioni 2027 all'Olimpico: le notti di partita da prezzare a Flaminio e Parioli, il soggiorno minimo con una data di verifica e il pick-up da seguire",
+  "keyword": {
+    "principale": "Sei Nazioni hotel Roma",
+    "secondarie": [
+      "tariffe hotel eventi Roma",
+      "soggiorno minimo hotel",
+      "hotel Stadio Olimpico Flaminio"
+    ]
+  },
+  "related_intro": "Per preparare in anticipo i prezzi delle date di evento, approfondisci",
+  "related": [
+    {
+      "label": "il servizio di revenue management",
+      "url": "/revenue-management/"
+    },
+    {
+      "label": "i voli su Roma come segnale della domanda",
+      "url": "/osservatorio/guardare-voli-calendario-leggiamo-fiumicino-ciampino/"
+    }
+  ],
+  "alternative_titolo": [
+    "Irlanda, Francia e Galles all'Olimpico: tre weekend da prezzare come un sabato qualunque?",
+    "Italia-Irlanda e San Valentino nello stesso weekend: due ospiti per la stessa camera",
+    "Tre partite del Sei Nazioni a Roma, sei notti con una tariffa propria a Flaminio e Parioli"
+  ],
+  "sottotitolo": "Le date delle tre partite di Roma, perché ogni weekend porta un pubblico diverso e le azioni su tariffe e soggiorno minimo da preparare adesso",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Evento sportivo senza vittime: la matrice ammette serio, divertente o ironico. Il capo redattore porta il mood da divertente a serio perché il corpo ha un registro serio e l'immagine passa alla foto di riserva (camera d'hotel), che non ha il dettaglio leggero del pallone: titolo, corpo e immagine ora hanno lo stesso tono"
+  },
+  "immagine": {
+    "fonte": "libreria",
+    "prompt": "Photorealistic interior of a quiet, minimal hotel room at winter dusk, 16:9. A plain white and grey rugby ball with no logos, no text and no stitching marks rests on a neatly made white bed, centered in the frame. Behind the bed a large window shows, far away on the horizon, the glowing floodlights of a distant stadium seen from outside, small in the frame, no signage, no crowd, no readable text. Sky gradient from soft cyan (#3CCDFA) to deep blue (#1F2DD0), a subtle violet (#724AF8) halo around the distant floodlights. Light neutral walls and bedding, one dim bedside lamp. Clean composition, generous negative space above, main subjects in the central horizontal band. Natural light, editorial photography, shallow depth of field on the ball. No people, no logos, no brand marks, no text, no team colors, no red tones, no bright green pitch.",
+    "scheda": "Soggetto: un pallone da rugby bianco e grigio, senza marchi né scritte, appoggiato sul letto rifatto di una camera d'hotel; oltre la finestra, lontano, le luci accese di uno stadio\nInquadratura: frontale, 16:9, letto e finestra nella fascia centrale, ampio spazio negativo di parete e cielo sopra, pavimento neutro sotto, margine per il ritaglio social\nLuce: crepuscolo invernale, luce fredda dalla finestra, una sola lampada da comodino tenue\nPalette: neutri chiari della camera, cielo azzurro #3CCDFA che scende al blu #1F2DD0, alone viola #724AF8 sulle luci dello stadio; niente rosso, niente verde acceso del campo\nAtmosfera: divertente per il dettaglio inatteso del pallone in camera, sobria e pulita, mai caricatura",
+    "libreria": "assets/img/a17d5675f3.webp",
+    "testo_sovrapposto": null
+  },
+  "alt": "Camera d'hotel luminosa con letto matrimoniale e vista sui tetti di Roma",
+  "data": "2026-11-03",
+  "autore": "Tito · Redazione Ricavia"
+}
