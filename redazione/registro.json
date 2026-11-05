@@ -70,5 +70,29 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-05",
+    "slug": "contributo-energia-hotel-investimenti",
+    "tema": "contributo-energia-pmi-bilancio-2027",
+    "keyword": "contributo energia hotel",
+    "categoria": "regole",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-05",
+    "slug": "clero-italiano-papa-hotel-roma",
+    "tema": "udienza-clero-italiano-dicembre-roma",
+    "keyword": "clero dal Papa hotel Roma",
+    "categoria": "eventi",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
