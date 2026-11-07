@@ -1,0 +1,214 @@
+{
+  "titolo": "Clero italiano dal Papa l'11 e il 12 dicembre: quale notte conta per gli hotel di Roma?",
+  "tesi": "Il programma dell'incontro del clero italiano con Papa Leone XIV, con la veglia a San Paolo fuori le Mura venerdì 11 dicembre dalle 18 e l'ingresso in San Pietro sabato 12 alle 8, rende quasi necessaria per chi arriva da lontano una sola notte a Roma, quella di venerdì, mentre i ritorni del sabato pomeriggio non sostengono la notte del 12: poiché i gruppi diocesani hanno chiuso iscrizioni e camere a ottobre e il numero dei partecipanti non è noto, per gli hotel di Prati e Vaticano e per quelli ben collegati con Termini e San Paolo l'effetto è basso e concentrato sul venerdì, quindi conviene contare ora il pick-up dell'11 contro un venerdì ordinario di fine novembre e lo stesso periodo del 2024, non imporre un soggiorno minimo di due notti e valutare le richieste di gruppo tardive solo confrontandole con la vendita ai singoli",
+  "tema": "udienza-clero-italiano-dicembre-roma",
+  "categoria": "eventi",
+  "fonti": [
+    {
+      "titolo": "Consiglio permanente: l'11 e il 12 dicembre il clero italiano dal Papa, veglia a San Paolo",
+      "editore": "AgenSIR",
+      "url": "https://www.agensir.it/quotidiano/2026/9/23/consiglio-permanente-l11-e-il-12-dicembre-il-clero-italiano-dal-papa-veglia-a-san-paolo/",
+      "data": "2026-11-05"
+    },
+    {
+      "titolo": "Incontro dei presbiteri in Italia col Santo Padre, 11-12 dicembre 2026: programma",
+      "editore": "Arcidiocesi di Milano",
+      "url": "https://www.chiesadimilano.it/wp-content/uploads/sites/83/2026/09/Programma-incontro-Presbiteri-in-Italia-col-Papa-a-Roma-dicembre-2026.pdf",
+      "data": "2026-11-05"
+    },
+    {
+      "titolo": "Il Papa incontra i sacerdoti",
+      "editore": "Arcidiocesi di Perugia-Città della Pieve",
+      "url": "https://diocesi.perugia.it/il-papa-incontra-i-sacerdoti/",
+      "data": "2026-11-05"
+    },
+    {
+      "titolo": "Incontro del clero italiano con Papa Leone XIV",
+      "editore": "Diocesi di Arezzo-Cortona-Sansepolcro",
+      "url": "https://diocesi.arezzo.it/2026/10/22/incontro-del-clero-italiano-con-papa-leone-xiv/",
+      "data": "2026-11-05"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Evento a Roma tra 36 e 37 giorni, annunciato a settembre e non trattato da nessun articolo; i programmi delle diocesi, con scadenze chiuse a ottobre, rendono leggibile la forma della domanda mentre un hotel può ancora agire sul prezzo della notte dell'11",
+      "correzioni": [],
+      "segnalazioni": [
+        "Recentezza: annuncio del 23 settembre, ammesso con l'estensione 'evento futuro annunciato da mesi' (giornalista.md, sezione 3); i fatti recenti sono le scadenze di iscrizione del 23 e 31 ottobre",
+        "Numero dei partecipanti non disponibile in nessuna fonte letta (SIR, Milano, Perugia, Arezzo; portale CEI solo con accesso): intensità scritta a parole, bassa. Se la CEI pubblica un numero prima del GO, il revenue manager può rivedere l'intensità",
+        "Orari dal programma di Milano, confermati come 'programma di massima' da Perugia: possono cambiare. La SIR conferma luoghi e sequenza ma non gli orari",
+        "Lettura da validare: la tesi sulla notte di venerdì deriva dai programmi (veglia la sera, ingresso alle 8, ritorni il sabato pomeriggio), non da dati sulle prenotazioni; il testo lo dichiara. Arezzo mostra che una parte dei sacerdoti viene solo il sabato, senza pernottare",
+        "Conoscenza generale da verificare: la Basilica di San Paolo fuori le Mura è sulla via Ostiense, lontano da San Pietro. In roma.md le zone che beneficiano di San Paolo non sono indicate: il testo non nomina un quartiere per il venerdì e parla di hotel 'ben collegati con Termini e con San Paolo'",
+        "Nomi di hotel e dell'agenzia di viaggio presenti nel programma di Milano non riportati (regole-comuni 9 e 9 ter); prezzi dei pacchetti non riportati",
+        "Somiglianza con l'articolo sulla maratona del 4 novembre (una notte resa necessaria dal programma): tesi diversa (la notte che conta è il venerdì, il sabato non è sostenuto, gruppi già collocati), segmento diverso, categoria proposta 'mercato' invece di 'eventi'. Il SEO director verifica",
+        "Collegamenti interni nel corpo: 1 (guida ai quartieri, per Prati e Vaticano) più /hotel-score/ nel paragrafo Ricavia, voce 4.1 n. 7, non usata negli articoli di questa settimana",
+        "Tono: notizia religiosa, nessuna ironia; il testo descrive solo programma e logistica"
+      ],
+      "ruolo_ricavia": "Per una data con domanda religiosa italiana di una sola notte Ricavia legge dall'Hotel Score come l'hotel si presenta a chi lo cerca (posizione, sito e vendita diretta, prezzi, reputazione) e indica tre interventi prioritari prima che arrivino le ultime prenotazioni individuali"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Il meccanismo regge sul programma dell'Arcidiocesi di Milano riletto oggi: veglia a San Paolo il venerdì sera e ingresso in San Pietro alle 8 del sabato rendono necessaria la sola notte dell'11 per chi arriva da lontano, con ritorni il sabato pomeriggio; indicatori e azioni sono coerenti e prudenti",
+      "correzioni": [
+        "Tesi confermata senza modifiche",
+        "Cosa fare adesso, azione 1: il termine di confronto 'un venerdì di dicembre senza eventi' diventa 'un venerdì ordinario di fine novembre e lo stesso periodo del 2024, non del 2025, anno del Giubileo'. I venerdì di dicembre 2026 cadono a ridosso dell'Immacolata e di Natale, e il 2025 non è un buon termine di paragone (roma.md, Calendario religioso)",
+        "Cosa fare adesso, azione 2: aggiunta una frase di condizione ('Se il weekend si sta già riempiendo con soggiorni di due notti, la scelta si rivede sul proprio pick-up'), perché un divieto assoluto del soggiorno minimo può far perdere ricavo a un hotel con un weekend già forte",
+        "Impatto sugli indicatori: 5 voci confermate senza modifiche (occupazione, ADR, RevPAR ↑ bassa; pick-up ↑ bassa; durata del soggiorno ↓ bassa); RevPAR coerente con occupazione e ADR"
+      ],
+      "segnalazioni": [
+        "Orari e treni verificati oggi sul PDF di Milano: 17.30 accoglienza, 18 veglia, 20 fraternità; sabato 8 ingresso, 8.45 Lodi, 9.30 udienza, 11 Messa; treni di andata il venerdì, ritorni da Termini tra le 15.50 e le 16.25. Il corpo corrisponde",
+        "Effetto marginale per la maggior parte degli hotel: il numero dei partecipanti non è noto e i gruppi diocesani hanno sistemazioni già assegnate. Il programma di Milano indica un alloggio assegnato dall'organizzazione 'secondo disponibilità', senza dire di che tipo: è plausibile che una parte della domanda organizzata vada a case religiose e non a hotel, ma non ho una fonte che lo dica in generale, quindi non l'ho scritto. La tesi per gli hotel è corretta: APPROVED, la scelta del pubblico è del capo redattore",
+        "Zona del venerdì: San Paolo fuori le Mura sulla via Ostiense non è coperta da roma.md e la posizione è conoscenza generale; il corpo non attribuisce l'effetto a un quartiere preciso, scelta che condivido",
+        "Il programma di Milano prevede anche una Messa alle 16 alle Tre Fontane per uno dei pacchetti: non cambia la tesi, non l'ho aggiunta",
+        "Antitrust: le azioni sono scritte per il singolo hotel e rimandano ai propri dati; nessun livello di prezzo"
+      ],
+      "ruolo_ricavia": "Ricavia aggiorna ogni giorno tariffe e disponibilità in base all'andamento delle prenotazioni e controlla ogni settimana il pick-up: per una notte come l'11 dicembre è il ritmo delle prenotazioni a dire se il venerdì merita un prezzo diverso da un venerdì ordinario"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo: nessun articolo sul calendario religioso nel registro, in journal/ o tra i 6 storici; rispetto alla maratona del 4 novembre cambiano evento, segmento (religioso italiano), notte (venerdì, non sabato) e keyword",
+      "correzioni": [
+        "Compilati slug (clero-italiano-papa-hotel-roma, 5 parole, senza date), title_seo (57 caratteri), description (151 caratteri), keyword, related_intro e related; lunghezze contate con Python",
+        "Categoria da 'mercato' a 'eventi': la causa della notizia è un evento (veglia e udienza), e la categoria non si sceglie per distinguersi dalla maratona (manuale SEO, sezione 5)",
+        "Apertura, prima frase: 'i sacerdoti delle diocesi italiane sono invitati a Roma per una veglia a San Paolo fuori le Mura e un'udienza con Papa Leone XIV in San Pietro' diventa 'il clero italiano è invitato a Roma per una veglia a San Paolo fuori le Mura e un'udienza con Papa Leone XIV in San Pietro, due giornate che interessano chi gestisce un hotel', per avere la keyword nella stessa frase; 'il clero italiano' è la formula della SIR, nessun fatto cambiato",
+        "Primo h3: 'Il programma: San Paolo il venerdì sera, San Pietro il sabato mattina' diventa 'Clero dal Papa: cosa dice il programma agli hotel di Roma'; costruzione diversa dall'h3 della maratona ('Maratona di Roma e hotel: …'). Luoghi e orari restano nel paragrafo",
+        "related: articolo sul dopo Giubileo (l'azione 1 chiede di non confrontare con il 2025) e /revenue-management/ (pick-up e tariffe giorno per giorno); non ripetono i collegamenti del corpo (guida ai quartieri, /hotel-score/ in chiusura)"
+      ],
+      "segnalazioni": [
+        "Confronto con la maratona (4 novembre, dentro i 14 giorni): in comune il meccanismo 'una notte resa necessaria dal programma' e la categoria 'eventi'; diversi evento, segmento, notte, keyword e title. Non è un duplicato SEO. Rischio fotocopia al capo redattore: l'azione 1 ('Prenotazioni dall'Italia per venerdì 11, contate adesso') ha la stessa costruzione dell'azione 1 della maratona ('Prenotazioni già acquisite per l'11, il 12 e il 13 marzo, controllate adesso'), e l'azione 2 riprende il tema del soggiorno minimo del Sei Nazioni (qui per escluderlo)",
+        "Con la categoria 'eventi' è il terzo articolo di eventi in tre giorni (Sei Nazioni, maratona): è la classificazione corretta, il peso sul mix lo valuta il capo redattore",
+        "Keyword scelta senza dati di volume: 'udienza Papa hotel Roma' porterebbe soprattutto il turista o il pellegrino che cerca una camera; 'clero dal Papa' (formula della SIR) e le secondarie restano sull'evento, e title e description spostano la ricerca sull'albergatore (notte da vendere, pick-up, richieste di gruppo)",
+        "La description contiene le date 11 e 12 dicembre, confermate dalla SIR e dai programmi diocesani; gli orari sono 'di massima' e non entrano in title né description",
+        "Collegamenti interni naturali nel corpo: 1 (guida ai quartieri, esistente su main), più /hotel-score/ in chiusura; nessun collegamento alla bozza 1",
+        "Apertura: dopo la mia frase la seconda comincia con 'Per un hotel il dato utile è l'orario', con 'hotel' ripetuto a distanza ravvicinata; non tocco la seconda frase (fuori dal mio ambito). Se il capo redattore preferisce, 'Per un hotel' può diventare 'Il dato utile'",
+        "Title, description e slug confrontati con tools/seo.json, PAGES di tools/build.py, le 5 cartelle di journal/, lo scartato del 3 novembre e la bozza 1: nessuna coincidenza"
+      ],
+      "ruolo_ricavia": "Per chi cerca come gestire una notte di domanda religiosa, il passo successivo naturale è l'Hotel Score, che mostra come l'hotel si presenta a chi prenota da solo all'ultimo momento"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "La storia c'è ed è concreta per l'albergatore: il programma decide la notte (venerdì 11), non il giorno dell'udienza; il racconto regge anche con intensità bassa, purché il titolo non prometta più domanda di quella che il corpo dimostra",
+      "correzioni": [
+        "Mood: serio (evento religioso, corpo con registro serio)",
+        "Titolo: 'Il clero italiano dal Papa l'11 e il 12 dicembre: l'udienza è sabato, la notte da vendere è il venerdì' (97 caratteri, oltre il limite di 90) diventa 'Clero italiano dal Papa l'11 e il 12 dicembre: quale notte conta per gli hotel di Roma?' (87 caratteri, tipo domanda). Il contrasto sabato/venerdì ricalcava il titolo del Sei Nazioni del 3 novembre ('si gioca il sabato, ma le notti…') e la conseguenza era il tipo della maratona del 4 novembre, con meccanismo simile: cambiato taglio, non solo parole. La risposta è nel corpo (frase citabile, box 'La notte che conta è quella di venerdì')",
+        "Sottotitolo scritto: orari, gruppi già sistemati e singoli ancora da prenotare, pick-up della notte dell'11, tutti nel corpo; evitata la formula 'e tre azioni…' dei sottotitoli recenti",
+        "alternative_titolo: contrasto (una notte, non due), conseguenza (ingresso alle 8 del sabato, domanda del venerdì), dato con fonte nominata (orari dell'Arcidiocesi di Milano); lunghezze contate con Python, tutte entro 90 caratteri",
+        "Frase citabile 'L'udienza è il sabato mattina. La camera che si vende è quella del venerdì sera' confermata senza modifiche: contrasto senza numeri né nomi, chiude il paragrafo sulle zone e sugli spostamenti, risponde alla domanda del titolo"
+      ],
+      "segnalazioni": [
+        "Intensità bassa su tutti gli indicatori e numero dei partecipanti ignoto: per questo il titolo è una domanda e non promette 'camere piene' né un aumento di tariffa; nessuna alternativa parla di domanda alta",
+        "Gli orari sono 'di massima' (Perugia): l'alternativa di tipo dato li attribuisce all'Arcidiocesi di Milano; se il capo redattore preferisce non mettere orari nel titolo, le altre due alternative non ne contengono di incerti oltre all'ingresso alle 8",
+        "Titolo e title_seo ('Clero dal Papa a Roma: hotel e notte di venerdì') descrivono lo stesso articolo: allineati",
+        "Fuori dal mio ambito, già segnalato dal SEO director: nell'apertura 'hotel' compare due volte di fila ('chi gestisce un hotel. Per un hotel il dato utile…')",
+        "Frase citabile con la stessa costruzione in due frasi brevi delle citazioni di Sei Nazioni e maratona: è il modello degli storici (stile.md), il contenuto è diverso; la segnalo per il controllo fotocopia del capo redattore",
+        "Nessuna coincidenza con titoli del Journal, di tools/seo.json, del registro o della bozza 1 (tipo conseguenza)"
+      ],
+      "ruolo_ricavia": "Dal punto di vista del racconto, per una notte sola e di bassa intensità il contributo di Ricavia è leggere quella data nel pick-up dell'hotel invece che nella notizia, e controllare come l'hotel si presenta al sacerdote che prenota da solo"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Una foto vera di San Pietro la sera, con la piazza già allestita, racconta il luogo dell'udienza e la notte prima, che è la tesi dell'articolo; in libreria le foto pertinenti sono già usate negli ultimi 10 articoli o ripeterebbero la camera d'hotel",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 929691, scheda, riserva della libreria con alt_libreria) e alt; nessuna modifica al corpo",
+        "Libreria esclusa: 67868d0855 (n110, Piazza San Pietro dall'alto) è la copertina dell'articolo 'Roma dopo il Giubileo', citato nei related di questa bozza; 9dc9005512 (s027, tetti con San Pietro) è la copertina della guida ai quartieri, linkata nel corpo; 90e6747927 (camera con vista sulla cupola) sarebbe la terza camera d'hotel in tre giorni di copertine, quindi resta come riserva",
+        "Stock: ricerca con content_type photo, ai_generated excluded, orientation landscape; scelta una foto gratuita; scartata la notte stellata su San Pietro (160604481, primo piano sfocato e tetti scuri) e, per costo, la facciata di San Paolo fuori le Mura (405077222, premium)"
+      ],
+      "segnalazioni": [
+        "Foto stock gratuita e non generata: nessuna nota AI nell'articolo",
+        "Alternativa premium, a scelta del capo redattore: 405077222, facciata e quadriportico di San Paolo fuori le Mura sotto un cielo azzurro, il luogo della veglia del venerdì, centrale nella tesi; costa 150 crediti contro 40, per questo non l'ho scelta (manuale, sezione 3)",
+        "Le sedie in piazza sono un allestimento generico: la foto non dice dove si svolge l'udienza del 12 dicembre e l'alt descrive solo ciò che si vede",
+        "L'editore controlli sul file intero che la luce della facciata resti un accento caldo e non un tono arancio dominante; in caso contrario usa la riserva",
+        "Per ampliare la libreria: manca San Paolo fuori le Mura e, in generale, una veduta di San Pietro non ancora usata dagli articoli"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo la copertina mostra il luogo la sera prima, non la folla: Ricavia legge la data dal lato dell'hotel, la notte da vendere, senza enfatizzare l'evento"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: una sola notte, venerdì 11, intensità bassa, scritta come lettura dei programmi)",
+        "[x] Ogni numero ha fonte: orari e date riletti oggi su programma dell'Arcidiocesi di Milano, SIR, Arezzo; nessun numero di partecipanti, intensità a parole",
+        "[x] Fonti citate con link; nessuna copia; nomi di hotel, agenzia e prezzi dei pacchetti non riportati",
+        "[x] Ruolo di Ricavia presente, 1 paragrafo, voce 4.1 n. 7 non usata questa settimana, chiusura su /hotel-score/",
+        "[x] Regole di brand e di copy rispettate (dopo le correzioni di forma)",
+        "[x] Tono coerente con la matrice: evento religioso, serio, nessuna ironia",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; dalla maratona cambiano evento, segmento, notte e azioni)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende",
+        "[x] Rischi legali 9 ter: azioni per il singolo hotel sui propri dati, nessun livello di prezzo, nessun dato personale",
+        "[x] Da 700 a 1.100 parole (circa 1.007) e struttura completa"
+      ],
+      "correzioni": [
+        "Apertura: 'Per un hotel il dato utile è l'orario' diventa 'Il dato utile è l'orario', per togliere la ripetizione di 'hotel' segnalata da SEO e virality director",
+        "Prima sezione: 'Le iscrizioni si sono chiuse a fine ottobre' diventa 'Il termine delle iscrizioni era fissato a fine ottobre': le fonti danno la scadenza, non la chiusura effettiva",
+        "In breve: 'Le iscrizioni si sono chiuse a fine ottobre' diventa 'Il termine delle iscrizioni era il 31 ottobre' (Diocesi di Arezzo, portale CEI)",
+        "Seconda sezione: 'I gruppi diocesani hanno camere già bloccate' diventa 'I gruppi diocesani organizzati come quello di Milano hanno camere già bloccate': il programma letto è uno solo, Arezzo lascia l'alloggio ai singoli",
+        "Seconda sezione: 'l'incontro non porta domanda' diventa 'l'incontro non porta domanda aggiuntiva secondo i programmi letti', per non scrivere un assoluto",
+        "Cosa fare adesso, azione 1: titolo in grassetto 'Prenotazioni dall'Italia per venerdì 11, contate adesso.' diventa 'Un termine di confronto giusto per venerdì 11.', per non ricalcare la costruzione dell'azione 1 della maratona; spiegazione invariata",
+        "tesi: 'un venerdì ordinario di dicembre' allineato all'azione corretta dal revenue manager ('di fine novembre e lo stesso periodo del 2024')",
+        "Paragrafo Ricavia finale scritto: voce 4.1 n. 7 dal giornalista e dal SEO director, con l'angolo del virality director (chi prenota da solo); non uso le voci 1 e 2 del revenue manager, già nel paragrafo dello sciopero del 3 novembre"
+      ],
+      "segnalazioni": [
+        "Foto: tengo la stock gratuita 929691; l'alternativa premium di San Paolo fuori le Mura non cambia la tesi e non giustifica il costo",
+        "Terzo articolo di categoria eventi in tre giorni: la causa della notizia lo richiede, e nella giornata l'altra bozza è 'regole'",
+        "Citazione in due frasi brevi come Sei Nazioni e maratona: è il modello degli storici, contenuto diverso; la tengo"
+      ],
+      "ruolo_ricavia": "Per la quota di domanda ancora aperta, i sacerdoti che prenotano da soli, Ricavia legge dai dati pubblici come l'hotel si presenta e indica tre interventi prioritari prima delle ultime prenotazioni per l'11"
+    }
+  ],
+  "slug": "clero-italiano-papa-hotel-roma",
+  "title_seo": "Clero dal Papa a Roma: hotel e notte di venerdì · Ricavia",
+  "description": "Clero italiano dal Papa l'11 e il 12 dicembre: perché conta la notte di venerdì, come contare il pick-up e come valutare le richieste di gruppo tardive",
+  "keyword": {
+    "principale": "clero dal Papa hotel Roma",
+    "secondarie": [
+      "incontro sacerdoti Papa Leone XIV dicembre",
+      "veglia San Paolo fuori le Mura",
+      "hotel Prati Vaticano",
+      "turismo religioso hotel Roma"
+    ]
+  },
+  "related_intro": "Per leggere una data di domanda religiosa con i tuoi numeri, approfondisci",
+  "related": [
+    {
+      "label": "il confronto con il 2025, anno del Giubileo",
+      "url": "/osservatorio/roma-dopo-giubileo-cambia-chi-ospita/"
+    },
+    {
+      "label": "il revenue management per hotel a Roma",
+      "url": "/revenue-management/"
+    }
+  ],
+  "sottotitolo": "Gli orari della veglia a San Paolo e dell'udienza in San Pietro, chi ha già una camera e chi la cerca ancora, e cosa controllare nel pick-up di venerdì 11",
+  "alternative_titolo": [
+    "Veglia a San Paolo, udienza in San Pietro: per il clero dal Papa una notte, non due",
+    "Ingresso in San Pietro alle 8 del sabato: il clero dal Papa porta agli hotel il venerdì",
+    "Veglia alle 18, ingresso alle 8 per l'Arcidiocesi di Milano: la notte utile è il venerdì"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Evento (incontro del clero con il Papa): la matrice ammette serio, divertente o ironico, ma è un evento religioso, il corpo ha un registro serio (programma e logistica) e il manuale chiede di seguirlo; ironia esclusa anche per non toccare persone e fede. Serio"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 929691,
+      "titolo": "Vatican building at dusk",
+      "anteprima": "https://img.magnific.com/free-photo/vatican-building-dusk_1163-71.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: la facciata della Basilica di San Pietro illuminata a sera, con la piazza già allestita con file di sedie e transenne; nessuna persona riconoscibile, solo poche figure minime e lontane a sinistra; nessuna scritta leggibile\nInquadratura: frontale e statica, basilica e cupola nella fascia centrale, cielo sopra e sedie sotto, margine per il ritaglio social\nLuce: sera, cielo blu scuro, illuminazione artificiale sulla facciata come unico accento caldo\nPalette: blu notte #1F2DD0 nel cielo, pietra chiara e neutri; luce calda solo sulla facciata, niente rosso\nAtmosfera: seria e sobria, la sera prima dell'udienza: la notte che conta per l'hotel",
+    "libreria": "assets/img/90e6747927.webp",
+    "alt_libreria": "Camera d'hotel luminosa con letto matrimoniale, pareti in marmo e una vetrata aperta sulla cupola di San Pietro",
+    "testo_sovrapposto": null
+  },
+  "alt": "Facciata illuminata della Basilica di San Pietro a sera, con file di sedie già allestite nella piazza",
+  "data": "2026-11-05",
+  "autore": "Tito · Redazione Ricavia"
+}
