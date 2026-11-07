@@ -106,5 +106,29 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-07",
+    "slug": "presenze-hotel-roma-extralberghiero",
+    "tema": "bankitalia-lazio-presenze-roma-2026",
+    "keyword": "presenze hotel Roma",
+    "categoria": "dati",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-07",
+    "slug": "rotte-fiumicino-nord-america-hotel",
+    "tema": "rotte-fiumicino-primavera-2027",
+    "keyword": "rotte Fiumicino hotel Roma",
+    "categoria": "trasporti",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
