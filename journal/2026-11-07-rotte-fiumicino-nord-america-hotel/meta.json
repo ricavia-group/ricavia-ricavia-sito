@@ -1,0 +1,200 @@
+{
+  "titolo": "Delta anticipa due rotte su Roma a marzo: le notti prima di Pasqua si prenotano in inverno",
+  "tesi": "Delta riporta a inizio marzo 2027 i voli stagionali da Minneapolis-St. Paul e Detroit verso Roma (Detroit giornaliero) e ad aprile la Seattle-Roma, mentre ITA Airways (Caracas, tre voli a settimana) ed easyJet (Edimburgo, due voli a settimana) aprono rotte nuove il 30 marzo, con Pasqua il 28 marzo: la capacità dal Nord America arriva su settimane che molti hotel hanno ancora a tariffe di fine inverno, e poiché il lungo raggio prenota con mesi di anticipo chi gestisce un hotel a Roma deve aprire e prezzare ora, data per data, marzo e aprile 2027 e leggere ogni settimana il pick-up statunitense di quelle date, mentre Caracas ed Edimburgo pesano poco sulla domanda alberghiera",
+  "tema": "rotte-fiumicino-primavera-2027",
+  "categoria": "trasporti",
+  "fonti": [
+    {
+      "titolo": "Delta brings more of Europe closer with new routes from Detroit and Boston to Athens and Venice",
+      "editore": "Delta Air Lines (Delta News Hub)",
+      "url": "https://news.delta.com/delta-brings-more-europe-closer-new-routes-detroit-and-boston",
+      "data": "2026-11-07"
+    },
+    {
+      "titolo": "ITA Airways lancia il nuovo volo diretto Roma Fiumicino–Caracas",
+      "editore": "ITA Airways",
+      "url": "https://www.ita-airways.com/content/dam/ita/documents/pdf/world-of-ita-airways/discover-ita-airways/corporate/press-release/2026/ITA_Airways_lancia_volo_Roma-Caracas.pdf",
+      "data": "2026-11-07"
+    },
+    {
+      "titolo": "easyJet amplia il network italiano con quattro nuove rotte internazionali per l'estate 2027",
+      "editore": "easyJet",
+      "url": "https://www.easyjet.com/it/news/airline/story/easyjet-amplia-il-network-italiano-con-quattro-nuove-rotte-internazionali-per-lestate-2027",
+      "data": "2026-11-07"
+    }
+  ],
+  "slug": "rotte-fiumicino-nord-america-hotel",
+  "title_seo": "Rotte su Fiumicino e hotel di Roma: marzo e Pasqua · Ricavia",
+  "description": "Delta riporta a Roma i voli da Minneapolis e Detroit a inizio marzo, con Pasqua il 28 marzo: perché aprire e prezzare adesso le date di marzo e aprile",
+  "keyword": {
+    "principale": "rotte Fiumicino hotel Roma",
+    "secondarie": [
+      "voli Nord America Roma",
+      "Pasqua 2027 hotel Roma",
+      "tariffe hotel marzo aprile",
+      "lead time lungo raggio"
+    ]
+  },
+  "related_intro": "Per prezzare data per data marzo e aprile, approfondisci",
+  "related": [
+    {
+      "label": "il calendario della domanda di Roma",
+      "url": "/osservatorio/calendario-roma-dodici-mesi-domanda-letti/"
+    },
+    {
+      "label": "le notti di arrivo della Maratona di Roma",
+      "url": "/osservatorio/maratona-roma-hotel-weekend/"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Unico candidato valido che guarda avanti (marzo e aprile 2027, entro 6 mesi) e lega Roma a un'azione precisa per quelle date; annunci di settembre e ottobre ammessi come evento futuro annunciato da tempo e non trattato da nessun articolo",
+      "correzioni": [],
+      "segnalazioni": [
+        "Recentezza: gli annunci sono del 24 settembre (easyJet), 25 settembre aggiornato il 16 ottobre (Delta) e 13 ottobre (ITA Airways). Rientrano nella seconda estensione del manuale (evento futuro tra 2 settimane e 6 mesi, non trattato), non nella finestra delle 72 ore. Il capo redattore valuti",
+        "Fonti primarie aperte e lette il 7 novembre: comunicato Delta (pagina aggiornata, la parte su Roma è nel paragrafo 'More time to explore Europe'), comunicato ITA Airways in PDF, comunicato easyJet. Il comunicato Delta non dà il giorno esatto di inizio di marzo né i posti offerti: il testo lo dice",
+        "Non verificato e non usato: secondo Thrifty Traveler le rotte Delta per Roma partono 'un mese o più' prima del previsto e la Boston-Roma diventa giornaliera. Il comunicato Delta letto non lo dice; il testo scrive solo che Delta presenta le date come estensione della stagione",
+        "Non ho le date di inizio delle stesse rotte Delta nel 2026: 'prima del solito' nell'apertura si regge sulla dichiarazione di Delta (estensione della stagione verso la primavera). Il capo redattore valuti se attenuare",
+        "Lettura da validare: che molti hotel abbiano ancora marzo a tariffe di fine inverno è un ragionamento sul comportamento tipico, non un dato; scritto come 'per molti hotel'",
+        "Il riferimento alla crescita del Nord America a Fiumicino a settembre viene dall'articolo del 4 novembre (nota di Aeroporti 2030); nel corpo è solo un collegamento interno, senza ripetere il numero",
+        "Rischio di serie con l'articolo del 6 novembre sugli Internazionali (confronto con il 2026 e calendario): qui Pasqua è solo un elemento di contesto, una frase e un'indicazione nel secondo punto di 'Cosa fare adesso'. Il virality director eviti titoli costruiti sul confronto con il 2026",
+        "Possibile sovrapposizione con l'articolo del 4 novembre sul traffico aereo (tema diverso: stagione estiva 2027 e nuove rotte, non dati di traffico dell'inverno). Il SEO director verifichi",
+        "Intensità degli indicatori a parole (bassa): nessun numero di posti o di camere, nessuna stima",
+        "Collegamenti interni nel corpo: 2 (Guardare i voli prima del calendario, traffico aereo di Roma per l'inverno) più /revenue-management/ nel paragrafo Ricavia. Paragrafo Ricavia sulla voce 4.1 n. 8 (traffico aereo e rotte come segnale anticipato)",
+        "Antitrust: le azioni sono scritte per il singolo hotel e sui propri dati, senza livelli di prezzo né percentuali"
+      ],
+      "ruolo_ricavia": "Ricavia segue nell'Osservatorio le aperture e le riprese delle rotte su Fiumicino come segnale anticipato della domanda e prepara le tariffe delle date coinvolte prima che arrivino le prenotazioni del lungo raggio"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge: Delta conferma sul comunicato la ripresa a inizio marzo di Minneapolis-Roma e Detroit-Roma dentro un'estensione della stagione verso la primavera, il lungo raggio prenota con mesi di anticipo e Pasqua cade il 28 marzo, quindi le date di marzo e aprile 2027 si aprono e si prezzano ora; Caracas ed Edimburgo sono descritti correttamente come marginali per la domanda alberghiera",
+      "correzioni": [
+        "Impatto, Occupazione: finestra precisata ('più a marzo che ad aprile'): la capacità in più rispetto al solito è soprattutto nelle settimane di inizio marzo anticipate da Delta, mentre la Seattle-Roma riparte ad aprile senza indicazione di anticipo",
+        "Impatto, ADR: riscritto il ragionamento. La versione del giornalista diceva che le prime camere vendute al lungo raggio 'abbassano la media del periodo', un meccanismo non corretto (una camera venduta alla tariffa già caricata non abbassa la tariffa media); ora: la domanda in più sostiene la tariffa solo se le date sono prezzate per tempo, perché le camere vendute con mesi di anticipo mantengono il prezzo di vendita",
+        "Cosa fare adesso, azione 1: 'al prezzo sbagliato' diventa 'a un prezzo che non considera Pasqua e il lungo raggio', per non dare per scontato che la tariffa di base sia sbagliata per ogni hotel"
+      ],
+      "segnalazioni": [
+        "Fonte primaria Delta riletta nel file scaricato: 'Seasonal service from Minneapolis-St. Paul and Detroit to Rome will begin in early March, followed by Seattle-Rome in April' nel paragrafo 'More time to explore Europe', dentro 'Delta is also extending the European travel season in 2027'; la frase successiva ('JFK to Catania, Porto, Prague and Copenhagen will also return earlier') conferma che anche le rotte per Roma ripartono prima. 'Prima del solito' nell'apertura regge; manca il giorno esatto e il numero di posti, e il testo lo dice",
+        "ITA Airways ed easyJet verificati sui comunicati: date, frequenze e giorni corrispondono",
+        "Intensità di tutti gli indicatori bassa: senza posti o frequenze del 2026 l'effetto è piccolo e incerto. Il valore pratico dell'articolo sta soprattutto nell'apertura e nel prezzo per data di marzo e aprile con Pasqua anticipata: il capo redattore valuti se l'articolo è abbastanza specifico (anti-obiettivo 7) e se la sovrapposizione con l'articolo del 6 novembre sul confronto con il 2026 è accettabile",
+        "Blockquote (ambito del virality director): 'Una tariffa caricata tardi gli vende la camera al prezzo di un'altra stagione' è ambiguo, perché una data non caricata non vende affatto (azione 1). Il senso giusto è 'una tariffa aggiornata tardi'. Non corretto, segnalato",
+        "Il riferimento alla crescita del Nord America a Fiumicino a settembre è solo un collegamento all'articolo del 4 novembre: corretto non ripetere il numero",
+        "Le azioni sono scritte per il singolo hotel e sui propri dati, senza livelli di prezzo: nessun rischio antitrust"
+      ],
+      "ruolo_ricavia": "Ricavia inserisce Pasqua e la ripresa anticipata dei voli dal Nord America nelle previsioni della domanda, prepara i prezzi di marzo e aprile prima che arrivino le prenotazioni del lungo raggio e poi aggiorna ogni giorno tariffe e disponibilità sull'andamento delle prenotazioni"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema non duplicato: il 4 novembre (traffico aereo) parla dei dati di settembre e dell'inverno senza nuova capacità Ryanair, questa bozza delle rotte di primavera 2027, del lungo raggio americano anticipato e di Pasqua il 28 marzo; tesi e keyword diverse, nessuna proposta simile nel registro e negli scartati; keyword inserita in apertura e in un h3, campi SEO compilati e verificati",
+      "correzioni": [
+        "Slug: rotte-fiumicino-nord-america-hotel (5 parole, senza date né anni, unico)",
+        "Categoria: trasporti confermata (la causa della notizia sono le rotte aeree)",
+        "Apertura, prima frase: 'La primavera 2027 di Fiumicino comincia prima del solito per una parte del lungo raggio americano' diventa 'Per gli hotel di Roma, la primavera 2027 di Fiumicino comincia prima del solito su una parte delle rotte dal Nord America', per avere rotte, Fiumicino e hotel nella stessa frase; fatti invariati",
+        "Secondo h3: 'Tre rotte, tre ospiti diversi' diventa 'Tre rotte su Fiumicino, tre ospiti diversi per un hotel'",
+        "title_seo: 'Rotte su Fiumicino e hotel di Roma: marzo e Pasqua · Ricavia', 60 caratteri contati, keyword all'inizio, senza anno; diverso dallo storico 'Voli su Roma e domanda hotel: Fiumicino e Ciampino' e dal 4 novembre 'Traffico aereo su Roma: l'inverno degli hotel'",
+        "description: 150 caratteri contati, senza punto finale",
+        "keyword: principale 'rotte Fiumicino hotel Roma', 4 secondarie",
+        "related: calendario della domanda (Pasqua, marzo e aprile) e Maratona di Roma (14 marzo 2027, stesse settimane), per non ripetere i due collegamenti del corpo e la chiusura /revenue-management/"
+      ],
+      "segnalazioni": [
+        "Collegamenti interni naturali nel corpo: 2 (Guardare i voli prima del calendario, traffico aereo del 4 novembre), entrambi esistenti su main; chiusura /revenue-management/ esclusa dal conteggio. Nessuna modifica",
+        "Primo h3 'Nuove rotte su Fiumicino nella primavera 2027' chiama 'nuove' anche le riprese stagionali di Delta: imprecisione lieve, non corretta perché ho già usato l'unico h3 che posso toccare; valuti il capo redattore se scrivere 'Rotte su Fiumicino'",
+        "Il titolo h2 contiene '2027' e 'primavera di Fiumicino' come l'apertura: nessun problema SEO, il virality director eviti titoli costruiti sul confronto con il 2026 come il 6 novembre"
+      ],
+      "ruolo_ricavia": "Chi cerca le nuove rotte su Fiumicino da gestore d'hotel vuole sapere quando e come aggiornare le tariffe: il passo successivo naturale è il servizio di revenue management, con le previsioni della domanda per data"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "La storia per l'albergatore c'è ed è concreta: capacità dal Nord America anticipata a inizio marzo, Pasqua il 28 marzo e un segmento che prenota con mesi di anticipo; titolo di tipo conseguenza, diverso dalla bozza 1 (dato) e dal contrasto del 6 novembre",
+      "correzioni": [
+        "Titolo: 'La primavera 2027 di Fiumicino comincia a marzo: le tariffe di Pasqua si decidono adesso' diventa 'Delta torna a Roma a inizio marzo: le notti prima di Pasqua si prenotano già in inverno' (87 caratteri contati). Tipo conseguenza; tolto 'si decidono adesso', troppo vicino al Sei Nazioni del 3 novembre ('le notti di partita si prezzano adesso'); nessun confronto con il 2026, per non ripetere il 6 novembre; 'torna' rispetta il fatto che le rotte Delta sono riprese stagionali; la promessa si trova nel corpo (lead time lungo, pick-up da adesso a febbraio, voce Pick-up e azione 1)",
+        "Sottotitolo: 'Quali voli tornano o arrivano su Fiumicino tra marzo e aprile 2027, quale ospite porta ciascuno e cosa preparare prima che prenoti il lungo raggio' (146 caratteri, senza punto finale); costruzione diversa dai sottotitoli recenti con 'e tre azioni'",
+        "Mood: serio",
+        "Alternative: una domanda, un dato con fonte nominata (Delta), un contrasto tra rotte, tutte sotto i 90 caratteri e diverse dai titoli pubblicati",
+        "Blockquote: 'Una tariffa caricata tardi gli vende la camera al prezzo di un'altra stagione' diventa 'Una tariffa aggiornata tardi gli vende la camera al prezzo di un'altra stagione', come segnalato dal revenue manager (una data non caricata non vende affatto); struttura della frase invariata"
+      ],
+      "segnalazioni": [
+        "'Già in inverno' nel titolo indica la finestra del pick-up della voce Indicatori (da adesso a febbraio 2027) per il mercato statunitense, non tutte le prenotazioni di Pasqua: il capo redattore valuti se preferisce la prima alternativa (domanda), più prudente",
+        "Il primo h3 'Nuove rotte su Fiumicino' chiama nuove anche le riprese Delta (segnalato dal SEO director): il titolo usa 'torna' per coerenza con il comunicato"
+      ],
+      "ruolo_ricavia": "Il lettore vuole sapere quando muoversi: Ricavia trasforma l'annuncio di una rotta in un calendario di date da aprire e prezzare prima che prenoti il mercato che quella rotta porta"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera, gratuita, non generata): ala di un aereo in volo sopra le nuvole, il lungo raggio in arrivo, palette nel blu e nell'azzurro del brand, senza loghi; diversa dalla copertina della bozza 1 e dal piazzale del 4 novembre",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 27148382, scheda, libreria 50ef15e328, alt_libreria, testo_sovrapposto null) e alt",
+        "Libreria scartata come fonte principale: l'unica foto di trasporti, cb8c5b135f (corridoio di un terminal), ha in primo piano una figura con un cappotto rosso acceso, fuori dai vincoli di palette; nessun'altra foto della libreria racconta voli o aeroporti",
+        "Scartate tra le anteprime stock: ali con winglet rosso o magenta (1185601, 1129666), tramonti arancio dominanti (4690278, 1009569), ala sopra un'isola tropicale (4011548), non pertinente"
+      ],
+      "segnalazioni": [
+        "Per l'editore: nel ritaglio 16:9 e social la punta dell'ala è vicina al bordo alto; spostare il ritaglio verso l'alto, togliendo nuvole in basso, così la punta resta intera",
+        "Per ampliare la libreria: mancano foto di voli e aeroporti senza persone e senza loghi (già segnalato dal soggetto mancante del 4 novembre)",
+        "Nessuna nota AI da aggiungere: foto vera dell'archivio stock"
+      ],
+      "ruolo_ricavia": "L'aereo è già in volo prima che arrivi la prenotazione: Ricavia legge le rotte come il primo segnale della domanda e prepara le date prima che il lungo raggio prenoti"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Titolo: 'Delta torna a Roma a inizio marzo: le notti prima di Pasqua si prenotano già in inverno' diventa 'Delta anticipa due rotte su Roma a marzo: le notti prima di Pasqua si prenotano in inverno' (90 caratteri): 'Delta torna a Roma' può far credere che Delta non voli su Roma in inverno, mentre il comunicato riguarda solo Minneapolis-Roma e Detroit-Roma; tipo conseguenza invariato",
+        "Apertura, seconda frase: 'Delta riporta a Roma…' diventa 'Delta, che presenta il 2027 come una stagione europea più lunga, riporta a Roma…', per attribuire a Delta l'anticipo ('prima del solito') della prima frase, come fa il comunicato ('extending the European travel season', 'will also return earlier')",
+        "Primo h3: 'Nuove rotte su Fiumicino nella primavera 2027: cosa è annunciato' diventa 'Rotte su Fiumicino nella primavera 2027: riprese e nuovi collegamenti' (le rotte Delta sono riprese stagionali; segnalazione del SEO director, keyword 'rotte Fiumicino' tenuta)",
+        "Sezione 'Tre rotte su Fiumicino': 'ITA Airways la collega soprattutto alla numerosa comunità italiana…, oltre che a turismo e affari' diventa 'ITA Airways la presenta come un collegamento per le imprese e per la numerosa comunità italiana e di origine italiana in Venezuela, oltre che per il turismo': il comunicato non indica una motivazione prevalente",
+        "Paragrafo Ricavia finale scritto al posto di quello provvisorio, che riprendeva quasi alla lettera l'esempio 'Nuova rotta aerea' di conoscenze/ricavia.md: rotte seguite nell'Osservatorio insieme ai prezzi della zona e settimane tra inizio marzo e Pasqua trattate come periodo distinto nella strategia tariffaria (voci 4.1 n. 8, 3 e 4); chiusura /revenue-management/"
+      ],
+      "segnalazioni": [
+        "Corpo di 961 parole (script, stesso metodo di tools/journal.py)",
+        "'Prima del solito' controllato oltre al comunicato Delta: AirlineGeeks (25 settembre 2026, Zach Vasile) scrive che Minneapolis-Roma e Detroit-Roma partono 'in March instead of May'. Fatto di contorno, non aggiunto al testo: all'editore da ricontrollare prima del merge",
+        "Notizia annunciata tra il 24 settembre e il 16 ottobre: ammessa per la seconda estensione (evento futuro tra 2 settimane e 6 mesi, non trattato)"
+      ],
+      "ruolo_ricavia": "Fuse la frase del revenue manager (Pasqua e ripresa dei voli nelle previsioni, prezzi preparati prima delle prenotazioni del lungo raggio), quella del virality director (dall'annuncio della rotta al calendario delle date) e quella dell'art director (la rotta come primo segnale della domanda)",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; intensità basse dichiarate, nessuna stima inventata)",
+        "[x] Ogni numero ha fonte (date, frequenze e giorni dai comunicati Delta, ITA Airways, easyJet; Pasqua 28 marzo 2027 e 5 aprile 2026 fatti di calendario)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta (tre comunicati primari linkati; il blog Thrifty Traveler non usato)",
+        "[x] Ruolo di Ricavia presente, un paragrafo, utile e non pubblicitario (riscritto per non riprendere l'esempio di ricavia.md)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (nessun punto finale, sigle con glossa, OTA spiegato)",
+        "[x] Tono coerente con la matrice del mood (trasporti senza vittime, impatto basso: serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; il 4 novembre tratta dati di settembre e l'inverno, qui rotte di primavera 2027)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo, azioni per il singolo hotel sui propri dati, contratti con i portali rispettati)",
+        "[x] Da 700 a 1.100 parole, struttura completa (961 parole; apertura, 4 h3 compresi impatto e azioni, In breve)"
+      ]
+    }
+  ],
+  "sottotitolo": "Quali voli tornano o arrivano su Fiumicino tra marzo e aprile 2027, quale ospite porta ciascuno e cosa preparare prima che prenoti il lungo raggio",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Rotte aeree e capacità: rientra nella riga trasporti senza vittime (serio, o drammatico solo con impatto alto e certo). Tutte le intensità sono basse e i comunicati non danno posti né giorni esatti: impatto né alto né certo, quindi serio, coerente con il registro del corpo"
+  },
+  "alternative_titolo": [
+    "Voli dal Nord America a inizio marzo: le date di Pasqua 2027 sono già aperte e prezzate?",
+    "Detroit-Roma giornaliero da inizio marzo per Delta: la primavera in hotel comincia prima",
+    "Detroit pesa più di Caracas ed Edimburgo: le rotte di primavera lette da un hotel di Roma"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 27148382,
+      "titolo": "Aircraft wing view from airplane window seat Blue sky and cloud",
+      "anteprima": "https://img.magnific.com/free-photo/aircraft-wing-view-from-airplane-window-seat-blue-sky-cloud_501050-1128.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: l'ala di un aereo di linea in volo, vista dal finestrino, con l'estremità (winglet) azzurra senza scritte né logo, sopra un mare di nuvole bianche; nessuna persona, nessuna livrea riconoscibile\nInquadratura: diagonale, l'ala entra da destra e sale verso sinistra, cielo blu pieno sopra e nuvole sotto, ampio spazio negativo; nel ritaglio la punta dell'ala è vicina al bordo alto: tagliare più nuvole in basso che cielo in alto\nLuce: diurna, alta quota, limpida e fredda\nPalette: cielo dal blu #1F2DD0 all'azzurro #3CCDFA, winglet azzurro, ala grigio chiaro, nuvole bianche; niente rosso, niente toni caldi\nAtmosfera: seria e ordinata, il volo di lungo raggio già in viaggio verso Roma: la capacità arriva prima delle prenotazioni; diversa dal piazzale con aerei fermi visto dal terminal del 4 novembre",
+    "libreria": "assets/img/50ef15e328.webp",
+    "alt_libreria": "Dettaglio delle arcate del Colosseo sotto un cielo azzurro con nuvole, con pochi visitatori lontani su una terrazza",
+    "testo_sovrapposto": null
+  },
+  "alt": "Ala di un aereo in volo con l'estremità azzurra, sopra un mare di nuvole bianche nel cielo blu",
+  "data": "2026-11-07",
+  "autore": "Tito · Redazione Ricavia"
+}
