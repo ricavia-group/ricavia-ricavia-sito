@@ -1,0 +1,201 @@
+{
+  "titolo": "Banca d'Italia: presenze a Roma in calo del 4%, ma negli hotel crescono le notti vendute",
+  "tesi": "Secondo l'aggiornamento congiunturale della Banca d'Italia sul Lazio (4 novembre 2026) le presenze nella Città metropolitana di Roma sono scese del 4,0% nel primo semestre 2026, ma il calo è concentrato nelle strutture extralberghiere mentre gli hotel, soprattutto di categoria superiore, hanno venduto più notti, e la spesa media giornaliera degli stranieri nel Lazio è salita di circa l'8% in termini nominali, tornando sui livelli precedenti il Giubileo: il calo della città non è il calo dell'hotel, e chi gestisce un hotel a Roma deve leggere il proprio 2026 per segmento e contro un competitive set che comprende l'extralberghiero della zona, invece di rispondere con sconti generalizzati a una domanda (quella del Giubileo) che il prezzo non riporta indietro",
+  "tema": "bankitalia-lazio-presenze-roma-2026",
+  "categoria": "dati",
+  "fonti": [
+    {
+      "titolo": "L'economia del Lazio. Aggiornamento congiunturale, Economie regionali n. 33, novembre 2026",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/pubblicazioni/economie-regionali/2026/2026-0033/2633-lazio.pdf?language_id=1",
+      "data": "2026-11-07"
+    },
+    {
+      "titolo": "Turismo, Bankitalia: a Roma presenze -4% nel primo semestre",
+      "editore": "askanews",
+      "url": "https://askanews.it/2026/11/04/turismo-bankitalia-a-roma-presenze-4-nel-primo-semestre/",
+      "data": "2026-11-07"
+    }
+  ],
+  "slug": "presenze-hotel-roma-extralberghiero",
+  "title_seo": "Presenze hotel a Roma e calo dell'extralberghiero · Ricavia",
+  "description": "Banca d'Italia: presenze a Roma in calo nel primo semestre, ma gli hotel vendono più notti. Come leggere il 2026 per segmento e contro concorrenti comparabili",
+  "keyword": {
+    "principale": "presenze hotel Roma",
+    "secondarie": [
+      "Banca d'Italia turismo Lazio",
+      "calo extralberghiero Roma",
+      "spesa turisti stranieri Lazio",
+      "hotel Roma dopo il Giubileo"
+    ]
+  },
+  "related_intro": "Per leggere i numeri del tuo hotel accanto a quelli della città, approfondisci",
+  "related": [
+    {
+      "label": "come si calcolano occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    },
+    {
+      "label": "il traffico aereo di Roma per l'inverno",
+      "url": "/osservatorio/traffico-aereo-roma-inverno-hotel/"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Dato pubblicato il 4 novembre dalla Banca d'Italia (fonte primaria letta nel PDF) che riguarda direttamente Roma e porta un fatto nuovo rispetto agli articoli già pubblicati: il calo delle presenze dopo il Giubileo è dell'extralberghiero, non degli hotel, e lo straniero spende di più per giorno",
+      "correzioni": [],
+      "segnalazioni": [
+        "Fonte primaria aperta e letta il 7 novembre: PDF Banca d'Italia, Economie regionali n. 33 (sintesi a pagina 3, turismo alle pagine 8-9, tavola a2.1). I dati sulle presenze sono dell'Ente Bilaterale del Turismo del Lazio, citato dal rapporto: il testo li attribuisce così. Controllo incrociato con askanews del 4 novembre, non citata nel testo",
+        "Il rapporto non quantifica né la crescita degli hotel né il calo dell'extralberghiero: il testo lo dice ('la direzione è chiara, l'entità no'). Nessun numero è stato ricavato dal grafico",
+        "Lettura da validare: la frase sulla spesa giornaliera più bassa nell'anno del Giubileo è dedotta dal ritorno ai livelli precedenti scritto dal rapporto; il testo la presenta come lettura. Il revenue manager valuti se tenerla",
+        "Lettura da validare: la pressione al ribasso dei prezzi dell'extralberghiero nelle zone dove è più numeroso è un ragionamento, non un dato; è scritta con 'possono'",
+        "Indicatori: l'occupazione ↑ bassa degli hotel deriva dai pernottamenti, non da un tasso di occupazione (il rapporto non dà l'offerta di camere); il pick-up = è una mia prima lettura, il rapporto dice solo che il calo è proseguito in estate. Il revenue manager le completi",
+        "Sovrapposizione da valutare (SEO director): l'articolo del 4 novembre sul traffico aereo e lo storico 'Roma dopo il Giubileo' consigliano già di non confrontarsi con il 2025. Qui il confronto con il 2025 è solo di contorno; il fatto nuovo è la composizione hotel ed extralberghiero e la spesa giornaliera. Il dato degli aeroporti romani (+0,5% nel semestre) è nel rapporto ma non è usato, per non ripetere l'articolo del 4 novembre",
+        "Categoria proposta mercato (in alternativa dati, usata il 4 novembre)",
+        "Collegamenti interni nel corpo: 2 (Roma dopo il Giubileo, tre errori di prezzo) più /hotel-score/ nel paragrafo Ricavia. Il 4 novembre il paragrafo Ricavia chiudeva già con l'Hotel Score: il capo redattore valuti se cambiare chiusura (per esempio /revenue-management/ con il report mensile, voce 4.1 n. 12)",
+        "Corpo di circa 1.060 parole, vicino al limite di 1.100: eventuali aggiunte richiedono tagli"
+      ],
+      "ruolo_ricavia": "Quando esce un dato sulla città, Ricavia lo legge accanto ai numeri del singolo hotel e al suo competitive set, per distinguere un calo del mercato da un calo dell'hotel prima di toccare le tariffe"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge sulla fonte primaria (Banca d'Italia, pagine 3 e 8-9, verificate sul PDF): il calo delle presenze della Città metropolitana è dell'extralberghiero mentre i pernottamenti negli hotel crescono, quindi il dato della città non si legge come dato dell'hotel e lo sconto generalizzato non riporta la domanda del Giubileo; corretti la tesi e alcuni passaggi che leggevano la spesa giornaliera come disponibilità a pagare per la camera",
+      "correzioni": [
+        "Tesi: precisato che la spesa media giornaliera (+8% circa) è degli stranieri nel Lazio, in termini nominali, e che torna sui livelli precedenti il Giubileo, come scrive il rapporto: è una normalizzazione dopo il 2025, non una crescita oltre il livello abituale",
+        "Corpo, sezione 'Meno notti dall'estero': 'gli stranieri sono meno, ma ognuno spende di più' diventa 'gli stranieri trascorrono nel Lazio meno notti, ma in media spendono di più': il rapporto misura pernottamenti e spesa media nel Lazio, non il numero di persone",
+        "Corpo, sezione 'Perché il calo della città': tolta la frase secondo cui uno sconto 'la paga meno di quanto sarebbe disposta a pagare'; la spesa giornaliera comprende ristorazione e altre spese e non misura la disponibilità a pagare per la camera (lo dice la stessa voce ADR). Ora: 'uno sconto generalizzato riduce la tariffa senza riportare la domanda che manca'",
+        "Impatto, Occupazione: area corretta in 'Città metropolitana di Roma' (il dato del rapporto), segmento 'italiani e stranieri insieme' al posto di 'leisure' (il rapporto non distingue il motivo del viaggio), intensità bassa dichiarata come lettura prudente",
+        "Impatto, ADR: precisato 'nel Lazio' e 'in termini nominali' per la spesa giornaliera",
+        "Impatto, RevPAR: finestra allineata a quelle di occupazione e ADR (primo semestre 2026 e prossimi mesi)",
+        "Impatto, Pick-up: da '=' a '?'. Il rapporto non contiene dati sulle prenotazioni future e '=' avrebbe voluto dire 'non so'; resta l'indicazione di confrontare il ritmo con il 2024 e con le ultime settimane",
+        "Cosa fare adesso, azione 1: 'è l'effetto della fine del Giubileo' diventa 'è coerente con la fine del Giubileo' (lettura, non certezza)",
+        "Cosa fare adesso, azione 2: titolo riscritto ('solo se l'hotel compete davvero con appartamenti e case vacanza') perché il soggetto di 'compete' era ambiguo; contenuto invariato, l'hotel verifica sul proprio pick-up prima di muovere la tariffa"
+      ],
+      "segnalazioni": [
+        "Fonte primaria letta: i numeri del corpo (4,0%, oltre 90%, oltre 10%, circa 3%, 4,4 e 2,4%, circa 8%) corrispondono al PDF; il calcolo torna (notti oltre -10% e spesa -3% danno circa +8% di spesa giornaliera). Nessun numero da segnalare",
+        "L'indagine sul turismo internazionale riguarda il Lazio, il dato sulle presenze riguarda la Città metropolitana di Roma: il corpo lo dice, ma l'elenco 'In breve' ('Lo straniero spende di più per ogni giorno') e il titolo non lo distinguono. Fuori dal mio ambito: valuti il capo redattore se aggiungere 'in media' o 'nel Lazio'",
+        "La lettura 'nell'anno del Giubileo ogni giorno di permanenza valeva meno' è coerente con il rapporto (spesa giornaliera tornata sui livelli precedenti dopo un aumento dell'8%): la tengo, è già scritta come lettura",
+        "Nel grafico 2.5 del rapporto la voce degli hotel è 'Alberghi e RTA' (residenze turistico-alberghiere): 'hotel' nel testo è una semplificazione accettabile",
+        "Intensità degli indicatori a parole: il rapporto non quantifica la crescita degli hotel. Per una voce più precisa servirebbe il dato dell'Ente Bilaterale del Turismo del Lazio",
+        "Chiusura del paragrafo Ricavia: Hotel Score già usato il 4 novembre (traffico aereo) e il 3 novembre (Sei Nazioni). Propongo /revenue-management/ con il report mensile e il pick-up settimanale (voci 4.1 n. 2 e 12)",
+        "Blockquote ('Il mercato può scendere mentre l'hotel cresce'): coerente con il meccanismo, purché il titolo e l'apertura restino su 'hotel' in media e non sul singolo hotel"
+      ],
+      "ruolo_ricavia": "Davanti a un dato sulla città, Ricavia confronta occupazione, ADR e RevPAR del singolo hotel nel report mensile e controlla ogni settimana pick-up e occupazione a 90 giorni, per capire se un calo è del mercato o dell'hotel prima di modificare la strategia tariffaria"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema non duplicato: negli ultimi 14 giorni nessun articolo ha usato il rapporto della Banca d'Italia né la composizione delle presenze tra hotel ed extralberghiero; il 4 novembre (traffico aereo, dati Assaeroporti) condivide solo il consiglio di non confrontarsi con il 2025, che qui è di contorno; keyword dell'albergatore inserita in apertura e in un h3, campi SEO compilati e verificati",
+      "correzioni": [
+        "Slug: presenze-hotel-roma-extralberghiero (4 parole, senza date, unico rispetto a journal/, seo.json, pull request #12 e scartati)",
+        "Categoria: dati invece di mercato, perché la causa della notizia è la pubblicazione di un rapporto statistico, come per il traffico aereo del 4 novembre",
+        "Apertura, prima frase: 'ma non le ha perse ovunque' diventa 'ma non negli hotel', per avere la keyword presenze hotel Roma nella stessa frase; il fatto è lo stesso del rapporto (pernottamenti negli hotel in aumento) e il senso resta sugli hotel nel loro insieme, non sul singolo hotel",
+        "Primo h3: 'Presenze a Roma nel 2026: cosa dice la Banca d'Italia' diventa 'Presenze a Roma tra hotel ed extralberghiero: cosa dice la Banca d'Italia'",
+        "title_seo: 'Presenze hotel a Roma e calo dell'extralberghiero · Ricavia', 59 caratteri contati, keyword all'inizio, diverso da ogni altro title (il più vicino è lo storico 'Hotel a Roma dopo il Giubileo: domanda nel 2026')",
+        "description: 158 caratteri contati, senza punto finale e senza cifre provvisorie (il 4,0% resta solo nel corpo)",
+        "keyword: principale 'presenze hotel Roma', 4 secondarie",
+        "related: /indicatori/ e l'articolo del 4 novembre sul traffico aereo, per non ripetere i due collegamenti del corpo né /hotel-score/ o /revenue-management/, che il capo redattore può scegliere come chiusura del paragrafo Ricavia"
+      ],
+      "segnalazioni": [
+        "Collegamenti interni naturali nel corpo: 2 (Roma dopo il Giubileo, tre errori di prezzo), entrambi storici esistenti su main; chiusura del paragrafo Ricavia esclusa dal conteggio. Nessuna modifica",
+        "Titolo h2 del giornalista lungo (95 caratteri) e con 'cosa dice la Banca d'Italia', simile al primo h3: ambito del virality director",
+        "Come il revenue manager: l'elenco 'In breve' ('Lo straniero spende di più per ogni giorno') non dice che il dato è del Lazio; ambito del capo redattore",
+        "Sovrapposizione tematica leggera con lo storico 'Roma dopo il Giubileo' (28 settembre, fuori dalla finestra di 14 giorni): tesi nuova, fondata su un dato pubblicato il 4 novembre"
+      ],
+      "ruolo_ricavia": "Chi cerca i dati sulle presenze a Roma vuole capire se il calo riguarda il proprio hotel: il passo successivo naturale è il servizio di revenue management, con il report mensile che confronta occupazione, ADR e RevPAR dell'hotel con il mercato"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare all'albergatore: il dato della città scende ma gli hotel, nel loro insieme, vendono più notti; titolo di tipo dato con fonte nominata, più corto e con un taglio diverso dal primo h3",
+      "correzioni": [
+        "Titolo: 'Roma perde presenze dopo il Giubileo, ma gli hotel vendono più notti: cosa dice la Banca d'Italia' (95 caratteri, simile al primo h3) diventa 'Banca d'Italia: presenze a Roma in calo del 4%, ma negli hotel crescono le notti vendute' (88 caratteri contati). Tipo dato, con fonte nominata; il 4,0% non è un dato provvisorio (verificato nel PDF, pagine 8-9); 'negli hotel' resta al plurale, sugli hotel nel loro insieme, come chiede il revenue manager per il blockquote",
+        "Sottotitolo: 'Dove si concentra il calo dopo il Giubileo, come cambia la spesa degli stranieri nel Lazio e perché il proprio 2026 si legge per segmento' (137 caratteri, senza punto finale); dice 'nel Lazio' per la spesa, come chiedono le segnalazioni del revenue manager e del SEO director",
+        "Mood: serio",
+        "Alternative: una domanda, una conseguenza, un contrasto, tutte sotto i 90 caratteri e diverse dai titoli pubblicati",
+        "Blockquote invariato ('Il mercato può scendere mentre l'hotel cresce. Prima del prezzo conta sapere quale parte del mercato è scesa'): aforisma di contrasto, senza numeri né nomi, subito dopo il paragrafo che lo dimostra"
+      ],
+      "segnalazioni": [
+        "Varietà dei titoli: il 4 novembre (traffico aereo) è già un titolo di tipo dato ('Fiumicino +0,6%, Italia +6,5% per Assaeroporti: …'); qui la costruzione è diversa (fonte in apertura, numero nel testo, contrasto sugli hotel) e il tipo dato non compare dal 4 novembre. Se il capo redattore preferisce evitarlo, la prima alternativa (domanda) è pronta",
+        "Il titolo dice 'Roma' per un dato della Città metropolitana di Roma Capitale, come l'apertura e il corpo: semplificazione coerente con il rapporto (oltre il 90 per cento dei movimenti della regione)",
+        "Resta fuori dal mio ambito la voce 'Lo straniero spende di più per ogni giorno' dell'elenco 'In breve', senza 'nel Lazio': già segnalata da revenue manager e SEO director"
+      ],
+      "ruolo_ricavia": "Il lettore arriva con la domanda 'il calo riguarda anche me?': Ricavia risponde mettendo i numeri del singolo hotel accanto a quelli della città, per segmento e contro concorrenti comparabili, prima di qualsiasi decisione sulle tariffe"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera, gratuita, non generata): palazzi residenziali sul Tevere, la città vista dall'esterno senza distinguere hotel e appartamenti, luce coperta coerente con il mood serio; riserva dalla libreria, camera d'hotel neutra senza persone",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 29221026, scheda, libreria ffd195a72d, alt_libreria, testo_sovrapposto null) e alt",
+        "Libreria scartata come fonte principale dopo averla guardata: 9dc9005512 (tetti di Roma) ha come soggetto la cupola di San Pietro, già in copertina il 5 novembre (pull request #12) e riserva il 6 novembre, e una metà inferiore di tetti in cotto arancio; db705b531a ha un'iscrizione latina leggibile e una statua religiosa, non pertinente; 50ef15e328 (Colosseo) racconta il turismo ma non l'alloggio; le foto di reception (d264766f83, 2fe8eeb51f) mostrano volti riconoscibili; la camera ffd195a72d direbbe solo 'hotel' e non il confronto con l'extralberghiero",
+        "Foto guardata in anteprima grande (1480 px): nessuna scritta leggibile, figure sul lungotevere minime e lontane; la filigrana dell'anteprima sparisce con il download con licenza"
+      ],
+      "segnalazioni": [
+        "Per l'editore: ritaglio 16:9 centrato (l'originale è già circa 16:9); nel social tagliare in parti uguali cielo e acqua, le facciate restano nella fascia centrale",
+        "Per ampliare la libreria: manca una veduta sobria di Roma in luce neutra senza San Pietro e senza tetti in cotto dominanti, utile per gli articoli sui dati della città",
+        "Nessuna nota AI da aggiungere: foto vera dell'archivio stock"
+      ],
+      "ruolo_ricavia": "Una facciata dove non si distingue la camera d'hotel dall'appartamento: Ricavia separa quello che la città mette insieme e legge il singolo hotel contro i concorrenti davvero comparabili"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Apertura, prima frase: 'Nel primo semestre 2026 Roma ha perso presenze turistiche, ma non negli hotel' diventa 'Roma ha perso presenze turistiche nel primo semestre 2026, ma non negli hotel' (l'apertura non comincia con la data; keyword e fatto invariati)",
+        "Sezione 'Perché il calo della città': 'Quella che c'è spende in media di più per ogni giorno' diventa 'Quella straniera spende in media di più per ogni giorno', perché il dato sulla spesa giornaliera riguarda solo i viaggiatori stranieri",
+        "In breve: 'Lo straniero spende di più per ogni giorno' diventa 'Lo straniero spende di più per ogni giorno nel Lazio' (il dato è regionale, segnalazione di revenue manager e SEO director)",
+        "Paragrafo Ricavia finale scritto al posto di quello provvisorio: report mensile con ADR e RevPAR e controllo settimanale di pick-up e occupazione a 90 giorni (voci 4.1 n. 12 e 2); chiusura spostata da /hotel-score/ (già usato il 3 e il 4 novembre) a /revenue-management/",
+        "fonti.md: aggiornato il collegamento di chiusura (/revenue-management/ al posto di /hotel-score/)",
+        "Titolo di tipo dato tenuto: le alternative sono di tipi usati più di recente (domanda il 5 novembre, contrasto il 6 novembre); la costruzione è diversa da quella del 4 novembre"
+      ],
+      "segnalazioni": [
+        "Corpo di 1.096 parole (script, stesso metodo di tools/journal.py): vicino al limite di 1.100, nessuna aggiunta possibile senza tagli",
+        "Per l'editore: ricontrollare sul PDF che l'indagine sul turismo internazionale (stranieri oltre -10% di notti, spesa -3%, spesa giornaliera +8%) sia riferita al Lazio, come scrive il corpo; il passaggio del rapporto non ripete il nome della regione"
+      ],
+      "ruolo_ricavia": "Fuse le frasi di revenue manager e SEO director (report mensile, pick-up settimanale, /revenue-management/) con l'idea comune a giornalista, virality e art director di separare il calo della città dal risultato del singolo hotel",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; spesa giornaliera precisata come dato del Lazio e degli stranieri)",
+        "[x] Ogni numero ha fonte (4,0%, oltre 90%, oltre 10%, circa 3%, 4,4 e 2,4%, circa 8%: verificati sul PDF della Banca d'Italia, pagine 8-9)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta (fonte primaria linkata, riassunta con parole proprie)",
+        "[x] Ruolo di Ricavia presente, un paragrafo, utile e non pubblicitario (voci 4.1 n. 12 e 2, chiusura /revenue-management/)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (nessun punto finale, sigle con glossa, nessun verbo colloquiale)",
+        "[x] Tono coerente con la matrice del mood (dati economici: serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; il confronto con il 2025 è solo contorno)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo né invito ad allinearsi; azioni per il singolo hotel; nessun consiglio legale o fiscale)",
+        "[x] Da 700 a 1.100 parole, struttura completa (1.096 parole; apertura, 5 h3 compresi impatto e azioni, In breve)"
+      ]
+    }
+  ],
+  "sottotitolo": "Dove si concentra il calo dopo il Giubileo, come cambia la spesa degli stranieri nel Lazio e perché il proprio 2026 si legge per segmento",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dato economico (rapporto congiunturale della Banca d'Italia sul turismo): la matrice ammette serio o provocatorio. Il corpo ha un registro serio e prudente (entità non quantificata dal rapporto, ADR e RevPAR '?', spesa giornaliera come lettura) e il manuale chiede che mood e titolo seguano il corpo; una provocazione sul 'calo che non riguarda gli hotel' direbbe più di quanto il rapporto dimostra per il singolo hotel. Serio"
+  },
+  "alternative_titolo": [
+    "Meno presenze a Roma dopo il Giubileo: quale parte del mercato è scesa davvero?",
+    "Il calo delle presenze a Roma non chiede sconti: il Giubileo non torna con il prezzo",
+    "Roma perde presenze, gli hotel vendono più notti: il 2026 si legge per tipo di alloggio"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 29221026,
+      "titolo": "View of the Tiber River in the center of Rome Italy",
+      "anteprima": "https://img.magnific.com/free-photo/view-tiber-river-center-rome-italy_1268-20516.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: una fila di palazzi residenziali romani affacciati sul Tevere, con file regolari di finestre e persiane, sopra il muraglione del lungotevere; sull'acqua una casa galleggiante ormeggiata; nessuna persona riconoscibile (solo poche figure minime e lontane sul lungotevere), nessuna scritta leggibile, nessun marchio\nInquadratura: frontale e statica, facciate nella fascia alta e centrale, muraglione al centro, acqua sotto; il ritaglio 16:9 è quasi il formato originale, quello social toglie solo una striscia di cielo in alto e di acqua in basso\nLuce: cielo coperto, luce diffusa e neutra, nessun sole diretto\nPalette: grigi del cielo e del travertino, facciate bianche e color sabbia, verde spento dell'acqua; i pali sottili e il tetto della casa galleggiante color ruggine sono un accento piccolo, non un tono dominante; nessun filtro\nAtmosfera: seria e sobria, la città vista dall'esterno: dietro le stesse finestre convivono camere d'hotel e appartamenti, e dalla facciata non si distingue chi ha venduto più notti; diversa da tutte le copertine recenti (pallina da tennis, San Pietro, pannelli, aerei, tende, camere, banchina, corridoio)",
+    "libreria": "assets/img/ffd195a72d.webp",
+    "alt_libreria": "Camera d'hotel con letto matrimoniale, pareti in marmo chiaro e verde salvia e una finestra sulla città",
+    "testo_sovrapposto": null
+  },
+  "alt": "Palazzi con file di finestre affacciati sul Tevere a Roma, sopra il muraglione del lungotevere, sotto un cielo coperto",
+  "data": "2026-11-07",
+  "autore": "Tito · Redazione Ricavia"
+}
