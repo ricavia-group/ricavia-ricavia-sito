@@ -130,5 +130,17 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-08",
+    "slug": "ponte-immacolata-hotel-roma-soggiorno-minimo",
+    "tema": "ponte-immacolata-2026-roma",
+    "keyword": "ponte dell'Immacolata hotel Roma",
+    "categoria": "prezzi",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
