@@ -1,0 +1,228 @@
+{
+  "titolo": "Ponte dell'Immacolata a Roma: il soggiorno minimo parte dal venerdì o dal sabato?",
+  "tesi": "Con l'Immacolata di martedì 8 dicembre il ponte a Roma si costruisce sul lunedì 7, e Più libri più liberi occupa la Nuvola dell'EUR dal 4 all'8: le notti di sabato 5 e domenica 6 sommano domanda del ponte e della fiera, mentre il venerdì 4, notte di arrivo, cade nello sciopero generale dei sindacati di base che per i treni va dalle 21 del 3 alle 21 del 4 dicembre; chi gestisce un hotel a Roma deve prezzare il ponte notte per notte, evitare un soggiorno minimo che parta dal venerdì (escluderebbe chi sposta l'arrivo al sabato) e leggere a parte il pick-up della notte del 4 fino alla conferma dello sciopero",
+  "tema": "ponte-immacolata-2026-roma",
+  "categoria": "prezzi",
+  "fonti": [
+    {
+      "titolo": "Più libri più liberi - XXV edizione",
+      "editore": "Turismo Roma (Roma Capitale)",
+      "url": "https://www.turismoroma.it/it/eventi/pi%C3%B9-libri-pi%C3%B9-liberi-xxv-edizione",
+      "data": "2026-11-08"
+    },
+    {
+      "titolo": "Più libri più liberi, sito ufficiale",
+      "editore": "Associazione Italiana Editori",
+      "url": "https://plpl.it/",
+      "data": "2026-11-08"
+    },
+    {
+      "titolo": "Domeniche ecologiche 2026 - 2027",
+      "editore": "Turismo Roma (Roma Capitale)",
+      "url": "https://www.turismoroma.it/it/eventi/domeniche-ecologiche-2026-2027",
+      "data": "2026-11-08"
+    },
+    {
+      "titolo": "Scioperi dicembre 2026, calendario completo: tutte le date di treni, aerei, autostrade e mezzi pubblici",
+      "editore": "Qualitytravel.it",
+      "url": "https://www.qualitytravel.it/scioperi-dicembre-2026-calendario-completo-tutte-le-date-di-treni-aerei-autostrade-e-mezzi-pubblici/194572",
+      "data": "2026-11-08"
+    },
+    {
+      "titolo": "Legge di bilancio, sindacati pronti a scioperare: il 4 dicembre sciopero di Cub, Unicobas e sindacalismo di base",
+      "editore": "Tecnica della Scuola",
+      "url": "https://www.tecnicadellascuola.it/legge-di-bilancio-sindacati-pronti-ascioperare-per-il-momento-ci-sono-lannuncio-di-landini-cgil-e-usb-per-il-20-novembre-il-4-dicembre-sciopero-di-cub-unicobas-e-sindacalismo-di-base",
+      "data": "2026-11-08"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Unica notizia della giornata che lega Roma a un periodo preciso tra 2 settimane e 6 mesi (4-8 dicembre, a 26 giorni) con azioni concrete su tariffe e soggiorno minimo; fiera e domenica ecologica su fonte primaria",
+      "correzioni": [],
+      "segnalazioni": [
+        "Fonte primaria dello sciopero non letta: il calendario del MIT ha risposto 503 e poi connessione interrotta, quello della Commissione di garanzia lo stesso (8 novembre). L'esistenza dello sciopero generale del 4 dicembre regge su due testate indipendenti (Tecnica della Scuola, 17 ottobre; Qualitytravel, 1 novembre); la finestra ferroviaria dalle 21 del 3 alle 21 del 4 regge su una sola testata di settore (Qualitytravel), con controllo su un aggregatore (scioperiitalia.it) che cita i dati MIT dell'8 novembre. Nel testo lo sciopero è scritto come condizione ('se lo sciopero viene confermato') e attribuito. Il capo redattore valuti; l'editore ricontrolli il calendario MIT prima della pull request",
+        "Un tracker in inglese ha segnalato una voce ferroviaria 3-4 dicembre come 'Revoked' accanto a una 'Announced' identica: riletta la pagina, nessuna revoca. Se il calendario MIT mostra una revoca, la seconda sezione e la voce Pick-up si riscrivono, ma la tesi sul ponte notte per notte regge comunque",
+        "Rischio di sovrapposizione con l'articolo del 3 novembre sullo sciopero dei treni del 20-21 novembre (tema sciopero-trasporti-20-21-novembre-2026, meno di 14 giorni fa): qui il tema è il ponte dell'Immacolata e il suo prezzo per notte, lo sciopero del 4 dicembre è un fatto nuovo e diverso che tocca una sola notte. Struttura diversa, categoria diversa (prezzi). L'articolo collega quello del 3 novembre e ne dichiara la differenza. Il SEO director verifichi che non sia un duplicato",
+        "Le letture sul comportamento degli ospiti (chi rinuncia al venerdì accorcia il soggiorno invece di cancellarlo; chi cerca solo sabato e domenica evita un vincolo rigido) sono ragionamenti, non dati: scritte senza numeri",
+        "Il numero di espositori (604) viene dal sito della fiera; nessun dato sui visitatori, nessuna stima",
+        "Non è citato l'omaggio del Papa all'Immacolata in piazza di Spagna l'8 dicembre (conoscenza generale, non verificata oggi)",
+        "Antitrust: nessun livello di prezzo né percentuale; le azioni sono per il singolo hotel e sui propri dati",
+        "Collegamenti interni nel corpo: 2 (calendario della domanda di Roma, articolo del 3 novembre sullo sciopero dei treni), più /revenue-management/ nel paragrafo Ricavia (voci 4.1 n. 2 e 3)",
+        "Parole del corpo: circa 1.085, vicino al limite di 1.100"
+      ],
+      "ruolo_ricavia": "Ricavia prezza i ponti notte per notte e decide il soggiorno minimo in base al giorno di arrivo, seguendo ogni settimana il pick-up delle notti più esposte"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta: ponte con l'Immacolata di martedì, fiera alla Nuvola su tutto il periodo e sciopero dei treni sulla notte di arrivo del 4 rendono le quattro notti diverse tra loro; il meccanismo del soggiorno minimo che parte dal venerdì regge. Tesi confermata senza modifiche",
+      "correzioni": [
+        "Impatto, Durata del soggiorno: finestra ristretta ai soggiorni con arrivo il 4 dicembre e segmento al leisure italiano che viaggia in treno; aggiunta la condizione 'se lo sciopero viene confermato' e 'una parte di', perché la lettura era scritta come certa",
+        "Impatto, ADR: segmento da 'tutti i segmenti' a 'leisure italiano e visitatori della fiera' (l'aumento riguarda solo la domanda di ponte e fiera); motivazione accorciata",
+        "Impatto, RevPAR: aggiunto il segmento ('stessi segmenti'), mancante nel formato; motivazione accorciata",
+        "Impatto, Pick-up: tolto 'nelle ultime due settimane', ripetizione della finestra",
+        "Cosa fare, azione 1: titolo da 'caricato' a 'prezzato' (lessico); tolto 'non un fine settimana qualunque' per stare nel limite di parole",
+        "Cosa fare, azione 2: corretto il nesso causale ('applicarlo agli arrivi del sabato... perché chi sposta l'arrivo trovi una camera' non spiegava il meccanismo): il soggiorno minimo si calcola sugli arrivi del sabato senza legarlo alla notte del venerdì, così chi sposta l'arrivo può prenotare da sabato",
+        "Cosa fare, azione 3 riscritta ('La notte del 4 seguita a parte'): tolto l'invito a proporre agli ospiti di spostare l'arrivo al sabato, che spinge a rinunciare a una notte già venduta; ora si comunicano orari dello sciopero e condizioni di modifica della propria tariffa, e chi rinuncia presto libera una camera da rimettere in vendita. Cambiata anche la costruzione, che ripeteva l'azione 1 dell'articolo del 3 novembre sullo sciopero ('Estrarre dal gestionale gli arrivi... con provenienza, canale...')",
+        "Lunghezza: le modifiche sono compensate nelle mie sezioni; corpo a circa 1.100 parole contate senza tag, come la bozza"
+      ],
+      "segnalazioni": [
+        "Fiera alla Nuvola: le fonti danno 604 espositori ma nulla su visitatori e loro provenienza. Una fiera dell'editoria richiama anche molto pubblico romano, che non dorme in hotel: l'effetto sull'occupazione è stimato basso-medio e attribuito insieme al ponte, senza numeri. L'effetto per zona (EUR in particolare) non è distinto perché roma.md non ha conoscenze sull'EUR (DA COMPLETARE): il capo redattore valuti se basta così",
+        "Sciopero: la notte del 4 è trattata solo come condizione; non ho fonti sulle fasce garantite dei treni regionali, quindi l'articolo non dice nulla su di esse. Se il calendario MIT mostra una revoca, si tolgono le voci Pick-up e Durata del soggiorno e l'azione 3, e l'azione 2 perde la sua motivazione principale (resta valida solo per chi cerca sabato e domenica)",
+        "Apertura (fuori dal mio ambito): 'il venerdì di arrivo coincide con uno sciopero generale' è scritto senza condizione; nel corpo lo sciopero è condizionato. Il SEO director o il capo redattore valutino 'con uno sciopero generale proclamato'",
+        "Articolo fotocopia (regole-comuni, sezione 2, punto 2): prezzo per singola notte e soggiorno minimo sono già azioni di Sei Nazioni (3 novembre) e Maratona (4 novembre), e la terza sezione richiama lo sciopero del 3 novembre. Qui il meccanismo è nuovo (soggiorno minimo calcolato sul giorno di arrivo per una notte esposta allo sciopero), ma il capo redattore valuti la somiglianza sull'insieme",
+        "Paragrafo Ricavia della bozza: 'decide il soggiorno minimo guardando il giorno di arrivo' attribuisce a Ricavia una pratica non dichiarata (il soggiorno minimo è il consiglio B della sezione 4.2 di ricavia.md, non una voce 4.1); inoltre 'controlla ogni settimana il pick-up' compare già nei paragrafi Ricavia di sciopero treni (3 novembre), tennis (6 novembre) e presenze (7 novembre). Propongo la voce 4.1 n. 4 e n. 1 (frase sotto)",
+        "Azioni: 3, tutte per il singolo hotel e sui propri dati; nessun livello di prezzo né percentuale (antitrust ok)"
+      ],
+      "ruolo_ricavia": "Ricavia inserisce ponti e fiere nelle previsioni della domanda e prepara in anticipo i prezzi di ciascuna notte; sulla notte esposta allo sciopero aggiorna ogni giorno tariffe e disponibilità in base all'andamento delle prenotazioni, finché lo sciopero non è confermato o revocato"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Nessun duplicato: rispetto all'articolo del 3 novembre sullo sciopero dei treni (tema sciopero-treni-novembre, keyword 'sciopero treni hotel Roma', categoria trasporti, tesi 'contare le prenotazioni esposte prima di decidere sconti') cambiano tema (ponte dell'Immacolata), keyword, categoria e tesi (prezzo per singola notte e soggiorno minimo calcolato sul giorno di arrivo); lo sciopero del 4 dicembre è un fatto nuovo, con altra proclamazione e altra data, e tocca una sola notte. Keyword dell'albergatore in apertura e in un h3, campi SEO compilati e verificati",
+      "correzioni": [
+        "Apertura, prima frase: 'e a Roma il ponte si costruisce' diventa 'e per gli hotel di Roma il ponte si costruisce', per avere la keyword principale (ponte, Immacolata, hotel, Roma) nella stessa frase; fatti, date e fonti invariati",
+        "Primo h3: 'Ponte dell'Immacolata a Roma: il calendario dal 4 all'8 dicembre' diventa 'Ponte dell'Immacolata e hotel a Roma: il calendario dal 4 all'8 dicembre', per la keyword nel titolo di sezione",
+        "meta.json: compilati slug, title_seo (60 caratteri), description (158 caratteri), keyword, related_intro, related; categoria confermata 'prezzi'"
+      ],
+      "segnalazioni": [
+        "Apertura, seconda frase (fuori dal mio ambito, che si ferma alla prima frase): 'il venerdì di arrivo coincide con uno sciopero generale' è scritto senza condizione, mentre nel corpo lo sciopero è condizionato. Come già segnalato dal revenue manager, il capo redattore valuti 'con uno sciopero generale proclamato'",
+        "Cannibalizzazione con l'articolo del 3 novembre: per tenerla bassa 'sciopero treni' non compare in slug, title_seo e keyword principale; la secondaria è legata alla data ('sciopero 4 dicembre hotel Roma'). Il collegamento nel corpo verso l'articolo del 3 novembre ne dichiara la differenza e resta, è uno dei 2 collegamenti naturali",
+        "Categoria: confermata 'prezzi'. La causa è la forma del calendario (festività di martedì e ponte sul lunedì); 'trasporti' è esclusa perché lo sciopero tocca una sola notte e sposterebbe l'articolo sul tema del 3 novembre; 'eventi' è esclusa perché la fiera è un elemento concorrente, non la causa. Il capo redattore può scegliere 'eventi' se preferisce, senza effetti sugli altri campi",
+        "Somiglianza con Sei Nazioni (3 novembre) e Maratona (4 novembre) su prezzo per notte e soggiorno minimo: lato SEO title, slug, keyword e related_intro sono distinti (la Maratona usa 'Per prezzare notte per notte le date di un grande evento'); la valutazione di articolo fotocopia sull'insieme spetta al capo redattore",
+        "Se il calendario MIT mostra una revoca dello sciopero del 4 dicembre, va riscritta anche la description, che lo cita; slug e title_seo non dipendono dallo sciopero e restano validi",
+        "Collegamenti interni nel corpo: 2 naturali (calendario della domanda di Roma, sciopero dei treni del 3 novembre) più /revenue-management/ nel paragrafo Ricavia, tutti verso pagine su main. related: Sei Nazioni e /indicatori/, nessuno ripete un collegamento del corpo; gli articoli della PR #12 (5 novembre) non sono su main e non sono collegati",
+        "Controllo dei doppioni fatto su registro.json, pubblicati.md, tools/seo.json e meta.json di journal/: slug, title_seo e description unici. Non ho eseguito check_seo.py sulla bozza (la cartella non è ancora in journal/): lo esegua l'editore"
+      ],
+      "ruolo_ricavia": "Chi cerca come prezzare il ponte dell'Immacolata ha come passo successivo naturale la pagina /revenue-management/: Ricavia anticipa ponti, fiere e festività nelle previsioni della domanda e prepara in anticipo il prezzo e le regole di soggiorno di ciascuna notte"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare all'albergatore: tre fatti di calendario sullo stesso ponte rendono diverse le quattro notti, e il soggiorno minimo calcolato sul giorno di arrivo è il meccanismo nuovo rispetto a Sei Nazioni e Maratona; titolo, sottotitolo, mood e citazione costruiti su quel meccanismo",
+      "correzioni": [
+        "Titolo: il titolo di lavoro (108 caratteri, oltre il limite di 90, con 'si prezza notte per notte' vicino a Sei Nazioni 'si prezzano adesso' e alla related_intro della Maratona, e con lo sciopero scritto come certo) diventa la domanda 'Ponte dell'Immacolata a Roma: il soggiorno minimo parte dal venerdì o dal sabato?' (81 caratteri); tecnica domanda, non usata il 6 e il 7 novembre; lo sciopero resta fuori dal titolo, così l'h2 regge anche in caso di revoca e non si sovrappone all'articolo del 3 novembre; l'articolo risponde nella seconda azione e nella terza sezione",
+        "Sottotitolo (mancava): scritto con i quattro contenuti che il lettore trova, lo sciopero indicato come 'proclamato'",
+        "Mood: serio (matrice, righe eventi e trasporti, vale la più restrittiva)",
+        "Alternative: tre titoli con tecniche diverse (conseguenza, contrasto, dato con fonte nominata), tutti entro 90 caratteri, unici e verificati contro journal/, pubblicati.md e registro",
+        "Frase citabile riscritta: 'Un ponte non è un blocco di notti. È una sequenza di notti diverse, e ognuna ha il suo prezzo' ripeteva quasi alla lettera l'apertura e l'ultima voce di In breve, ricalcava la citazione storica di a2 sui ponti e contraddiceva il paragrafo che la precede ('La decisione riguarda le regole di soggiorno più che il prezzo della singola notte'). Nuova frase, scritta da me e coerente con la tesi, sul contrasto vendere e escludere: 'Il soggiorno minimo serve a vendere meglio le notti centrali, non a escludere chi arriva un giorno dopo'; senza numeri né nomi, chiude il ragionamento delle due sezioni precedenti"
+      ],
+      "segnalazioni": [
+        "Apertura e In breve (fuori dal mio ambito): oltre alla seconda frase dell'apertura già segnalata da revenue manager e SEO director, anche la voce 'Lo sciopero dei treni tocca la notte di venerdì 4' è scritta senza condizione; il capo redattore valuti 'Lo sciopero proclamato tocca la notte di venerdì 4'",
+        "Terza sezione (fuori dal mio ambito): 'L'errore più frequente è trattare il ponte come un unico pacchetto' è un'affermazione di frequenza senza fonte; il capo redattore valuti 'Un errore comune' o 'Un errore possibile'",
+        "In breve (fuori dal mio ambito): 'Ogni notte del ponte ha il suo prezzo' ripete la chiusura dell'apertura; le altre quattro voci sono fatti di calendario, questa è una regola: la costruzione non è parallela",
+        "Se il calendario MIT mostra una revoca dello sciopero, titolo e frase citabile reggono; vanno rivisti il sottotitolo (che cita lo sciopero proclamato) e la seconda alternativa",
+        "Somiglianza di forma del titolo: domanda con due opzioni come lo sciopero del 3 novembre ('ridurre le tariffe o contare prima le prenotazioni?'), ma oggetto e tema diversi e cinque giorni di distanza; se il capo redattore preferisce un tipo mai usato in settimana, la prima alternativa (conseguenza) è pronta"
+      ],
+      "ruolo_ricavia": "Il lettore arriva per il dubbio sul soggiorno minimo: il paragrafo Ricavia funziona se mostra la previsione della domanda notte per notte preparata in anticipo (voce 4.1 proposta dal revenue manager), senza attribuire a Ricavia il soggiorno minimo, che nel corpo è già un consiglio all'hotel"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina pertinente al tema e al luogo: la Colonna dell'Immacolata di piazza Mignanelli è il monumento romano della festa dell'8 dicembre, in una foto vera all'ora blu, senza persone, con palette in tono col brand e mood serio",
+      "correzioni": [
+        "immagine compilata: fonte stock, foto vera (non generata con AI) n. 19612520 dell'archivio Magnific, scheda, riserva della libreria e relativo alt",
+        "alt compilato sulla foto scelta, senza punto finale"
+      ],
+      "segnalazioni": [
+        "Libreria: nessuna foto pertinente al tema (ponte dell'Immacolata, dicembre a Roma, fiera alla Nuvola). La più vicina, i tetti di Roma con San Pietro (9dc9005512), racconta il luogo ma non il tema: usata come riserva. Le foto della libreria usate negli ultimi 10 articoli (8 su main e 2 della PR #12) sono escluse",
+        "Archivio stock: la foto scelta è premium (150 crediti al download invece di 40). Le ricerche tra le gratuite (Colonna dell'Immacolata, piazza di Spagna, Roma a Natale, Roma d'inverno) non hanno dato nessuna foto del monumento né di Roma a dicembre senza persone in primo piano o luoghi di altre città: tutte le foto della Colonna dell'Immacolata nell'archivio sono premium. Tra queste scelta quella all'ora blu, con il cielo nella palette del brand; scartate la notturna (cielo nero, bandiera), quella con la Barcaccia (toni gialli e arancio dominanti) e le diurne con la colonna piccola o tagliata",
+        "Editore: download con stock_download; nel ritaglio tagliare il cielo in alto e non la strada in basso, perché la base della colonna resti intera anche nel social.jpg. Controllare a piena risoluzione le vetrine ai lati: se compare un'insegna o un marchio leggibile, stringere il ritaglio o passare alla riserva",
+        "Nessuna nota di immagine generata in articolo.html: la foto è vera e coperta dalla licenza Premium di Ricavia",
+        "Per ampliare la libreria mancano: Roma a dicembre (luci e festività senza persone riconoscibili) e l'EUR con la Nuvola"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo il ponte si racconta con il luogo della festa e con la città ancora vuota prima dell'arrivo degli ospiti: Ricavia prepara le notti del ponte prima che la domanda si veda nel pick-up"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Apertura, seconda frase: 'il venerdì di arrivo coincide con uno sciopero generale che coinvolge anche i treni' diventa 'per il venerdì di arrivo è proclamato uno sciopero generale che, se confermato, coinvolge anche i treni' (condizione come nel corpo, segnalata da revenue manager, SEO director e virality director); terza frase: 'non è un blocco unico: è una sequenza' diventa 'non è un blocco unico ma una sequenza' (lunghezza)",
+        "Seconda sezione, primo paragrafo: 'per i treni lo sciopero va dalle 21' diventa 'è previsto dalle 21' (verbo colloquiale vietato da CLAUDE.md); 'Il primo giorno del ponte è anche il giorno dello sciopero' diventa 'Il venerdì di arrivo coincide con lo sciopero', perché In breve e la prima sezione fanno cominciare il ponte sabato 5",
+        "Prima sezione: 'porta in città un pubblico con un motivo preciso per esserci' diventa 'può richiamare anche visitatori da fuori Roma': le fonti non dicono nulla sui visitatori e una fiera dell'editoria richiama anche pubblico romano (segnalazione del revenue manager)",
+        "Domenica ecologica: 'con categorie ed eccezioni fissate da Roma Capitale con un'ordinanza' diventa 'con eccezioni fissate da un'ordinanza di Roma Capitale' (lunghezza, senso invariato)",
+        "Terzo h3: 'Perché il ponte si prezza notte per notte' diventa 'Perché il ponte non ha una tariffa unica', per allontanarlo da 'si prezzano adesso' del Sei Nazioni e dalla Maratona",
+        "Terza sezione: 'L'errore più frequente' diventa 'Un errore da evitare' (frequenza senza fonte, segnalazione del virality director); 'sceglie un altro hotel' diventa 'può scegliere un altro hotel' (comportamento scritto come certo, senza dati)",
+        "In breve: 'Lo sciopero dei treni tocca la notte di venerdì 4' diventa 'Lo sciopero proclamato tocca la notte di venerdì 4'; 'Ogni notte del ponte ha il suo prezzo' (regola tra fatti, ripeteva l'apertura) diventa 'La notte di lunedì 7 dipende dal giorno di ferie', parallela alle altre quattro voci",
+        "Paragrafo Ricavia riscritto (voci 4.1 n. 4 e n. 1, fuse dalle proposte di revenue manager, SEO director e art director): tolto il soggiorno minimo attribuito a Ricavia (consiglio 4.2 B, non pratica dichiarata) e 'controlla ogni settimana il pick-up', già usato il 3, il 6 e il 7 novembre; parole e costruzione diverse dagli esempi di ricavia.md e dai paragrafi della settimana; un solo collegamento, /revenue-management/",
+        "Lunghezza: corpo da circa 1.103 a 1.100 parole (conteggio di tools/journal.py), dentro il limite della griglia",
+        "Titolo e sottotitolo del virality director confermati: domanda come il 3 novembre, ma oggetto diverso e nessuna violazione; categoria 'prezzi' confermata"
+      ],
+      "segnalazioni": [
+        "Per l'editore: prima della pull request aprire il calendario scioperi del MIT (https://scioperi.mit.gov.it/mit2/public/scioperi) e della Commissione di garanzia (https://cgsse.it/calendario-scioperi). L'8 novembre anche dal capo redattore entrambi hanno dato 'connection reset'. Verificare che lo sciopero generale del 4 dicembre (CUB, SGB, SI Cobas e altri) sia ancora proclamato e che la finestra ferroviaria sia dalle 21 del 3 alle 21 del 4 dicembre; ricontrollare anche la voce 'Revoked' vista dal giornalista su un tracker in inglese",
+        "Per l'editore: se il calendario mostra una revoca, l'articolo non si pubblica così: da riscrivere apertura (seconda frase), seconda sezione, terza sezione (secondo e terzo paragrafo), voci Pick-up e Durata del soggiorno, azioni 2 e 3, In breve (terza voce), paragrafo Ricavia (seconda frase), sottotitolo, description e seconda alternativa del titolo. Lo si segnala nella pull request e nell'email (regole-comuni 9 bis)",
+        "Per l'editore: la finestra ferroviaria regge su una sola testata (Qualitytravel, attribuita nel testo, letta anche dal capo redattore l'8 novembre: conferma la finestra dalle 21 del 3 alle 21 del 4 e cita il prospetto MIT al 1° novembre); è un fatto di contorno su una sola testata, da ricontrollare sulla fonte primaria prima del merge. L'esistenza dello sciopero regge su due testate indipendenti (Tecnica della Scuola, Qualitytravel)",
+        "Per l'editore: eseguire check_seo.py, test e build con la cartella in journal/; il corpo è a 1.100 parole esatte, al limite: nessuna aggiunta di testo in fase di impaginazione",
+        "Per l'editore: copertina premium (19612520) con le indicazioni di ritaglio dell'art director; se a piena risoluzione compare un'insegna leggibile, passare alla riserva della libreria e copiare in alt immagine.alt_libreria",
+        "Somiglianza con Sei Nazioni (3 novembre), Maratona (4 novembre) e clero dal Papa (5 novembre, PR #12): prezzo per singola notte e soggiorno minimo sono azioni ricorrenti in settimana, ma tema, fatti (ponte, fiera, sciopero, domenica ecologica) e meccanismo (soggiorno minimo calcolato sul giorno di arrivo con la prima notte esposta allo sciopero) sono nuovi: non è fotocopia. Per i prossimi giorni il giornalista eviti un'altra tesi 'prezzare notte per notte' e un altro titolo a domanda",
+        "Quadro della giornata: una sola bozza, legata a Roma e che guarda avanti (26 giorni), nessuna macro; meno di 2 GO va bene",
+        "Fiera alla Nuvola: nessun dato sui visitatori, effetto per zona (EUR) non distinto perché roma.md non copre l'EUR (DA COMPLETARE Ricavia); accettato così, senza numeri"
+      ],
+      "ruolo_ricavia": "Paragrafo finale scritto nel corpo: voci 4.1 n. 4 (anticipare festività, fiere ed eventi e preparare per tempo i prezzi) e n. 1 (tariffe e disponibilità riviste ogni giorno sulla notte esposta allo sciopero)",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED, tesi confermata senza modifiche)",
+        "[x] Ogni numero ha fonte o è dichiarato stima Ricavia (604 espositori dal sito della fiera, orari da Turismo Roma e Qualitytravel; nessuna stima)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta (fonte primaria dello sciopero irraggiungibile: esistenza su due testate indipendenti, finestra ferroviaria su una testata attribuita come contorno; scritto come condizione; da ricontrollare dall'editore)",
+        "[x] Ruolo di Ricavia presente, al massimo 2 paragrafi, utile e non pubblicitario (riscritto in un paragrafo, solo pratiche 4.1)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (corretti 'va dalle', frequenza senza fonte, voce non parallela di In breve; nessun punto finale)",
+        "[x] Tono coerente con la matrice del mood (serio, riga più restrittiva tra eventi e trasporti)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; sciopero del 3 novembre è altra proclamazione e altra data)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo o percentuale, azioni per il singolo hotel sui propri dati, nessun consiglio legale o fiscale, foto vera con licenza, nessuna nota AI necessaria)",
+        "[x] Da 700 a 1.100 parole, struttura completa (1.100 parole, 5 h3, apertura, impatto, 3 azioni, In breve con 5 voci, paragrafo Ricavia)"
+      ]
+    }
+  ],
+  "slug": "ponte-immacolata-hotel-roma-soggiorno-minimo",
+  "title_seo": "Ponte Immacolata e hotel a Roma: tariffe per notte · Ricavia",
+  "description": "Ponte dell'Immacolata a Roma: fiera alla Nuvola e sciopero proclamato per il 4 dicembre. Come prezzare ogni notte e su quale arrivo basare il soggiorno minimo",
+  "keyword": {
+    "principale": "ponte dell'Immacolata hotel Roma",
+    "secondarie": [
+      "tariffe hotel ponte Immacolata",
+      "soggiorno minimo ponte hotel",
+      "Più libri più liberi hotel Roma",
+      "sciopero 4 dicembre hotel Roma"
+    ]
+  },
+  "related_intro": "Per decidere tariffe e soggiorno minimo di un ponte, approfondisci",
+  "related": [
+    {
+      "label": "il soggiorno minimo nelle notti del Sei Nazioni",
+      "url": "/osservatorio/sei-nazioni-hotel-roma-tariffe/"
+    },
+    {
+      "label": "occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "sottotitolo": "Il calendario dal 4 all'8 dicembre, la fiera alla Nuvola, lo sciopero proclamato per il venerdì e tre azioni su tariffe per notte, soggiorno minimo e pick-up della prima notte",
+  "mood": {
+    "scelta": "serio",
+    "perche": "La notizia sta su due righe della matrice, eventi (ponte e fiera) e trasporti (sciopero proclamato, impatto non certo): vale la più restrittiva, che con impatto non certo esclude il drammatico; il corpo ha un registro serio e lo sciopero è una condizione, quindi niente toni leggeri"
+  },
+  "alternative_titolo": [
+    "L'Immacolata cade di martedì: per gli hotel di Roma il ponte si costruisce sul lunedì 7",
+    "Ponte dell'Immacolata: le notti della fiera alla Nuvola e quella dello sciopero proclamato",
+    "604 espositori alla Nuvola per l'AIE: il ponte dell'Immacolata non ha un prezzo unico"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 19612520,
+      "titolo": "The Column of the Immaculate Conception depicting the Blessed Virgin Mary, on Piazza Mignanelli during morning blue hour, Rome, Italy",
+      "anteprima": "https://img.magnific.com/premium-photo/column-immaculate-conception-depicting-blessed-virgin-mary-piazza-mignanelli-morning-blue-hour-rome-italy_218319-4731.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: la Colonna dell'Immacolata in piazza Mignanelli, vicino a piazza di Spagna, il monumento romano della festa dell'8 dicembre, vista in fondo a una strada vuota del centro storico; nessuna persona, nessuna scritta leggibile, nessun marchio\nInquadratura: frontale e statica, colonna al centro tra due quinte di palazzi, cielo sopra e selciato sotto; nel ritaglio 16:9 e in quello social tagliare più cielo in alto (luna compresa) che strada in basso, perché la base della colonna resti intera nella fascia centrale\nLuce: ora blu del mattino, cielo uniforme e lampioni accesi; le luci calde delle finestre sono solo un accento\nPalette: cielo blu #1F2DD0 dominante con passaggio all'azzurro #3CCDFA verso l'orizzonte, travertino chiaro della colonna, facciate color ocra e crema; niente rosso dominante\nAtmosfera: seria e quieta, la città prima dei giorni del ponte",
+    "libreria": "assets/img/9dc9005512.webp",
+    "alt_libreria": "Tetti di Roma con la cupola di San Pietro sullo sfondo, sotto un cielo azzurro con nuvole bianche",
+    "testo_sovrapposto": null
+  },
+  "alt": "Colonna dell'Immacolata in piazza Mignanelli a Roma all'ora blu, in fondo a una strada vuota tra palazzi illuminati",
+  "data": "2026-11-08",
+  "autore": "Tito · Redazione Ricavia"
+}
