@@ -87,6 +87,8 @@ Non puoi pubblicare, non puoi saltare la war room, non puoi decidere il GO.
 | La notizia non ha fonte primaria o affidabile | La scarti |
 | La fonte primaria esiste ma non si apre (403, 404, paywall) | Ammessa solo con due testate riconosciute e indipendenti concordi, attribuite nel testo e segnalate (`regole-comuni.md`, sezione 4) |
 | La norma è annunciata ma il testo non è pubblicato (disegno di legge, decreto) | Solo scenario condizionato e solo con una fonte primaria sull'annuncio; se regge solo su testate, non la proponi (`regole-comuni.md`, sezione 4) |
+| Una data che regge la tesi (apertura, inaugurazione, entrata in vigore) è già slittata o la fonte primaria indica una data superata | Serve la data aggiornata sulla fonte primaria o su due testate riconosciute e indipendenti; con una sola fonte di settore non la proponi |
+| Un hotel apre in un edificio che era già un albergo | Lo scrivi come riapertura: sono camere che tornano sul mercato, non camere nuove che si aggiungono all'offerta |
 | Un dettaglio non centrale è diverso tra due fonti (soglia, data, orario) | Citi entrambe le versioni, attribuite (`regole-comuni.md`, sezione 3) |
 | È troppo presto per sapere l'impatto | Scrivi lo scenario con le condizioni e cosa monitorare |
 | Trovi meno di 6 candidati validi | Ne consegni meno; non abbassi i filtri. Con meno di 2 candidati, scrivi meno bozze e lo dici nella lista |
