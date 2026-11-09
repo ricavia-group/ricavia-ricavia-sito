@@ -1,0 +1,198 @@
+{
+  "titolo": "Nuovi hotel a Termini e in centro: per gli indipendenti non sono lo stesso concorrente",
+  "tesi": "Hyatt porta a Roma più di trecento camere di fascia alta in due hotel, Thompson Rome (69 camere, via delle Botteghe Oscure, già aperto) e Hyatt Regency Rome Central (238 camere nell'Esquilino, a ridosso di Termini, apertura attesa tra fine novembre e l'inverno secondo ITHIC, data non confermata da fonte ufficiale): l'offerta in più si somma a una domanda invernale più debole nelle notti infrasettimanali dall'apertura a febbraio, escluse le festività di fine anno, nella zona più affollata di Roma, e chi gestisce un hotel indipendente di fascia media e alta tra Termini ed Esquilino o di categoria superiore in centro deve decidere con un criterio se il nuovo hotel entra nel proprio competitive set, leggere il pick-up per segmento dall'apertura a febbraio, con un confronto che per dicembre tiene conto del Giubileo del 2025, e lavorare sulla qualità percepita invece di inseguire con ribassi eventuali tariffe di lancio",
+  "tema": "nuove-aperture-hotel-roma-hyatt-inverno-2026",
+  "categoria": "mercato",
+  "fonti": [
+    {
+      "titolo": "Apre Thompson Rome: il brand Thompson Hotels debutta in Italia",
+      "editore": "Hyatt Hotels Corporation (comunicato pubblicato su Hospitality Net)",
+      "url": "https://www.hospitalitynet.org/it/novita/41015327/apre-thompson-rome-il-brand-thompson-hotels-debutta-in-italia",
+      "data": "2026-11-09"
+    },
+    {
+      "titolo": "Hyatt Strengthens Italy Presence, Announces Three Openings and Debut of Hyatt Regency and Thompson Hotel Brands",
+      "editore": "Hyatt Hotels Corporation",
+      "url": "https://newsroom.hyatt.com/news-releases?item=124795",
+      "data": "2026-11-09"
+    },
+    {
+      "titolo": "Hyatt Expands in Rome with First Thompson and Regency Hotels in Italy",
+      "editore": "ITHIC - Italian Hospitality Investment Conference",
+      "url": "https://www.ithic.it/hyatt-expands-in-rome-with-first-thompson-and-regency-hotels-in-italy/",
+      "data": "2026-11-09"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Fatto nuovo sull'offerta di Roma (apertura imminente di 238 camere a Termini, Thompson Rome aperto a fine ottobre) con effetto sul competitive set da dicembre a marzo e azioni concrete per il singolo hotel; unica notizia della giornata legata a Roma con fonti primarie leggibili",
+      "correzioni": [],
+      "segnalazioni": [
+        "Data di apertura dello Hyatt Regency Rome Central: la fonte primaria (comunicato Hyatt del 18-19 giugno 2026) indica 'fine del terzo trimestre 2026', data già superata; la 'seconda metà di novembre' viene da una sola fonte di settore (ITHIC, 29 ottobre). Forum e blog di viaggio (FlyerTalk, LoyaltyLobby, UpgradedPoints) parlano del 1° dicembre e di più rinvii: non sono fonti affidabili e non sono usati. Nel testo la data è attribuita e dichiarata non confermata; il fatto che regge la tesi (238 camere a ridosso di Termini in arrivo) è sulla fonte primaria. L'editore ricontrolli hyatt.com (oggi 403) prima della pull request",
+        "Recentezza: il comunicato su Thompson Rome è del 28 ottobre e l'articolo ITHIC del 29 ottobre (11-12 giorni). Proposta come evento futuro annunciato di recente (apertura del Regency tra 2 e 4 settimane), con effetti da dicembre a marzo; nessun articolo del Journal ha trattato il tema",
+        "Il comunicato Hyatt non dà superfici né capienza degli spazi per meeting: il testo dice solo 'pensato anche per la domanda di lavoro, meeting ed eventi', come il comunicato",
+        "Le tariffe di lancio sono scritte come ipotesi condizionata, non come fatto sul nuovo hotel; nessuna affermazione su prezzi o qualità del gruppo nominato (regole-comuni 9 ter, punti 5 e 8)",
+        "Non citati altri hotel di lusso aperti o annunciati a Roma (Corinthia, Palazzo Sanzio Radisson Collection, hotel in via della Pallacorda di LHM per fine 2027): date e numeri discordanti tra le fonti trovate, nessuna primaria letta oggi",
+        "Antitrust: nessun livello di prezzo né percentuale; azioni per il singolo hotel, sui propri dati",
+        "Collegamenti interni nel corpo: 1 (guida ai quartieri), più /hotel-score/ nel paragrafo Ricavia (voci 4.1 n. 6 e 7). Hotel Score non usato nei paragrafi Ricavia della settimana corrente",
+        "Parole del corpo: circa 920"
+      ],
+      "ruolo_ricavia": "Ricavia confronta tariffe, calendario, mix dei canali e recensioni dell'hotel con un competitive set di hotel davvero comparabili e decide con un criterio se una nuova apertura ne fa parte"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge (238 camere a Termini più 69 in centro, verificate sui comunicati Hyatt e su ITHIC, si sommano a una domanda infrasettimanale debole nella zona più affollata) dopo aver corretto la finestra temporale, che includeva dicembre e marzo senza distinguere i picchi, e reso incerta la direzione dell'ADR, che dipende da tariffe di lancio non note",
+      "correzioni": [
+        "Tesi: finestra corretta da 'dicembre-marzo' a 'dall'apertura a febbraio, escluse le festività di fine anno', con confronto di dicembre che tiene conto del Giubileo 2025. Motivo: dicembre ha i picchi dell'Immacolata e delle festività e marzo 2027 ha Sei Nazioni, Maratona e Pasqua il 28 (articoli pubblicati del 3, 4 e 7 novembre); i mesi tranquilli sono gennaio e febbraio (conoscenze/roma.md)",
+        "Corpo, sezione Esquilino e Termini: 'notti infrasettimanali da dicembre a marzo' diventa 'dall'apertura a febbraio, escluse le festività di fine anno' (frase che descriveva il meccanismo in modo impreciso)",
+        "Impatto sugli indicatori, Occupazione: finestra allineata, segmento precisato (lavoro, meeting e piccoli gruppi, come nel comunicato Hyatt), 'hotel indipendenti'",
+        "Impatto sugli indicatori, ADR: da '↓ bassa solo se...' a '?' da monitorare: la direzione era condizionata e il corpo stesso dice che tariffe alte possono alzare il riferimento della zona; mai una direzione certa su un'ipotesi",
+        "Impatto sugli indicatori, RevPAR: resta ↓ bassa come conseguenza del calo di occupazione, con la precisazione che si accentua se l'ADR scende (coerenza con il glossario)",
+        "Cosa fare adesso, azione 2: finestra allineata; aggiunto il confronto di dicembre anche con il 2024 perché il dicembre 2025 era nel Giubileo; 'indica un ospite spostato' diventa 'può indicare ospiti spostati' (prudenza)"
+      ],
+      "segnalazioni": [
+        "Data di apertura dello Hyatt Regency: verificata su ITHIC (seconda metà di novembre) e sul comunicato Hyatt (fine terzo trimestre 2026, superata). Una ricerca mostra che blog di viaggio (UpgradedPoints, MilesMate) riportano più di sei rinvii e oggi il 1° dicembre: non affidabili, ma il rischio di un nuovo slittamento è concreto. La finestra degli indicatori parte 'dall'apertura' per restare valida; se l'apertura slitta oltre gennaio, la tesi si indebolisce e va ricontrollata prima della pull request",
+        "ITHIC precisa che l'edificio è l'ex Radisson Es: sono camere che tornano sul mercato dopo una chiusura, non un edificio nuovo. Per gli hotel della zona sono comunque camere in più rispetto a oggi, la tesi regge; il capo redattore valuti se dirlo nel testo",
+        "Centro storico: nessuna voce sugli indicatori per Thompson Rome (69 camere), coerente con il corpo che dice che non cambiano l'equilibrio della zona; l'effetto è sul confronto online, non misurabile oggi",
+        "Intensità 'bassa' per l'occupazione: nessuna fonte dà le camere della zona Termini, quindi niente stima Ricavia; scelta prudente",
+        "Antitrust: nessun livello di prezzo, nessuna percentuale, nessun invito collettivo; tutte le azioni sono del singolo hotel sui propri dati. Nessun giudizio sul gruppo nominato",
+        "Numeri verificati: 69 camere (19 suite), 238 camere, totale 307 ('più di trecento') corretto"
+      ],
+      "ruolo_ricavia": "Quando un nuovo hotel apre nella zona, Ricavia decide con il proprietario se entra nel competitive set guardando fascia, segmenti e distanza, e nelle settimane successive legge il pick-up per segmento per capire quali ospiti si stanno spostando prima di toccare le tariffe"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo negli ultimi 14 giorni (offerta in più a Roma e revisione del competitive set): nessun articolo pubblicato, proposto o scartato tratta nuove aperture; il più vicino, quello del 7 novembre sulle presenze, ha un'altra tesi (calo dell'extralberghiero e lettura per segmento) e un'altra keyword",
+      "correzioni": [
+        "slug: nuove-aperture-hotel-roma-competitive-set (6 parole, senza date, unico; sostituisce il nome di lavoro della cartella)",
+        "categoria: confermata mercato (la causa è l'offerta nuova sul mercato di Roma)",
+        "title_seo: 'Nuove aperture di hotel a Roma e competitive set · Ricavia' (58 caratteri contati con script), keyword all'inizio, diverso da ogni altro title del sito",
+        "description: 158 caratteri contati con script, senza punto finale, senza data di apertura del Regency (non confermata da fonte ufficiale)",
+        "keyword: principale 'nuove aperture hotel Roma' (intento dell'albergatore, non del turista che cerca 'nuovi hotel Roma'), 4 secondarie",
+        "Apertura, prima frase: 'Due aperture dello stesso gruppo internazionale aggiungono a Roma' diventa 'Due nuove aperture dello stesso gruppo internazionale aggiungono agli hotel di Roma', per inserire la keyword; fatti, numeri e fonti invariati",
+        "Primo h3: 'Due aperture, due zone: centro storico ed Esquilino' diventa 'Nuove aperture di hotel a Roma: centro storico ed Esquilino', per inserire la keyword",
+        "related_intro e related: articolo del 7 novembre sulle presenze (lettura per segmento e competitive set) e /revenue-management/; nessuno ripete i collegamenti del corpo",
+        "Collegamenti interni del corpo verificati: 1 naturale (guida ai quartieri, articolo storico esistente) più /hotel-score/ nel paragrafo Ricavia; nessun collegamento verso la bozza 2"
+      ],
+      "segnalazioni": [
+        "Description e title non contengono la data di apertura dello Hyatt Regency: se l'apertura slitta oltre gennaio, la tesi va ricontrollata (segnalazione del revenue manager) ma i campi SEO restano validi",
+        "Il nome del gruppo (Hyatt) è nella description e tra le keyword secondarie solo per descrivere il fatto (regole-comuni 9 ter, punto 8); il capo redattore valuti se preferisce una description senza marchio",
+        "La build e check_seo.py non sono stati eseguiti su questa bozza: i file restano nella cartella di lavoro fino all'editore; title e description confrontati a mano con tools/seo.json e con i meta.json di journal/"
+      ],
+      "ruolo_ricavia": "Chi cerca come reagire a una nuova apertura nella propria zona ha come passo successivo naturale l'Hotel Score, che mostra dove l'hotel si colloca oggi nel competitive set, e poi il servizio di revenue management per la lettura settimanale del pick-up per segmento"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è un racconto chiaro e nuovo per il Journal (offerta in più, non domanda): il contrasto tra le due aperture, una che pesa sull'occupazione infrasettimanale tra Termini ed Esquilino e una che entra nel confronto online del centro storico, parla direttamente a chi deve rivedere il proprio competitive set",
+      "correzioni": [
+        "titolo: da 'Nuovi hotel a Termini e in centro: chi entra nel competitive set degli indipendenti' a 'Nuovi hotel a Termini e in centro: per gli indipendenti non sono lo stesso concorrente' (86 caratteri contati con script; tecnica contrasto, tra zone: l'ultimo contrasto pubblicato è del 6 novembre, l'8 novembre era una domanda; tutto ciò che annuncia è nelle sezioni Esquilino e Termini e Centro storico; nessun nome di azienda)",
+        "sottotitolo: scritto, senza punto finale, senza data di apertura e senza marchio",
+        "alternative_titolo: domanda (tre criteri del competitive set, azione 1), dato con fonte nominata (238 camere secondo Hyatt, comunicato di giugno), conseguenza (camere in più nelle settimane più calme); tutte sotto i 90 caratteri, uniche, senza punto finale",
+        "mood: serio (matrice: mercati, serio o provocatorio; il corpo è serio)",
+        "blockquote: da 'Un nuovo concorrente non si misura dal prezzo che pubblica, ma dagli ospiti che riesce a spostare' a 'Un nuovo hotel entra nel competitive set per gli ospiti che condivide, non per il marchio che porta'. Motivo: la frase precedente ripeteva quasi alla lettera la seconda frase dell'apertura; la nuova chiude il paragrafo sul centro storico (marchio noto) e anticipa il criterio dell'azione 1 (stessa fascia, stessi segmenti), con un contrasto senza numeri né nomi"
+      ],
+      "segnalazioni": [
+        "Il titolo dice 'nuovi hotel' e non 'aperti': lo Hyatt Regency non è ancora aperto e la data non è confermata da fonte ufficiale. Se l'apertura slitta oltre gennaio (segnalazione del revenue manager), titolo e sottotitolo ('arrivano all'inizio dei mesi più calmi') vanno ricontrollati con la tesi",
+        "L'alternativa con il dato (238 camere secondo Hyatt) nomina il gruppo solo come fonte del numero, in chiave neutra; se il capo redattore preferisce nessun marchio nei titoli, si scarta quella",
+        "La bozza 2 di oggi usa un titolo di tipo diverso (conseguenza), per non avere due contrasti nella stessa giornata"
+      ],
+      "ruolo_ricavia": "Il racconto regge se il paragrafo Ricavia mostra il criterio, non la reazione: Ricavia decide se il nuovo hotel entra nel competitive set guardando fascia, segmenti e distanza, e solo dopo legge che cosa cambia nel pick-up"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera, gratuita): Santa Maria Maggiore all'Esquilino racconta il luogo dell'apertura più grande senza mostrare né nominare gli hotel citati; la libreria non ha foto dell'Esquilino o di Termini",
+      "correzioni": [
+        "immagine: fonte stock, id 29220991, scheda compilata, prompt nullo, testo_sovrapposto nullo",
+        "immagine.libreria: riserva assets/img/90e6747927.webp (camera di fascia alta con vista su San Pietro, non usata negli ultimi 10 articoli), con alt_libreria scritto guardando il file",
+        "alt: scritto sulla foto stock scelta"
+      ],
+      "segnalazioni": [
+        "Libreria: nessuna foto dell'Esquilino, di Termini o di una facciata d'albergo senza persone; soggetto da aggiungere alla libreria (quartiere di Termini, facciate di zona)",
+        "Esclusi di proposito: vedute di Termini e di via Turati (rischio di inquadrare l'edificio dello Hyatt Regency), via delle Botteghe Oscure e piazza Venezia (Thompson Rome), reception e camere d'albergo che il lettore potrebbe scambiare per i nuovi hotel",
+        "Per l'editore: nel file a piena risoluzione controllare che sugli edifici a sinistra e a destra della basilica non ci siano insegne d'albergo leggibili; se ci sono, ritagliare o passare alla riserva",
+        "Ripetizione: l'8 novembre la copertina era un monumento romano (Colonna dell'Immacolata); qui cambiano soggetto, luce e quartiere, ma il capo redattore valuti se due monumenti in due giorni sono troppi; alternativa neutra: la riserva della libreria",
+        "Riserva: i cuscini rosa antico sono un accento piccolo, non un tono dominante"
+      ],
+      "ruolo_ricavia": "Ricavia guarda la zona prima del singolo concorrente: la copertina mostra il quartiere in cui l'offerta cambia, non il marchio che arriva, come il criterio con cui si decide il competitive set"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "NO-GO",
+      "motivo": "Dati non verificabili",
+      "correzioni": [],
+      "segnalazioni": [
+        "Il fatto che regge la tesi è l'apertura dello Hyatt Regency Rome Central all'inizio dell'inverno (apertura del lede, sottotitolo, In breve, finestra degli indicatori 'dall'apertura a febbraio'). La fonte primaria (newsroom Hyatt, 18-19 giugno 2026, riletta oggi) indica 'end of Q3 2026', data superata; la pagina dell'hotel su hyatt.com risponde 403 anche oggi. La 'seconda metà di novembre' regge su una sola fonte di settore (ITHIC, 29 ottobre). Per regole-comuni sezione 4, con la primaria non leggibile servono almeno due testate riconosciute e indipendenti: una sola non basta",
+        "Il rischio non è teorico: fonti non affidabili (MilesMate, UpgradedPoints, FlyerTalk) riportano sei rinvii dall'aprile 2025 e oggi il 1° dicembre. La frase del corpo 'l'apertura cade in ogni caso tra la fine del 2026 e l'inverno' è un'affermazione senza fonte",
+        "L'hotel occupa l'edificio dell'ex Radisson Es (ITHIC; altre fonti lo descrivono come chiuso da anni): sono camere che tornano sul mercato dopo una ristrutturazione, non camere nuove. Il testo parla di 'nuove aperture' che 'aggiungono agli hotel di Roma più di trecento camere' senza dirlo: un albergatore della zona se ne accorge subito. Inserirlo è un fatto in più, non una correzione di forma",
+        "Nessun problema di reputazione: il gruppo è nominato in modo neutro e le tariffe di lancio sono un'ipotesi condizionata. Il tema non è bloccato per reputazione",
+        "Riproponibile solo con fonte nuova: comunicato ufficiale di apertura di Hyatt o pagina dell'hotel con data di apertura leggibile, oppure due testate riconosciute e indipendenti che riportano la data; nella riproposta va detto che si tratta dell'ex Radisson Es e la tesi va misurata su camere che tornano sul mercato. Thompson Rome (aperto, fonte primaria) da solo non regge un articolo: 69 camere che, per il corpo stesso, non cambiano l'equilibrio del centro storico"
+      ],
+      "ruolo_ricavia": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED, meccanismo corretto; ma dipende da una data non verificata)",
+        "[ ] Ogni numero ha fonte o è dichiarato stima Ricavia come intervallo (camere e numeri con fonte primaria; la data di apertura che regge la tesi ha una sola fonte di settore e la primaria è superata)",
+        "[ ] Fonti citate con link; nessuna copia o parafrasi stretta (link presenti, nessuna copia; ma 'in ogni caso tra la fine del 2026 e l'inverno' non ha fonte)",
+        "[ ] Ruolo di Ricavia presente, al massimo 2 paragrafi (non scritto: NO-GO)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (nessun punto finale, nessun verbo vietato trovato)",
+        "[x] Tono coerente con la matrice del mood (serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun invito ad allinearsi sui prezzi, azioni per il singolo hotel)",
+        "[x] Da 700 a 1.100 parole, struttura completa (circa 920 parole)"
+      ]
+    }
+  ],
+  "slug": "nuove-aperture-hotel-roma-competitive-set",
+  "title_seo": "Nuove aperture di hotel a Roma e competitive set · Ricavia",
+  "description": "Due nuovi hotel Hyatt aggiungono più di trecento camere tra Termini e il centro di Roma: come decidere se entrano nel competitive set e quali segmenti seguire",
+  "keyword": {
+    "principale": "nuove aperture hotel Roma",
+    "secondarie": [
+      "competitive set hotel",
+      "hotel Termini Esquilino",
+      "Hyatt Regency Rome Central",
+      "pick-up per segmento"
+    ]
+  },
+  "related_intro": "Per confrontare il tuo hotel con i concorrenti giusti, approfondisci",
+  "related": [
+    {
+      "label": "le presenze di Roma lette per segmento",
+      "url": "/osservatorio/presenze-hotel-roma-extralberghiero/"
+    },
+    {
+      "label": "il servizio di revenue management",
+      "url": "/revenue-management/"
+    }
+  ],
+  "sottotitolo": "Più di trecento camere di fascia alta arrivano all'inizio dei mesi più calmi dell'anno: quali ospiti possono spostarsi, come decidere se il nuovo hotel entra nel competitive set e cosa leggere nel pick-up per segmento",
+  "alternative_titolo": [
+    "Il nuovo hotel di Termini entra nel tuo competitive set? Tre criteri prima delle tariffe",
+    "238 camere a Termini secondo Hyatt: l'inverno degli indipendenti si legge per segmento",
+    "Più camere a Termini nelle settimane più calme: il pick-up per segmento prima del prezzo"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Nuova offerta sul mercato alberghiero di Roma: rientra nella riga dati economici e mercati (serio o provocatorio). Il corpo ha un registro serio e prudente (occupazione ↓ bassa, ADR '?', data di apertura del Regency non confermata da fonte ufficiale, tariffe di lancio solo come ipotesi) e nomina un gruppo alberghiero: una provocazione rischierebbe di leggersi come un giudizio sul nuovo arrivato e direbbe più di quanto l'articolo dimostra. Serio"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 29220991,
+      "titolo": "Santa Maria Maggiore in Rome Italy",
+      "anteprima": "https://img.magnific.com/free-photo/santa-maria-maggiore-rome-italy_1268-20512.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: la facciata della basilica di Santa Maria Maggiore con il campanile, all'Esquilino, a pochi minuti da Termini: il quartiere in cui arrivano le camere in più, raccontato con il suo monumento e non con un hotel; nessun hotel citato, nessuna insegna, nessuna persona, nessun marchio\nInquadratura: dal basso, statica, basilica e campanile nella metà destra, ampio cielo a sinistra e in alto; il formato originale è già 16:9, il ritaglio social toglie una striscia sottile in alto e una più ampia in basso, senza tagliare la cuspide del campanile\nLuce: giorno coperto, luce diffusa e fredda, nessun sole diretto\nPalette: cielo grigio-azzurro con passaggi verso l'azzurro #3CCDFA e il blu #1F2DD0, travertino chiaro, facciate ocra; il mattone del campanile è un accento caldo naturale, non un tono dominante; nessun filtro\nAtmosfera: seria e statica, il quartiere prima dell'inverno; diversa dalla Colonna dell'Immacolata all'ora blu dell'8 novembre per luce, soggetto e quartiere",
+    "libreria": "assets/img/90e6747927.webp",
+    "alt_libreria": "Camera d'albergo luminosa con letto matrimoniale, pareti in marmo e una vetrata aperta sulla cupola di San Pietro",
+    "testo_sovrapposto": null
+  },
+  "alt": "Basilica di Santa Maria Maggiore all'Esquilino con il suo campanile, sotto un cielo coperto grigio e azzurro"
+}

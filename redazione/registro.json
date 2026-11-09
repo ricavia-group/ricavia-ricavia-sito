@@ -142,5 +142,29 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-09",
+    "slug": "sterlina-tassi-ospiti-britannici-roma",
+    "tema": "sterlina-tassi-boe-domanda-britannica-inverno-2027",
+    "keyword": "sterlina ospiti britannici Roma",
+    "categoria": "macro",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-09",
+    "slug": "nuove-aperture-hotel-roma-competitive-set",
+    "tema": "nuove-aperture-hotel-roma-hyatt-inverno-2026",
+    "keyword": "nuove aperture hotel Roma",
+    "categoria": "mercato",
+    "esito": "NO-GO",
+    "motivo": "Dati non verificabili",
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": true,
+    "pubblicato": false
   }
 ]
