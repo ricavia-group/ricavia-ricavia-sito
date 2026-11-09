@@ -322,7 +322,7 @@ def page(pid, slug, title):
 <meta property="og:url" content="{u}">
 <meta property="og:image" content="{i}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/img/favicon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 {ld}'''.format(t=html.escape(title), d=html.escape(desc, quote=True), u=url, i=og_image(pid), ld=jsonld(pid, title, url, content))
     h = fix_assets(head)
     doc = '<!doctype html>\n<html lang="it" class="%s">\n<head>\n%s\n%s\n%s\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (cls, h.strip(), meta, PRE if is_home else '<script>window.__MP=true;window.__DBG=/[?&]debug/.test(location.search)</script>', parts)
@@ -412,7 +412,7 @@ def art_page(aid, art):
 <meta property="og:url" content="{u}">
 <meta property="og:image" content="{i}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/img/favicon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <script type="application/ld+json">{ld}</script>'''.format(t=html.escape(t), d=html.escape(desc, quote=True), u=url, i=image_url, ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
     doc = '<!doctype html>\n<html lang="it" class="mp mp-in mp-art">\n<head>\n%s\n%s\n<script>window.__MP=true</script>\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (fix_assets(head).strip(), meta, SHIM + parts)
     d = os.path.join(OUT, ART_URL[aid].strip('/'))
@@ -459,7 +459,7 @@ def archive_page(mese, articoli):
 <meta property="og:url" content="{u}">
 <meta property="og:image" content="{i}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/img/favicon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <script type="application/ld+json">{ld}</script>'''.format(t=html.escape(title), d=html.escape(desc, quote=True), u=url, i=og_image('pg-osservatorio'), ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
     doc = '<!doctype html>\n<html lang="it" class="mp mp-in mp-art">\n<head>\n%s\n%s\n<script>window.__MP=true</script>\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (fix_assets(head).strip(), meta, SHIM + parts)
     d = os.path.join(OUT, path.strip('/'))
@@ -488,6 +488,8 @@ open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % (u.repl
 # chiave IndexNow (Bing e altri motori): il file deve restare raggiungibile alla radice del sito
 INDEXNOW_KEY = '77a8078505659e943f2e417aafa1d9db'
 open(os.path.join(OUT, INDEXNOW_KEY + '.txt'), 'w').write(INDEXNOW_KEY)
+# icona del sito anche all'indirizzo classico /favicon.ico (motori di ricerca e browser)
+shutil.copy(os.path.join(ROOT, 'assets', 'img', 'favicon.ico'), os.path.join(OUT, 'favicon.ico'))
 open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n' % DOMAIN)
 shutil.copy(os.path.join(ROOT, 'tools', 'headers'), os.path.join(OUT, '_headers'))
 # pagina 404: intestazione e piè di pagina della Home, messaggio semplice
