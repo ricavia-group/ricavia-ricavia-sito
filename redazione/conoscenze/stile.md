@@ -2,7 +2,7 @@
 
 File di conoscenza per la redazione, ricavato dai 6 articoli storici del Journal (in `index.html`, `<template id="jr-t-a1">` … `jr-t-a6`). Lo usano il giornalista quando scrive, il virality director per titoli e citazioni, il capo redattore per le correzioni di forma.
 
-Gerarchia: questo file descrive come suonano gli articoli storici. Dove gli storici contraddicono `CLAUDE.md` o `regole-comuni.md`, valgono le regole (vedi sezione 4).
+Gerarchia: questo file descrive come suonano gli articoli storici e, nelle sezioni 6 e 7, la voce che Ricavia ha approvato per i nuovi articoli. Dove gli storici contraddicono `CLAUDE.md`, `regole-comuni.md` o le sezioni 6 e 7, valgono le regole (vedi sezione 4).
 
 | Articolo | Categoria | Data | Parole del corpo (circa) | Sezioni h3 |
 |---|---|---|---|---|
@@ -25,7 +25,7 @@ Gerarchia: questo file descrive come suonano gli articoli storici. Dove gli stor
 
 ### Apertura (`jr-lede`)
 
-Due o tre frasi. Schema ricorrente: un'affermazione generale e breve sul mercato, poi lo spostamento del punto di vista verso chi gestisce, poi la conseguenza.
+Due o tre frasi. Schema ricorrente: un'affermazione generale e breve sul mercato, poi lo spostamento del punto di vista verso il lettore, poi la conseguenza. Nei nuovi articoli il lettore si chiama con il tu (sezione 6).
 
 - a1: affermazione ("A Roma la domanda c'è quasi sempre") e ribaltamento ("La vera domanda… è un'altra")
 - a2: tesi in negativo ("Roma non ha una sola alta stagione") e conseguenza per i prezzi
@@ -45,7 +45,7 @@ Due o tre frasi. Schema ricorrente: un'affermazione generale e breve sul mercato
 
 - Etichetta "In breve" in a1, a3, a6; "Come usarlo" in a2; "Lista di controllo" in a4 e a5. Per i nuovi articoli l'etichetta è sempre "In breve" (`regole-comuni.md`, sezione 7)
 - Quattro voci negli storici (cinque in a5); l'esempio di markup di `regole-comuni.md` (sezione 7) ne mostra tre. Sono ammesse da tre a cinque, brevi, parallele, con la stessa costruzione dentro lo stesso box
-- Due modelli: frasi dichiarative al presente (a1, a6: "Le nuove rotte anticipano i nuovi mercati") oppure imperativi alla seconda persona (a2, a3: "Prezza le singole date, non i mesi", "Leggi il ritmo delle prenotazioni, non solo il risultato del mese")
+- Due modelli: frasi dichiarative al presente (a1, a6: "Le nuove rotte anticipano i nuovi mercati") oppure imperativi alla seconda persona (a2, a3: "Prezza le singole date, non i mesi", "Leggi il ritmo delle prenotazioni, non solo il risultato del mese"). "Prezza" non si usa nei nuovi articoli (sezione 3)
 - Il box riassume la tesi, non aggiunge fatti nuovi
 
 ### Citazione (`blockquote class="jr-q"`)
@@ -60,12 +60,13 @@ Due o tre frasi. Schema ricorrente: un'affermazione generale e breve sul mercato
 - Ricorrenti: domanda, ospite, tariffe, prezzo, date, picchi, ponti, soggiorno minimo, ritmo delle prenotazioni, concorrenza, recensioni, annuncio, canale, commissioni, vendita diretta, zona, segmenti, soggiorni medi
 - "Struttura ricettiva" sempre completa, anche ripetuta più volte nello stesso paragrafo; mai "struttura" da sola
 - Sigle quasi assenti: gli storici non usano ADR, RevPAR, GOP o GOPPAR. Nei nuovi articoli le sigle compaiono nella sezione "Impatto sugli indicatori" e si spiegano la prima volta (`regole-comuni.md`, sezioni 6 e 6 bis)
-- Chi legge è indicato con "chi gestisce", "chi ospita", "chi apre o gestisce una struttura ricettiva", "chi imposta i prezzi"
+- Negli storici il lettore è indicato con "chi gestisce", "chi ospita", "chi apre o gestisce una struttura ricettiva", "chi imposta i prezzi". Nei nuovi articoli queste formule non si usano: il lettore si chiama con il tu (sezione 6)
 
 ### Come si rivolgono al lettore
 
-- Nel corpo: forma impersonale ("Chi gestisce qui deve seguirlo con attenzione"), raramente la seconda persona
-- Nei box e nelle chiusure: seconda persona singolare ("Vuoi sapere se la tua struttura ricettiva…", "verifica sempre le fonti ufficiali")
+- Negli storici, nel corpo: forma impersonale ("Chi gestisce qui deve seguirlo con attenzione"), raramente la seconda persona
+- Negli storici, nei box e nelle chiusure: seconda persona singolare ("Vuoi sapere se la tua struttura ricettiva…", "verifica sempre le fonti ufficiali")
+- **Nei nuovi articoli, ovunque: seconda persona singolare** ("il tuo hotel", "la tua struttura ricettiva", "puoi", "rischi di"). Mai la forma impersonale con "chi", mai gli hotel in terza persona ("gli hotel devono", "l'hotel può") quando si parla al lettore (sezione 6)
 - Ricavia parla in prima persona plurale per descrivere il proprio lavoro ("Mettiamo insieme dati pubblici su voli, flussi e prezzi"). Nei nuovi articoli il paragrafo Ricavia può usare la prima persona plurale (come `regole-comuni.md`, sezione 5) o la terza ("Ricavia controlla", come gli esempi di `ricavia.md`), mai le due nello stesso paragrafo
 
 ### Come finiscono
@@ -115,7 +116,14 @@ Citazioni esatte dagli articoli storici.
 |---|---|
 | Punto alla fine di paragrafi, voci, titoli, citazioni, didascalie | `CLAUDE.md`: il punto resta solo tra una frase e l'altra |
 | "Struttura" da sola | `CLAUDE.md`: sempre "struttura ricettiva", "hotel" o altro |
-| "Vanno", "va letto", "va detto", "coprono", "resta", "restano", "rimangono", "finiscono altrove", "prendono strade" | `CLAUDE.md`: verbi colloquiali; si scrive "si leggono", "si dichiara", "sono", "si trovano" |
+| "Vanno", "va letto", "va detto", "va verificato", "va rimosso" e ogni forma "va + participio", "coprono", "resta", "restano", "rimangono", "finiscono altrove", "prendono strade" | `CLAUDE.md`: verbi colloquiali o costruzioni indirette; si usa un verbo attivo e diretto rivolto al lettore ("verifica", "togli il vincolo", "controlla") o un verbo preciso con soggetto esplicito |
+| "Si" impersonale con un verbo improprio o generico: "il ponte si costruisce", "la notte si legge", "il vincolo si toglie", "si studia", "si ricontrolla", "si prezzano" | Decisione di Ricavia del 10 novembre 2026: costruzione contorta; si usa un verbo attivo e preciso ("il ponte include lunedì 7", "controlla il pick-up della notte del 4") |
+| "Prezzare", "prezza", "prezzate", "la prezziamo" | Verbo forzato: si scrive "tariffa dedicata", "decidi la tariffa", "ogni notte ha la sua tariffa" |
+| Verbi generici che non dicono il fatto ("il ponte dipende dal lunedì") | Si dice il fatto con il verbo esatto ("il ponte include lunedì 7 dicembre") |
+| "Agenzie di viaggio online" | Si scrive sempre OTA o OTAs, senza glossa |
+| Costruzioni con "chi" ("chi prende", "chi arriva", "chi gestisce") | Si scrive "gli ospiti che…", "i visitatori…", oppure si parla al lettore con il tu |
+| Hotel in terza persona quando si parla al lettore ("gli hotel devono", "l'hotel rischia") | Si scrive "il tuo hotel", "rischi di" |
+| Frasi contorte o da brochure, burocratese | Italiano semplice, da giornalista (sezione 6) |
 | "Bussola", "cruscotto", "a portata di mano" e immagini simili ("vetrina", "motore", "rovescio della medaglia", "guerra dei prezzi") | `CLAUDE.md`: metafore deboli; si dice il meccanismo |
 | "Così" a inizio frase | `CLAUDE.md` |
 | Aprire con la data o con "Secondo…" | `giornalista.md`, sezione 3 |
@@ -142,8 +150,31 @@ Citazioni esatte dagli articoli storici.
 
 ## 5. Come si traduce in un articolo nuovo
 
-- Apertura: affermazione breve sul fatto, spostamento verso chi gestisce, conseguenza per tariffe, occupazione o margine
+- Apertura: affermazione breve sul fatto, spostamento verso il lettore (il tuo hotel), conseguenza per tariffe, occupazione o margine
 - Sezioni h3: nome del tema, due punti, descrizione breve senza metafore ("Prati e Vaticano: famiglie, pellegrini e lavoro"); in un articolo su errori o azioni, titoli numerati
 - Una citazione per articolo, aforisma di contrasto, senza numeri, dopo il paragrafo che la dimostra
 - Box "In breve": da tre a cinque voci parallele, tutte dichiarative o tutte imperative
 - Ruolo di Ricavia: descrizione di una pratica dichiarata (`ricavia.md`, sezione 4.1), con un solo collegamento finale; i consigli della sezione 4.2 si scrivono come consigli, non come lavoro di Ricavia
+
+## 6. La voce giornalistica dei nuovi articoli (approvata da Ricavia, 8-10 novembre 2026)
+
+Riferimento: le testate digitali di servizio come Open e Il Post. L'articolo si scrive come lo scriverebbe un giornalista professionista per un lettore che ha poco tempo e spesso legge dallo smartphone.
+
+- **Italiano semplice, mai contorto**: frasi brevi, una informazione per frase. Si riducono le parole, non le informazioni
+- **Come si parla a un collega**: non si scrive niente che non si direbbe a voce. Niente burocratese, niente giri di parole, niente metafore quando esiste la parola esatta
+- **Il fatto prima**: l'apertura aggancia l'attualità con una frase breve, poi arrivano subito date, orari e conseguenze. Le informazioni più utili stanno in alto
+- **Tono di servizio**: neutro e preciso, al massimo un tocco colloquiale misurato
+- **Titoletti h3 descrittivi**, spesso con la data o il luogo ("Lo sciopero di venerdì 4", "Domenica 6, stop alle auto"), senza domande
+- **Il lettore si chiama con il tu**: "il tuo hotel", "la tua struttura ricettiva", "puoi", "rischi di". Mai "chi gestisce", mai gli hotel in terza persona
+- **Soggetto sempre esplicito e preciso**: "la notte di venerdì 4 ha una domanda propria", non "venerdì 4 ha una domanda propria"
+- **Verbi attivi e precisi**: niente "va + participio", niente "si" impersonale con verbi impropri (sezione 3)
+- **Fonti attribuite per nome nel testo**, meglio quelle ufficiali; i fatti incerti al condizionale
+
+## 7. Esempi approvati da Ricavia (prima → dopo)
+
+Correzioni fatte da Ricavia sull'articolo del ponte dell'Immacolata 2026. Servono a mostrare il tipo di correzione: i fatti non si riusano.
+
+- "L'Immacolata del 2026 cade di martedì, e per gli hotel di Roma il ponte si costruisce sul lunedì 7 dicembre" → "Quest'anno l'Immacolata cade di martedì. Per sfruttare i quattro giorni di ponte, da sabato 5 a martedì 8, serve un giorno di ferie, ovvero lunedì 7 dicembre"
+- "Il ponte prezzato notte per notte. Verificare che le notti dal 4 al 7 dicembre abbiano ciascuna la propria tariffa sul sito diretto e sulle OTA (agenzie di viaggio online)" → "Il primo passo è controllare che ogni notte, dal 4 al 7 dicembre, abbia la sua tariffa dedicata, sia sul sito diretto sia sulle OTAs"
+- "Per un hotel il ponte non è un blocco unico ma una sequenza di quattro notti con domande diverse, da prezzare una per una" → "Per il tuo hotel le quattro notti del ponte non hanno lo stesso valore"
+- Rifiutate senza alternativa approvata: "il ponte dipende dal lunedì 7", "la notte si legge nel pick-up", "il vincolo si toglie", "si studia prima che le prenotazioni lo mostrino"

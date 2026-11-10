@@ -61,9 +61,13 @@ Ogni fonte ha titolo, editore, link e data. Una notizia che regge solo su fonti 
 - Mai "struttura" da sola: "struttura ricettiva", "hotel" o altro
 - Lessico del settore: occupazione, tariffe, ADR, RevPAR, GOP, GOPPAR, margine, commissioni di distribuzione, costi operativi, personale, operatività, competitive set, pick-up, lead time, mix di segmento e di canale, riclassificazione secondo lo standard USALI, call conoscitiva
 - Niente verbi colloquiali ("vanno", "coprono", "resta/restano", "finiscono altrove", "prendono strade"), niente metafore deboli ("bussola", "cruscotto", "a portata di mano"), niente "Così" a inizio frase
-- Registro serio e professionale, frasi chiare, una idea per frase
+- Registro serio e professionale, frasi chiare, una idea per frase. Italiano semplice, da giornalista di una testata digitale di servizio (Open, Il Post), mai contorto: vedi `conoscenze/stile.md`, sezioni 6 e 7
+- Il lettore si chiama con il tu ("il tuo hotel", "la tua struttura ricettiva", "puoi"): mai costruzioni con "chi" ("chi gestisce", "chi arriva") e mai gli hotel in terza persona quando si parla al lettore
+- Verbi attivi e precisi: niente "va + participio" ("va verificato", "va rimosso"), niente "si" impersonale con verbi impropri o generici ("il ponte si costruisce", "la notte si legge", "il vincolo si toglie")
+- Mai "prezzare" in nessuna forma ("prezza", "prezzate", "la prezziamo"): si scrive "tariffa dedicata", "decidi la tariffa"
+- Mai "agenzie di viaggio online": si scrive sempre OTA o OTAs, senza glossa
 - Gli elenchi "In breve" hanno frasi brevi, parallele, con la stessa costruzione
-- Sigle spiegate la prima volta con una glossa breve, di massimo 6 parole circa, tra parentesi: "ADR (tariffa media per camera venduta)". La glossa è la prima parte della definizione del glossario (sezione 6 bis); la definizione completa non si incolla nell'articolo, vive solo nel glossario e nella pagina `/indicatori/`. Gli indicatori che non sono sigle (occupazione, pick-up, lead time) non hanno bisogno di glossa
+- Sigle spiegate la prima volta con una glossa breve, di massimo 6 parole circa, tra parentesi: "ADR (tariffa media per camera venduta)". La glossa è la prima parte della definizione del glossario (sezione 6 bis); la definizione completa non si incolla nell'articolo, vive solo nel glossario e nella pagina `/indicatori/`. Gli indicatori che non sono sigle (occupazione, pick-up, lead time) e le sigle OTA e OTAs non hanno bisogno di glossa
 - Nel testo non si scrivono i simboli minore e maggiore: si scrive "meno di" e "più di"
 
 ## 6 bis. Glossario degli indicatori

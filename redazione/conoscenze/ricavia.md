@@ -156,7 +156,7 @@ Il capo redattore sceglie la voce più pertinente e, nel limite del possibile, n
 
 | # | Consiglio | Notizie adatte | Pagina | Fonte |
 |---|---|---|---|---|
-| A | Prezzare le singole date, separando infrasettimanale, weekend e date con evento, invece di una tariffa fissa per stagione | Concerti, partite, ponti | `/revenue-management/` | articolo: Tre errori di prezzo; articolo: Calendario di Roma |
+| A | Dare a ogni data una tariffa dedicata, separando infrasettimanale, weekend e date con evento, invece di una tariffa fissa per stagione | Concerti, partite, ponti | `/revenue-management/` | articolo: Tre errori di prezzo; articolo: Calendario di Roma |
 | B | Usare il soggiorno minimo nei picchi e toglierlo quando il picco non si riempie | Grandi eventi di più giorni, ponti, Capodanno | `/revenue-management/` | articolo: Calendario di Roma |
 | C | Preparare un calendario a 12 mesi con eventi, ponti e festività e rivedere le date calde almeno una volta a settimana | Annunci di eventi, festività | `/revenue-management/` | articolo: Calendario di Roma |
 | D | Rivedere ogni mese soggiorni minimi, chiusure all'arrivo e politiche di cancellazione tra i canali | Dopo un ponte o un evento, scioperi, cambi di regole delle OTA | `/revenue-management/` | articolo: Tre errori di prezzo |
