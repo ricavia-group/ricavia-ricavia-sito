@@ -166,5 +166,17 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": true,
     "pubblicato": false
+  },
+  {
+    "data": "2026-11-10",
+    "slug": "alta-velocita-roma-napoli-hotel",
+    "tema": "lavori-av-roma-napoli-gennaio-2027",
+    "keyword": "alta velocità Roma-Napoli hotel",
+    "categoria": "trasporti",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
