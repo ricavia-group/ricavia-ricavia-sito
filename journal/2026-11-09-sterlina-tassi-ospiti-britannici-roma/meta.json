@@ -1,0 +1,214 @@
+{
+  "slug": "sterlina-tassi-ospiti-britannici-roma",
+  "data": "2026-11-09",
+  "categoria": "macro",
+  "titolo": "Sterlina forte: Roma costa meno ai britannici, ma il cambio non sposta l'ADR",
+  "sottotitolo": "Tassi in salita nel Regno Unito e una sterlina più forte di un anno fa: perché il cambio non dà a Roma un vantaggio sulle città dell'area euro e come leggere gli ospiti britannici nel pick-up dei weekend d'inverno",
+  "title_seo": "Sterlina, tassi e ospiti britannici a Roma · Ricavia",
+  "description": "Sterlina più forte e tassi in salita nel Regno Unito: perché il cambio non sposta l'ADR e come leggere nel pick-up gli ospiti britannici dei weekend d'inverno",
+  "related_intro": "Per leggere la domanda straniera dei weekend d'inverno, approfondisci",
+  "related": [
+    {
+      "label": "le notti di partita del Sei Nazioni all'Olimpico",
+      "url": "/osservatorio/sei-nazioni-hotel-roma-tariffe/"
+    },
+    {
+      "label": "il traffico aereo di Roma per l'inverno",
+      "url": "/osservatorio/traffico-aereo-roma-inverno-hotel/"
+    }
+  ],
+  "alt": "Moneta da una sterlina su una superficie grigio-blu, con un'altra moneta sfocata sullo sfondo",
+  "autore": "Tito · Redazione Ricavia",
+  "tesi": "Il 5 novembre la Banca d'Inghilterra ha alzato il tasso al 4% e prevede un'inflazione al 4,5% circa nel primo trimestre 2027, con energia e mutui che riducono il reddito disponibile, mentre la sterlina compra circa il 5% di euro in più di un anno fa (0,83415 contro 0,8795, cambi Banca d'Italia): per gli ospiti britannici Roma costa meno in sterline ma il loro budget si stringe, e il cambio non dà vantaggi rispetto alle altre città dell'area euro; chi gestisce un hotel a Roma con ospiti britannici nei weekend da gennaio a marzo 2027 non deve muovere le tariffe per il solo cambio (l'ADR in euro non cambia), ma separare nel pick-up il mercato britannico, controllare il prezzo mostrato in sterline sui canali e tenere le notti del 12 e 13 marzo di Italia-Galles fuori dal confronto, perché lì la domanda dipende dalla partita più che dal cambio",
+  "tema": "sterlina-tassi-boe-domanda-britannica-inverno-2027",
+  "fonti": [
+    {
+      "titolo": "Monetary Policy Summary and minutes, November 2026",
+      "editore": "Bank of England",
+      "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+      "data": "2026-11-09"
+    },
+    {
+      "titolo": "Cambi di riferimento del 6 novembre 2026",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/compiti/operazioni-cambi/cambio/cambi_rif_20261106",
+      "data": "2026-11-09"
+    },
+    {
+      "titolo": "Cambi di riferimento del 4 novembre 2025",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/compiti/operazioni-cambi/cambio/cambi_rif_20251104",
+      "data": "2026-11-09"
+    },
+    {
+      "titolo": "A Natale previsti 4mln di arrivi dall'estero in aeroporti italiani: le stime dell'Enit",
+      "editore": "Sky TG24",
+      "url": "https://tg24.sky.it/economia/2025/12/04/mitur-enit-natale-aeroporti-turisti",
+      "data": "2026-11-09"
+    },
+    {
+      "titolo": "Guinness Men's Six Nations 2027, pagina biglietti delle partite dell'Italia (titolo descrittivo)",
+      "editore": "Federazione Italiana Rugby",
+      "url": "https://www.federugby.it/gm6n/",
+      "data": "2026-11-09"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Fatto di 4 giorni fa su fonte primaria (decisione della Banca d'Inghilterra del 5 novembre) che, insieme al cambio Banca d'Italia, tocca un mercato di provenienza importante per Roma in un periodo preciso (weekend da gennaio a marzo 2027, notti del 12 e 13 marzo) con azioni concrete; garantisce il mix (guarda avanti, unico macro della giornata)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Calcoli da verificare: 0,83415/0,8795 = 0,948, cioè circa 5% in meno in sterline a parità di prezzo in euro; 1/0,83415 = 1,199 contro 1/0,8795 = 1,137 euro per sterlina, cioè circa 5% di euro in più; dollaro 1,1165/1,1491 = 0,972, circa 3%. Le due date non coincidono (6 novembre 2026 contro 4 novembre 2025, ultimo dato letto per l'anno precedente): differenza di due giorni, dichiarata nel testo",
+        "Il dato sul peso del Regno Unito (circa 585 mila arrivi aerei per le festività 2025, secondo mercato dopo la Spagna) è nazionale, non di Roma, e viene da una testata (Sky TG24) che riprende ENIT e ministero del Turismo: fatto di contorno, attribuito. Nessuna fonte letta dà la quota britannica sugli arrivi a Roma: l'articolo non la scrive",
+        "La previsione della Banca d'Inghilterra non contiene numeri su consumi o viaggi: nel testo solo la valutazione qualitativa del comitato. La frase sul fine settimana all'estero come spesa rinviabile è un ragionamento, senza numeri",
+        "Il voto 8 a 1 viene dalla fonte primaria; alcune fonti secondarie scrivono 9 a 0: vale la primaria",
+        "Rischio fotocopia: l'articolo del 4 novembre (traffico aereo) e quello del 7 novembre (rotte dal Nord America) concludono anch'essi sul pick-up per mercato. Qui la tesi nuova è che il cambio non cambia l'ADR né la posizione di Roma rispetto alle città dell'area euro; le azioni 2 e 3 sono diverse. Il capo redattore valuti l'insieme",
+        "Le notti di Italia-Galles: data e sede dalla pagina biglietti della FIR (letta oggi); il collegamento all'articolo sul Sei Nazioni è stato lasciato fuori dal corpo per restare a 1 collegamento interno, il SEO director può usarlo in related",
+        "Antitrust: nessun livello di prezzo né percentuale da applicare; il 5% descrive il cambio, non una variazione di tariffa",
+        "Collegamenti interni nel corpo: 1 (articolo sui voli), più /metodo/ nel paragrafo Ricavia (voce 4.1 n. 13)",
+        "Parole del corpo: circa 855"
+      ],
+      "ruolo_ricavia": "Ricavia ordina in un piano di una pagina gli interventi che una notizia macro rende necessari, per impatto sull'utile, prima di toccare le tariffe"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta e verificata sulle fonti primarie: il cambio cambia il prezzo pagato in sterline, non l'ADR in euro né la posizione di Roma rispetto all'area euro, e l'effetto netto sul mercato britannico è incerto; corretta l'azione 3, che attribuiva al cambio un peso maggiore proprio nelle notti in cui la domanda è guidata dall'evento",
+      "correzioni": [
+        "Cosa fare adesso, azione 3: da 'verificare che 12 e 13 marzo abbiano una tariffa propria... è la data in cui il cambio può pesare di più' a 'tenere quelle notti fuori dal confronto del mercato britannico'. Motivo: nelle notti di partita la domanda dipende dall'evento e dalla capienza dello stadio, non dal cambio; inserite nella media nascondono l'andamento dei weekend ordinari. La tariffa propria di quelle notti è già il tema dell'articolo pubblicato il 3 novembre sul Sei Nazioni (rischio di ripetizione)",
+        "Tesi: allineata alla nuova azione 3",
+        "Impatto sugli indicatori: aggiunto 'da monitorare' alle voci con '?' (manuale, sezione 5), virgola dopo il simbolo come nel formato, precisata la finestra in ogni voce; RevPAR motivato con 'ADR stabile' per coerenza con il glossario"
+      ],
+      "segnalazioni": [
+        "Numeri verificati sulle fonti: BoE 4% da 3,75%, voto 8 a 1 (Mann per 4,25%), CPI 3,5% a settembre, circa 4,5% nel primo trimestre 2027 e circa 5% nel secondo; Banca d'Italia 0,83415 e 1,1165 (6 novembre 2026), 0,8795 e 1,1491 (4 novembre 2025); Sky TG24 585 mila arrivi aerei dal Regno Unito, secondo dopo la Spagna. Calcoli corretti: 0,83415/0,8795 = 0,948 (circa 5% in meno), 1/0,83415 contro 1/0,8795 = più 5,4% di euro per sterlina, dollaro 0,972 (circa 3%)",
+        "Il confronto dei cambi usa due date diverse (6 novembre 2026 e 4 novembre 2025). Esiste la pagina del 4 novembre 2026 (0,83460, letta dal giornalista): confrontare lo stesso giorno sarebbe più pulito e il risultato non cambia. Non modificato: decide il capo redattore",
+        "Apertura: 'inflazione in crescita fino all'estate 2027' semplifica la previsione BoE (circa 5% nel secondo trimestre, aprile-giugno): 'fino al secondo trimestre 2027' sarebbe più preciso. Fuori dal mio ambito, non modificato",
+        "Il paragrafo su Italia-Galles nel corpo resta corretto nell'aritmetica (a parità di tariffa le notti costano meno in sterline), ma letto con l'azione 3 corretta non va presentato come la data dove il cambio pesa di più",
+        "Peso dell'effetto per gli hotel: nessuna fonte dà la quota britannica sugli arrivi a Roma, quindi l'articolo non può dire quanto pesa il segmento; impatto incerto per costruzione. Tesi corretta, utilità per l'hotel medio limitata: la scelta è del capo redattore",
+        "Rischio fotocopia nelle conclusioni (pick-up per mercato, come gli articoli del 4 e del 7 novembre): l'azione 1 è vicina a quelle pubblicate; le azioni 2 e 3 sono diverse. Lo valuti il capo redattore con il SEO director",
+        "Antitrust: nessun livello di prezzo né percentuale da applicare; il 5% descrive il cambio. Azioni per il singolo hotel"
+      ],
+      "ruolo_ricavia": "Quando il cambio si muove, Ricavia separa il mercato di provenienza nel pick-up settimanale e lo confronta con i weekend dell'anno prima, tenendo da parte le notti di evento, prima di decidere se la strategia tariffaria va cambiata"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo negli ultimi 14 giorni (cambio della sterlina e tassi della Banca d'Inghilterra sul mercato britannico): l'unico macro recente, quello del 3 novembre su inflazione ed energia, tratta i costi; gli articoli del 4 e del 7 novembre hanno keyword e fatti diversi (traffico aereo, rotte dal Nord America), anche se concludono anch'essi sul pick-up per mercato",
+      "correzioni": [
+        "slug: confermato sterlina-tassi-ospiti-britannici-roma (5 parole, senza date, unico)",
+        "categoria: confermata macro (la causa è la politica monetaria britannica e il cambio)",
+        "title_seo: 'Sterlina, tassi e ospiti britannici a Roma · Ricavia' (52 caratteri contati con script; la prima versione con ': cambio e tassi' era di 61 e superava il limite)",
+        "description: 158 caratteri contati con script, senza punto finale, senza cifre provvisorie",
+        "keyword: principale 'sterlina ospiti britannici Roma', 4 secondarie; nell'apertura è già nella seconda frase ('Per gli ospiti britannici di Roma... in sterline'), prima frase non toccata",
+        "Secondo h3: 'Il cambio: Roma costa circa il 5% in meno in sterline' diventa 'Il cambio: per gli ospiti britannici Roma costa circa il 5% in meno in sterline', per inserire la keyword; numero e fonte invariati",
+        "related_intro e related: articolo del 3 novembre sul Sei Nazioni (le notti di Italia-Galles, indicato dal giornalista) e articolo del 4 novembre sul traffico aereo d'inverno; nessuno ripete i collegamenti del corpo",
+        "Collegamenti interni del corpo verificati: 1 naturale (articolo storico sui voli) più /metodo/ nel paragrafo Ricavia; nessun collegamento verso la bozza 1"
+      ],
+      "segnalazioni": [
+        "Rischio fotocopia nelle conclusioni (pick-up per mercato, come gli articoli del 4 e del 7 novembre), già segnalato da giornalista e revenue manager: per la SEO non è cannibalizzazione, perché keyword e intento di ricerca sono diversi; il giudizio editoriale resta al capo redattore",
+        "Apertura, prima frase: 'inflazione in crescita fino all'estate 2027' non è precisa rispetto alla previsione della Banca d'Inghilterra (secondo trimestre 2027), come segnalato dal revenue manager; non toccata perché la correzione riguarda un fatto, non la keyword",
+        "Intento di ricerca: il volume di ricerca di chi gestisce un hotel su questo tema è probabilmente basso; il valore dell'articolo è più editoriale che di posizionamento",
+        "La build e check_seo.py non sono stati eseguiti su questa bozza: title e description confrontati a mano con tools/seo.json e con i meta.json di journal/"
+      ],
+      "ruolo_ricavia": "Chi arriva cercando l'effetto del cambio sugli ospiti stranieri ha come passo successivo naturale il metodo Ricavia, che ordina gli interventi per impatto sull'utile prima di toccare le tariffe, e poi la pagina degli indicatori per capire perché il cambio non sposta l'ADR"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "Il racconto ha un punto di vista che l'albergatore non si aspetta e che ripeterebbe a un collega: la sterlina forte rende Roma più economica per i britannici, ma l'ADR in euro non cambia e lo stesso vantaggio vale per tutte le città dell'area euro",
+      "correzioni": [
+        "titolo: da 'Sterlina forte e tassi in salita: due spinte opposte sugli ospiti britannici a Roma' a 'Sterlina forte: Roma costa meno ai britannici, ma il cambio non sposta l'ADR' (76 caratteri contati con script; tecnica conseguenza inattesa, tipo diverso dal contrasto della bozza 1 e dalla domanda dell'8 novembre; mantiene ciò che promette: sezione sul cambio e voce ADR '=' degli indicatori)",
+        "sottotitolo: scritto, senza punto finale; dice le due cose che il lettore trova (nessun vantaggio sull'area euro, lettura del pick-up britannico dei weekend d'inverno) e non riprende 'fino all'estate 2027' dell'apertura",
+        "alternative_titolo: domanda (sterlina o budget, dall'apertura), dato con fonte nominata (circa il 5% sui cambi della Banca d'Italia, calcolo verificato dal revenue manager), contrasto (il titolo di lavoro del giornalista); tutte sotto i 90 caratteri, uniche",
+        "mood: serio (matrice: dati economici e mercati, serio o provocatorio; effetto incerto)",
+        "blockquote: confermato senza modifiche ('Il cambio decide quanto costa Roma in sterline. Il bilancio delle famiglie decide se si parte'): aforisma di contrasto, senza numeri né nomi, chiude il ragionamento delle due spinte opposte"
+      ],
+      "segnalazioni": [
+        "Il titolo afferma che il cambio non sposta l'ADR: è la tesi verificata dal revenue manager (ADR '=' perché la tariffa incassata è in euro). Se il capo redattore preferisce non mettere la sigla nel titolo, l'alternativa di tipo domanda è la più vicina al corpo",
+        "Interesse limitato per l'hotel medio (già segnalato da revenue manager e SEO director): nessuna fonte dà il peso degli ospiti britannici a Roma. Il racconto regge sul punto contro-intuitivo del cambio, non sulla dimensione del segmento",
+        "Le conclusioni sul pick-up per mercato sono vicine a quelle del 4 e del 7 novembre: titolo e sottotitolo puntano sul cambio e sull'ADR proprio per differenziare il taglio"
+      ],
+      "ruolo_ricavia": "Il paragrafo Ricavia rafforza il racconto se mostra la disciplina che il titolo promette: davanti a una notizia sul cambio, Ricavia separa il mercato britannico nel pick-up e ordina gli interventi per impatto sull'utile prima di toccare le tariffe"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera): una moneta da una sterlina racconta il tema del cambio in modo diretto e sobrio; la libreria non ha nulla su valute o mercati esteri",
+      "correzioni": [
+        "immagine: fonte stock, id 5080692, scheda compilata, prompt nullo, testo_sovrapposto nullo",
+        "immagine.libreria: riserva assets/img/c0d93aa676.webp (camera d'albergo neutra, non usata negli ultimi 10 articoli), con alt_libreria scritto guardando il file",
+        "alt: scritto sulla foto stock scelta"
+      ],
+      "segnalazioni": [
+        "Foto premium (150 crediti invece di 40): tra le gratuite con la sterlina c'erano solo grafiche e lavori in carta, non fotografie; scelta consentita dal manuale",
+        "Scartate le foto con il lato del ritratto del sovrano (persona reale riconoscibile), con banconote e con passaporti",
+        "Scritta 'ONE POUND' leggibile sul bordo della moneta: è parte dell'oggetto e identifica la valuta, non è un marchio; se il capo redattore preferisce nessuna scritta, si passa alla riserva",
+        "Libreria: nessuna foto su valute, cambi o ospiti stranieri senza persone; soggetto da valutare per la libreria",
+        "Riserva: la panca ai piedi del letto è color vinaccia scuro, accento piccolo e non dominante"
+      ],
+      "ruolo_ricavia": "Ricavia separa ciò che cambia per l'ospite da ciò che cambia per l'hotel: la copertina mostra la valuta in cui paga l'ospite, mentre la tariffa e l'ADR restano in euro"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Apertura, prima frase: 'inflazione in crescita fino all'estate 2027' diventa 'fino al secondo trimestre 2027', come nella previsione della Banca d'Inghilterra (circa 4,5% nel primo trimestre e circa 5% nel secondo, poi in calo), riletta oggi: frase resa più precisa, nessun fatto nuovo",
+        "Terza sezione: 'i dati di ENIT e del ministero del Turismo, ripresi da Sky TG24' diventa 'le stime di ENIT e del ministero del Turismo sulle prenotazioni, riprese da Sky TG24': l'articolo di Sky TG24 (riletto oggi) riporta stime basate sulle prenotazioni, non arrivi registrati",
+        "Paragrafo Ricavia riscritto: fonde le frasi di giornalista, SEO director e virality director sul piano di una pagina (ricavia.md 4.1 n. 13, non usata negli articoli della settimana) e lo lega all'azione 2 (valuta e conversione mostrate sui canali); scartata la lettura settimanale del pick-up per mercato (4.1 n. 2), già usata il 3, il 6 e il 7 novembre; collegamento di chiusura /metodo/, non usato nella settimana"
+      ],
+      "segnalazioni": [
+        "Rischio fotocopia valutato: l'azione 1 (mercato separato nel pick-up) è vicina all'azione 2 del 7 novembre e all'azione 3 del 3 novembre; le azioni 2 e 3, la tesi (il cambio non cambia l'ADR né la posizione di Roma rispetto alle città dell'area euro), la categoria macro e il tipo di titolo sono nuovi nel Journal. Accettato per questa volta; per i prossimi giorni la redazione eviti un'altra chiusura sul pick-up per mercato o per segmento",
+        "Peso del mercato britannico a Roma: nessuna fonte lo dà e l'articolo non lo scrive; il dato di contesto è nazionale e attribuito. Utilità limitata per chi ha pochi ospiti britannici, dichiarata implicitamente dagli indicatori '?'",
+        "Il confronto dei cambi usa il 6 novembre 2026 e il 4 novembre 2025, entrambe le date sono scritte nel testo; il confronto sullo stesso giorno (4 novembre 2026, 0,83460) non cambia il risultato. Non modificato: cambierebbe numero e fonte",
+        "Numeri ricontrollati oggi sulle fonti primarie: Bank Rate dal 3,75% al 4%, voto 8 a 1 (Mann per 4,25%), CPI 3,5% a settembre; Banca d'Italia 0,83415 e 1,1165 (6 novembre 2026), 0,87950 e 1,1491 (4 novembre 2025); calcoli corretti (circa 5% e circa 3%)"
+      ],
+      "ruolo_ricavia": "Una decisione di politica monetaria non diventa una tariffa diversa il giorno dopo: Ricavia ordina in un piano di una pagina gli interventi che la notizia rende necessari, per impatto sull'utile, e mette il controllo della valuta mostrata sui canali prima di qualsiasi valutazione sul prezzo",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; il cambio cambia il prezzo pagato in sterline, non l'ADR in euro; effetto netto incerto dichiarato)",
+        "[x] Ogni numero ha fonte o è dichiarato stima Ricavia come intervallo (BoE, Banca d'Italia, FIR primarie; Sky TG24 per un dato di contorno nazionale, attribuito e ora indicato come stima)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, al massimo 2 paragrafi, utile e non pubblicitario (1 paragrafo, pratica 4.1 n. 13, collegamento /metodo/)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (nessun punto finale, nessun verbo vietato, OTA spiegata)",
+        "[x] Tono coerente con la matrice del mood (macro: serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; somiglianza nelle conclusioni valutata e accettata, vedi segnalazioni)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo né percentuale da applicare; il 5% descrive il cambio; nessun consiglio di investimento)",
+        "[x] Da 700 a 1.100 parole, struttura completa (circa 915 parole, 5 h3, impatto, azioni, In breve)"
+      ]
+    }
+  ],
+  "keyword": {
+    "principale": "sterlina ospiti britannici Roma",
+    "secondarie": [
+      "cambio sterlina euro hotel",
+      "Banca d'Inghilterra tassi",
+      "mercato britannico hotel Roma",
+      "pick-up per mercato di provenienza"
+    ]
+  },
+  "alternative_titolo": [
+    "Ospiti britannici a Roma: pesa di più la sterlina forte o il budget che si stringe?",
+    "Sui cambi della Banca d'Italia la sterlina guadagna circa il 5%: l'ADR in euro non cambia",
+    "Sterlina forte e tassi in salita: due spinte opposte sugli ospiti britannici a Roma"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Politica monetaria e cambi: rientra nella riga dati economici e mercati (serio o provocatorio). L'effetto netto sul mercato britannico è incerto per costruzione (pick-up, occupazione e RevPAR '?', ADR '='), nessuna fonte dà il peso degli ospiti britannici a Roma e il corpo ha un registro serio: una provocazione direbbe più di quanto l'articolo dimostra. Serio"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 5080692,
+      "titolo": "New British one pound coin",
+      "anteprima": "https://img.magnific.com/premium-photo/new-british-one-pound-coin_117856-333.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: una moneta da una sterlina, lato con lo stemma floreale (rosa, porro, cardo e trifoglio sotto la corona), appoggiata su una superficie lucida grigio-blu; una seconda moneta sfocata in alto a sinistra; nessun ritratto, nessuna persona, nessun marchio. L'unica scritta leggibile è 'ONE POUND' sul bordo della moneta: scelta motivata, identifica la valuta di cui parla l'articolo\nInquadratura: dall'alto in diagonale, moneta principale al centro e leggermente a destra, ampio spazio negativo di superficie scura; il formato originale è 3:2, il ritaglio 16:9 e quello social tolgono strisce in alto e in basso, la moneta principale resta intera nella fascia centrale\nLuce: da studio, morbida e laterale, riflessi sul metallo\nPalette: grigio-blu freddo dominante, vicino al blu #1F2DD0 desaturato, oro e argento della moneta come unico accento; niente rosso\nAtmosfera: seria e sobria, la valuta dell'ospite britannico vista da vicino; diversa da tutte le copertine recenti (monumenti, aerei, camere, campo da tennis, Tevere)",
+    "libreria": "assets/img/c0d93aa676.webp",
+    "alt_libreria": "Camera d'albergo moderna con letto matrimoniale bianco, due lampade accese sui comodini, una panca ai piedi del letto e tende chiare alla finestra",
+    "testo_sovrapposto": null
+  }
+}
