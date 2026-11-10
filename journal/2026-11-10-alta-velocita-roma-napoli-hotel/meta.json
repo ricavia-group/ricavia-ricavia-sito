@@ -1,0 +1,207 @@
+{
+  "titolo": "Alta velocità Roma-Napoli interrotta dal 18 al 31 gennaio: notti a Roma in meno o in più",
+  "categoria": "trasporti",
+  "autore": "Tito · Redazione Ricavia",
+  "tesi": "RFI indica un'interruzione della linea Roma-Napoli AV/AC tra il bivio di Cassino sud e Napoli Afragola dal 18 al 31 gennaio 2027, in due settimane che per Roma sono la base dell'anno: per un hotel romano l'effetto non è uno stop in una notte ma due settimane di viaggi più lunghi, che possono togliere notti (impegni di lavoro rinviati, gite a Napoli trasformate in notti fuori Roma) o aggiungerne (chi non riesce più a tornare in giornata dorme a Roma la sera prima); senza orari modificati pubblicati la direzione è incerta, quindi chi gestisce un hotel a Roma non tocca le tariffe ma legge ora le prenotazioni dal 18 al 31 gennaio per provenienza e motivo del viaggio, prepara i messaggi prima dell'arrivo (anche per l'interruzione Ostiense-Fiumicino dal 26 al 29 novembre) e rende facile prenotare sul sito diretto la notte prima dell'impegno per i clienti di lavoro dalla Campania",
+  "tema": "lavori-av-roma-napoli-gennaio-2027",
+  "fonti": [
+    {
+      "titolo": "Lazio (lavori in corso e interruzioni programmate)",
+      "editore": "RFI · Rete Ferroviaria Italiana",
+      "url": "https://www.rfi.it/it/rete/i-nostri-progetti/I-nostri-progetti-regione-per-regione/lazio.html",
+      "data": "2026-11-10"
+    },
+    {
+      "titolo": "Leonardo Express: circolazione sospesa su Orte-Fiumicino, si accumulano ritardi e cancellazioni",
+      "editore": "Teleborsa",
+      "url": "https://www.teleborsa.it/News/2026/11/04/leonardo-express-circolazione-sospesa-su-orte-fiumicino-si-accumulano-ritardi-e-cancellazioni-65.html",
+      "data": "2026-11-10"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Fatto futuro su fonte primaria leggibile (RFI), a 69 giorni dalla data, nessuna testata lo ha ancora trattato: tocca hotel di Roma in due settimane di bassa stagione con azioni concrete da fare ora; garantisce da solo il mix (Roma e guarda avanti)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Unica bozza della giornata: gli altri candidati che superano i filtri hanno forza 2 su 5 e fonti deboli (dettaglio in candidati.md e note-giornalista.md)",
+        "La pagina RFI non ha data di pubblicazione e non dice come saranno gestiti i treni: l'articolo non scrive deviazioni, tempi di viaggio né cancellazioni, solo che li comunicheranno Trenitalia e Italo. Se il revenue manager ritiene l'effetto troppo incerto per una tesi, il punto è questo",
+        "Estensione della recentezza: evento futuro annunciato in data non nota, ammesso perché cade tra 2 settimane e 6 mesi (69 giorni) e nessun articolo l'ha trattato; nessuna testata trovata oggi lo riporta",
+        "Fatti di conoscenza generale scritti senza numeri: impegni di lavoro Napoli-Roma risolti in giornata con la linea veloce, ospiti stranieri con una giornata a Napoli in programma, arrivi dal Sud che passano per Napoli. roma.md segnala come DA COMPLETARE il peso del treno negli arrivi: l'articolo non lo quantifica e non attribuisce effetti a zone precise",
+        "Interruzione Ostiense-Fiumicino del 26-29 novembre usata come contesto (fonte primaria RFI; che sia la tratta di FL1 e Leonardo Express viene da Teleborsa, fatto di contorno attribuito). Per regole-comuni sezione 7 non può diventare un articolo a sé nella stessa giornata",
+        "Rischio fotocopia con l'articolo del 3 novembre sullo sciopero dei treni (stesso canale di arrivo, stessa azione 'prenotazioni per provenienza'): la bozza lo cita e lo distingue (interruzione programmata di due settimane, effetto in due direzioni, segmento gita a Napoli, notte prima per il lavoro). Titolo di lavoro di tipo diverso (non domanda). Il capo redattore valuti",
+        "Antitrust: nessun livello di prezzo né invito ad allinearsi; le azioni sono per il singolo hotel e sui suoi dati",
+        "Collegamenti interni nel corpo: 2 (calendario di Roma, articolo sullo sciopero dei treni), più /revenue-management/ nel paragrafo Ricavia (voce 4.1 n. 2, la stessa area del paragrafo del 3 novembre ma con parole e costruzione diverse; più di 7 giorni fa)",
+        "Parole del corpo: circa 1.050"
+      ],
+      "ruolo_ricavia": "Ricavia legge ogni settimana pick-up e occupazione a 90 giorni: le notti dal 18 al 31 gennaio sono già in quell'orizzonte e si confrontano con le settimane vicine, per segmento e provenienza, prima di toccare le tariffe"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge: un'interruzione programmata di due settimane su un collegamento usato in giornata agisce sulle notti in due direzioni opposte, la direzione non si conosce senza orari modificati e le azioni proposte (lettura delle prenotazioni per provenienza, messaggi prima dell'arrivo, notte prima prenotabile sul diretto) sono utili, adatte a un hotel indipendente e senza tagli di prezzo",
+      "correzioni": [
+        "Impatto, Occupazione: segmento corretto da 'lavoro e leisure italiano in arrivo dalla Campania e dal Sud' a 'lavoro in arrivo dalla Campania e leisure internazionale con una giornata a Napoli in programma' (per il corpo gli arrivi dal resto del Sud non cambiano la scelta di venire, mentre le gite trasformate in notti fuori Roma tolgono notti vendute); aggiunto 'impatto incerto, da monitorare sul pick-up dopo la pubblicazione degli orari modificati'",
+        "Impatto, Pick-up: finestra da 'da dicembre a fine gennaio' a 'da oggi al 31 gennaio' (le prenotazioni per quelle notti si acquisiscono già ora; la data di pubblicazione degli orari non è nota); segmenti esplicitati",
+        "Impatto, Durata del soggiorno: ragionamento corretto. 'Un impegno in giornata può diventare una notte a Roma' è una prenotazione nuova (occupazione), non un soggiorno più lungo; ora: la gita accorcia il soggiorno a Roma, l'ospite di lavoro che non riparte in serata può aggiungere una notte",
+        "Impatto, ADR: ragionamento riscritto come lettura della domanda invece che come indicazione di prezzo ('non sposta la disponibilità a pagare degli ospiti: una revisione delle tariffe ha senso solo se il pick-up di quelle notti si discosta da quello delle settimane vicine'), per il singolo hotel e sui suoi dati",
+        "Impatto, RevPAR: segmento allineato a quello dell'occupazione e aggiunto 'da monitorare insieme al pick-up'",
+        "Cosa fare adesso, azione 1: aggiunta la seconda lettura delle prenotazioni quando Trenitalia e Italo pubblicheranno gli orari di gennaio",
+        "Cosa fare adesso, azione 2: 'con le alternative al treno da Fiumicino' diventa 'con il rimando agli avvisi di Trenitalia sul collegamento con Fiumicino e le alternative al treno' (RFI indica l'interruzione di linea, non come cambia il servizio)",
+        "Tesi in meta.json confermata senza modifiche"
+      ],
+      "segnalazioni": [
+        "Fiumicino, frase del corpo fuori dal mio ambito: 'Per chi atterra a Fiumicino in quei quattro giorni il trasferimento in città cambia' presenta come certo un effetto che RFI non descrive. La pagina RFI (riletta oggi) dice solo 'interruzione di linea' dal 26 al 29 novembre; il paragone con il guasto del 4 novembre (Teleborsa) non dimostra che FL1 e Leonardo Express saranno sospesi in tutte le ore. Da una ricerca, in un intervento analogo sulla stessa tratta a fine novembre 2025 Romamobilità indicava il Leonardo Express regolare (fonte non letta per intero: PDF illeggibile). Suggerisco 'può cambiare' e il rimando agli avvisi di Trenitalia; decide il capo redattore",
+        "Intensità: con gli indicatori a '?' l'intensità non si scrive. Per l'hotel medio di Roma l'effetto è con ogni probabilità basso, perché tocca solo gli ospiti di lavoro dalla Campania e chi ha una gita a Napoli in programma; il peso del treno negli arrivi è DA COMPLETARE in roma.md, quindi non lo quantifico. Il corpo è coerente con questa lettura (nessuna reazione sul prezzo)",
+        "Contesto, non da inserire senza fonte primaria: nelle interruzioni passate della linea AV Roma-Napoli i treni sono stati instradati sulle linee convenzionali (via Cassino o via Formia) con tempi di viaggio più lunghi, non cancellati (ferrovie.it, 2022, letto solo in sintesi). Rende plausibile lo scenario 'viaggio più lungo' della bozza, ma resta un'ipotesi finché Trenitalia e Italo non pubblicano gli orari",
+        "Le azioni utili sono 3; nessuna riguarda il prezzo, coerente con la tesi. L'azione 1 è vicina all'azione 1 dell'articolo del 3 novembre sullo sciopero dei treni (prenotazioni per provenienza): rischio fotocopia moderato, già segnalato dal giornalista",
+        "Paragrafo Ricavia: la voce 4.1 n. 2 (pick-up e occupazione a 90 giorni) compare già negli articoli del 3, 6 e 7 novembre. Propongo come alternativa la voce 4.1 n. 5 (mix dei canali e parità), legata all'azione 3; è stata usata il 4 novembre, quindi il capo redattore valuti quale ripetizione pesa meno",
+        "Antitrust: nessun livello di prezzo né invito ad allinearsi; tutte le azioni sono per il singolo hotel e sui suoi dati"
+      ],
+      "ruolo_ricavia": "Quando un collegamento cambia per settimane, Ricavia lavora sul mix dei canali e sulla parità tra sito e OTA: la notte in più di un cliente di lavoro abituale conviene che arrivi dal sito diretto, a condizioni coerenti con gli altri canali e con una commissione di distribuzione in meno"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Nessuna cannibalizzazione: l'unico tema vicino negli ultimi 14 giorni è lo sciopero dei treni del 3 novembre (keyword 'sciopero treni hotel Roma'), con fatto, tesi e keyword diversi (interruzione programmata di due settimane sulla Roma-Napoli, effetto in due direzioni); keyword dell'albergatore inserita in apertura e in un h3, campi SEO compilati e nei limiti",
+      "correzioni": [
+        "slug: alta-velocita-roma-napoli-hotel (5 parole, senza date, unico in registro, scartati, journal e tools/seo.json)",
+        "categoria: trasporti confermata (la causa è un'interruzione ferroviaria)",
+        "title_seo: 'Alta velocità Roma-Napoli interrotta: hotel a Roma · Ricavia' (60 caratteri contati con python), keyword all'inizio, diverso da ogni title del sito",
+        "description: 158 caratteri contati con python, senza punto finale, diversa da ogni altra pagina; date certe da fonte primaria RFI, nessuna cifra provvisoria",
+        "keyword: principale 'alta velocità Roma-Napoli hotel', 4 secondarie",
+        "related_intro e related: voli su Roma come segnale della domanda (/osservatorio/guardare-voli-calendario-leggiamo-fiumicino-ciampino/) e /indicatori/; nessuno ripete i collegamenti del corpo",
+        "Apertura, prima frase: aggiunto ', una notizia che riguarda anche gli hotel di Roma' per avere la keyword nella stessa frase; fatti, date e fonti invariati",
+        "h3 della seconda sezione: da 'Quali ospiti di un hotel romano usano la Roma-Napoli' a 'Quali ospiti di un hotel romano usano l'alta velocità Roma-Napoli'"
+      ],
+      "segnalazioni": [
+        "Duplicati: confronto con l'articolo del 3 novembre sullo sciopero dei treni (7 giorni fa). Tesi diversa e fatto nuovo, quindi niente veto; resta il rischio fotocopia sull'azione 1 (prenotazioni per provenienza) già segnalato da giornalista e revenue manager. Il title SEO non riprende la struttura 'Sciopero treni e hotel a Roma: cosa controllare'",
+        "Apertura: dopo la mia modifica la parola 'hotel' compare nella prima e nella seconda frase ('Per un hotel romano'). La seconda frase è fuori dal mio ambito: il capo redattore valuti se variarla",
+        "Collegamenti interni del corpo: 2 naturali (calendario di Roma, sciopero dei treni del 3 novembre), entrambi su main, più /revenue-management/ nel paragrafo Ricavia, che non si conta. Nessun collegamento ad articoli della stessa giornata",
+        "Il titolo di lavoro contiene 'gennaio': lo slug non ha date, il nome della cartella di lavoro non conta per la build",
+        "Ricerca web non eseguita: la keyword è scelta sull'intento dell'albergatore; la query 'lavori alta velocità Roma Napoli gennaio 2027' ha intento viaggiatore ed è tenuta solo tra le secondarie"
+      ],
+      "ruolo_ricavia": "Chi cerca come una linea interrotta cambia le prenotazioni del proprio hotel ha come passo successivo naturale la pagina sul revenue management, dove Ricavia descrive la lettura settimanale di pick-up, canali e prezzi per segmento e provenienza"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare all'albergatore: un'interruzione nota con dieci settimane di anticipo che può togliere o aggiungere notti a Roma secondo chi viaggia; titolo di tipo conseguenza, diverso dalla domanda usata il 3 novembre per lo sciopero dei treni e l'8 novembre per l'Immacolata e dal contrasto del 9 novembre",
+      "correzioni": [
+        "titolo: da 'Roma-Napoli in alta velocità ferma dal 18 al 31 gennaio: una notte a Roma in meno o in più' a 'Alta velocità Roma-Napoli interrotta dal 18 al 31 gennaio: notti a Roma in meno o in più' (88 caratteri). 'Ferma' tolto: RFI indica un'interruzione tra Cassino sud e Napoli Afragola, non dice che i treni non circolano; l'apertura della keyword ('Alta velocità Roma-Napoli interrotta') è allineata al title_seo",
+        "sottotitolo: scritto, una frase senza punto finale; nomina anche la tratta Ostiense-Fiumicino senza dire come cambia il servizio",
+        "mood: serio",
+        "alternative_titolo: 3 titoli di tipo domanda, contrasto e dato con fonte nominata (RFI; i 14 giorni sono il periodo dal 18 al 31 gennaio indicato da RFI), tutti entro 90 caratteri",
+        "blockquote: 'Dipende da chi viaggia' diventa 'Dipende da chi viaggia e perché', per legare la frase alla lettura per provenienza e motivo del viaggio del paragrafo che la precede; prima frase invariata, nessun numero, nessun punto finale"
+      ],
+      "segnalazioni": [
+        "Titoli confrontati con pubblicati.txt, journal/*/meta.json e i 6 storici: nessun titolo uguale o con la stessa struttura. Il rischio fotocopia riguarda il corpo (azione 1 vicina al 3 novembre), già segnalato; il titolo non riprende la domanda 'ridurre le tariffe o contare prima le prenotazioni?'",
+        "Il titolo e il sottotitolo non dicono come cambia il servizio a Fiumicino: la frase del corpo 'il trasferimento in città cambia', segnalata dal revenue manager, resta fuori dal mio ambito e va decisa dal capo redattore",
+        "Titoli e sottotitolo usano 'interrotta' e 'si interrompe' come la fonte RFI; se Trenitalia e Italo pubblicano orari con treni deviati, il titolo regge comunque perché parla della linea, non dei treni"
+      ],
+      "ruolo_ricavia": "Il racconto funziona se il paragrafo Ricavia mostra il gesto concreto che segue il titolo: Ricavia separa le notti dal 18 al 31 gennaio per provenienza e motivo del viaggio e le confronta con le settimane vicine, così l'albergatore vede se la linea interrotta gli toglie o gli aggiunge notti prima di decidere qualsiasi cosa sul prezzo"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "La libreria non ha una foto di binari o stazioni e quelle vicine al tema sono escluse o già usate: scelta una foto vera dell'archivio stock (gratuita, non generata con AI) di una linea ferroviaria moderna vuota nella campagna, pertinente al tema, in tono con il mood serio e diversa dalla banchina del 3 novembre",
+      "correzioni": [
+        "immagine.fonte: stock, foto 13951902 'Transport concept with railroad' (gratuita, aiGenerated false, 40 crediti), anteprima guardata prima della scelta",
+        "immagine.scheda compilata: linea elettrificata vuota in curva, vista dall'alto di tre quarti, luce diurna, palette azzurro pallido e grigi, soggetto nella fascia centrale per il ritaglio 16:9 e social",
+        "immagine.libreria (riserva): assets/img/90e6747927.webp, camera d'hotel con vista su San Pietro, non usata negli ultimi 10 articoli; alt_libreria scritto guardando il file",
+        "alt: descrive ciò che si vede nella foto stock, senza attribuirla alla linea Roma-Napoli",
+        "Nessuna generazione: nessuna nota AI da aggiungere all'articolo"
+      ],
+      "segnalazioni": [
+        "Libreria: nessuna foto di treni, binari o stazioni. La sola foto vicina al tema (assets/img/cb8c5b135f.webp, corridoio di un terminal) è esclusa: persone in primo piano, un cappotto rosso dominante e un luogo che sembra un aeroporto. Soggetto mancante da aggiungere alla libreria: linea o stazione ferroviaria senza persone",
+        "Foto stock: non è la linea Roma-Napoli. Sullo sfondo, molto piccolo, c'è lo skyline di una città straniera con alcuni grattacieli (sembra Madrid): non è riconoscibile a colpo d'occhio e l'alt non indica il luogo; l'editore, nel ritaglio, tagli più cielo che massicciata senza però spostare la curva dei binari fuori dalla fascia centrale",
+        "Piccole targhe gialle e arancio sui pali dei segnali, senza scritte leggibili nell'anteprima: accento minimo, da ricontrollare sulla foto a piena risoluzione; se risultassero leggibili, l'editore usi la riserva",
+        "Alternative valutate e scartate: 13951924 (stessa serie, più affollata, tralicci in primo piano), 13951903 (binari dall'alto, poco leggibile come linea veloce), 10978553 e 9991521 (binari convergenti, troppo vicini alla copertina del 3 novembre), 13951906 e 13951908 (treno con livrea riconoscibile)"
+      ],
+      "ruolo_ricavia": "La copertina mostra una linea vuota, non un disagio: è coerente con un paragrafo Ricavia che descrive una lettura calma delle prenotazioni dal 18 al 31 gennaio, per provenienza e motivo del viaggio, prima di qualsiasi intervento sulle tariffe"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Apertura, seconda frase: 'Per un hotel romano' diventa 'Per chi gestisce una struttura ricettiva a Roma,' per togliere la ripetizione di 'hotel' con la prima frase (segnalazione del SEO director); prima frase con la keyword invariata",
+        "Fiumicino: 'il trasferimento in città cambia' diventa 'il trasferimento in città può cambiare' (segnalazione del revenue manager accolta): la pagina RFI, riletta oggi, indica solo 'interruzione di linea' dal 26 al 29 novembre e non come cambierà il servizio; il rimando agli avvisi di Trenitalia è già nell'azione 2. Nessun fatto nuovo",
+        "Lunghezza: la bozza consegnata contava 1.157 parole (conteggio sul testo di articolo.html senza tag, lo stesso che dà 1.060-1.100 sugli articoli pubblicati), non 'circa 1.050'. Ritocchi senza cambiare tesi, numeri e fonti, ora 1.099: tolta 'una visita medica' tra gli impegni di lavoro (non è un impegno di lavoro); 'su altri percorsi' tolto da 'deviati'; ultima frase sul terzo segmento accorciata in 'È anche il gruppo che rischia di accorgersene a soggiorno già iniziato'; 'il periodo basta' diventa 'basta'; 'per provenienza e per motivo' diventa 'per provenienza e motivo'; 'una parte di questi ospiti' diventa 'una parte di loro'",
+        "Impatto, ritocchi di forma senza cambiare direzioni, finestre e segmenti: Occupazione, segmento abbreviato in 'lavoro dalla Campania e leisure internazionale con una gita a Napoli' e ragionamento accorciato (tolto 'impatto incerto', già detto dal '?'); Pick-up e Durata del soggiorno con 'stessi segmenti dell'occupazione'; ADR 'Un cambiamento nei collegamenti' diventa 'Un collegamento più lento'",
+        "Cosa fare adesso, azione 1, per il rischio fotocopia con l'azione 1 del 3 novembre ('Contare e contattare le prenotazioni esposte. Estrarre dal gestionale gli arrivi…'): titolo da 'Le prenotazioni dal 18 al 31 gennaio lette per provenienza' a 'Gli arrivi di gennaio divisi per motivo del viaggio' e frase riordinata senza 'Estrarre dal gestionale'; contenuto e seconda lettura dopo gli orari invariati",
+        "Cosa fare adesso, azione 2: seconda parte riordinata ('con una giornata a Napoli in programma, con il rimando agli orari di Trenitalia e Italo'), stesso contenuto",
+        "In breve: 'Gli orari modificati arrivano da Trenitalia e Italo' diventa 'Trenitalia e Italo pubblicheranno gli orari modificati' (verbo di movimento colloquiale); 'L'esposizione dell'hotel si legge nelle prenotazioni per provenienza' diventa 'Le notti di gennaio si leggono per provenienza e motivo del viaggio', per non riprendere 'Le prenotazioni esposte si contano prima delle tariffe' del 3 novembre",
+        "Paragrafo Ricavia riscritto: voce 4.1 n. 5 (mix dei canali e parità tra sito e OTA) al posto della 4.1 n. 2, già usata il 3, 6 e 7 novembre; la n. 5 è stata usata una volta, il 4 novembre, con parole e costruzione diverse da quelle di oggi. Collegamento di chiusura /revenue-management/, OTA con glossa"
+      ],
+      "segnalazioni": [
+        "Fatto centrale verificato oggi sulla fonte primaria (pagina RFI Lazio, WebFetch): Roma-Napoli AV/AC, 'Bivio Cassino sud-1° bivio/PC Gricignano 1° bivio Gricignano-PM NA Afragola', 18 gennaio 2027 - 31 gennaio 2027, 'interruzione di linea per interventi di manutenzione straordinaria e potenziamento tecnologico'; Roma Ostiense-Fiumicino Aeroporto, 26 - 29 novembre 2026, 'interruzione di linea per interventi di potenziamento infrastrutturale'. La pagina non indica gestione del servizio né data di aggiornamento",
+        "Per l'editore: che la tratta Ostiense-Fiumicino sia quella di FL1 e Leonardo Express viene da una sola testata (Teleborsa), fatto di contorno attribuito nel testo: da ricontrollare prima del merge, insieme agli eventuali avvisi di Trenitalia per il 26-29 novembre",
+        "Per l'editore: l'articolo è a 1.099 parole; nessuna aggiunta al corpo senza togliere altrettanto",
+        "Rischio fotocopia con il 3 novembre: giudicato moderato e gestito con la correzione dell'azione 1 e del box; fatto, tesi (effetto in due direzioni), segmenti, titolo e paragrafo Ricavia sono diversi"
+      ],
+      "ruolo_ricavia": "Quando un collegamento cambia per settimane, Ricavia guarda anche su quale canale prenotano i clienti di lavoro abituali: stabilisce quante notti vendere attraverso ogni canale e a quale costo, e controlla che prezzi e condizioni siano coerenti tra il sito e le OTA",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; effetto in due direzioni, nessuna reazione sul prezzo prima degli orari modificati)",
+        "[x] Ogni numero ha fonte o è stima Ricavia (date e tratte da RFI, verificate oggi; nessuna stima, nessuna quota)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta (RFI primaria; Teleborsa solo per un fatto di contorno, attribuito)",
+        "[x] Ruolo di Ricavia presente, un paragrafo, utile e non pubblicitario (voce 4.1 n. 5, collegamento a /revenue-management/)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (corretti 'arrivano' nel box e la ripetizione di 'hotel'; nessun punto finale, nessuna 'struttura' da sola)",
+        "[x] Tono coerente con la matrice del mood (trasporti senza vittime, serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; distinto dallo sciopero del 3 novembre, azione 1 e box ritoccati)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo né invito ad allinearsi, azioni per il singolo hotel; foto stock non generata, nessuna nota AI)",
+        "[x] Da 700 a 1.100 parole, struttura completa (1.099 dopo i ritocchi, era 1.157; 4 h3, impatto, 3 azioni, In breve con 4 voci)"
+      ]
+    }
+  ],
+  "slug": "alta-velocita-roma-napoli-hotel",
+  "title_seo": "Alta velocità Roma-Napoli interrotta: hotel a Roma · Ricavia",
+  "description": "Alta velocità Roma-Napoli interrotta dal 18 al 31 gennaio: quali ospiti di un hotel romano sono esposti, come leggere le prenotazioni e quali messaggi inviare",
+  "keyword": {
+    "principale": "alta velocità Roma-Napoli hotel",
+    "secondarie": [
+      "interruzione alta velocità Roma Napoli gennaio 2027",
+      "lavori RFI Roma-Napoli",
+      "prenotazioni hotel Roma per provenienza",
+      "clienti business Napoli Roma"
+    ]
+  },
+  "related_intro": "Per leggere le prenotazioni per canale di arrivo e provenienza, approfondisci",
+  "related": [
+    {
+      "label": "i voli su Roma come segnale della domanda",
+      "url": "/osservatorio/guardare-voli-calendario-leggiamo-fiumicino-ciampino/"
+    },
+    {
+      "label": "come si calcolano occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "sottotitolo": "Cosa indica RFI per le due settimane di gennaio e per la tratta Ostiense-Fiumicino a fine novembre, quali ospiti di un hotel romano sono esposti e cosa preparare prima di toccare le tariffe",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Interruzione ferroviaria programmata senza vittime: la matrice (trasporti) ammette serio, o drammatico solo con impatto alto e certo. Qui l'impatto non è né alto né certo (occupazione, pick-up e RevPAR '?', ADR '=', orari modificati non ancora pubblicati, effetto in due direzioni) e il corpo ha un registro serio. Serio"
+  },
+  "alternative_titolo": [
+    "Roma-Napoli interrotta a gennaio: quali prenotazioni di un hotel romano sono esposte?",
+    "Lavoro e gite a Napoli: la Roma-Napoli interrotta sposta le notti a Roma in due direzioni",
+    "Per RFI la Roma-Napoli ad alta velocità si interrompe per 14 giorni, dal 18 al 31 gennaio"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 13951902,
+      "titolo": "Transport concept with railroad",
+      "anteprima": "https://img.magnific.com/free-photo/transport-concept-with-railroad_23-2148959664.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: una linea ferroviaria moderna a più binari, elettrificata, che curva nella campagna senza nessun treno in vista; pali della linea aerea, recinzione, arbusti e prati secchi ai lati; in lontananza, piccolissimo, lo skyline di una città; nessuna persona, nessuna scritta leggibile, nessun marchio\nInquadratura: dall'alto e di tre quarti, i binari entrano in basso e curvano verso il centro, ampio cielo sopra e massicciata sotto; il formato originale è 3:2, il ritaglio 16:9 e quello social tolgono una striscia di cielo in alto e di massicciata in basso, la curva dei binari resta nella fascia centrale\nLuce: diurna, sole basso e laterale, cielo velato\nPalette: cielo azzurro pallido vicino a #3CCDFA desaturato, grigi della massicciata e dei binari, beige e verde spento dei prati; le piccole targhe gialle dei segnali sono un accento minimo; niente rosso\nAtmosfera: seria e statica, la linea veloce vuota, che per due settimane non porta i treni: diversa dalla banchina con i binari convergenti dello sciopero del 3 novembre e da tutte le copertine recenti (moneta, monumenti, aerei, camere, campo da tennis, Tevere)",
+    "libreria": "assets/img/90e6747927.webp",
+    "alt_libreria": "Camera d'hotel luminosa con letto matrimoniale, vetrate aperte sul balcone e la cupola di San Pietro sullo sfondo",
+    "testo_sovrapposto": null
+  },
+  "alt": "Linea ferroviaria elettrificata a più binari che curva nella campagna, senza treni",
+  "data": "2026-11-10"
+}
