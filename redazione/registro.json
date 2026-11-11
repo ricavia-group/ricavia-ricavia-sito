@@ -189,6 +189,6 @@
     "motivo": null,
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
-    "pubblicato": false
+    "pubblicato": true
   }
 ]
