@@ -1,0 +1,251 @@
+{
+  "titolo": "SiGMA World passa a maggio: a Roma il budget di novembre 2027 si costruisce senza summit",
+  "tesi": "Il summit SiGMA World, che nel 2025 e nel 2026 ha portato alla Fiera di Roma più di 30.000 delegati nella prima settimana di novembre, quasi tutti da fuori città, nel 2027 si sposta a maggio con date non ancora pubblicate: per un hotel di Roma che ha ospitato quei delegati le notti infrasettimanali di inizio novembre 2027 perdono domanda MICE che lo storico registra come stagionale, mentre maggio aggiunge un evento a un mese già richiesto e in parte occupato dal tennis; conviene isolare ora nelle prenotazioni 2025-2026 il segmento dell'evento, costruire il budget di novembre 2027 su un anno senza summit (con il 2024 come riferimento e il confronto per giorno della settimana) senza leggere come calo della domanda un pick-up più lento del 2026, e valutare gruppi, allotment o tariffe negoziate per maggio sul ricavo atteso prima che le date siano note",
+  "tema": "sigma-world-fiera-roma-maggio-2027",
+  "categoria": "eventi",
+  "fonti": [
+    {
+      "titolo": "Sigma World Summit: quattro settori, un unico punto d'incontro globale",
+      "editore": "Turismo Roma (Roma Capitale)",
+      "url": "https://turismoroma.it/it/node/179357",
+      "data": "2026-11-11"
+    },
+    {
+      "titolo": "The MGA participates in SiGMA Central Europe 2025",
+      "editore": "Malta Gaming Authority",
+      "url": "https://www.mga.org.mt/the-mga-participates-in-sigma-central-europe-2025/",
+      "data": "2026-11-11"
+    },
+    {
+      "titolo": "SiGMA World Roma 2026 chiude con 31mila visitatori. Nel 2027 appuntamento a maggio",
+      "editore": "Jamma",
+      "url": "https://www.jamma.it/attualita/sigma-world-roma-2026-chiude-con-31mila-visitatori-nel-2027-appuntamento-a-maggio-362156",
+      "data": "2026-11-11"
+    },
+    {
+      "titolo": "SiGMA World 2027 a Roma, attese 35.000 presenze",
+      "editore": "Agimeg",
+      "url": "https://www.agimeg.it/sigma-world-2027-tutte-strade-riportano-roma-attesi-35000-partecipanti/",
+      "data": "2026-11-11"
+    },
+    {
+      "titolo": "Tutte le strade portano a Roma: attesi 35.000 partecipanti nel 2027",
+      "editore": "Agipronews",
+      "url": "https://agipronews.it/tutte-le-strade-portano-a-roma-attesi-35000-partecipanti-nel-2027",
+      "data": "2026-11-11"
+    },
+    {
+      "titolo": "Calendario eventi",
+      "editore": "Fiera Roma",
+      "url": "https://www.fieraroma.it/eventi-e-portfolio/calendario-eventi/",
+      "data": "2026-11-11"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Notizia recente (6-10 novembre) su Roma che guarda avanti: lo spostamento a maggio 2027 di un evento da più di 30.000 delegati, presente a novembre nel 2025 e nel 2026, sposta domanda tra due periodi e chiede decisioni ora su budget e disponibilità di maggio; unica bozza della giornata, garantisce da sola il mix (Roma e guarda avanti)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Unica bozza della giornata: gli altri candidati che superano i filtri hanno forza 2 su 5 o fonti insufficienti (dettaglio in candidati.md e note-giornalista.md)",
+        "Fonte primaria dello spostamento (sigma.world, pagina 'SiGMA World 2027: Rome moves to May') esistente ma oggi in 403: il fatto regge su due testate indipendenti concordi attribuite nel testo (Jamma, Agimeg) più Agipronews. Sono testate di settore del gioco: il capo redattore valuti se bastano come 'riconosciute' (regole-comuni sezione 4)",
+        "Date di maggio 2027 non pubblicate: il testo non le indica e scrive gli effetti di maggio solo come scenario ('se il summit cadrà nelle stesse settimane del tennis...'). Se l'organizzatore pubblica le date prima del merge, il fatto cambia e conviene aggiornare la sezione su maggio",
+        "Zona Fiera e area di Fiumicino sono DA COMPLETARE in roma.md: l'articolo non attribuisce effetti a zone precise, parla di 'hotel che lavorano con fiere e congressi' e di hotel che hanno ospitato delegati",
+        "Numeri usati solo con fonte e attribuiti: più di 30.000 delegati 2025, 78% dall'estero e 95% da fuori dell'area metropolitana (stima degli organizzatori riportata da Turismo Roma), circa 31.000 nel 2026 e circa 35.000 attesi nel 2027 (organizzatore, via Jamma e Agimeg). Nessuna stima Ricavia",
+        "Rischio fotocopia: il tema del confronto ingannevole con l'anno precedente compare nell'articolo del 6 novembre sul tennis (ponte del 1° maggio) e in quello storico sul Giubileo. Qui il meccanismo è diverso (un evento che si sposta di mese, due anni di storico che sembrano stagionalità) e l'articolo cita entrambi; il capo redattore valuti titolo e citazione",
+        "Reputazione: il settore dell'evento è descritto in modo neutro ('gioco regolamentato, tecnologia e finanza'); nessun giudizio sull'organizzatore",
+        "Antitrust: nessun livello di prezzo né invito ad allinearsi; le azioni sono per il singolo hotel e sui suoi dati",
+        "Indicatori: per novembre 2027 la direzione è certa solo per gli hotel che hanno venduto notti al summit; l'intensità non è stimabile senza i dati dell'hotel, per questo è scritta come 'da misurare'. Il revenue manager completi",
+        "Collegamenti interni nel corpo: 2 (articolo sul Giubileo, articolo sul tennis), più /revenue-management/ nel paragrafo Ricavia (voce 4.1 n. 4, anticipare eventi e fiere e preparare i prezzi). Attenzione: la stessa voce è nel paragrafo Ricavia dell'8 novembre (ponte dell'Immacolata) e in parte del 6 novembre (tennis); in settimana sono già state usate anche le voci 2, 5, 6, 12 e 13. Le parole sono diverse, ma il capo redattore valuti se variare (per esempio verso la voce 6, confronto con il competitive set, legata al budget di novembre)",
+        "Parole del corpo: circa 1.020"
+      ],
+      "ruolo_ricavia": "Quando un evento cambia data, Ricavia lo sposta nelle previsioni della domanda e prepara in anticipo i prezzi dei giorni coinvolti: le notti di inizio novembre 2027 tornano al valore di un mese senza fiera, quelle del summit a maggio entrano tra le date da proteggere appena l'organizzatore le pubblica"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge (un evento spostato di mese non è stagionalità: budget e lettura del pick-up di novembre 2027 vanno corretti, maggio va valutato sul ricavo atteso); corrette le sezioni del mio ambito per formato, intensità e numero di azioni",
+      "correzioni": [
+        "Tesi in meta.json precisata: notti infrasettimanali di inizio novembre, segmento MICE, maggio 'già richiesto e in parte occupato dal tennis' (il torneo copre 27 aprile-16 maggio, non tutto il mese), lettura del pick-up senza sconti, riferimento al 2024 e confronto per giorno della settimana; per maggio 'valutare sul ricavo atteso' al posto di 'non chiudere disponibilità', che poteva suonare come rifiutare gruppi a priori",
+        "Impatto sugli indicatori: unite le due voci Occupazione in una sola (regola 'una voce per indicatore'), con la direzione per periodo come già facevano ADR e RevPAR",
+        "Impatto sugli indicatori: aggiunta l'intensità mancante (Occupazione ↓ media a novembre, ↑ bassa a maggio; ADR e RevPAR media), al posto di 'da misurare' e 'non stimabile', non ammessi dal formato; a maggio occupazione bassa e ADR media perché un evento in un mese già richiesto agisce più sulla tariffa che sull'occupazione",
+        "Impatto sugli indicatori: finestra di novembre resa precisa per giorno della settimana (notti dal 31 ottobre al 4 novembre 2027, da domenica a giovedì come le notti del summit 2026, dal 1° al 5 novembre); segmento 'lavoro e fiere' reso 'MICE internazionale'",
+        "Impatto sugli indicatori: Pick-up da '?' a ↓ media per inizio novembre 2027 (meccanismo centrale della tesi: rispetto allo stesso momento del 2026 manca l'evento) e ↑ media per maggio dalla pubblicazione delle date",
+        "Cosa fare adesso: da 4 a 3 azioni; la n. 4 (ricontattare aziende e agenzie del 2025-2026) unita alla n. 1, di cui è la conseguenza; tolto 'condizioni chiare sul sito diretto', generico",
+        "Cosa fare adesso, n. 2: aggiunti il 2024 come anno di riferimento senza summit, il confronto per giorno della settimana con il ponte di Ognissanti a parte (1° novembre 2027 è lunedì, nel 2026 era domenica) e l'avvertenza che un pick-up più lento non giustifica da solo uno sconto",
+        "Cosa fare adesso, n. 3: resa concreta ('considerare che una parte del mese può avere un evento in più' sostituito da confronto del ricavo atteso con la vendita singola e data di rilascio anticipata per i blocchi)"
+      ],
+      "segnalazioni": [
+        "Fonte primaria (sigma.world, 'SiGMA World 2027: Rome moves to May') ancora in 403 anche oggi per me; Jamma (6 novembre) e Agimeg (10 novembre) lette e concordi su maggio 2027, nessuna delle due indica i giorni. La sufficienza delle due testate di settore la decide il capo redattore",
+        "Date di maggio: una pagina SiGMA (floor plan, non apribile, 403) compare nei risultati di ricerca con '03-05 May 2027' accanto a Roma. Non verificabile, non usata. Se confermata prima del merge, il summit cadrebbe dentro la prima settimana del torneo di tennis (lunedì 3-mercoledì 5 maggio 2027) e la sezione su maggio e le voci di maggio negli indicatori andrebbero aggiornate (regole-comuni 9 bis)",
+        "Fonti, fuori dal mio ambito: le date del 2025 (3-6 novembre) sono attribuite nel testo alla scheda di Turismo Roma, che però riporta solo le date 2026 (2-5 novembre) e 'oltre 30.000 delegati' per il 2025; le date 2025 trovano conferma in testate di settore, ma l'attribuzione nel testo va corretta o aggiunta una fonte. Le percentuali 78% e 95% nella scheda si riferiscono a 'SiGMA Central Europe 2025' e sono un'ipotesi della valutazione d'impatto degli organizzatori: il testo le attribuisce correttamente come stima",
+        "Formato indicatori: la notizia sposta domanda tra due periodi con direzioni opposte, quindi ogni voce porta due direzioni (novembre ↓, maggio ↑). È una deroga alla regola 'una voce con una direzione', scelta per non duplicare le voci; il capo redattore valuti",
+        "Intensità ↓ media a novembre è una lettura prudente: per un hotel che ha venduto gran parte di quelle notti ai delegati può essere alta, per uno che ne ha venduto poche bassa; nessuna stima numerica possibile senza dati con fonte",
+        "Ponte di Ognissanti 2027 (lunedì 1° novembre, festa nazionale) citato nell'azione 2 come fatto di calendario, senza fonte esterna: il capo redattore valuti se basta",
+        "Copy fuori dal mio ambito: lede, titolo h3 e 'In breve' dicono maggio 'mese già pieno'; il torneo occupa 27 aprile-16 maggio, quindi 'già richiesto' sarebbe più preciso. Frase 'concentrata in pochi giorni feriali': plausibile (2025 e 2026 da lunedì a giovedì) ma le date 2027 non sono note",
+        "Nessuna zona attribuita (Zona Fiera DA COMPLETARE in roma.md): rispettato anche nelle mie sezioni"
+      ],
+      "ruolo_ricavia": "Quando definisce la strategia tariffaria sulla stagionalità e sui picchi di domanda, Ricavia separa nello storico le notti prodotte da un evento da quelle della stagione, per non portare nel 2027 una settimana di fiera che a novembre non ci sarà più (voce 4.1 n. 3, meno usata in settimana della n. 4)"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo, senza cannibalizzazione: nessun articolo su SiGMA World nel registro, negli scartati, in journal/ o tra gli storici; keyword dell'albergatore nell'apertura e in un h3 dopo due ritocchi; campi SEO compilati e verificati",
+      "correzioni": [
+        "Apertura, prima frase: aggiunto 'e sposta con sé la domanda che porta agli hotel' per avere SiGMA World, Roma e hotel nella stessa frase (prima la frase con SiGMA World non conteneva 'hotel'); fatti, numeri e fonti invariati, il passaggio riprende quanto il corpo dice già ('si traduce in notti d'albergo')",
+        "Primo h3: 'SiGMA World alla Fiera di Roma: da novembre a maggio' sostituito da 'SiGMA World alla Fiera di Roma: cosa sanno oggi gli hotel', per avere la keyword principale in un h3; la sezione riporta i fatti noti e le date non pubblicate, il titolo resta pertinente",
+        "slug 'sigma-world-fiera-roma-hotel' (5 parole): il nome di lavoro della cartella contiene 'maggio', un mese, non ammesso nello slug",
+        "title_seo 'SiGMA World e hotel a Roma: da novembre a maggio · Ricavia' (58 caratteri, contati), keyword all'inizio, diverso da tutti i title di tools/seo.json e di journal/",
+        "description di 151 caratteri (contati), senza punto finale e senza cifre provvisorie: i 35.000 delegati attesi restano solo nel corpo",
+        "keyword, categoria 'eventi' (confermata: la causa è un evento), related_intro e related compilati; related verso il calendario della domanda e /indicatori/, nessuno dei due già presente nel corpo; /revenue-management/ escluso perché è il collegamento di chiusura del paragrafo Ricavia"
+      ],
+      "segnalazioni": [
+        "Confronto con gli articoli vicini: 'internazionali-tennis-roma-hotel' (6 novembre) tratta maggio 2027 ma per il torneo al Foro Italico; 'roma-dopo-giubileo-cambia-chi-ospita' (storico) tratta il confronto con un anno eccezionale; 'ponte-immacolata-hotel-roma-soggiorno-minimo' (8 novembre) cita una fiera alla Nuvola. La tesi qui è nuova (un evento che cambia mese e due anni di storico scambiati per stagionalità) e la keyword è diversa: non è duplicato. I due articoli sono citati nel corpo, e il rischio fotocopia sul tipo di titolo resta al capo redattore, come già segnalato dal giornalista",
+        "Collegamenti interni naturali nel corpo: 2 (Giubileo, tennis), più /revenue-management/ in chiusura del paragrafo Ricavia: nel limite. Entrambe le pagine di destinazione esistono su main",
+        "Il nome della cartella di lavoro (1-sigma-world-fiera-roma-maggio) non coincide con lo slug: l'editore crei la cartella journal/2026-11-11-sigma-world-fiera-roma-hotel/",
+        "Se prima del merge l'organizzatore pubblica i giorni di maggio, title_seo, description e slug restano validi (non contengono giorni); cambia solo il corpo, come già segnalato dal revenue manager",
+        "Copy fuori dal mio ambito: 'mese già pieno' nell'apertura (terza frase), nel titolo h3 su maggio e in 'In breve' è più forte del dato, come già segnalato dal revenue manager; non toccato",
+        "L'apertura ora contiene 'hotel' in due frasi consecutive (prima e seconda): accettabile, ma il capo redattore può valutare se la seconda frase ('Per un hotel di Roma che lavora con fiere e congressi') meriti una variazione, che non è nel mio ambito"
+      ],
+      "ruolo_ricavia": "Per chi cerca SiGMA World con un hotel a Roma il passo successivo naturale è il lavoro sul calendario degli eventi e sulla strategia tariffaria: la chiusura verso /revenue-management/ è coerente con la ricerca, mentre il budget di novembre costruito su un anno senza summit si presta al rimando a /indicatori/ già messo in related"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare e non è la cronaca dello spostamento: due anni di notti forti a novembre che lo storico scambia per stagione; il titolo porta la conseguenza sul budget di novembre 2027, che l'articolo sviluppa nella sezione su novembre e nell'azione 2",
+      "correzioni": [
+        "Titolo: 'SiGMA World lascia novembre per maggio: due anni di fila alla Fiera di Roma non fanno una stagione' (98 caratteri, oltre il limite di 90, e uguale nella seconda metà al secondo h3) sostituito con 'SiGMA World passa a maggio: a Roma il budget di novembre 2027 si costruisce senza summit' (88 caratteri, tipo conseguenza). Scartati per il titolo il contrasto tra anni, già usato il 6 novembre per il tennis, e la domanda, usata l'8 novembre",
+        "Sottotitolo scritto (155 caratteri): annuncia le tre parti dell'articolo senza ripetere la formula 'tre azioni' dei sottotitoli recenti e senza 'mese già pieno'",
+        "Mood: serio (matrice eventi; corpo di registro serio)",
+        "alternative_titolo: domanda (85), dato con fonte nominata (Turismo Roma, più di 30.000 delegati nel 2025, 89), contrasto (86); nessun dato provvisorio: i 35.000 attesi nel 2027 non sono usati",
+        "Frase citabile: 'Una settimana piena due anni di fila può essere un evento, non una stagione. Il calendario dell'organizzatore conta più dello storico' sostituita con 'Lo storico registra quante notti si sono vendute, non perché'. La precedente conteneva un numero in lettere ('due anni'), ripeteva il secondo h3 e nel concetto la citazione del tennis del 6 novembre ('A volte manca solo il ponte') e quella storica del Giubileo; la nuova è un contrasto breve, senza numeri né nomi, e chiude il paragrafo sul Giubileo che la dimostra"
+      ],
+      "segnalazioni": [
+        "Copy fuori dal mio ambito, già segnalato da revenue manager e SEO director: 'mese già pieno' nell'apertura, nel terzo h3 e in 'In breve' è più forte del dato (tennis 27 aprile-16 maggio); nei miei testi ho evitato la formula. Il capo redattore valuti 'mese già richiesto'",
+        "Il secondo h3 ('Novembre 2027: due anni di fila non fanno una stagione') è una frase proverbiale vicina alla citazione storica del Giubileo; non è nel mio ambito, il capo redattore valuti una formula descrittiva come da stile.md ('Novembre 2027: un anno senza summit')",
+        "L'alternativa di tipo dato usa la cifra del 2025 attribuita nel corpo alla scheda di Turismo Roma, che riporta 'oltre 30.000 delegati' per il 2025: verificata nel testo, coerente. Se il capo redattore corregge l'attribuzione delle date 2025 (segnalata dal revenue manager), la cifra resta valida",
+        "Se prima del merge l'organizzatore pubblica i giorni di maggio, titolo, sottotitolo e frase citabile restano validi: non contengono date di maggio",
+        "Titolo e title_seo ('SiGMA World e hotel a Roma: da novembre a maggio') descrivono lo stesso articolo con tagli diversi: nessun riallineamento necessario"
+      ],
+      "ruolo_ricavia": "Il racconto regge se il paragrafo Ricavia descrive il gesto che il titolo promette: separare nello storico le notti del summit da quelle della stagione prima di costruire il budget di novembre 2027 (voce 4.1 n. 3, come propone il revenue manager), senza ripetere la frase sul calendario degli eventi già usata l'8 novembre"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "La libreria non ha una foto di fiere o congressi (l'unica vicina, il corridoio di un terminal, ha un cappotto rosso in primo piano); dall'archivio stock una foto vera dell'atrio vuoto di un centro congressi con i banchi dell'accreditamento senza personale, che racconta il summit che a novembre non ci sarà",
+      "correzioni": [
+        "immagine: fonte stock, foto 428359513 ('Empty Convention Center Lobby White Reception Desk Before Trade Show Opening', non generata con AI, premium da 150 crediti), scheda, riserva e alt compilati",
+        "immagine.libreria: assets/img/941717e0f5.webp (camera d'hotel neutra), non usata negli ultimi 10 articoli del Journal (l'ultima volta il 3 novembre, inflazione ed energia)",
+        "alt: descrive ciò che si vede nella foto stock; alt_libreria scritto guardando il file della riserva"
+      ],
+      "segnalazioni": [
+        "Foto premium (150 crediti): tra le gratuite c'erano solo corridoi, centri commerciali, sale cinema, rendering 3D o padiglioni con oggetti rossi in primo piano; nessuna mostrava una fiera o un congresso in modo riconoscibile",
+        "Nella foto scelta i cordoni dei paletti segnapercorso e due piccoli allarmi a parete sono rossi: sottili e lontani, non dominanti. Se all'editore dopo il ritaglio sembrano troppo evidenti, usi la riserva",
+        "Ritaglio: formato originale 3:2, banchi nella fascia centrale bassa; per 16:9 e social tagliare più soffitto che pavimento",
+        "Licenza da scaricare a cura dell'editore (stock_download); se il download non riesce, riserva assets/img/941717e0f5.webp con alt uguale ad alt_libreria",
+        "Soggetto mancante nella libreria: fiere, centri congressi, eventi MICE (anche Fiera di Roma o Nuvola dell'EUR), utile per ampliarla",
+        "Nessuna immagine generata: nessuna nota AI da aggiungere all'articolo"
+      ],
+      "ruolo_ricavia": "Visivamente Ricavia guarda il giorno prima dell'evento, quando i banchi sono ancora vuoti: è il momento in cui si decide quali notti contano come evento e quali come stagione"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: un evento che cambia mese non è stagionalità; budget e lettura del pick-up di novembre 2027 corretti, maggio valutato sul ricavo atteso)",
+        "[x] Ogni numero ha fonte (30.000 delegati e 78%/95% Turismo Roma come stima degli organizzatori; 31.000 Jamma; 35.000 attesi e sede 2027 Agimeg; date 2026 Turismo Roma; date 2025 ora attribuite alla Malta Gaming Authority, senza giorni esatti; nessuna stima Ricavia)",
+        "[x] Fonti citate con link, nessuna copia (spostamento a maggio su due testate indipendenti, Jamma e Agimeg, più Agipronews; fonte primaria sigma.world riprovata oggi: ancora 403)",
+        "[x] Ruolo di Ricavia presente, un paragrafo, utile e non pubblicitario (voce 4.1 n. 3, riscritto: la versione del giornalista riprendeva quasi alla lettera l'esempio 'Evento' di ricavia.md)",
+        "[x] Brand e copy di CLAUDE.md (nessun punto finale, nessuna 'struttura' da sola, sigle con glossa, 'mese già pieno' sostituito con 'mese già richiesto')",
+        "[x] Tono coerente con la matrice (eventi, serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; tesi diversa dal tennis del 6 novembre e dall'Immacolata dell'8, titolo di tipo conseguenza e citazione nuova)",
+        "[x] Nessuna affermazione negativa su persone o aziende (settore dell'evento descritto in modo neutro)",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo né invito ad allinearsi, azioni per il singolo hotel sui propri dati, citazioni assenti, foto stock vera senza nota AI)",
+        "[x] Da 700 a 1.100 parole e struttura completa (1.099 parole col conteggio di tools/journal.py dopo i tagli: la bozza arrivava a 1.107; 5 h3, apertura, impatto, 3 azioni, In breve)"
+      ],
+      "correzioni": [
+        "Attribuzione delle date 2025: la scheda di Turismo Roma riporta solo le date 2026; la frase ora attribuisce la prima edizione romana (novembre 2025, Fiera di Roma, con il nome SiGMA Central Europe usato dalla stessa scheda per le percentuali) al comunicato della Malta Gaming Authority del 4 novembre 2025 e lascia a Turismo Roma solo date e sede 2026 e i numeri 2025. Tolti i giorni '3-6 novembre': le fonti divergono (organizzatore 3-6 nei risultati di ricerca, MGA e Adnkronos via Ecoseven 4-6), il testo dice 'prima settimana di novembre 2025', vero per entrambe",
+        "'Mese già pieno' sostituito con 'mese già richiesto' in apertura, nel terzo h3 e in In breve (segnalato da revenue manager, SEO director e virality director: il tennis occupa 27 aprile-16 maggio, non tutto il mese)",
+        "Apertura: 'che da due anni riempie la Fiera di Roma' diventa 'che negli ultimi due anni si è tenuto alla Fiera di Roma' ('riempie' non ha fonte); seconda frase accorciata",
+        "Secondo h3: 'Novembre 2027: due anni di fila non fanno una stagione' diventa 'Novembre 2027: un anno senza summit' (formula descrittiva, come suggerito dal virality director e da stile.md)",
+        "Sezione su maggio: 'concentrata in pochi giorni feriali' riferito alle edizioni romane già svolte, perché le date 2027 non sono note (segnalazione del revenue manager); tolto 'alla Fiera di Roma' ripetuto",
+        "Tagli di lunghezza senza cambiare fatti (da 1.107 a 1.099 parole): seconda sezione, chiusura del paragrafo sul Giubileo, motivazione della voce Occupazione negli indicatori (direzioni e intensità invariate)",
+        "Paragrafo Ricavia riscritto sulla voce 4.1 n. 3 (strategia tariffaria su stagionalità e picchi), fondendo le proposte di revenue manager e virality director (separare nello storico le notti dell'evento da quelle della stagione) con quella del giornalista (novembre senza summit, maggio tra i picchi); chiusura su /revenue-management/ come proposto dal SEO director",
+        "meta.json fonti e fonti.md: aggiunta la Malta Gaming Authority"
+      ],
+      "segnalazioni": [
+        "Fonti dello spostamento a maggio: ritenute sufficienti. Jamma (6 novembre) e Agimeg (10 novembre) sono testate registrate di editori diversi, concordi, attribuite nel testo; Agipronews conferma. L'annuncio dell'organizzatore esiste (pagine sigma.world in più lingue con titolo 'Rome moves to May' nei risultati di ricerca) ma oggi risponde 403 anche a me. Per l'editore: riaprire sigma.world prima del merge",
+        "Formato indicatori: una voce per indicatore con due direzioni (novembre ↓, maggio ↑) accettata come deroga motivata dal revenue manager: il manuale prevede intensità diverse per data, non direzioni opposte in periodi diversi. Da portare nella pull request settimanale sui manuali",
+        "Ponte di Ognissanti 2027 di lunedì: verificato sul calendario (1° novembre 2027 è lunedì, 31 ottobre domenica); festività nazionale, fatto di calendario senza bisogno di fonte",
+        "Paragrafo Ricavia: voce 4.1 n. 3 compare come voce secondaria nell'articolo del 7 novembre (rotte), quasi tutte le voci adatte sono state usate in settimana; scelta la meno usata come voce principale",
+        "Per l'editore: se prima del merge SiGMA pubblica le date di maggio 2027 (una pagina non apribile indica '03-05 May 2027', non verificata), la sezione su maggio e le voci di maggio negli indicatori vanno aggiornate (regole-comuni 9 bis): con quelle date il summit cadrebbe nella prima settimana del torneo di tennis",
+        "Per l'editore: controllare che il link al comunicato della Malta Gaming Authority si apra al momento del merge; se non si apre, la frase sul 2025 si appoggia ad Adnkronos (ripreso da Ecoseven, 'dal 4 al 6 novembre, presso la Fiera di Roma')",
+        "Per l'editore: il conteggio parole è a 1.099, al limite; qualsiasi aggiunta in fase di pubblicazione richiede un taglio equivalente",
+        "Per l'editore: foto stock premium (150 crediti) con piccoli dettagli rossi; se dopo il ritaglio sono evidenti, usare la riserva assets/img/941717e0f5.webp con alt uguale ad alt_libreria",
+        "Per l'editore: cartella journal/2026-11-11-sigma-world-fiera-roma-hotel/ (slug diverso dal nome della cartella di lavoro)",
+        "Per l'editore, quadro della giornata: una sola bozza, Roma e guarda avanti; nessuna sostituzione dalla riserva, che oggi ha forza 2 su 5 e fonti insufficienti"
+      ],
+      "ruolo_ricavia": "Ricavia definisce la strategia tariffaria su stagionalità e picchi tenendo distinte nello storico le notti di un evento da quelle della stagione (voce 4.1 n. 3)"
+    },
+    {
+      "agente": "editore",
+      "esito": "FOTO DI RISERVA",
+      "motivo": "La foto stock 428359513 scaricata riporta nei metadati XMP DigitalSourceType trainedAlgorithmicMedia, cioè generata con AI: dall'archivio stock si scelgono solo foto non generate, quindi si usa la foto di riserva della libreria",
+      "correzioni": [
+        "immagine.fonte da stock a libreria; alt copiato da immagine.alt_libreria"
+      ],
+      "segnalazioni": [],
+      "ruolo_ricavia": null
+    }
+  ],
+  "slug": "sigma-world-fiera-roma-hotel",
+  "title_seo": "SiGMA World e hotel a Roma: da novembre a maggio · Ricavia",
+  "description": "SiGMA World passa a maggio 2027 alla Fiera di Roma: come isolare le notti del summit nello storico, costruire il budget di novembre e valutare i gruppi",
+  "keyword": {
+    "principale": "SiGMA World Roma hotel",
+    "secondarie": [
+      "SiGMA World maggio 2027",
+      "Fiera di Roma eventi 2027",
+      "budget hotel novembre",
+      "eventi e stagionalità hotel"
+    ]
+  },
+  "related_intro": "Per distinguere un evento dalla stagionalità, approfondisci",
+  "related": [
+    {
+      "label": "il calendario della domanda di Roma",
+      "url": "/osservatorio/calendario-roma-dodici-mesi-domanda-letti/"
+    },
+    {
+      "label": "come si calcolano occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "sottotitolo": "Perché le notti del summit nel 2025 e nel 2026 non sono stagionalità, cosa si sa delle date di maggio e come trattare storico, budget e richieste di gruppo",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Fiera e congresso senza vittime: la matrice (eventi) ammette serio, divertente o ironico. Il corpo ha un registro serio (storico per segmento, budget di novembre, valutazione dei gruppi su date non pubblicate) e il manuale chiede che mood e titolo seguano il registro del corpo; un tono leggero non si addice nemmeno a un articolo che lavora su uno scenario non ancora confermato nei giorni. Serio"
+  },
+  "alternative_titolo": [
+    "La settimana forte di novembre era stagione o evento? SiGMA World passa a maggio 2027",
+    "Più di 30.000 delegati nel 2025 per Turismo Roma: nel 2027 SiGMA World si sposta a maggio",
+    "Novembre perde il summit, maggio lo guadagna: SiGMA World e gli hotel di Roma nel 2027"
+  ],
+  "immagine": {
+    "fonte": "libreria",
+    "stock": {
+      "id": 428359513,
+      "titolo": "Empty Convention Center Lobby White Reception Desk Before Trade Show Opening",
+      "anteprima": "https://img.magnific.com/premium-photo/empty-convention-center-lobby-white-reception-desk-before-trade-show-opening_79202-3110.jpg"
+    },
+    "scheda": "Soggetto: l'atrio vuoto di un grande centro congressi, con due banchi bianchi dell'accreditamento senza personale davanti a una parete chiara di cemento e una vetrata alta sulla destra; nessuna persona, nessuna scritta leggibile, nessun marchio\nInquadratura: frontale e statica, banchi nella fascia centrale bassa, ampia parete sopra e pavimento lucido sotto; il formato originale è 3:2, nel ritaglio 16:9 e in quello social tagliare più soffitto in alto che pavimento in basso, perché i banchi restino interi nella fascia centrale\nLuce: diurna, sole radente che entra dalla vetrata e taglia la parete in diagonale, ombre nette\nPalette: neutri chiari del cemento e del pavimento, cielo azzurro #3CCDFA e blu #1F2DD0 nella vetrata; i cordoni sottili dei paletti segnapercorso e due piccoli allarmi a parete sono rossi ma minimi, un accento non dominante\nAtmosfera: seria e sospesa, l'accoglienza pronta per un evento che quei giorni non avranno: novembre senza summit; diversa da tutte le copertine recenti (binari, moneta, monumenti, aerei, camere, campo da tennis, Tevere, tende)",
+    "libreria": "assets/img/941717e0f5.webp",
+    "alt_libreria": "Camera d'hotel con letto matrimoniale, panca ai piedi del letto, pareti in marmo chiaro e armadi grigi",
+    "testo_sovrapposto": null
+  },
+  "alt": "Camera d'hotel con letto matrimoniale, panca ai piedi del letto, pareti in marmo chiaro e armadi grigi",
+  "data": "2026-11-11",
+  "autore": "Tito · Redazione Ricavia"
+}
