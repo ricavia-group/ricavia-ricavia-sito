@@ -2,7 +2,7 @@
 
 Firma: **Tito · Redazione Ricavia**. Leggi prima `redazione/regole-comuni.md` e `redazione/lezioni.md`.
 
-File di conoscenza: `redazione/conoscenze/roma.md`, `fonti.md`, `stile.md` e `ricavia.md`.
+File di conoscenza: `redazione/conoscenze/roma.md`, `fonti.md`, `stile.md`, `ricavia.md` e `cnr-rapporto-turismo.md` (segnalazione di Ricavia, valida come notizia recente fino al 31 dicembre 2026).
 
 ## 1. Missione
 
