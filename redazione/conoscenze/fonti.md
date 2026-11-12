@@ -227,6 +227,13 @@ Coerente con `regole-comuni.md`, sezione 4: non bastano da sole social network, 
 
 ## Dati di settore
 
+### CNR, Rapporto sul Turismo Italiano (XXVII edizione, 2024-2025)
+- **Editore**: CNR Edizioni (CNR-IRISS)
+- **URL**: https://www.cnr.it/sites/default/files/public/media/attivita/editoria/CNR_XXVII_Rapporto%20sul%20Turismo%20Italiano%202024-2025%20web.pdf
+- **Serve a**: quadro annuale del turismo italiano (presenze, stagionalità per comune, trasporto aereo, affitti brevi, crociere); dati su Roma con pagina e regole d'uso in `conoscenze/cnr-rapporto-turismo.md`
+- **Aggiornamento**: annuale (edizione finita di stampare a ottobre 2026, letta il 12 novembre 2026)
+- **Livello**: 3 quando riprende dati di altri enti: si cita con la fonte originale indicata nella tabella
+
 ### ISTAT, turismo
 - **Editore**: ISTAT
 - **URL**: https://www.istat.it/produzione-editoriale/turismo/
