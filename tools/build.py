@@ -205,6 +205,9 @@ ORG = {
                 "postalCode": "00173", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
     "areaServed": {"@type": "Country", "name": "Italia"},
     "knowsAbout": ["Revenue management alberghiero", "GOP", "GOPPAR", "USALI", "Distribuzione alberghiera"],
+    # Profili ufficiali dell'azienda: collegano il sito ai profili che Google già mostra per "Ricavia"
+    "sameAs": ["https://www.linkedin.com/company/ricaviagroup/", "https://www.instagram.com/ricaviagroup/",
+               "https://www.facebook.com/ricaviagroup/"],
 }
 
 SERVICES = {
