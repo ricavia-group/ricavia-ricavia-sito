@@ -18,7 +18,7 @@ with open(os.path.join(ROOT, 'tools', 'seo.json'), encoding='utf-8') as f:
 
 # id nel sorgente, indirizzo, titolo della scheda
 PAGES = [
-    ('home', '', 'Revenue management e consulenza per hotel a Roma · Ricavia'),
+    ('home', '', 'Ricavia · Revenue management e consulenza per hotel a Roma'),
     ('revenue-management', 'revenue-management', 'Revenue management per hotel a Roma · Ricavia'),
     ('consulenza', 'consulenza', 'Consulenza per hotel: margine, GOP e GOPPAR · Ricavia'),
     ('apertura', 'nuova-apertura', 'Nuova apertura di un hotel o di una struttura ricettiva · Ricavia'),
