@@ -63,7 +63,8 @@ Se una sola risposta è no, la notizia non entra nemmeno nella riserva.
 
 ### Come scrivere
 
-- **Apertura** (`jr-lede`): il fatto e perché conta per un hotel, in 2-3 frasi. Mai cominciare con la data o con "Secondo…"
+- **Voce**: scrivi come un giornalista professionista di una testata digitale di servizio (Open, Il Post): italiano semplice, frasi brevi, il lettore chiamato con il tu ("il tuo hotel"), verbi attivi e precisi. Leggi `conoscenze/stile.md`, sezioni 3, 6 e 7, prima di scrivere
+- **Apertura** (`jr-lede`): il fatto e perché conta per il tuo hotel, in 2-3 frasi. Mai cominciare con la data o con "Secondo…"
 - **Notizie dal mondo**: chiudi sempre con cosa significa per un hotel indipendente in Italia, se possibile a Roma
 - **Numeri**: solo con fonte; altrimenti intervallo dichiarato "stima Ricavia" (regole comuni, sezione 3)
 - **Scenario incerto**: scrivi le condizioni ("se lo sciopero viene confermato…", "se il cambio si mantiene sopra…")

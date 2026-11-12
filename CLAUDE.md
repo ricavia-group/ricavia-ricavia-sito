@@ -32,6 +32,9 @@ Leggi anche README.md per struttura e indirizzi delle pagine.
 - Mai "struttura" da sola: scrivi "struttura ricettiva", "hotel" o altro.
 - Lessico del settore alberghiero: occupazione, tariffe, margine, commissioni di distribuzione, costi operativi, personale, operatività, GOP, GOPPAR, competitive set, riclassificazione secondo lo standard USALI, call conoscitiva.
 - Niente verbi colloquiali ("vanno", "coprono", "resta/restano", "finiscono altrove", "prendono strade"), niente metafore deboli ("bussola", "cruscotto", "a portata di mano"), niente "Così" a inizio frase.
+- Niente verbi forzati o indiretti: mai "prezzare" in nessuna forma ("si prezza", "la prezziamo"), niente "va + participio" ("va verificato"), niente "si" impersonale con verbi impropri o generici ("il ponte si costruisce", "la notte si legge"). Verbi attivi e precisi, soggetto sempre esplicito.
+- Mai "agenzie di viaggio online": sempre OTA o OTAs.
+- Negli articoli del Journal il lettore si chiama con il tu ("il tuo hotel"): mai costruzioni con "chi" ("chi gestisce", "chi arriva") e mai gli hotel in terza persona. Italiano semplice, da giornalista: vedi `redazione/conoscenze/stile.md`, sezioni 6 e 7.
 - Registro serio e professionale. Non inventare dati: se un numero o un calcolo non torna, segnalalo invece di correggerlo.
 - Gli elenchi "Da ricordare" hanno frasi brevi, parallele, con la stessa costruzione.
 - Nessun punto alla fine dei testi (titoli, sottotitoli, paragrafi, voci di elenco, didascalie, citazioni): il punto resta solo dentro il testo, tra una frase e l'altra.

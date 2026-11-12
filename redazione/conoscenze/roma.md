@@ -121,7 +121,7 @@ Le zone coperte dalle fonti sono otto. Per le altre zone citate nei manuali dell
 Principi (articolo: Calendario di Roma):
 
 - Roma non ha una sola alta stagione: ne ha diverse, sovrapposte, e ognuna porta un ospite diverso
-- Chi imposta i prezzi guardando solo i mesi perde i giorni: si prezzano le singole date, non i mesi
+- Impostare le tariffe guardando solo i mesi fa perdere i giorni: ogni data ha la sua tariffa dedicata, non il mese
 - I ponti cambiano valore con il giorno della settimana: "Il ponte che cade di lunedì e quello che cade di mercoledì non sono lo stesso ponte"
 - Calendario a 12 mesi con eventi, ponti e festività; date calde riviste almeno una volta a settimana; soggiorno minimo nei picchi, tolto quando il picco non si riempie
 
@@ -138,7 +138,7 @@ Solo eventi ricorrenti: le date di un anno specifico si verificano sempre sulla 
 | Settembre e ottobre | "La seconda primavera": temperature miti, ritorno dei congressi, molti ospiti da Nord America e Asia. Per molte zone è il periodo migliore dell'anno, spesso sottovalutato da chi abbassa i prezzi a fine agosto per abitudine | articolo: Calendario di Roma |
 | Ottobre | Festa del Cinema (presente solo nel calendario di esempio della pagina, in nessun articolo; conoscenza generale, da verificare) | pagina: Revenue management (calendario di esempio) |
 | Novembre | Più calmo | articolo: Calendario di Roma |
-| Dicembre | Ponte dell'Immacolata, mercatini, Natale, Capodanno. Le date tra il 27 dicembre e il 2 gennaio devono essere aperte e prezzate con mesi di anticipo, con regole di soggiorno minimo chiare | articolo: Calendario di Roma; pagina: Revenue management |
+| Dicembre | Ponte dell'Immacolata, mercatini, Natale, Capodanno. Le date tra il 27 dicembre e il 2 gennaio devono essere aperte con mesi di anticipo, con una tariffa dedicata per ogni data e regole di soggiorno minimo chiare | articolo: Calendario di Roma; pagina: Revenue management |
 
 Note:
 
@@ -183,7 +183,7 @@ Note:
 - Nuove rotte: quando una compagnia apre un collegamento diretto con una nuova città, nei mesi successivi aumentano gli ospiti da quel mercato; seguire aperture e chiusure delle rotte indica da dove arriverà la domanda e in quale lingua curare annunci e messaggi (articolo: Voli)
 - Lungo raggio e voli brevi: chi arriva da lontano, per esempio dal Nord America, prenota con più anticipo, soggiorna più notti e tende a scegliere zone centrali; chi arriva con un volo breve, spesso low cost, decide più tardi e viaggia per un weekend (articolo: Voli)
 - Ricerche dei voli: una crescita insolita delle ricerche verso Roma per certe date segnala spesso un evento o un ponte; accorgersene settimane prima permette di alzare i prezzi in tempo (articolo: Voli)
-- Il segnale aereo si legge insieme ai prezzi della zona (articolo: Voli, In breve)
+- Il segnale aereo ha valore solo insieme ai prezzi della zona (articolo: Voli, In breve)
 
 ### Ferrovia e Termini
 
@@ -277,7 +277,7 @@ Le fonti non contengono informazioni di mercato sul Lazio fuori Roma.
 ### Distribuzione e costi
 
 - Le OTA portano prenotazioni ma ogni notte ha un costo; le leve sono il mix dei canali e la parità tra sito e OTA (pagina: Revenue management)
-- Il costo del personale si legge in rapporto ai ricavi: in bassa stagione, a parità di organico, la sua incidenza raddoppia (esempio del sito, non dato di mercato) (pagina: Consulenza; pagina: Indicatori)
+- Il costo del personale ha senso solo in rapporto ai ricavi: in bassa stagione, a parità di organico, la sua incidenza raddoppia (esempio del sito, non dato di mercato) (pagina: Consulenza; pagina: Indicatori)
 - Forniture ed energia: contratti e consumi rivisti con i numeri alla mano (pagina: Consulenza)
 - DA COMPLETARE (Ricavia): quali temi normativi oltre all'extralberghiero (per esempio ZTL, regole sul lavoro stagionale, IVA) Ricavia vuole che la redazione segua con priorità?
 
