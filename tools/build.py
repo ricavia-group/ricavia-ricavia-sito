@@ -475,11 +475,18 @@ def archive_page(mese, articoli):
 ART_DATE = {}
 urls += [art_page(a, x) for a, x in ARTS]
 urls += [archive_page(m, [a for a in NUOVI if a['data'].startswith(m)]) for m in MESI_NUOVI]
-# data dell'ultima modifica: per gli articoli la data di pubblicazione, per le pagine l'ultimo salvataggio del sito
+# data dell'ultima modifica: per gli articoli la data di pubblicazione; per le pagine l'ultimo salvataggio
+# dei file che le generano (non dei soli articoli del journal, che non cambiano le altre pagine).
+# Una data che cambia a ogni articolo su tutte le pagine porta Google a ignorare lastmod.
 try:
-    LAST = subprocess.run(['git', 'log', '-1', '--format=%cs'], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    LAST = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', 'index.html', 'assets', 'parti',
+                           'tools/build.py', 'tools/seo.json'],
+                          cwd=ROOT, capture_output=True, text=True).stdout.strip()
 except Exception:
     LAST = ''
+# l'elenco dell'Osservatorio cambia anche quando esce un articolo nuovo
+if NUOVI:
+    ART_DATE['/osservatorio/'] = max([LAST] + [a['data'] for a in NUOVI])
 def lastmod(u):
     d = ART_DATE.get(u.replace(DOMAIN, '')) or LAST
     return '<lastmod>%s</lastmod>' % d if d else ''
