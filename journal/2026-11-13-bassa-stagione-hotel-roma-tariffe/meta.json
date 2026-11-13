@@ -1,0 +1,197 @@
+{
+  "slug": "bassa-stagione-hotel-roma-tariffe",
+  "data": "2026-11-13",
+  "categoria": "dati",
+  "titolo": "Per il CNR la bassa stagione di Roma è più lieve che a Firenze e Venezia: tariffe per data",
+  "sottotitolo": "Cosa misura l'elaborazione del CNR sui dati ISTAT del 2025, quali limiti ha il dato e come aprire gennaio-marzo 2027 con una tariffa per data, partendo dalla stagionalità del tuo hotel",
+  "title_seo": "Bassa stagione hotel a Roma: tariffe per data · Ricavia",
+  "description": "Per il CNR la bassa stagione di Roma pesa meno che a Firenze e Venezia: come aprire gennaio-marzo con una tariffa per data e misurare quella del tuo hotel",
+  "related_intro": "Per costruire le tariffe della bassa stagione, approfondisci",
+  "related": [
+    {
+      "label": "presenze a Roma tra hotel ed extralberghiero",
+      "url": "/osservatorio/presenze-hotel-roma-extralberghiero/"
+    },
+    {
+      "label": "il revenue management per hotel a Roma",
+      "url": "/revenue-management/"
+    }
+  ],
+  "alt": "La cupola dei Santi Luca e Martina tra i tetti e i pini del Foro Romano, sotto un cielo azzurro con nuvole bianche",
+  "autore": "Tito · Redazione Ricavia",
+  "tesi": "Secondo il Rapporto sul Turismo Italiano del CNR, su dati ISTAT 2025, Roma ha un coefficiente di variazione mensile delle presenze del 13,2%, il più basso tra le città d'arte della tabella (alla pari con Padova; Firenze 22,3%, Venezia 25,0%, Italia 56,4%), e la nota della Banca d'Italia sul Giubileo indica che i viaggiatori giubilari si sono distribuiti come la stagionalità abituale, quindi la regolarità non sembra un effetto del Giubileo, almeno per i viaggiatori stranieri che la nota misura: in inverno la domanda di Roma cala ma non crolla, per cui il tuo hotel non apre gennaio-marzo 2027 con una tariffa di stagione più bassa per tutte le notti, ma con una tariffa per data (feriali, weekend, eventi, Pasqua il 28 marzo) e una soglia minima sui costi variabili, misura la propria stagionalità mese per mese per capire se un inverno debole dipende dal mix più che dal mercato, cerca i segmenti dell'inverno (tariffe negoziate con le aziende, soggiorni più lunghi nei giorni feriali) prima di toccare il prezzo e confronta il pick-up con il primo trimestre 2026, il primo dopo la chiusura del Giubileo il 6 gennaio 2026, alla stessa distanza dall'arrivo; il dato conta le notti e non le tariffe, quindi non dice quanto si può chiedere",
+  "tema": "stagionalita-roma-primo-trimestre-2027",
+  "fonti": [
+    {
+      "titolo": "XXVII Rapporto sul Turismo Italiano 2024-2025",
+      "editore": "CNR Edizioni (CNR-IRISS)",
+      "url": "https://www.cnr.it/sites/default/files/public/media/attivita/editoria/CNR_XXVII_Rapporto%20sul%20Turismo%20Italiano%202024-2025%20web.pdf",
+      "data": "2026-11-13"
+    },
+    {
+      "titolo": "Un'analisi dei flussi turistici internazionali connessi con il Giubileo del 2025",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/pubblicazioni/metodi-e-fonti-approfondimenti/metodi-fonti-2026/metodi-e-fonti-Nota-Giubileo-2025.pdf",
+      "data": "2026-11-13"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Segnalazione di Ricavia (rapporto CNR, tema 1) che supera i tre filtri: dato su Roma con fonte ISTAT, meccanismo chiaro (domanda invernale che cala poco, quindi tariffe per data invece di una tariffa di stagione) e azioni per il primo trimestre 2027, dentro la finestra 2 settimane-6 mesi; unica bozza della giornata, garantisce da sola il mix (Roma e guarda avanti)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Unica bozza della giornata: gli altri candidati hanno forza 2 su 5 o sono fuori dalle regole (dettaglio in candidati.md e note-giornalista.md)",
+        "Fonte di livello 3: il CNR riprende dati ISTAT (Roma, pag. 84) ed Eurostat (Italia, pag. 79-81); non ho potuto controllare il dato comunale sull'ISTAT originale (esploradati.istat.it non ha risposto). Nel testo è attribuito come 'elaborazione del CNR sui dati ISTAT'",
+        "Dato del 2025, anno del Giubileo: il dubbio che il Giubileo abbia appiattito la stagionalità è affrontato con la nota della Banca d'Italia del 28 agosto 2026 (viaggiatori giubilari distribuiti come la stagionalità abituale). La nota riguarda i viaggiatori internazionali, non tutte le presenze di Roma: la frase nel testo è prudente ('la nota non indica una concentrazione nei mesi invernali'). Il revenue manager e il capo redattore valutino se basta",
+        "Limiti del dato scritti nel testo: misura le notti e non le tariffe; somma hotel ed extralberghiero; perimetro 2025 allargato agli affitti brevi (CNR pag. 80). Nessuna stima Ricavia, nessun valore mensile di Roma (il rapporto non lo pubblica)",
+        "Padova ha lo stesso coefficiente di Roma (13,2%): il testo lo dice ('alla pari con Padova') e il titolo di lavoro parla di 'bassa stagione più corta' tra le città d'arte; il virality director eviti un titolo con 'unica' o 'la meno stagionale d'Italia' senza la precisazione",
+        "Sei Nazioni, Maratona di Roma ed Epifania sono citati senza date puntuali o con date di calendario; le fonti delle date sono negli articoli del 3 e del 4 novembre. Pasqua 28 marzo 2027 è un fatto di calendario",
+        "Rischio fotocopia: la 'tariffa minima per data' compare nell'articolo del 3 novembre su inflazione ed energia (lì dal lato dei costi, qui dal lato della domanda), che il testo linka; il primo trimestre 2027 è toccato da Sei Nazioni, Maratona, sterlina e alta velocità Roma-Napoli, ma nessuno di questi articoli tratta la stagionalità della città come tema. Il SEO director verifichi",
+        "Impatto sugli indicatori: la notizia non è uno shock di domanda; ho scritto Occupazione e Pick-up '=' e ADR e RevPAR '↑ bassa' condizionati alla scelta del singolo hotel. Il revenue manager valuti se il formato lo ammette o se servono '?'",
+        "Antitrust: nessun livello di prezzo, nessun invito ad allinearsi; tutte le azioni sono sui dati del singolo hotel",
+        "Collegamenti interni nel corpo: 2 (calendario di Roma, articolo su inflazione ed energia), più /hotel-score/ nel paragrafo Ricavia (voci 4.1 n. 6 e 7). /hotel-score/ è stato usato come chiusura il 3 novembre (Sei Nazioni), non negli ultimi 9 giorni",
+        "Categoria proposta 'dati'; parole del corpo circa 1.000"
+      ],
+      "ruolo_ricavia": "Davanti a un dato sulla stagionalità della città, Ricavia confronta tariffe, calendario, mix dei canali e recensioni del singolo hotel con il suo competitive set mese per mese, per capire se un inverno debole dipende dal mercato o dalle scelte dell'hotel"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge: una stagionalità mensile bassa delle presenze (13,2%, CNR su dati ISTAT) dice che in inverno la domanda della città cala senza crollare, per cui uno sconto di stagione su tutte le notti cede ADR anche sulle notti con domanda propria; il limite (il dato conta le notti, non le tariffe, e somma l'extralberghiero) è scritto nel testo. Ho corretto indicatori e azioni nel mio ambito",
+      "correzioni": [
+        "Impatto, Occupazione: da '=' a '?' con 'da monitorare sul pick-up'. Il rapporto descrive la distribuzione della domanda nell'anno, non una variazione del 2027: '=' usato per dire 'non so' non è ammesso (manuale, sezione 2)",
+        "Impatto, RevPAR: da '↑ bassa' a '?', per coerenza con il glossario (occupazione incerta e ADR in aumento); sale con l'ADR solo se l'occupazione delle notti vendute senza sconto non scende",
+        "Impatto, Pick-up: da '=' a '?'; corretto 'il primo trimestre 2026, che non contiene il Giubileo' (i primi sei giorni di gennaio 2026 sono ancora Giubileo: ora 'il primo dopo la chiusura del Giubileo il 6 gennaio' e 'tieni a parte i primi giorni di gennaio 2026'); aggiunto il confronto alla stessa distanza dall'arrivo",
+        "Impatto, ADR: segmenti distinti (lavoro e congressi nelle notti feriali, leisure internazionale nelle date con evento come Sei Nazioni e Maratona); 'notti infrasettimanali' diventa 'notti feriali' come nell'azione 2; 'singolo hotel' diventa 'tuo hotel'",
+        "Azione 1: anno di riferimento dal 2026 (non ancora chiuso, manca dicembre) al 2025, lo stesso anno del rapporto; 'notti vendute' diventa 'camere vendute'; aggiunto il calcolo del coefficiente di variazione da confrontare con il 13,2% di Roma, perché l'indice mensile da solo non ha un termine di paragone (il rapporto non pubblica i valori mensili di Roma)",
+        "Azione 2: il confronto del pick-up è ora con il primo trimestre 2026 alla stessa distanza dall'arrivo, non con un generico '2026'",
+        "Azione 3: tolta la parte su Pasqua e sui canali che vendono all'estero, con il dato 'stranieri oltre tre quarti delle presenze' (ripete l'azione dell'articolo del 7 novembre sulle rotte Delta, 'aprire ora marzo e aprile 2027 data per data', e legava la quota di stranieri all'apertura anticipata con un lead time non citato da nessuna fonte); sostituita con due azioni concrete sui segmenti dell'inverno: tariffe negoziate 2027 con le aziende e tariffa per i soggiorni di più notti nei giorni feriali (catalogo 4.2, consiglio G)",
+        "meta.json, tesi: 'il primo senza Giubileo' diventa 'il primo dopo la chiusura del Giubileo il 6 gennaio 2026, alla stessa distanza dall'arrivo'; aggiunta l'azione sui segmenti dell'inverno"
+      ],
+      "segnalazioni": [
+        "Rischio ripetizione sul messaggio, non sul tema: 'niente sconti generalizzati d'inverno, tariffa per data, decidi sul pick-up' compare già il 3 novembre (tariffa minima per data), il 4 novembre (weekend d'inverno costruiti sul pick-up, senza sconti anticipati) e il 7 novembre (invece di sconti generalizzati). L'elemento nuovo è la misura della stagionalità della città e del singolo hotel (azione 1). Il SEO director e il capo redattore valutino",
+        "Il titolo h3 'Il Giubileo non spiega la regolarità del 2025' e la voce uguale dell'In breve sono più forti della prova: la nota della Banca d'Italia riguarda solo i viaggiatori internazionali venuti per il Giubileo (il 2,2% dei pernottanti), non i pellegrini italiani né tutte le presenze di Roma. Proposta: 'Il Giubileo non sembra spiegare la regolarità del 2025'. L'h3 è del SEO director, l'In breve non è del mio ambito",
+        "Frase 'Il Giubileo ha aggiunto volume, soprattutto nel Lazio, dove i viaggiatori stranieri con pernottamento sono cresciuti del 23,0%': il lettore può attribuire al Giubileo tutta la crescita del 23,0%. Da controllare sulla nota se la Banca d'Italia la attribuisce al Giubileo; se no, separare i due fatti. Non l'ho toccata perché non cambia la tesi",
+        "Pagina della tabella 4.6: fonti.md indica pag. 84, la scheda conoscenze/cnr-rapporto-turismo.md indica pag. 86 del PDF. Non cambia il testo, ma il riferimento in fonti.md va controllato",
+        "Il confronto dell'azione 1 è indicativo: il 13,2% della città misura presenze (persone per notte) di hotel ed extralberghiero, e un hotel quasi pieno in estate ha per costruzione una variazione più bassa. Il testo lo dice in parte nel paragrafo sui limiti; nessuna correzione",
+        "Indicatori: tre voci su quattro sono '?', perché il dato descrive una struttura della domanda e non uno shock; solo l'ADR ha una direzione, condizionata alla scelta del singolo hotel. È la lettura corretta per un articolo di dati; il capo redattore valuti se basta",
+        "Il dato 'stranieri oltre tre quarti delle presenze' (pag. 77) non è più nel testo: si può togliere da fonti.md",
+        "'Il dato del CNR suggerisce un'altra lettura: in quei mesi la domanda c'è, con un ospite diverso': 'con un ospite diverso' viene dal calendario di Roma, non dal CNR. La frase dopo cita il calendario, quindi l'ho lasciata"
+      ],
+      "ruolo_ricavia": "In situazioni come questa controlliamo ogni settimana pick-up e occupazione a 90 giorni delle date di gennaio-marzo, confrontati con il primo trimestre 2026 alla stessa distanza dall'arrivo, e usiamo lo sconto solo sulle date in ritardo, non sull'intero mese"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema non duplicato: nessun articolo negli ultimi 14 giorni misura la stagionalità di Roma né ha keyword sulla bassa stagione; keyword dell'albergatore ('bassa stagione hotel Roma') distinta da quella dell'articolo storico sul calendario ('Stagionalità hotel a Roma'), che il corpo linka; title, description, slug e related compilati e verificati con conteggio reale (title 55 caratteri, description 154)",
+      "correzioni": [
+        "Apertura, prima frase: 'A Roma la bassa stagione esiste' diventa 'A Roma la bassa stagione di hotel ed extralberghiero esiste', per avere nella stessa frase tutte le parole della keyword principale; il perimetro è quello già scritto nel corpo (il dato CNR somma hotel ed extralberghiero), nessun fatto, numero o fonte cambiato",
+        "h3 della terza sezione: 'Gennaio-marzo 2027: una tariffa per ogni data' diventa 'Bassa stagione a Roma: il tuo hotel decide una tariffa per ogni data', per inserire la keyword in un h3; il periodo gennaio-marzo 2027 resta nella prima frase della sezione"
+      ],
+      "segnalazioni": [
+        "Confronto con i temi vicini (criterio 1): articolo storico del 5 ottobre 'Il calendario di Roma' (title 'Stagionalità hotel a Roma: calendario della domanda', oltre i 14 giorni) descrive i dodici mesi, questa bozza misura la stagionalità della città contro le altre città d'arte e la applica al primo trimestre 2027; 7 novembre presenze-hotel-roma-extralberghiero (keyword 'presenze hotel Roma'): calo del primo semestre 2026, tesi diversa; 3 novembre inflazione-energia-costi-hotel: tariffa minima per data dal lato dei costi, linkata nel corpo. Tesi nuova, nessun veto. Resta il rischio di messaggio ripetuto segnalato dal revenue manager ('niente sconti generalizzati d'inverno' il 3, 4 e 7 novembre): lo valuti il capo redattore",
+        "Cannibalizzazione con l'articolo storico sul calendario: ho evitato 'stagionalità' come keyword principale e nel title; il collegamento nel corpo verso il calendario chiarisce a Google il rapporto tra le due pagine",
+        "h3 'Il Giubileo non spiega la regolarità del 2025' e la voce uguale dell'In breve: concordo con il revenue manager che sono più forti della prova (la nota Banca d'Italia riguarda solo i viaggiatori internazionali venuti per il Giubileo). Non l'ho cambiato perché il mio ruolo consente un solo h3, usato per la keyword. Proposta: 'Il Giubileo non sembra spiegare la regolarità del 2025', in h3 e In breve. Decide il capo redattore",
+        "Collegamenti interni nel corpo: 2 naturali (calendario di Roma, inflazione ed energia), entrambi pubblicati su main, più /hotel-score/ di chiusura. Le voci di related non ripetono collegamenti del corpo",
+        "Title e description senza cifre e senza anno, per non invecchiare; slug senza date e unico tra seo.json e journal/"
+      ],
+      "ruolo_ricavia": "Per il lettore che arriva cercando come gestire la bassa stagione, il passo successivo naturale è la pagina revenue management, dove Ricavia descrive come costruisce il calendario tariffario data per data sul pick-up del singolo hotel"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare e nuova nel Journal: il confronto tra Roma, Firenze e Venezia e la misura della stagionalità del proprio hotel; titolo di tipo dato con fonte nominata (l'ultimo dato è del 7 novembre, gli ultimi tre titoli sono conseguenza e contrasto), che mantiene ciò che promette e parla all'albergatore",
+      "correzioni": [
+        "meta.json, titolo: sostituito il titolo di lavoro 'Roma, la bassa stagione più corta tra le città d'arte: gennaio-marzo 2027 non è un trimestre da svendere' (103 caratteri, oltre il limite di 90; 'più corta' non è preciso perché il coefficiente misura l'ampiezza delle oscillazioni, non la durata, e Roma è alla pari con Padova; 'svendere' fuori registro) con 'Per il CNR la bassa stagione di Roma è più lieve che a Firenze e Venezia: tariffe per data' (90 caratteri), coerente con title_seo e keyword",
+        "meta.json: compilati sottotitolo, mood (serio) e 3 alternative di tipo domanda, contrasto e conseguenza, tutte entro 90 caratteri e diverse dai titoli pubblicati",
+        "Frase citabile: lasciata invariata ('A Roma l'inverno riduce la domanda, non la cancella. Lo sconto di stagione è una scelta, non un obbligo'): contrasto doppio, senza numeri, senza punto finale, coerente con la tesi e ripetibile tra colleghi"
+      ],
+      "segnalazioni": [
+        "Concordo con revenue manager e SEO director: h3 e voce dell'In breve 'Il Giubileo non spiega la regolarità del 2025' sono più forti della prova; 'non sembra spiegare' è la scelta prudente. Fuori dal mio ambito, decide il capo redattore",
+        "Il titolo non dice 'la più bassa' né 'unica' perché Roma è alla pari con Padova; il confronto con Firenze e Venezia è esatto (13,2% contro 22,3% e 25,0%)",
+        "Rischio di messaggio già letto ('niente sconti generalizzati d'inverno', 3, 4 e 7 novembre): il titolo punta sul dato nuovo (il confronto tra città d'arte) e non sullo sconto, per distinguere l'articolo; l'alternativa di tipo domanda riprende lo sconto e va scelta solo se il capo redattore ritiene il messaggio abbastanza distinto"
+      ],
+      "ruolo_ricavia": "Il racconto si chiude bene se il paragrafo Ricavia porta dal dato della città al numero del singolo hotel: Ricavia confronta la stagionalità mese per mese dell'hotel con quella di Roma prima di decidere su quali date serve uno sconto"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina stock con una foto vera di Roma (cupola dei Santi Luca e Martina sopra il Foro Romano), pertinente al confronto tra città d'arte che regge titolo e tesi; mood serio, nessuna persona, scritta o marchio, palette azzurro-blu, soggetto diverso dalle copertine recenti",
+      "correzioni": [
+        "meta.json: compilati immagine (fonte stock, id 160605063, scheda, libreria e alt_libreria di riserva, testo_sovrapposto null) e alt"
+      ],
+      "segnalazioni": [
+        "Libreria: nessuna foto pertinente libera. Le vedute di Roma con il Colosseo dall'alto (0e01261517 e bb5d2ac53b, quasi la stessa foto) sono state foto di riserva il 4 e il 3 novembre; le altre foto inutilizzate mostrano persone riconoscibili (reception, check-in) o una scritta latina leggibile (db705b531a). Ho cercato nell'archivio stock",
+        "Archivio stock: nessuna foto vera di Roma d'inverno adatta (i risultati 'winter' sono città innevate estere o ritratti); per questo la copertina racconta Roma città d'arte e non la stagione. La scheda e l'alt non dichiarano l'inverno, che la foto non mostra con certezza",
+        "Foto gratuita (40 crediti), formato 3:2: all'editore il ritaglio 16:9 e social con più pini tagliati in basso che cielo in alto, cupola intera nella fascia centrale",
+        "Riserva bb5d2ac53b: è stata riserva il 3 novembre ma non è mai stata pubblicata come copertina (quell'articolo ha una foto generata); è molto simile a 0e01261517, riserva del 4 novembre, anch'essa mai pubblicata. Se l'editore la usa, l'alt è in alt_libreria",
+        "Soggetto mancante in libreria, da ampliare: Roma in bassa stagione (piazze e strade del centro in inverno, luce fredda, pochi passanti lontani)"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo, l'articolo passa dalla città al singolo hotel: la copertina mostra Roma nel suo insieme, il dato della città, mentre il paragrafo Ricavia porta il lettore alla stagionalità mese per mese del suo hotel, che nessuna veduta può mostrare"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "h3 della seconda sezione: 'Il Giubileo non spiega la regolarità del 2025' diventa 'Giubileo 2025: i viaggiatori stranieri seguono la stagione abituale'. Il titolo diceva più della prova: la nota della Banca d'Italia (letta oggi sul PDF) misura solo i viaggiatori internazionali venuti per il Giubileo e la loro distribuzione per trimestre, non tutte le presenze di Roma né i pellegrini italiani. Ora il titolo descrive ciò che la fonte dice, senza trarre la conclusione",
+        "In breve, seconda voce: 'Il Giubileo non spiega la regolarità del 2025' diventa 'I viaggiatori stranieri del Giubileo seguono la stagione abituale', stessa precisazione, costruzione parallela alle altre voci (soggetto e verbo al presente)",
+        "Seconda sezione, ultima frase: separati i due fatti sul Lazio, come chiedeva il revenue manager. Ora: 'secondo la nota, la crescita del 23,0% dei viaggiatori stranieri con pernottamento si deve in larga parte all'Anno Santo' (la nota scrive 'in larga parte determinato' dai viaggiatori del Giubileo e dagli altri partecipanti) e 'La nota non indica una concentrazione nei mesi invernali, ma riguarda solo i viaggiatori stranieri, non i pellegrini italiani': limite della fonte già scritto in fonti.md, nessun fatto nuovo",
+        "Lunghezza: dopo le precisazioni il corpo superava le 1.100 parole (circa 1.150). Tolte frasi ridondanti senza toccare fatti, numeri e fonti: 'Il confronto con il resto del Paese rende l'idea', 'Secondo l'indagine sul turismo internazionale' (la fonte resta attribuita alla nota), 'e conviene tenerli presenti', 'la conseguenza è pratica', 'Sono notti che il tuo hotel non può leggere con la media del mese' (ripeteva la frase d'apertura del paragrafo). Ora circa 1.090 parole",
+        "Paragrafo Ricavia riscritto: quello della bozza ripeteva pratica e costruzione dell'articolo del 4 novembre (competitive set e Hotel Score, 'sui soli dati pubblici'); ora fonde revenue manager e virality director sulla pratica 4.1 n. 2 (pick-up e occupazione a 90 giorni ogni settimana, confrontati con il primo trimestre 2026) con chiusura su /hotel-score/ (4.1 n. 7). Nessuna pratica già usata questa settimana (9 novembre: n. 13; 10 novembre: n. 5; 11 novembre: n. 3)",
+        "meta.json, tesi: 'la regolarità non è un effetto del Giubileo' diventa 'non sembra un effetto del Giubileo, almeno per i viaggiatori stranieri che la nota misura'"
+      ],
+      "segnalazioni": [
+        "Rischio di messaggio ripetuto (revenue manager, SEO director, virality director): valutato e non bloccante. Il tema non è duplicato (SEO director APPROVED, nessun veto): nessun articolo degli ultimi 14 giorni misura la stagionalità di Roma, la fonte è nuova e segnalata da Ricavia, il titolo punta sul confronto tra città d'arte. Il messaggio 'tariffa per data, sconto solo dove il pick-up è in ritardo' compare il 3, il 4 e il 7 novembre come conseguenza di fatti diversi; qui l'elemento nuovo e utile è la misura della stagionalità della città e del singolo hotel (azione 1). L'azione 2 riprende la tariffa minima del 3 novembre e la collega in modo esplicito. Nei prossimi giorni un altro articolo che chiuda su 'niente sconti generalizzati d'inverno' sarebbe una fotocopia",
+        "Dati verificati oggi sulle fonti: CNR, tab. 4.6 a pag. 86 del PDF (84 a stampa), Roma 50,4 milioni, 13,2%, picco luglio, alla pari con Padova, Firenze 22,3%, Venezia 25,0%; Italia 56,4% e novembre a 44,7 (pag. 79-80 del PDF); Roma 9,4% delle presenze (pag. 77 del PDF). Banca d'Italia, nota del 28 agosto 2026: quasi 1,4 milioni, 2,2%, distribuzione simile alla stagionalità abituale con il picco estivo, Lazio +23,0% 'in larga parte' dovuto ai viaggiatori del Giubileo (nota 9: il 45% dell'aumento ai soli viaggiatori del Giubileo)",
+        "Il dato comunale ISTAT originale non è stato controllato (il CNR lo elabora; il coefficiente è un calcolo del CNR, che è anche la fonte primaria dell'elaborazione). Lo passo all'editore"
+      ],
+      "ruolo_ricavia": "Paragrafo finale scelto e fuso: pratica 4.1 n. 2 dal revenue manager (pick-up e occupazione a 90 giorni contro il primo trimestre 2026), passaggio dalla città al singolo hotel dal virality director, chiusura su /hotel-score/ (4.1 n. 7); il collegamento a /revenue-management/ proposto dal SEO director è già nei related",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; tesi precisata sul Giubileo con una correzione di forma)",
+        "[x] Ogni numero ha fonte (CNR su dati ISTAT ed Eurostat, Banca d'Italia, entrambe linkate e verificate oggi sui PDF; nessuna stima Ricavia)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta (una sola espressione ripresa dal calendario di Roma, articolo nostro, attribuita)",
+        "[x] Ruolo di Ricavia presente, 1 paragrafo, utile e non pubblicitario (pratiche 4.1 n. 2 e 7, un solo collegamento finale)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (nessun punto finale, tu al lettore, sigle con glossa, nessun verbo vietato)",
+        "[x] Tono coerente con la matrice del mood (dati economici: serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; messaggio vicino al 3, 4 e 7 novembre valutato e non bloccante)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter: nessun livello di prezzo né invito ad allinearsi, azioni sui dati del singolo hotel, nessun consiglio legale o fiscale; copertina stock vera, nessuna nota AI",
+        "[x] Da 700 a 1.100 parole (circa 1.090 dopo le correzioni), struttura completa (apertura, 5 h3 con impatto e azioni, citazione, In breve, paragrafo Ricavia)"
+      ]
+    }
+  ],
+  "keyword": {
+    "principale": "bassa stagione hotel Roma",
+    "secondarie": [
+      "stagionalità Roma città d'arte",
+      "tariffe hotel gennaio febbraio marzo",
+      "tariffa per data hotel",
+      "stagionalità presenze Roma CNR"
+    ]
+  },
+  "mood": {
+    "scelta": "serio",
+    "perche": "Notizia di dati economici (matrice: serio o provocatorio); il corpo ha un registro serio e il dato ha limiti dichiarati (notti e non tariffe, Giubileo, perimetro con l'extralberghiero), quindi un taglio provocatorio esagererebbe la prova"
+  },
+  "alternative_titolo": [
+    "Bassa stagione a Roma: sconto su tutto il trimestre o una tariffa per ogni data?",
+    "Roma oscilla meno di Firenze e Venezia, il tuo hotel forse no: calcola la tua stagionalità",
+    "A Roma la domanda d'inverno cala senza crollare: lo sconto su tutte le notti costa ADR"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 160605063,
+      "titolo": "Panoramic view of Santi Luca e Martina church in Roman Forum",
+      "anteprima": "https://img.magnific.com/free-photo/panoramic-view-santi-luca-e-martina-church-roman-forum_1268-35823.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: la cupola della chiesa dei Santi Luca e Martina sopra i tetti del Foro Romano, con il campanile di Santa Francesca Romana, le rovine e i pini marittimi del centro storico e i monti sullo sfondo; Roma come città d'arte, il termine di confronto dell'articolo con Firenze e Venezia; nessuna persona, nessuna scritta leggibile, nessun marchio\nInquadratura: frontale e statica, cupola al centro e leggermente a destra, pini in primo piano ai lati, cielo con nuvole sopra; il formato originale è 3:2, nel ritaglio 16:9 e in quello social tagliare più pini in basso che cielo in alto, perché la cupola resti intera, lanterna compresa, nella fascia centrale\nLuce: diurna, sole laterale limpido, ombre morbide\nPalette: cielo azzurro #3CCDFA e blu #1F2DD0 con nuvole bianche, travertino e intonaci chiari, tetti in coppi e verde scuro dei pini; i toni caldi dei tetti e della facciata sono un accento, non un tono dominante; nessun filtro\nAtmosfera: seria e sobria, la città nel suo insieme, che attraversa l'anno senza svuotarsi; diversa da tutte le copertine recenti (atrio congressuale, binari, moneta, Colonna dell'Immacolata, ala in volo, Tevere, campo da tennis, aerei, tende, camere)",
+    "libreria": "assets/img/bb5d2ac53b.webp",
+    "alt_libreria": "Il Colosseo e il centro di Roma visti dall'alto in una giornata limpida, con alberi spogli e i monti sullo sfondo",
+    "testo_sovrapposto": null
+  }
+}
