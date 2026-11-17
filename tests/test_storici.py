@@ -15,4 +15,4 @@ class TestStorici(unittest.TestCase):
             attesi = json.load(f)
         self.assertEqual(len(attesi), 6)
         for slug, h in attesi.items():
-            self.assertEqual(sha(os.path.join(site, 'osservatorio', slug, 'index.html')), h, slug)
+            self.assertEqual(sha(os.path.join(site, 'journal', slug, 'index.html')), h, slug)

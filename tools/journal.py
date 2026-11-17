@@ -204,7 +204,7 @@ def _e(x):
 
 
 def _hero(a):
-    return '/osservatorio/%s/hero.webp' % a['slug']
+    return '/journal/%s/hero.webp' % a['slug']
 
 
 def template(a):
@@ -219,7 +219,7 @@ def template(a):
 
 def scheda(a, in_evidenza=False):
     return (
-        '<article class="%s ar" data-cat="%s"><a class="jr-hit" href="/osservatorio/%s/" aria-label="Leggi: %s"></a>'
+        '<article class="%s ar" data-cat="%s"><a class="jr-hit" href="/journal/%s/" aria-label="Leggi: %s"></a>'
         '<figure class="jr-im"><img src="%s" alt="" loading="lazy"></figure>'
         '<div class="jr-tx"><span class="jr-k">%s</span><h3>%s</h3><p>%s</p>'
         '<div class="jr-m"><span>%s</span><span>%d min di lettura</span><b>Leggi %s</b></div></div></article>'

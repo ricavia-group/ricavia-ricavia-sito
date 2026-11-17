@@ -21,33 +21,33 @@ class TestIndice(unittest.TestCase):
     def test_dodici_piu_recenti(self):
         for i in range(14):
             crea_articolo(self.r, slug='a%02d' % i, titolo='Titolo %02d' % i, data='2026-11-%02d' % (i + 1))
-        p = leggi(costruisci(self.r), 'osservatorio/index.html')
-        self.assertIn('href="/osservatorio/a13/"', p)
-        self.assertNotIn('href="/osservatorio/a01/"', p)
-        self.assertIn('href="/osservatorio/a02/"', p)
+        p = leggi(costruisci(self.r), 'journal/index.html')
+        self.assertIn('href="/journal/a13/"', p)
+        self.assertNotIn('href="/journal/a01/"', p)
+        self.assertIn('href="/journal/a02/"', p)
         self.assertIn('<nav class="jr-arch" aria-label="Archivio del Journal">', p)
-        self.assertIn('<a href="/osservatorio/archivio/2026-11/">Novembre 2026</a>', p)
+        self.assertIn('<a href="/journal/archivio/2026-11/">Novembre 2026</a>', p)
 
     def test_archivio_a_cavallo_dei_mesi(self):
         crea_articolo(self.r, slug='ott', titolo='Titolo ott', data='2026-10-31')
         crea_articolo(self.r, slug='nov', titolo='Titolo nov', data='2026-11-01')
         site = costruisci(self.r)
-        a10 = leggi(site, 'osservatorio/archivio/2026-10/index.html')
-        self.assertIn('/osservatorio/ott/', a10)
-        self.assertNotIn('/osservatorio/nov/', a10)
-        self.assertIn('/osservatorio/nov/', leggi(site, 'osservatorio/archivio/2026-11/index.html'))
+        a10 = leggi(site, 'journal/archivio/2026-10/index.html')
+        self.assertIn('/journal/ott/', a10)
+        self.assertNotIn('/journal/nov/', a10)
+        self.assertIn('/journal/nov/', leggi(site, 'journal/archivio/2026-11/index.html'))
         self.assertIn('<h1 class="jr-h1">Il Journal di ottobre 2026</h1>', a10)
         self.assertIn('<title>Journal di ottobre 2026 · Ricavia</title>', a10)
         self.assertIn('<footer class="ft z-ft', a10)
         self.assertIn('<div class="jr-arp"><a class="jr-back"', a10)
         sm = leggi(site, 'sitemap.xml')
-        self.assertIn('/osservatorio/archivio/2026-10/</loc><lastmod>2026-10-31', sm)
-        self.assertIn('/osservatorio/archivio/2026-11/', sm)
+        self.assertIn('/journal/archivio/2026-10/</loc><lastmod>2026-10-31', sm)
+        self.assertIn('/journal/archivio/2026-11/', sm)
 
     def test_indice_invariato_senza_nuovi(self):
-        self.assertNotIn('jr-arch', leggi(costruisci(os.path.join(self.r, 'vuoto')), 'osservatorio/index.html'))
+        self.assertNotIn('jr-arch', leggi(costruisci(os.path.join(self.r, 'vuoto')), 'journal/index.html'))
 
     def test_filtri_nuove_categorie(self):
-        p = leggi(costruisci(os.path.join(self.r, 'vuoto')), 'osservatorio/index.html')
+        p = leggi(costruisci(os.path.join(self.r, 'vuoto')), 'journal/index.html')
         for f in ('eventi', 'trasporti', 'macro'):
             self.assertIn('data-f="%s"' % f, p)

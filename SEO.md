@@ -52,7 +52,7 @@ Le espressioni sotto sono ipotesi di ricerca da verificare con Search Console e 
 | `/nuova-apertura/` | Valutare e avviare un progetto | business plan hotel Roma, studio di fattibilità albergo Lazio | Richiesta relativa a un progetto concreto |
 | `/hotel-score/` | Ottenere una prima valutazione | analisi hotel, Hotel Score Ricavia | Richiesta completa e pertinente |
 | `/indicatori/` | Capire e calcolare gli indicatori | calcolo GOPPAR, formula GOP hotel, calcolo RevPAR | Uso dello strumento e passaggio a consulenza |
-| `/osservatorio/` e articoli | Interpretare il mercato, non prenotare una vacanza | domanda alberghiera Roma, stagionalità hotel Roma, eventi e tariffe hotel | Lettura di un contenuto e accesso a servizio o Hotel Score |
+| `/osservatorio/` e `/journal/` con gli articoli | Interpretare il mercato, non prenotare una vacanza | domanda alberghiera Roma, stagionalità hotel Roma, eventi e tariffe hotel | Lettura di un contenuto e accesso a servizio o Hotel Score |
 
 Ogni intento commerciale ha una pagina di riferimento. Le guide devono rispondere a domande specifiche e accompagnare alle pagine servizi. Pagine per singoli comuni del Lazio sono giustificate solo da servizi, esperienza o dati effettivamente diversi; la priorità iniziale è rendere forti le pagine esistenti.
 
@@ -81,6 +81,8 @@ Presentare fasi, informazioni richieste, contenuto dello studio di fattibilità 
 Le recensioni e le menzioni non sono state richieste durante questa revisione: richiedono dati e contatti del team.
 
 ## Osservatorio e Journal
+
+Dal 17 novembre 2026 il Journal e i suoi articoli sono sotto `/journal/` (prima `/osservatorio/`), con redirect 301 dai vecchi indirizzi; `/osservatorio/` resta la pagina dell'Osservatorio.
 
 L'asset distintivo può essere un'analisi originale del mercato romano, con dati comprensibili per chi gestisce un hotel. Ogni analisi dovrebbe riportare fonte, periodo osservato, campione, metodo, limiti e persona che l'ha verificata. Le classifiche illustrative vanno mantenute distinguibili da quelle prodotte con dati reali.
 

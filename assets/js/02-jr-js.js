@@ -1,5 +1,5 @@
 (function(){
-var pg=document.getElementById('pg-osservatorio');if(!pg)return;
+var pg=document.getElementById('pg-journal');if(!pg)return;
 var rd=document.getElementById('jrRd'),art=rd.querySelector('.jr-art'),bar=rd.querySelector('.jr-pr i'),nx=rd.querySelector('[data-jr-next]');
 document.body.appendChild(rd);
 var ids=[].map.call(pg.querySelectorAll('template[id^="jr-t-"]'),function(t){return t.id.slice(5)}),cur=null,last=null;

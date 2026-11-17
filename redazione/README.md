@@ -1,5 +1,7 @@
 # Redazione dell'Osservatorio
 
+Gli articoli escono su `ricavia.com/journal/<slug>/` (non più sotto `/osservatorio/`; il formato della cartella `journal/` non cambia).
+
 Qui vivono le istruzioni della redazione automatica che ogni giorno propone fino a 2 articoli per il Journal di ricavia.com. Il progetto approvato è in `docs/superpowers/specs/2026-11-03-redazione-osservatorio-design.md`.
 
 ## Cosa c'è in questa cartella

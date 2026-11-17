@@ -27,6 +27,7 @@ PAGES = [
     ('pg-partner', 'partner', 'Partner tecnologici per hotel: PMS, channel manager · Ricavia'),
     ('contatti', 'contatti', 'Contatti: prenota una call conoscitiva · Ricavia'),
     ('pg-osservatorio', 'osservatorio', 'Osservatorio Roma: dati del mercato alberghiero · Ricavia'),
+    ('pg-journal', 'journal', 'Journal: mercato e prezzi degli hotel a Roma · Ricavia'),
     ('pg-pagella', 'hotel-score', 'Hotel Score gratuito per la tua struttura ricettiva · Ricavia'),
     ('pg-indicatori', 'indicatori', 'ADR, RevPAR, GOP e GOPPAR spiegati · Ricavia'),
     ('pg-privacy', 'privacy', 'Informativa privacy · Ricavia'),
@@ -89,14 +90,14 @@ for pid, _, _ in PAGES[1:]:
     pages[pid] = element(body, at)
 
 
-ARTS = re.findall(r'<template id="jr-t-(a\d+)">(.*?)</template>', pages['pg-osservatorio'], re.S)
+ARTS = re.findall(r'<template id="jr-t-(a\d+)">(.*?)</template>', pages['pg-journal'], re.S)
 # Gli indirizzi pubblicati non devono cambiare quando viene ritoccato un titolo.
 ART_URL = {}
 for aid, _ in ARTS:
     slug = SEO['articles'].get(aid, {}).get('slug', '')
     if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
         raise ValueError('Aggiungere uno slug stabile per %s in tools/seo.json' % aid)
-    ART_URL[aid] = '/osservatorio/%s/' % slug
+    ART_URL[aid] = '/journal/%s/' % slug
 if len(set(ART_URL.values())) != len(ART_URL):
     raise ValueError('Gli slug degli articoli devono essere univoci')
 
@@ -110,11 +111,20 @@ for _s in RITIRATI:
 for _a in NUOVI:
     _k = 'j-' + _a['slug']
     SEO['articles'][_k] = journal.voce_seo(_a)
-    ART_URL[_k] = '/osservatorio/%s/' % _a['slug']
+    ART_URL[_k] = '/journal/%s/' % _a['slug']
     ARTS.append((_k, journal.template(_a)))
 NUOVI_PER_CHIAVE = {'j-' + _a['slug']: _a for _a in NUOVI}
 MESI_IT = journal.MESI
 MESI_NUOVI = sorted({a['data'][:7] for a in NUOVI}, reverse=True)
+# Il Journal stava sotto /osservatorio/: i vecchi indirizzi di articoli e archivi diventano redirect 301 (_redirects)
+# e, nei testi degli articoli, i collegamenti vecchi vengono riscritti sui nuovi (nessun file di journal/ cambia).
+SLUG_ARTICOLI = [u.split('/')[2] for u in ART_URL.values()]
+VECCHI_LINK = re.compile(r'(?<![\w/.-])((?:https://ricavia\.com)?)/osservatorio/(archivio/\d{4}-\d{2}|%s)(?![\w.-])'
+                         % '|'.join(map(re.escape, SLUG_ARTICOLI)))
+
+
+def nuovi_link(h):
+    return VECCHI_LINK.sub(lambda m: m.group(1) + '/journal/' + m.group(2), h)
 
 
 def resolve_photos(h):
@@ -219,7 +229,7 @@ SERVICES = {
 
 
 def web_page(pid, title, url, desc):
-    kind = {'contatti': 'ContactPage', 'pg-chi-siamo': 'AboutPage', 'pg-osservatorio': 'CollectionPage'}.get(pid, 'WebPage')
+    kind = {'contatti': 'ContactPage', 'pg-chi-siamo': 'AboutPage', 'pg-osservatorio': 'CollectionPage', 'pg-journal': 'CollectionPage'}.get(pid, 'WebPage')
     data = {'@type': kind, '@id': url + '#webpage', 'url': url, 'name': title,
             'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
             'about': {'@id': DOMAIN + '/#org'}}
@@ -257,7 +267,7 @@ def jsonld(pid, title, url, content, crumbs=None):
 # blocco «Dall'Osservatorio»: tre articoli pertinenti prima delle domande frequenti
 OS_BLOCKS = {k: v for k, v in SEO.get('osservatorio_blocks', {}).items() if not k.startswith('_')}
 OS_CARDS = {}
-for m in re.finditer(r'<article class="jr-(?:cd|ft) ar"[^>]*><button type="button" class="jr-hit" data-art="(a\d+)".*?</article>', pages['pg-osservatorio'], re.S):
+for m in re.finditer(r'<article class="jr-(?:cd|ft) ar"[^>]*><button type="button" class="jr-hit" data-art="(a\d+)".*?</article>', pages['pg-journal'], re.S):
     card = re.sub(r'^<article class="jr-ft ', '<article class="jr-cd ', m.group(0))
     card = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
                   lambda x: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (x.group(1), ART_URL[x.group(1)], x.group(2)), card)
@@ -267,8 +277,8 @@ for m in re.finditer(r'<article class="jr-(?:cd|ft) ar"[^>]*><button type="butto
 def os_block(pid, content):
     cards = ''.join(OS_CARDS[a] for a in OS_BLOCKS[pid])
     sec = ('<section class="ap-sec ap-light ix rs-w rs os-rel"><div class="wrap"><div class="rs-th">'
-           '<span class="ap-tag ar">Dall\'Osservatorio</span><h2 class="ar">Dati e analisi sul mercato di Roma</h2></div>'
-           '<div class="os-rel-g">%s</div><p class="os-rel-all"><a class="z-btn" href="/osservatorio/">Tutti gli articoli <span class="arr">→</span></a></p></div></section>') % cards
+           '<span class="ap-tag ar">Dal Journal</span><h2 class="ar">Dati e analisi sul mercato di Roma</h2></div>'
+           '<div class="os-rel-g">%s</div><p class="os-rel-all"><a class="z-btn" href="/journal/">Tutti gli articoli <span class="arr">→</span></a></p></div></section>') % cards
     if pid == 'home':
         # in Home le animazioni di comparsa usano un altro sistema: il blocco resta visibile
         sec = re.sub(r'class="([^"]*?) ?\bar\b', lambda m: 'class="%s' % m.group(1), sec).replace(' class=""', '')
@@ -290,16 +300,18 @@ def page(pid, slug, title):
         content = content.replace(' aria-hidden="true"', ' aria-hidden="false"', 1)
         content = re.sub(r'class="(app pgv|ctp pgv)"', lambda m: 'class="%s on"' % m.group(1), content, count=1)
         content = content.replace(' data-lenis-prevent', '', 1)
-    if pid == 'pg-osservatorio':
+    if pid == 'pg-journal':
         content = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
                          lambda m: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (m.group(1), ART_URL.get(m.group(1), '#'), m.group(2)), content)
-    if pid == 'pg-osservatorio' and NUOVI:
+    if pid == 'pg-journal' and NUOVI:
         lista = '<div class="jr-list">' + journal.scheda(NUOVI[0], True) + (
             '<div class="jr-grid">' + ''.join(journal.scheda(a) for a in NUOVI[1:12]) + '</div>' if NUOVI[1:] else '') + '</div>\n    '
         content = content.replace('<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', lista + '<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', 1)
         arch = '<nav class="jr-arch" aria-label="Archivio del Journal"><span>Archivio</span>' + ''.join(
-            '<a href="/osservatorio/archivio/%s/">%s %s</a>' % (m, MESI_IT[int(m[5:]) - 1].capitalize(), m[:4]) for m in MESI_NUOVI) + '</nav>\n    '
+            '<a href="/journal/archivio/%s/">%s %s</a>' % (m, MESI_IT[int(m[5:]) - 1].capitalize(), m[:4]) for m in MESI_NUOVI) + '</nav>\n    '
         content = content.replace('<div class="jz ar" id="os-zone">', arch + '<div class="jz ar" id="os-zone">', 1)
+    if pid == 'pg-journal':  # l'iscrizione è sulla pagina dell'Osservatorio
+        content = content.replace('href="#osForm"', 'href="/osservatorio/#osForm"')
     if pid in OS_BLOCKS:
         content = os_block(pid, content)
     parts = chrome + content + scripts
@@ -360,7 +372,7 @@ def art_page(aid, art):
     desc = SEO['articles'][aid].get('description', desc)
     date = re.search(r'<small>(\d{1,2}) (\w+) (\d{4})', art)
     iso = '%s-%02d-%02d' % (date.group(3), MESI_IT.index(date.group(2)) + 1, int(date.group(1))) if date and date.group(2) in MESI_IT else None
-    body_html = art.replace('<h2>', '<h1 class="jr-h1">', 1).replace('</h2>', '</h1>', 1)
+    body_html = nuovi_link(art.replace('<h2>', '<h1 class="jr-h1">', 1).replace('</h2>', '</h1>', 1))
     body_html = resolve_photos(body_html)
     # sottotitoli dell'articolo come H2 (stesso aspetto degli H3 di prima)
     body_html = re.sub(r'<h3>(.*?)</h3>', r'<h2 class="jr-sh">\1</h2>', body_html, flags=re.S)
@@ -369,7 +381,7 @@ def art_page(aid, art):
     img = re.search(r'<img[^>]*src="([^"]+)"', body_html)
     related = SEO['articles'][aid].get('related', [])
     if related:
-        anchors = ['<a href="%s">%s</a>' % (html.escape(x['url'], quote=True), html.escape(x['label'])) for x in related]
+        anchors = ['<a href="%s">%s</a>' % (html.escape(nuovi_link(x['url']), quote=True), html.escape(x['label'])) for x in related]
         body_html += '<div class="jr-body"><p data-related-services>%s: %s</p></div>' % (html.escape(SEO['articles'][aid]['related_intro']), ' · '.join(anchors))
     # anteprima per i social: JPG 1200x630 ricavato dalla foto dell'articolo (tools/og_articoli.py)
     og_jpg = '/assets/img/og/%s.jpg' % ART_URL[aid].strip('/').split('/')[-1]
@@ -383,7 +395,7 @@ def art_page(aid, art):
     elif img:
         image_url = DOMAIN + img.group(1).replace('assets/', '/assets/', 1).replace('//assets', '/assets')
     else:
-        image_url = og_image('pg-osservatorio')
+        image_url = og_image('pg-journal')
     ldata = {"@context": "https://schema.org", "@graph": [
         {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title,
          'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
@@ -394,15 +406,16 @@ def art_page(aid, art):
          **({"datePublished": iso} if iso else {}), "image": image_url},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN + "/"},
-            {"@type": "ListItem", "position": 2, "name": "Osservatorio", "item": DOMAIN + "/osservatorio/"},
+            {"@type": "ListItem", "position": 2, "name": "Journal", "item": DOMAIN + "/journal/"},
             {"@type": "ListItem", "position": 3, "name": title, "item": url}]}]}
-    ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-osservatorio'], re.S)
-    parts = chrome + '<main class="jr-pgm"><a class="jr-back" href="/osservatorio/">← Osservatorio · Il Journal</a><article class="jr-art">' + body_html + '</article>' + \
+    ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-journal'], re.S)
+    parts = chrome + '<main class="jr-pgm"><a class="jr-back" href="/journal/">← Il Journal</a><article class="jr-art">' + body_html + '</article>' + \
         '<div class="jr-cta"><p>Vuoi applicare questi dati al tuo hotel?</p><a class="z-btn" href="/contatti/">Prenota una call conoscitiva <span class="arr">→</span></a></div></main>' + \
         (ft.group(0) if ft else '') + scripts
-    parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-osservatorio'))
+    parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-journal'))
     # ancore che negli articoli puntano a sezioni dell'Osservatorio
-    parts = re.sub(r'href="#(osForm|os-zone|os-top10|os-journal)"', r'href="/osservatorio/#\1"', parts)
+    parts = re.sub(r'href="#(osForm|os-top10)"', r'href="/osservatorio/#\1"', parts)
+    parts = re.sub(r'href="#(os-zone|os-journal)"', r'href="/journal/#\1"', parts)
     t = SEO['articles'][aid].get('title', '%s · Ricavia' % title)
     meta = '''<title>{t}</title>
 <meta name="description" content="{d}">
@@ -433,10 +446,9 @@ def archive_page(mese, articoli):
     """Pagina d'archivio di un mese ('AAAA-MM'); restituisce l'URL assoluto."""
     nome = '%s %s' % (MESI_IT[int(mese[5:]) - 1], mese[:4])
     h1 = 'Il Journal di ' + nome
-    title = 'Journal di %s · Ricavia' % nome
-    desc = ('Gli articoli dell’Osservatorio Ricavia di %s: eventi, trasporti, mercato e prezzi '
-            'letti in chiave revenue per chi gestisce un hotel') % nome
-    path = '/osservatorio/archivio/%s/' % mese
+    title = SEO['archive']['title'].format(mese=nome)
+    desc = SEO['archive']['description'].format(mese=nome)
+    path = '/journal/archivio/%s/' % mese
     url = DOMAIN + path
     ART_DATE[path] = max(a['data'] for a in articoli)
     ldata = {"@context": "https://schema.org", "@graph": [
@@ -444,13 +456,13 @@ def archive_page(mese, articoli):
          'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN + "/"},
-            {"@type": "ListItem", "position": 2, "name": "Osservatorio", "item": DOMAIN + "/osservatorio/"},
+            {"@type": "ListItem", "position": 2, "name": "Journal", "item": DOMAIN + "/journal/"},
             {"@type": "ListItem", "position": 3, "name": h1, "item": url}]}]}
-    ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-osservatorio'], re.S)
+    ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-journal'], re.S)
     parts = chrome + '<main class="jr-pgm">' + \
-        '<div class="jr-arp"><a class="jr-back" href="/osservatorio/">← Osservatorio · Il Journal</a><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div></main>' % (
+        '<div class="jr-arp"><a class="jr-back" href="/journal/">← Il Journal</a><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div></main>' % (
             html.escape(h1), ''.join(journal.scheda(a) for a in articoli)) + (ft.group(0) if ft else '') + scripts
-    parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-osservatorio'))
+    parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-journal'))
     meta = '''<title>{t}</title>
 <meta name="description" content="{d}">
 <meta name="robots" content="max-image-preview:large">
@@ -464,7 +476,7 @@ def archive_page(mese, articoli):
 <meta property="og:image" content="{i}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/img/favicon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<script type="application/ld+json">{ld}</script>'''.format(t=html.escape(title), d=html.escape(desc, quote=True), u=url, i=og_image('pg-osservatorio'), ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
+<script type="application/ld+json">{ld}</script>'''.format(t=html.escape(title), d=html.escape(desc, quote=True), u=url, i=og_image('pg-journal'), ld=json.dumps(ldata, ensure_ascii=False).replace('</', '<\\/'))
     doc = '<!doctype html>\n<html lang="it" class="mp mp-in mp-art">\n<head>\n%s\n%s\n<script>window.__MP=true</script>\n<link rel="stylesheet" href="/assets/css/mp.css">\n</head>\n<body>\n%s\n</body>\n</html>\n' % (fix_assets(head).strip(), meta, SHIM + parts)
     d = os.path.join(OUT, path.strip('/'))
     os.makedirs(d, exist_ok=True)
@@ -486,7 +498,7 @@ except Exception:
     LAST = ''
 # l'elenco dell'Osservatorio cambia anche quando esce un articolo nuovo
 if NUOVI:
-    ART_DATE['/osservatorio/'] = max([LAST] + [a['data'] for a in NUOVI])
+    ART_DATE['/journal/'] = max([LAST] + [a['data'] for a in NUOVI])
 def lastmod(u):
     d = ART_DATE.get(u.replace(DOMAIN, '')) or LAST
     return '<lastmod>%s</lastmod>' % d if d else ''
@@ -494,8 +506,19 @@ open(os.path.join(OUT, 'sitemap.xml'), 'w').write(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     ''.join('  <url><loc>%s</loc>%s</url>\n' % (u, lastmod(u)) for u in urls) + '</urlset>\n')
 # indirizzi senza barra finale: reindirizzamento permanente (301) invece del 307 automatico
-open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % (u.replace(DOMAIN, '').rstrip('/'), u.replace(DOMAIN, '')) for u in urls if u.replace(DOMAIN, '') != '/') +
-    ''.join('/osservatorio/%s/ /osservatorio/ 301\n/osservatorio/%s /osservatorio/ 301\n' % (s, s) for s in RITIRATI))
+RED = [(u.replace(DOMAIN, '').rstrip('/'), u.replace(DOMAIN, '')) for u in urls if u.replace(DOMAIN, '') != '/']
+# vecchi indirizzi del Journal sotto /osservatorio/ (con e senza barra finale): 301 verso l'indirizzo nuovo.
+# Una regola per indirizzo e non /osservatorio/*: quel percorso ospiterà il nuovo Osservatorio.
+# /osservatorio/ stesso non è qui: resta la pagina dell'Osservatorio.
+VECCHI = [('/osservatorio/' + u[len('/journal/'):], u) for u in ART_URL.values()]
+VECCHI += [('/osservatorio/archivio/%s/' % m, '/journal/archivio/%s/' % m) for m in MESI_NUOVI]
+for _a in NUOVI:  # anteprime social già diffuse con il vecchio indirizzo
+    VECCHI += [('/osservatorio/%s/%s' % (_a['slug'], f), '/journal/%s/%s' % (_a['slug'], f))
+               for f in ('hero.webp', 'social.jpg') if os.path.isfile(os.path.join(_a['percorso'], f))]
+for _s in RITIRATI:  # articoli ritirati: direttamente all'elenco
+    VECCHI += [('/osservatorio/%s/' % _s, '/journal/'), ('/journal/%s/' % _s, '/journal/')]
+RED += [(v.rstrip('/'), n) for v, n in VECCHI if v.endswith('/')] + VECCHI
+open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % r for r in RED))
 # chiave IndexNow (Bing e altri motori): il file deve restare raggiungibile alla radice del sito
 INDEXNOW_KEY = '77a8078505659e943f2e417aafa1d9db'
 open(os.path.join(OUT, INDEXNOW_KEY + '.txt'), 'w').write(INDEXNOW_KEY)

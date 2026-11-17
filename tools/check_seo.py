@@ -154,7 +154,7 @@ for title, count in titles.items():
 
 config = json.loads((ROOT / 'tools/seo.json').read_text(encoding='utf-8'))
 for aid, article in config['articles'].items():
-    url = DOMAIN + '/osservatorio/' + article['slug'] + '/'
+    url = DOMAIN + '/journal/' + article['slug'] + '/'
     if url not in parsed:
         fail(aid, 'URL stabile dell’articolo assente dalla sitemap')
     else:

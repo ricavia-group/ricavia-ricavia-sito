@@ -30,6 +30,10 @@
     "pg-osservatorio": {
       "description": "Analisi del mercato alberghiero di Roma per chi gestisce un hotel: domanda, stagionalità, quartieri, voli e prezzi. Leggi il Journal di Ricavia"
     },
+    "pg-journal": {
+      "title": "Journal: mercato e prezzi degli hotel a Roma · Ricavia",
+      "description": "Il Journal di Ricavia: articoli su eventi, trasporti, regole e prezzi che muovono la domanda degli hotel a Roma, letti in chiave revenue per il tuo hotel"
+    },
     "pg-pagella": {
       "title": "Hotel Score gratuito per hotel a Roma e nel Lazio · Ricavia",
       "description": "Richiedi l'Hotel Score gratuito di Ricavia per il tuo hotel a Roma o nel Lazio: sei aree di valutazione e tre priorità su cui intervenire"
@@ -46,6 +50,11 @@
     "pg-termini": {
       "description": "Termini di servizio del sito ricavia.com e degli strumenti di Ricavia Group S.r.l.: uso del sito, proprietà intellettuale, pubblicazione sui social e responsabilità"
     }
+  },
+  "archive": {
+    "_nota": "Pagine d'archivio mensile /journal/archivio/AAAA-MM/: {mese} è per esempio «novembre 2026»",
+    "title": "Journal di {mese} · Ricavia",
+    "description": "Gli articoli del Journal Ricavia di {mese}: eventi, trasporti, mercato e prezzi letti in chiave revenue per chi gestisce un hotel"
   },
   "articles": {
     "a1": {

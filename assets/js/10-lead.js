@@ -87,7 +87,7 @@
     var h=a.getAttribute('href')||'',lab=(a.textContent||'').trim().slice(0,40);
     if(/contatti/.test(h))track('CTA chiamata',{testo:lab,pagina:location.pathname});
     else if(/pg-pagella|hotel-score/.test(h))track('CTA Hotel Score',{testo:lab,pagina:location.pathname});
-    else if(/pg-osservatorio|osservatorio/.test(h))track('CTA Osservatorio',{testo:lab,pagina:location.pathname});
+    else if(/pg-osservatorio|osservatorio|pg-journal|\/journal\//.test(h))track('CTA Osservatorio',{testo:lab,pagina:location.pathname});
   },true);
   document.addEventListener('focusin',function(e){var f=e.target.closest&&e.target.closest('form[id]');if(!f||f.dataset.rkStart)return;f.dataset.rkStart=1;track('Modulo iniziato',{modulo:f.id})});
 
