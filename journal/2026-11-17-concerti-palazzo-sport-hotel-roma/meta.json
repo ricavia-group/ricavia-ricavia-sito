@@ -1,0 +1,202 @@
+{
+  "titolo": "Dodici concerti esauriti al Palazzo dello Sport: mercoledì 13 gennaio non è mercoledì 27",
+  "categoria": "eventi",
+  "tema": "concerti-palazzo-sport-gennaio-2027-roma",
+  "tesi": "Le dieci date di Max Pezzali al Palazzo dello Sport dal 13 al 26 gennaio 2027 (più Sfera Ebbasta il 2 e 3 febbraio) sono tutte esaurite, e nove notti su dodici sono infrasettimanali nel periodo più tranquillo dell'anno: in notti con poca domanda di base anche una piccola quota di pubblico da fuori Roma sposta l'occupazione, e poiché i biglietti sono venduti da mesi le prenotazioni possono arrivare presto; il tuo hotel segna ora le dodici notti, confronta il loro pick-up con le notti infrasettimanali senza concerto, toglie le promozioni automatiche di gennaio da quelle notti finché il pick-up non si legge e rende semplice la notte singola, invece di vendere quelle notti alla tariffa base di un mercoledì di gennaio",
+  "fonti": [
+    {
+      "titolo": "Max Forever palasport 26 · Stessa storia stesso posto stesso bar",
+      "editore": "Vivo Concerti",
+      "url": "https://www.vivoconcerti.com/roster/max-pezzali/max-forever-palasport-26-stessa-storia-stesso-posto-stesso-bar",
+      "data": "2026-11-17"
+    },
+    {
+      "titolo": "Max Pezzali, si aggiungono sold out e repliche al tour nei palasport",
+      "editore": "Spettakolo.it",
+      "url": "https://www.spettakolo.it/2026/10/15/max-pezzali-si-aggiungono-sold-out-e-repliche-al-tour-nei-palasport/",
+      "data": "2026-11-17"
+    },
+    {
+      "titolo": "Sfera Ebbasta · Live Tour 2027",
+      "editore": "Turismo Roma · Roma Capitale",
+      "url": "https://www.turismoroma.it/it/node/179521",
+      "data": "2026-11-17"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Evento con fonte primaria (organizzatore) che sposta domanda su notti precise tra 8 e 11 settimane, nel periodo più debole dell'anno, legato a Roma e con azioni concrete sul pick-up: copre da solo il criterio Roma e il criterio guarda avanti del mix",
+      "correzioni": [],
+      "segnalazioni": [
+        "Recentezza: evento futuro annunciato da mesi (prime date annunciate il 24 giugno, repliche di Roma e date di aprile il 15 ottobre); ammesso dalla seconda estensione del manuale (cade tra 2 settimane e 6 mesi, nessun articolo l'ha trattato). Il fatto di oggi è lo stato 'esaurito' di tutte e dieci le date sulla pagina dell'organizzatore",
+        "Nessun numero di spettatori: la capienza del Palazzo dello Sport e la quota di pubblico da fuori Roma non sono in nessuna fonte letta. Il testo lo dichiara e sposta la decisione sul pick-up del singolo hotel; intensità 'bassa' per occupazione e pick-up per questo motivo. Il revenue manager valuti se servono '?'",
+        "EUR: roma.md segna la zona come DA COMPLETARE. Il testo non attribuisce effetti a una zona e non nomina l'EUR; parla solo di 'distanza dal Palazzo dello Sport e collegamenti'. L'indirizzo (piazzale dello Sport 1) è su Turismo Roma",
+        "Rischio fotocopia: l'articolo del 13 novembre (bassa stagione, primo trimestre 2027) consiglia tariffe per data nel primo trimestre. Qui il tema è un evento preciso su notti precise e la struttura è diversa (date, poi limite del dato, poi pick-up); il SEO director verifichi",
+        "Spettakolo (livello 2) regge solo un fatto di contorno (12 date su 42 in sei città), attribuito nel testo",
+        "Sfera Ebbasta: due date su Turismo Roma, organizzatore non letto; fatto di contorno che rafforza la tesi ma non la regge",
+        "Antitrust: nessun livello di prezzo, nessun invito ad allinearsi; le azioni sono sui dati del singolo hotel",
+        "Collegamenti interni nel corpo: 2 (calendario di Roma, Internazionali di tennis), più /contatti/ nel paragrafo Ricavia (voce 4.1 n. 1). /revenue-management/ chiude già 11-08, 11-10 e 11-11, per questo la call conoscitiva",
+        "Parole del corpo: circa 970"
+      ],
+      "ruolo_ricavia": "Davanti a un evento esaurito in un periodo di domanda bassa, Ricavia aggiorna ogni giorno tariffe e disponibilità delle notti coinvolte seguendo il pick-up, invece di fissare il prezzo una volta sola all'apertura del mese"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge: dodici serate esaurite, nove su notti infrasettimanali del periodo più debole dell'anno, spostano domanda in modo incerto ma non negativo, e la bozza affida la decisione al pick-up del singolo hotel senza numeri inventati",
+      "correzioni": [
+        "Tesi confermata senza modifiche",
+        "Impatto, ADR: da '=' a '↑ bassa', perché la bozza stessa consiglia di togliere le promozioni di gennaio dalle notti di concerto; l'aumento è condizionato al pick-up che si stacca dalle notti feriali vicine",
+        "Impatto, RevPAR: motivazione allineata al glossario (segue occupazione e ADR, entrambi in lieve aumento) e aggiunto il segmento",
+        "Impatto, occupazione: aggiunto 'impatto da verificare sul pick-up delle prossime settimane'; tenuto '↑ bassa' invece di '?' perché un tutto esaurito non può ridurre la domanda, ma la quota di pubblico da fuori Roma non ha fonte",
+        "Impatto, durata del soggiorno: tolto 'spesso senza notti prima o dopo' (frequenza senza fonte), sostituito con il ragionamento sulle prenotazioni di una notte sola",
+        "Cosa fare adesso, azione 2: 'finché il pick-up non dice qualcosa' diventa 'finché il pick-up non indica una direzione' (registro)"
+      ],
+      "segnalazioni": [
+        "Verificata oggi la pagina di Vivo Concerti: dieci date di gennaio esaurite, 24 e 25 aprile in vendita. Giorni della settimana ricontrollati sul calendario 2027 (anche mercoledì 27 gennaio dell'azione 1)",
+        "Lessico per il capo redattore: il testo chiama 'feriali' anche la notte di domenica 17; nel senso alberghiero è una notte infrasettimanale, ma in italiano la domenica non è feriale. Valutare 'infrasettimanali' nell'apertura, nel corpo e nell'In breve (fuori dal mio ambito)",
+        "Apertura: 'prima che il calendario lo mostri' è poco chiaro (si intende il calendario degli eventi del tuo hotel?); non tocca il meccanismo, la passo al SEO director e al capo redattore",
+        "Effetto per gli hotel probabilmente basso e legato alla distanza dal Palazzo dello Sport (zona EUR, DA COMPLETARE in roma.md): il testo non attribuisce effetti a zone, scelta corretta",
+        "Sovrapposizione con l'articolo del 13 novembre (notti feriali del primo trimestre 2027, niente sconto di stagione su tutte le notti): l'azione 2 è coerente con quell'articolo ma su notti precise; il SEO director e il capo redattore valutino la percezione di ripetizione"
+      ],
+      "ruolo_ricavia": "Quando un evento esaurito cade in notti di domanda bassa, Ricavia lo inserisce nelle previsioni della domanda e confronta ogni settimana il pick-up di quelle notti con le notti dello stesso giorno senza evento, prima di decidere se togliere le promozioni del mese"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo nel registro e nel Journal: nessun articolo sul Palazzo dello Sport o sui concerti di gennaio; la vicinanza con il 13 novembre è di periodo, non di tesi né di keyword, e l'articolo si può trovare con una keyword dell'albergatore",
+      "correzioni": [
+        "Apertura, prima frase: 'Le dieci serate romane di Max Pezzali al Palazzo dello Sport' diventa 'Le dieci serate di Max Pezzali al Palazzo dello Sport di Roma' e aggiunto in coda 'date da segnare subito nel calendario del tuo hotel', per avere la keyword principale nella stessa frase; fatti, date e fonti invariati",
+        "Primo h3: 'Le date: dieci sere di gennaio e due di febbraio' diventa 'Concerti al Palazzo dello Sport di Roma: le date che contano per il tuo hotel' (keyword principale)",
+        "Compilati slug, categoria, title_seo (56 caratteri), description (155 caratteri), keyword, related_intro e related",
+        "Collegamenti interni del corpo controllati: 2 naturali (calendario di Roma, Internazionali di tennis) più /contatti/ nel paragrafo Ricavia, che non si conta; entrambi verso articoli pubblicati su main"
+      ],
+      "segnalazioni": [
+        "Controllo doppioni: registro.json, scartati, tools/seo.json e journal/ letti. Nessun tema su Palazzo dello Sport o sui concerti di gennaio. Confronto con il 13 novembre (bassa-stagione-hotel-roma-tariffe, keyword 'bassa stagione hotel Roma'): quello legge la stagionalità della città nel trimestre, questo un evento preciso su dodici notti precise, con fonte primaria dell'organizzatore; keyword e tesi diverse, niente veto. Confronto con Sei Nazioni (3 novembre) e Maratona (4 novembre): eventi, sedi e notti diverse",
+        "Il 13 novembre è in related come approfondimento sulla tariffa per data della bassa stagione: rende esplicito il legame invece di farlo sembrare una ripetizione",
+        "Apertura, seconda frase (fuori dal mio ambito): dopo la mia prima frase 'Per il tuo hotel sono dodici notti' ripete 'tuo hotel'; il capo redattore valuti 'Sono dodici notti, quasi tutte infrasettimanali, ...'",
+        "Lessico segnalato dal revenue manager: 'feriali' include la domenica 17 (apertura, h3 'Perché le notti feriali di gennaio contano di più', In breve). Nella description ho scritto 'infrasettimanali'; il capo redattore valuti lo stesso nel corpo",
+        "Apertura, terza frase: 'prima che il calendario lo mostri' resta poco chiara, ora anche accanto a 'calendario del tuo hotel' nella prima frase; il capo redattore valuti 'prima che il pick-up lo renda evidente' o simile",
+        "Slug senza mese: la cartella di lavoro contiene 'gennaio', lo slug no (regola sulle date); l'editore usi la cartella 2026-11-17-concerti-palazzo-sport-hotel-roma",
+        "Title senza nomi degli artisti: la keyword dell'albergatore è il luogo e il tipo di evento; il nome dell'artista porta soprattutto il pubblico dei concerti e resta tra le secondarie"
+      ],
+      "ruolo_ricavia": "Chi cerca come gestire le notti di un evento in bassa stagione trova il passo successivo naturale nel servizio di revenue management, dove Ricavia segue il pick-up notte per notte; la call conoscitiva in chiusura è coerente con questa ricerca"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia concreta per l'albergatore: notti di concerto esaurite in mezzo alle notti più deboli dell'anno, con un confronto tra due mercoledì che il lettore può rifare subito sui propri dati",
+      "correzioni": [
+        "Titolo: 'Dodici serate esaurite al Palazzo dello Sport: le notti feriali di gennaio hanno già una domanda propria' (104 caratteri, oltre il limite di 90) diventa 'Dodici concerti esauriti al Palazzo dello Sport: mercoledì 13 gennaio non è mercoledì 27' (88 caratteri). Tipo: contrasto tra giorni; il confronto è l'azione 1 dell'articolo, quindi il titolo mantiene ciò che promette. Non dice che gli hotel sono pieni",
+        "Sottotitolo scritto: artisti, dodici serate, notti infrasettimanali e cosa trova il lettore (pick-up e promozioni); 'infrasettimanali' al posto di 'feriali', come la description del SEO director",
+        "Mood: serio",
+        "Alternative: domanda, dato con fonte nel titolo (Vivo Concerti e Turismo Roma), conseguenza",
+        "Frase citabile tenuta: 'Un concerto esaurito è un segnale, non una previsione. La previsione la fanno le tue prenotazioni' è già un aforisma di contrasto, senza numeri né nomi, e chiude il paragrafo sul limite del dato"
+      ],
+      "segnalazioni": [
+        "Varietà dei titoli: oggi la bozza 1 usa il contrasto e la bozza 2 la conseguenza. Ultimi titoli pubblicati: 13 novembre dato, 11 novembre conseguenza, 10 e 9 novembre contrasto, 8 novembre domanda; tutti con mood serio",
+        "Fuori dal mio ambito, già segnalato da revenue manager e SEO director: 'feriali' comprende la domenica 17 nell'apertura, nell'h3 'Perché le notti feriali di gennaio contano di più' e nell'In breve; titolo e sottotitolo usano già 'infrasettimanali', il capo redattore valuti di allineare il corpo",
+        "Fuori dal mio ambito: nell'apertura 'prima che il calendario lo mostri' resta poco chiaro e 'tuo hotel' è ripetuto in due frasi consecutive",
+        "Il titolo e il title_seo descrivono lo stesso articolo: il title_seo resta sul luogo e sul tipo di evento, il titolo-hook sul confronto tra le notti"
+      ],
+      "ruolo_ricavia": "Il lettore ricorda il confronto tra due mercoledì: Ricavia lo trasforma in un'abitudine, confrontando ogni settimana il pick-up delle notti di evento con le stesse notti senza evento prima di decidere la tariffa"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "La libreria non ha una foto di concerti o di sale per eventi; dall'archivio stock una foto vera, gratuita, di un palco visto dal fondo con il pubblico di spalle racconta la serata di concerto senza artisti, volti o marchi",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 9899090, scheda, riserva della libreria e suo alt) e alt"
+      ],
+      "segnalazioni": [
+        "Libreria senza soggetti di eventi, concerti o palazzetti: soggetto mancante da aggiungere alla libreria",
+        "Nell'archivio stock nessuna foto del Palazzo dello Sport di Roma o dell'EUR; scartate le foto di folle con luci arancio (tono caldo dominante), le foto con volti o telefoni in primo piano e una foto premium di un'arena dall'alto (150 crediti, con riflessi magenta), perché tra le gratuite c'era una foto adatta",
+        "Per l'editore: la foto è quasi in 16:9; nel ritaglio social tagliare buio in alto e sagome in basso in parti uguali, la scena illuminata resta al centro",
+        "Riserva: facciate del centro storico (db705b531a, non usata negli ultimi 10 articoli). In basso a destra la foto ha un'iscrizione in pietra in parte leggibile: se l'editore usa la riserva, il ritaglio 16:9 parte dal bordo alto e toglie la striscia in basso con l'iscrizione. Riserva diversa da quella della bozza 2, perché le due copertine della giornata non coincidano",
+        "Nessuna immagine generata: niente nota AI in fondo all'articolo"
+      ],
+      "ruolo_ricavia": "La copertina mostra il concerto da lontano, come lo guarda Ricavia: un segnale nel calendario delle notti, da confermare con il pick-up del tuo hotel, non una sala piena da celebrare"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Apertura, seconda frase: 'Per il tuo hotel sono dodici notti, quasi tutte feriali' diventa 'Sono dodici notti, quasi tutte infrasettimanali' (tolta la ripetizione di 'tuo hotel' dopo la prima frase)",
+        "Apertura, terza frase: 'possono arrivare prima che il calendario lo mostri' diventa 'possono arrivare con settimane di anticipo' (frase poco chiara resa precisa, coerente con il terzo paragrafo della seconda sezione)",
+        "'Feriali' sostituito con 'infrasettimanali' in tutto il corpo (apertura, frase sui concerti di febbraio, secondo h3, paragrafo sulla domanda di base, voci Occupazione e ADR dell'impatto, azione 2, In breve) e nella tesi: la domenica 17 non è un giorno feriale",
+        "Primo h3, frase su Spettakolo: tolto 'di 42 concerti': l'articolo di Spettakolo elenca le date ma non scrive il totale; resta 'un tour nei palasport di sei città', che la fonte riporta",
+        "Paragrafo Ricavia scritto fondendo le frasi del giornalista e del revenue manager: voci 4.1 n. 4 (previsioni della domanda, prezzi preparati in anticipo) e n. 1 (tariffe e disponibilità aggiornate ogni giorno), con chiusura sulla call conoscitiva; non usa la voce 2, già nel paragrafo del 13 novembre, e non riprende le frasi dell'esempio Evento di ricavia.md"
+      ],
+      "segnalazioni": [
+        "Fonti ricontrollate oggi: Vivo Concerti (dieci date di gennaio SOLD OUT, 24 e 25 aprile acquistabili), Turismo Roma (Sfera Ebbasta 2 e 3 febbraio, ore 21, 'I concerti sono Sold Out'), Spettakolo (dodici date romane, sei città). Giorni della settimana ricontrollati sul calendario 2027",
+        "Sfera Ebbasta: Sky TG24 del 14 luglio 2026 indica che il primo concerto romano andato esaurito è quello del 3 febbraio e che la data del 2 febbraio è stata aggiunta dopo; lo stato esaurito del 2 febbraio regge solo sulla scheda di Turismo Roma (livello 1, attribuita nel testo). Fatto di contorno: la tesi regge sulle dieci date di Vivo Concerti. L'editore lo ricontrolli prima della pull request; se il 2 febbraio non risulta esaurito, titolo, sottotitolo, description, apertura e In breve vanno riportati a undici serate esaurite",
+        "Recentezza: evento annunciato da mesi, ammesso con la seconda estensione (cade tra 8 e 11 settimane, nessun articolo l'ha trattato); fatto attuale lo stato esaurito letto oggi",
+        "Vicinanza con il 13 novembre (primo trimestre 2027, niente sconto di stagione su tutte le notti): periodo comune, tesi diversa (evento preciso su dodici notti); il 13 novembre è in related, non nel corpo"
+      ],
+      "ruolo_ricavia": "Paragrafo finale: notti di evento trattate come date a sé nelle previsioni, prezzi preparati in anticipo, tariffe e disponibilità aggiornate ogni giorno sul pick-up; chiusura sulla call conoscitiva",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; intensità bassa dichiarata, decisione sul pick-up del singolo hotel)",
+        "[x] Ogni numero ha fonte (date e stato esaurito da Vivo Concerti e Turismo Roma; sei città da Spettakolo; tolto il totale di 42 concerti non scritto dalla fonte; nessuna stima)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voci 4.1 n. 4 e 1, non pubblicitario",
+        "[x] Regole di brand e di copy rispettate (dopo le correzioni: 'infrasettimanali', apertura senza ripetizioni, nessun punto finale)",
+        "[x] Tono coerente con la matrice del mood (eventi: serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; nessun articolo sul Palazzo dello Sport)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter: nessun livello di prezzo né invito ad allinearsi, azioni sul singolo hotel; foto stock vera, nessuna nota AI",
+        "[x] Da 700 a 1.100 parole (circa 1.020 con il paragrafo Ricavia), 4 h3, struttura completa"
+      ]
+    }
+  ],
+  "slug": "concerti-palazzo-sport-hotel-roma",
+  "title_seo": "Concerti al Palazzo dello Sport e hotel a Roma · Ricavia",
+  "description": "Dodici concerti esauriti al Palazzo dello Sport tra gennaio e febbraio: il pick-up del tuo hotel nelle notti infrasettimanali e le promozioni da sospendere",
+  "keyword": {
+    "principale": "concerti Palazzo dello Sport hotel Roma",
+    "secondarie": [
+      "eventi gennaio Roma hotel",
+      "pick-up notti infrasettimanali",
+      "promozioni bassa stagione hotel",
+      "Max Pezzali Palazzo dello Sport Roma"
+    ]
+  },
+  "related_intro": "Per leggere la domanda delle notti di evento in bassa stagione, approfondisci",
+  "related": [
+    {
+      "label": "le tariffe per data della bassa stagione a Roma",
+      "url": "/osservatorio/bassa-stagione-hotel-roma-tariffe/"
+    },
+    {
+      "label": "il servizio di revenue management",
+      "url": "/revenue-management/"
+    }
+  ],
+  "sottotitolo": "Max Pezzali a gennaio e Sfera Ebbasta a febbraio hanno esaurito dodici serate, nove su notti infrasettimanali del periodo più tranquillo dell'anno. Cosa guardare nel pick-up del tuo hotel e quali promozioni sospendere su quelle notti",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Concerti: la matrice ammette serio, divertente o ironico, ma il corpo ha un registro serio e dichiara un dato incerto (nessuna fonte sul pubblico da fuori Roma); niente toni leggeri che possano sembrare ironia sugli artisti o sul pubblico"
+  },
+  "alternative_titolo": [
+    "Palazzo dello Sport esaurito a gennaio: togliere le promozioni dalle notti dei concerti?",
+    "Dodici serate esaurite per Vivo Concerti e Turismo Roma: nove in notti infrasettimanali",
+    "Concerti esauriti a gennaio: il pick-up delle notti di concerto può partire prima"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 9899090,
+      "titolo": "Group of people near stage at concert",
+      "anteprima": "https://img.magnific.com/free-photo/group-people-near-stage-concert_250224-175.jpg"
+    },
+    "scheda": "Soggetto: un palco da concerto al coperto visto dal fondo della sala, con fasci di luce viola e lilla che scendono sulla scena vuota di artisti; in primo piano le sagome scure e controluce del pubblico, di spalle, nessun volto riconoscibile, nessuna scritta leggibile, nessun marchio, nessun artista in vista\nInquadratura: frontale e statica, il palco al centro, sagome nella fascia bassa, ampio buio sopra; il formato è già vicino al 16:9, il ritaglio social toglie solo una striscia di buio in alto e di sagome in basso, la scena illuminata resta intera nella fascia centrale\nLuce: luce di scena bassa e diffusa, foschia, nessun flash\nPalette: nero dominante, viola vicino a #724AF8 e riflessi azzurri tenui nei fasci di luce; niente rosso, niente toni caldi\nAtmosfera: seria e raccolta, la serata di concerto vista da lontano come le notti che l'articolo chiede di seguire; diversa da tutte le copertine recenti (cupola sul Foro Romano, atrio congressuale, binari, moneta, Colonna dell'Immacolata, ala in volo, Tevere, campo da tennis, aerei, tende, camere)",
+    "libreria": "assets/img/db705b531a.webp",
+    "alt_libreria": "Facciate del centro storico di Roma con finestre e persiane grigie accanto a una statua barocca di un santo",
+    "testo_sovrapposto": null
+  },
+  "alt": "Sagome del pubblico di spalle davanti a un palco illuminato da fasci di luce viola",
+  "data": "2026-11-17",
+  "autore": "Tito · Redazione Ricavia"
+}

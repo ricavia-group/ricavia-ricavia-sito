@@ -1,0 +1,204 @@
+{
+  "titolo": "Contributo di soggiorno a Roma: l'importo fisso pesa di più nelle notti che vendi a meno",
+  "categoria": "regole",
+  "tema": "contributo-soggiorno-roma-peso-tariffe-basse",
+  "tesi": "Il contributo di soggiorno di Roma è un importo fisso per persona e per notte stabilito dalla categoria (6 euro in un tre stelle, 7,50 in un quattro stelle, 10 in un cinque stelle, 6 in una locazione breve, delibera 255/2023), quindi nelle notti feriali d'inverno vendute a tariffa bassa pesa di più rispetto alla tariffa della camera e sul prezzo finale che l'ospite confronta, come misura l'analisi JFC presentata da Assohotel il 16 novembre; la proposta di un'imposta in percentuale non è una norma, il contributo non cambia l'ADR, e il tuo hotel controlla ora come il contributo compare sul sito e sulle OTA nelle notti più economiche tra gennaio e marzo 2027, lo comunica prima della prenotazione e confronta con il competitive set anche il totale contributo compreso, invece di abbassare la tariffa della camera per compensare un tributo che non incassa",
+  "fonti": [
+    {
+      "titolo": "Turismo: Assohotel, tassa di soggiorno verso il record di 1,3 miliardi. Ma restano le iniquità: sulle camere più economiche si paga in proporzione fino a 3,5 volte di più",
+      "editore": "Assohotel Confesercenti",
+      "url": "https://assohotel.confesercenti.it/turismo-assohotel-tassa-di-soggiorno-verso-il-record-di-13-miliardi-ma-restano-le-iniquita-sulle-camere-piu-economiche-si-paga-in-proporzione-fino-a-35-volte-di-piu/",
+      "data": "2026-11-17"
+    },
+    {
+      "titolo": "Turismo: lunedì 16 novembre a Roma la tavola rotonda di Assohotel Confesercenti sul futuro dell'imposta di soggiorno",
+      "editore": "Confesercenti",
+      "url": "https://www.confesercenti.it/blog/turismo-lunedi-16-novembre-a-roma-la-tavola-rotonda-di-assohotel-confesercenti-sul-futuro-dellimposta-di-soggiorno/",
+      "data": "2026-11-17"
+    },
+    {
+      "titolo": "Deliberazione della Giunta Capitolina n. 255 del 17 luglio 2023 · Approvazione delle tariffe del Contributo di Soggiorno",
+      "editore": "Roma Capitale",
+      "url": "https://www.comune.roma.it/web-resources/cms/documents/Deliberazione_Giunta_Capitolina_n__255_del_17_luglio__2023.pdf",
+      "data": "2026-11-17"
+    },
+    {
+      "titolo": "Contributo di soggiorno",
+      "editore": "Roma Capitale",
+      "url": "https://www.comune.roma.it/web/it/scheda-servizi.page?contentId=INF41430",
+      "data": "2026-11-17"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Notizia di ieri (comunicato Assohotel-JFC del 16 novembre) letta su un fatto primario di Roma (tariffe della delibera 255/2023): meccanismo chiaro sul prezzo finale delle notti a tariffa bassa, azioni concrete su visualizzazione e comunicazione del contributo; categoria diversa dagli ultimi giorni",
+      "correzioni": [],
+      "segnalazioni": [
+        "La notizia è una proposta di un'associazione di categoria (livello 3), non una norma: il testo lo dice due volte e la tesi non dipende dalla proposta, ma dalle tariffe in vigore a Roma (fonte primaria). Il capo redattore valuti se il gancio di attualità basta",
+        "La tabella delle tariffe è nel PDF della delibera 255/2023 come immagine scansionata, letta pagina per pagina; la scheda di Roma Capitale rimanda a questa delibera come tariffe vigenti ma non ha una data di aggiornamento. Nessuna fonte indica delibere successive: l'editore ricontrolli la scheda prima della pull request",
+        "Della tavola rotonda conosciamo solo programma e relatori: non abbiamo un resoconto, quindi nessuna posizione è attribuita all'assessore Onorato o agli altri relatori. Una fonte di ricerca accennava a una proposta di Onorato su tariffe per zona: non verificata, non usata",
+        "Calcoli nel testo (15, 20, 12 euro a notte per una coppia, 9 euro su tre notti) sono aritmetica sui dati della delibera, non stime",
+        "Nessuna affermazione su come le singole OTA mostrano il contributo (incluso o a parte): l'azione 1 chiede al lettore di verificarlo sui propri canali",
+        "Consigli fiscali: il testo rimanda al regolamento di Roma Capitale e al parere del proprio consulente per esenzioni e casi particolari (regole-comuni 9 ter, punto 6)",
+        "Rischio fotocopia: l'articolo del 13 novembre parla di tariffa minima nel primo trimestre 2027 dal lato della domanda; qui la soglia minima compare in una sola azione, dal lato del prezzo finale. Le due bozze di oggi toccano entrambe l'inverno 2027 ma con temi diversi (evento contro tributo)",
+        "Impatto sugli indicatori: ho scritto solo ADR, Occupazione e RevPAR; la notizia non è uno shock di domanda e occupazione e RevPAR sono '?'. Il revenue manager valuti se aggiungere il mix di canale",
+        "Antitrust: nessun livello di prezzo; le azioni sono sui dati del singolo hotel",
+        "Collegamenti interni nel corpo: 1 (articolo Banca d'Italia sul competitive set con l'extralberghiero), più /consulenza/ nel paragrafo Ricavia (voce 4.1 n. 14, non usata questa settimana). Il link all'articolo sugli affitti brevi è un'alternativa per related",
+        "Parole del corpo: circa 900"
+      ],
+      "ruolo_ricavia": "Ricavia valuta PMS, channel manager e fornitori in base all'impatto sul conto economico: davanti a un tributo fisso che pesa di più sulle notti economiche, il primo controllo è il prezzo finale che quegli strumenti mostrano all'ospite, prima di toccare una tariffa"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi è corretta: un importo fisso per persona pesa di più sulle notti vendute a tariffa bassa, non cambia l'ADR e agisce solo sul prezzo finale che l'ospite confronta; l'effetto sulla domanda è incerto e la bozza lo dichiara",
+      "correzioni": [
+        "Tesi: sostituita 'decide la tariffa minima al netto' con il confronto del totale nel competitive set, per allinearla alla nuova azione 3, e precisato che il peso raddoppia rispetto alla tariffa della camera",
+        "Corpo, frase del meccanismo: 'lo stesso contributo pesa il doppio sul totale che l'ospite paga' diventa 'pesa il doppio rispetto alla tariffa della camera': sul totale, che contiene anche il contributo, il peso cresce di meno del doppio",
+        "In breve: 'Gli hotel a quattro e cinque stelle pagano più degli appartamenti' diventa 'L'ospite di un quattro o cinque stelle paga più che in appartamento': il contributo lo paga l'ospite, l'hotel lo riscuote e lo versa",
+        "Impatto, occupazione: 'conviene osservarlo nel proprio pick-up' diventa 'da monitorare nel tuo pick-up' (forma del manuale e lettore al tu)",
+        "Cosa fare adesso, azione 3: 'La tariffa minima decisa al netto' sostituita da 'Il confronto sul totale, non solo sulla tariffa' (competitive set con il totale per due ospiti, contributo compreso), che conserva il ragionamento sul non abbassare la tariffa per compensare il tributo; la soglia minima sui costi è già l'azione 2 dell'articolo del 13 novembre",
+        "Impatto: confermati ADR '=', occupazione '?' e RevPAR '?'; non aggiunto il mix di canale, perché nessuna fonte indica che il contributo sposti prenotazioni tra sito e OTA"
+      ],
+      "segnalazioni": [
+        "Effetto per gli hotel marginale in valore assoluto (1,50 euro per persona e per notte tra un quattro stelle e una locazione breve, zero tra un tre stelle e una locazione breve): la tesi regge, la scelta del pubblico è del capo redattore",
+        "Verificata oggi la scheda di Roma Capitale: rimanda alla delibera di Giunta 255/2023 come tariffe vigenti, senza data di aggiornamento né cenni a tariffe 2026 o 2027; gli importi non sono sulla scheda ma nell'allegato. L'editore ricontrolli prima della pull request",
+        "Comunicato Assohotel ricontrollato: date, gettito, esempio di Firenze (6 euro a persona, 5,3% su 114 euro e 1,5% su 413 euro) e proposta coincidono; il comunicato non dice se i 114 e 413 euro sono per camera o per persona, il testo non lo afferma e va bene così",
+        "Le azioni 1 e 2 sono vicine (verifica dei canali e comunicazione dell'importo) ma distinte; se il capo redattore preferisce unirle, la terza azione resta quella sul competitive set",
+        "Bozza 2 e articolo del 13 novembre toccano entrambi le notti feriali del primo trimestre 2027: dopo la sostituzione dell'azione 3 la sovrapposizione delle azioni è tolta, resta quella del periodo"
+      ],
+      "ruolo_ricavia": "Davanti a un tributo fisso che pesa di più sulle notti economiche, Ricavia analizza tariffe e mix dei canali confrontandoli con il competitive set, e guarda il prezzo finale che l'ospite vede su ogni canale prima di toccare una tariffa"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Primo articolo del Journal sul contributo di soggiorno, con keyword dell'albergatore e una tesi sul prezzo finale che nessun articolo pubblicato o proposto copre",
+      "correzioni": [
+        "Apertura, prima frase: 'che non cambia con la tariffa della camera' diventa 'che non cambia con la tariffa della camera del tuo hotel', per avere la keyword principale nella stessa frase; glossa del contributo di soggiorno, fatti e fonti invariati",
+        "Secondo h3: 'Le tariffe di Roma: un importo per persona, deciso dalla categoria' diventa 'Contributo di soggiorno a Roma: un importo per persona, deciso dalla categoria dell'hotel' (keyword principale; toglie anche l'ambiguità di 'tariffe', che nel resto dell'articolo indica le tariffe delle camere)",
+        "Compilati slug, categoria, title_seo (56 caratteri), description (154 caratteri), keyword, related_intro e related",
+        "Collegamenti interni del corpo controllati: 1 naturale (presenze a Roma tra hotel ed extralberghiero, sul competitive set) più /consulenza/ nel paragrafo Ricavia, che non si conta; related non ripete il collegamento del corpo"
+      ],
+      "segnalazioni": [
+        "Controllo doppioni: registro.json, scartati, tools/seo.json e journal/ letti. Nessun articolo sul contributo o sulla tassa di soggiorno; il NO-GO del 3 novembre (affitti-brevi-cedolare-hotel-roma) riguarda la cedolare secca, tema e keyword diversi, e non ha blocco. Il 13 novembre condivide il periodo (notti feriali del primo trimestre 2027), non la tesi né la keyword",
+        "Categoria regole e non prezzi: la causa della notizia è un tributo e la proposta di modificarlo; l'effetto sul prezzo finale è la conseguenza",
+        "Title e description non presentano la proposta di Assohotel come norma: parlano delle regole in vigore a Roma",
+        "Candidato 5 della riserva (sanzioni dell'imposta di soggiorno dal 2027) ha una keyword quasi uguale: se questa bozza esce, nei prossimi 14 giorni quel candidato regge solo come fatto nuovo dello stesso tema, con il decreto letto in Gazzetta Ufficiale"
+      ],
+      "ruolo_ricavia": "Chi cerca il contributo di soggiorno legato alle tariffe del proprio hotel trova il passo successivo naturale nella consulenza, dove Ricavia controlla come PMS, channel manager e canali mostrano il prezzo finale all'ospite"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "Il meccanismo è semplice e ripetibile tra colleghi (un importo fisso pesa di più quando la camera costa meno) e porta ad azioni sui canali che il lettore può fare subito",
+      "correzioni": [
+        "Titolo: 'Contributo di soggiorno: a Roma pesa di più nelle notti che vendi a meno' diventa 'Contributo di soggiorno a Roma: l'importo fisso pesa di più nelle notti che vendi a meno' (88 caratteri): il soggetto è esplicito e dice il perché. Tipo: conseguenza; non presenta la proposta di Assohotel come norma",
+        "Sottotitolo scritto: meccanismo, cosa trova il lettore (sito diretto e OTA nelle notti d'inverno) e lo stato della proposta",
+        "Mood: serio",
+        "Alternative: domanda, dato con fonte nel titolo (JFC), contrasto tra categorie con l'aritmetica della delibera 255/2023 già nel corpo",
+        "Frase citabile: 'Il contributo di soggiorno non è un tuo ricavo, ma è una parte del prezzo che l'ospite confronta' diventa 'Il contributo di soggiorno non entra nei tuoi ricavi, ma entra nel prezzo che l'ospite confronta': stesso concetto, contrasto parallelo più facile da ripetere"
+      ],
+      "segnalazioni": [
+        "Alternativa con il dato JFC: '3,5 volte' è una misura dell'analisi presentata da Assohotel su Firenze, non su Roma; se il capo redattore la sceglie, il titolo nomina la fonte come richiesto, ma il titolo scelto resta quello su Roma",
+        "Le due bozze di oggi hanno titoli di tipo diverso (bozza 1 contrasto, bozza 2 conseguenza) e due mood serio, come tutti i titoli pubblicati finora: la varietà del Journal è nel taglio, non nel mood, perché nessuna delle due bozze sostiene un tono leggero",
+        "Il titolo e il title_seo descrivono lo stesso articolo"
+      ],
+      "ruolo_ricavia": "L'albergatore ricorda che il contributo pesa sul prezzo che l'ospite confronta: Ricavia parte da lì, controllando come ogni canale mostra il totale nelle notti più economiche prima di toccare una tariffa"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Il contributo di soggiorno si paga e si scopre alla reception: la foto della libreria con la reception mostra volti riconoscibili, quindi una foto vera e gratuita dell'archivio stock con un campanello sul banco racconta il tema senza persone né scritte",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 1328797, scheda, riserva della libreria e suo alt) e alt"
+      ],
+      "segnalazioni": [
+        "Libreria: la reception d264766f83 è pertinente ma mostra la receptionist e un'ospite a media distanza con il volto visibile, contro il vincolo sulle persone riconoscibili; la camera a17d5675f3 è pertinente alle tariffe ma da sola non fa capire il tema, per questo è la riserva. Soggetto mancante in libreria: una reception senza persone",
+        "Scartate dall'archivio stock le foto con la scritta RECEPTION leggibile e quelle con monete o banconote, per non ripetere la copertina della sterlina del 9 novembre",
+        "Per l'editore: il formato originale è 3:2, campanello al centro; nel ritaglio social il margine sopra il pomello e sotto la base è stretto, tagliare in parti uguali sopra e sotto",
+        "Riserva a17d5675f3 usata il 3 novembre, fuori dagli ultimi 10 articoli; diversa dalla riserva della bozza 1",
+        "Nessuna immagine generata: niente nota AI in fondo all'articolo"
+      ],
+      "ruolo_ricavia": "La copertina porta il lettore al banco della reception, dove l'ospite vede il totale: Ricavia parte dal prezzo finale che l'ospite incontra su ogni canale e al check-in, prima di toccare una tariffa"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Apertura, terza frase: 'Lo misura un'analisi presentata il 16 novembre da Assohotel Confesercenti' diventa 'Lo mostra, con un esempio su Firenze, un'analisi di JFC presentata il 16 novembre da Assohotel Confesercenti': la misura riguarda Firenze, non Roma, e l'analisi è di JFC (precisione di una frase vera, nessun fatto nuovo)",
+        "Paragrafo Ricavia riscritto: la voce 4.1 n. 14 (valutazione di PMS, channel manager e fornitori) non descriveva l'analisi utile qui e la frase 'è uno dei temi della consulenza' non ha riscontro sul sito; ora voce 4.1 n. 6 (tariffe, calendario e mix dei canali confrontati con il competitive set) con il totale mostrato all'ospite come consiglio, chiusura su /revenue-management/, che non compare in related"
+      ],
+      "segnalazioni": [
+        "Fonti ricontrollate oggi: comunicato Assohotel del 16 novembre (1,308 miliardi nel 2026, 1,135 nel 2025, 438,3 milioni nel primo semestre, +13%, 37 Comuni, esempio JFC su Firenze 6 euro, 5,3% su 114 euro e 1,5% su 413 euro, fino a 3,5 volte, proposta in percentuale con tetto); nota Confesercenti del 12 novembre sulla tavola rotonda (relatori e ruoli, nessun testo di legge); delibera 255/2023 letta sulle pagine 4 e 5 (3 stelle 6 euro, 4 stelle 7,50, 5 stelle 10, B&B 6, locazione breve 6, massimo 10 pernottamenti consecutivi, dal 1° ottobre 2023); scheda di Roma Capitale che richiama la delibera 255/2023, senza data di aggiornamento",
+        "La delibera 255/2023 è intitolata 'tariffe per l'anno 2023': nessuna delibera successiva trovata oggi né sul sito di Roma Capitale né nelle ricerche, e la scheda ufficiale la indica come fonte delle tariffe. L'editore ricontrolli che non ci siano tariffe nuove per il 2027 prima della pull request: se ci sono, l'articolo non si pubblica così (regole comuni, 9 bis)",
+        "Calcoli del testo (15, 20, 12 euro a notte per una coppia, 9 euro su tre notti) ricontrollati: aritmetica sui dati della delibera",
+        "Peso dell'effetto modesto in valore assoluto, dichiarato nel testo; tesi corretta e azioni concrete, revenue manager APPROVED",
+        "Le due bozze toccano le notti infrasettimanali dell'inverno 2027 come il 13 novembre, con temi, categorie e titoli diversi: varietà accettabile, ma i prossimi giorni conviene uscire dal primo trimestre 2027"
+      ],
+      "ruolo_ricavia": "Paragrafo finale: un tributo fisso cambia il confronto dell'ospite; Ricavia confronta tariffe, calendario e mix dei canali con il competitive set, e conviene che il confronto comprenda il totale mostrato su ogni canale prima di toccare la tariffa",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: il contributo non cambia l'ADR, pesa di più rispetto alla tariffa nelle notti economiche)",
+        "[x] Ogni numero ha fonte (comunicato Assohotel-JFC attribuito; tariffe dalla delibera 255/2023, fonte primaria; calcoli aritmetici sulla delibera)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voce 4.1 n. 6 più un consiglio, non pubblicitario",
+        "[x] Regole di brand e di copy rispettate (contributo di soggiorno spiegato alla prima menzione, ADR con glossa, nessun punto finale)",
+        "[x] Tono coerente con la matrice del mood (normativa: serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; primo articolo sul contributo di soggiorno)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate; nessuna posizione attribuita ai relatori della tavola rotonda",
+        "[x] Rischi legali 9 ter: proposta presentata come proposta, nessuna presa di posizione sul tributo, rimando al regolamento e al proprio consulente per esenzioni e casi specifici, nessun livello di prezzo; foto stock vera, nessuna nota AI",
+        "[x] Da 700 a 1.100 parole (circa 980 con il paragrafo Ricavia), 4 h3, struttura completa"
+      ]
+    }
+  ],
+  "slug": "contributo-soggiorno-roma-hotel-prezzo-finale",
+  "title_seo": "Contributo di soggiorno e tariffe hotel a Roma · Ricavia",
+  "description": "Contributo di soggiorno a Roma: perché un importo fisso per persona pesa di più nelle notti economiche d'inverno e come mostrarlo all'ospite su sito e OTA",
+  "keyword": {
+    "principale": "contributo di soggiorno Roma hotel",
+    "secondarie": [
+      "tassa di soggiorno Roma hotel",
+      "contributo di soggiorno prezzo finale",
+      "imposta di soggiorno in percentuale",
+      "contributo di soggiorno OTA"
+    ]
+  },
+  "related_intro": "Per gestire contributo di soggiorno e tariffe del tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "gli adempimenti del contributo di soggiorno a Roma",
+      "url": "/osservatorio/affitti-brevi-extralberghiero-roma-lista-controllo/"
+    },
+    {
+      "label": "come si calcolano ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "sottotitolo": "A Roma il contributo è fisso per persona e per notte, quindi pesa di più quando la camera costa meno. Cosa controllare su sito diretto e OTA nelle notti d'inverno, e perché la proposta di Assohotel non cambia le regole in vigore",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Normativa: la matrice ammette serio o provocatorio, ma un tono provocatorio rischierebbe di far sembrare la proposta di Assohotel una norma in arrivo o di prendere posizione su un tributo (regole-comuni, sezione 9); il corpo è di servizio e il mood segue il corpo"
+  },
+  "alternative_titolo": [
+    "Contributo di soggiorno a Roma: abbassare la tariffa per compensarlo o mostrarlo prima?",
+    "Per JFC l'imposta di soggiorno pesa fino a 3,5 volte di più sulle camere economiche",
+    "Contributo di soggiorno per una coppia: 15 euro in un quattro stelle, 12 in appartamento"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 1328797,
+      "titolo": "Bell on reception desk",
+      "anteprima": "https://img.magnific.com/free-photo/bell-reception-desk_1398-2541.jpg"
+    },
+    "scheda": "Soggetto: un campanello da reception in ottone su base scura, appoggiato sul banco in legno chiaro di un hotel; dietro, sfocato, il casellario delle chiavi con riflessi azzurri; il punto in cui l'ospite paga il contributo e scopre il prezzo finale; nessuna persona, nessuna scritta leggibile, nessun marchio\nInquadratura: frontale e statica, campanello al centro, sfondo sfocato sopra e piano del banco sotto; il formato originale è 3:2, nel ritaglio 16:9 e in quello social tagliare in parti uguali sopra e sotto, perché il campanello resti intero, pomello e base compresi, nella fascia centrale\nLuce: interna, morbida e diffusa, riflessi leggeri sul metallo\nPalette: neutri caldi del legno e dell'ottone come accento, base blu scuro, riflessi azzurri #3CCDFA e blu #1F2DD0 nel casellario sfocato; niente rosso, nessun filtro\nAtmosfera: seria e sobria, il momento del conto in un hotel qualsiasi; diversa dalla copertina della bozza 1 (palco da concerto) e da tutte le copertine recenti (cupola sul Foro Romano, atrio congressuale, binari, moneta, Colonna dell'Immacolata, ala in volo, Tevere, campo da tennis, aerei, tende, camere)",
+    "libreria": "assets/img/a17d5675f3.webp",
+    "alt_libreria": "Camera d'hotel luminosa con letto matrimoniale, panca ai piedi del letto e una portafinestra sui tetti di Roma",
+    "testo_sovrapposto": null
+  },
+  "alt": "Campanello in ottone sul banco della reception di un hotel, con il casellario delle chiavi sfocato sullo sfondo",
+  "data": "2026-11-17",
+  "autore": "Tito · Redazione Ricavia"
+}
