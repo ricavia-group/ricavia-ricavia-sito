@@ -202,5 +202,29 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-17",
+    "slug": "concerti-palazzo-sport-hotel-roma",
+    "tema": "concerti-palazzo-sport-gennaio-2027-roma",
+    "keyword": "concerti Palazzo dello Sport hotel Roma",
+    "categoria": "eventi",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-17",
+    "slug": "contributo-soggiorno-roma-hotel-prezzo-finale",
+    "tema": "contributo-soggiorno-roma-peso-tariffe-basse",
+    "keyword": "contributo di soggiorno Roma hotel",
+    "categoria": "regole",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
