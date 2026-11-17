@@ -100,7 +100,7 @@ Pagina didattica su ADR, RevPAR, GOP e GOPPAR, con calcolatore (pagina: Indicato
 - Cosa spiega la pagina oltre alle formule: l'ADR dipende da giorno della settimana, eventi in città, anticipo delle prenotazioni e tariffe del competitive set ("tre o quattro competitor, non venti"); il RevPAR dice quale strategia ha prodotto più ricavi tra tariffe basse con più occupazione e tariffe alte con meno; il GOPPAR è "il numero da guardare per primo" e mette sullo stesso piano un hotel da dodici camere e uno da quaranta
 - Ritmo: ogni giorno ADR, RevPAR, occupazione; ogni mese GOP e GOPPAR con il conto economico riclassificato secondo lo standard USALI
 
-### Osservatorio e Journal (`/osservatorio/`)
+### Osservatorio (`/osservatorio/`) e Journal (`/journal/`)
 
 - Classifiche con l'Hotel Score per zona e categoria, prezzi della concorrenza giorno per giorno, ospiti e flussi, voli in arrivo (pagina: Osservatorio)
 - Metodo dichiarato: dati pubblici raccolti ed elaborati da algoritmi e intelligenza artificiale secondo i criteri di Ricavia, ogni risultato verificato da una persona del team (pagina: Osservatorio)
@@ -202,7 +202,7 @@ Collegamento adatto: `/revenue-management/` (voci 4.1: 2, 3)
 
 > Una nuova regola sulla tassa di soggiorno non cambia l'ADR, ma cambia il prezzo finale che l'ospite vede quando prenota. Per questo conviene aggiornare subito gli importi nel gestionale e comunicarli in modo chiaro già al momento della prenotazione, come indica la lista di controllo di Ricavia per l'extralberghiero
 
-Collegamento adatto: `/osservatorio/affitti-brevi-extralberghiero-roma-lista-controllo/` (consiglio 4.2: I)
+Collegamento adatto: `/journal/affitti-brevi-extralberghiero-roma-lista-controllo/` (consiglio 4.2: I)
 
 **Pubblicazione di dati** (arrivi e presenze)
 

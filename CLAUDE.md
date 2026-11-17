@@ -7,14 +7,14 @@ Leggi anche README.md per struttura e indirizzi delle pagine.
 - Il sorgente resta `index.html`, ma il sito pubblicato è multipagina: `python tools/build.py` genera `site/`, pubblicata da Cloudflare Workers
 - Prima di proporre una pubblicazione eseguire `python tools/check_seo.py`; gli URL pubblicati sono in README.md
 - Titoli e descrizioni SEO e gli slug degli articoli sono in `tools/seo.json`: uno slug pubblicato non cambia quando viene riscritto un titolo
-- Tutte le pagine sono in `index.html`. Le pagine interne sono `div.pgv` con id (`#revenue-management`, `#consulenza`, `#apertura`, `#contatti`, `#pg-metodo`, `#pg-chi-siamo`, `#pg-partner`, `#pg-pagella`, `#pg-osservatorio`, `#pg-indicatori`, `#pg-privacy`, `#pg-cookie`, `#pg-termini`) aperte via hash.
+- Tutte le pagine sono in `index.html`. Le pagine interne sono `div.pgv` con id (`#revenue-management`, `#consulenza`, `#apertura`, `#contatti`, `#pg-metodo`, `#pg-chi-siamo`, `#pg-partner`, `#pg-pagella`, `#pg-osservatorio`, `#pg-journal`, `#pg-indicatori`, `#pg-privacy`, `#pg-cookie`, `#pg-termini`) aperte via hash.
 - Stili tutti in `assets/css/site.css`. L'ordine delle regole conta: le regole in fondo al file sovrascrivono quelle prima. Le regole delle pagine interne usano il prefisso `:is(#revenue-management,#consulenza,…)`.
 - Variabili principali: `--zink` (nero testo/tasti), `--zgr` (gradiente brand), `--zf` (carattere Geist).
 - Script in `assets/js/`, caricati nell'ordine numerico.
 - Loghi dei partner: sono disegnati nella pagina (sprite `<svg class="lg-sprite">` in cima al body, simboli `#lg-…`, richiamati con `<svg class="plg"><use …></svg>`). Non usare maschere CSS o file SVG esterni per i loghi: in alcuni ambienti non si caricano e i loghi spariscono.
 
 ## Journal automatico
-- Gli articoli nuovi vanno in `journal/AAAA-MM-GG-<slug>/` (formato in README.md), mai in `index.html`; i 6 articoli storici restano in `index.html`
+- Gli articoli nuovi vanno in `journal/AAAA-MM-GG-<slug>/` (formato in README.md), mai in `index.html`; i 6 articoli storici restano in `index.html` (dentro `#pg-journal`); gli articoli stanno su `/journal/<slug>/`, mai su `/osservatorio/`
 - Prima di proporre un articolo: `python -m unittest discover tests -v`, `python tools/build.py`, `python tools/check_seo.py`
 - Le istruzioni degli agenti della redazione automatica sono in `redazione/` (partire da `redazione/README.md`)
 

@@ -245,7 +245,7 @@ class TestJournal(unittest.TestCase):
         t = journal.template(self.carica()[0])
         for atteso in ('<span class="jr-k">Mercato</span>', '<h2>Titolo di prova</h2>', '<p class="jr-sub">',
                        '<b>Tito · Redazione Ricavia</b>', '3 novembre 2026 · 1 min di lettura',
-                       'src="/osservatorio/articolo-di-prova/hero.webp" alt="Immagine di prova"',
+                       'src="/journal/articolo-di-prova/hero.webp" alt="Immagine di prova"',
                        '<div class="jr-body">', 'class="jr-lede"'):
             self.assertIn(atteso, t)
 
@@ -254,7 +254,7 @@ class TestJournal(unittest.TestCase):
         a = self.carica()[0]
         s = journal.scheda(a)
         self.assertTrue(s.startswith('<article class="jr-cd ar" data-cat="mercato">'))
-        self.assertIn('href="/osservatorio/articolo-di-prova/"', s)
+        self.assertIn('href="/journal/articolo-di-prova/"', s)
         self.assertIn('<b>Leggi →</b>', s)
         self.assertTrue(journal.scheda(a, True).startswith('<article class="jr-ft ar"'))
         self.assertIn('<b>Leggi l’articolo →</b>', journal.scheda(a, True))

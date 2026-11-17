@@ -18,13 +18,13 @@ File di conoscenza per la redazione. Lo usano soprattutto il giornalista (scelta
 
 | Nome breve | Fonte completa | URL pubblicato |
 |---|---|---|
-| articolo: Zone di Roma | Dove conviene avere una struttura ricettiva a Roma: guida ragionata ai quartieri (12 ottobre 2026) | `/osservatorio/conviene-avere-struttura-ricettiva-roma-guida/` |
-| articolo: Calendario di Roma | Il calendario di Roma: dodici mesi di domanda, letti da vicino (5 ottobre 2026) | `/osservatorio/calendario-roma-dodici-mesi-domanda-letti/` |
-| articolo: Roma dopo il Giubileo | Roma dopo il Giubileo: cosa cambia per chi ospita nel 2026 (28 settembre 2026) | `/osservatorio/roma-dopo-giubileo-cambia-chi-ospita/` |
-| articolo: Tre errori di prezzo | Tre errori di prezzo che vediamo ogni settimana nelle strutture ricettive romane (21 settembre 2026) | `/osservatorio/tre-errori-prezzo-vediamo-settimana-strutture/` |
-| articolo: Affitti brevi | Affitti brevi ed extralberghiero a Roma: la lista di controllo (14 settembre 2026) | `/osservatorio/affitti-brevi-extralberghiero-roma-lista-controllo/` |
-| articolo: Voli | Guardare i voli prima del calendario: come leggiamo Fiumicino e Ciampino (7 settembre 2026) | `/osservatorio/guardare-voli-calendario-leggiamo-fiumicino-ciampino/` |
-| pagina: Scheda zone | Scheda "Le zone di Roma in un colpo d'occhio" nel Journal dell'Osservatorio | `/osservatorio/` |
+| articolo: Zone di Roma | Dove conviene avere una struttura ricettiva a Roma: guida ragionata ai quartieri (12 ottobre 2026) | `/journal/conviene-avere-struttura-ricettiva-roma-guida/` |
+| articolo: Calendario di Roma | Il calendario di Roma: dodici mesi di domanda, letti da vicino (5 ottobre 2026) | `/journal/calendario-roma-dodici-mesi-domanda-letti/` |
+| articolo: Roma dopo il Giubileo | Roma dopo il Giubileo: cosa cambia per chi ospita nel 2026 (28 settembre 2026) | `/journal/roma-dopo-giubileo-cambia-chi-ospita/` |
+| articolo: Tre errori di prezzo | Tre errori di prezzo che vediamo ogni settimana nelle strutture ricettive romane (21 settembre 2026) | `/journal/tre-errori-prezzo-vediamo-settimana-strutture/` |
+| articolo: Affitti brevi | Affitti brevi ed extralberghiero a Roma: la lista di controllo (14 settembre 2026) | `/journal/affitti-brevi-extralberghiero-roma-lista-controllo/` |
+| articolo: Voli | Guardare i voli prima del calendario: come leggiamo Fiumicino e Ciampino (7 settembre 2026) | `/journal/guardare-voli-calendario-leggiamo-fiumicino-ciampino/` |
+| pagina: Scheda zone | Scheda "Le zone di Roma in un colpo d'occhio" nel Journal | `/journal/` |
 | pagina: Revenue management, Consulenza, Nuova apertura, Metodo, Osservatorio, Indicatori | pagine del sito in `index.html` | vedi README.md |
 
 ## 1. Le zone di Roma

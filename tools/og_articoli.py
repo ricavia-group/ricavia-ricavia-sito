@@ -1,11 +1,11 @@
-"""Anteprime social degli articoli dell'Osservatorio: JPG 1200x630 ritagliato dalla foto dell'articolo.
+"""Anteprime social degli articoli del Journal: JPG 1200x630 ritagliato dalla foto dell'articolo.
 Da eseguire dopo `python3 tools/build.py` quando cambia la foto di un articolo; i file vanno in assets/img/og/."""
 import os, re, glob
 from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'assets', 'img', 'og')
 os.makedirs(OUT, exist_ok=True)
-for f in glob.glob(os.path.join(ROOT, 'site', 'osservatorio', '*', 'index.html')):
+for f in glob.glob(os.path.join(ROOT, 'site', 'journal', '*', 'index.html')):
     slug = os.path.basename(os.path.dirname(f))
     h = open(f, encoding='utf-8').read()
     art = h.split('<article class="jr-art">', 1)[1]

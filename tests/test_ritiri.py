@@ -28,8 +28,8 @@ class TestRitiri(unittest.TestCase):
     def test_redirect_ritirato(self):
         scrivi_json(self.f, ['vecchio-articolo'])
         red = leggi(costruisci(self.r), '_redirects')
-        self.assertIn('/osservatorio/vecchio-articolo/ /osservatorio/ 301', red)
-        self.assertIn('/osservatorio/vecchio-articolo /osservatorio/ 301', red)
+        self.assertIn('/osservatorio/vecchio-articolo/ /journal/ 301', red)
+        self.assertIn('/osservatorio/vecchio-articolo /journal/ 301', red)
 
     def test_ritirato_con_cartella_rifiutato(self):
         crea_articolo(self.r, slug='x')

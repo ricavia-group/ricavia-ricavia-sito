@@ -76,9 +76,9 @@ Facoltativo: `autore` (predefinito `Tito · Redazione Ricavia`). Altri campi (pe
 
 Il corpo ammette solo i tag `a`, `b`, `blockquote`, `div`, `h3`, `li`, `ol`, `p`, `small`, `ul`, `strong`, `em`, `i`, `br`, `span`, `figure`, `figcaption`, `img` e gli attributi `class`, `alt`, `href` (su `a`: percorso interno `/...`, ancora `#...` o `https://...`), `src` (su `img`: solo percorsi interni `/...`) e `data-jr-go` senza valore su `a`. Commenti, dichiarazioni e tag non chiusi fanno fallire la build. Titoli di sezione con `h3`.
 
-Per ritirare un articolo: aggiungere lo slug a `journal/ritirati.json` e cancellare la sua cartella; l'URL risponde con redirect 301 a `/osservatorio/`. La build fallisce se la cartella esiste ancora.
+Per ritirare un articolo: aggiungere lo slug a `journal/ritirati.json` e cancellare la sua cartella; l'URL risponde con redirect 301 a `/journal/`. La build fallisce se la cartella esiste ancora.
 
-`/osservatorio/` mostra i 12 articoli nuovi più recenti; gli altri sono nell'archivio mensile `/osservatorio/archivio/AAAA-MM/`. Una cartella con errori fa fallire la build con un messaggio che inizia dal nome della cartella.
+`/journal/` mostra i 12 articoli nuovi più recenti; gli altri sono nell'archivio mensile `/journal/archivio/AAAA-MM/`. Ogni articolo è su `/journal/<slug>/`. Il Journal stava prima sotto `/osservatorio/`: la build genera in `_redirects` un 301 per ogni vecchio indirizzo (articoli, archivi, immagini, ritirati). Nei testi degli articoli i vecchi collegamenti `/osservatorio/<slug>/` vengono riscritti sui nuovi. `/osservatorio/` resta la pagina dell'Osservatorio, senza redirect, perché ospiterà un prodotto diverso. Una cartella con errori fa fallire la build con un messaggio che inizia dal nome della cartella.
 
 Variabili d'ambiente: `RICAVIA_JOURNAL` usa un'altra cartella al posto di `journal/` (usata dai test); `RICAVIA_NO_MIN` salta la minificazione.
 
@@ -102,13 +102,14 @@ Su GitHub il workflow `.github/workflows/controlli.yml` (job `controlli`) esegue
 | Chi siamo | `/chi-siamo/` |
 | Partner | `/partner/` |
 | Contatti | `/contatti/` |
-| Osservatorio e Journal | `/osservatorio/` |
+| Osservatorio | `/osservatorio/` |
+| Journal | `/journal/` |
 | Hotel Score | `/hotel-score/` |
 | Indicatori | `/indicatori/` |
 | Privacy e cookie | `/privacy/` · `/cookie/` |
 | Termini di servizio | `/termini/` |
 
-Le sei pagine articolo sono sotto `/osservatorio/`; sitemap e redirect vengono generati dalla build. I vecchi hash della Home sono conservati come collegamenti compatibili.
+Le sei pagine articolo storiche e quelle nuove sono sotto `/journal/`; sitemap e redirect vengono generati dalla build. I vecchi hash della Home sono conservati come collegamenti compatibili.
 
 ## Misurazione
 
