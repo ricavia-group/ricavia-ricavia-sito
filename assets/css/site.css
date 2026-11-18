@@ -5267,3 +5267,6 @@ html body form p.rk-note,:is(#revenue-management,#consulenza,#apertura,#contatti
 @media (max-width:620px){.jr-arp{padding-left:16px;padding-right:16px}}
 .jr-arp .jr-back{max-width:none;margin:0 0 clamp(16px,2vw,24px);padding:0}
 .jr-arp .jr-k{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* Occhiello della home dentro l H1: stesso aspetto della riga precedente */
+.z-h1 .z-h1-ey{display:block;font-size:12px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;margin:0 0 22px;text-align:center}
