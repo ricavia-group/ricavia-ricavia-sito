@@ -1,0 +1,20 @@
+name: hash-temp
+on: [push]
+jobs:
+  hash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python - <<'EOF'
+          import json, os, tempfile
+          from tests.aiuti import costruisci, sha
+          site = costruisci(os.path.join(tempfile.mkdtemp(), 'inesistente'))
+          slugs = json.load(open('tests/storici.json'))
+          print('HASHES ' + json.dumps({s: sha(os.path.join(site, 'journal', s, 'index.html')) for s in slugs}))
+          EOF
