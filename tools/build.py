@@ -24,7 +24,7 @@ PAGES = [
     ('apertura', 'nuova-apertura', 'Nuova apertura di un hotel o di una struttura ricettiva · Ricavia'),
     ('pg-metodo', 'metodo', 'Il metodo Ricavia: dal dato all\'utile · Ricavia'),
     ('pg-chi-siamo', 'chi-siamo', 'Chi siamo: i fondatori di Ricavia, Roma · Ricavia'),
-    ('pg-partner', 'partner', 'Partner tecnologici per hotel: PMS, channel manager · Ricavia'),
+    ('pg-partner', 'partner', 'Partner tecnologici hotel: PMS e channel manager · Ricavia'),
     ('contatti', 'contatti', 'Contatti: prenota una call conoscitiva · Ricavia'),
     ('pg-osservatorio', 'osservatorio', 'Osservatorio Roma: dati del mercato alberghiero · Ricavia'),
     ('pg-journal', 'journal', 'Journal: mercato e prezzi degli hotel a Roma · Ricavia'),

@@ -28,7 +28,7 @@
       "description": "Parla con Ricavia del tuo hotel a Roma o nel Lazio: prenota una call conoscitiva su tariffe, distribuzione e costi oppure scrivi a info@ricavia.com"
     },
     "pg-osservatorio": {
-      "description": "Analisi del mercato alberghiero di Roma per chi gestisce un hotel: domanda, stagionalità, quartieri, voli e prezzi. Leggi il Journal di Ricavia"
+      "description": "Analisi del mercato alberghiero di Roma per il tuo hotel: domanda, stagionalità, quartieri, voli e prezzi. Leggi il Journal di Ricavia"
     },
     "pg-journal": {
       "title": "Journal: mercato e prezzi degli hotel a Roma · Ricavia",
@@ -48,13 +48,13 @@
       "description": "Cookie e tecnologie simili usati sul sito di Ricavia"
     },
     "pg-termini": {
-      "description": "Termini di servizio del sito ricavia.com e degli strumenti di Ricavia Group S.r.l.: uso del sito, proprietà intellettuale, pubblicazione sui social e responsabilità"
+      "description": "Termini di servizio di ricavia.com e degli strumenti di Ricavia Group S.r.l.: uso del sito, proprietà intellettuale, pubblicazione sui social e responsabilità"
     }
   },
   "archive": {
     "_nota": "Pagine d'archivio mensile /journal/archivio/AAAA-MM/: {mese} è per esempio «novembre 2026»",
     "title": "Journal di {mese} · Ricavia",
-    "description": "Gli articoli del Journal Ricavia di {mese}: eventi, trasporti, mercato e prezzi letti in chiave revenue per chi gestisce un hotel"
+    "description": "Gli articoli del Journal Ricavia di {mese}: eventi, trasporti, mercato e prezzi letti in chiave revenue per il tuo hotel"
   },
   "articles": {
     "a1": {
@@ -74,7 +74,7 @@
     },
     "a2": {
       "slug": "calendario-roma-dodici-mesi-domanda-letti",
-      "title": "Stagionalità hotel a Roma: calendario della domanda · Ricavia",
+      "title": "Stagionalità hotel Roma: calendario della domanda · Ricavia",
       "related_intro": "Per trasformare il calendario in decisioni tariffarie, approfondisci",
       "related": [
         {
