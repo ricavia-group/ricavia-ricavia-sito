@@ -522,6 +522,9 @@ open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % r for r
 # chiave IndexNow (Bing e altri motori): il file deve restare raggiungibile alla radice del sito
 INDEXNOW_KEY = '77a8078505659e943f2e417aafa1d9db'
 open(os.path.join(OUT, INDEXNOW_KEY + '.txt'), 'w').write(INDEXNOW_KEY)
+# seconda chiave IndexNow, usata dal progetto OpenSEO per avvisare Bing dopo ogni pubblicazione
+INDEXNOW_KEY_OPENSEO = '54fe5acbd9ca466dab75904c1d6555e0'
+open(os.path.join(OUT, INDEXNOW_KEY_OPENSEO + '.txt'), 'w').write(INDEXNOW_KEY_OPENSEO)
 # icona del sito anche all'indirizzo classico /favicon.ico (motori di ricerca e browser)
 shutil.copy(os.path.join(ROOT, 'assets', 'img', 'favicon.ico'), os.path.join(OUT, 'favicon.ico'))
 open(os.path.join(OUT, 'robots.txt'), 'w').write('User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n' % DOMAIN)
