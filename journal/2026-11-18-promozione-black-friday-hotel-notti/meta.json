@@ -1,0 +1,209 @@
+{
+  "titolo": "Promozione Black Friday per il tuo hotel: quali notti del 2027 includere nello sconto?",
+  "tesi": "Le promozioni del Black Friday vendono oggi notti valide per tutto il 2027 (UNA Italian Hospitality: prenotazioni dal 16 novembre al 4 dicembre, fino al 40% per i soci, cancellazione gratuita fino a 14 giorni prima, hotel di Roma inclusi), con tariffe riservate che non compaiono nei prezzi pubblici del competitive set: se il tuo hotel decide una promozione, lo sconto può aggiungere occupazione solo sulle notti con pick-up lento del primo trimestre 2027, mentre sulle notti con eventi già in calendario (Sei Nazioni 13 febbraio, 6 e 13 marzo, Maratona 14 marzo, Pasqua 28 marzo, concerti di gennaio e febbraio) rischia di anticipare a tariffa più bassa prenotazioni che sarebbero arrivate comunque; per questo conviene scegliere le notti una per una, con condizioni di cancellazione che proteggono il pick-up e un codice tariffa dedicato per misurare il risultato",
+  "tema": "black-friday-promozioni-soggiorni-2027",
+  "categoria": "prezzi",
+  "fonti": [
+    {
+      "titolo": "Black Weeks",
+      "editore": "UNA Italian Hospitality",
+      "url": "https://www.unaitalianhospitality.com/it/promo/black-weeks",
+      "data": "2026-11-18"
+    },
+    {
+      "titolo": "Tornano le Black Weeks di UNA Italian Hospitality, sconti fino al 40%",
+      "editore": "Travelnostop",
+      "url": "https://travelnostop.com/news/alberghi/tornano-le-black-weeks-di-una-italian-hospitality-sconti-fino-al-40_702251",
+      "data": "2026-11-18"
+    },
+    {
+      "titolo": "Black Friday o Travel Tuesday: come ottenere le migliori offerte voli e hotel 2026",
+      "editore": "Euronews",
+      "url": "https://it.euronews.com/2026/10/28/black-friday-o-travel-tuesday-come-ottenere-le-migliori-offerte-voli-e-hotel-2026",
+      "data": "2026-11-18"
+    },
+    {
+      "titolo": "Guinness Sei Nazioni Maschile 2027",
+      "editore": "Federazione Italiana Rugby",
+      "url": "https://www.federugby.it/gm6n/",
+      "data": "2026-11-18"
+    },
+    {
+      "titolo": "Run Rome The Marathon",
+      "editore": "Run Rome The Marathon (organizzatore)",
+      "url": "https://www.runromethemarathon.com/",
+      "data": "2026-11-18"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Decisione concreta che ogni hotel affronta entro il 27 novembre, con effetto sulle tariffe del primo trimestre 2027; fatto con fonte primaria (pagina dell'offerta) e collegamento alle date di Roma già trattate dal Journal",
+      "correzioni": [],
+      "segnalazioni": [
+        "Rischio antitrust (regole-comuni 9 ter, punto 1): l'articolo descrive la promozione di una catena con hotel a Roma. Nessun livello di prezzo o percentuale da applicare; le azioni sono per il singolo hotel e dicono esplicitamente di decidere sui propri dati, non sulla percentuale di un concorrente. Il capo redattore controlli che il titolo finale non suoni come invito a seguire o a contrastare lo sconto",
+        "Reputazione e marchi (9 ter, punti 5 e 8): UNA Italian Hospitality è citata solo per i fatti della sua pagina pubblica, senza giudizi; il meccanismo della cancellazione e del competitive set è scritto in generale, non come critica all'offerta. Se il capo redattore preferisce, la catena si può citare come esempio senza nome nel lede, tenendo il nome solo nella sezione con il link",
+        "Condizioni dell'offerta lette sulla pagina UNA: prenotazioni 16/11-04/12/2026, soggiorni fino al 31/12/2027, fino al 40% sulle tariffe Super-Flex, camere limitate, solo iscritti al programma fedeltà con tariffe visibili dopo il login, cancellazione gratuita fino a 14 giorni dall'arrivo. Hotel di Roma inclusi (la pagina ne elenca quattro). Il testo non nomina i singoli hotel",
+        "Euronews (28 ottobre) è usata solo come contesto: catene che lo scorso anno hanno fatto promozioni per il Black Friday e sconti maggiori per i soci. Nessun numero ripreso",
+        "Date degli eventi: Sei Nazioni lette oggi sulla pagina della Federazione Italiana Rugby; Maratona 14 marzo letta sul sito dell'organizzatore; Pasqua 28 marzo 2027 da calendario. Le date dei concerti al Palazzo dello Sport sono richiamate tramite l'articolo pubblicato il 17 novembre, senza ripeterle",
+        "Mix della giornata: la bozza 1 (crociere) è legata al Lazio; questa riguarda gli hotel di Roma tramite le date del primo trimestre. Categoria prezzi: l'ultima del Journal è dell'8 novembre (ponte dell'Immacolata), struttura e titolo diversi",
+        "Direzioni degli indicatori: RevPAR '?' perché occupazione e ADR si muovono in direzioni opposte (glossario, regole di coerenza)",
+        "Collegamenti interni nel corpo: 2 (/journal/sei-nazioni-hotel-roma-tariffe/, /journal/concerti-palazzo-sport-hotel-roma/), più /hotel-score/ nel paragrafo Ricavia (voci 4.1 n. 5 e 7). Hotel Score non usato nei paragrafi Ricavia degli ultimi due giorni",
+        "Parole del corpo: circa 900"
+      ],
+      "ruolo_ricavia": "Ricavia lavora sul mix dei canali e sulla coerenza dei prezzi tra sito diretto e OTA, e decide una tariffa riservata ai clienti diretti insieme al calendario delle notti, escludendo le date con eventi"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge: una promozione con soggiorni validi tredici mesi aggiunge occupazione solo sulle notti deboli e sulle notti con eventi anticipa domanda a tariffa più bassa; fatti e date verificati sulle fonti primarie, nessun calcolo da correggere, azioni sul singolo hotel",
+      "correzioni": [
+        "Tesi in meta.json: 'aggiunge occupazione' diventa 'può aggiungere occupazione' e 'anticipa' diventa 'rischia di anticipare' (effetto non misurato, lettura prudente)",
+        "Impatto sugli indicatori, Pick-up: tolti la finestra 16 novembre-4 dicembre e il segmento 'soci dei programmi fedeltà', che descrivevano la promozione della catena e non l'hotel del lettore; ora 'nelle settimane della tua promozione, leisure che prenota con largo anticipo sul canale diretto', con le cancellazioni dentro la voce pick-up (glossario, indicatori fuori elenco)",
+        "Impatto sugli indicatori, ADR: segmento 'tutti i segmenti' (formula riservata ai costi) sostituito con 'leisure'",
+        "Impatto sugli indicatori, Occupazione: finestra 'notti infrasettimanali di gennaio e febbraio 2027 senza eventi' diventa 'notti di gennaio-marzo 2027 senza eventi e con pick-up lento', coerente con il corpo e con l'azione 1 (le notti deboli si riconoscono dal pick-up, non dal giorno della settimana; i concerti di gennaio e febbraio sono infrasettimanali)",
+        "Cosa fare adesso, azione 1: 'escludi le notti con eventi già in calendario' diventa una verifica sul pick-up del singolo hotel su quelle notti; un'esclusione uguale per tutti su date precise, letta da molti hotel di Roma, era vicina al divieto della sezione 9 ter, punto 1 (indicazione di tenere le tariffe su date comuni)",
+        "Azioni 2 e 3 invariate; 3 azioni in tutto"
+      ],
+      "segnalazioni": [
+        "Antitrust (9 ter, punto 1), fuori dalle mie sezioni: l'h3 'Le notti del primo trimestre da tenere fuori' suona come un'indicazione uguale per tutti gli hotel su date precise. Proposta per il SEO director o il capo redattore: 'Le notti del primo trimestre con una domanda propria'. Nel resto del corpo nessun livello di prezzo da applicare e nessun invito ad allinearsi",
+        "Antitrust e marchi: il lede e la prima sezione riportano 'fino al 40%' della promozione di una catena con hotel a Roma. È un fatto della pagina pubblica, non un livello da applicare, e l'azione 1 dice di non decidere sulla percentuale di un concorrente; il virality director non usi la percentuale nel titolo o nel sottotitolo, per non trasformarla in un riferimento di prezzo",
+        "Verificati sulle fonti: pagina UNA (prenotazioni 16/11-04/12/2026, soggiorni fino al 31/12/2027, fino al 40% sulle tariffe Super-Flex, camere limitate, solo iscritti un_tourist con iscrizione gratuita, cancellazione gratuita fino a 14 giorni, hotel di Roma inclusi); FIR: Italia all'Olimpico il 13 febbraio, 6 e 13 marzo 2027, tre sabati; 27 novembre 2026 è venerdì; 14 marzo 2027 è domenica; Pasqua 2027 il 28 marzo. Maratona 14 marzo non riletta oggi sul sito dell'organizzatore, coerente con l'articolo del 4 novembre",
+        "Corpo, sezione sulla cancellazione: 'cancellazione gratuita fino a pochi giorni dall'arrivo' è generica; nell'offerta citata il termine è di 14 giorni. Non cambia il meccanismo, lo lascio al capo redattore",
+        "L'effetto per un hotel indipendente dipende dal fatto che faccia o meno una promozione: l'articolo lo dice ('Se stai pensando a una promozione'). Se il tuo hotel non fa promozioni, l'unico effetto della notizia è sul competitive set (tariffe dei soci invisibili nei prezzi pubblici), descritto nel corpo"
+      ],
+      "ruolo_ricavia": "Ricavia lavora sul mix dei canali e sulla parità tra sito e OTA: una tariffa promozionale per il canale diretto si decide notte per notte guardando il pick-up di ogni data, e si tiene separata con un codice dedicato per misurare se ha portato ospiti nuovi"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo nel registro e nel Journal: nessun articolo sul Black Friday o sulle promozioni; le date del primo trimestre sono contesto già trattato, ma la tesi (su quali notti applicare uno sconto) e la keyword sono nuove",
+      "correzioni": [
+        "Terzo h3: 'Le notti del primo trimestre da tenere fuori' diventa 'Promozione Black Friday: le notti del tuo hotel con una domanda propria', per inserire la keyword principale; accoglie anche la proposta antitrust del revenue manager (9 ter, punto 1): il titolo non suona più come un'esclusione uguale per tutti su date comuni. Fatti, date e fonti invariati",
+        "Apertura: prima frase invariata, contiene già 'promozioni', 'Black Friday' e 'hotel'",
+        "Collegamenti interni del corpo controllati: 2 naturali (Sei Nazioni del 3 novembre, concerti del 17 novembre, entrambi pubblicati) più /hotel-score/ nel paragrafo Ricavia, che non si conta",
+        "Compilati slug (promozione-black-friday-hotel-notti, 5 parole, senza date), title_seo (56 caratteri), description (152 caratteri, senza punto finale), keyword, related_intro e related; lunghezze contate con Python. Categoria 'prezzi' confermata: la causa della notizia è una promozione tariffaria"
+      ],
+      "segnalazioni": [
+        "Controllo doppioni: registro.json, scartati, pubblicati.md, journal/*/meta.json e tools/seo.json letti. Nessun tema su Black Friday o promozioni. Confronto con il 13 novembre (bassa-stagione-hotel-roma-tariffe, 'bassa stagione hotel Roma'): quello legge la stagionalità del trimestre, questo la decisione su una promozione con soggiorni fino al 2027; con Sei Nazioni (3 novembre), Maratona (4 novembre) e concerti (17 novembre) le date sono solo contesto. Nessun veto; il primo trimestre ricorre però in molti articoli del mese: il capo redattore valuti il rischio fotocopia sull'insieme",
+        "Keyword: 'Black Friday hotel' da sola porta soprattutto il viaggiatore che cerca offerte; scelta 'promozione Black Friday hotel', che porta chi decide la promozione. 'Roma' solo tra le secondarie: l'aggancio con Roma passa dalle date del primo trimestre e dagli hotel della catena a Roma, non dal Black Friday",
+        "Title, description e slug senza nome della catena e senza 'fino al 40%', come chiesto dal revenue manager per non trasformare la percentuale in un riferimento di prezzo",
+        "Corpo, sezione sulla cancellazione (fuori dal mio ambito): 'fino a pochi giorni dall'arrivo' contro i 14 giorni dell'offerta citata, già segnalato dal revenue manager",
+        "Related: nessuno ripete i collegamenti del corpo né /hotel-score/ di chiusura"
+      ],
+      "ruolo_ricavia": "Chi cerca come impostare una promozione del Black Friday trova nell'Hotel Score il passo successivo naturale per vedere prezzi, canali e vendita diretta del proprio hotel prima di decidere lo sconto"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "La storia c'è ed è utile: una decisione che il lettore prende in questi giorni, con un meccanismo poco visibile (lo sconto di novembre vende notti di tredici mesi); il titolo pone la domanda che l'articolo risolve, senza percentuali della catena e senza invito a seguire gli sconti dei concorrenti",
+      "correzioni": [
+        "Titolo: 'Black Friday degli hotel: lo sconto di novembre vale per le notti del 2027' diventa 'Promozione Black Friday per il tuo hotel: quali notti del 2027 includere nello sconto?' (86 caratteri). Tipo Domanda, la domanda che l'albergatore si fa; la risposta è nella sezione sulle notti con una domanda propria e nell'azione 1. Contiene la keyword principale ed è allineato al title_seo ('Promozione Black Friday per hotel: quali notti')",
+        "Sottotitolo scritto, senza 'fino al 40%', senza nome della catena e senza riferimenti agli sconti dei concorrenti (segnalazioni del revenue manager); il punto resta solo tra le due frasi",
+        "Mood: serio (matrice, riga 'dati economici, mercati'; regola 9 ter, punto 1)",
+        "Alternative: una Conseguenza, un Contrasto, una Domanda sulla cancellazione, tutte sotto i 90 caratteri, senza percentuali e senza indicazioni di prezzo",
+        "Frase citabile invariata: 'Lo sconto del Black Friday non sceglie le notti. Le notti le scegli tu' è un aforisma di contrasto senza numeri né nomi, coerente con la tesi, e affida la scelta al singolo hotel"
+      ],
+      "segnalazioni": [
+        "Antitrust (9 ter, punto 1): il titolo è rivolto al singolo hotel ('il tuo hotel') e non indica date, livelli di prezzo o percentuali; nessuna alternativa suggerisce di allinearsi alla promozione di una catena. L'alternativa Contrasto nomina il Sei Nazioni come esempio di notte con domanda propria, non come data da escludere per tutti: se il capo redattore la preferisce, la valuti con questo criterio",
+        "Varietà: l'ultimo titolo di tipo Domanda è dell'8 novembre (ponte dell'Immacolata, con struttura diversa); la bozza 1 di oggi usa un Dato",
+        "La frase citabile segue il paragrafo sul competitive set, non quello che dimostra la tesi (martedì di gennaio contro sabato di partita). Spostarla tocca la struttura del corpo, fuori dal mio ambito: il capo redattore valuti se metterla dopo il primo paragrafo della sezione 'Perché uno sconto di novembre pesa sulle notti del 2027'",
+        "Confermo, fuori dal mio ambito: 'cancellazione gratuita fino a pochi giorni dall'arrivo' contro i 14 giorni dell'offerta citata (già segnalato da revenue manager e SEO director)"
+      ],
+      "ruolo_ricavia": "Il racconto chiude bene se il paragrafo Ricavia riprende la domanda del titolo: Ricavia decide la tariffa riservata del canale diretto notte per notte, sul pick-up di ogni data, e la tiene separata con un codice dedicato per vedere se ha portato ospiti nuovi"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "L'articolo parla delle notti che il tuo hotel decide di vendere in promozione: una camera della libreria, non usata negli ultimi 10 articoli, è pertinente al tema delle tariffe e non mostra persone, scritte o simboli di sconto",
+      "correzioni": [
+        "Compilati immagine (fonte libreria, dd641d2c79, scheda e alt_libreria) e alt, uguale ad alt_libreria"
+      ],
+      "segnalazioni": [
+        "Scelta la libreria e non l'archivio stock: per un articolo su tariffe e promozioni il manuale considera pertinente una camera d'albergo; le immagini stock di Black Friday (cartellini, percentuali, borse della spesa) sono cliché e potrebbero suggerire un livello di sconto, contro la regola 9 ter punto 1",
+        "dd641d2c79 usata l'ultima volta il 4 novembre come riserva, fuori dagli ultimi 10 articoli. Nessuna copertina recente ha come soggetto una camera (il 17 novembre la camera a17d5675f3 era solo riserva)",
+        "Per l'editore: formato originale 4:3 (1448×1086); nel ritaglio 16:9 e social tagliare in parti uguali sopra e sotto, letto e panca al centro. Se il ritaglio non convince, la riserva resta la stessa foto: fonte libreria, nessun download",
+        "Scartate in libreria le foto di reception e di staff (volti riconoscibili), la stretta di mano (cliché) e il terminal cb8c5b135f (cappotto rosso in primo piano)",
+        "Nessuna immagine generata: niente nota AI in fondo all'articolo"
+      ],
+      "ruolo_ricavia": "La copertina mostra una camera vuota, la notte che decidi tu se scontare: Ricavia guarda notte per notte il pick-up del tuo hotel prima di inserire una data nella promozione"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Apertura: il nome della catena esce dal lede ('UNA Italian Hospitality, per esempio, vende…' diventa 'Una catena alberghiera italiana con hotel anche a Roma, per esempio, vende…'); il nome resta solo nella prima sezione, accanto al link della pagina dell'offerta (regole 9 ter, punti 1 e 8; proposta del giornalista)",
+        "Apertura: 'non riguardano le notti di dicembre' diventa 'non riguardano solo le notti di dicembre' (l'offerta vale per soggiorni dal 16 novembre 2026: precisione di una frase vera)",
+        "Sezione 'Perché uno sconto di novembre…': 'Con la cancellazione gratuita fino a pochi giorni dall'arrivo' diventa 'Con la cancellazione gratuita, che nell'offerta citata vale fino a 14 giorni prima dell'arrivo'; 'possono tornare disponibili poco prima della data, quando è più difficile rivenderle' diventa 'a ridosso della data, quando hai meno tempo per rivenderle' (segnalazione di revenue manager, SEO e virality director; il meccanismo non cambia)",
+        "Frase citabile spostata, testo invariato: dal paragrafo sul competitive set alla fine della sezione 'Promozione Black Friday: le notti del tuo hotel con una domanda propria', dopo la frase 'Le notti adatte a una promozione sono altre…', che la dimostra, e prima di 'Impatto sugli indicatori' come nel markup di riferimento (proposta del virality director)",
+        "Paragrafo Ricavia riscritto: tolto 'Ricavia la decide', che contraddice l'ultima parola della proprietà sui prezzi; ora voce 4.1 n. 5 (mix dei canali e parità) con la scelta per singola data come consiglio, chiusura su /hotel-score/, che non compare in related"
+      ],
+      "segnalazioni": [
+        "Per l'editore, da ricontrollare prima del merge: pagina Black Weeks di UNA Italian Hospitality, riletta oggi (prenotazioni 16/11-04/12/2026, soggiorni fino al 31/12/2027, fino al 40% sulle tariffe Super-Flex, camere limitate, solo iscritti gratuiti al programma un_tourist, cancellazione gratuita fino a 14 giorni, hotel di Roma inclusi): se l'offerta cambia o viene ritirata prima del merge, l'articolo non si pubblica così (regole 9 bis). Euronews (promozioni di Marriott, Accor, IHG e Hilton lo scorso anno) è un fatto di contorno da una sola testata, attribuito nel testo: da ricontrollare. Date di Sei Nazioni (13 febbraio, 6 e 13 marzo, tre sabati) e Maratona (domenica 14 marzo) coerenti con gli articoli del 3 e del 4 novembre; Black Friday venerdì 27 novembre e Pasqua 28 marzo 2027 controllati sul calendario",
+        "Rischio fotocopia sul primo trimestre, valutato e accettato: il tema (promozione con soggiorni validi tredici mesi, cancellazione come opzione, tariffe dei soci invisibili nel competitive set, codice tariffa per misurare) è nuovo, il tipo di titolo (Domanda) e la categoria (prezzi) sono diversi dal 13 novembre; le date del trimestre sono contesto e rimandano agli articoli già pubblicati. Restano però vicini al 13 novembre l'azione 1 (sconto solo sulle notti con pick-up in ritardo) e l'espressione 'notti con una domanda propria'. Dopo oggi la redazione esca dal primo trimestre 2027 per almeno una settimana: è la seconda volta che il capo redattore lo chiede",
+        "Antitrust (9 ter, punto 1): 'fino al 40%' resta nel corpo come fatto della pagina pubblica, mai in titolo, sottotitolo, description o In breve; l'azione 1 dice di decidere sui propri dati e non sulla percentuale di un concorrente; nessuna data indicata come da escludere per tutti",
+        "Le tariffe dei soci 'non compaiono nei prezzi pubblici' vale per definizione delle tariffe riservate; la pagina UNA conferma che sono visibili solo dopo l'accesso"
+      ],
+      "ruolo_ricavia": "Paragrafo finale: Ricavia lavora sul mix dei canali e sulla parità tra sito diretto e OTA; una promozione riservata ai clienti diretti tocca entrambe le leve e conviene deciderla sul pick-up di ogni data, non sul calendario della promozione; chiusura su /hotel-score/",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: lo sconto con soggiorni di tredici mesi aggiunge occupazione solo sulle notti con pick-up lento e anticipa domanda sulle notti con eventi)",
+        "[x] Ogni numero ha fonte (pagina UNA, FIR, sito della Maratona, Euronews per il contorno; date controllate sul calendario)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voce 4.1 n. 5 più un consiglio, non pubblicitario",
+        "[x] Regole di brand e di copy rispettate (ADR e RevPAR con glossa, OTA senza glossa, nessun punto finale, il lettore con il tu)",
+        "[x] Tono coerente con la matrice del mood (prezzi e mercato: serio, scelta prudente per la 9 ter)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; rischio fotocopia sul primo trimestre valutato nelle segnalazioni)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate (catena citata solo per i fatti della sua pagina, il meccanismo della cancellazione è descritto in generale)",
+        "[x] Rischi legali 9 ter: nessun livello di prezzo da applicare, azioni sul singolo hotel, percentuale della catena solo come fatto nel corpo, nome fuori dal lede; foto della libreria, nessuna nota AI",
+        "[x] Da 700 a 1.100 parole (circa 970 con il paragrafo Ricavia), 5 h3, struttura completa"
+      ]
+    }
+  ],
+  "slug": "promozione-black-friday-hotel-notti",
+  "title_seo": "Promozione Black Friday per hotel: quali notti · Ricavia",
+  "description": "Promozione Black Friday del tuo hotel: su quali notti del 2027 uno sconto può aggiungere camere, quali condizioni proteggono il pick-up e come misurarla",
+  "keyword": {
+    "principale": "promozione Black Friday hotel",
+    "secondarie": [
+      "Black Friday hotel Roma",
+      "tariffe primo trimestre 2027 hotel",
+      "cancellazione gratuita e pick-up",
+      "codice tariffa promozione hotel"
+    ]
+  },
+  "related_intro": "Per decidere su quali notti vale uno sconto, approfondisci",
+  "related": [
+    {
+      "label": "le tariffe per data della bassa stagione a Roma",
+      "url": "/journal/bassa-stagione-hotel-roma-tariffe/"
+    },
+    {
+      "label": "lo sconto dell'ultimo minuto tra i tre errori di prezzo",
+      "url": "/journal/tre-errori-prezzo-vediamo-settimana-strutture/"
+    }
+  ],
+  "sottotitolo": "Le promozioni del Black Friday vendono già soggiorni fino alla fine del 2027. Su quali notti uno sconto può aggiungere camere vendute, quali condizioni di cancellazione proteggono il pick-up e come misurare il risultato con i tuoi dati",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Promozioni e tariffe: riga 'dati economici, mercati' (serio o provocatorio). Il tema tocca prezzi e concorrenza (regole comuni 9 ter, punto 1): un tono provocatorio rischierebbe di suonare come invito a seguire o a contrastare lo sconto di un concorrente. Nel dubbio, serio, coerente con il registro del corpo"
+  },
+  "alternative_titolo": [
+    "Black Friday: lo sconto di novembre può ridurre le tariffe del tuo primo trimestre 2027",
+    "Black Friday: martedì di gennaio e sabato di Sei Nazioni, due notti con domande diverse",
+    "Promozione Black Friday con cancellazione gratuita: prenotazioni vere o opzioni sul 2027?"
+  ],
+  "immagine": {
+    "fonte": "libreria",
+    "stock": null,
+    "prompt": null,
+    "scheda": "Soggetto: una camera d'hotel luminosa e vuota, letto matrimoniale bianco al centro con cuscini grigio-azzurri, panca imbottita blu-grigia ai piedi del letto, comodini con lampade accese, pavimento in marmo chiaro, una portafinestra a sinistra; la camera come notte da vendere, senza persone, senza scritte, senza marchi\nInquadratura: frontale e simmetrica, letto e panca nella fascia centrale; il formato originale è 4:3, nel ritaglio 16:9 e in quello social tagliare in parti uguali sopra e sotto, perché letto e panca restino interi\nLuce: naturale dalla portafinestra, morbida, con le lampade dei comodini come accento caldo leggero\nPalette: neutri chiari di marmo e lino, grigio-azzurro della panca e dei pannelli vicino al blu del brand; niente rosso, nessun filtro\nAtmosfera: seria e sobria, la notte del tuo hotel di cui decidi la tariffa; nessun richiamo allo sconto (niente cartellini, percentuali, carrelli o borse della spesa), per non suggerire un livello di prezzo; diversa dalla copertina della bozza 1 (porto di Civitavecchia) e dalle copertine recenti (campanello della reception, palco, cupola sul Foro, atrio congressuale, binari, moneta)",
+    "libreria": "assets/img/dd641d2c79.webp",
+    "alt_libreria": "Camera d'hotel luminosa con letto matrimoniale bianco, panca imbottita ai piedi del letto e pavimento in marmo chiaro",
+    "testo_sovrapposto": null
+  },
+  "alt": "Camera d'hotel luminosa con letto matrimoniale bianco, panca imbottita ai piedi del letto e pavimento in marmo chiaro",
+  "data": "2026-11-18",
+  "autore": "Tito · Redazione Ricavia"
+}

@@ -1,0 +1,210 @@
+{
+  "titolo": "Civitavecchia, imbarchi e sbarchi +19,3% per l'Autorità portuale: cercali nei tuoi dati",
+  "tesi": "Nei primi nove mesi del 2026 gli imbarcati e sbarcati a Civitavecchia, cioè i passeggeri che lì iniziano o finiscono la crociera, sono cresciuti del 19,3% e hanno quasi raggiunto il totale di tutto il 2025: a differenza dei crocieristi in transito, una parte di questi ospiti può avere bisogno di una notte prima della partenza o dopo lo sbarco, quindi se il tuo hotel ne ospita già conviene riconoscerli nei tuoi dati e preparare per la stagione 2027 soggiorni di una notte, servizi di arrivo e partenza e informazioni sui collegamenti, senza dare per scontato un aumento di domanda che nessuna fonte misura; la previsione di Risposte Turismo per il 2027 (3,8 milioni di passeggeri) non indica da sola una crescita rispetto al 2026",
+  "tema": "crociere-civitavecchia-homeport-2027",
+  "categoria": "dati",
+  "fonti": [
+    {
+      "titolo": "Porti di Roma e del Lazio: crescono le crociere, Civitavecchia consolida il primato e Gaeta accelera sul turismo di qualità",
+      "editore": "Autorità di Sistema Portuale del Mar Tirreno Centro Settentrionale",
+      "url": "https://www.portidiroma.it/notizia/porti-di-roma-e-del-lazio-crescono-le-crociere-civitavecchia-consolida-il-primato-e-gaeta",
+      "data": "2026-11-18"
+    },
+    {
+      "titolo": "Traffici AdSP del Mar Tirreno Centro Settentrionale - Anno 2025",
+      "editore": "Autorità di Sistema Portuale del Mar Tirreno Centro Settentrionale",
+      "url": "https://portidiroma.it/sites/default/files/allegati/Traffici%20AdSP%20del%20Mar%20Tirreno%20Centro%20Settentrionale%20-%20Anno%202025.pdf",
+      "data": "2026-11-18"
+    },
+    {
+      "titolo": "Presentate le previsioni per il 2027 sulla crocieristica nazionale a Italian Cruise Day 2026 (comunicato stampa)",
+      "editore": "Risposte Turismo",
+      "url": "https://www.risposteturismo.it/presentate-le-previsioni-per-il-2027-sulla-crocieristica-nazionale-a-italian-cruise-day-2026-comunicato-stampa/",
+      "data": "2026-11-18"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Dato primario nuovo (Autorità portuale, 14 novembre) su un segmento mai trattato dal Journal, legato al Lazio e con effetto sulla stagione 2027; tesi prudente perché nessuna fonte misura le notti dei crocieristi a Roma",
+      "correzioni": [],
+      "segnalazioni": [
+        "roma.md, domanda aperta 21: Ricavia non ha ancora detto se i crocieristi sono un segmento rilevante per gli hotel che segue e in quali zone. Il testo non attribuisce l'effetto a nessuna zona e scrive tutto in forma condizionata ('se il tuo hotel ne ospita già'); il capo redattore valuti se la tesi regge senza quella risposta",
+        "Nessuna fonte pubblica indica quanti crocieristi in imbarco o sbarco dormono a Roma: il testo lo dice esplicitamente e non usa stime. Fonti commerciali (operatori di transfer, terminal crociere in un articolo di Shipping Italy del 2023) parlano di 'molti' crocieristi che dormono a Civitavecchia o a Roma: non usate perché non affidabili o non misurate",
+        "Il dato 'imbarcati e sbarcati' conta movimenti, non persone: lo stesso passeggero di una crociera di andata e ritorno compare due volte. Il testo lo spiega; il revenue manager verifichi che le voci degli indicatori non lo leggano come numero di ospiti",
+        "Calcolo mio, da verificare: 1.672.722 (gennaio-settembre 2026) diviso 1.727.485 (anno 2025, prospetto AdSP) = 96,8%, scritto 'quasi il 97%'. Il totale crocieristi 2025 del prospetto AdSP (3.558.568) è leggermente diverso da quello riportato da alcune testate per Risposte Turismo (3.556.559): uso il dato dell'Autorità portuale, fonte primaria",
+        "Previsione 2027 di Risposte Turismo (3,8 milioni a Civitavecchia): letta sul comunicato; le tabelle complete sono immagini e non indicano nel testo la quota di imbarchi. Il rapporto CNR (conoscenze/cnr-rapporto-turismo.md, pag. 347) ricorda che le stime di Risposte Turismo sono state in passato più alte dei consuntivi: il testo dice 'è una previsione, non un consuntivo'",
+        "Periodo in avanti: la stagione crocieristica 2027 (dalla primavera). Nessuna fonte letta indica il calendario 2027 delle partenze da Civitavecchia o la stagionalità mensile; per questo le azioni partono dai dati dell'hotel e non da date precise",
+        "Recentezza: comunicato dell'Autorità portuale del 14 novembre (4 giorni), ripreso da ANSA il 16 novembre",
+        "Collegamenti interni nel corpo: nessuno, più /revenue-management/ nel paragrafo Ricavia (voce 4.1 n. 2). Il SEO director può aggiungerne uno, per esempio verso /journal/guardare-voli-calendario-leggiamo-fiumicino-ciampino/",
+        "Parole del corpo: circa 950"
+      ],
+      "ruolo_ricavia": "Ricavia controlla ogni settimana pick-up e occupazione a 90 giorni per segmento, per vedere se le notti legate a un imbarco crescono davvero prima di cambiare tariffe e regole di soggiorno"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "DA RIVEDERE",
+      "motivo": "La tesi sul 2026 regge (dati AdSP verificati), ma la sezione sul 2027 confronta la previsione di Risposte Turismo con il 2025 e suggerisce una crescita che i numeri non mostrano: con 3.123.520 crocieristi già in nove mesi, 3,8 milioni nel 2027 sono vicini al livello probabile del 2026",
+      "correzioni": [
+        "Tesi in meta.json: 'questi ospiti hanno bisogno di una notte' diventa 'una parte di questi ospiti può avere bisogno di una notte' (il corpo stesso dice che nessuna fonte misura quanti dormono a Roma); tolta la previsione 2027 come argomento di crescita e aggiunto che da sola non indica una crescita sul 2026",
+        "Impatto sugli indicatori, Occupazione: segmento 'leisure internazionale' sostituito con 'crocieristi in partenza o in arrivo a Civitavecchia' (nessuna fonte dice che il segmento è internazionale)",
+        "Impatto sugli indicatori, Pick-up: da '↑ bassa' a '?', con 'da monitorare ogni settimana'; tolta l'affermazione senza fonte 'I crocieristi prenotano la nave con anticipo… prima delle altre prenotazioni', riscritta in forma condizionata sui dati dell'hotel",
+        "Impatto sugli indicatori, Durata del soggiorno: tolto 'spesso' senza fonte, il ragionamento resta sul legame con il giorno di partenza o di rientro",
+        "Impatto sugli indicatori: aggiunta la voce RevPAR '?' con glossa, per coerenza con Occupazione ↑ e ADR ? (glossario, regole di coerenza)",
+        "Corpo, sezione 'Perché i passeggeri…': 'spesso con un volo su Fiumicino' diventa 'per esempio con un volo su Fiumicino' (quota senza fonte)",
+        "Corpo, sezione 'Il 2027…': 'aumentano le notti di soggiorno breve' diventa 'possono aumentare le notti di soggiorno breve' (il nesso tra imbarchi e notti a Roma non è misurato)",
+        "Cosa fare adesso: le 3 azioni restano invariate, sono sul singolo hotel e sui suoi dati"
+      ],
+      "segnalazioni": [
+        "Numero da rivedere (non corretto): la sezione 'Il 2027 nelle previsioni di Risposte Turismo' mette accanto 3,8 milioni (2027) e 3.558.568 (2025), e l'In breve riporta la previsione come se fosse una crescita. Ma gennaio-settembre 2026 vale già 3.123.520; il quarto trimestre 2025 valeva circa 714.000 crocieristi (3.558.568 meno 3.123.520/1,098, calcolo mio): se il quarto trimestre 2026 resta allo stesso livello, il 2026 chiude intorno a 3,8-3,9 milioni. La previsione 2027 indica quindi stabilità, non crescita. Il confronto giusto è con il 2026, che non è ancora pubblicato: il capo redattore valuti se dirlo nel testo ('la previsione è vicina al livello che il 2026 sta raggiungendo') o togliere il confronto con il 2025. Il calcolo serve solo al controllo, non va pubblicato come dato",
+        "Verificati sulle fonti: 3.123.520 (+9,8%), 1.672.722 (+19,3%), 752 accosti (+12,7%) sul comunicato AdSP del 14 novembre; 869.027 + 858.458 = 1.727.485 e 1.727.485 + 1.831.083 = 3.558.568 tornano; 1.672.722 / 1.727.485 = 96,8%, 'quasi il 97%' corretto; il comunicato di Risposte Turismo riporta solo '3,8 milioni di passeggeri movimentati attesi', senza dato 2026",
+        "'La crescita è doppia rispetto al totale': 19,3% contro 9,8% è 1,97 volte; 'quasi doppia' sarebbe più preciso. Frase fuori dalle mie sezioni, la lascio al capo redattore",
+        "Frase citabile (ambito del virality director): 'Un crocierista che si imbarca ha bisogno di un letto la sera prima' afferma come certa una notte che il corpo dichiara non misurata; più prudente 'può avere bisogno'",
+        "roma.md, domanda aperta 21 (crocieristi segmento rilevante, quali zone): il testo non attribuisce zone e resta condizionato; da revenue la tesi regge solo così. Effetto marginale per molti hotel di Roma: la scelta del pubblico è del capo redattore",
+        "Antitrust (9 ter, punto 1): nessun livello di prezzo né invito ad allinearsi; le azioni sono sul singolo hotel. Nessun rischio rilevato",
+        "Azioni: 3, tutte eseguibili in pochi giorni da un hotel indipendente; nessuna azione dannosa"
+      ],
+      "ruolo_ricavia": "Ricavia controlla ogni settimana pick-up e occupazione a 90 giorni: per un segmento nuovo come i crocieristi in imbarco, è il controllo che dice se le notti prima della partenza crescono davvero prima di cambiare tariffe e soggiorni minimi"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo nel registro e nel Journal: nessun articolo su crociere o Civitavecchia; la keyword dell'albergatore ('crocieristi Civitavecchia hotel Roma') ora è nella prima frase dell'apertura e in un h3",
+      "correzioni": [
+        "Apertura, prima frase: 'e la parte che cresce di più è quella dei passeggeri che…' diventa 'e per il tuo hotel a Roma conta soprattutto la parte che cresce di più: i passeggeri che…', per avere la keyword principale nella stessa frase; fatti, numeri e fonti invariati",
+        "Secondo h3: 'Perché i passeggeri che si imbarcano a Civitavecchia contano per Roma' diventa 'Perché i crocieristi che si imbarcano a Civitavecchia contano per il tuo hotel a Roma' (keyword principale)",
+        "Collegamento interno naturale aggiunto (il corpo non ne aveva): 'un volo su Fiumicino' porta a /journal/guardare-voli-calendario-leggiamo-fiumicino-ciampino/ (articolo storico, pubblicato); /revenue-management/ nel paragrafo Ricavia non si conta",
+        "Compilati slug (crocieristi-civitavecchia-hotel-roma, 4 parole, senza date), title_seo (52 caratteri), description (159 caratteri, senza punto finale), keyword, related_intro e related; lunghezze contate con Python. Categoria 'dati' confermata: la causa della notizia è la pubblicazione dei dati dell'Autorità portuale"
+      ],
+      "segnalazioni": [
+        "Controllo doppioni: registro.json, scartati (affitti brevi, nuove aperture), pubblicati.md, journal/*/meta.json e tools/seo.json letti. Nessun tema su crociere, porto o Civitavecchia; title, description e slug diversi da ogni altra pagina. Niente veto",
+        "Apertura: dopo la mia prima frase, la terza ripete 'Se il tuo hotel ne ospita già'; il capo redattore valuti 'Se ne ospiti già' per evitare la ripetizione",
+        "Description senza la previsione 2027 e senza percentuali: resta fuori dal problema segnalato dal revenue manager sul confronto tra 3,8 milioni (2027) e il 2025, che il capo redattore decide nel corpo e nell'In breve",
+        "'La crescita è doppia' (19,3% contro 9,8%): concordo con il revenue manager su 'quasi doppia'; frase fuori dal mio ambito",
+        "Roma nella keyword: l'aggancio è reale solo come ipotesi condizionata (domanda aperta 21 di roma.md senza risposta); il title non promette una domanda misurata, dice solo il collegamento tra crocieristi e hotel a Roma",
+        "Related: nessuno ripete i collegamenti del corpo; /revenue-management/ escluso perché è il collegamento di chiusura del paragrafo Ricavia. Il collegamento ai tre errori di prezzo riguarda i soggiorni minimi dimenticati, tema della seconda azione"
+      ],
+      "ruolo_ricavia": "Chi cerca come gestire i crocieristi in un hotel di Roma trova il passo successivo naturale nel servizio di revenue management, dove Ricavia separa il pick-up per segmento: il collegamento di chiusura è coerente con questa ricerca"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare all'albergatore: un dato primario nuovo e un contrasto chiaro tra crocieristi in transito e in imbarco, con un'azione concreta (riconoscere il segmento nei propri dati); titolo, sottotitolo e citazione non promettono notti che nessuna fonte misura",
+      "correzioni": [
+        "Titolo: 'Crociere a Civitavecchia: crescono i passeggeri che partono dal Lazio, e le notti prima dell'imbarco' (97 caratteri, dava per certa la crescita delle notti) diventa 'Civitavecchia, imbarcati e sbarcati +19,3% per l'Autorità portuale: cercali nei tuoi dati' (89 caratteri). Tipo Dato, con la fonte nominata nel titolo; dato consuntivo, non provvisorio. Titolo unico, nessun altro titolo su crociere",
+        "Sottotitolo scritto: annuncia i dati dei primi nove mesi, il contrasto transito-imbarco e i tre controlli; non cita la previsione 2027, sulla quale il revenue manager ha aperto un dubbio",
+        "Mood: serio (matrice, riga 'dati economici, mercati')",
+        "Alternative: una Domanda, un Contrasto, una Conseguenza, tutte sotto i 90 caratteri e senza la previsione 2027",
+        "Frase citabile: 'Un crocierista che si imbarca ha bisogno di un letto la sera prima' affermava come certa una notte che il corpo dichiara non misurata (segnalazione del revenue manager). Nuova frase: 'Il crocierista in transito visita Roma in giornata. Il crocierista che si imbarca può avere bisogno di un letto, ma solo i tuoi dati dicono se lo cerca nel tuo hotel'. Mantiene il contrasto, senza numeri né nomi, e chiude il paragrafo sul metodo"
+      ],
+      "segnalazioni": [
+        "Titolo e title_seo ('Crocieristi a Civitavecchia e hotel a Roma') descrivono lo stesso articolo: nessun allineamento necessario",
+        "Varietà: il tipo Dato è stato usato il 13 novembre (CNR); il 17 novembre i titoli erano Contrasto e Conseguenza. La bozza 2 di oggi usa una Domanda: le due bozze della giornata hanno tipi diversi",
+        "Il '+19,3%' del titolo è la variazione di gennaio-settembre 2026 sullo stesso periodo del 2025: il sottotitolo precisa i nove mesi e il corpo lo dice nella prima sezione",
+        "Fuori dal mio ambito, confermo le segnalazioni già aperte: 'La crescita è doppia' (19,3 contro 9,8) è più precisa come 'quasi doppia'; il confronto tra la previsione 2027 e il 2025 nella terza sezione e nell'In breve resta al capo redattore. Per questo nessun titolo e nessuna alternativa parla del 2027",
+        "Nessun rischio di ironia o di paura come leva; nessun nome di persona o azienda nel titolo oltre alla fonte"
+      ],
+      "ruolo_ricavia": "Il racconto regge se il paragrafo Ricavia resta sul controllo che il lettore può riconoscere: separare il pick-up per segmento per vedere se le notti legate all'imbarco esistono davvero nel suo hotel, prima di cambiare tariffe o soggiorni minimi"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "La libreria non ha porti né navi: una foto vera dell'archivio stock del porto di Civitavecchia, senza navi con livrea né persone, mostra il luogo esatto della notizia e tiene la palette azzurra del brand",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 387425537, scheda, riserva della libreria e suo alt) e alt"
+      ],
+      "segnalazioni": [
+        "Foto premium (150 crediti): tra le gratuite dell'archivio, con content_type photo, ai_generated excluded e orientation landscape, non c'era nessuna foto di Civitavecchia, solo porti di Monaco, Cannes, Québec e navi da crociera con il marchio della compagnia leggibile sullo scafo (per esempio 883373, scartata). Le tre foto vere di Civitavecchia nell'archivio sono tutte premium; scelta quella con il forte sul molo e la città, la più riconoscibile",
+        "Scartate anche le foto con fiancate di navi da crociera in primo piano (bandiere e livree) e le vedute notturne di altri porti: luogo sbagliato o marchi di terzi",
+        "Per l'editore: formato originale 3:2; nel ritaglio 16:9 e social togliere più cielo che banchina, il forte e la città restino nella fascia centrale",
+        "Riserva 0e01261517 (Colosseo dall'alto): la più neutra tra le vedute di città, non usata negli ultimi 10 articoli (ultimo uso il 4 novembre); diversa dalla copertina e dalla riserva della bozza 2",
+        "Soggetto mancante in libreria: porto di Civitavecchia o terminal crociere senza persone, utile se il segmento crocieristi torna negli articoli",
+        "Nessuna immagine generata: niente nota AI in fondo all'articolo"
+      ],
+      "ruolo_ricavia": "La copertina mostra il porto da cui parte il segmento, non l'hotel: Ricavia parte dallo stesso punto, cerca nei dati del tuo hotel le notti legate a imbarchi e sbarchi prima di decidere tariffe e soggiorni minimi"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Sezione 'Il 2027 nelle previsioni di Risposte Turismo': tolto l'accostamento tra la previsione 2027 (3,8 milioni) e il consuntivo 2025 (3.558.568), che faceva credere a una crescita non detta dalla fonte; ora il testo dice che il confronto utile è con il 2026, che non ha ancora un dato annuale, ricorda i 3.123.520 crocieristi già contati in nove mesi con il quarto trimestre da aggiungere e conclude che la previsione non indica da sola una nuova crescita. Nessun numero nuovo e nessuna stima pubblicata: il calcolo di controllo del revenue manager (2026 intorno a 3,8-3,9 milioni) resta fuori dal testo. Risolve il DA RIVEDERE del revenue manager",
+        "In breve: 'Risposte Turismo prevede 3,8 milioni di passeggeri nel 2027' diventa 'La previsione per il 2027 non indica da sola una nuova crescita'; 'Nove mesi del 2026 valgono quasi tutto il 2025' diventa 'Nove mesi di imbarchi e sbarchi valgono quasi tutto il 2025' (il 97% riguarda gli imbarcati e sbarcati, non i crocieristi totali, che sono all'88%)",
+        "Prima sezione: 'La crescita è doppia rispetto al totale' diventa 'quasi doppia' (19,3% contro 9,8%, cioè 1,97 volte)",
+        "Apertura: 'cominciano o finiscono la crociera' diventa 'iniziano o concludono la crociera' ('finiscono' tra i verbi da evitare); terza frase 'Se il tuo hotel ne ospita già, la stagione 2027 è il momento per…' diventa 'Se ne ospiti già, prima della stagione 2027 conviene…' (ripetizione di 'il tuo hotel' segnalata dal SEO director; il momento per agire è adesso, prima della stagione)",
+        "Titolo: 'imbarcati e sbarcati' diventa 'imbarchi e sbarchi' (da 89 a 87 caratteri, coerente con la spiegazione del corpo sui movimenti); tipo Dato con fonte nominata invariato",
+        "Paragrafo Ricavia riscritto: tolta la pratica non dichiarata 'separando le prenotazioni per segmento' e la costruzione impersonale 'la strategia tariffaria … si decide'; ora voce 4.1 n. 2 (pick-up e occupazione a 90 giorni) con il controllo sulle notti legate a un imbarco come consiglio, chiusura su /revenue-management/, che non compare in related"
+      ],
+      "segnalazioni": [
+        "Per l'editore, da ricontrollare prima del merge: (1) comunicato AdSP del 14 novembre, riletto oggi: 3.123.520 crocieristi (+9,8%), 1.672.722 imbarcati e sbarcati (+19,3%), 752 accosti (+12,7%); (2) prospetto AdSP 2025 (1.727.485 imbarcati e sbarcati, 1.831.083 transiti, 3.558.568 totale): non riletto da me, verificato dal revenue manager; (3) comunicato Risposte Turismo del 23 ottobre, riletto oggi: solo '3,8 milioni di passeggeri movimentati attesi' per Civitavecchia, nessuna variazione né stima 2026 nel testo. La scheda CNR cita un +2,7% e 990 toccate dall'Italian Cruise Watch di ottobre 2026: non leggibile nel comunicato, non usato. Se nel frattempo l'AdSP pubblica dati di ottobre o Risposte Turismo una stima 2026, verificare che la frase sul 2027 regga",
+        "roma.md, domanda aperta 21 (crocieristi segmento rilevante, zone): il testo non attribuisce zone, non dice che il segmento riguarda gli hotel seguiti da Ricavia e scrive tutto in forma condizionata, dichiarando che nessuna fonte misura le notti dei crocieristi a Roma. Così com'è non riempie il vuoto; la persona di Ricavia che fa il merge può rispondere alla domanda 21 e, se il segmento non è rilevante per i suoi hotel, decidere di non pubblicare",
+        "Peso della tesi: effetto marginale per molti hotel di Roma, dichiarato nel testo ('se oggi il tuo hotel non ospita crocieristi, la previsione non cambia le tue decisioni'); tre azioni concrete e verificabili sui dati dell'hotel",
+        "Il periodo in avanti è la stagione crocieristica 2027 senza date: il requisito 'guarda avanti' della giornata è soddisfatto anche dalla bozza 2",
+        "Foto premium dell'archivio stock (387425537): l'editore controlli il ritaglio indicato dall'art director"
+      ],
+      "ruolo_ricavia": "Paragrafo finale: per un segmento non misurato il primo dato è il ritmo delle prenotazioni; Ricavia controlla ogni settimana pick-up e occupazione a 90 giorni e conviene vedere se le notti legate a un imbarco crescono davvero prima di cambiare tariffe o soggiorni minimi; chiusura su /revenue-management/",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager DA RIVEDERE per il confronto 2027-2025, risolto con correzione di forma: tolto il confronto, nessuna crescita suggerita; tesi condizionata sui dati dell'hotel)",
+        "[x] Ogni numero ha fonte (comunicato AdSP 14 novembre, prospetto AdSP 2025, comunicato Risposte Turismo; 'quasi il 97%' e 'quasi doppia' sono rapporti tra dati citati; nessuna stima)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, un paragrafo, voce 4.1 n. 2 più un consiglio, non pubblicitario",
+        "[x] Regole di brand e di copy rispettate (ADR e RevPAR con glossa, nessun punto finale, 'finiscono' tolto, il lettore con il tu)",
+        "[x] Tono coerente con la matrice del mood (dati: serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; primo articolo su crociere e Civitavecchia)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate (l'avvertenza CNR sulle stime passate di Risposte Turismo non entra nel testo)",
+        "[x] Rischi legali 9 ter: nessun livello di prezzo né invito ad allinearsi, azioni sul singolo hotel; foto stock vera, nessuna nota AI",
+        "[x] Da 700 a 1.100 parole (circa 1.070 con il paragrafo Ricavia), 5 h3, struttura completa"
+      ]
+    }
+  ],
+  "slug": "crocieristi-civitavecchia-hotel-roma",
+  "title_seo": "Crocieristi a Civitavecchia e hotel a Roma · Ricavia",
+  "description": "Crocieristi a Civitavecchia: imbarchi e sbarchi in crescita. Come riconoscere nei dati del tuo hotel a Roma le notti prima dell'imbarco e quali servizi offrire",
+  "keyword": {
+    "principale": "crocieristi Civitavecchia hotel Roma",
+    "secondarie": [
+      "imbarchi Civitavecchia crociere",
+      "notte prima dell'imbarco hotel Roma",
+      "segmento crocieristi hotel",
+      "crociere Civitavecchia 2027"
+    ]
+  },
+  "related_intro": "Per leggere un segmento nuovo nei dati del tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "i soggiorni minimi dimenticati tra i tre errori di prezzo",
+      "url": "/journal/tre-errori-prezzo-vediamo-settimana-strutture/"
+    },
+    {
+      "label": "gli indicatori per leggere pick-up e occupazione",
+      "url": "/indicatori/"
+    }
+  ],
+  "sottotitolo": "I dati dei primi nove mesi del 2026, la differenza tra crocieristi in transito e in imbarco e tre controlli per capire se il segmento riguarda il tuo hotel a Roma",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dati di traffico portuale e previsioni di settore: riga 'dati economici, mercati' (serio o provocatorio). Il corpo è prudente e condizionato, nessuna fonte misura le notti dei crocieristi a Roma: un tono provocatorio prometterebbe più di quanto l'articolo dimostra"
+  },
+  "alternative_titolo": [
+    "Imbarchi e sbarchi in crescita a Civitavecchia: il tuo hotel ospita già crocieristi?",
+    "Civitavecchia: i crocieristi in transito non dormono a Roma, quelli in imbarco forse sì",
+    "Più crocieristi in imbarco a Civitavecchia: per il tuo hotel può contare la notte singola"
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 387425537,
+      "titolo": "View of Civitavecchia Romes cruise and ferry port City in the background Sunny",
+      "anteprima": "https://img.magnific.com/premium-photo/view-civitavecchia-romes-cruise-ferry-port-city-background-sunny_78774-3058.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: il porto di Civitavecchia visto dall'alto, come dal ponte di una nave all'ormeggio: in primo piano l'angolo di una banchina chiara, al centro l'acqua turchese del bacino con barche ormeggiate e un antico forte rotondo in pietra sul molo, dietro la città e le colline; nessuna nave da crociera con livrea, nessuna persona riconoscibile, nessuna scritta leggibile, nessun marchio\nInquadratura: dall'alto, leggermente in diagonale, forte e città nella fascia centrale; il formato originale è 3:2, nel ritaglio 16:9 e in quello social togliere più cielo in alto che banchina in basso, perché il forte e la linea della città restino interi al centro\nLuce: naturale di giornata limpida, sole laterale, ombre morbide\nPalette: azzurro e turchese dell'acqua e del cielo vicini a #3CCDFA, blu profondo verso #1F2DD0 nell'acqua in basso, neutri chiari di banchina e palazzi; i toni ocra e rosa dei palazzi restano accento, niente rosso dominante, nessun filtro\nAtmosfera: seria e documentaria, il punto in cui la crociera comincia o finisce; diversa dalla copertina della bozza 2 (camera d'hotel) e dalle copertine recenti (campanello della reception, palco, cupola sul Foro, atrio congressuale, binari, moneta, Colonna dell'Immacolata, ala in volo, Tevere, campo da tennis)",
+    "libreria": "assets/img/0e01261517.webp",
+    "alt_libreria": "Il Colosseo e il centro di Roma visti dall'alto in una giornata limpida, con le colline sullo sfondo",
+    "testo_sovrapposto": null
+  },
+  "alt": "Il porto di Civitavecchia visto dall'alto, con l'acqua turchese del bacino, un antico forte in pietra sul molo e la città sullo sfondo",
+  "data": "2026-11-18",
+  "autore": "Tito · Redazione Ricavia"
+}
