@@ -1,0 +1,217 @@
+{
+  "titolo": "Alloggio per il personale: lo stesso contratto incide poco a Pasqua e molto a gennaio",
+  "tesi": "Secondo l'Osservatorio Restworld (791 annunci di hotel, aprile 2024 - settembre 2026) il 69% degli annunci alberghieri offre l'alloggio, gli annunci con alloggio ricevono il 53% di candidature in più e a Roma una stanza singola assorbe circa il 38% dello stipendio offerto; il disegno di legge di bilancio 2027 (articolo 8) conferma per gennaio-settembre 2027 il trattamento integrativo del 15% sugli straordinari festivi e notturni, che il datore di lavoro anticipa e recupera in compensazione: se l'articolo viene confermato, un turno festivo o notturno può valere di più per il dipendente senza costare di più all'hotel, mentre l'alloggio è una leva che ha un costo; per questo il tuo hotel decide ora il personale dei picchi del primo semestre 2027 (Pasqua 28 marzo, ponti di aprile, maggio e giugno) partendo dal calendario delle tariffe e leggendo il costo del lavoro sui ricavi di ogni mese, non sull'anno",
+  "tema": "personale-hotel-alloggio-detassazione-2027",
+  "categoria": "dati",
+  "fonti": [
+    {
+      "titolo": "Legge di bilancio 2027. Profili di interesse della XI Commissione Lavoro (A.C. 3174-bis)",
+      "editore": "Servizio Studi del Senato e Servizio Studi della Camera dei deputati",
+      "url": "https://documenti.camera.it/leg19/dossier/Pdf/LA0244.pdf",
+      "data": "2026-11-19"
+    },
+    {
+      "titolo": "Stipendi in hotel a 1.800 euro, alloggio nel 69% degli annunci",
+      "editore": "Hospitality Business",
+      "url": "https://www.hospitalitybusiness.it/mercato-e-dati/stipendi-in-hotel-1800-euro-alloggio/",
+      "data": "2026-11-19"
+    },
+    {
+      "titolo": "Permanent contract offers in Italian hospitality job listings more than doubled to 12.4%",
+      "editore": "Vinetur",
+      "url": "https://www.vinetur.com/en/amp/20261116111162/permanent-contract-offers-in-italian-hospitality-job-listings-more-than-doubled-to-124.html",
+      "data": "2026-11-19"
+    },
+    {
+      "titolo": "Ristorazione, produttività italiana inferiore del 37% alla Francia. Stipendi a 1.700 euro, gli affitti pesano fino al 40%",
+      "editore": "La Mescolanza",
+      "url": "https://www.lamescolanza.com/2026/11/16/ristorazione-produttivita-italiana-inferiore-del-37-alla-francia-stipendi-a-1-700-euro-gli-affitti-pesano-fino-al-40/",
+      "data": "2026-11-19"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Tema mai trattato dal Journal (costo e reperimento del personale), con un dato nuovo del 16-18 novembre e un dato su Roma, legato a una norma con finestra precisa (gennaio-settembre 2027) e ad azioni concrete per i picchi del primo semestre",
+      "correzioni": [],
+      "segnalazioni": [
+        "Fonte di livello 3: l'Osservatorio Restworld è una piattaforma commerciale di annunci, con metodo, campione e periodo dichiarati; il report originale non è linkato dalle testate e non l'ho trovato. I numeri sugli hotel sono confermati da tre testate indipendenti (Hospitality Business, Vinetur, La Mescolanza) e nel testo sono attribuiti alle testate, con il limite del campione",
+        "Il +53% di candidature riguarda l'intero campione Restworld, non solo gli hotel: il testo lo dice ('Nel campione completo')",
+        "Il 38% di Roma (affitto di una stanza singola sullo stipendio offerto) viene dalla stessa analisi; non so se è calcolato sugli stipendi degli hotel o di tutto il campione: il testo dice 'stipendio offerto' senza specificare. Il capo redattore valuti se basta",
+        "Norma non ancora approvata: il testo è scritto come scenario condizionato ('se l'articolo 8 viene confermato'), con fonte primaria sul testo del disegno di legge (dossier parlamentare del 9 novembre) e il rinvio al consulente del lavoro (regole-comuni 9 ter, punto 6). Il dossier cita anche un articolo 44 (nuova imposta sostitutiva) che esclude dal trattamento i lavoratori che scelgono quel regime: non lo cito per non entrare in dettagli fiscali, ma il consulente del lavoro dovrà tenerne conto",
+        "Recentezza: dati Restworld pubblicati tra il 16 e il 18 novembre; il disegno di legge è del 28 ottobre (Consiglio dei ministri), con dossier del 9 novembre e termine emendamenti alla Camera il 17 novembre: lo uso come secondo fatto, non come notizia del giorno",
+        "Legame con Roma: il dato del 38% e le date di picco; la norma e gli annunci sono nazionali. Il mix della giornata è garantito dalla bozza 2, tutta su Roma",
+        "Impatto sugli indicatori: ho scritto solo due voci (costi operativi e GOP), entrambe con '?', perché l'effetto sul costo dipende dalle condizioni che l'hotel decide; nessun effetto diretto su occupazione e ADR. Il revenue manager valuti se aggiungere altro",
+        "Collegamenti interni nel corpo: nessuno; chiusura verso /consulenza/ (voci 4.1 n. 9 e 10, non usate nei paragrafi Ricavia della settimana). Il SEO director può aggiungerne uno, per esempio verso /indicatori/ per il GOP",
+        "Parole del corpo: circa 930"
+      ],
+      "ruolo_ricavia": "Ricavia legge il costo del personale in rapporto ai ricavi di ogni mese, sul conto economico riclassificato secondo lo standard USALI, per capire in quali mesi del 2027 un organico più ampio rende e in quali pesa sul GOP"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi confermata: la notizia non muove la domanda ma il costo e il reperimento del personale nei picchi del primo semestre 2027, e il meccanismo (15% recuperato in compensazione, alloggio come leva con un costo, costo del lavoro letto sui ricavi di ogni mese) regge sulla fonte primaria",
+      "correzioni": [
+        "Tesi in meta.json confermata senza modifiche",
+        "Corpo, paragrafo 'Messi insieme': 'pesa sulla scelta di un lavoratore quanto lo stipendio' diventa 'pesa molto sulla scelta di un lavoratore', perché il 38% e il +53% di candidature non dicono che l'alloggio pesa quanto lo stipendio",
+        "Corpo, stesso paragrafo: 'nel 2027 può valere di più' diventa 'nel 2027 può continuare a valere di più', perché il dossier (pagina 19) descrive l'articolo 8 come conferma della misura già in vigore da gennaio a settembre 2026: per il tuo hotel non cambia nulla rispetto al 2026",
+        "Impatto sugli indicatori: aggiunto 'da monitorare' alle due voci con '?' (manuale, sezione 5); 'per coprire i picchi' diventa 'per i turni dei picchi' (verbo colloquiale vietato)",
+        "Cosa fare adesso, azione 2: tolta la frase 'un'assunzione stagionale con alloggio può costare meno di un turno lasciato scoperto nella settimana di Pasqua, ma pesa di più a gennaio', che confrontava un costo con una perdita non misurata e attribuiva a gennaio un contratto stagionale per Pasqua; ora l'azione chiede di decidere la data di inizio di ogni contratto stagionale sul forecast di occupazione"
+      ],
+      "segnalazioni": [
+        "Verificati il dossier parlamentare (pagine 19-20 stampate: articolo 8, 15%, 1° gennaio-30 settembre 2027, compensazione, 12,3 milioni assunti per il 2027), Hospitality Business e Vinetur: i numeri del testo corrispondono",
+        "Soglia di reddito: il dossier scrive 'non superiore a 40 mila euro' nel riquadro e nel comma 19 vigente, 'inferiore a 40.000 euro' nella scheda; il testo usa 'inferiore'. Differenza minima ma è una soglia (regole-comuni, sezione 3): il capo redattore valuti 'fino a 40.000 euro' o il rinvio al testo",
+        "Titolo: 'a Roma una stanza costa il 38% dello stipendio offerto in hotel'. Né Hospitality Business né Vinetur dicono se il 38% è calcolato sugli stipendi degli hotel o di tutto il campione (La Mescolanza lo riporta in un articolo sulla ristorazione): 'in hotel' nel titolo non è sostenuto dalla fonte. Da correggere a cura del virality director o del capo redattore",
+        "Frase citabile 'Una notte di picco senza personale vale meno di una notte normale ben servita': affermazione di ricavo senza fonte e discutibile (una notte di picco con personale ridotto può comunque valere più di una notte normale per ADR e occupazione). Il virality director valuti una frase che non contenga un confronto di valore",
+        "Copy fuori dal mio ambito: 'Sono due leve diverse per coprire i turni dei picchi' (paragrafo 'Messi insieme') e 'copre gennaio-settembre 2027' (In breve) usano il verbo 'coprire', vietato da CLAUDE.md",
+        "Impatto sugli indicatori: due sole voci (costi operativi e GOP, entrambe '?'), perché la notizia non agisce su occupazione, ADR, pick-up o canali. Non ho aggiunto voci di riempimento",
+        "Fonte di livello 3 per i dati Restworld (report originale non trovato): la sufficienza la decide il capo redattore; per la tesi i dati servono solo come contesto del reperimento, il fatto che regge le azioni è l'articolo 8 con fonte primaria"
+      ],
+      "ruolo_ricavia": "Ricavia mette il costo del personale accanto al forecast di occupazione mese per mese, sul conto economico riclassificato secondo lo standard USALI, per decidere quando far partire i contratti stagionali del 2027 senza appesantire il GOP dei mesi deboli"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo per il Journal (personale, alloggio e straordinari festivi): nessun articolo pubblicato, proposto o scartato su questo tema negli ultimi 14 giorni; keyword dell'albergatore presente nell'apertura e in un h3, campi SEO completi e verificati",
+      "correzioni": [
+        "Compilati slug, categoria (dati: la notizia del giorno sono i dati sugli annunci; la norma è il secondo fatto), title_seo (60 caratteri), description (155 caratteri), keyword, related_intro e related",
+        "Primo h3: 'Cosa dicono gli annunci di lavoro degli hotel' diventa 'Alloggio per il personale: cosa dicono gli annunci degli hotel', per inserire la keyword principale; fatti, numeri e fonti invariati",
+        "Apertura non toccata: la prima frase contiene già alloggio, personale e hotel",
+        "Collegamento interno naturale aggiunto (il corpo non ne aveva): in 'Cosa fare adesso', azione 2, le parole 'un mese con meno camere vendute, come gennaio o febbraio' puntano a /journal/bassa-stagione-hotel-roma-tariffe/; testo invariato. Il collegamento di chiusura verso /consulenza/ resta e non si conta",
+        "related: /indicatori/ e /journal/inflazione-energia-costi-hotel/, nessuno dei due già presente nel corpo"
+      ],
+      "segnalazioni": [
+        "Controllo duplicati: nessun articolo su personale o costo del lavoro nel registro, in journal/, negli scartati e nei 6 storici. Il più vicino è /journal/inflazione-energia-costi-hotel/ (3 novembre): stesso campo dei costi operativi ma tesi diversa (energia e tariffa minima), per questo è in related",
+        "title_seo e description senza il 38% e senza il 15%: il primo ha il dubbio hotel o campione completo segnalato dal revenue manager, il secondo è in un disegno di legge non ancora approvato. Il titolo-hook 'a Roma una stanza costa il 38% dello stipendio offerto in hotel' resta da correggere a cura del virality director o del capo redattore",
+        "Copy fuori dal mio ambito, già segnalato dal revenue manager: 'per coprire i turni dei picchi' (paragrafo 'Messi insieme') e 'copre gennaio-settembre 2027' (In breve) usano il verbo 'coprire', vietato da CLAUDE.md",
+        "Roma non è nello slug né nel title_seo: la norma e gli annunci sono nazionali e l'aggancio su Roma è un solo dato con fonte di livello 3 (criterio 3 del mio manuale); Roma resta nelle keyword secondarie",
+        "Entrambe le bozze della giornata linkano /journal/bassa-stagione-hotel-roma-tariffe/ nel corpo, con ancore diverse: ammesso, nessuna delle due linka l'altra"
+      ],
+      "ruolo_ricavia": "Per un albergatore che cerca come pianificare il costo del personale stagionale, il passo successivo naturale è la consulenza su costi e riclassificazione USALI: Ricavia legge il costo del lavoro sui ricavi di ogni mese, e la chiusura verso /consulenza/ risponde a questo intento di ricerca"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia utile per l'albergatore: due leve per i turni dei picchi del 2027, una con un costo e una che, se confermata, non pesa sul costo del lavoro, da leggere mese per mese sui ricavi; titolo, sottotitolo e frase citabile ora stanno sui fatti che il corpo dimostra",
+      "correzioni": [
+        "Titolo: 'Personale per il 2027: a Roma una stanza costa il 38% dello stipendio offerto in hotel' (88 caratteri, 'in hotel' non sostenuto dalla fonte, dato di livello 3) diventa 'Alloggio per il personale: lo stesso contratto incide poco a Pasqua e molto a gennaio' (85 caratteri), tipo contrasto tra periodi, sostenuto dall'azione 2 di 'Cosa fare adesso' e dalla voce GOP; contiene la keyword principale e nessun numero incerto",
+        "Tipo di titolo scelto per varietà: il 18 novembre dato (crocieristi) e domanda (Black Friday), il 17 contrasto e conseguenza; oggi contrasto per la bozza 1 e conseguenza per la bozza 2, diversi tra loro. Nessun titolo uguale o simile in journal/, tools/seo.json e registro",
+        "Sottotitolo scritto (mancava): annunci e alloggio, norma al condizionale ('cosa cambierebbe'), personale dei picchi mese per mese",
+        "alternative_titolo: domanda (data di inizio dei contratti), dato con fonte nominata (69% degli annunci di hotel sulla piattaforma Restworld, non il 38%), conseguenza condizionata (15% 'se confermato'); tutte entro 90 caratteri",
+        "Frase citabile: 'Una notte di picco senza personale vale meno di una notte normale ben servita' (confronto di valore senza fonte, segnalato dal revenue manager) diventa 'Per i turni dei picchi l'alloggio è un costo in più. Il trattamento integrativo su festivi e notti, se confermato, no': contrasto che chiude il paragrafo 'Messi insieme', senza numeri né nomi, con la condizione della norma",
+        "Mood: serio"
+      ],
+      "segnalazioni": [
+        "Copy fuori dal mio ambito, già segnalato da revenue manager e SEO director: 'per coprire i turni dei picchi' (paragrafo 'Messi insieme') e 'copre gennaio-settembre 2027' (In breve) usano 'coprire', vietato; proposta: 'per i turni dei picchi' e 'vale da gennaio a settembre 2027'",
+        "Il titolo poggia sull'azione 2 ('lo stesso contratto con alloggio pesa poco sui ricavi della settimana di Pasqua e molto su un mese con meno camere vendute, come gennaio o febbraio'): se il capo redattore cambia quella frase, il titolo perde il suo appoggio (in alternativa la domanda sulla data di inizio dei contratti)",
+        "L'alternativa con il 69% nomina Restworld, piattaforma commerciale (fonte di livello 3 confermata da tre testate): la propongo come dato, non come titolo principale; il capo redattore valuti",
+        "Il titolo-hook non contiene 'hotel': lo contiene il title_seo; descrivono lo stesso articolo, nessun disallineamento",
+        "Il 38% compare ancora nell'In breve con 'stipendio offerto', coerente con il corpo; il dubbio hotel o campione completo resta al capo redattore"
+      ],
+      "ruolo_ricavia": "Dal punto di vista del racconto, il contributo di Ricavia è mostrare al lettore lo stesso costo del personale in due mesi diversi: Ricavia mette il costo di ogni contratto stagionale accanto ai ricavi previsti mese per mese, sul conto economico riclassificato secondo lo standard USALI"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera, gratuita) sul lavoro del personale ai piani, pertinente al tema; la libreria non ha foto di personale senza volti riconoscibili",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 5577534, scheda, riserva ffd195a72d con alt_libreria) e alt",
+        "Nessuna modifica al corpo (fuori dal mio ambito)"
+      ],
+      "segnalazioni": [
+        "Libreria: nessuna foto pertinente e usabile. Le foto di lavoro in hotel della Home (reception, team con tablet, sala ristorante: d264766f83, 24c6c2ec3f, 925d41e651, f04cab0a0f e simili) mostrano volti riconoscibili; le foto senza persone sono quasi tutte nelle riserve degli ultimi 10 articoli. Restano libere e neutre solo ffd195a72d (camera) e 67868d0855 (San Pietro dall'alto): usate come riserve, una per bozza. Soggetti da aggiungere alla libreria: personale d'hotel al lavoro senza volti (carrello dei piani, divise, spogliatoio) e sale congressuali vuote",
+        "Non ho potuto aprire le anteprime stock (lo scaricamento dell'anteprima per guardarla è stato bloccato dai permessi della sessione): la scelta poggia su titolo, autore e metadati dell'archivio (foto vera, gratuita). L'editore guarda l'anteprima prima del download e, se compaiono volti riconoscibili, scritte leggibili, marchi o toni rossi dominanti, passa alla foto di riserva con alt_libreria",
+        "Scelta del soggetto: il personale al lavoro e non l'alloggio (una stanza in affitto sarebbe una camera o una facciata, soggetti già usati il 7 e il 18 novembre); nessun richiamo a stipendi, contanti o buste paga, per non suggerire livelli di costo",
+        "Riserva ffd195a72d: un pannello color terracotta sul bordo destro della camera è un accento, non un tono dominante; l'ultimo uso come riserva è del 7 novembre, fuori dagli ultimi 10 articoli",
+        "Nessuna immagine generata: nessuna nota da aggiungere all'articolo"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo, Ricavia mostra il costo del personale com'è nel lavoro quotidiano dell'hotel, un turno ai piani, senza volti e senza simboli di denaro: il tema è il costo letto sui ricavi, non la persona"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: la notizia agisce su costi del personale e reperimento per i picchi gennaio-settembre 2027, non sulla domanda; meccanismo verificato sul dossier parlamentare)",
+        "[x] Ogni numero ha fonte (dossier di Camera e Senato per l'articolo 8, ricontrollato oggi alle pagine 19-20; dati Restworld attribuiti a tre testate concordi; perimetro incerto del 38% ora dichiarato nel testo)",
+        "[x] Fonti citate con link, nessuna copia o parafrasi stretta (testo rielaborato, nessuna citazione letterale lunga)",
+        "[x] Ruolo di Ricavia presente, 1 paragrafo, pratiche 4.1 n. 9 e 10 non usate nella settimana, un solo collegamento a /consulenza/, nessuna frase degli esempi di ricavia.md",
+        "[x] Brand e copy di CLAUDE.md (dopo correzione: tolti i tre 'coprire/copre'; nessun punto finale; tu al lettore; OTA, struttura, prezzare, va + participio assenti)",
+        "[x] Tono coerente con la matrice (dati e normativa: serio)",
+        "[x] Tema nuovo negli ultimi 14 giorni (SEO director APPROVED; nessun articolo su personale, alloggio o straordinari nel registro, in journal/ e negli scartati)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende (Restworld e testate citate solo per i dati)",
+        "[x] Rischi legali 9 ter: nessun livello di prezzo o di stipendio da applicare, azioni per il singolo hotel; norma scritta come scenario condizionato con fonte primaria parlamentare e rinvio al consulente del lavoro; citazioni brevi",
+        "[x] 1.023 parole circa, 4 sezioni h3, struttura completa (apertura, sezioni, citazione, impatto, azioni, In breve, paragrafo Ricavia)"
+      ],
+      "correzioni": [
+        "Paragrafo 'Il 15%...', secondo blocco: 'la finestra copre le date più impegnative' diventa 'la finestra comprende le date più impegnative' (verbo vietato, sfuggito alla war room)",
+        "Paragrafo 'Messi insieme': 'Sono due leve diverse per coprire i turni dei picchi' diventa 'Sono due leve diverse per i turni dei picchi' (verbo vietato)",
+        "In breve: 'Il 15% sugli straordinari festivi e notturni copre gennaio-settembre 2027' diventa '... vale da gennaio a settembre 2027' (verbo vietato; voce ancora parallela alle altre)",
+        "Apertura: la prima frase resta invariata (keyword del SEO director); il dato di Roma passa a una frase propria, 'A Roma, poi, una stanza singola in affitto assorbe più di un terzo dello stipendio offerto negli annunci analizzati', e 'Lo dice un'analisi' diventa 'Lo dicono i dati': la frase precedente faceva credere che il 38% fosse calcolato sugli annunci degli hotel, cosa che nessuna fonte dice (precisione, nessun fatto nuovo)",
+        "Paragrafo 'Per Roma c'è un numero preciso': aggiunta la frase 'Le fonti non dicono se il calcolo usa gli stipendi offerti dagli hotel o quelli di tutte le offerte della piattaforma, ristorazione compresa' (ricontrollato oggi: La Mescolanza e Vinetur riportano il 38% fuori dall'analisi separata sui 791 annunci di hotel, senza indicare il perimetro)",
+        "Soglia di reddito: 'inferiore a 40.000 euro' diventa 'non superiore a 40.000 euro ..., come prevede il comma 19 della legge di bilancio 2026 che l'articolo 8 modifica'. Ricontrollato il dossier: la scheda dell'articolo 8 scrive 'inferiore', il riquadro e il comma 19 vigente, che l'articolo 8 non cambia sulla soglia (modifica solo il riferimento all'anno), scrivono 'non superiore'; uso il testo di legge, più autorevole, dicendo quale (regole-comuni, sezione 3)",
+        "Paragrafo Ricavia definitivo scritto fondendo le proposte di giornalista (USALI, costo del lavoro sui ricavi di ogni mese, mesi in cui un organico più ampio pesa sul GOP) e revenue manager (previsioni di occupazione mese per mese); terza persona in tutto il paragrafo, un solo collegamento a /consulenza/",
+        "Titolo, sottotitolo, citazione, mood e campi SEO confermati senza modifiche: il titolo poggia sull'azione 2, che non cambia"
+      ],
+      "segnalazioni": [
+        "Per l'editore, da ricontrollare prima della pubblicazione: stato del disegno di legge di bilancio (A.C. 3174-bis) e dell'articolo 8; se l'articolo 8 viene stralciato o modificato (periodo, 15%, soglia, compensazione), il fatto centrale cambia e l'articolo non si pubblica così (regole-comuni, 9 bis)",
+        "Per l'editore: i dati Restworld poggiano su testate (Hospitality Business 18/11, Vinetur e La Mescolanza 16/11), il report originale non è stato trovato; verifica che i tre link si aprano e che i numeri (791 annunci, 1.800 contro 1.692 euro, 69% contro 20%, 62%, +53% sull'intero campione, Roma 38%, Milano 40%, Torino 30%) siano ancora quelli; se esce il report Restworld, il link nel testo può puntare a quello",
+        "Per l'editore: la relazione tecnica stima 12,3 milioni per il 2026 e assume lo stesso importo per il 2027 (dossier, pagina 19 stampata): il testo dice 'circa 12,3 milioni di euro per il 2027', coerente con il prospetto degli effetti finanziari",
+        "Per l'editore: date di calendario del 2027 citate (Pasqua 28 marzo, lunedì dell'Angelo 29 marzo, 25 aprile, 1° maggio, 2 giugno) verificate sul calendario; nessuna da cambiare",
+        "Per l'editore: copertina stock 5577534 non vista dalla war room; guarda l'anteprima e, con volti riconoscibili, scritte o marchi, usa la riserva ffd195a72d con alt_libreria",
+        "Mix della giornata: questa bozza è nazionale con un solo dato su Roma; la bozza 2 ha NO-GO, quindi il legame con Roma dipende dal sostituto della riserva. Se il sostituto non passa, meglio un mix imperfetto che un articolo debole"
+      ],
+      "ruolo_ricavia": "Paragrafo definitivo: Ricavia riclassifica il conto economico secondo lo standard USALI e legge il costo del lavoro in rapporto ai ricavi e alle previsioni di occupazione di ogni mese, per vedere in quali mesi del 2027 un organico più ampio pesa sul GOP"
+    }
+  ],
+  "slug": "alloggio-personale-hotel-straordinari-festivi",
+  "title_seo": "Alloggio per il personale e turni festivi in hotel · Ricavia",
+  "description": "Alloggio per il personale negli annunci degli hotel e straordinari festivi del 2027: come pianificare costi e turni dei picchi del tuo hotel, mese per mese",
+  "keyword": {
+    "principale": "alloggio personale hotel",
+    "secondarie": [
+      "straordinari festivi e notturni turismo 2027",
+      "trattamento integrativo 15% turismo",
+      "costo del personale hotel",
+      "personale stagionale hotel Roma"
+    ]
+  },
+  "related_intro": "Per leggere il costo del personale sui ricavi di ogni mese, approfondisci",
+  "related": [
+    {
+      "label": "GOP e costi operativi di un hotel",
+      "url": "/indicatori/"
+    },
+    {
+      "label": "costi e margine dell'hotel nei mesi di bassa stagione",
+      "url": "/journal/inflazione-energia-costi-hotel/"
+    }
+  ],
+  "sottotitolo": "Cosa dicono gli annunci degli hotel sull'alloggio per il personale, cosa cambierebbe per i turni festivi e notturni con il disegno di legge di bilancio e come decidere il personale dei picchi del 2027 mese per mese",
+  "alternative_titolo": [
+    "Personale stagionale 2027: quando far partire i contratti per Pasqua e i ponti?",
+    "Restworld: il 69% degli annunci di hotel sulla piattaforma offre l'alloggio al personale",
+    "Festivi e notturni: il 15% del 2027, se confermato, non aumenta il costo del tuo hotel"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dati sul mercato del lavoro e norma in discussione: riga 'dati economici, mercati, normativa' (serio o provocatorio). L'articolo 8 non è ancora legge, i dati Restworld sono di livello 3 e il corpo ha un registro serio e condizionato: una provocazione su stipendi e alloggi direbbe più di quanto l'articolo dimostra. Serio"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 5577534,
+      "titolo": "Unrecognizable cleaner walking into hotel room with tools and detergents",
+      "anteprima": "https://img.magnific.com/free-photo/unrecognizable-cleaner-walking-into-hotel-room-with-tools-detergents_1098-17830.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: una persona del personale delle pulizie che entra in una camera d'hotel con attrezzi e detergenti, non riconoscibile (di spalle, tagliata o sfocata); il lavoro dei piani che l'articolo mette nel conto economico; nessun volto, nessuna scritta leggibile (cartellini alla porta compresi), nessun marchio\nInquadratura: porta della camera e figura nella fascia centrale; nel ritaglio 16:9 e in quello social tagliare in parti uguali sopra e sotto, perché figura e attrezzi restino interi\nLuce: interna, naturale e diffusa, nessun flash\nPalette: neutri chiari della camera e del corridoio, eventuali divise e oggetti in blu o grigio; niente rosso dominante, nessun filtro\nAtmosfera: seria e concreta, il turno visto da vicino senza ritrarre la persona; diversa dalla copertina della bozza 2 (sala congressuale) e da tutte le copertine recenti (camera vuota, porto, campanello della reception, palco, cupola sul Foro, atrio congressuale, binari, moneta)",
+    "libreria": "assets/img/ffd195a72d.webp",
+    "alt_libreria": "Camera d'hotel con letto matrimoniale bianco, testiera imbottita chiara, panca ai piedi del letto e una portafinestra sulla destra",
+    "testo_sovrapposto": null
+  },
+  "alt": "Una persona del personale delle pulizie entra in una camera d'hotel con attrezzi e detergenti",
+  "data": "2026-11-19",
+  "autore": "Tito · Redazione Ricavia"
+}
