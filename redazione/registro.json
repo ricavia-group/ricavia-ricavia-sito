@@ -250,5 +250,41 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-19",
+    "slug": "alloggio-personale-hotel-straordinari-festivi",
+    "tema": "personale-hotel-alloggio-detassazione-2027",
+    "keyword": "alloggio personale hotel",
+    "categoria": "dati",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-19",
+    "slug": "congresso-scmr-roma-hotel-notti-feriali",
+    "tema": "congresso-scmr-roma-febbraio-2027",
+    "keyword": "congresso SCMR Roma hotel",
+    "categoria": "eventi",
+    "esito": "NO-GO",
+    "motivo": "Tema già trattato",
+    "bloccato_fino": "2026-12-03",
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-19",
+    "slug": "avvisi-easa-golfo-hotel-roma-feste",
+    "tema": "avvisi-easa-golfo-voli-feste-2026",
+    "keyword": "avvisi EASA Golfo hotel Roma",
+    "categoria": "trasporti",
+    "esito": "NO-GO",
+    "motivo": "Tesi revenue debole o sbagliata",
+    "bloccato_fino": "2026-11-26",
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]

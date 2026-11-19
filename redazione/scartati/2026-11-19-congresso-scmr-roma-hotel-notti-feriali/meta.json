@@ -1,0 +1,187 @@
+{
+  "titolo": "Congresso SCMR a Roma a febbraio: il pick-up delle notti feriali può partire a dicembre",
+  "tesi": "La Society for Cardiovascular Magnetic Resonance tiene a Roma le sue Scientific Sessions da mercoledì 17 a sabato 20 febbraio 2027, con iscrizione a tariffa ridotta fino al 18 dicembre: in settimane feriali che a Roma sono tra le più deboli dell'anno, il congresso dà alle notti dal 16 al 19 febbraio una domanda MICE propria, ma senza dati sui partecipanti e sulla sede non giustifica un aumento deciso oggi; per il tuo hotel la mossa utile è togliere quelle notti dalle promozioni generiche del primo trimestre, dare loro una tariffa dedicata e, da subito e con più attenzione nelle settimane intorno al 18 dicembre, confrontare ogni settimana il loro pick-up con quello delle stesse notti feriali vicine, per decidere la tariffa sui propri dati",
+  "tema": "congresso-scmr-roma-febbraio-2027",
+  "categoria": "eventi",
+  "fonti": [
+    {
+      "titolo": "Upcoming SCMR Meetings and Events",
+      "editore": "Society for Cardiovascular Magnetic Resonance",
+      "url": "https://scmr.org/event-calendar/",
+      "data": "2026-11-19"
+    },
+    {
+      "titolo": "Guinness Sei Nazioni Maschile 2027",
+      "editore": "Federazione Italiana Rugby",
+      "url": "https://www.federugby.it/gm6n/",
+      "data": "2026-11-19"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Evento a Roma tra 3 mesi, con fonte primaria dell'organizzatore e mai trattato dal Journal; l'articolo è costruito sull'incertezza (nessun dato di partecipazione) e porta azioni prudenti su tariffe, promozioni e pick-up nelle settimane più deboli dell'anno",
+      "correzioni": [],
+      "segnalazioni": [
+        "Forza contenuta: la fonte primaria indica solo città, date e scadenze; non indica sede, partecipanti attesi né hotel convenzionati. Non ho trovato numeri di partecipazione delle edizioni precedenti su fonti affidabili: il testo non usa numeri e l'intensità degli indicatori è 'bassa'",
+        "Sede: due portali di eventi medici (healthmanagement.org, emedevents.com) indicano la Nuvola dell'EUR; non sono fonti affidabili e la pagina dell'organizzatore non la cita. Il testo non nomina la sede e chiede all'hotel di verificarla; roma.md lascia comunque aperte le domande su EUR e sedi congressuali (DA COMPLETARE), quindi nessuna zona è indicata",
+        "Recentezza: evento annunciato da mesi, ammesso perché cade tra 2 settimane e 6 mesi e nessun articolo l'ha trattato (giornalista.md, sezione 3); l'aggancio di attualità è la scadenza dell'iscrizione ridotta del 18 dicembre e la chiusura degli abstract del 18 novembre",
+        "Frase non verificata su fonte, scritta come attesa ragionevole: 'È ragionevole aspettarsi che una parte dei partecipanti prenoti volo e camera dopo l'iscrizione'. Il capo redattore valuti se tenerla o toglierla",
+        "Le notti 'da martedì 16 a venerdì 19' sono una lettura del calendario (congresso da mercoledì a sabato), non un dato dell'organizzatore: il testo le chiama 'le più probabili' e 'le più esposte'",
+        "Rischio antitrust (9 ter, punto 1): nessuna percentuale o livello di prezzo; le azioni sono per il singolo hotel, sui propri dati di pick-up",
+        "Collegamenti interni nel corpo: 2 (/journal/bassa-stagione-hotel-roma-tariffe/, /journal/promozione-black-friday-hotel-notti/), più /revenue-management/ nel paragrafo Ricavia (voce 4.1 n. 4, più n. 2 e 6). Per related suggerisco /journal/sigma-world-fiera-roma-hotel/ (l'altro grande evento congressuale del 2027) e /indicatori/",
+        "Mix della giornata: questa è la bozza legata a Roma; la bozza 1 (personale 2027) è nazionale con un dato su Roma. Categoria eventi: l'ultimo articolo eventi è del 17 novembre (concerti al Palazzo dello Sport), struttura e titolo diversi",
+        "Parole del corpo: circa 900"
+      ],
+      "ruolo_ricavia": "Ricavia inserisce i congressi annunciati nelle previsioni della domanda e prepara in anticipo le tariffe delle date coinvolte, poi le corregge sul pick-up settimanale delle notti del congresso confrontato con quello delle notti vicine"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi prudente e corretta: un congresso internazionale infrasettimanale in settimane deboli dà alle notti dal 16 al 19 febbraio una domanda propria, e senza numeri la mossa giusta è proteggere quelle notti dagli sconti e leggere il pick-up, non alzare le tariffe oggi",
+      "correzioni": [
+        "Tesi in meta.json: 'dal 18 dicembre' diventa 'da subito e con più attenzione nelle settimane intorno al 18 dicembre'. La scadenza della tariffa ridotta concentra le iscrizioni prima del 18 dicembre (le iscrizioni sono già aperte): le prenotazioni di camera possono arrivare prima e intorno a quella data, non solo dopo",
+        "Corpo, paragrafo sui tempi delle prenotazioni: 'Da quella data il pick-up...' diventa 'Nelle settimane intorno a quella data il pick-up...', per lo stesso motivo",
+        "Impatto sugli indicatori, voce Pick-up: finestra 'da oggi a inizio febbraio 2027, con più attenzione nelle settimane intorno al 18 dicembre' e aggiunto 'da monitorare' (manuale, sezione 5)",
+        "Cosa fare adesso, azione 2: il confronto settimanale del pick-up parte da subito, con più attenzione intorno al 18 dicembre, invece che dal 18 dicembre"
+      ],
+      "segnalazioni": [
+        "Verificata la fonte primaria (scmr.org/event-calendar): Roma, 17-20 febbraio 2027, abstract al 18 novembre, iscrizione ridotta al 18 dicembre; nessuna sede, partecipanti o hotel. Date di calendario controllate: 16 febbraio martedì, 17 mercoledì, 20 sabato; Italia all'Olimpico il 13 febbraio, il 6 e il 13 marzo, tutti sabati",
+        "Effetto per zona: se la sede fosse la Nuvola dell'EUR (fonti non affidabili), l'effetto sarebbe concentrato su EUR e collegamenti con l'EUR, zona che roma.md lascia DA COMPLETARE. Il testo correttamente non indica zone e chiede di verificare la sede: se il SEO director o l'editore leggono il sito dell'evento, la voce Occupazione può distinguere le zone",
+        "Rischio fotocopia (anti-obiettivo 2), fuori dal mio ambito: lo schema 'evento senza numeri, intensità bassa, la tariffa la decide il pick-up delle notti' è lo stesso dell'articolo sui concerti al Palazzo dello Sport del 17 novembre, e 'notti fuori dagli sconti' riprende l'articolo sul Black Friday del 18 novembre, che è linkato. Il capo redattore valuti se la struttura è abbastanza diversa",
+        "La frase 'È ragionevole aspettarsi che una parte dei partecipanti prenoti volo e camera dopo l'iscrizione' è un ragionamento senza numeri, coerente con la regola dei numeri: per me può restare",
+        "Forza della notizia contenuta: intensità 'bassa' su occupazione, ADR e RevPAR, coerenti tra loro; l'ADR sale solo per scelta del tuo hotel (notti fuori dalle promozioni), come il testo dice"
+      ],
+      "ruolo_ricavia": "Per un congresso senza dati di partecipazione, Ricavia toglie le notti coinvolte dalle promozioni generiche e confronta ogni settimana il loro pick-up con quello delle notti feriali vicine, prima di toccare la tariffa"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Evento mai trattato dal Journal e keyword nuova; il confronto con gli articoli eventi e prezzi degli ultimi 14 giorni non mostra lo stesso tema, quindi nessun duplicato; keyword nell'apertura e in un h3, campi SEO completi e verificati",
+      "correzioni": [
+        "Compilati slug (senza mese né anno), categoria eventi, title_seo (59 caratteri), description (154 caratteri), keyword, related_intro e related",
+        "Prima frase dell'apertura: 'il congresso annuale della Society for Cardiovascular Magnetic Resonance, una società medica internazionale' diventa 'il congresso annuale della SCMR (Society for Cardiovascular Magnetic Resonance), una società medica internazionale: sono date da segnare subito nel calendario del tuo hotel', per avere congresso, SCMR, Roma e hotel nella stessa frase; date, fatti e fonti invariati",
+        "Primo h3: 'SCMR 2027: date, scadenze e cosa manca' diventa 'Congresso SCMR a Roma: date, scadenze e cosa manca al tuo hotel', coerente con il paragrafo 'Mancano tre informazioni che per il tuo hotel contano'",
+        "Collegamenti interni naturali nel corpo: 2 (/journal/bassa-stagione-hotel-roma-tariffe/, /journal/promozione-black-friday-hotel-notti/), più la chiusura verso /revenue-management/ che non si conta: nessuna modifica",
+        "related: /journal/sigma-world-fiera-roma-hotel/ e /indicatori/, nessuno dei due già presente nel corpo"
+      ],
+      "segnalazioni": [
+        "Confronto con gli articoli vicini (nessun veto): /journal/concerti-palazzo-sport-hotel-roma/ (17 novembre) ha evento, keyword e date diverse ma lo stesso schema 'evento in bassa stagione senza numeri, promozioni da sospendere, pick-up delle notti infrasettimanali'; /journal/promozione-black-friday-hotel-notti/ (18 novembre) tratta le notti da escludere dagli sconti ed è linkato nel corpo; /journal/sigma-world-fiera-roma-hotel/ (11 novembre) è un altro evento congressuale. La tesi SEO è distinta, il rischio fotocopia sulla struttura lo valuta il capo redattore, come già segnalato dal revenue manager",
+        "Sede non verificata su fonte affidabile: nessuna zona nel title_seo, nella description e nelle keyword. Non ho letto il sito dell'evento: se l'editore o il capo redattore confermano la sede, la voce Occupazione potrebbe distinguere le zone (ambito del revenue manager)",
+        "La frase 'È ragionevole aspettarsi che una parte dei partecipanti prenoti volo e camera dopo l'iscrizione' resta fuori dal mio ambito: decide il capo redattore"
+      ],
+      "ruolo_ricavia": "Per un albergatore che cerca un congresso a Roma per decidere le tariffe di febbraio, il passo successivo naturale è il revenue management: Ricavia mette l'evento nel calendario delle tariffe e lo verifica sul pick-up, e la chiusura verso /revenue-management/ risponde a questo intento di ricerca"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è da raccontare un dettaglio che l'albergatore non vede: un congresso di metà febbraio può mostrarsi nel pick-up già a dicembre, intorno alla scadenza della tariffa ridotta; il titolo usa questo taglio per distinguersi dagli articoli sui concerti (17 novembre) e sul Black Friday (18 novembre)",
+      "correzioni": [
+        "Titolo: 'Un congresso medico a Roma dal 17 al 20 febbraio: quattro notti feriali da togliere dagli sconti' (95 caratteri, oltre il limite di 90, e taglio 'notti fuori dagli sconti' già usato dal Black Friday del 18 novembre) diventa 'Congresso SCMR a Roma a febbraio: il pick-up delle notti feriali può partire a dicembre' (87 caratteri), tipo conseguenza, al condizionale ('può'), sostenuto da tesi, paragrafo sui tempi, voce Pick-up e azione 2",
+        "Sottotitolo scritto (mancava): date e scadenze, informazioni mancanti, tariffa dedicata e pick-up settimanale",
+        "alternative_titolo: domanda, contrasto (nessun aumento ma notti fuori dagli sconti), conseguenza sulle promozioni (versione accorciata del titolo di lavoro); tutte entro 90 caratteri, nessuna con la formula 'X non è Y' del 17 novembre",
+        "Frase citabile: 'Giustifica una tariffa che non regala la domanda che arriva' diventa 'Giustifica notti fuori dagli sconti': più breve e ripetibile, senza il verbo figurato 'regala'; il contrasto aumento/sconti resta",
+        "Mood: serio"
+      ],
+      "segnalazioni": [
+        "Il titolo poggia sul meccanismo della scadenza del 18 dicembre (tesi, voce Pick-up, azione 2). Se il capo redattore toglie la frase 'È ragionevole aspettarsi che una parte dei partecipanti prenoti volo e camera dopo l'iscrizione', il titolo regge comunque sulla correzione del revenue manager; se cambia la finestra del pick-up, scelgo un altro titolo (alternativa pronta: il contrasto 'nessun aumento oggi')",
+        "Rischio fotocopia segnalato da revenue manager e SEO director: ho spostato titolo e sottotitolo sul tempo del segnale (dicembre) invece che sulle notti da scontare; la struttura del corpo resta simile ai concerti del 17 novembre, decide il capo redattore",
+        "Nessuna zona nel titolo: sede non verificata"
+      ],
+      "ruolo_ricavia": "Dal punto di vista del racconto, il valore di Ricavia è leggere prima degli altri un segnale debole: Ricavia mette in calendario la scadenza del 18 dicembre e da quelle settimane confronta il pick-up delle notti dal 16 al 19 febbraio con quello delle notti feriali vicine"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera, gratuita): la sala vuota racconta il congresso senza numeri, in palette blu; la libreria non ha sale congressuali",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 1370972, scheda, riserva 67868d0855 con alt_libreria) e alt",
+        "Nessuna modifica al corpo (fuori dal mio ambito)"
+      ],
+      "segnalazioni": [
+        "Libreria: nessuna foto pertinente e usabile. Le foto di lavoro in hotel della Home (reception, team con tablet, sala ristorante: d264766f83, 24c6c2ec3f, 925d41e651, f04cab0a0f e simili) mostrano volti riconoscibili; le foto senza persone sono quasi tutte nelle riserve degli ultimi 10 articoli. Restano libere e neutre solo ffd195a72d (camera) e 67868d0855 (San Pietro dall'alto): usate come riserve, una per bozza. Soggetti da aggiungere alla libreria: personale d'hotel al lavoro senza volti (carrello dei piani, divise, spogliatoio) e sale congressuali vuote",
+        "Non ho potuto aprire le anteprime stock (lo scaricamento dell'anteprima per guardarla è stato bloccato dai permessi della sessione): la scelta poggia su titolo, autore e metadati dell'archivio (foto vera, gratuita). L'editore guarda l'anteprima prima del download e, se compaiono volti riconoscibili, scritte leggibili, marchi o toni rossi dominanti, passa alla foto di riserva con alt_libreria. Se la foto mostra in modo evidente un cinema o uno stadio invece di una sala, vale lo stesso la riserva",
+        "Sede del congresso non verificata (forse EUR, zona DA COMPLETARE in roma.md): nessun luogo riconoscibile in copertina, né la Nuvola né altri centri congressi",
+        "Riserva 67868d0855 (San Pietro dall'alto): neutra su Roma ma non sul tema; ultimo uso come riserva il 6 novembre, fuori dagli ultimi 10 articoli. I tetti in coppi sono un accento caldo, non dominante",
+        "Nessuna immagine generata: nessuna nota da aggiungere all'articolo"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo, Ricavia guarda un congresso come una sala ancora vuota: le notti contano prima che arrivino i numeri, e la copertina lo mostra senza promettere il tutto esaurito"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "NO-GO",
+      "motivo": "Tema già trattato",
+      "bloccato_fino": "2026-12-03",
+      "griglia": [
+        "[x] Tesi revenue corretta nel meccanismo (revenue manager APPROVED), ma è la stessa tesi del 17 novembre: evento senza numeri in bassa stagione, notti fuori dalle promozioni, tariffa decisa dal pick-up confrontato con le notti vicine",
+        "[x] Nessun numero senza fonte (date dall'organizzatore e dalla FIR; intensità scritte a parole)",
+        "[x] Fonti citate con link, nessuna copia",
+        "[ ] Ruolo di Ricavia (non scritto per un NO-GO; la bozza riusava la voce 4.1 n. 4, 'anticipa gli eventi nelle previsioni della domanda e prepara i prezzi', già usata il 17 novembre per i concerti)",
+        "[x] Brand e copy rispettati",
+        "[x] Tono serio, coerente con la matrice",
+        "[ ] Non ripete un tema degli ultimi 14 giorni (anti-obiettivo 2, articolo fotocopia: stessa struttura e stessa tesi di /journal/concerti-palazzo-sport-hotel-roma/ del 17/11, stessa leva 'notti fuori dagli sconti' di /journal/promozione-black-friday-hotel-notti/ del 18/11, che cita già le stesse date di febbraio del Sei Nazioni; terzo articolo su 'notti di un evento da isolare' in otto giorni con /journal/sigma-world-fiera-roma-hotel/ dell'11/11)",
+        "[x] Nessuna affermazione negativa su persone o aziende",
+        "[x] Rischi legali 9 ter: nessun invito ad allinearsi sui prezzi",
+        "[x] Lunghezza e struttura complete (circa 900 parole)"
+      ],
+      "correzioni": [],
+      "segnalazioni": [
+        "Motivo del NO-GO: articolo fotocopia (regole-comuni, sezione 2, punto 2). Confronto puntuale con il 17/11: stessa apertura ('date da segnare subito nel calendario del tuo hotel', 'periodo/settimane più tranquilli dell'anno'), stessa sezione su gennaio e febbraio 'tranquilli ma non vuoti, sostenuti da fiere, congressi e viaggi di lavoro', stesso limite dichiarato (nessun numero sul pubblico da fuori Roma), stessa citazione costruita su 'un evento senza numeri non è una previsione/un aumento', stesse voci di impatto (occupazione, ADR, RevPAR in aumento basso, pick-up), stesse azioni (confronto del pick-up con le notti vicine, esclusione dalle promozioni), stessa pratica Ricavia. Titolo e sottotitolo cambiati dal virality director non cambiano la struttura del corpo, che è sostanza e non forma: non si sistema con una correzione né con un RIMANDA",
+        "Due motivazioni possibili: tema già trattato e tesi debole (la fonte primaria dà solo città, date e scadenze; sede, partecipanti e blocchi di camere non sono noti). Scelgo quella con la conseguenza più pesante sul registro, tema già trattato (14 giorni), come chiede il manuale, sezione 5",
+        "Il congresso SCMR resta un tema proponibile dopo il 3 dicembre, o prima solo con un fatto nuovo che cambia la tesi: sede confermata dall'organizzatore, numero di partecipanti, hotel convenzionati o blocchi di camere. Con la sede confermata la tesi può diventare un articolo di zona (EUR, oggi DA COMPLETARE in roma.md)",
+        "Sostituzione: il giornalista prende il primo candidato della riserva (sciopero handling di Fiumicino e Ciampino del 14 dicembre), che rifà tutta la war room. Attenzione: oggi poggia solo su testate che riprendono il prospetto del MIT; se il fatto regge la tesi serve la fonte primaria (MIT o Commissione di garanzia) o due testate indipendenti e riconosciute, e va verificato quali compagnie servono l'handler",
+        "Nessun paragrafo Ricavia: NO-GO"
+      ],
+      "lezione": "2026-11-19 · capo-redattore · Un evento in bassa stagione senza dati su sede e partecipanti non regge un articolo nuovo se la tesi (notti fuori dagli sconti, pick-up confrontato con le notti vicine) è già uscita per un altro evento negli ultimi 14 giorni: serve un fatto che cambia la tesi, come sede, partecipanti o blocchi di camere",
+      "ruolo_ricavia": null
+    }
+  ],
+  "slug": "congresso-scmr-roma-hotel-notti-feriali",
+  "title_seo": "Congresso SCMR e hotel a Roma: notti senza sconti · Ricavia",
+  "description": "Congresso SCMR a Roma dal 17 al 20 febbraio 2027: perché togliere dalle promozioni le notti feriali del congresso e come leggerne il pick-up nel tuo hotel",
+  "keyword": {
+    "principale": "congresso SCMR Roma hotel",
+    "secondarie": [
+      "congressi Roma febbraio 2027 hotel",
+      "notti feriali bassa stagione hotel",
+      "tariffa dedicata congresso hotel",
+      "blocco camere congresso hotel"
+    ]
+  },
+  "related_intro": "Per decidere la tariffa delle notti di un congresso, approfondisci",
+  "related": [
+    {
+      "label": "come isolare le notti di un evento e valutare i gruppi",
+      "url": "/journal/sigma-world-fiera-roma-hotel/"
+    },
+    {
+      "label": "occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "sottotitolo": "Le date e le scadenze del congresso, le informazioni che ancora mancano e perché le notti dal 16 al 19 febbraio meritano una tariffa dedicata e un controllo settimanale del pick-up, già da dicembre",
+  "alternative_titolo": [
+    "Congresso SCMR a Roma a febbraio: tariffe più alte subito o prima il pick-up?",
+    "Congresso SCMR a Roma: nessun aumento oggi, ma le notti del congresso fuori dagli sconti",
+    "Congresso SCMR a Roma: quattro notti feriali di febbraio da togliere dalle promozioni"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Congresso senza vittime: riga 'eventi' (serio, divertente o ironico). Il corpo ha un registro serio e prudente (nessun dato sui partecipanti, sede non verificata, intensità bassa) e il manuale chiede che mood e titolo seguano il corpo; un tono leggero su un congresso medico non aggiunge nulla. Serio"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 1370972,
+      "titolo": "Rows of blue seats",
+      "anteprima": "https://img.magnific.com/free-photo/rows-blue-seats_23-2147689829.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: file di poltrone blu vuote di una sala, come un auditorium congressuale prima dell'apertura; nessuna persona, nessuna scritta leggibile (numeri di fila compresi, se grandi), nessun marchio, nessun palco né schermo con contenuti\nInquadratura: file che attraversano il quadro in diagonale o in prospettiva, ampio campo di poltrone; nel ritaglio 16:9 e in quello social tagliare in parti uguali sopra e sotto, perché le file restino leggibili nella fascia centrale\nLuce: interna, diffusa e uniforme\nPalette: blu dominante vicino a #1F2DD0, riflessi azzurri #3CCDFA sui braccioli o sulla luce; niente rosso, nessun filtro\nAtmosfera: seria e in attesa, la sala che a febbraio si riempie ma di cui oggi nessuno conosce i numeri; nessun richiamo medico (niente cuori, risonanze, camici); diversa dall'atrio dell'accreditamento del congresso dell'11 novembre, dal palco con il pubblico del 17 novembre e dalla copertina della bozza 1 (personale ai piani)",
+    "libreria": "assets/img/67868d0855.webp",
+    "alt_libreria": "Piazza San Pietro e la Basilica vaticana viste dall'alto, con i tetti di Roma sotto un cielo azzurro con nuvole",
+    "testo_sovrapposto": null
+  },
+  "alt": "File di poltrone blu vuote in una sala"
+}

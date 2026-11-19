@@ -1,0 +1,204 @@
+{
+  "titolo": "Avvisi EASA sul Golfo fino al 31 gennaio: nelle feste conta la rivendita a breve preavviso",
+  "sottotitolo": "Cosa dice la revisione EASA del 16 novembre, quali ospiti del tuo hotel viaggiano attraverso gli hub del Golfo e come gestire un volo cancellato e la rivendita delle camere nelle notti delle feste",
+  "alternative_titolo": [
+    "Avvisi EASA sul Golfo: quanti ospiti delle feste arrivano al tuo hotel via Doha e Dubai?",
+    "Per l'EASA l'avviso sul Golfo vale fino al 31 gennaio 2027: comprende Natale e Capodanno",
+    "Avvisi EASA e feste: Asia e Oceania prenotano presto, Italia ed Europa decidono tardi"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Il bollettino nasce da un conflitto militare (Stati Uniti e Iran): la riga più restrittiva della matrice è 'tragedie, conflitti, vittime, calamità', che ammette solo serio, anche se la notizia tocca i trasporti. Il titolo non usa la guerra come leva, non nomina attacchi e non promette cancellazioni: dice il fatto (proroga al 31 gennaio) e la conseguenza operativa per il tuo hotel"
+  },
+  "tesi": "La revisione del 16 novembre proroga al 31 gennaio 2027, senza cambiare contenuto né chiudere aeroporti, l'avviso EASA sullo spazio aereo del Golfo Persico: il periodo in cui, secondo l'EASA, una chiusura improvvisa degli hub di Doha, Dubai e Abu Dhabi, come a fine febbraio, può cancellare a ridosso dell'arrivo i soggiorni degli ospiti di Asia e Oceania comprende ora Natale, Capodanno ed Epifania; questi ospiti prenotano presto e per più notti, quindi il tuo hotel a Roma non ha motivo di toccare le tariffe, ma conviene sapere quante notti tra il 20 dicembre e il 6 gennaio dipendono da quei mercati, decidere ora come gestire un volo cancellato e prepararsi a rimettere in vendita in pochi minuti le camere liberate, perché nelle notti tra il 27 dicembre e il 2 gennaio la domanda a breve preavviso di Italia ed Europa può riassorbirle",
+  "tema": "avvisi-easa-golfo-voli-feste-2026",
+  "categoria": "trasporti",
+  "fonti": [
+    {
+      "titolo": "CZIB-2026-07R4, Airspace of the Persian Gulf and Gulf of Oman",
+      "editore": "EASA, Agenzia dell'Unione europea per la sicurezza aerea",
+      "url": "https://www.easa.europa.eu/en/domains/air-operations/czibs/czib-2026-07r4",
+      "data": "2026-11-19"
+    },
+    {
+      "titolo": "Easa: al 31 gennaio il rischio sorvolo per il Medio Oriente",
+      "editore": "TTG Italia",
+      "url": "https://www.ttgitalia.com/compagnie-aeree/easa-al-31-gennaio-il-rischio-sorvolo-per-il-medio-oriente-JL26962902",
+      "data": "2026-11-19"
+    },
+    {
+      "titolo": "Blocco dei voli, la situazione a Mxp e Roma Fiumicino",
+      "editore": "TTG Italia",
+      "url": "https://www.ttgitalia.com/compagnie-aeree/blocco-dei-voli-la-situazione-a-mxp-e-roma-fiumicino-DC25720704",
+      "data": "2026-11-19"
+    },
+    {
+      "titolo": "Qatar Airways aumenta i voli su Milano e Roma. Domanda di viaggio al rialzo",
+      "editore": "Travelquotidiano",
+      "url": "https://www.travelquotidiano.com/trasporti/qatar-airways-aumenta-i-voli-su-milano-e-roma-domanda-di-viaggio-al-rialzo/tqid-517319",
+      "data": "2026-11-19"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Bozza sostitutiva della bozza 2 (NO-GO): il primo candidato della riserva, lo sciopero handling del 14 dicembre, non regge sulle fonti; scritto il candidato 4, proroga EASA sul Golfo, l'unico rimasto in riserva che oggi rispetta il mix (legato a Roma, guarda avanti alle notti dal 20 dicembre al 6 gennaio, unico articolo di geopolitica della giornata)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Fatto nuovo debole: la revisione del 16 novembre proroga la validità senza cambiare contenuto (fonte primaria EASA). La tesi poggia sulla nuova durata, che ora comprende le feste, non su un peggioramento; forza del candidato 2 su 5, come nella lista candidati. Il capo redattore valuti se basta: per le regole comuni, un articolo in meno vale più di un articolo debole",
+        "Tema di guerra: tono solo serio (regole comuni, sezione 8). Il testo non descrive attacchi né vittime, nomina il conflitto solo come motivazione del bollettino e non lega la notizia a vendite o promozioni; il paragrafo Ricavia parla di rivendita delle camere, non della guerra. Il virality director non può scegliere altri mood",
+        "Nessun numero sull'esposizione di Roma: nessuna fonte affidabile dà la quota di ospiti di Asia e Oceania in transito dal Golfo né l'operativo di novembre delle compagnie del Golfo su Roma; il testo lo dice e rimanda ai dati del singolo hotel. Impatto scritto con '?' su pick-up, occupazione e RevPAR",
+        "Fatti di contorno da una sola testata, attribuiti nel testo: cancellazioni a Fiumicino del 28 febbraio e 1 marzo (TTG Italia, 2 marzo) e Qatar Airways da 14 a 18 voli settimanali su Roma (Travelquotidiano, 23 giugno, dato di giugno e non di novembre)",
+        "Attacchi iraniani sul Bahrein del 14-16 novembre e cancellazioni Etihad verso l'Arabia Saudita: visti solo su AviNews/Avi-Go e Travel And Tour World, non affidabili da soli; non sono nel testo",
+        "Rischio fotocopia da controllare (SEO director): l'articolo sullo sciopero dei treni del 3 novembre (16 giorni fa) aveva azioni vicine (prenotazioni esposte, condizioni di cancellazione). Qui l'angolo è diverso (mercato di provenienza, gestione del volo cancellato, rivendita a breve preavviso nelle notti delle feste) e la citazione parla di preavviso, non di prezzo, ma la seconda azione è simile",
+        "Dati di traffico ADR di settembre (+4,0% totale, +6,6% extra-UE sulla pagina ADR) non coerenti con il +0,6% di Fiumicino dell'articolo del 4 novembre (Assaeroporti): non usati",
+        "Azione 2 tocca condizioni contrattuali: inserito il rinvio al consulente (regole comuni 9 ter, punto 6)",
+        "Collegamenti interni nel corpo: articolo sui voli (storico) e calendario di Roma (storico); chiusura verso /revenue-management/ (voci 4.1 n. 1 e 8). Nessun collegamento alla bozza 1 della stessa giornata",
+        "Parole del corpo: circa 1.040"
+      ],
+      "ruolo_ricavia": "Ricavia segue il traffico aereo di Fiumicino e Ciampino come segnale anticipato della domanda e aggiorna ogni giorno tariffe e disponibilità: nelle notti delle feste serve a rimettere in vendita subito una camera liberata da un volo cancellato"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta con una precisazione: il rischio per le notti delle feste nasce dal conflitto, non dall'avviso; la proroga dice che per l'EASA il rischio di chiusure improvvise dura fino al 31 gennaio 2027. Meccanismo (prenotazioni anticipate e lunghe a lungo raggio, cancellazioni a ridosso dell'arrivo, rivendita a breve preavviso) e azioni reggono, nessuna azione dannosa",
+      "correzioni": [
+        "Tesi: aggiunto \"secondo l'EASA\" al periodo di rischio, perché il bollettino valuta il rischio e non lo crea",
+        "Apertura, terza frase (meccanismo): \"Allunga però il periodo in cui gli ospiti… possono perdere il volo\" diventa \"Indica però che, secondo l'EASA, il rischio di chiusure improvvise comprende anche le feste: gli ospiti… possono perdere il volo\"; l'avviso non chiude e non allunga nulla, segnala un rischio che esiste per il conflitto (CZIB-2026-07R4 letto oggi: validità al 31 gennaio 2027, contenuto invariato, autorità regionali con chiusure temporanee, istruzioni con poco preavviso)",
+        "Corpo, sezione Natale e Capodanno: \"molte di queste camere sono già vendute\" diventa \"è probabile che una parte di queste camere sia già venduta\": nessuna fonte sulla quota venduta, è una deduzione dal lead time",
+        "Impatto: finestra di Occupazione e RevPAR portata dal 24 al 20 dicembre, coerente con Pick-up, tesi e azione 1",
+        "Cosa fare adesso, azione 3: aggiunto il contatto con gli ospiti in arrivo dalle rotte del Golfo se un hub chiude, per distinguere un soggiorno che slitta (le notti successive non si liberano) da uno annullato prima del mancato arrivo; senza questo la rivendita rischia di liberare notti di un ospite solo in ritardo o di arrivare tardi"
+      ],
+      "segnalazioni": [
+        "Frase citabile (virality director): \"Un avviso di rischio non toglie ospiti. Toglie preavviso\" attribuisce all'avviso un effetto che è del conflitto e delle chiusure; proposta: \"Il rischio sul Golfo non toglie ospiti. Toglie preavviso, e il preavviso è il tempo che hai per rivendere una camera\"",
+        "Esposizione probabilmente marginale per la media degli hotel di Roma (primi mercati Stati Uniti, Spagna, Regno Unito secondo il rapporto CNR citato in fonti.md; nessun dato sul transito dal Golfo): la tesi è corretta e il testo rimanda ai dati del singolo hotel, ma la rilevanza per il lettore è bassa. Insieme al fatto nuovo debole (proroga a contenuto invariato), la scelta se pubblicare è del capo redattore",
+        "Azione 2 (regola sul volo cancellato) vicina a quella dell'articolo sullo sciopero dei treni del 3 novembre, come segnala il giornalista: l'ho tenuta perché qui la richiesta arriva da un ospite bloccato all'estero e tocca le condizioni pubblicate sulle OTAs; il capo redattore valuti il rischio fotocopia",
+        "Impatto con tre voci su quattro a \"?\": è la lettura prudente corretta (senza chiusure non cambia nulla), ma rende l'articolo poco quantitativo; nessun numero si può aggiungere senza fonte",
+        "Verificata oggi la fonte primaria EASA: confermati validità al 31 gennaio 2027 salvo revisione anticipata, contenuto invariato, FIR e raccomandazioni come nel testo"
+      ],
+      "ruolo_ricavia": "Ricavia aggiorna ogni giorno tariffe e disponibilità in base all'andamento delle prenotazioni: nelle notti delle feste una cancellazione legata a un volo annullato entra subito nel pick-up e la camera torna in vendita con la tariffa adatta alla domanda a breve preavviso di quel giorno"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo per il Journal (avvisi EASA sul Golfo e voli in transito dagli hub del Golfo): nessun articolo pubblicato, proposto o scartato su questo tema o su questa keyword negli ultimi 14 giorni; keyword dell'albergatore nell'apertura e in un h3, campi SEO completi e verificati con un conteggio reale",
+      "correzioni": [
+        "Compilati slug (avvisi-easa-golfo-hotel-roma-feste, 6 parole, senza date), title_seo (58 caratteri), description (153 caratteri, senza punto finale e senza cifre provvisorie), keyword, related_intro e related; categoria confermata trasporti (la causa è un avviso sulla sicurezza dei voli, non un dato macro)",
+        "Apertura, prima frase: 'Gli avvisi europei' diventa 'Gli avvisi EASA', e la prima e la seconda frase si uniscono con i due punti ('…all'Epifania: per il tuo hotel a Roma l'avviso non chiude aeroporti e non cancella voli'), per avere la keyword principale in una sola frase senza ripetere 'hotel a Roma'; parole della seconda frase, fatti, date e fonti invariati",
+        "Primo h3: 'Avvisi EASA sul Golfo: cosa dice la revisione del 16 novembre' diventa 'Avvisi EASA sul Golfo e hotel a Roma: cosa dice la revisione del 16 novembre'",
+        "Collegamenti interni naturali: 2 già presenti e corretti nella forma /journal/<slug>/ (articoli storici sui voli e sul calendario di Roma), nessuna modifica; la chiusura verso /revenue-management/ non si conta",
+        "related: /journal/traffico-aereo-roma-inverno-hotel/ (4 novembre, su main) e /indicatori/, nessuno dei due già nel corpo; nessun collegamento all'articolo di oggi sull'alloggio del personale"
+      ],
+      "segnalazioni": [
+        "Controllo duplicati: nessun articolo su EASA, Golfo, Medio Oriente o hub di Doha e Dubai nel registro, in journal/, negli scartati, in tools/seo.json e nei 6 storici. I più vicini per keyword sono traffico aereo (4 novembre) e rotte di Fiumicino (7 novembre): tesi diverse (volumi d'inverno e capacità dal Nord America), per questo uno dei due è in related. Nessun veto",
+        "Rischio fotocopia (struttura, non keyword): oltre allo sciopero dei treni del 3 novembre (16 giorni fa, fuori dai 14 giorni), le azioni somigliano all'articolo sull'alta velocità Roma-Napoli del 10 novembre (9 giorni fa): prenotazioni separate per provenienza, messaggio prima dell'arrivo, condizioni coerenti tra sito diretto e OTAs. Il tratto nuovo è la rivendita a breve preavviso nelle notti delle feste; è il terzo articolo trasporti in 16 giorni con questo schema. Decide il capo redattore",
+        "Sigla EASA: nell'apertura e nel primo h3 compare prima della sua spiegazione, che arriva nel primo paragrafo della sezione ('L'Agenzia dell'Unione europea per la sicurezza aerea (EASA)'); la sigla era già nella terza frase dell'apertura del giornalista. Se il capo redattore vuole la spiegazione alla prima menzione, può aggiungere 'l'agenzia europea per la sicurezza aerea' nell'apertura",
+        "Volume di ricerca della keyword probabilmente basso e orientato al settore aereo; ho scelto comunque 'avvisi EASA Golfo hotel Roma' perché dice di cosa parla l'articolo e porta l'albergatore, non il viaggiatore (criteri 2 e 4); le secondarie coprono le ricerche sulle cancellazioni delle feste",
+        "Fuori dal mio ambito, già segnalato dal revenue manager: la frase citabile 'Un avviso di rischio non toglie ospiti' attribuisce all'avviso un effetto del conflitto; nel testo attuale la seconda parte è già quella proposta, la prima no",
+        "Description e title_seo senza i numeri di febbraio e di giugno (fatti di contorno da una sola testata); confrontati con tutti i title e le description del sito e degli articoli di oggi: nessun duplicato"
+      ],
+      "ruolo_ricavia": "Per un albergatore che cerca come gestire cancellazioni dei voli dal Golfo nelle notti delle feste, il passo successivo naturale è il servizio di revenue management: la chiusura verso /revenue-management/ risponde a questo intento, perché descrive l'aggiornamento quotidiano di tariffe e disponibilità che rimette in vendita una camera liberata"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare all'albergatore, ma non è la guerra: è la rivendita a breve preavviso delle camere liberate nelle notti delle feste. Mood obbligato serio (tema di conflitto), titolo di tipo conseguenza, diverso dal contrasto della bozza 1 e dai tipi di ieri (dato, domanda)",
+      "correzioni": [
+        "Titolo di lavoro (103 caratteri, oltre il limite di 90) sostituito con un titolo conseguenza di 90 caratteri: \"Avvisi EASA sul Golfo fino al 31 gennaio: nelle feste conta la rivendita a breve preavviso\". Poggia sulla terza sezione, sull'azione 3 e sulla tesi; il titolo dice il fatto con la data della fonte primaria e non attribuisce all'avviso cancellazioni o chiusure",
+        "Sottotitolo scritto: \"Cosa dice la revisione EASA del 16 novembre, quali ospiti del tuo hotel viaggiano attraverso gli hub del Golfo e come gestire un volo cancellato e la rivendita delle camere nelle notti delle feste\"",
+        "Alternative: domanda (quanti ospiti delle feste arrivano via Doha e Dubai, risposta nell'azione 1 e nei dati del singolo hotel), dato con fonte nominata (validità EASA al 31 gennaio 2027, fonte primaria), contrasto tra segmenti (lungo raggio che prenota presto, Italia ed Europa che decidono tardi); nessuna alternativa usa i voli cancellati di febbraio, fatto di contorno da una sola testata e legato al conflitto",
+        "Mood: serio, l'unico ammesso dalla matrice per un tema di conflitto",
+        "Frase citabile riscritta: \"Un avviso di rischio non toglie ospiti. Toglie preavviso, e il preavviso è il tempo che hai per rivendere una camera\" diventa \"Un volo cancellato può costarti una prenotazione. Una camera che non rimetti in vendita ti costa la notte\". Toglie l'effetto attribuito all'avviso (segnalazione del revenue manager e del SEO director) e l'assoluto \"non toglie ospiti\", che resterebbe anche nella proposta del revenue manager: una chiusura dell'hub può togliere ospiti. \"Può\" tiene conto del soggiorno che slitta (azione 3); la frase chiude il paragrafo che la dimostra (\"Il danno maggiore non viene dalla cancellazione, ma dalla camera vuota che nessuno rimette in vendita\"), senza numeri né nomi, e ha una costruzione diversa dalle citazioni recenti del Journal"
+      ],
+      "segnalazioni": [
+        "Titolo, sottotitolo e alternative hanno la sigla EASA senza glossa: nei titoli non c'è spazio per la spiegazione, che nel corpo arriva nel primo paragrafo della prima sezione (già segnalato dal SEO director per l'apertura)",
+        "Il titolo è la conseguenza più forte che il corpo dimostra; un titolo più forte (voli cancellati, Capodanno a rischio) esagererebbe un fatto nuovo debole (proroga a contenuto invariato) e userebbe il conflitto come leva. Il valore di racconto dipende dalla rivendita a breve preavviso, che è anche il tratto che distingue l'articolo dagli articoli trasporti del 3 e del 10 novembre: se il capo redattore taglia l'azione 3 o la sezione su Natale e Capodanno, il titolo perde il suo appoggio",
+        "Rilevanza per il lettore medio di Roma probabilmente bassa (segnalata da revenue manager e SEO director): c'è qualcosa da raccontare, quindi APPROVED nel mio ambito; la scelta di pubblicare resta del capo redattore",
+        "Varietà della giornata: bozza 1 contrasto, bozza 3 conseguenza; ieri dato e domanda, il 17 contrasto e conseguenza. Nessun titolo del Journal o del registro parla di EASA o del Golfo: titolo e alternative sono unici",
+        "Il titolo-hook e il title_seo ('Avvisi EASA sul Golfo e hotel a Roma nelle feste') descrivono lo stesso articolo: nessun allineamento necessario"
+      ],
+      "ruolo_ricavia": "Nel racconto delle feste il lavoro di Ricavia è il punto pratico dell'articolo: accorgersi subito di una camera liberata da un volo cancellato e rimetterla in vendita con la tariffa adatta alla domanda a breve preavviso di quel giorno, senza toccare in anticipo le tariffe delle notti già prenotate"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Tema di conflitto con mood serio: copertina stock, foto vera e gratuita di una sala d'attesa d'aeroporto vuota, che racconta il volo da prendere e l'attesa senza guerra, aerei militari, persone o toni drammatici",
+      "correzioni": [
+        "immagine.fonte stock, id 975771 \"Airport with seats and big windows\" (gratuita, aiGenerated false), cercata con content_type photo, ai_generated excluded, orientation landscape, people exclude; presente anche nella ricerca con colore dominante blu",
+        "immagine.scheda e alt scritti; testo_sovrapposto null, prompt null",
+        "Riserva: assets/img/67868d0855.webp (piazza San Pietro dall'alto), non usata come copertina o riserva negli ultimi 10 articoli di journal/ (ultimo uso il 6 novembre); alt_libreria scritto guardando il file"
+      ],
+      "segnalazioni": [
+        "Non ho aperto l'anteprima stock (niente scaricamento nel mio ruolo): la scelta poggia su titolo, metadati e filtri. L'editore guarda l'anteprima prima del download; se compaiono persone riconoscibili, loghi di compagnie, numeri di gate o tabelloni leggibili, sedute rosse dominanti o un aereo con livrea in primo piano, usa la riserva con alt_libreria",
+        "Libreria scartata come copertina: l'unica foto di trasporti non ancora usata (cb8c5b135f, corridoio di un terminal) ha un cappotto rosso dominante in primo piano e persone in movimento; la reception d264766f83 e le altre foto di lavoro in hotel hanno volti riconoscibili; le foto neutre di città e camere sono quasi tutte negli ultimi 10 articoli",
+        "La riserva 67868d0855 era stata assegnata oggi alla bozza 2 (congresso SCMR, NO-GO e sostituita da questa bozza): nessun doppio uso se la bozza 2 non si pubblica; la riserva della bozza 1 (ffd195a72d) non è ripetuta",
+        "Terzo soggetto aeroportuale del Journal in 15 giorni (4 e 7 novembre): qui la sala d'attesa vuota, non aerei né piazzale",
+        "Da aggiungere alla libreria: interni di aeroporto senza persone e senza scritte (sale d'attesa, vetrate sul piazzale)",
+        "Nessuna immagine generata: nessuna nota da aggiungere all'articolo"
+      ],
+      "ruolo_ricavia": "Una sala d'attesa vuota mostra il punto in cui il volo di un ospite incontra la notte del tuo hotel: Ricavia guarda quel passaggio nei dati di pick-up, senza drammatizzare il conflitto che lo causa"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "NO-GO",
+      "motivo": "Tesi revenue debole o sbagliata",
+      "griglia": [
+        "[ ] Tesi revenue chiara e corretta (corretta nel meccanismo e APPROVED dal revenue manager, ma debole: il fatto nuovo è una proroga a contenuto invariato che, come dice il testo stesso, non cambia la domanda di oggi né il rischio; l'esposizione degli hotel di Roma agli hub del Golfo non ha nessun dato ed è probabilmente marginale, con Stati Uniti, Spagna e Regno Unito primi mercati; tre voci di impatto su quattro a '?')",
+        "[x] Ogni numero ha fonte o è stima Ricavia (21 e 28 voli cancellati da TTG Italia, 14 e 18 voli settimanali da Travelquotidiano, attribuiti nel testo; nessuna stima)",
+        "[x] Fonti citate con link, nessuna copia (CZIB-2026-07R4 ricontrollato oggi: revisione del 16 novembre, validità al 31 gennaio 2027, contenuto e raccomandazioni invariati, FIR come nel testo)",
+        "[x] Ruolo di Ricavia presente, 1 paragrafo (non finalizzato: con NO-GO non si scrive il paragrafo definitivo)",
+        "[x] Regole di brand e di copy (nessun verbo vietato, nessun 'chi', nessun punto finale; la sigla EASA nell'apertura prima della glossa sarebbe stata una correzione di forma)",
+        "[x] Tono coerente con la matrice (serio, unico ammesso per un tema di conflitto; nessun attacco o vittima nel testo)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; tema EASA e Golfo nuovo, ma azioni 1 e 2 vicine all'alta velocità del 10 novembre e allo sciopero dei treni del 3 novembre: unico tratto nuovo la rivendita a breve preavviso)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun invito ad allinearsi sui prezzi, rinvio al consulente nell'azione 2, citazioni brevi)",
+        "[x] Da 700 a 1.100 parole, struttura completa (circa 1.040-1.080 parole, 4 h3, impatto, azioni, In breve)"
+      ],
+      "correzioni": [],
+      "segnalazioni": [
+        "Bloccato fino al 2026-11-26 (7 giorni). Prima di riproporre il tema serve un fatto che cambia la tesi, su fonti affidabili: chiusure o cancellazioni sulle rotte del Golfo verso Roma, una riduzione dell'operativo delle compagnie del Golfo su Fiumicino, un dato sugli arrivi a Roma da Asia e Oceania",
+        "Il giornalista stesso ha dato forza 2 su 5 e tre agenti su quattro hanno segnalato rilevanza bassa per la media di Roma: senza fatto nuovo e senza esposizione misurabile, l'articolo usa un avviso di guerra come aggancio per consigli validi in qualsiasi periodo di feste (regola sul volo cancellato, rivendita rapida), già in parte usciti il 3 e il 10 novembre",
+        "Sostituzioni della giornata esaurite: la giornata si chiude con 1 GO (bozza 1)"
+      ],
+      "ruolo_ricavia": null
+    }
+  ],
+  "slug": "avvisi-easa-golfo-hotel-roma-feste",
+  "title_seo": "Avvisi EASA sul Golfo e hotel a Roma nelle feste · Ricavia",
+  "description": "Avvisi EASA sul Golfo fino al 31 gennaio: quali ospiti del tuo hotel a Roma sono esposti nelle feste e come gestire voli cancellati e camere da rivendere",
+  "keyword": {
+    "principale": "avvisi EASA Golfo hotel Roma",
+    "secondarie": [
+      "voli Doha Dubai cancellati hotel",
+      "cancellazioni hotel Natale Capodanno",
+      "ospiti Asia Oceania hotel Roma",
+      "rivendita camere ultimo momento"
+    ]
+  },
+  "related_intro": "Per leggere i voli su Roma accanto alle prenotazioni del tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "il traffico aereo di Roma in inverno",
+      "url": "/journal/traffico-aereo-roma-inverno-hotel/"
+    },
+    {
+      "label": "pick-up, occupazione e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 975771,
+      "titolo": "Airport with seats and big windows",
+      "anteprima": "https://img.magnific.com/free-photo/airport-with-seats-big-windows_1203-1979.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: la sala d'attesa di un gate d'aeroporto vuota, file di sedute davanti a grandi vetrate sul piazzale; nessuna persona, nessun aereo con livrea, nessuna scritta leggibile (numeri di gate e tabelloni fuori quadro o illeggibili), nessun marchio; nessun riferimento a guerra, aerei militari o mappe del Golfo\nInquadratura: vetrate e file di sedute nella fascia centrale, con margine sopra e sotto per il ritaglio 16:9 e per quello social\nLuce: naturale e diffusa dalle vetrate, nessun flash, nessun contrasto drammatico\nPalette: neutri chiari, grigi e azzurro del cielo; sedute blu o grigie; niente rosso o arancio dominante, nessun filtro\nAtmosfera: seria e sospesa, l'attesa di un volo raccontata senza allarme; diversa dalle copertine recenti sui voli (piazzale con aerei ai gate del 4 novembre, ala in volo del 7 novembre) e da quelle di oggi (personale ai piani, sala congressuale)",
+    "libreria": "assets/img/67868d0855.webp",
+    "alt_libreria": "Piazza San Pietro e la Basilica vaticana viste dall'alto, con i tetti di Roma fino all'orizzonte sotto un cielo azzurro con nuvole bianche",
+    "testo_sovrapposto": null
+  },
+  "alt": "Sala d'attesa vuota di un gate d'aeroporto, con file di sedute davanti a grandi vetrate"
+}
