@@ -1,0 +1,736 @@
+{
+ "aggiornato": "2026-11-19",
+ "letture_dal": "2026-11-15",
+ "alberghi_letti": 470,
+ "alberghi_elenco": 960,
+ "date": {
+  "martedi": "2026-12-15",
+  "sabato": "2026-12-12",
+  "evento": "2026-12-31"
+ },
+ "roma": {
+  "alberghi": 470,
+  "martedi": 141,
+  "sabato": 168,
+  "evento": 329,
+  "rincaro_sabato": 0.154,
+  "rincaro_evento": 1.333,
+  "esauriti_evento": 0.361,
+  "tariffa_ferma": 0.174,
+  "voto": 8.3
+ },
+ "classifiche": {
+  "vie_strutture": [
+   {
+    "nome": "Via Aurelia",
+    "valore": 230
+   },
+   {
+    "nome": "Via Principe Amedeo",
+    "valore": 192
+   },
+   {
+    "nome": "Via Cavour",
+    "valore": 184
+   },
+   {
+    "nome": "Via di San Giovanni in Laterano",
+    "valore": 161
+   },
+   {
+    "nome": "Viale Giulio Cesare",
+    "valore": 153
+   },
+   {
+    "nome": "Via Gregorio VII",
+    "valore": 142
+   },
+   {
+    "nome": "Via Emanuele Filiberto",
+    "valore": 139
+   },
+   {
+    "nome": "Via Merulana",
+    "valore": 129
+   },
+   {
+    "nome": "Viale di Trastevere",
+    "valore": 127
+   },
+   {
+    "nome": "Via del Corso",
+    "valore": 117
+   }
+  ],
+  "vie_camere": [
+   {
+    "nome": "Via Principe Amedeo",
+    "valore": 1871
+   },
+   {
+    "nome": "Via Aurelia",
+    "valore": 1839
+   },
+   {
+    "nome": "Via Cavour",
+    "valore": 1483
+   },
+   {
+    "nome": "Via Nazionale",
+    "valore": 1171
+   },
+   {
+    "nome": "Via Vittorio Veneto",
+    "valore": 1023
+   },
+   {
+    "nome": "Via Palestro",
+    "valore": 715
+   },
+   {
+    "nome": "Via Filippo Turati",
+    "valore": 708
+   },
+   {
+    "nome": "Via Giovanni Amendola",
+    "valore": 706
+   },
+   {
+    "nome": "Via del Corso",
+    "valore": 605
+   },
+   {
+    "nome": "Via Marsala",
+    "valore": 605
+   }
+  ],
+  "aree_alberghi": [
+   {
+    "nome": "Castro Pretorio",
+    "valore": 224,
+    "camere": 9153
+   },
+   {
+    "nome": "Esquilino",
+    "valore": 78,
+    "camere": 2856
+   },
+   {
+    "nome": "Monti",
+    "valore": 76,
+    "camere": 2224
+   },
+   {
+    "nome": "Campo Marzio",
+    "valore": 64,
+    "camere": 2143
+   },
+   {
+    "nome": "Trevi",
+    "valore": 48,
+    "camere": 1755
+   },
+   {
+    "nome": "Prati",
+    "valore": 47,
+    "camere": 1688
+   },
+   {
+    "nome": "Colonna",
+    "valore": 45,
+    "camere": 1360
+   },
+   {
+    "nome": "Aurelio",
+    "valore": 30,
+    "camere": 3581
+   },
+   {
+    "nome": "Ludovisi",
+    "valore": 30,
+    "camere": 2204
+   },
+   {
+    "nome": "Nomentano",
+    "valore": 25,
+    "camere": 873
+   }
+  ],
+  "aree_extra": [
+   {
+    "nome": "Aurelio",
+    "valore": 2084
+   },
+   {
+    "nome": "Monti",
+    "valore": 1907
+   },
+   {
+    "nome": "Esquilino",
+    "valore": 1666
+   },
+   {
+    "nome": "Trastevere",
+    "valore": 1656
+   },
+   {
+    "nome": "Gianicolense",
+    "valore": 1635
+   },
+   {
+    "nome": "Trionfale",
+    "valore": 1607
+   },
+   {
+    "nome": "Prati",
+    "valore": 1467
+   },
+   {
+    "nome": "Tuscolano",
+    "valore": 1245
+   },
+   {
+    "nome": "Campo Marzio",
+    "valore": 1093
+   },
+   {
+    "nome": "Della Vittoria",
+    "valore": 1017
+   }
+  ],
+  "aree_sabato": [
+   {
+    "nome": "Campo Marzio",
+    "valore": 296,
+    "alberghi": 25
+   },
+   {
+    "nome": "Pigna",
+    "valore": 287,
+    "alberghi": 8
+   },
+   {
+    "nome": "Colonna",
+    "valore": 286,
+    "alberghi": 27
+   },
+   {
+    "nome": "Trevi",
+    "valore": 281,
+    "alberghi": 28
+   },
+   {
+    "nome": "Regola",
+    "valore": 277,
+    "alberghi": 8
+   },
+   {
+    "nome": "Sant'Eustachio",
+    "valore": 228,
+    "alberghi": 11
+   },
+   {
+    "nome": "Ludovisi",
+    "valore": 202,
+    "alberghi": 7
+   },
+   {
+    "nome": "Gianicolense",
+    "valore": 179,
+    "alberghi": 6
+   },
+   {
+    "nome": "Monti",
+    "valore": 173,
+    "alberghi": 30
+   },
+   {
+    "nome": "Prati",
+    "valore": 164,
+    "alberghi": 18
+   }
+  ],
+  "aree_rincaro": [
+   {
+    "nome": "Pigna",
+    "valore": 0.405,
+    "alberghi": 8
+   },
+   {
+    "nome": "Monti",
+    "valore": 0.254,
+    "alberghi": 30
+   },
+   {
+    "nome": "Regola",
+    "valore": 0.231,
+    "alberghi": 8
+   },
+   {
+    "nome": "Trevi",
+    "valore": 0.193,
+    "alberghi": 28
+   },
+   {
+    "nome": "Prati",
+    "valore": 0.19,
+    "alberghi": 18
+   },
+   {
+    "nome": "Colonna",
+    "valore": 0.179,
+    "alberghi": 27
+   },
+   {
+    "nome": "Castro Pretorio",
+    "valore": 0.165,
+    "alberghi": 163
+   },
+   {
+    "nome": "Campo Marzio",
+    "valore": 0.161,
+    "alberghi": 25
+   },
+   {
+    "nome": "Aurelio",
+    "valore": 0.12,
+    "alberghi": 9
+   },
+   {
+    "nome": "Esquilino",
+    "valore": 0.115,
+    "alberghi": 48
+   }
+  ],
+  "aree_evento": [
+   {
+    "nome": "Campo Marzio",
+    "valore": 620,
+    "alberghi": 25
+   },
+   {
+    "nome": "Colonna",
+    "valore": 605,
+    "alberghi": 27
+   },
+   {
+    "nome": "Pigna",
+    "valore": 587,
+    "alberghi": 8
+   },
+   {
+    "nome": "Trevi",
+    "valore": 552,
+    "alberghi": 28
+   },
+   {
+    "nome": "Sant'Eustachio",
+    "valore": 525,
+    "alberghi": 11
+   },
+   {
+    "nome": "Prati",
+    "valore": 375,
+    "alberghi": 18
+   },
+   {
+    "nome": "Monti",
+    "valore": 357,
+    "alberghi": 30
+   },
+   {
+    "nome": "Castro Pretorio",
+    "valore": 310,
+    "alberghi": 163
+   },
+   {
+    "nome": "Esquilino",
+    "valore": 274,
+    "alberghi": 48
+   }
+  ],
+  "aree_esauriti": [
+   {
+    "nome": "Regola",
+    "valore": 0.6,
+    "alberghi": 8
+   },
+   {
+    "nome": "Ludovisi",
+    "valore": 0.429,
+    "alberghi": 7
+   },
+   {
+    "nome": "Aurelio",
+    "valore": 0.429,
+    "alberghi": 9
+   },
+   {
+    "nome": "Gianicolense",
+    "valore": 0.4,
+    "alberghi": 6
+   },
+   {
+    "nome": "Castro Pretorio",
+    "valore": 0.395,
+    "alberghi": 163
+   },
+   {
+    "nome": "Monti",
+    "valore": 0.381,
+    "alberghi": 30
+   },
+   {
+    "nome": "Esquilino",
+    "valore": 0.333,
+    "alberghi": 48
+   },
+   {
+    "nome": "Campo Marzio",
+    "valore": 0.333,
+    "alberghi": 25
+   },
+   {
+    "nome": "Trevi",
+    "valore": 0.308,
+    "alberghi": 28
+   },
+   {
+    "nome": "Colonna",
+    "valore": 0.304,
+    "alberghi": 27
+   }
+  ],
+  "aree_voto": [
+   {
+    "nome": "Pigna",
+    "valore": 8.9,
+    "alberghi": 8
+   },
+   {
+    "nome": "Sant'Eustachio",
+    "valore": 8.9,
+    "alberghi": 11
+   },
+   {
+    "nome": "Colonna",
+    "valore": 8.8,
+    "alberghi": 27
+   },
+   {
+    "nome": "Regola",
+    "valore": 8.7,
+    "alberghi": 8
+   },
+   {
+    "nome": "Trevi",
+    "valore": 8.6,
+    "alberghi": 28
+   },
+   {
+    "nome": "Campo Marzio",
+    "valore": 8.6,
+    "alberghi": 25
+   },
+   {
+    "nome": "Gianicolense",
+    "valore": 8.6,
+    "alberghi": 6
+   },
+   {
+    "nome": "Monti",
+    "valore": 8.5,
+    "alberghi": 30
+   },
+   {
+    "nome": "Ludovisi",
+    "valore": 8.5,
+    "alberghi": 7
+   },
+   {
+    "nome": "Aurelio",
+    "valore": 8.4,
+    "alberghi": 9
+   }
+  ]
+ },
+ "zone": [
+  {
+   "nome": "Centro storico",
+   "offerta": {
+    "strutture": 5158,
+    "guest_house": 789,
+    "camere": 13290,
+    "posti_letto": 28158,
+    "alberghi": 208,
+    "camere_alberghi": 6871,
+    "stelle_4": 71,
+    "stelle_3": 79,
+    "stelle_2": 14,
+    "stelle_1": 11,
+    "stelle_5": 33,
+    "bb": 68,
+    "case": 1420,
+    "altro": 59,
+    "alloggi": 2614
+   },
+   "mercato": {
+    "alberghi": 120,
+    "martedi": 219,
+    "sabato": 279,
+    "evento": 588,
+    "rincaro_sabato": 0.192,
+    "rincaro_evento": 1.407,
+    "esauriti_evento": 0.333,
+    "tariffa_ferma": 0.076,
+    "voto": 8.7
+   }
+  },
+  {
+   "nome": "Monti",
+   "offerta": {
+    "strutture": 2003,
+    "guest_house": 229,
+    "camere": 4831,
+    "posti_letto": 10090,
+    "alberghi": 76,
+    "camere_alberghi": 2224,
+    "stelle_1": 8,
+    "stelle_2": 18,
+    "stelle_3": 28,
+    "stelle_4": 19,
+    "stelle_5": 3,
+    "bb": 46,
+    "case": 562,
+    "altro": 20,
+    "alloggi": 1070
+   },
+   "mercato": {
+    "alberghi": 30,
+    "martedi": 134,
+    "sabato": 173,
+    "evento": 357,
+    "rincaro_sabato": 0.254,
+    "rincaro_evento": 1.608,
+    "esauriti_evento": 0.381,
+    "tariffa_ferma": 0.053,
+    "voto": 8.5
+   }
+  },
+  {
+   "nome": "Trastevere",
+   "offerta": {
+    "strutture": 1681,
+    "guest_house": 98,
+    "camere": 1688,
+    "posti_letto": 3455,
+    "alberghi": 14,
+    "camere_alberghi": 500,
+    "stelle_2": 3,
+    "stelle_3": 5,
+    "stelle_4": 5,
+    "stelle_5": 1,
+    "bb": 29,
+    "case": 341,
+    "altro": 11,
+    "alloggi": 1188
+   },
+   "mercato": {
+    "alberghi": 5,
+    "martedi": null,
+    "sabato": null,
+    "evento": null,
+    "rincaro_sabato": null,
+    "rincaro_evento": null,
+    "esauriti_evento": 0.6,
+    "tariffa_ferma": null,
+    "voto": 9.1
+   }
+  },
+  {
+   "nome": "Prati · Vaticano",
+   "offerta": {
+    "strutture": 1847,
+    "guest_house": 417,
+    "camere": 4973,
+    "posti_letto": 10067,
+    "alberghi": 53,
+    "camere_alberghi": 1999,
+    "stelle_2": 7,
+    "stelle_3": 18,
+    "stelle_4": 17,
+    "stelle_1": 10,
+    "stelle_5": 1,
+    "bb": 98,
+    "case": 403,
+    "altro": 8,
+    "alloggi": 868
+   },
+   "mercato": {
+    "alberghi": 22,
+    "martedi": 161,
+    "sabato": 165,
+    "evento": 380,
+    "rincaro_sabato": 0.177,
+    "rincaro_evento": 1.425,
+    "esauriti_evento": 0.368,
+    "tariffa_ferma": 0.167,
+    "voto": 8.2
+   }
+  },
+  {
+   "nome": "Esquilino · Termini",
+   "offerta": {
+    "strutture": 2865,
+    "guest_house": 752,
+    "camere": 17250,
+    "posti_letto": 35642,
+    "alberghi": 302,
+    "camere_alberghi": 12009,
+    "stelle_3": 105,
+    "stelle_2": 72,
+    "stelle_4": 56,
+    "stelle_1": 63,
+    "stelle_5": 6,
+    "bb": 166,
+    "case": 459,
+    "altro": 44,
+    "alloggi": 1142
+   },
+   "mercato": {
+    "alberghi": 211,
+    "martedi": 114,
+    "sabato": 137,
+    "evento": 296,
+    "rincaro_sabato": 0.144,
+    "rincaro_evento": 1.441,
+    "esauriti_evento": 0.38,
+    "tariffa_ferma": 0.184,
+    "voto": 7.9
+   }
+  },
+  {
+   "nome": "Testaccio · Ostiense",
+   "offerta": {
+    "strutture": 1213,
+    "guest_house": 67,
+    "camere": 1778,
+    "posti_letto": 3643,
+    "alberghi": 10,
+    "camere_alberghi": 958,
+    "stelle_4": 8,
+    "stelle_3": 2,
+    "bb": 66,
+    "case": 215,
+    "altro": 3,
+    "alloggi": 852
+   },
+   "mercato": {
+    "alberghi": 3,
+    "martedi": null,
+    "sabato": null,
+    "evento": null,
+    "rincaro_sabato": null,
+    "rincaro_evento": null,
+    "esauriti_evento": null,
+    "tariffa_ferma": null,
+    "voto": null
+   }
+  },
+  {
+   "nome": "San Lorenzo · Pigneto",
+   "offerta": {
+    "strutture": 1572,
+    "guest_house": 54,
+    "camere": 2005,
+    "posti_letto": 3821,
+    "alberghi": 12,
+    "camere_alberghi": 926,
+    "stelle_2": 2,
+    "stelle_4": 4,
+    "stelle_3": 6,
+    "bb": 47,
+    "case": 322,
+    "altro": 10,
+    "alloggi": 1127
+   },
+   "mercato": {
+    "alberghi": 6,
+    "martedi": 149,
+    "sabato": 133,
+    "evento": 198,
+    "rincaro_sabato": null,
+    "rincaro_evento": 1.0,
+    "esauriti_evento": 0.0,
+    "tariffa_ferma": null,
+    "voto": 7.8
+   }
+  },
+  {
+   "nome": "Flaminio · Parioli",
+   "offerta": {
+    "strutture": 657,
+    "guest_house": 47,
+    "camere": 2143,
+    "posti_letto": 4300,
+    "alberghi": 21,
+    "camere_alberghi": 1519,
+    "stelle_5": 3,
+    "stelle_4": 11,
+    "stelle_3": 5,
+    "stelle_2": 2,
+    "bb": 40,
+    "case": 98,
+    "altro": 8,
+    "alloggi": 443
+   },
+   "mercato": {
+    "alberghi": 3,
+    "martedi": null,
+    "sabato": null,
+    "evento": null,
+    "rincaro_sabato": null,
+    "rincaro_evento": null,
+    "esauriti_evento": null,
+    "tariffa_ferma": null,
+    "voto": null
+   }
+  },
+  {
+   "nome": "Via Veneto",
+   "offerta": {
+    "strutture": 249,
+    "guest_house": 68,
+    "camere": 2673,
+    "posti_letto": 5550,
+    "alberghi": 30,
+    "camere_alberghi": 2204,
+    "stelle_1": 1,
+    "stelle_5": 11,
+    "stelle_4": 13,
+    "stelle_2": 1,
+    "stelle_3": 4,
+    "bb": 5,
+    "case": 36,
+    "altro": 3,
+    "alloggi": 107
+   },
+   "mercato": {
+    "alberghi": 7,
+    "martedi": 180,
+    "sabato": 202,
+    "evento": null,
+    "rincaro_sabato": 0.048,
+    "rincaro_evento": null,
+    "esauriti_evento": 0.429,
+    "tariffa_ferma": 0.5,
+    "voto": 8.5
+   }
+  }
+ ],
+ "registro": {
+  "file": "giugno 2025",
+  "strutture": 33660,
+  "alberghi": 1008
+ }
+}
