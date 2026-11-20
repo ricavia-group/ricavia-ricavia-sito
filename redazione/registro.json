@@ -286,5 +286,17 @@
     "bloccato_fino": "2026-11-26",
     "fonte_nuova_richiesta": false,
     "pubblicato": false
+  },
+  {
+    "data": "2026-11-20",
+    "slug": "eventi-roma-hotel-blocchi-gruppo",
+    "tema": "settimana-21-25-aprile-2027-roma-gitex-azione-cattolica",
+    "keyword": "eventi aprile Roma hotel",
+    "categoria": "eventi",
+    "esito": "NO-GO",
+    "motivo": "Tema già trattato",
+    "bloccato_fino": "2026-12-04",
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
