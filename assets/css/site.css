@@ -5653,3 +5653,14 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio .o2-fb span{font-size:10.5px;color:#6E6E73}
 #pg-osservatorio .o2-fc small{font-size:12px;line-height:1.5;color:#6E6E73}
 @media (max-width:480px){#pg-osservatorio .o2-fb b{font-size:8.5px}#pg-osservatorio .o2-fb{gap:3px}}
+/* Osservatorio: i due indicatori del giorno in cima (riempiti da 12-osservatorio.js) */
+.o2-ind{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 0 clamp(28px,4vw,48px)}
+.o2-ind[hidden]{display:none}
+.o2-ic{position:relative;padding:20px 22px 18px;border:1px solid var(--o2l);border-radius:18px;background:rgba(255,255,255,.03);min-width:0}
+.o2-ic>span{display:block;font:600 11.5px/1.4 var(--zf);letter-spacing:.08em;text-transform:uppercase;color:var(--o2m)}
+.o2-ic b{display:inline-block;margin-top:10px;font:600 clamp(36px,4.4vw,54px)/1 var(--zf);letter-spacing:-.04em;font-variant-numeric:tabular-nums;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent}
+.o2-ic em{display:block;margin-top:8px;font-style:normal;font-size:13px;color:var(--o2t)}
+.o2-ic svg{position:absolute;right:22px;top:46px;width:min(160px,34%);height:32px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.o2-ic small{display:block;margin-top:10px;font-size:12.5px;line-height:1.45;color:var(--o2m)}
+.o2-im{grid-column:1/-1;margin:0;font-size:12.5px;color:var(--o2m)}
+@media(max-width:700px){.o2-ind{grid-template-columns:minmax(0,1fr);gap:12px}.o2-ic svg{top:40px;width:30%}}

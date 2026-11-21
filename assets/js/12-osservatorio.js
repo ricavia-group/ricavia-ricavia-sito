@@ -327,5 +327,21 @@ function sezSigillo(s){var l=(D.hs||[]).filter(function(x){return x[2]===s.zona_
 document.addEventListener('click',function(e){var b=e.target.closest('[data-sig]');if(!b||!rep||!rep.contains(b))return;var p=b.getAttribute('data-sig').split('|'),t=rep.querySelector('.o2-rh h2');sigillo(t?t.textContent:'',p[0],p[1])});
 
 /* ---------- la conversazione dell'Hotel Score, una riga alla volta ---------- */
+/* ---------- i due indicatori del giorno: alberghi pieni e tariffa mediana per la notte dopo (assets/data/indicatori.json, aggiornato ogni sera) ---------- */
+var ind=$('#o2Ind');if(ind){
+  /* il file cambia ogni giorno e /assets/ ha una cache di un anno: un indirizzo nuovo al giorno */
+  fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+    var u=d.ultimo,p=d.precedente,gg=new Date(u.notte+'T12:00:00').toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
+    var dl=function(a,b,eur){if(a==null||b==null)return '';var x=a-b,s=x>0?'+':x<0?'−':'',v=eur?num(Math.abs(x))+' €':d1(Math.abs(x))+(Math.abs(x)===1?' punto':' punti');return '<em>'+(x?s+v:'uguale')+' rispetto alla lettura prima</em>'};
+    var sp=function(i){var v=d.serie.map(function(x){return x[i]}).filter(function(x){return x!=null});if(v.length<3)return '';var mn=Math.min.apply(0,v),mx=Math.max.apply(0,v),w=160,h=32;
+      return '<svg viewBox="0 0 '+w+' '+h+'" aria-hidden="true"><defs><linearGradient id="o2ig'+i+'" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#1F2DD0"/><stop offset="1" stop-color="#724AF8"/></linearGradient></defs><polyline stroke="url(#o2ig'+i+')" points="'+v.map(function(x,j){return (j*w/(v.length-1)).toFixed(1)+','+(h-3-(mx>mn?(x-mn)/(mx-mn):.5)*(h-6)).toFixed(1)}).join(' ')+'"/></svg>'};
+    var m=d.mesi[d.mesi.length-1],nm=new Date(m.mese+'-01T12:00:00').toLocaleDateString('it-IT',{month:'long'});
+    ind.innerHTML='<div class="o2-ic"><span>Alberghi pieni a Roma · notte di '+esc(gg)+'</span><b>'+d1(u.alberghi_pieni)+'%</b>'+dl(u.alberghi_pieni,p&&p.alberghi_pieni)+sp(1)
+      +'<small>'+num(u.alberghi_prenotabili)+' alberghi su '+num(d.alberghi_registro)+' hanno ancora camere su Booking</small></div>'
+      +'<div class="o2-ic"><span>Tariffa mediana degli hotel · notte di '+esc(gg)+'</span><b>'+num(u.tariffa_alberghi)+' €</b>'+dl(u.tariffa_alberghi,p&&p.tariffa_alberghi,1)+sp(2)
+      +'<small>Per 2 adulti, negli hotel ancora prenotabili su Booking</small></div>'
+      +'<p class="o2-im">Aggiornati ogni sera · media di '+esc(nm)+' su '+m.giorni+(m.giorni===1?' notte':' notti')+': '+d1(m.alberghi_pieni)+'% di alberghi pieni, '+num(m.tariffa_alberghi)+' € di tariffa mediana</p>';
+    ind.hidden=false}).catch(function(){})}
+
 var ch=$('#o2Chat');if(ch){var bub=[].slice.call(ch.querySelectorAll('.q,.a'));vis(ch,function(){bub.forEach(function(b,i){setTimeout(function(){b.classList.add('show')},RM?0:300+i*750)})},.35)}
 }catch(_e){window.__DBG&&console.warn('osservatorio',_e&&_e.message)}})();

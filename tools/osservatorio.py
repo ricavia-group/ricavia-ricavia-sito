@@ -71,6 +71,7 @@ def hero(d):
             (d["vie"], "vie con almeno una struttura ricettiva")]
     return f'''<section class="o2-hero ap-dark2" id="o2-top"><div class="wrap">
 <button class="ap-back" type="button" data-ct-close>← Torna alla home</button>
+<div class="o2-ind" id="o2Ind" hidden></div>
 <div class="o2-hg">
 <div class="o2-hl">
 <span class="o2-tag ar" style="--d:.05s">Osservatorio Ricavia · Roma</span>
@@ -233,11 +234,11 @@ def metodo():
               ("Ogni numero con fonte e data", "Accanto a ogni dato il giorno della lettura. Un dato che manca è dichiarato, mai stimato"),
               ("Valori mediani, mai medie", "Metà degli alberghi sta sopra, metà sotto. Un valore mediano compare solo con almeno 5 alberghi letti"),
               ("Il competitive set", "Le strutture ricettive più vicine, con stesso tipo, categoria vicina e dimensione simile"),
+              ("Alberghi pieni e tariffa del giorno", "Ogni sera contiamo su Booking gli hotel di Roma ancora prenotabili per 2 adulti la notte dopo e li confrontiamo con gli alberghi del registro. "
+               "Un albergo pieno non ha più camere su Booking: è la disponibilità, non l’occupazione delle camere. La tariffa è il prezzo mediano degli hotel ancora prenotabili"),
               ("I clienti Ricavia", "Compaiono nelle classifiche con una nota accanto al nome"),
               ("Le correzioni", "Puoi segnalare un dato sbagliato o chiedere di non comparire: una persona di Ricavia controlla ogni richiesta")]
     arr = [("Dicembre", "Canali e Sito nell’Hotel Score", "Le ultime due aree: su quali OTA vende l’hotel e cosa offre il suo sito"),
-           ("Dicembre", "Occupazione e tariffa media di Roma", "Due numeri aggiornati ogni giorno, salvati per le statistiche di fine mese"),
-           ("Dicembre", "Costo d’ingresso per zona", "Quotazioni immobiliari OMI sulla pagina Nuova apertura"),
            ("Gennaio", "Gli hotel saliti di più", "La classifica di chi ha guadagnato più Hotel Score nel mese")]
     return f'''<section class="o2-sec o2-lt" id="o2-metodo"><div class="wrap"><div class="o2-mg">
 <div><div class="o2-sh"><span class="o2-tag ar">Il metodo</span><h2 class="ar">Regole {g("uguali per tutti")}</h2></div>
