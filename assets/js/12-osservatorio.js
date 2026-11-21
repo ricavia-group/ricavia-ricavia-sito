@@ -154,7 +154,7 @@ function bel(n){var P={di:1,de:1,del:1,della:1,delle:1,dei:1,al:1,alla:1,e:1,a:1
 function mostraHotel(i){var h=HOT[i],c=[[num(h.s),'strutture ricettive'],[num(h.a),'alberghi']];if(h.mar)c.push([h.mar+' €','il martedì']);if(h.sab)c.push([h.sab+' €','il sabato']);if(h.cap)c.push([h.cap+' €','a Capodanno']);if(h.v)c.push([h.v.toFixed(1).replace('.',','),'voto mediano su Booking']);
   nf.innerHTML='<b>'+esc(bel(h.n))+'</b><p>'+esc(h.i)+(h.z&&h.z!=='n.d.'?' · '+esc(h.z):'')+'. Il mercato entro 1 km dal tuo hotel</p><div class="o2-hm">'+c.map(function(x){return '<span><b>'+x[0]+'</b><small>'+x[1]+'</small></span>'}).join('')+'</div>'+
     '<p>'+(h.l?'Prezzi e voto: valori mediani di '+num(h.l)+' alberghi letti su Booking, camera per 2 persone. ':'Meno di 5 alberghi letti su Booking qui intorno: prezzi non ancora disponibili. ')+'Strutture ricettive dal registro di Roma Capitale</p>'+
-    '<div><button type="button" data-o2-hn="'+esc(bel(h.n))+'">Come sei messo rispetto a loro? Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null}
+    '<div>'+(h.r?'<button type="button" class="o2-pr" data-o2-chat="'+esc(h.id)+'">Vedi i tuoi competitor e il tuo Hotel Score →</button>':'<button type="button" data-o2-hn="'+esc(bel(h.n))+'">Come sei messo rispetto a loro? Calcola l’Hotel Score →</button>')+'</div>';nf.hidden=false;nf._d=null}
 function calcola(n){try{sessionStorage.setItem('hs-n',n)}catch(_){}var hs=document.getElementById('hsForm');if(hs&&hs.n)hs.n.value=n;var a=$('#o2Hs');if(a)a.click()}
 function chiudi(){if(!sug)return;sug.hidden=true;sug.innerHTML='';SI=-1}
 function suggerisci(){var t=f.q.value.trim();nf.hidden=true;var hh=modo==='h'?trovaHotel(t).slice(0,5):[];if(t.length<2||(modo==='h'&&!VIA.test(t)&&!zoneDi(t).length&&!hh.length)){chiudi();return}
@@ -181,7 +181,7 @@ if(f){var seg=$$('.o2-seg button');
     else if(e.key==='Enter'&&SI>-1){e.preventDefault();apri(bs[SI].dataset.a)}});
   sug.addEventListener('mousedown',function(e){e.preventDefault()});
   pg.addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(b&&(sug.contains(b)||nf.contains(b)))apri(b.dataset.a);
-    var hn=e.target.closest('[data-o2-hn]');if(hn&&nf.contains(hn))calcola(hn.getAttribute('data-o2-hn'));
+    var hn=e.target.closest('[data-o2-hn]');if(hn&&nf.contains(hn))calcola(hn.getAttribute('data-o2-hn'));var rr=e.target.closest('[data-o2-rep]');if(rr)apriReport(rr.getAttribute('data-o2-rep'));var hc=e.target.closest('[data-o2-chat]');if(hc&&nf.contains(hc))apriChat(hc.getAttribute('data-o2-chat'));
     if(e.target.closest('[data-o2-faq]')){var d=nf._d,faq=pg.querySelector('.ix-faq');if(d)d.open=true;vai(d||faq)}
     if(!f.contains(e.target))chiudi()});
   f.addEventListener('submit',function(e){e.preventDefault();var t=f.q.value.trim();chiudi();nf.hidden=true;if(!t){f.q.focus();return}
@@ -190,6 +190,111 @@ if(f){var seg=$$('.o2-seg button');
     if(modo==='h'&&!VIA.test(t))return hotel().then(function(){var r=trovaHotel(t);if(r.length===1||(r.length&&norm(HOT[r[0]].n)===norm(t)))return mostraHotel(r[0]);if(r.length){suggerisci();return}
       nf.innerHTML='<b>Non troviamo «'+esc(t)+'» tra le '+num(HOT.length)+' strutture ricettive del registro di Roma Capitale</b><p>Cerchiamo tra alberghi, affittacamere, B&B e residence: prova con il nome scritto in un altro modo, oppure calcoliamo l’Hotel Score partendo dal nome</p><div><button type="button" data-o2-hn="'+esc(t)+'">Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null});
     vie().then(function(){var r=trovaVie(t);if(r.length===1)return apri('v:'+r[0]);if(r.length){suggerisci();if(sug.hidden)nonTrovato(t);return}nonTrovato(t)})})}
+
+/* ---------- la conversazione vera e il report pubblico (fermate 2 e 4 del giro; ok del legale del 21/11) ---------- */
+var SCH={},chatEl=$('#o2Chat');
+function schedaH(id){if(!SCH[id])SCH[id]=fetch('/assets/data/schede/'+id+'.json?v='+(D.ver||'')).then(function(r){if(!r.ok)throw 0;return r.json()});return SCH[id]}
+function d1(x){return x==null?'n.d.':(Math.round(x*10)/10).toFixed(1).replace('.',',')}
+function eu(x){return x==null?'n.d.':num(Math.round(x))+' €'}
+function gg(iso,wd){try{return new Date(iso.slice(0,10)+'T12:00:00').toLocaleDateString('it-IT',wd?{weekday:'long',day:'numeric',month:'long'}:{day:'numeric',month:'long'})}catch(_){return iso}}
+var ETI={martedi:'Martedì',sabato:'Sabato',evento:'Capodanno'};
+function pz(s,k){return (s.prezzi||[]).filter(function(p){return p.etichetta===k})[0]||null}
+function emOk(e){return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(e)}
+function urlRep(s){return location.origin+'/osservatorio/?report='+encodeURIComponent(s.id_comune)}
+function invia(em,s,cb){var l=[['Email',em],['Struttura ricettiva',s.nome],['Tipo di struttura ricettiva','Hotel'],['Camere',String(s.camere||'')],['Città o zona','Roma, '+(s.zona||'')],['Report',urlRep(s)]];
+  if(window.RK&&RK.deliver)RK.deliver('hotel-score','Hotel Score · '+s.nome,l,{tipo:'hotel',camere:s.camere,citta:'Roma'},cb);else cb&&cb('mail')}
+function bolla(h,cls){var p=document.createElement('div');p.className=cls||'q';p.innerHTML=h;chatEl.appendChild(p);setTimeout(function(){p.classList.add('show')},30);return p}
+function moduloEm(n,obbl){return '<form class="o2-cf" data-f="'+n+'" novalidate><label>'+(obbl?'Dove ti mando il link al report?':'La tua email, se vuoi ricevere anche il report completo con le tre priorità')+'</label>'+
+  '<input type="email" name="em" autocomplete="email" placeholder="nome@tuohotel.it'+(obbl?'':' · facoltativa')+'">'+
+  '<label class="o2-ck"><input type="checkbox" name="pv"><span>Ho letto l’<a href="#pg-privacy">informativa privacy</a> e accetto di essere ricontattato</span></label>'+
+  '<button type="submit">'+(obbl?'Mandami il report':'Mostrami i competitor')+' →</button><p class="o2-er" hidden></p></form>'}
+function tabella(s){var m=pz(s,'martedi'),b=pz(s,'sabato'),io={nome:s.nome,voto:(s.booking||{}).voto,recensioni:(s.booking||{}).recensioni,martedi:m&&m.prezzo,sabato:b&&b.prezzo,io:1};
+  var r=(s.competitor||[]).concat([io]).sort(function(x,y){return (y.voto||0)-(x.voto||0)});
+  var cella=function(x,k,p){var v=x[k];return v!=null?eu(v):(x.io&&p&&p.motivo?'<em>'+esc(p.motivo)+'</em>':'n.d.')};
+  return '<div class="o2-tw"><table class="o2-tb"><thead><tr><th>Struttura ricettiva</th><th>Voto</th><th>Recensioni</th><th>'+(m?'Mar '+gg(m.arrivo):'Feriale')+'</th><th>'+(b?'Sab '+gg(b.arrivo):'Weekend')+'</th></tr></thead><tbody>'+
+    r.map(function(x){return '<tr'+(x.io?' class="io"':'')+'><td>'+esc(x.io?bel(x.nome):x.nome)+'</td><td>'+d1(x.voto)+'</td><td>'+(x.recensioni!=null?num(x.recensioni):'n.d.')+'</td><td>'+cella(x,'martedi',m)+'</td><td>'+cella(x,'sabato',b)+'</td></tr>'}).join('')+
+    '</tbody></table></div><small class="o2-fs">Booking, una notte per 2 persone · letto il '+gg(s.letto_il)+'. Prezzo mancante: n.d.</small>'}
+function finale(s,em){bolla(em?'Fatto: il link al report sta arrivando a <b>'+esc(em)+'</b>. Puoi anche aprirlo subito':'Ecco il tuo report');
+  bolla('<div class="o2-ops"><button type="button" data-c="rep">Apri il report →</button><button type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per leggere insieme il report di '+esc(s.nome)+'">Prenota la call conoscitiva</button></div>','q o2-qo');
+  bolla('Vuoi leggerlo con noi? Venti minuti su Google Meet, senza impegno')}
+function apriChat(id){if(!chatEl)return;chatEl.innerHTML='<small>Hotel Score · dati veri letti su Booking</small>';chatEl.classList.add('o2-vera');vai(chatEl,90);
+  schedaH(id).then(function(s){chatEl._s=s;chatEl._em='';
+    bolla('Ho trovato <b>'+esc(bel(s.nome))+'</b>, in '+esc(s.indirizzo||'')+(s.zona?', '+esc(s.zona):'')+': '+(s.camere?s.camere+' camere, ':'')+(s.stelle?s.stelle+' stelle':'albergo')+'. È il tuo?');
+    bolla('<div class="o2-ops"><button type="button" data-c="si">Sì, è il mio</button><button type="button" data-c="no">No, cerca ancora</button></div>','q o2-qo')})
+  .catch(function(){bolla('Non riesco a caricare i dati di questo hotel. Riprova tra poco, oppure <button type="button" class="o2-lk" data-o2-msg="Non riesco ad aprire l’Hotel Score del mio hotel">scrivici</button>')})}
+function passo2(s){var n=(s.set||{}).quanti||0;
+  if(!s.confronto)bolla('Intorno a te ho letto '+n+' alberghi simili su Booking: per un confronto onesto ne servono almeno 5. Ti mostro i tuoi numeri e quelli che ho');
+  else bolla('Ho letto i dati di '+n+' alberghi simili al tuo, tra i più vicini'+((s.set||{}).piu_lontano_m?' (il più lontano a '+num(s.set.piu_lontano_m)+' metri)':'')+'. Vuoi vedere i tuoi competitor?');
+  if(Date.now()-new Date(s.letto_il).getTime()>7*864e5)bolla('I dati del tuo hotel sono del '+gg(s.letto_il)+': te li mostro con la loro data. Il tuo hotel passa in cima alle prossime letture');
+  bolla(moduloEm(1,false),'q o2-qf')}
+function passo3(s){var em=chatEl._em;
+  bolla(tabella(s),'q o2-qt');
+  var fr=[];if(s.posizione)fr.push('Per voto su Booking sei '+s.posizione+'° su '+s.su);if(s.fatti&&s.fatti[0])fr.push(esc(s.fatti[0]));
+  if(fr.length)bolla(fr.join('. '));
+  if(em)finale(s,em);else{bolla('Vuoi il report completo, con l’Hotel Score e le tre priorità?');bolla(moduloEm(2,true),'q o2-qf')}
+  bolla('Hai una domanda? <button type="button" class="o2-lk" data-o2-msg="Domanda sull’Hotel Score di '+esc(s.nome)+': ">Scrivici</button>','q o2-qn')}
+if(chatEl){chatEl.addEventListener('click',function(e){var b=e.target.closest('[data-c]');if(!b)return;var s=chatEl._s,c=b.dataset.c;if(!s)return;
+    var ops=b.closest('.o2-ops');if(ops&&c!=='rep'){var w=ops.parentNode;w.parentNode.removeChild(w)}
+    if(c==='si'){bolla('Sì, è il mio','a');passo2(s)}
+    else if(c==='no'){bolla('No, non è il mio','a');bolla('Scrivi il nome del tuo hotel nella ricerca qui sopra: ti mostro i suggerimenti');var q=f&&f.q;if(q){vai(f,160);setTimeout(function(){q.focus()},400)}}
+    else if(c==='rep')apriReport(s.id_comune)});
+  chatEl.addEventListener('submit',function(e){var fm=e.target.closest('.o2-cf');if(!fm)return;e.preventDefault();var s=chatEl._s,em=fm.em.value.trim(),er=fm.querySelector('.o2-er'),n=fm.dataset.f;
+    var no=function(t){er.textContent=t;er.hidden=false};
+    if(n==='2'&&!em)return no('Scrivi la tua email');
+    if(em&&!emOk(em))return no('Controlla l’indirizzo email');
+    if(em&&!fm.pv.checked)return no('Per usare la tua email serve la spunta sulla privacy');
+    var w=fm.parentNode;w.parentNode.removeChild(w);
+    if(em){chatEl._em=em;invia(em,s);bolla(esc(em),'a')}else bolla('Mostrami i competitor','a');
+    if(n==='1')passo3(s);else finale(s,em)})}
+
+/* il report: si apre dalla conversazione o dal link nell'email (/osservatorio/?report=ID) */
+var rep=null;
+function chiudiRep(){if(!rep)return;rep.hidden=true;document.documentElement.classList.remove('o2-nosc');try{var u=new URL(location.href);u.searchParams.delete('report');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}}
+function apriReport(id){if(!rep){rep=document.createElement('div');rep.className='o2-rep';rep.setAttribute('role','dialog');rep.setAttribute('aria-modal','true');rep.setAttribute('aria-label','Report dell’Hotel Score');rep.setAttribute('data-lenis-prevent','');
+    rep.innerHTML='<div class="o2-rp"><button type="button" class="o2-rx" aria-label="Chiudi il report">Chiudi ✕</button><div class="o2-rc"></div></div>';pg.appendChild(rep);
+    rep.addEventListener('click',function(e){if(e.target===rep||e.target.closest('.o2-rx')||e.target.closest('[data-o2-msg]'))chiudiRep()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&rep&&!rep.hidden)chiudiRep()})}
+  var c=rep.querySelector('.o2-rc');c.innerHTML='<p class="o2-rl0">Carico il report…</p>';rep.hidden=false;rep.scrollTop=0;document.documentElement.classList.add('o2-nosc');
+  try{var u=new URL(location.href);u.searchParams.set('report',id);history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
+  schedaH(id).then(function(s){c.innerHTML=report(s);rep.querySelector('.o2-rx').focus()}).catch(function(){c.innerHTML='<p class="o2-rl0">Report non trovato. Cerca il tuo hotel nell’Osservatorio</p>'})}
+function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'),b=pz(s,'sabato'),ev=pz(s,'evento');
+  var A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto e contenuti'],['canali','Canali'],['sito','Sito e vendita diretta']];
+  var h='<header class="o2-rh"><small>Hotel Score · Osservatorio Ricavia</small><h2>'+esc(bel(s.nome))+'</h2><p>'+esc(s.indirizzo||'')+(s.zona?' · '+esc(s.zona):'')+(s.stelle?' · '+s.stelle+' stelle':'')+(s.camere?' · '+s.camere+' camere':'')+'</p><p class="o2-rd">Dati letti su Booking il '+gg(s.letto_il)+'. Competitive set: '+((s.set||{}).quanti||0)+' alberghi simili entro 1.000 metri</p></header>';
+  /* 4.1 i voti */
+  h+='<section class="o2-rs"><h3>Il tuo Hotel Score</h3><div class="o2-rhs"><b>'+(s.hotel_score!=null?d1(s.hotel_score):'n.d.')+'</b><span>su 10, media di '+A.filter(function(a){return v[a[0]]!=null}).length+' aree su 6'+(s.hotel_score==null?'. La media compare con almeno 4 aree':'')+'</span></div><ul class="o2-rv">'+
+    A.map(function(a){var x=v[a[0]];return x==null?'<li class="na"><span>'+a[1]+'</span><i></i><b>in arrivo</b></li>':'<li><span>'+a[1]+'</span><i><u style="width:'+x*10+'%"></u></i><b>'+x+'</b></li>'}).join('')+'</ul>'+
+    '<p class="o2-rn">Canali e Sito entrano a dicembre. Il voto Foto conta le foto della pagina Booking</p></section>';
+  /* 4.11 la scala */
+  if(sc){var su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
+    h+='<section class="o2-rs"><h3>La tua posizione</h3><p class="o2-rbig"><b>'+sc.pos+'°</b> su '+sc.su+' alberghi a '+(s.stelle||'')+' stelle in '+esc(s.zona_sito||'')+'</p>'+
+      (su?'<p>L’albergo al '+su.pos+'° posto ha '+d1(su.hs)+' di Hotel Score: ti servono '+d1(su.hs-s.hotel_score)+' punti per salire di un posto</p>':'<p>Sei il primo della tua zona e della tua categoria</p>')+'</section>'}
+  /* 4.2 i prezzi e 4.14 il termometro di Capodanno */
+  var P=[m,b,ev].filter(Boolean),mx=Math.max.apply(null,P.map(function(p){return Math.max(p.prezzo||0,p.mediano||0,1)}));
+  if(P.length){h+='<section class="o2-rs"><h3>Il tuo prezzo e quello dei competitor</h3><div class="o2-rpz">'+P.map(function(p){return '<div><strong>'+ETI[p.etichetta]+'</strong><small>'+gg(p.arrivo,1)+(p.notti===2?' · 2 notti, prezzo per notte':'')+'</small>'+
+      '<div class="o2-rb"><span>Tu</span><i><u class="tu" style="width:'+((p.prezzo||0)/mx*100)+'%"></u></i><b>'+(p.prezzo!=null?eu(p.prezzo):esc(p.motivo||'n.d.'))+'</b></div>'+
+      '<div class="o2-rb"><span>Competitor</span><i><u style="width:'+((p.mediano||0)/mx*100)+'%"></u></i><b>'+eu(p.mediano)+'</b></div>'+
+      (p.minimo!=null?'<small>Dai '+eu(p.minimo)+' ai '+eu(p.massimo)+', valore mediano di '+p.con_prezzo+' competitor</small>':'')+'</div>'}).join('')+'</div>';
+    if(m&&ev&&m.mediano&&ev.mediano)h+='<p class="o2-rnote">Tra martedì '+gg(m.arrivo)+' e Capodanno i competitor salgono del <b>'+Math.round((ev.mediano/m.mediano-1)*100)+'%</b>'+(m.prezzo&&ev.prezzo?'. Tu del <b>'+Math.round((ev.prezzo/m.prezzo-1)*100)+'%</b>':'')+'</p>';
+    h+='</section>'}
+  /* 4.4 cosa dicono gli ospiti */
+  if(s.parziali&&s.parziali.length)h+='<section class="o2-rs"><h3>Cosa dicono gli ospiti</h3><div class="o2-tw"><table class="o2-tb"><thead><tr><th>Tema</th><th>Tu</th><th>Competitor</th><th>Differenza</th></tr></thead><tbody>'+
+    s.parziali.map(function(p){var d=p.tu!=null&&p.mediano!=null?p.tu-p.mediano:null;return '<tr><td>'+esc(p.nome)+'</td><td>'+d1(p.tu)+'</td><td>'+d1(p.mediano)+'</td><td class="'+(d>0.05?'pos':d<-0.05?'neg':'')+'">'+(d==null?'n.d.':(d>0.05?'+':d<-0.05?'−':'')+d1(Math.abs(d)))+'</td></tr>'}).join('')+
+    '</tbody></table></div><p class="o2-rn">Punteggi parziali di Booking. Competitor: valore mediano</p></section>';
+  /* 4.5 le priorità */
+  if(s.fatti&&s.fatti.length)h+='<section class="o2-rs"><h3>Le cose da guardare</h3><ol class="o2-rf">'+s.fatti.slice(0,3).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ol></section>';
+  /* 4.13 i traguardi */
+  var T=[['Oltre 1.000 recensioni su Booking',(bk.recensioni||0)>=1000],['Voto Booking da 8,5 in su',(bk.voto||0)>=8.5],['Il sabato più caro del martedì',!!(m&&b&&m.prezzo&&b.prezzo&&b.prezzo>m.prezzo)],['Capodanno almeno +50% sul martedì',!!(m&&ev&&m.prezzo&&ev.prezzo&&ev.prezzo>=m.prezzo*1.5)],['Top 10 della tua zona e categoria',!!(sc&&sc.pos<=10)]];
+  var ok=T.filter(function(t){return t[1]}).length;
+  h+='<section class="o2-rs"><h3>I traguardi: '+ok+' su '+T.length+'</h3><div class="o2-rbar"><u style="width:'+ok/T.length*100+'%"></u></div><ul class="o2-rt">'+T.map(function(t){return '<li class="'+(t[1]?'ok':'')+'"><span>'+t[0]+'</span><b>'+(t[1]?'Raggiunto':'Da raggiungere')+'</b></li>'}).join('')+'</ul></section>';
+  /* 4.6 quanto vale un punto */
+  h+='<section class="o2-rs"><h3>Quanto vale un punto di voto</h3><p>Uno studio della Cornell University del 2012 stima l’11,2% di tariffa in più per un punto su una scala da 1 a 5, a parità di occupazione. Sulla scala di Booking, da 1 a 10, un punto vale circa la metà. È un ordine di grandezza, non una promessa</p></section>';
+  /* 4.8 i competitor */
+  if(s.competitor&&s.competitor.length)h+='<section class="o2-rs"><h3>I tuoi competitor</h3><ul class="o2-rco">'+s.competitor.map(function(x){return '<li><span>'+esc(x.nome)+'<small>'+(x.stelle?x.stelle+' stelle':'')+(x.distanza_m?' · '+num(x.distanza_m)+' m':'')+(x.recensioni?' · '+num(x.recensioni)+' recensioni':'')+'</small></span><b>'+d1(x.voto)+'</b></li>'}).join('')+'</ul>'+
+    '<button type="button" class="o2-lk" data-o2-msg="Nel report di '+esc(s.nome)+' vorrei cambiare i competitor: ">Un competitor non è giusto? Scrivici</button></section>';
+  /* 4.9 e 4.10 */
+  h+='<section class="o2-rs o2-rcta"><h3>Vuoi leggerlo con noi?</h3><p>Venti minuti su Google Meet: ti spieghiamo i numeri e da dove partire</p><div class="o2-ops"><button type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per leggere insieme il report di '+esc(s.nome)+'">Prenota la call conoscitiva →</button><button type="button" data-o2-msg="Nel report di '+esc(s.nome)+' c’è un dato sbagliato: ">Segnala un dato sbagliato</button></div></section>';
+  return h}
+try{var rq=new URL(location.href).searchParams.get('report');if(rq)apriReport(rq)}catch(_){}
 
 /* ---------- la conversazione dell'Hotel Score, una riga alla volta ---------- */
 var ch=$('#o2Chat');if(ch){var bub=[].slice.call(ch.querySelectorAll('.q,.a'));vis(ch,function(){bub.forEach(function(b,i){setTimeout(function(){b.classList.add('show')},RM?0:300+i*750)})},.35)}

@@ -119,7 +119,7 @@ def classifiche(d):
         if not voci:
             continue
         top = max(x["valore"] for x in voci) or 1
-        rows = "".join(f'<li style="--w:{x["valore"] / top * 100:.0f}%;--i:{j}"><em>{j:02d}</em><b>{E(x["nome"])}'
+        rows = "".join(f'<li style="--w:{x["valore"] / top * 100:.0f}%;--i:{j}"' + (f' data-o2-rep="{E(x["id"])}" tabindex="0" role="button"' if x.get("id") else "") + f'><em>{j:02d}</em><b>{E(x["nome"])}'
                        + (f'<small>{x["alberghi"]} alberghi letti</small>' if "alberghi" in x else f'<small>{E(x["nota"])}</small>' if "nota" in x else "")
                        + f'</b><i><u></u></i><span>{fmt(x["valore"])}</span></li>' for j, x in enumerate(voci, 1))
         on = " on" if i == 0 else ""
@@ -217,6 +217,9 @@ def main():
     if os.path.abspath(src) != os.path.abspath(DATI):
         for f in ("osservatorio.json", "vie.json", "mappa.json", "hotel.json"):
             shutil.copy(os.path.join(src, f), os.path.join(DATI, f))
+        if os.path.isdir(os.path.join(src, "schede")):  # una scheda per albergo letto: conversazione e report pubblici
+            shutil.rmtree(os.path.join(DATI, "schede"), ignore_errors=True)
+            shutil.copytree(os.path.join(src, "schede"), os.path.join(DATI, "schede"))
     with open(os.path.join(DATI, "osservatorio.json"), encoding="utf-8") as f:
         d = json.load(f)
     with open(os.path.join(DATI, "vie.json"), encoding="utf-8") as f:
@@ -226,7 +229,8 @@ def main():
         d["mappa_wh"] = f'{m["w"]}/{m["h"]}'
     # /assets/ resta in cache un anno: la pagina chiede i file dei dati con una versione che cambia quando cambia il contenuto
     h = hashlib.sha1()
-    for f in ("vie.json", "mappa.json", "hotel.json"):
+    schede = sorted(os.path.join("schede", x) for x in os.listdir(os.path.join(DATI, "schede"))) if os.path.isdir(os.path.join(DATI, "schede")) else []
+    for f in ["vie.json", "mappa.json", "hotel.json"] + schede:
         with open(os.path.join(DATI, f), "rb") as x:
             h.update(x.read())
     d["ver"] = h.hexdigest()[:10]

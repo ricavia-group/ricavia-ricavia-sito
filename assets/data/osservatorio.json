@@ -462,52 +462,62 @@
    {
     "nome": "Sophie Terrace Hotel",
     "valore": 9.0,
-    "nota": "Esquilino · Termini · 3 stelle · 2.452 recensioni"
+    "nota": "Esquilino · Termini · 3 stelle · 2.452 recensioni",
+    "id": "369541"
    },
    {
     "nome": "Room Mate Collection Filippo, Rome-Fontana di Trevi",
     "valore": 8.8,
-    "nota": "Centro storico · 4 stelle · 1.271 recensioni"
+    "nota": "Centro storico · 4 stelle · 1.271 recensioni",
+    "id": "369386"
    },
    {
     "nome": "Harry's Bar Trevi Hotel & Restaurant",
     "valore": 8.8,
-    "nota": "Centro storico · 5 stelle · 1.068 recensioni"
+    "nota": "Centro storico · 5 stelle · 1.068 recensioni",
+    "id": "370026"
    },
    {
     "nome": "Palazzo Venere",
     "valore": 8.8,
-    "nota": "Centro storico · 4 stelle · 548 recensioni"
+    "nota": "Centro storico · 4 stelle · 548 recensioni",
+    "id": "369841"
    },
    {
     "nome": "Hotel Des Artistes Roma",
     "valore": 8.5,
-    "nota": "Esquilino · Termini · 2 stelle · 1.530 recensioni"
+    "nota": "Esquilino · Termini · 2 stelle · 1.530 recensioni",
+    "id": "369951"
    },
    {
     "nome": "Hotel Lunetta",
     "valore": 8.5,
-    "nota": "Centro storico · 4 stelle · 1.153 recensioni"
+    "nota": "Centro storico · 4 stelle · 1.153 recensioni",
+    "id": "369894"
    },
    {
     "nome": "CC Palace Hotel",
     "valore": 8.5,
-    "nota": "Esquilino · Termini · 4 stelle · 1.122 recensioni"
+    "nota": "Esquilino · Termini · 4 stelle · 1.122 recensioni",
+    "id": "369711"
    },
    {
     "nome": "Otivm Hotel",
     "valore": 8.2,
-    "nota": "Centro storico · 4 stelle · 1.009 recensioni"
+    "nota": "Centro storico · 4 stelle · 1.009 recensioni",
+    "id": "369407"
    },
    {
     "nome": "Hotel Amalfi",
     "valore": 8.2,
-    "nota": "Monti · 3 stelle · 998 recensioni"
+    "nota": "Monti · 3 stelle · 998 recensioni",
+    "id": "369431"
    },
    {
     "nome": "Terrace Pantheon Relais",
     "valore": 8.2,
-    "nota": "Centro storico · 4 stelle · 744 recensioni"
+    "nota": "Centro storico · 4 stelle · 744 recensioni",
+    "id": "402151"
    }
   ]
  },
