@@ -89,7 +89,7 @@ def hero(d):
 </div>
 <div class="o2-cnt">{"".join(f'<div class="ar" style="--d:{.1 + i * .08:.2f}s"><b data-n="{n}">{num(n)}</b><span>{E(t)}</span></div>' for i, (n, t) in enumerate(cont))}</div>
 </div></section>
-<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o2-prezzi">Prezzi</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-zone">Zone</a><a href="#o2-flussi">Domanda</a><a href="#o2-vie">Vie</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-metodo">Metodo</a></div></nav>'''
+<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-prezzi">Prezzi</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-zone">Zone</a><a href="#o2-flussi">Domanda</a><a href="#o2-vie">Vie</a><a href="#o2-metodo">Metodo</a></div></nav>'''
 
 
 def prezzi(d):
@@ -213,24 +213,24 @@ def hotel():
     passi = [("Scrivi il nome", "Lo troviamo nel registro di Roma Capitale"),
              ("Scegliamo i competitor", "Le strutture ricettive più vicine, simili per tipo e dimensione"),
              ("Leggiamo il mercato", "Voti, recensioni e prezzi su Booking, con fonte e data"),
-             ("Ricevi il report", "Sei aree, un voto per ognuna e tre priorità")]
+             ("Ricevi il report", "Un voto per area: 4 aree oggi, Canali e Sito in arrivo")]
     tab = [("Competitor A", "9,1", "205 €"), ("Competitor B", "8,9", "198 €"), ("Hotel Esempio", "8,8", "138 €"), ("Competitor C", "8,6", "184 €")]
     righe = "".join(f'<div{" class=you" if n == "Hotel Esempio" else ""}><span>{n}</span><span>{v}</span><span>{p}</span></div>' for n, v, p in tab)
     return f'''<section class="o2-sec ap-dark2 o2-dk" id="o2-hotel"><div class="wrap"><div class="o2-hg2">
 <div><div class="o2-sh"><span class="o2-tag ar">Hotel Score</span><h2 class="ar">E il tuo hotel,<br>{g("rispetto ai competitor?")}</h2>
-<p class="ar">Scrivi il nome del tuo hotel: scegliamo le strutture ricettive più vicine e simili, leggiamo voti e prezzi e ti mandiamo l'Hotel Score con tre priorità. Gratis</p></div>
+<p class="ar">Scrivi il nome del tuo hotel: scegliamo le strutture ricettive più vicine e simili, leggiamo voti e prezzi e ti mandiamo l'Hotel Score con le cose da guardare. Gratis</p></div>
 <ol class="o2-st">{"".join(f'<li class="ar" style="--d:{.1 + i * .08:.2f}s"><em>{i + 1:02d}</em><b>{a}</b><span>{b}</span></li>' for i, (a, b) in enumerate(passi))}</ol>
 <a class="ap-btn solid ar" href="#pg-pagella">Calcola l'Hotel Score <span class="arr">→</span></a></div>
 <div class="o2-chat" id="o2Chat" aria-label="Anteprima della conversazione dell'Hotel Score, con valori illustrativi"><small>Anteprima · valori illustrativi</small>
 <p class="q">Come si chiama il tuo hotel?</p><p class="a">Hotel Esempio</p>
 <p class="q">Ho trovato Hotel Esempio, a Monti: 24 camere, tre stelle. Ho letto 10 strutture ricettive simili, tra le più vicine</p>
 <div class="q o2-ct"><div><span>Struttura ricettiva</span><span>Voto</span><span>Sabato</span></div>{righe}</div>
-<p class="q">Il sabato hai il prezzo più basso del gruppo, con recensioni tra le migliori. Ti mando il report con le tre priorità?</p></div>
+<p class="q">Il sabato hai il prezzo più basso del gruppo, con recensioni tra le migliori. Ti mando il report completo?</p></div>
 </div></div></section>'''
 
 
 def metodo():
-    regole = [("Le sei aree dell'Hotel Score", "Prezzi, Canali, Sito e vendita diretta, Reputazione, Foto e contenuti, Posizionamento. La media compare solo con almeno 4 voti su 6"),
+    regole = [("Le sei aree dell'Hotel Score", "Prezzi, Canali, Sito e vendita diretta, Reputazione, Foto e contenuti, Posizionamento. La media compare solo con almeno 4 voti su 6. Oggi calcoliamo Prezzi, Reputazione, Foto e Posizionamento: Canali e Sito sono in arrivo"),
               ("Ogni numero con fonte e data", "Accanto a ogni dato il giorno della lettura. Un dato che manca è dichiarato, mai stimato"),
               ("Valori mediani, mai medie", "Metà degli alberghi sta sopra, metà sotto. Un valore mediano compare solo con almeno 5 alberghi letti"),
               ("Il competitive set", "Le strutture ricettive più vicine, con stesso tipo, categoria vicina e dimensione simile"),

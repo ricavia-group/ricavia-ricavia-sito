@@ -5689,3 +5689,12 @@ html.o2-nosc{overflow:hidden}
 .o2-rco li button{flex:none;border:1px solid var(--o2l);background:none;color:var(--o2t);border-radius:999px;padding:5px 12px;font:600 12px var(--zf);cursor:pointer}
 .o2-rco li button:hover{background:rgba(255,255,255,.1)}
 .o2-rco li.no>span,.o2-rco li.no>b{opacity:.4;text-decoration:line-through}
+
+/* A2 revisione 21/11: sul telefono l'header nasconde "Hotel Score gratuito"; la barra in basso lo tiene sempre visibile */
+.z-mbar{display:none}
+@media(max-width:760px){
+  .z-mbar{display:block;position:fixed;z-index:8000;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:14px 20px;border-radius:99px;background:var(--zink);color:#fff;font:600 15px var(--zf);text-align:center;text-decoration:none;box-shadow:0 14px 34px -14px rgba(11,13,18,.55)}
+  .z-mbar:hover,.z-mbar:active{background:var(--zgr);background-color:var(--zink)}
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+  .menu-open .z-mbar,.mp-pg-pagella .z-mbar,.mp-apertura .z-mbar,html:has(#pg-pagella.on) .z-mbar,html:has(#apertura.on) .z-mbar,html:has(.o2-rep:not([hidden])) .z-mbar{display:none}
+}

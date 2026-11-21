@@ -12,6 +12,10 @@ OUT = os.path.join(ROOT, 'site')
 sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import journal
 DOMAIN = 'https://ricavia.com'
+# 13.1 e 14.1 della revisione del 21/11: chi arriva dalle mail su un articolo trova subito l'Hotel Score; la call è la seconda scelta
+JR_CTA = ('<div class="jr-cta"><p>Come sta il tuo hotel rispetto ai competitor della tua zona?</p>'
+          '<a class="z-btn" href="/hotel-score/">Il tuo Hotel Score gratuito <span class="arr">→</span></a>'
+          '<a class="jr-cta2" href="/contatti/">Oppure prenota una call conoscitiva</a></div>')
 JOURNAL = os.environ.get('RICAVIA_JOURNAL', os.path.join(ROOT, 'journal'))
 with open(os.path.join(ROOT, 'tools', 'seo.json'), encoding='utf-8') as f:
     SEO = json.load(f)
@@ -296,11 +300,12 @@ def page(pid, slug, title):
     content = pages[pid]
     cls = 'mp'
     if not is_home:
-        cls += ' mp-in'
+        cls += ' mp-in mp-' + pid  # la pagina corrente, per le regole che valgono su una sola pagina (barra Hotel Score)
         content = content.replace(' aria-hidden="true"', ' aria-hidden="false"', 1)
         content = re.sub(r'class="(app pgv|ctp pgv)"', lambda m: 'class="%s on"' % m.group(1), content, count=1)
         content = content.replace(' data-lenis-prevent', '', 1)
     if pid == 'pg-journal':
+        content = content.replace('<div class="jr-rd" id="jrRd"', JR_CTA + '<div class="jr-rd" id="jrRd"', 1)
         content = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
                          lambda m: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (m.group(1), ART_URL.get(m.group(1), '#'), m.group(2)), content)
     if pid == 'pg-journal' and NUOVI:
@@ -410,7 +415,7 @@ def art_page(aid, art):
             {"@type": "ListItem", "position": 3, "name": title, "item": url}]}]}
     ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-journal'], re.S)
     parts = chrome + '<main class="jr-pgm"><a class="jr-back" href="/journal/">← Il Journal</a><article class="jr-art">' + body_html + '</article>' + \
-        '<div class="jr-cta"><p>Vuoi applicare questi dati al tuo hotel?</p><a class="z-btn" href="/contatti/">Prenota una call conoscitiva <span class="arr">→</span></a></div></main>' + \
+        JR_CTA + '</main>' + \
         (ft.group(0) if ft else '') + scripts
     parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-journal'))
     # ancore che negli articoli puntano a sezioni dell'Osservatorio
@@ -460,8 +465,8 @@ def archive_page(mese, articoli):
             {"@type": "ListItem", "position": 3, "name": h1, "item": url}]}]}
     ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-journal'], re.S)
     parts = chrome + '<main class="jr-pgm">' + \
-        '<div class="jr-arp"><a class="jr-back" href="/journal/">← Il Journal</a><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div></main>' % (
-            html.escape(h1), ''.join(journal.scheda(a) for a in articoli)) + (ft.group(0) if ft else '') + scripts
+        '<div class="jr-arp"><a class="jr-back" href="/journal/">← Il Journal</a><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div>%s</main>' % (
+            html.escape(h1), ''.join(journal.scheda(a) for a in articoli), JR_CTA) + (ft.group(0) if ft else '') + scripts
     parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-journal'))
     meta = '''<title>{t}</title>
 <meta name="description" content="{d}">

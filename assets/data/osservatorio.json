@@ -13,8 +13,8 @@
   "martedi": 129,
   "sabato": 151,
   "evento": 311,
-  "rincaro_sabato": 0.144,
-  "rincaro_evento": 1.283,
+  "rincaro_sabato": 0.171,
+  "rincaro_evento": 1.411,
   "esauriti_evento": 0.33,
   "tariffa_ferma": 0.184,
   "voto": 8.3,
@@ -254,53 +254,53 @@
   "aree_rincaro": [
    {
     "nome": "Trastevere",
-    "valore": 0.305,
+    "valore": 0.762,
     "alberghi": 10
    },
    {
-    "nome": "Pigna",
-    "valore": 0.28,
+    "nome": "Campo Marzio",
+    "valore": 0.541,
+    "alberghi": 27
+   },
+   {
+    "nome": "Regola",
+    "valore": 0.505,
     "alberghi": 8
    },
    {
     "nome": "Monti",
-    "valore": 0.256,
+    "valore": 0.376,
     "alberghi": 57
    },
    {
-    "nome": "Campo Marzio",
-    "valore": 0.198,
-    "alberghi": 27
-   },
-   {
-    "nome": "Colonna",
-    "valore": 0.191,
-    "alberghi": 27
-   },
-   {
-    "nome": "Sant'Eustachio",
-    "valore": 0.176,
-    "alberghi": 11
+    "nome": "Trevi",
+    "valore": 0.306,
+    "alberghi": 28
    },
    {
     "nome": "Castro Pretorio",
-    "valore": 0.171,
+    "valore": 0.286,
     "alberghi": 167
    },
    {
-    "nome": "Trionfale",
-    "valore": 0.17,
+    "nome": "Pigna",
+    "valore": 0.26,
+    "alberghi": 8
+   },
+   {
+    "nome": "Colonna",
+    "valore": 0.243,
+    "alberghi": 27
+   },
+   {
+    "nome": "Gianicolense",
+    "valore": 0.237,
     "alberghi": 10
    },
    {
-    "nome": "Aurelio",
-    "valore": 0.168,
-    "alberghi": 16
-   },
-   {
-    "nome": "Prati",
-    "valore": 0.167,
-    "alberghi": 26
+    "nome": "Ludovisi",
+    "valore": 0.234,
+    "alberghi": 12
    }
   ],
   "aree_evento": [
@@ -547,8 +547,8 @@
     "martedi": 196,
     "sabato": 271,
     "evento": 533,
-    "rincaro_sabato": 0.196,
-    "rincaro_evento": 1.4,
+    "rincaro_sabato": 0.383,
+    "rincaro_evento": 1.719,
     "esauriti_evento": 0.317,
     "tariffa_ferma": 0.077,
     "voto": 8.7,
@@ -580,8 +580,8 @@
     "martedi": 141,
     "sabato": 194,
     "evento": 362,
-    "rincaro_sabato": 0.256,
-    "rincaro_evento": 1.613,
+    "rincaro_sabato": 0.376,
+    "rincaro_evento": 1.567,
     "esauriti_evento": 0.333,
     "tariffa_ferma": 0.026,
     "voto": 8.6,
@@ -612,7 +612,7 @@
     "martedi": 130,
     "sabato": 229,
     "evento": null,
-    "rincaro_sabato": 0.305,
+    "rincaro_sabato": 0.762,
     "rincaro_evento": null,
     "esauriti_evento": 0.571,
     "tariffa_ferma": 0.0,
@@ -645,8 +645,8 @@
     "martedi": 135,
     "sabato": 162,
     "evento": 372,
-    "rincaro_sabato": 0.166,
-    "rincaro_evento": 1.386,
+    "rincaro_sabato": 0.2,
+    "rincaro_evento": 1.756,
     "esauriti_evento": 0.36,
     "tariffa_ferma": 0.125,
     "voto": 8.2,
@@ -678,8 +678,8 @@
     "martedi": 105,
     "sabato": 132,
     "evento": 286,
-    "rincaro_sabato": 0.153,
-    "rincaro_evento": 1.523,
+    "rincaro_sabato": 0.257,
+    "rincaro_evento": 1.724,
     "esauriti_evento": 0.364,
     "tariffa_ferma": 0.157,
     "voto": 7.9,
@@ -708,7 +708,7 @@
     "martedi": 126,
     "sabato": 116,
     "evento": null,
-    "rincaro_sabato": 0.0,
+    "rincaro_sabato": -0.079,
     "rincaro_evento": null,
     "esauriti_evento": 0.4,
     "tariffa_ferma": 0.6,
@@ -739,8 +739,8 @@
     "martedi": 127,
     "sabato": 127,
     "evento": 194,
-    "rincaro_sabato": 0.074,
-    "rincaro_evento": 0.764,
+    "rincaro_sabato": 0.0,
+    "rincaro_evento": 0.528,
     "esauriti_evento": 0.125,
     "tariffa_ferma": 0.167,
     "voto": 7.8,
@@ -771,8 +771,8 @@
     "martedi": 143,
     "sabato": 148,
     "evento": 313,
-    "rincaro_sabato": 0.0,
-    "rincaro_evento": 0.767,
+    "rincaro_sabato": 0.035,
+    "rincaro_evento": 1.189,
     "esauriti_evento": 0.375,
     "tariffa_ferma": 0.556,
     "voto": 9.0,
@@ -804,8 +804,8 @@
     "martedi": 154,
     "sabato": 190,
     "evento": 452,
-    "rincaro_sabato": 0.048,
-    "rincaro_evento": 1.597,
+    "rincaro_sabato": 0.234,
+    "rincaro_evento": 1.935,
     "esauriti_evento": 0.3,
     "tariffa_ferma": 0.4,
     "voto": 8.2,
