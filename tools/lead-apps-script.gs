@@ -55,12 +55,30 @@ function doPost(e) {
       (d.oggetto || '') + '\n\nPunteggio: ' + (p.punti || 0) + '/100, fascia ' + (p.fascia || '') +
         '\n\n' + Object.keys(c).map(function (k) { return k + ': ' + c[k]; }).join('\n') +
         '\n\nFoglio: ' + ss.getUrl());
+    mandaReport(v('Email'), v('Report'));
     return risposta({ok: true});
   } catch (err) {
     return risposta({ok: false});
   } finally {
     lock.releaseLock();
   }
+}
+
+/**
+ * Hotel Score dall'Osservatorio: all'albergatore arriva solo il link al suo report (fermata 3 del giro).
+ * Testo fisso e link controllato: chi usa il modulo non può far partire da info@ un messaggio scritto da lui.
+ */
+function mandaReport(email, link) {
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email || '')) return;
+  if (!/^https:\/\/(www\.)?ricavia\.com\/osservatorio\/\?report=\d{1,10}$/.test(link || '')) return;
+  var testo = 'Buongiorno,\n\nil report dell\'Hotel Score del tuo hotel è pronto. Si apre da questo link e si aggiorna a ogni nuova lettura dei dati:\n\n' +
+    link + '\n\nVuoi leggerlo insieme a noi? Rispondi a questa email: fissiamo venti minuti su Google Meet.\n\nOsservatorio Ricavia\n\n' +
+    'Hai ricevuto questa email perché hai chiesto il report sull\'Osservatorio Ricavia.';
+  var html = '<p>Buongiorno,</p><p>il report dell\'Hotel Score del tuo hotel è pronto. Si apre da questo link e si aggiorna a ogni nuova lettura dei dati</p>' +
+    '<p><a href="' + link + '" style="display:inline-block;background:#1D1D1F;color:#fff;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600">Apri il report</a></p>' +
+    '<p>Vuoi leggerlo insieme a noi? Rispondi a questa email: fissiamo venti minuti su Google Meet</p><p>Osservatorio Ricavia</p>' +
+    '<p style="color:#6E6E73;font-size:12px">Hai ricevuto questa email perché hai chiesto il report sull\'Osservatorio Ricavia</p>';
+  GmailApp.sendEmail(email, 'Il report del tuo hotel · Osservatorio Ricavia', testo, {htmlBody: html, name: 'Osservatorio Ricavia'});
 }
 
 function risposta(o) {
