@@ -6,7 +6,7 @@ var cf=document.getElementById('ctForm'),cv=sessionStorage.getItem('o2-msg');if(
 
 /* il simulatore di Nuova apertura (10.5): budget e camere → zone compatibili e ricavo stimato. Dati e formula in tools/osservatorio.py, simulatore() */
 var sim=document.getElementById('ozSim');if(sim)try{var SZ=JSON.parse(sim.getAttribute('data-z')),OC=+sim.getAttribute('data-occ'),sf=sim.querySelector('form'),stb=sim.querySelector('tbody'),sn=sim.querySelector('.oz-sn');
-  var mil=function(x){return x>=1e6?(Math.round(x/1e5)/10).toFixed(1).replace('.',',')+' mln €':String(Math.round(x/1e3)*1e3).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'};
+  var mil=function(x){x=Math.round(x/1e3)*1e3;return x>=1e6?(Math.round(x/1e5)/10).toFixed(1).replace('.',',')+' mln €':String(Math.round(x/1e3)*1e3).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'};
   var calc=function(){var b=Math.max(0,+sf.b.value||0),c=Math.max(1,Math.round(+sf.c.value||1)),mq=Math.max(10,+sf.m.value||35);
     var r=SZ.map(function(z){var co=c*mq*z[2],ri=c*z[1]*365*OC;return {n:z[0],co:co,ri:ri,ok:co<=b}}).sort(function(x,y){return (y.ok-x.ok)||(y.ri/y.co-x.ri/x.co)}),k=r.filter(function(x){return x.ok}).length;
     stb.innerHTML=r.map(function(x){return '<tr'+(x.ok?'':' class="oz-no"')+'><th scope="row">'+x.n+'</th><td>'+mil(x.co)+'</td><td>'+mil(x.ri)+'</td><td><b>'+(x.ri/x.co*100).toFixed(1).replace('.',',')+'%</b></td><td>'+(x.ok?'Nel budget':'Oltre il budget')+'</td></tr>'}).join('');

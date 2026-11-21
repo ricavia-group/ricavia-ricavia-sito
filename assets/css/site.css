@@ -5681,3 +5681,5 @@ html.o2-nosc{overflow:hidden}
 .o2-cf input[type=url]{width:100%;box-sizing:border-box;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:var(--o2t);font:500 14.5px var(--zf)}
 .o2-nf .o2-nb button{border:0;background:#fff;color:var(--zink)}
 .o2-nf .o2-ok{color:var(--o2t);font-weight:600}
+#apertura .oz-sim .ix-sh{display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:760px}
+#apertura .oz-sim .ix-sh>*{margin:0;max-width:none;width:auto}
