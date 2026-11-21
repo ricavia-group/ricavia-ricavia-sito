@@ -178,7 +178,7 @@ function senzaDati(h){return '<form class="o2-cf o2-nb" data-n="'+esc(bel(h.n))+
   '<input type="email" name="em" autocomplete="email" placeholder="nome@tuohotel.it">'+
   '<label class="o2-ck"><input type="checkbox" name="pv"><span>Ho letto l’<a href="#pg-privacy">informativa privacy</a> e accetto di essere ricontattato</span></label>'+
   '<button type="submit">Preparate il mio report →</button><p class="o2-er" hidden></p></form>'}
-nf.addEventListener('submit',function(e){var fm=e.target.closest('.o2-nb');if(!fm)return;e.preventDefault();var er=fm.querySelector('.o2-er'),em=fm.em.value.trim(),ln=fm.ln.value.trim().slice(0,300),
+pg.addEventListener('submit',function(e){var fm=e.target.closest('.o2-nb');if(!fm)return;e.preventDefault();var er=fm.querySelector('.o2-er'),em=fm.em.value.trim(),ln=fm.ln.value.trim().slice(0,300),
     dv=[].slice.call(fm.querySelectorAll('[name=dv]:checked')).map(function(x){return x.value});
   var no=function(t){er.textContent=t;er.hidden=false};
   if(!dv.length)return no('Scegli almeno un canale');if(!emOk(em))return no('Scrivi la tua email');if(!fm.pv.checked)return no('Per usare la tua email serve la spunta sulla privacy');
@@ -267,7 +267,7 @@ if(chatEl){chatEl.addEventListener('click',function(e){var b=e.target.closest('[
     if(c==='si'){bolla('Sì, è il mio','a');passo2(s)}
     else if(c==='no'){bolla('No, non è il mio','a');bolla('Scrivi il nome del tuo hotel nella ricerca qui sopra: ti mostro i suggerimenti');var q=f&&f.q;if(q){vai(f,160);setTimeout(function(){q.focus()},400)}}
     else if(c==='rep')apriReport(s.id_comune)});
-  chatEl.addEventListener('submit',function(e){var fm=e.target.closest('.o2-cf');if(!fm)return;e.preventDefault();var s=chatEl._s,em=fm.em.value.trim(),er=fm.querySelector('.o2-er'),n=fm.dataset.f;
+  chatEl.addEventListener('submit',function(e){var fm=e.target.closest('.o2-cf');if(!fm||fm.classList.contains('o2-nb')||fm.classList.contains('o2-cq'))return;e.preventDefault();var s=chatEl._s,em=fm.em.value.trim(),er=fm.querySelector('.o2-er'),n=fm.dataset.f;
     var no=function(t){er.textContent=t;er.hidden=false};
     if(n==='2'&&!em)return no('Scrivi la tua email');
     if(em&&!emOk(em))return no('Controlla l’indirizzo email');
@@ -275,6 +275,22 @@ if(chatEl){chatEl.addEventListener('click',function(e){var b=e.target.closest('[
     var w=fm.parentNode;w.parentNode.removeChild(w);
     if(em){chatEl._em=em;invia(em,s);bolla(esc(em),'a')}else bolla('Mostrami i competitor','a');
     if(n==='1')passo3(s);else finale(s,em)})}
+
+/* la conversazione parte anche dalla sua casella: scrivi il nome, scegli il tuo hotel, vedi i competitor */
+var cq=$('#o2ChatQ');
+if(cq){var cs=cq.querySelector('.o2-sug'),ci=cq.q;
+  var lista=function(){var t=ci.value.trim(),r=t.length<3?[]:trovaHotel(t).slice(0,5);
+    cs.innerHTML=r.map(function(i){return '<button type="button" data-ci="'+i+'">'+esc(bel(HOT[i].n))+'<small>'+esc(HOT[i].t||'albergo')+' · '+esc(HOT[i].i)+'</small></button>'}).join('');cs.hidden=!r.length};
+  var scegli=function(i){var h=HOT[i];cs.hidden=true;if(h.r)return apriChat(h.id);
+    var w=cq.parentNode;if(w)w.removeChild(cq);bolla(esc(bel(h.n)),'a');bolla(senzaDati(h),'q o2-qf')};
+  ci.addEventListener('focus',function(){hotel().then(lista)});
+  ci.addEventListener('input',function(){hotel().then(lista)});
+  ci.addEventListener('blur',function(){setTimeout(function(){cs.hidden=true},150)});
+  cs.addEventListener('mousedown',function(e){e.preventDefault()});
+  cs.addEventListener('click',function(e){var b=e.target.closest('[data-ci]');if(b)scegli(+b.dataset.ci)});
+  cq.addEventListener('submit',function(e){e.preventDefault();e.stopPropagation();var t=ci.value.trim();if(!t){ci.focus();return}
+    hotel().then(function(){var r=trovaHotel(t);if(r.length)return scegli(r[0]);
+      bolla(esc(t),'a');bolla('Non trovo «'+esc(t)+'» tra le '+num(HOT.length)+' strutture ricettive del registro di Roma Capitale. Prova a scriverlo in un altro modo, oppure <button type="button" class="o2-lk" data-o2-msg="Vorrei l’Hotel Score di '+esc(t)+'">scrivici</button>')})})}
 
 /* il report: si apre dalla conversazione o dal link nell'email (/osservatorio/?report=ID) */
 var rep=null;

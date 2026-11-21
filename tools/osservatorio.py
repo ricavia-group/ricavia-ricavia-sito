@@ -214,18 +214,14 @@ def hotel():
              ("Scegliamo i competitor", "Le strutture ricettive più vicine, simili per tipo e dimensione"),
              ("Leggiamo il mercato", "Voti, recensioni e prezzi su Booking, con fonte e data"),
              ("Ricevi il report", "Un voto per area: 4 aree oggi, Canali e Sito in arrivo")]
-    tab = [("Competitor A", "9,1", "205 €"), ("Competitor B", "8,9", "198 €"), ("Hotel Esempio", "8,8", "138 €"), ("Competitor C", "8,6", "184 €")]
-    righe = "".join(f'<div{" class=you" if n == "Hotel Esempio" else ""}><span>{n}</span><span>{v}</span><span>{p}</span></div>' for n, v, p in tab)
     return f'''<section class="o2-sec ap-dark2 o2-dk" id="o2-hotel"><div class="wrap"><div class="o2-hg2">
 <div><div class="o2-sh"><span class="o2-tag ar">Hotel Score</span><h2 class="ar">E il tuo hotel,<br>{g("rispetto ai competitor?")}</h2>
 <p class="ar">Scrivi il nome del tuo hotel: scegliamo le strutture ricettive più vicine e simili, leggiamo voti e prezzi e ti mandiamo l'Hotel Score con le cose da guardare. Gratis</p></div>
 <ol class="o2-st">{"".join(f'<li class="ar" style="--d:{.1 + i * .08:.2f}s"><em>{i + 1:02d}</em><b>{a}</b><span>{b}</span></li>' for i, (a, b) in enumerate(passi))}</ol>
 <a class="ap-btn solid ar" href="#pg-pagella">Calcola l'Hotel Score <span class="arr">→</span></a></div>
-<div class="o2-chat" id="o2Chat" aria-label="Anteprima della conversazione dell'Hotel Score, con valori illustrativi"><small>Anteprima · valori illustrativi</small>
-<p class="q">Come si chiama il tuo hotel?</p><p class="a">Hotel Esempio</p>
-<p class="q">Ho trovato Hotel Esempio, a Monti: 24 camere, tre stelle. Ho letto 10 strutture ricettive simili, tra le più vicine</p>
-<div class="q o2-ct"><div><span>Struttura ricettiva</span><span>Voto</span><span>Sabato</span></div>{righe}</div>
-<p class="q">Il sabato hai il prezzo più basso del gruppo, con recensioni tra le migliori. Ti mando il report completo?</p></div>
+<div class="o2-chat" id="o2Chat" aria-label="Conversazione dell'Hotel Score" aria-live="polite"><small>Hotel Score · dati veri letti su Booking</small>
+<p class="q show">Come si chiama il tuo hotel? Scrivi il nome o il CIN: ti mostro i tuoi competitor veri, con voti e prezzi</p>
+<form class="o2-cf o2-cq" id="o2ChatQ" novalidate><div class="o2-cqi"><input type="search" name="q" autocomplete="off" aria-label="Nome del tuo hotel o CIN" placeholder="Nome del tuo hotel o CIN"><div class="o2-sug" hidden></div></div><button type="submit">Cerca →</button></form></div>
 </div></div></section>'''
 
 
@@ -324,7 +320,7 @@ def pagina(d):
     dati = {"zone": d["zone"], "date": d["date"], "letti": d["alberghi_letti"], "agg": d["aggiornato"], "dal": d["letture_dal"],
             "vie": d["vie"], "fonte": fonti(d), "ver": d.get("ver", ""), "hs": d.get("hs_tutti", [])}
     js = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    return (hero(d) + prezzi(d) + classifiche(d) + zone(d) + flussi(d) + vie(d) + hotel() + metodo()
+    return (hero(d) + hotel() + prezzi(d) + classifiche(d) + zone(d) + flussi(d) + vie(d) + metodo()
             + '<a href="#pg-pagella" id="o2Hs" hidden>Hotel Score</a><a href="#contatti" id="o2Ct" hidden>Contatti</a>'
             + f'<script type="application/json" id="o2Dati">{js}</script>')
 
