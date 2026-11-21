@@ -298,5 +298,17 @@
     "bloccato_fino": "2026-12-04",
     "fonte_nuova_richiesta": false,
     "pubblicato": false
+  },
+  {
+    "data": "2026-11-21",
+    "slug": "voli-brevi-cari-primavera-hotel-roma",
+    "tema": "carburante-tariffe-voli-brevi-primavera-2027",
+    "keyword": "voli brevi hotel Roma",
+    "categoria": "trasporti",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
