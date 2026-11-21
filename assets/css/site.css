@@ -5695,7 +5695,8 @@ html.o2-nosc{overflow:hidden}
 .o2-cqi{position:relative;min-width:0}
 .o2-cq input[type=search]{width:100%;box-sizing:border-box;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:var(--o2t);font:500 14.5px var(--zf);-webkit-appearance:none;appearance:none}
 .o2-cq .o2-sug{z-index:5}
-.o2-cq .o2-sug small{white-space:normal;text-align:right}
+.o2-cq .o2-sug button{flex-direction:column;align-items:flex-start;gap:2px}
+.o2-cq .o2-sug small{white-space:normal}
 @media(max-width:560px){.o2-cq{grid-template-columns:1fr}}
 
 /* A2 revisione 21/11: sul telefono l'header nasconde "Hotel Score gratuito"; la barra in basso lo tiene sempre visibile */
