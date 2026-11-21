@@ -248,25 +248,67 @@ function finale(s,em){bolla(em?'Fatto: il link al report sta arrivando a <b>'+es
   bolla('<div class="o2-ops"><button type="button" data-c="rep">Apri il report →</button><button type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per leggere insieme il report di '+esc(s.nome)+'">Prenota la call conoscitiva</button></div>','q o2-qo');
   bolla('Vuoi leggerlo con noi? Venti minuti su Google Meet, senza impegno')}
 function apriChat(id){if(!chatEl)return;chatEl.innerHTML='<small>Hotel Score · dati veri letti su Booking</small>';chatEl.classList.add('o2-vera');var nv=$('#o2Nav');vai(chatEl,(nv?(parseFloat(getComputedStyle(nv).top)||0)+nv.offsetHeight:90)+24);
-  schedaH(id).then(function(s){chatEl._s=s;chatEl._em='';
-    bolla('<b>'+esc(bel(s.nome))+'</b>, '+esc(s.indirizzo||'')+(s.zona_sito||s.zona?', '+esc(s.zona_sito||s.zona):'')+': '+(s.camere?s.camere+' camere, ':'')+(s.stelle?s.stelle+' stelle':'albergo'));passo2(s)})
+  schedaH(id).then(function(s){chatEl._s=s;chatEl._em='';chatEl._fatte=[];presenta(s)})
   .catch(function(){bolla('Non riesco a caricare i dati di questo hotel. Riprova tra poco, oppure <button type="button" class="o2-lk" data-o2-msg="Non riesco ad aprire l’Hotel Score del mio hotel">scrivici</button>')})}
-function passo2(s){var n=(s.set||{}).quanti||0;
-  if(!s.confronto)bolla('Intorno a te ho letto '+n+' alberghi simili su Booking: per un confronto onesto ne servono almeno 5. Ti mostro i tuoi numeri e quelli che ho');
-  else bolla('Ho letto i dati di '+n+' alberghi simili al tuo, tra i più vicini'+((s.set||{}).piu_lontano_m?' (il più lontano a '+num(s.set.piu_lontano_m)+' metri)':'')+'. Vuoi vedere i tuoi competitor?');
-  if(Date.now()-new Date(s.letto_il).getTime()>7*864e5)bolla('I dati del tuo hotel sono del '+gg(s.letto_il)+': te li mostro con la loro data. Il tuo hotel passa in cima alle prossime letture');
-  bolla(moduloEm(1,false),'q o2-qf')}
-function passo3(s){var em=chatEl._em;
-  bolla(tabella(s),'q o2-qt');
-  var fr=[];if(s.posizione)fr.push('Per voto su Booking sei '+s.posizione+'° su '+s.su+' tra te e i tuoi competitor');if(s.fatti&&s.fatti[0])fr.push(esc(s.fatti[0]));
-  if(fr.length)bolla(fr.join('. '));
-  if(em)finale(s,em);else{bolla('Vuoi il report completo, con l’Hotel Score e le cose da guardare?');bolla(moduloEm(2,true),'q o2-qf')}
-  bolla('Hai una domanda? <button type="button" class="o2-lk" data-o2-msg="Domanda sull’Hotel Score di '+esc(s.nome)+': ">Scrivici</button>','q o2-qn')}
+/* la chat guidata (George, 21/11): trovato l'hotel dice due cose vere, poi propone domande; ogni risposta suggerisce le successive;
+   dopo 3 risposte chiede l'email per l'analisi completa. Le risposte nascono dalla scheda dell'hotel (gli stessi numeri del report) */
+var DOPO_EMAIL=3;
+function presenta(s){var bk=s.booking||{},st=s.set||{},n=st.quanti||0;
+  bolla('Ho trovato <b>'+esc(bel(s.nome))+'</b>, '+esc(s.indirizzo||'')+(s.zona_sito||s.zona?', '+esc(s.zona_sito||s.zona):'')+': '+(s.camere?s.camere+' camere, ':'')+(s.stelle?s.stelle+' stelle':'albergo')+
+    (bk.voto?'. Su Booking hai <b>'+d1(bk.voto)+'</b>'+(bk.recensioni?' con '+num(bk.recensioni)+' recensioni':''):''));
+  bolla(s.confronto?'Ho già letto i tuoi '+n+' competitor, gli alberghi simili più vicini'+(st.piu_lontano_m?': il più lontano è a '+num(st.piu_lontano_m)+' metri da te':'')+'. Cosa vuoi sapere?'
+    :'Intorno a te ho letto solo '+n+' alberghi simili: per un confronto onesto ne servono almeno 5. Ti mostro quello che ho. Cosa vuoi sapere?');
+  if(Date.now()-new Date(s.letto_il).getTime()>7*864e5)bolla('I dati sono del '+gg(s.letto_il)+': il tuo hotel passa in cima alle prossime letture notturne');
+  offri(s,null)}
+function sopra(p){return p.prezzo!=null&&p.mediano!=null}
+function var1(a,b){return Math.round((a/b-1)*100)}
+/* le domande: quando ha senso farle (ok), la risposta (r) e le domande che vengono naturali dopo (poi) */
+var DOM={
+  classifica:{d:'Dove sei in classifica nella tua zona?',ok:function(s){return !!(s.scala&&s.hotel_score!=null)},poi:['competitor','score'],
+    r:function(s){var sc=s.scala,su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
+      return ['Per Hotel Score sei <b>'+sc.pos+'° su '+sc.su+'</b> alberghi a '+s.stelle+' stelle in '+esc(s.zona_sito||'')+(sc.pos<=10?': sei nella Top 10 della tua zona e della tua categoria':''),
+        su?(su.hs-s.hotel_score<0.05?'Sei a pari punteggio con l’albergo al '+su.pos+'° posto: davanti va chi ha più recensioni':'L’albergo al '+su.pos+'° posto ha '+d1(su.hs)+': ti servono <b>'+d1(su.hs-s.hotel_score)+' punti</b> per salire di un posto'):'Davanti a te non c’è nessuno']}},
+  competitor:{d:'Chi sono i tuoi competitor veri?',ok:function(s){return !!(s.competitor&&s.competitor.length)},poi:['prezzo','ospiti'],
+    r:function(s){return [[tabella(s),'q o2-qt'],s.posizione?'Per voto su Booking sei <b>'+s.posizione+'° su '+s.su+'</b> tra te e i tuoi competitor':null]}},
+  prezzo:{d:'Il tuo prezzo è giusto rispetto ai competitor?',ok:function(s){var m=pz(s,'martedi');return !!(m&&sopra(m))},poi:['capodanno','ospiti'],
+    r:function(s){var m=pz(s,'martedi'),b=pz(s,'sabato'),o=[];
+      o.push('Martedì '+gg(m.arrivo)+' chiedi <b>'+eu(m.prezzo)+'</b>, i tuoi competitor '+eu(m.mediano)+' (valore mediano)'+(m.piu_cari!=null?': <b>'+m.piu_cari+' su '+m.con_prezzo+'</b> sono più cari di te':''));
+      if(b&&sopra(b))o.push('Sabato '+gg(b.arrivo)+' chiedi '+eu(b.prezzo)+' contro '+eu(b.mediano)+(b.prezzo>m.prezzo?': il tuo weekend vale il '+var1(b.prezzo,m.prezzo)+'% più del martedì, quello dei competitor il '+var1(b.mediano,m.mediano)+'%':': il tuo sabato costa quanto il martedì, mentre i competitor salgono del '+var1(b.mediano,m.mediano)+'%'));
+      else if(b&&b.prezzo==null&&b.mediano!=null)o.push('Sabato '+gg(b.arrivo)+' su Booking non sei più in vendita: o sei già pieno, o hai chiuso la vendita. I tuoi competitor chiedono '+eu(b.mediano));
+      return o}},
+  ospiti:{d:'Cosa dicono gli ospiti di te rispetto agli altri?',ok:function(s){return !!(s.parziali&&s.parziali.filter(function(p){return p.tu!=null&&p.mediano!=null}).length>1)},poi:['punto','classifica'],
+    r:function(s){var P=s.parziali.filter(function(p){return p.tu!=null&&p.mediano!=null}).map(function(p){return {n:p.nome,tu:p.tu,m:p.mediano,d:(Math.round(p.tu*10)-Math.round(p.mediano*10))/10}}).sort(function(x,y){return y.d-x.d}),
+      best=P[0],worst=P[P.length-1],seg=function(x){return (x>0?'+':x<0?'−':'')+d1(Math.abs(x))};
+      return [best.d>0?'Gli ospiti ti premiano su <b>'+esc(best.n)+'</b>: '+d1(best.tu)+' contro '+d1(best.m)+' dei competitor, '+seg(best.d):'Il tema dove sei più vicino ai competitor è <b>'+esc(best.n)+'</b>: '+d1(best.tu)+' contro '+d1(best.m),
+        worst.d<0?'Il tema dove hai più margine è <b>'+esc(worst.n)+'</b>: '+d1(worst.tu)+' contro '+d1(worst.m)+', '+seg(worst.d)+'. È anche il voto che gli ospiti leggono prima di prenotare':'Su tutti i temi sei in linea o sopra i competitor']}},
+  capodanno:{d:'Sei pronto per Capodanno?',ok:function(s){var ev=pz(s,'evento'),m=pz(s,'martedi');return !!(ev&&ev.mediano!=null&&m&&m.mediano!=null)},poi:['prezzo','score'],
+    r:function(s){var ev=pz(s,'evento'),m=pz(s,'martedi'),o=['A Capodanno i tuoi competitor chiedono <b>'+eu(ev.mediano)+'</b> a notte, il '+var1(ev.mediano,m.mediano)+'% più del loro martedì'];
+      if(ev.prezzo!=null&&m.prezzo!=null)o.push('Tu chiedi '+eu(ev.prezzo)+', il '+var1(ev.prezzo,m.prezzo)+'% più del tuo martedì'+(ev.prezzo<ev.mediano?': sei sotto il gruppo':''));
+      else if(ev.prezzo==null)o.push('Su Booking a Capodanno non sei in vendita: o sei pieno, o non hai ancora aperto quelle date');
+      return o}},
+  score:{d:'Com’è il tuo Hotel Score?',ok:function(s){return s.hotel_score!=null},poi:['classifica','ospiti'],
+    r:function(s){var v=s.voti||{},A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto']].filter(function(x){return v[x[0]]!=null}).sort(function(x,y){return v[y[0]]-v[x[0]]});
+      return ['Il tuo Hotel Score è <b>'+d1(s.hotel_score)+' su 10</b>, media di '+A.length+' aree: '+A.map(function(x){return x[1]+' '+v[x[0]]}).join(', '),
+        'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]+'. Canali e Sito sono in arrivo']}},
+  punto:{d:'Quanto vale un punto di voto in più?',ok:function(s){return !!((s.booking||{}).voto&&s.voto&&s.voto.mediano!=null)},poi:['ospiti','prezzo'],
+    r:function(s){return ['Il tuo voto su Booking è '+d1(s.booking.voto)+', quello mediano dei tuoi competitor '+d1(s.voto.mediano),
+      'Uno studio della Cornell University stima circa l’11% di tariffa in più per un punto su una scala da 1 a 5: sulla scala di Booking, da 1 a 10, un punto vale circa la metà. È un ordine di grandezza']}}};
+var ORDINE=['classifica','competitor','prezzo','ospiti','capodanno','score','punto'];
+function offri(s,dopo){var fatte=chatEl._fatte,lista=((DOM[dopo]||{}).poi||[]).concat(ORDINE).filter(function(k,i,a){return a.indexOf(k)===i&&fatte.indexOf(k)<0&&DOM[k].ok(s)}).slice(0,3);
+  if(!lista.length)return;
+  bolla('<div class="o2-ops">'+lista.map(function(k){return '<button type="button" data-c="d:'+k+'">'+DOM[k].d+'</button>'}).join('')+'</div>','q o2-qo')}
+function rispondi(s,k){var q=DOM[k];if(!q)return;chatEl._fatte.push(k);bolla(q.d,'a');
+  q.r(s).forEach(function(x){if(!x)return;if(typeof x==='string')bolla(x);else bolla(x[0],x[1])});
+  var n=chatEl._fatte.length;
+  if(!chatEl._em&&n===DOPO_EMAIL){var tot=ORDINE.filter(function(k2){return DOM[k2].ok(s)}).length;
+    bolla('Ti ho mostrato '+n+' cose su '+tot+'. L’analisi completa, con l’Hotel Score per ogni area, le cose da guardare, i prezzi di Capodanno e il report in PDF, te la mando via email');
+    bolla(moduloEm(2,true),'q o2-qf');return}
+  offri(s,k)}
 if(chatEl){chatEl.addEventListener('click',function(e){var b=e.target.closest('[data-c]');if(!b)return;var s=chatEl._s,c=b.dataset.c;if(!s)return;
     var ops=b.closest('.o2-ops');if(ops&&c!=='rep'){var w=ops.parentNode;w.parentNode.removeChild(w)}
-    if(c==='si'){bolla('Sì, è il mio','a');passo2(s)}
-    else if(c==='no'){bolla('No, non è il mio','a');bolla('Scrivi il nome del tuo hotel nella ricerca qui sopra: ti mostro i suggerimenti');var q=f&&f.q;if(q){vai(f,160);setTimeout(function(){q.focus()},400)}}
-    else if(c==='rep')apriReport(s.id_comune)});
+    if(c==='no'){bolla('No, non è il mio','a');bolla('Scrivi il nome del tuo hotel nella ricerca qui sopra: ti mostro i suggerimenti');var q=f&&f.q;if(q){vai(f,160);setTimeout(function(){q.focus()},400)}}
+    else if(c==='rep')apriReport(s.id_comune);
+    else if(c.indexOf('d:')===0)rispondi(s,c.slice(2))});
   chatEl.addEventListener('submit',function(e){var fm=e.target.closest('.o2-cf');if(!fm||fm.classList.contains('o2-nb')||fm.classList.contains('o2-cq'))return;e.preventDefault();var s=chatEl._s,em=fm.em.value.trim(),er=fm.querySelector('.o2-er'),n=fm.dataset.f;
     var no=function(t){er.textContent=t;er.hidden=false};
     if(n==='2'&&!em)return no('Scrivi la tua email');
@@ -274,7 +316,7 @@ if(chatEl){chatEl.addEventListener('click',function(e){var b=e.target.closest('[
     if(em&&!fm.pv.checked)return no('Per usare la tua email serve la spunta sulla privacy');
     var w=fm.parentNode;w.parentNode.removeChild(w);
     if(em){chatEl._em=em;invia(em,s);bolla(esc(em),'a')}else bolla('Mostrami i competitor','a');
-    if(n==='1')passo3(s);else finale(s,em)})}
+    finale(s,em);offri(s,null)})}
 
 /* la conversazione parte anche dalla sua casella: scrivi il nome, scegli il tuo hotel, vedi i competitor */
 var cq=$('#o2ChatQ');
