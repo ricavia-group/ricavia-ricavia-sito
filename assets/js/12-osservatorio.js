@@ -150,18 +150,19 @@ var DOM=/\?|^(come|quanto|quanti|quante|cosa|che cosa|perche|perché|dove|quando
 function zoneDi(t){var k=norm(t);if(k.length<3)return [];return D.zone.map(function(z,i){return [z,i]}).filter(function(x){var n=norm(x[0].nome);return n.indexOf(k)>-1||k.indexOf(n)>-1})}
 var HL,HOT=null;function hotel(){if(!HL)HL=fetch('/assets/data/hotel.json').then(function(r){return r.json()}).then(function(d){HOT=d}).catch(function(){HOT=[]});return HL}
 function trovaHotel(t){var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});return r.sort(function(a,b){return norm(HOT[a].n).length-norm(HOT[b].n).length})}
-function mostraHotel(i){var h=HOT[i],c=[[num(h.s),'strutture ricettive'],[num(h.a),'alberghi']];if(h.mar)c.push([h.mar+' €','il martedì']);if(h.sab)c.push([h.sab+' €','il sabato']);if(h.cap)c.push([h.cap+' €','a Capodanno']);if(h.v)c.push([String(h.v).replace('.',','),'voto su Booking']);
-  nf.innerHTML='<b>'+esc(h.n)+'</b><p>'+esc(h.i)+(h.z&&h.z!=='n.d.'?' · '+esc(h.z):'')+'. Il mercato entro 1 km dal tuo hotel</p><div class="o2-hm">'+c.map(function(x){return '<span><b>'+x[0]+'</b><small>'+x[1]+'</small></span>'}).join('')+'</div>'+
+function bel(n){var P={di:1,de:1,del:1,della:1,delle:1,dei:1,al:1,alla:1,e:1,a:1,in:1,da:1,the:1,of:1,and:1};return n.toLowerCase().split(' ').map(function(w,i){return i&&P[w]?w:w.charAt(0).toUpperCase()+w.slice(1)}).join(' ').replace(/b&b/gi,'B&B')}
+function mostraHotel(i){var h=HOT[i],c=[[num(h.s),'strutture ricettive'],[num(h.a),'alberghi']];if(h.mar)c.push([h.mar+' €','il martedì']);if(h.sab)c.push([h.sab+' €','il sabato']);if(h.cap)c.push([h.cap+' €','a Capodanno']);if(h.v)c.push([h.v.toFixed(1).replace('.',','),'voto mediano su Booking']);
+  nf.innerHTML='<b>'+esc(bel(h.n))+'</b><p>'+esc(h.i)+(h.z&&h.z!=='n.d.'?' · '+esc(h.z):'')+'. Il mercato entro 1 km dal tuo hotel</p><div class="o2-hm">'+c.map(function(x){return '<span><b>'+x[0]+'</b><small>'+x[1]+'</small></span>'}).join('')+'</div>'+
     '<p>'+(h.l?'Prezzi e voto: valori mediani di '+num(h.l)+' alberghi letti su Booking, camera per 2 persone. ':'Meno di 5 alberghi letti su Booking qui intorno: prezzi non ancora disponibili. ')+'Strutture ricettive dal registro di Roma Capitale</p>'+
-    '<div><button type="button" data-o2-hn="'+esc(h.n)+'">Come sei messo rispetto a loro? Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null}
+    '<div><button type="button" data-o2-hn="'+esc(bel(h.n))+'">Come sei messo rispetto a loro? Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null}
 function calcola(n){try{sessionStorage.setItem('hs-n',n)}catch(_){}var hs=document.getElementById('hsForm');if(hs&&hs.n)hs.n.value=n;var a=$('#o2Hs');if(a)a.click()}
 function chiudi(){if(!sug)return;sug.hidden=true;sug.innerHTML='';SI=-1}
 function suggerisci(){var t=f.q.value.trim();nf.hidden=true;var hh=modo==='h'?trovaHotel(t).slice(0,5):[];if(t.length<2||(modo==='h'&&!VIA.test(t)&&!zoneDi(t).length&&!hh.length)){chiudi();return}
-  hh=hh.map(function(i){return '<button type="button" data-a="h:'+i+'">'+esc(HOT[i].n)+'<small>albergo · '+esc(HOT[i].i)+'</small></button>'});
+  hh=hh.map(function(i){return '<button type="button" data-a="h:'+i+'">'+esc(bel(HOT[i].n))+'<small>albergo · '+esc(HOT[i].i)+'</small></button>'});
   var z=zoneDi(t).slice(0,3).map(function(x){return '<button type="button" data-a="z:'+x[1]+'">'+esc(x[0].nome)+'<small>zona · '+num(x[0].offerta.strutture)+' strutture ricettive</small></button>'});
   var v=VIE&&t.length>=3?trovaVie(t).slice(0,5).map(function(x){return '<button type="button" data-a="v:'+esc(x)+'">'+esc(x)+'<small>via · '+num(VIE[x].strutture)+'</small></button>'}):[];
   var h=hh.concat(z,v);if(!h.length){chiudi();return}sug.innerHTML=h.join('');sug.hidden=false;SI=-1}
-function apri(a){chiudi();nf.hidden=true;if(a.indexOf('h:')===0){var i=+a.slice(2);f.q.value=HOT[i].n;mostraHotel(i)}else if(a.indexOf('z:')===0){var i=+a.slice(2);zona(i);vai($('#o2-zone'))}else{var v=a.slice(2);f.q.value=v;if(vf)vf.q.value=v;cercaVia(v,true)}}
+function apri(a){chiudi();nf.hidden=true;if(a.indexOf('h:')===0){var i=+a.slice(2);f.q.value=bel(HOT[i].n);mostraHotel(i)}else if(a.indexOf('z:')===0){var i=+a.slice(2);zona(i);vai($('#o2-zone'))}else{var v=a.slice(2);f.q.value=v;if(vf)vf.q.value=v;cercaVia(v,true)}}
 function domanda(t){var w=norm(t).split(' ').filter(function(x){return x.length>3}),best=null,bs=0;
   [].slice.call(pg.querySelectorAll('.ix-faq details')).forEach(function(d){var tx=norm(d.textContent),s=w.filter(function(x){return tx.indexOf(x)>-1}).length;if(s>bs){bs=s;best=d}});
   if(best&&bs>=1){var q=best.querySelector('summary').textContent,ans=best.querySelector('p');
