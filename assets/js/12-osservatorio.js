@@ -80,14 +80,14 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 /* ---------- classifiche e scheda social ---------- */
 var card=$('#o2Card'),mese=MESI[+D.agg.split('-')[1]-1]+' '+D.agg.split('-')[0];
 function righe(p,n){return [].slice.call(p.querySelectorAll('.o2-l li')).slice(0,n).map(function(li){return [li.querySelector('b').firstChild.textContent,li.querySelector('span').textContent]})}
-function scheda(p){if(!card)return;if(p.dataset.i==='hs'){card.innerHTML='<small>Osservatorio Ricavia · da dicembre</small><h4>Top 10 Hotel Score</h4><p style="margin:0;font-size:13px;line-height:1.5;color:#A1A1A6">Gli alberghi migliori per zona e categoria, con il sigillo da mettere sul proprio sito</p><span>ricavia.com/osservatorio</span>';return}
+function scheda(p){if(!card)return;
   card.innerHTML='<small>Osservatorio Ricavia · '+mese+'</small><h4>'+esc(p.dataset.t)+'</h4><ol>'+righe(p,5).map(function(r,i){return '<li><em>'+(i+1)+'</em><span>'+esc(r[0])+'</span><b>'+esc(r[1])+'</b></li>'}).join('')+'</ol><span>'+esc(p.dataset.u)+' · ricavia.com/osservatorio</span>'}
 var tabs=$$('.o2-t'),panes=$$('.o2-p');
 tabs.forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.i;tabs.forEach(function(t){var on=t.dataset.i===k;t.classList.toggle('on',on);t.setAttribute('aria-pressed',on)});
   panes.forEach(function(p){var on=p.dataset.i===k;p.classList.toggle('on',on);if(on){scheda(p);p.querySelectorAll('.o2-l u').forEach(function(u){u.style.transition='none';u.style.width='0';void u.offsetWidth;u.style.transition='';u.style.width=''})}})})});
 var p0=$('.o2-p.on');if(p0)scheda(p0);
 function testo(c,t,x,y,w,lh){var parole=t.split(' '),r='',n=0;for(var i=0;i<parole.length;i++){var prova=r?r+' '+parole[i]:parole[i];if(c.measureText(prova).width>w&&r){c.fillText(r,x,y+n*lh);n++;r=parole[i]}else r=prova}c.fillText(r,x,y+n*lh);return n+1}
-function png(){var p=$('.o2-p.on');if(!p||p.dataset.i==='hs')return;var W=1080,H=1350,cv=document.createElement('canvas');cv.width=W;cv.height=H;var c=cv.getContext('2d'),F='Geist, system-ui, sans-serif';
+function png(){var p=$('.o2-p.on');if(!p)return;var W=1080,H=1350,cv=document.createElement('canvas');cv.width=W;cv.height=H;var c=cv.getContext('2d'),F='Geist, system-ui, sans-serif';
   var bg=c.createRadialGradient(160,0,0,160,0,1500);bg.addColorStop(0,'#141B68');bg.addColorStop(.72,'#0B0D12');c.fillStyle=bg;c.fillRect(0,0,W,H);
   var gr=c.createLinearGradient(90,0,700,0);gr.addColorStop(0,'#3CCDFA');gr.addColorStop(.7,'#1F2DD0');gr.addColorStop(1,'#724AF8');
   c.fillStyle=gr;c.beginPath();c.arc(97,118,7,0,6.2832);c.fill();c.font='600 26px '+F;c.textBaseline='middle';c.fillText(('Osservatorio Ricavia · '+mese).toUpperCase(),118,119);
@@ -148,12 +148,20 @@ var f=$('#o2Cerca'),sug=$('#o2Sug'),nf=$('#o2Nf'),modo='h',PH={h:'Nome del tuo h
 var VIA=/^(via|viale|piazza|piazzale|largo|corso|vicolo|lungotevere|circonvallazione|salita|borgo|clivo|vico)\b/i;
 var DOM=/\?|^(come|quanto|quanti|quante|cosa|che cosa|perche|perché|dove|quando|chi|posso|si puo|si può|e possibile|è possibile)\b/i;
 function zoneDi(t){var k=norm(t);if(k.length<3)return [];return D.zone.map(function(z,i){return [z,i]}).filter(function(x){var n=norm(x[0].nome);return n.indexOf(k)>-1||k.indexOf(n)>-1})}
+var HL,HOT=null;function hotel(){if(!HL)HL=fetch('/assets/data/hotel.json').then(function(r){return r.json()}).then(function(d){HOT=d}).catch(function(){HOT=[]});return HL}
+function trovaHotel(t){var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});return r.sort(function(a,b){return norm(HOT[a].n).length-norm(HOT[b].n).length})}
+function mostraHotel(i){var h=HOT[i],c=[[num(h.s),'strutture ricettive'],[num(h.a),'alberghi']];if(h.mar)c.push([h.mar+' €','il martedì']);if(h.sab)c.push([h.sab+' €','il sabato']);if(h.cap)c.push([h.cap+' €','a Capodanno']);if(h.v)c.push([String(h.v).replace('.',','),'voto su Booking']);
+  nf.innerHTML='<b>'+esc(h.n)+'</b><p>'+esc(h.i)+(h.z&&h.z!=='n.d.'?' · '+esc(h.z):'')+'. Il mercato entro 1 km dal tuo hotel</p><div class="o2-hm">'+c.map(function(x){return '<span><b>'+x[0]+'</b><small>'+x[1]+'</small></span>'}).join('')+'</div>'+
+    '<p>'+(h.l?'Prezzi e voto: valori mediani di '+num(h.l)+' alberghi letti su Booking, camera per 2 persone. ':'Meno di 5 alberghi letti su Booking qui intorno: prezzi non ancora disponibili. ')+'Strutture ricettive dal registro di Roma Capitale</p>'+
+    '<div><button type="button" data-o2-hn="'+esc(h.n)+'">Come sei messo rispetto a loro? Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null}
+function calcola(n){try{sessionStorage.setItem('hs-n',n)}catch(_){}var hs=document.getElementById('hsForm');if(hs&&hs.n)hs.n.value=n;var a=$('#o2Hs');if(a)a.click()}
 function chiudi(){if(!sug)return;sug.hidden=true;sug.innerHTML='';SI=-1}
-function suggerisci(){var t=f.q.value.trim();nf.hidden=true;if(t.length<2||(modo==='h'&&!VIA.test(t)&&!zoneDi(t).length)){chiudi();return}
+function suggerisci(){var t=f.q.value.trim();nf.hidden=true;var hh=modo==='h'?trovaHotel(t).slice(0,5):[];if(t.length<2||(modo==='h'&&!VIA.test(t)&&!zoneDi(t).length&&!hh.length)){chiudi();return}
+  hh=hh.map(function(i){return '<button type="button" data-a="h:'+i+'">'+esc(HOT[i].n)+'<small>albergo · '+esc(HOT[i].i)+'</small></button>'});
   var z=zoneDi(t).slice(0,3).map(function(x){return '<button type="button" data-a="z:'+x[1]+'">'+esc(x[0].nome)+'<small>zona · '+num(x[0].offerta.strutture)+' strutture ricettive</small></button>'});
   var v=VIE&&t.length>=3?trovaVie(t).slice(0,5).map(function(x){return '<button type="button" data-a="v:'+esc(x)+'">'+esc(x)+'<small>via · '+num(VIE[x].strutture)+'</small></button>'}):[];
-  var h=z.concat(v);if(!h.length){chiudi();return}sug.innerHTML=h.join('');sug.hidden=false;SI=-1}
-function apri(a){chiudi();nf.hidden=true;if(a.indexOf('z:')===0){var i=+a.slice(2);zona(i);vai($('#o2-zone'))}else{var v=a.slice(2);f.q.value=v;if(vf)vf.q.value=v;cercaVia(v,true)}}
+  var h=hh.concat(z,v);if(!h.length){chiudi();return}sug.innerHTML=h.join('');sug.hidden=false;SI=-1}
+function apri(a){chiudi();nf.hidden=true;if(a.indexOf('h:')===0){var i=+a.slice(2);f.q.value=HOT[i].n;mostraHotel(i)}else if(a.indexOf('z:')===0){var i=+a.slice(2);zona(i);vai($('#o2-zone'))}else{var v=a.slice(2);f.q.value=v;if(vf)vf.q.value=v;cercaVia(v,true)}}
 function domanda(t){var w=norm(t).split(' ').filter(function(x){return x.length>3}),best=null,bs=0;
   [].slice.call(pg.querySelectorAll('.ix-faq details')).forEach(function(d){var tx=norm(d.textContent),s=w.filter(function(x){return tx.indexOf(x)>-1}).length;if(s>bs){bs=s;best=d}});
   if(best&&bs>=1){var q=best.querySelector('summary').textContent,ans=best.querySelector('p');
@@ -165,19 +173,21 @@ function nonTrovato(t){var s=VIE?simili(t,3):[],zs=D.zone.map(function(z,i){retu
     '<div><button type="button" data-o2-faq>Domande frequenti</button><button type="button" data-o2-msg="'+esc(t)+'">Scrivici: ti rispondiamo noi</button></div>';nf.hidden=false;nf._d=null}
 if(f){var seg=$$('.o2-seg button');
   seg.forEach(function(b){b.addEventListener('click',function(){modo=b.dataset.m;seg.forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});f.q.placeholder=PH[modo];nf.hidden=true;chiudi();f.q.focus();if(modo==='z')vie()})});
-  f.q.addEventListener('focus',function(){vie().then(function(){if(f.q.value)suggerisci()})});
+  f.q.addEventListener('focus',function(){if(modo==='h')hotel().then(function(){if(f.q.value)suggerisci()});vie().then(function(){if(f.q.value)suggerisci()})});
   f.q.addEventListener('input',suggerisci);
   f.q.addEventListener('keydown',function(e){var bs=[].slice.call(sug.querySelectorAll('button'));if(e.key==='Escape')return chiudi();if(!bs.length)return;
     if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();SI=(SI+(e.key==='ArrowDown'?1:-1)+bs.length)%bs.length;bs.forEach(function(b,i){b.classList.toggle('on',i===SI)})}
     else if(e.key==='Enter'&&SI>-1){e.preventDefault();apri(bs[SI].dataset.a)}});
   sug.addEventListener('mousedown',function(e){e.preventDefault()});
   pg.addEventListener('click',function(e){var b=e.target.closest('[data-a]');if(b&&(sug.contains(b)||nf.contains(b)))apri(b.dataset.a);
+    var hn=e.target.closest('[data-o2-hn]');if(hn&&nf.contains(hn))calcola(hn.getAttribute('data-o2-hn'));
     if(e.target.closest('[data-o2-faq]')){var d=nf._d,faq=pg.querySelector('.ix-faq');if(d)d.open=true;vai(d||faq)}
     if(!f.contains(e.target))chiudi()});
   f.addEventListener('submit',function(e){e.preventDefault();var t=f.q.value.trim();chiudi();nf.hidden=true;if(!t){f.q.focus();return}
     if(DOM.test(t))return domanda(t);
     var z=zoneDi(t);if(z.length===1&&(modo==='z'||norm(z[0][0].nome)===norm(t)))return apri('z:'+z[0][1]);
-    if(modo==='h'&&!VIA.test(t)){try{sessionStorage.setItem('hs-n',t)}catch(_){}var hs=document.getElementById('hsForm');if(hs&&hs.n)hs.n.value=t;var a=$('#o2Hs');if(a)a.click();return}
+    if(modo==='h'&&!VIA.test(t))return hotel().then(function(){var r=trovaHotel(t);if(r.length===1||(r.length&&norm(HOT[r[0]].n)===norm(t)))return mostraHotel(r[0]);if(r.length){suggerisci();return}
+      nf.innerHTML='<b>Non troviamo «'+esc(t)+'» tra i '+num(HOT.length)+' alberghi del registro di Roma Capitale</b><p>Prova con il nome scritto in un altro modo, oppure calcoliamo l’Hotel Score partendo dal nome</p><div><button type="button" data-o2-hn="'+esc(t)+'">Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null});
     vie().then(function(){var r=trovaVie(t);if(r.length===1)return apri('v:'+r[0]);if(r.length){suggerisci();if(sug.hidden)nonTrovato(t);return}nonTrovato(t)})})}
 
 /* ---------- la conversazione dell'Hotel Score, una riga alla volta ---------- */

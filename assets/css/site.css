@@ -5541,3 +5541,7 @@ html.mp #pg-osservatorio .o2-nav{top:64px}
 #pg-osservatorio .o2-th-b i,#pg-osservatorio .o2-l u,#pg-osservatorio .o2-chat .q,#pg-osservatorio .o2-chat .a{transition:none}
 #pg-osservatorio .o2-live i{animation:none}
 }
+#pg-osservatorio .o2-nf .o2-hm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#pg-osservatorio .o2-hm>span{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.05);min-width:0}
+#pg-osservatorio .o2-hm b{display:block;font:600 20px/1.2 var(--zf);color:var(--o2t)}
+#pg-osservatorio .o2-hm small{display:block;font-size:12px;line-height:1.35;color:var(--o2m)}

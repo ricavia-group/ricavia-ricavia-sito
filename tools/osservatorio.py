@@ -48,6 +48,7 @@ CLASSIFICHE = [
     ("aree_evento", "Dove costa di più Capodanno", "bk", "€ a notte, valore mediano", lambda v: f"{v} €"),
     ("aree_esauriti", "Dove non c'è più posto a Capodanno", "bk", "alberghi senza camere per 2", lambda v: pct(v, False)),
     ("aree_voto", "Dove gli ospiti danno il voto più alto", "bk", "voto mediano su Booking", dec),
+    ("hotel_score", "Top 10 Hotel Score", "hs", "Hotel Score su 10", dec),
 ]
 
 
@@ -57,7 +58,9 @@ def fonti(d):
     return {"reg": f'Registro delle strutture ricettive di Roma Capitale, file di {d["registro"]["file"]} (CC BY 4.0)',
             "bk": lett,
             "aree_esauriti": lett + f'. Quota di alberghi senza camere per 2 persone in vendita per la notte del {data(d["date"]["evento"])}: '
-                                    'è la disponibilità su Booking, non l\'occupazione'}
+                                    'è la disponibilità su Booking, non l\'occupazione',
+            "hs": f'Hotel Score Ricavia su 4 aree di 6 (Prezzi, Reputazione, Posizionamento e Foto), letto su Booking dal {data(d["letture_dal"])} '
+                  f'al {data(d["aggiornato"])} 2026. Solo alberghi con almeno 100 recensioni. Canali e Sito entrano a dicembre'}
 
 
 def hero(d):
@@ -110,29 +113,25 @@ def prezzi(d):
 
 def classifiche(d):
     f = fonti(d)
-    tabs, panes = {"reg": [], "bk": []}, []
+    tabs, panes = {"reg": [], "bk": [], "hs": []}, []
     for i, (k, titolo, gr, unita, fmt) in enumerate(CLASSIFICHE):
         voci = d["classifiche"].get(k) or []
         if not voci:
             continue
         top = max(x["valore"] for x in voci) or 1
         rows = "".join(f'<li style="--w:{x["valore"] / top * 100:.0f}%;--i:{j}"><em>{j:02d}</em><b>{E(x["nome"])}'
-                       + (f'<small>{x["alberghi"]} alberghi letti</small>' if "alberghi" in x else "")
+                       + (f'<small>{x["alberghi"]} alberghi letti</small>' if "alberghi" in x else f'<small>{E(x["nota"])}</small>' if "nota" in x else "")
                        + f'</b><i><u></u></i><span>{fmt(x["valore"])}</span></li>' for j, x in enumerate(voci, 1))
         on = " on" if i == 0 else ""
         tabs[gr].append(f'<button type="button" class="o2-t{on}" data-i="{k}" aria-pressed="{"true" if on else "false"}">{E(titolo)}</button>')
         panes.append(f'<div class="o2-p{on}" data-i="{k}" data-t="{E(titolo)}" data-u="{E(unita)}"><div class="o2-ph"><b>{E(titolo)}</b><small>{E(unita)}</small></div>'
                      f'<ol class="o2-l">{rows}</ol><p class="o2-src">Fonte: {E(f.get(k, f[gr]))}</p></div>')
-    panes.append('<div class="o2-p" data-i="hs"><div class="o2-ph"><b>Top 10 Hotel Score</b><small>da dicembre</small></div><div class="o2-soon">'
-                 '<div class="o2-seal"><span>Top 10<b>Centro storico</b>Osservatorio Ricavia</span></div>'
-                 '<p>La classifica degli alberghi per zona e categoria esce quando ogni albergo ha almeno 4 voti su 6 dell\'Hotel Score. '
-                 'Gli hotel in Top 10 ricevono il sigillo per il proprio sito</p></div></div>')
     return f'''<section class="o2-sec o2-lt2" id="o2-classifiche"><div class="wrap">
 <div class="o2-sh"><span class="o2-tag ar">Le classifiche</span><h2 class="ar">Le classifiche,<br>{g("una sola Roma")}</h2>
 <p class="ar">Dove si trovano le strutture ricettive, dove costano di più, dove a Capodanno non c'è più posto. Ogni classifica con fonte, data e metodo, ogni mese una nuova edizione</p></div>
 <div class="o2-cl ar">
 <div class="o2-tabs"><div><span>Dove sono</span>{"".join(tabs["reg"])}</div><div><span>Quanto costano</span>{"".join(tabs["bk"])}</div>
-<div><span>Gli alberghi</span><button type="button" class="o2-t" data-i="hs" aria-pressed="false">Top 10 Hotel Score</button></div></div>
+{f'<div><span>Gli alberghi</span>{"".join(tabs["hs"])}</div>' if tabs["hs"] else ""}</div>
 <div class="o2-pn">{"".join(panes)}</div>
 <aside class="o2-soc"><div class="o2-card" id="o2Card" aria-label="Scheda della classifica da condividere"></div>
 <div class="o2-sb"><button type="button" id="o2Png">Scarica l'immagine</button><button type="button" id="o2Share">Condividi</button></div>
@@ -215,7 +214,7 @@ def pagina(d):
 def main():
     src = sys.argv[1] if len(sys.argv) > 1 else DATI
     if os.path.abspath(src) != os.path.abspath(DATI):
-        for f in ("osservatorio.json", "vie.json", "mappa.json"):
+        for f in ("osservatorio.json", "vie.json", "mappa.json", "hotel.json"):
             shutil.copy(os.path.join(src, f), os.path.join(DATI, f))
     with open(os.path.join(DATI, "osservatorio.json"), encoding="utf-8") as f:
         d = json.load(f)
