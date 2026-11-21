@@ -5664,3 +5664,20 @@ html.o2-nosc{overflow:hidden}
 .o2-ic small{display:block;margin-top:10px;font-size:12.5px;line-height:1.45;color:var(--o2m)}
 .o2-im{grid-column:1/-1;margin:0;font-size:12.5px;color:var(--o2m)}
 @media(max-width:700px){.o2-ind{grid-template-columns:minmax(0,1fr);gap:12px}.o2-ic svg{top:40px;width:30%}}
+/* Nuova apertura: il simulatore (10.5) */
+#apertura .oz-sim{margin-top:clamp(40px,6vw,72px);padding-top:clamp(28px,4vw,40px);border-top:1px solid #E2E2E8}
+#apertura .oz-sf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+#apertura .oz-sf label{display:flex;flex-direction:column;gap:6px;font:600 10.5px/1.3 var(--zf);letter-spacing:.06em;text-transform:uppercase;color:#6E6E73}
+#apertura .oz-sf input{font:500 17px var(--zf);letter-spacing:0;text-transform:none;color:var(--zink);padding:12px 14px;border:1px solid #E2E2E8;border-radius:12px;background:#fff;min-width:0;width:100%;font-variant-numeric:tabular-nums}
+#apertura .oz-sf input:focus{outline:2px solid #1F2DD0;outline-offset:1px}
+#apertura .oz-sn{margin:16px 0 0;font-size:15px;font-weight:600;color:var(--zink)}
+#apertura .oz-t tr.oz-no th,#apertura .oz-t tr.oz-no td{color:#A1A1A6}
+@media(max-width:700px){#apertura .oz-sf{grid-template-columns:minmax(0,1fr)}}
+/* Osservatorio, 2.8: struttura ricettiva non letta su Booking */
+.o2-nf .o2-nbo{display:flex;flex-wrap:wrap;gap:8px}
+.o2-nbo label{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;cursor:pointer;font-size:13px}
+.o2-nbo label:has(input:checked){background:#fff;color:var(--zink);border-color:#fff}
+.o2-nbo input{margin:0;accent-color:#1F2DD0}
+.o2-cf input[type=url]{width:100%;box-sizing:border-box;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:var(--o2t);font:500 14.5px var(--zf)}
+.o2-nf .o2-nb button{border:0;background:#fff;color:var(--zink)}
+.o2-nf .o2-ok{color:var(--o2t);font-weight:600}

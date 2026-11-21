@@ -258,6 +258,44 @@ def casa(qq):
     return f'<td>{num(int(round(v, -2)))} €</td><td>{dec(r * 100)}%</td>'
 
 
+# shortcut: posti letto di alberghi, dipendenze alberghiere e residence nel registro di giugno 2025 (100.693 + 1.330 + 2.701);
+# da ricalcolare con un registro nuovo
+LETTI_ALBERGHI = 104724
+MQ_CAMERA = 35  # superficie lorda per camera, spazi comuni compresi: ipotesi dichiarata, il visitatore la cambia
+
+
+def simulatore(d, omi):
+    """Il simulatore (fermata 10.5): budget e camere → zone compatibili e ricavo stimato, tutto dichiarato come stima.
+    Occupazione: occupazione lorda dei letti negli alberghi di Roma (notti ISTAT dell'anno diviso posti letto del registro per 365)."""
+    a = ((d.get("flussi") or {}).get("istat") or {}).get("annui", {})
+    anno = max((k for k in a if (a[k] or {}).get("presenze_alberghi")), default=None)
+    if not anno:
+        return ""
+    occ = a[anno]["presenze_alberghi"] / (LETTI_ALBERGHI * 365)
+    zz = []
+    for z in d["zone"]:
+        m, qq = z["mercato"] or {}, omi.get(z["nome"])
+        if m.get("martedi") and m.get("sabato") and qq:
+            zz.append([z["nome"], (m["martedi"] + m["sabato"]) / 2, statistics.median((q["vendita_min"] + q["vendita_max"]) / 2 for q in qq)])
+    if not zz:
+        return ""
+    js = html.escape(json.dumps(zz, ensure_ascii=False, separators=(",", ":")), quote=True)
+    return (f'<div class="oz-sim ar" id="ozSim" data-z="{js}" data-occ="{occ:.4f}">'
+            f'<div class="ix-sh"><span class="ap-tag">Il simulatore</span><h2>Quanto costa entrare e quanto può incassare</h2>'
+            f'<p class="ix-p">Scrivi il budget e le camere: vedi le zone compatibili e il ricavo stimato delle camere in un anno</p></div>'
+            f'<form class="oz-sf" novalidate><label>Budget<input name="b" type="number" inputmode="numeric" min="0" step="100000" value="5000000"></label>'
+            f'<label>Camere<input name="c" type="number" inputmode="numeric" min="1" max="500" value="20"></label>'
+            f'<label>m² per camera, spazi comuni compresi<input name="m" type="number" inputmode="numeric" min="10" max="200" value="{MQ_CAMERA}"></label></form>'
+            f'<p class="oz-sn" role="status" aria-live="polite"></p>'
+            f'<div class="oz-w"><table class="oz-t"><thead><tr><th>Zona</th><th>Costo d’ingresso stimato</th><th>Ricavo camere stimato all’anno</th>'
+            f'<th>Ricavo sul costo</th><th>Budget</th></tr></thead><tbody></tbody></table></div>'
+            f'<p class="oz-s">Stima, non una promessa. Costo: camere × m² × prezzo delle case della zona (OMI, 1° semestre 2026): '
+            f'non esistono quotazioni pubbliche degli alberghi. Ricavo: camere × tariffa mediana della zona (media tra martedì e sabato, letti su Booking dal '
+            f'{data(d["letture_dal"])} al {data(d["aggiornato"])}) × 365 notti × {dec(occ * 100)}% di occupazione. Il {dec(occ * 100)}% è l’occupazione lorda dei letti '
+            f'negli alberghi di Roma nel {anno}: notti in albergo ISTAT diviso i posti letto del registro di Roma Capitale. '
+            f'Ricavo prima di commissioni, costi di gestione e tasse</p></div>')
+
+
 def apertura(d):
     """Blocco della pagina Nuova apertura: le nove zone a confronto per chi apre o compra (fermata 10 del giro)."""
     righe, omi = [], collections.defaultdict(list)
@@ -278,6 +316,7 @@ def apertura(d):
             f'<th>Sabato, valore mediano</th><th>Voto mediano</th><th>Alberghi sotto 8</th><th>Casa al m²</th><th>Rendimento lordo da affitto</th></tr></thead><tbody>{"".join(righe)}</tbody></table></div>'
             f'<p class="oz-s">Fonte: registro delle strutture ricettive di Roma Capitale ({E(d["registro"]["file"])}) e Booking, prezzi letti dal {data(d["letture_dal"])} '
             f'al {data(d["aggiornato"])}, camera per 2 persone. Casa al m² e rendimento: quotazioni OMI dell’Agenzia delle Entrate, 1° semestre 2026, abitazioni civili in stato normale, valore mediano delle zone OMI della zona; il rendimento è l’affitto annuo diviso il prezzo, prima di tasse e spese</p>'
+            f'{simulatore(d, omi)}'
             f'<p class="oz-c"><a class="z-btn" href="#pg-osservatorio">Le zone nell’Osservatorio <span class="arr">→</span></a></p></div>')
 
 

@@ -4,6 +4,15 @@
 try{var hf=document.getElementById('hsForm'),hv=sessionStorage.getItem('hs-n');if(hf&&hf.n&&hv){sessionStorage.removeItem('hs-n');if(!hf.n.value)hf.n.value=hv}
 var cf=document.getElementById('ctForm'),cv=sessionStorage.getItem('o2-msg');if(cf&&cf.msg&&cv){sessionStorage.removeItem('o2-msg');if(!cf.msg.value)cf.msg.value=cv}}catch(_){}
 
+/* il simulatore di Nuova apertura (10.5): budget e camere → zone compatibili e ricavo stimato. Dati e formula in tools/osservatorio.py, simulatore() */
+var sim=document.getElementById('ozSim');if(sim)try{var SZ=JSON.parse(sim.getAttribute('data-z')),OC=+sim.getAttribute('data-occ'),sf=sim.querySelector('form'),stb=sim.querySelector('tbody'),sn=sim.querySelector('.oz-sn');
+  var mil=function(x){return x>=1e6?(Math.round(x/1e5)/10).toFixed(1).replace('.',',')+' mln €':String(Math.round(x/1e3)*1e3).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'};
+  var calc=function(){var b=Math.max(0,+sf.b.value||0),c=Math.max(1,Math.round(+sf.c.value||1)),mq=Math.max(10,+sf.m.value||35);
+    var r=SZ.map(function(z){var co=c*mq*z[2],ri=c*z[1]*365*OC;return {n:z[0],co:co,ri:ri,ok:co<=b}}).sort(function(x,y){return (y.ok-x.ok)||(y.ri/y.co-x.ri/x.co)}),k=r.filter(function(x){return x.ok}).length;
+    stb.innerHTML=r.map(function(x){return '<tr'+(x.ok?'':' class="oz-no"')+'><th scope="row">'+x.n+'</th><td>'+mil(x.co)+'</td><td>'+mil(x.ri)+'</td><td><b>'+(x.ri/x.co*100).toFixed(1).replace('.',',')+'%</b></td><td>'+(x.ok?'Nel budget':'Oltre il budget')+'</td></tr>'}).join('');
+    sn.textContent=k?k+(k===1?' zona compatibile':' zone compatibili')+' con '+mil(b)+' per '+c+(c===1?' camera':' camere'):'Nessuna zona compatibile: con '+mil(b)+' servono meno camere o un budget più alto'};
+  sf.addEventListener('input',calc);sf.addEventListener('submit',function(e){e.preventDefault();calc()});calc()}catch(_s){}
+
 var pg=document.getElementById('pg-osservatorio'),DT=document.getElementById('o2Dati');if(!pg||!DT)return;
 var D=JSON.parse(DT.textContent),MP=!!window.__MP,ROOT=MP?null:pg;
 var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -159,7 +168,22 @@ function mostraHotel(i){var h=HOT[i],g=function(c){return '<div class="o2-hm">'+
     '<p class="o2-ht">Entro 250 metri</p>'+g([[num(h.s),'strutture ricettive'],[num(h.a),'alberghi']])+
     (p.length?'<p class="o2-ht">I '+num(h.l)+' '+chi+(h.d?', entro '+num(h.d)+' m':'')+'</p>'+g(p)+'<p>Booking, camera per 2 persone, valori mediani. Strutture ricettive dal registro di Roma Capitale</p>'
       :'<p>Intorno a te ci sono meno di 5 alberghi simili letti su Booking: prezzi non ancora disponibili. Strutture ricettive dal registro di Roma Capitale</p>')+
-    '<div>'+(h.r?'<button type="button" class="o2-pr" data-o2-chat="'+esc(h.id)+'">Vedi i tuoi competitor e il tuo Hotel Score →</button>':'<button type="button" data-o2-hn="'+esc(bel(h.n))+'">Come sei messo rispetto a loro? Calcola l’Hotel Score →</button>')+'</div>';nf.hidden=false;nf._d=null}
+    (h.r?'<div><button type="button" class="o2-pr" data-o2-chat="'+esc(h.id)+'">Vedi i tuoi competitor e il tuo Hotel Score →</button></div>':senzaDati(h));nf.hidden=false;nf._d=null}
+/* 2.8: struttura ricettiva che non abbiamo letto su Booking: chiede dove vende, il link e l'email; la richiesta arriva nel CRM come Hotel Score */
+function senzaDati(h){return '<form class="o2-cf o2-nb" data-n="'+esc(bel(h.n))+'" data-z="'+esc(h.z||'')+'" data-t="'+esc(h.t||'')+'" novalidate>'+
+  '<label>Non abbiamo ancora letto '+esc(bel(h.n))+' su Booking. Dove vendi le tue camere?</label><div class="o2-nbo">'+
+  ['Booking','Airbnb','Expedia','Dal mio sito','Altro'].map(function(x){return '<label><input type="checkbox" name="dv" value="'+x+'"><span>'+x+'</span></label>'}).join('')+'</div>'+
+  '<input type="url" name="ln" inputmode="url" placeholder="Link del tuo annuncio o del tuo sito · facoltativo">'+
+  '<input type="email" name="em" autocomplete="email" placeholder="nome@tuohotel.it">'+
+  '<label class="o2-ck"><input type="checkbox" name="pv"><span>Ho letto l’<a href="#pg-privacy">informativa privacy</a> e accetto di essere ricontattato</span></label>'+
+  '<button type="submit">Preparate il mio report →</button><p class="o2-er" hidden></p></form>'}
+nf.addEventListener('submit',function(e){var fm=e.target.closest('.o2-nb');if(!fm)return;e.preventDefault();var er=fm.querySelector('.o2-er'),em=fm.em.value.trim(),ln=fm.ln.value.trim().slice(0,300),
+    dv=[].slice.call(fm.querySelectorAll('[name=dv]:checked')).map(function(x){return x.value});
+  var no=function(t){er.textContent=t;er.hidden=false};
+  if(!dv.length)return no('Scegli almeno un canale');if(!emOk(em))return no('Scrivi la tua email');if(!fm.pv.checked)return no('Per usare la tua email serve la spunta sulla privacy');
+  var n=fm.dataset.n,ok=function(m){fm.outerHTML='<p class="o2-ok">'+(m==='mail'?'Si è aperta la tua email con la richiesta già scritta: mandala e la prendiamo in carico':'Ricevuto. Prepariamo il report di '+esc(n)+' con i dati di '+esc(dv.join(', '))+' e lo mandiamo a '+esc(em))+'</p>'};
+  var l=[['Email',em],['Struttura ricettiva',n],['Tipo di struttura ricettiva',fm.dataset.t||'n.d.'],['Città o zona','Roma, '+(fm.dataset.z||'')],['Dove vende',dv.join(', ')],['Link',ln||'—'],['Nota','Senza dati letti su Booking: report da preparare a mano']];
+  if(window.RK&&RK.deliver)RK.deliver('hotel-score','Hotel Score senza Booking · '+n,l,{tipo:'hotel',citta:'Roma'},ok);else ok('mail')});
 function calcola(n){try{sessionStorage.setItem('hs-n',n)}catch(_){}var hs=document.getElementById('hsForm');if(hs&&hs.n)hs.n.value=n;var a=$('#o2Hs');if(a)a.click()}
 function chiudi(){if(!sug)return;sug.hidden=true;sug.innerHTML='';SI=-1}
 function suggerisci(){var t=f.q.value.trim();nf.hidden=true;var hh=modo==='h'?trovaHotel(t).slice(0,5):[];if(t.length<2||(modo==='h'&&!VIA.test(t)&&!zoneDi(t).length&&!hh.length)){chiudi();return}
