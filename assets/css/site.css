@@ -5683,3 +5683,9 @@ html.o2-nosc{overflow:hidden}
 .o2-nf .o2-ok{color:var(--o2t);font-weight:600}
 #apertura .oz-sim .ix-sh{display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:760px}
 #apertura .oz-sim .ix-sh>*{margin:0;max-width:none;width:auto}
+/* Report, 4.8: togli o rimetti un competitor */
+.o2-rco li{align-items:center}
+.o2-rco li>span{flex:1;min-width:0}
+.o2-rco li button{flex:none;border:1px solid var(--o2l);background:none;color:var(--o2t);border-radius:999px;padding:5px 12px;font:600 12px var(--zf);cursor:pointer}
+.o2-rco li button:hover{background:rgba(255,255,255,.1)}
+.o2-rco li.no>span,.o2-rco li.no>b{opacity:.4;text-decoration:line-through}

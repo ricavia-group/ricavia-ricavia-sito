@@ -154,12 +154,13 @@ pg.addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(b&
   var h=e.target.closest('[data-o2-hs]');if(h){e.preventDefault();var a=$('#o2Hs');if(a)a.click()}});
 
 /* ---------- la ricerca del hero: due pulsanti, una casella che riconosce hotel, zone e vie ---------- */
-var f=$('#o2Cerca'),sug=$('#o2Sug'),nf=$('#o2Nf'),modo='h',PH={h:'Nome del tuo hotel',z:'Una zona o una via, per esempio Monti o Via Nazionale'},SI=-1;
+var f=$('#o2Cerca'),sug=$('#o2Sug'),nf=$('#o2Nf'),modo='h',PH={h:'Nome del tuo hotel o CIN',z:'Una zona o una via, per esempio Monti o Via Nazionale'},SI=-1;
 var VIA=/^(via|viale|piazza|piazzale|largo|corso|vicolo|lungotevere|circonvallazione|salita|borgo|clivo|vico)\b/i;
 var DOM=/\?|^(come|quanto|quanti|quante|cosa|che cosa|perche|perché|dove|quando|chi|posso|si puo|si può|e possibile|è possibile)\b/i;
 function zoneDi(t){var k=norm(t);if(k.length<3)return [];return D.zone.map(function(z,i){return [z,i]}).filter(function(x){var n=norm(x[0].nome);return n.indexOf(k)>-1||k.indexOf(n)>-1})}
 var HL,HOT=null;function hotel(){if(!HL)HL=fetch('/assets/data/hotel.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){HOT=d}).catch(function(){HOT=[]});return HL}
-function trovaHotel(t){var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});var pe=function(i){var h=HOT[i];return (h.r?0:2)+(h.t==='albergo'?0:1)};return r.sort(function(a,b){return pe(a)-pe(b)||norm(HOT[a].n).length-norm(HOT[b].n).length})}
+function trovaHotel(t){var cc=t.replace(/[\s-]/g,'').toUpperCase();if(/^IT\d{6}[A-Z0-9]{6,}$/.test(cc)){var rc=[];(HOT||[]).forEach(function(h,i){if(h.c===cc)rc.push(i)});return rc}/* 1.1: si cerca anche per CIN */
+  var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});var pe=function(i){var h=HOT[i];return (h.r?0:2)+(h.t==='albergo'?0:1)};return r.sort(function(a,b){return pe(a)-pe(b)||norm(HOT[a].n).length-norm(HOT[b].n).length})}
 function bel(n){var P={di:1,de:1,del:1,della:1,delle:1,dei:1,al:1,alla:1,e:1,a:1,in:1,da:1,the:1,of:1,and:1};return n.toLowerCase().split(' ').map(function(w,i){return i&&P[w]?w:w.charAt(0).toUpperCase()+w.slice(1)}).join(' ').replace(/b&b/gi,'B&B')}
 function mostraHotel(i){var h=HOT[i],g=function(c){return '<div class="o2-hm">'+c.map(function(x){return '<span><b>'+x[0]+'</b><small>'+x[1]+'</small></span>'}).join('')+'</div>'};
   var p=[];if(h.mar)p.push([h.mar+' €','il martedì']);if(h.sab)p.push([h.sab+' €','il sabato']);if(h.cap)p.push([h.cap+' €','a Capodanno']);if(h.v)p.push([h.v.toFixed(1).replace('.',','),'voto mediano su Booking']);
@@ -285,10 +286,20 @@ function apriReport(id){if(!rep){rep=document.createElement('div');rep.className
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&rep&&!rep.hidden)chiudiRep()})}
   var c=rep.querySelector('.o2-rc');c.innerHTML='<p class="o2-rl0">Carico il report…</p>';rep.hidden=false;rep.scrollTop=0;document.documentElement.classList.add('o2-nosc');
   try{var u=new URL(location.href);u.searchParams.set('report',id);history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
-  schedaH(id).then(function(s){c.innerHTML=report(s);rep.querySelector('.o2-rx').focus()}).catch(function(){c.innerHTML='<p class="o2-rl0">Report non trovato. Cerca il tuo hotel nell’Osservatorio</p>'})}
+  schedaH(id).then(function(s){rep._s=s;c.innerHTML=report(applica(s));rep.querySelector('.o2-rx').focus()}).catch(function(){c.innerHTML='<p class="o2-rl0">Report non trovato. Cerca il tuo hotel nell’Osservatorio</p>'})}
+/* 4.8: competitor tolti dall'albergatore, salvati in questo browser; il confronto di martedì e sabato si ricalcola sugli altri */
+var TOLTI={};try{TOLTI=JSON.parse(localStorage.getItem('o2-tolti')||'{}')||{}}catch(_){}
+function med(a){a=a.slice().sort(function(x,y){return x-y});var n=a.length;return n%2?a[(n-1)/2]:(a[n/2-1]+a[n/2])/2}
+function applica(s){var t=TOLTI[s.id_comune]||[];if(!t.length||!s.competitor)return s;var s2={},k;for(k in s)s2[k]=s[k];
+  s2._tutti=s.competitor;s2._tolti=t;s2.competitor=s.competitor.filter(function(x){return t.indexOf(x.nome)<0});
+  s2.prezzi=(s.prezzi||[]).map(function(p){if(p.etichetta!=='martedi'&&p.etichetta!=='sabato')return p;var v=s2.competitor.map(function(x){return x[p.etichetta]}).filter(function(x){return x!=null}),q={},k2;for(k2 in p)q[k2]=p[k2];
+    q.con_prezzo=v.length;if(v.length>=5){q.mediano=Math.round(med(v));q.minimo=Math.min.apply(0,v);q.massimo=Math.max.apply(0,v)}else{q.mediano=q.minimo=q.massimo=null}return q});
+  return s2}
 function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'),b=pz(s,'sabato'),ev=pz(s,'evento');
   var A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto e contenuti'],['canali','Canali'],['sito','Sito e vendita diretta']];
-  var h='<header class="o2-rh"><small>Hotel Score · Osservatorio Ricavia</small><h2>'+esc(bel(s.nome))+'</h2><p>'+esc(s.indirizzo||'')+(s.zona?' · '+esc(s.zona):'')+(s.stelle?' · '+s.stelle+' stelle':'')+(s.camere?' · '+s.camere+' camere':'')+'</p><p class="o2-rd">Dati letti su Booking il '+gg(s.letto_il)+'. Competitor: i '+((s.set||{}).quanti||0)+' alberghi simili più vicini'+((s.set||{}).piu_lontano_m?', il più lontano a '+num(s.set.piu_lontano_m)+' m':'')+'</p></header>';
+  var h='<header class="o2-rh"><small>Hotel Score · Osservatorio Ricavia</small><h2>'+esc(bel(s.nome))+'</h2><p>'+esc(s.indirizzo||'')+(s.zona?' · '+esc(s.zona):'')+(s.stelle?' · '+s.stelle+' stelle':'')+(s.camere?' · '+s.camere+' camere':'')+'</p><p class="o2-rd">Dati letti su Booking il '+gg(s.letto_il)+'. Competitor: i '+((s.set||{}).quanti||0)+' alberghi simili più vicini'+((s.set||{}).piu_lontano_m?', il più lontano a '+num(s.set.piu_lontano_m)+' m':'')+'</p>'+
+    /* 2.9: dato più vecchio di 7 giorni; il giro notturno rilegge per primi gli hotel letti da più tempo (ordinaCoda) */
+    (s.letto_il&&Date.now()-Date.parse(s.letto_il)>7*864e5?'<p class="o2-rd">Questi dati hanno più di 7 giorni: il tuo hotel è tra i primi delle prossime letture notturne</p>':'')+'</header>';
   /* 4.1 i voti */
   h+='<section class="o2-rs"><h3>Il tuo Hotel Score</h3><div class="o2-rhs"><b>'+(s.hotel_score!=null?d1(s.hotel_score):'n.d.')+'</b><span>su 10, media di '+A.filter(function(a){return v[a[0]]!=null}).length+' aree su 6'+(s.hotel_score==null?'. La media compare con almeno 4 aree':'')+'</span></div><ul class="o2-rv">'+
     A.map(function(a){var x=v[a[0]];return x==null?'<li class="na"><span>'+a[1]+'</span><i></i><b>in arrivo</b></li>':'<li><span>'+a[1]+'</span><i><u style="width:'+x*10+'%"></u></i><b>'+x+'</b></li>'}).join('')+'</ul>'+
@@ -319,11 +330,16 @@ function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'
   /* 4.6 quanto vale un punto */
   h+='<section class="o2-rs"><h3>Quanto vale un punto di voto</h3><p>Uno studio della Cornell University del 2012 stima l’11,2% di tariffa in più per un punto su una scala da 1 a 5, a parità di occupazione. Sulla scala di Booking, da 1 a 10, un punto vale circa la metà. È un ordine di grandezza, non una promessa</p></section>';
   /* 4.8 i competitor */
-  if(s.competitor&&s.competitor.length)h+='<section class="o2-rs"><h3>I tuoi competitor</h3><ul class="o2-rco">'+s.competitor.map(function(x){return '<li><span>'+esc(x.nome)+'<small>'+(x.stelle?x.stelle+' stelle':'')+(x.distanza_m?' · '+num(x.distanza_m)+' m':'')+(x.recensioni?' · '+num(x.recensioni)+' recensioni':'')+'</small></span><b>'+d1(x.voto)+'</b></li>'}).join('')+'</ul>'+
-    '<button type="button" class="o2-lk" data-o2-msg="Nel report di '+esc(s.nome)+' vorrei cambiare i competitor: ">Un competitor non è giusto? Scrivici</button></section>';
+  var tutti=s._tutti||s.competitor||[],tl=s._tolti||[];
+  if(tutti.length)h+='<section class="o2-rs"><h3>I tuoi competitor</h3><p class="o2-rn">Togli un albergo che non è un tuo competitor: i prezzi di martedì e sabato si ricalcolano sugli altri. La scelta resta salvata su questo dispositivo</p><ul class="o2-rco">'+tutti.map(function(x){var no=tl.indexOf(x.nome)>-1;return '<li'+(no?' class="no"':'')+'><span>'+esc(x.nome)+'<small>'+(x.stelle?x.stelle+' stelle':'')+(x.distanza_m?' · '+num(x.distanza_m)+' m':'')+(x.recensioni?' · '+num(x.recensioni)+' recensioni':'')+'</small></span><b>'+d1(x.voto)+'</b><button type="button" data-o2-tg="'+esc(x.nome)+'">'+(no?'Rimetti':'Togli')+'</button></li>'}).join('')+'</ul>'+
+    (tl.length?'<p class="o2-rn">Hai tolto '+tl.length+(tl.length===1?' albergo':' alberghi')+'. Capodanno e cosa dicono gli ospiti restano sul gruppo completo</p>':'')+
+    '<button type="button" class="o2-lk" data-o2-msg="Nel report di '+esc(s.nome)+' manca un competitor: ">Manca un competitor? Scrivici e lo aggiungiamo</button></section>';
   /* 4.9 e 4.10 */
   h+='<section class="o2-rs o2-rcta"><h3>Vuoi leggerlo con noi?</h3><p>Venti minuti su Google Meet: ti spieghiamo i numeri e da dove partire</p><div class="o2-ops"><button type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per leggere insieme il report di '+esc(s.nome)+'">Prenota la call conoscitiva →</button><button type="button" data-o2-msg="Nel report di '+esc(s.nome)+' c’è un dato sbagliato: ">Segnala un dato sbagliato</button></div></section>';
   return h}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-o2-tg]');if(!b||!rep||!rep.contains(b)||!rep._s)return;var s=rep._s,n=b.getAttribute('data-o2-tg'),t=(TOLTI[s.id_comune]||[]).slice(),i=t.indexOf(n);
+  if(i>-1)t.splice(i,1);else t.push(n);if(t.length)TOLTI[s.id_comune]=t;else delete TOLTI[s.id_comune];try{localStorage.setItem('o2-tolti',JSON.stringify(TOLTI))}catch(_){}
+  var y=rep.scrollTop;rep.querySelector('.o2-rc').innerHTML=report(applica(s));rep.scrollTop=y;var nb=rep.querySelector('[data-o2-tg="'+n.replace(/"/g,'\\"')+'"]');if(nb)nb.focus()});
 try{var rq=new URL(location.href).searchParams.get('report');if(rq)apriReport(rq)}catch(_){}
 
 /* ---------- Top 10 per zona e categoria (6.1), nota cliente (6.2) ---------- */

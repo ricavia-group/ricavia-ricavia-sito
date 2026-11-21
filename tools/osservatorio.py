@@ -79,7 +79,7 @@ def hero(d):
 <p class="o2-lead ar" style="--d:.2s">Ogni notte leggiamo su Booking le tariffe degli alberghi di Roma. Ogni mese pubblichiamo le classifiche. Cerca il tuo hotel, una zona o una via e guarda il mercato intorno a te</p>
 <div class="o2-cerca ar" style="--d:.3s">
 <div class="o2-seg" role="group" aria-label="Cosa vuoi cercare"><button type="button" class="on" data-m="h" aria-pressed="true">Il tuo hotel</button><button type="button" data-m="z" aria-pressed="false">Una zona o una via</button></div>
-<form class="o2-f" id="o2Cerca" novalidate><div class="o2-in"><input name="q" autocomplete="off" aria-label="Cerca un hotel, una zona o una via" placeholder="Nome del tuo hotel"><div class="o2-sug" id="o2Sug" hidden></div></div><button type="submit">Cerca <span class="arr">→</span></button></form>
+<form class="o2-f" id="o2Cerca" novalidate><div class="o2-in"><input name="q" autocomplete="off" aria-label="Cerca un hotel, una zona o una via" placeholder="Nome del tuo hotel o CIN"><div class="o2-sug" id="o2Sug" hidden></div></div><button type="submit">Cerca <span class="arr">→</span></button></form>
 <div class="o2-nf" id="o2Nf" role="status" aria-live="polite" hidden></div>
 </div>
 <p class="o2-live ar" style="--d:.38s"><i></i>Ultima lettura: {data(d["aggiornato"])} · {num(d["alberghi_letti"])} alberghi letti su Booking</p>
