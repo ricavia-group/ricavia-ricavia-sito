@@ -158,7 +158,7 @@ function mostraHotel(i){var h=HOT[i],c=[[num(h.s),'strutture ricettive'],[num(h.
 function calcola(n){try{sessionStorage.setItem('hs-n',n)}catch(_){}var hs=document.getElementById('hsForm');if(hs&&hs.n)hs.n.value=n;var a=$('#o2Hs');if(a)a.click()}
 function chiudi(){if(!sug)return;sug.hidden=true;sug.innerHTML='';SI=-1}
 function suggerisci(){var t=f.q.value.trim();nf.hidden=true;var hh=modo==='h'?trovaHotel(t).slice(0,5):[];if(t.length<2||(modo==='h'&&!VIA.test(t)&&!zoneDi(t).length&&!hh.length)){chiudi();return}
-  hh=hh.map(function(i){return '<button type="button" data-a="h:'+i+'">'+esc(bel(HOT[i].n))+'<small>albergo · '+esc(HOT[i].i)+'</small></button>'});
+  hh=hh.map(function(i){return '<button type="button" data-a="h:'+i+'">'+esc(bel(HOT[i].n))+'<small>'+esc(HOT[i].t||'albergo')+' · '+esc(HOT[i].i)+'</small></button>'});
   var z=zoneDi(t).slice(0,3).map(function(x){return '<button type="button" data-a="z:'+x[1]+'">'+esc(x[0].nome)+'<small>zona · '+num(x[0].offerta.strutture)+' strutture ricettive</small></button>'});
   var v=VIE&&t.length>=3?trovaVie(t).slice(0,5).map(function(x){return '<button type="button" data-a="v:'+esc(x)+'">'+esc(x)+'<small>via · '+num(VIE[x].strutture)+'</small></button>'}):[];
   var h=hh.concat(z,v);if(!h.length){chiudi();return}sug.innerHTML=h.join('');sug.hidden=false;SI=-1}
@@ -188,7 +188,7 @@ if(f){var seg=$$('.o2-seg button');
     if(DOM.test(t))return domanda(t);
     var z=zoneDi(t);if(z.length===1&&(modo==='z'||norm(z[0][0].nome)===norm(t)))return apri('z:'+z[0][1]);
     if(modo==='h'&&!VIA.test(t))return hotel().then(function(){var r=trovaHotel(t);if(r.length===1||(r.length&&norm(HOT[r[0]].n)===norm(t)))return mostraHotel(r[0]);if(r.length){suggerisci();return}
-      nf.innerHTML='<b>Non troviamo «'+esc(t)+'» tra i '+num(HOT.length)+' alberghi del registro di Roma Capitale</b><p>Prova con il nome scritto in un altro modo, oppure calcoliamo l’Hotel Score partendo dal nome</p><div><button type="button" data-o2-hn="'+esc(t)+'">Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null});
+      nf.innerHTML='<b>Non troviamo «'+esc(t)+'» tra le '+num(HOT.length)+' strutture ricettive del registro di Roma Capitale</b><p>Cerchiamo tra alberghi, affittacamere, B&B e residence: prova con il nome scritto in un altro modo, oppure calcoliamo l’Hotel Score partendo dal nome</p><div><button type="button" data-o2-hn="'+esc(t)+'">Calcola l’Hotel Score →</button></div>';nf.hidden=false;nf._d=null});
     vie().then(function(){var r=trovaVie(t);if(r.length===1)return apri('v:'+r[0]);if(r.length){suggerisci();if(sug.hidden)nonTrovato(t);return}nonTrovato(t)})})}
 
 /* ---------- la conversazione dell'Hotel Score, una riga alla volta ---------- */
