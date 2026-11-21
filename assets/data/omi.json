@@ -1,0 +1,236 @@
+[
+ {
+  "zona_omi": "D5",
+  "dizione": "SAN PAOLO (VIA TULLIO LEVI CIVITA)",
+  "zona_sito": "Testaccio · Ostiense",
+  "vendita_min": 2950.0,
+  "vendita_max": 4200.0,
+  "affitto_min": 11.5,
+  "affitto_max": 16.5
+ },
+ {
+  "zona_omi": "D1",
+  "dizione": "PRENESTINO LABICANO (VIALE PARTENOPE,VIA TEANO)",
+  "zona_sito": "San Lorenzo · Pigneto",
+  "vendita_min": 2650.0,
+  "vendita_max": 3800.0,
+  "affitto_min": 10.0,
+  "affitto_max": 14.5
+ },
+ {
+  "zona_omi": "B31",
+  "dizione": "C.STORICO:TRIDENTE(CAMPO MARZIO,COLONNA,PIGNA,TREVI)",
+  "zona_sito": "Centro storico",
+  "vendita_min": 7900.0,
+  "vendita_max": 10300.0,
+  "affitto_min": 20.3,
+  "affitto_max": 26.8
+ },
+ {
+  "zona_omi": "B29",
+  "dizione": "VIMINALE (VIA TORINO)",
+  "zona_sito": "Monti",
+  "vendita_min": 4500.0,
+  "vendita_max": 6200.0,
+  "affitto_min": 16.8,
+  "affitto_max": 23.3
+ },
+ {
+  "zona_omi": "B4",
+  "dizione": "MONTI (VIA DEI  SERPENTI)",
+  "zona_sito": "Monti",
+  "vendita_min": 5000.0,
+  "vendita_max": 6800.0,
+  "affitto_min": 18.0,
+  "affitto_max": 25.0
+ },
+ {
+  "zona_omi": "B3",
+  "dizione": "CELIO (VIA CLAUDIA)",
+  "zona_sito": "Monti",
+  "vendita_min": 4400.0,
+  "vendita_max": 6400.0,
+  "affitto_min": 16.0,
+  "affitto_max": 23.0
+ },
+ {
+  "zona_omi": "C49",
+  "dizione": "FLAMINIO (VIA G. RENI)",
+  "zona_sito": "Flaminio · Parioli",
+  "vendita_min": 4500.0,
+  "vendita_max": 6200.0,
+  "affitto_min": 15.0,
+  "affitto_max": 20.5
+ },
+ {
+  "zona_omi": "C50",
+  "dizione": "FLAMINIO PORTA DEL POPOLO (PIAZZA DELLA MARINA)",
+  "zona_sito": "Flaminio · Parioli",
+  "vendita_min": 4900.0,
+  "vendita_max": 7100.0,
+  "affitto_min": 18.3,
+  "affitto_max": 26.0
+ },
+ {
+  "zona_omi": "B18",
+  "dizione": "ESQUILINO (PIAZZA VITTORIO)",
+  "zona_sito": "Esquilino · Termini",
+  "vendita_min": 3600.0,
+  "vendita_max": 5100.0,
+  "affitto_min": 11.3,
+  "affitto_max": 16.3
+ },
+ {
+  "zona_omi": "C29",
+  "dizione": "CASAL BERTONE-PORTONACCIO (VIA DI CASAL BERTONE)",
+  "zona_sito": "San Lorenzo · Pigneto",
+  "vendita_min": 2850.0,
+  "vendita_max": 4000.0,
+  "affitto_min": 11.5,
+  "affitto_max": 16.5
+ },
+ {
+  "zona_omi": "C30",
+  "dizione": "PIGNETO (PIAZZA DEL PIGNETO)",
+  "zona_sito": "San Lorenzo · Pigneto",
+  "vendita_min": 3100.0,
+  "vendita_max": 4300.0,
+  "affitto_min": 12.5,
+  "affitto_max": 18.0
+ },
+ {
+  "zona_omi": "C32",
+  "dizione": "OSTIENSE (VIA DEL PORTO FLUVIALE)",
+  "zona_sito": "Testaccio · Ostiense",
+  "vendita_min": 3300.0,
+  "vendita_max": 4500.0,
+  "affitto_min": 13.0,
+  "affitto_max": 18.5
+ },
+ {
+  "zona_omi": "C40",
+  "dizione": "PRATI (VIA COLA DI RIENZO)",
+  "zona_sito": "Prati · Vaticano",
+  "vendita_min": 4900.0,
+  "vendita_max": 6800.0,
+  "affitto_min": 15.0,
+  "affitto_max": 20.8
+ },
+ {
+  "zona_omi": "B14",
+  "dizione": "TRASTEVERE (VIA DELLA LUNGARA)",
+  "zona_sito": "Trastevere",
+  "vendita_min": 5200.0,
+  "vendita_max": 7200.0,
+  "affitto_min": 18.3,
+  "affitto_max": 26.3
+ },
+ {
+  "zona_omi": "B15",
+  "dizione": "BORGO (VIA DELLA CONCILIAZIONE)",
+  "zona_sito": "Prati · Vaticano",
+  "vendita_min": 4800.0,
+  "vendita_max": 6900.0,
+  "affitto_min": 15.8,
+  "affitto_max": 23.0
+ },
+ {
+  "zona_omi": "B17",
+  "dizione": "SALLUSTIANO-CASTRO PRETORIO (PIAZZA INDIPENDENZA)",
+  "zona_sito": "Esquilino · Termini",
+  "vendita_min": 3800.0,
+  "vendita_max": 5700.0,
+  "affitto_min": 14.5,
+  "affitto_max": 21.5
+ },
+ {
+  "zona_omi": "C5",
+  "dizione": "SAN LORENZO (VIA DEI SABELLI)",
+  "zona_sito": "San Lorenzo · Pigneto",
+  "vendita_min": 3000.0,
+  "vendita_max": 4500.0,
+  "affitto_min": 13.8,
+  "affitto_max": 20.0
+ },
+ {
+  "zona_omi": "C26",
+  "dizione": "VILLAGGIO OLIMPICO (VIALE DE COUBERTIN)",
+  "zona_sito": "Flaminio · Parioli",
+  "vendita_min": 3900.0,
+  "vendita_max": 5600.0,
+  "affitto_min": 11.5,
+  "affitto_max": 16.0
+ },
+ {
+  "zona_omi": "C3",
+  "dizione": "PINCIANO (VIA GIOVANNI PAISIELLO)",
+  "zona_sito": "Flaminio · Parioli",
+  "vendita_min": 4600.0,
+  "vendita_max": 6700.0,
+  "affitto_min": 16.3,
+  "affitto_max": 23.8
+ },
+ {
+  "zona_omi": "B32",
+  "dizione": "C.STORICO:CORSO VITTORIO(PONTE,PARIONE,REGOLA,S.EUSTACHIO)",
+  "zona_sito": "Centro storico",
+  "vendita_min": 5700.0,
+  "vendita_max": 7900.0,
+  "affitto_min": 18.3,
+  "affitto_max": 26.3
+ },
+ {
+  "zona_omi": "B25",
+  "dizione": "LUDOVISI (VIA VENETO)",
+  "zona_sito": "Via Veneto",
+  "vendita_min": 4800.0,
+  "vendita_max": 6800.0,
+  "affitto_min": 15.8,
+  "affitto_max": 23.5
+ },
+ {
+  "zona_omi": "C38",
+  "dizione": "CASILINO MARRANELLA (VIA LABICO)",
+  "zona_sito": "San Lorenzo · Pigneto",
+  "vendita_min": 2450.0,
+  "vendita_max": 3400.0,
+  "affitto_min": 10.0,
+  "affitto_max": 14.8
+ },
+ {
+  "zona_omi": "C10",
+  "dizione": "GARBATELLA (LARGO DELLE SETTE CHIESE)",
+  "zona_sito": "Testaccio · Ostiense",
+  "vendita_min": 2850.0,
+  "vendita_max": 4000.0,
+  "affitto_min": 12.0,
+  "affitto_max": 16.3
+ },
+ {
+  "zona_omi": "B1",
+  "dizione": "TESTACCIO (PIAZZA S.MARIA LIBERATRICE)",
+  "zona_sito": "Testaccio · Ostiense",
+  "vendita_min": 4700.0,
+  "vendita_max": 6600.0,
+  "affitto_min": 15.0,
+  "affitto_max": 21.3
+ },
+ {
+  "zona_omi": "C1",
+  "dizione": "PARIOLI (PIAZZA EUCLIDE)",
+  "zona_sito": "Flaminio · Parioli",
+  "vendita_min": 5200.0,
+  "vendita_max": 7200.0,
+  "affitto_min": 17.5,
+  "affitto_max": 25.0
+ },
+ {
+  "zona_omi": "D52",
+  "dizione": "CASILINO VILLA DE SANTIS (VIA ROMOLO BALZANI)",
+  "zona_sito": "San Lorenzo · Pigneto",
+  "vendita_min": 2200.0,
+  "vendita_max": 3300.0,
+  "affitto_min": 8.8,
+  "affitto_max": 12.8
+ }
+]

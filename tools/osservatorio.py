@@ -6,7 +6,7 @@ CARTELLA contiene osservatorio.json, vie.json e mappa.json prodotti da tools/oss
 Riscrive la parte tra <!--oss:pagina--> e <!--/oss:pagina-->: si rilancia a ogni edizione, poi build e controlli.
 Il percorso segue il giro delle pagine del 13/11 (fermate 1, 6, 7, 8, 9).
 """
-import datetime, hashlib, html, json, os, re, shutil, sys
+import collections, datetime, hashlib, html, json, os, re, shutil, statistics, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATI = os.path.join(ROOT, "assets", "data")
@@ -88,7 +88,7 @@ def hero(d):
 </div>
 <div class="o2-cnt">{"".join(f'<div class="ar" style="--d:{.1 + i * .08:.2f}s"><b data-n="{n}">{num(n)}</b><span>{E(t)}</span></div>' for i, (n, t) in enumerate(cont))}</div>
 </div></section>
-<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o2-prezzi">Prezzi</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-zone">Zone</a><a href="#o2-vie">Vie</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-metodo">Metodo</a></div></nav>'''
+<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o2-prezzi">Prezzi</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-zone">Zone</a><a href="#o2-flussi">Domanda</a><a href="#o2-vie">Vie</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-metodo">Metodo</a></div></nav>'''
 
 
 def prezzi(d):
@@ -153,9 +153,48 @@ def zone(d):
 <p class="ar">Scegli una zona: l'offerta dal registro di Roma Capitale e il mercato letto su Booking. Solo numeri d'insieme, nessun hotel nominato</p></div>
 <div class="o2-zc ar" role="group" aria-label="Scegli la zona">{chips}</div>
 <div class="o2-zg ar"><div class="o2-zm"><canvas id="o2ZMap" role="img" aria-label="Mappa della zona scelta"></canvas></div><div class="o2-zp" id="o2Zona" aria-live="polite"></div></div>
-<p class="o2-soon2 ar">Da gennaio, ogni mese: arrivi e presenze turistiche di Roma e passeggeri di Fiumicino e Ciampino, con fonte e data</p>
 <div class="o2-inv ar"><div><b>Vuoi aprire o comprare una struttura ricettiva a Roma?</b><span>Dai numeri della zona al business plan: studio di fattibilità, ricavi, costi e GOP anno per anno</span></div><a class="ap-btn solid" href="#apertura">Nuova apertura <span class="arr">→</span></a></div>
 </div></section>'''
+
+
+MESI_BREVI = ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"]
+
+
+def milioni(x):
+    return f"{x / 1e6:.1f}".replace(".", ",")
+
+
+def flussi(d):
+    """La domanda di Roma (fermate 7.5 e 11 del giro): ISTAT per arrivi e presenze, Assaeroporti per i passeggeri."""
+    f = d.get("flussi")
+    if not f:
+        return ""
+    ist, ae = f["istat"], f["aeroporti"]
+    anni = sorted(ist["annui"])
+    a, b = ist["annui"][anni[-1]], ist["annui"][anni[-2]]
+    var = (a["arrivi_alberghi"] / b["arrivi_alberghi"] - 1) * 100
+    tiles = [(milioni(a["arrivi_alberghi"]) + " mln", f'arrivi negli alberghi di Roma nel {anni[-1]}, {"+" if var >= 0 else ""}{var:.1f}% sul {anni[-2]}'.replace(".", ",")),
+             (milioni(a["presenze_alberghi"]) + " mln", f"notti negli alberghi nel {anni[-1]}"),
+             (f'{a["presenze_alberghi"] / a["arrivi_alberghi"]:.1f}'.replace(".", ",") + " notti", "permanenza media in albergo"),
+             (f'{a["arrivi_stranieri"] / a["arrivi"] * 100:.0f}%', "degli arrivi viene dall'estero")]
+    am = ist["mesi"][anni[-1]]["arrivi"]
+    mx = max(am)
+    barre1 = "".join(f'<div style="--h:{v / mx * 100:.0f}%"><i></i><b>{v / 1e6:.2f}'.replace(".", ",") + f'</b><span>{MESI_BREVI[i]}</span></div>' for i, v in enumerate(am))
+    pm = ae["mesi"]
+    mp = max(p["fco"] + p["cia"] for p in pm)
+    barre2 = "".join(f'<div style="--h:{(p["fco"] + p["cia"]) / mp * 100:.0f}%"><i></i><b>{(p["fco"] + p["cia"]) / 1e6:.1f}'.replace(".", ",") +
+                     f'</b><span>{MESI_BREVI[p["mese"] - 1]}</span></div>' for p in pm)
+    ultimo = MESI_BREVI[pm[-1]["mese"] - 1]
+    return f'''<section class="o2-sec o2-lt" id="o2-flussi"><div class="wrap">
+<div class="o2-sh"><span class="o2-tag ar">La domanda</span><h2 class="ar">Quante persone arrivano<br>{g("a Roma")}</h2>
+<p class="ar">Arrivi e notti negli esercizi ricettivi del Comune di Roma e passeggeri di Fiumicino e Ciampino, mese per mese, con fonte e data</p></div>
+<div class="o2-fx ar">{"".join(f'<div><b>{x}</b><span>{E(y)}</span></div>' for x, y in tiles)}</div>
+<div class="o2-fg">
+<figure class="o2-fc ar"><figcaption>Arrivi a Roma nel {anni[-1]}, milioni al mese</figcaption><div class="o2-fb">{barre1}</div>
+<small>Fonte: {E(ist["fonte"])}, dati annuali {anni[-1]}. {E(ist["nota_2025"])}</small></figure>
+<figure class="o2-fc ar"><figcaption>Passeggeri di Fiumicino e Ciampino nel {ae["anno"]}, milioni al mese</figcaption><div class="o2-fb">{barre2}</div>
+<small>Fonte: {E(ae["fonte"])}, gennaio-{ultimo} {ae["anno"]}: {milioni(ae["totale"])} milioni, {"+" if ae["var"] >= 0 else ""}{str(ae["var"]).replace(".", ",")}% sullo stesso periodo del {ae["anno"] - 1}</small></figure>
+</div></div></section>'''
 
 
 def vie(d):
@@ -196,10 +235,10 @@ def metodo():
               ("Il competitive set", "Le strutture ricettive più vicine, con stesso tipo, categoria vicina e dimensione simile"),
               ("I clienti Ricavia", "Compaiono nelle classifiche con una nota accanto al nome"),
               ("Le correzioni", "Puoi segnalare un dato sbagliato o chiedere di non comparire: una persona di Ricavia controlla ogni richiesta")]
-    arr = [("Dicembre", "Top 10 Hotel Score", "Per zona e categoria, con il sigillo per il sito dell'hotel"),
-           ("Dicembre", "Le prime tre di ogni via", "Per tariffa letta e per Hotel Score"),
-           ("Dicembre", "Investitori", "Affollamento, rendimento e costo d'ingresso delle zone, sulla pagina Nuova apertura"),
-           ("Gennaio", "Domanda e flussi", "Arrivi, presenze, passeggeri di Fiumicino e Ciampino, eventi e giornate di picco")]
+    arr = [("Dicembre", "Canali e Sito nell’Hotel Score", "Le ultime due aree: su quali OTA vende l’hotel e cosa offre il suo sito"),
+           ("Dicembre", "Occupazione e tariffa media di Roma", "Due numeri aggiornati ogni giorno, salvati per le statistiche di fine mese"),
+           ("Dicembre", "Costo d’ingresso per zona", "Quotazioni immobiliari OMI sulla pagina Nuova apertura"),
+           ("Gennaio", "Gli hotel saliti di più", "La classifica di chi ha guadagnato più Hotel Score nel mese")]
     return f'''<section class="o2-sec o2-lt" id="o2-metodo"><div class="wrap"><div class="o2-mg">
 <div><div class="o2-sh"><span class="o2-tag ar">Il metodo</span><h2 class="ar">Regole {g("uguali per tutti")}</h2></div>
 <ol class="o2-rl">{"".join(f'<li class="ar"><em>{i + 1:02d}</em><b>{a}</b><span>{b}</span></li>' for i, (a, b) in enumerate(regole))}</ol>
@@ -209,23 +248,35 @@ def metodo():
 </div></div></section>'''
 
 
+def casa(qq):
+    """Prezzo delle case (abitazioni civili, OMI) e rendimento lordo da affitto di una zona: valori mediani delle zone OMI."""
+    if not qq:
+        return "<td>n.d.</td><td>n.d.</td>"
+    v = statistics.median((q["vendita_min"] + q["vendita_max"]) / 2 for q in qq)
+    r = statistics.median((q["affitto_min"] + q["affitto_max"]) / 2 * 12 / ((q["vendita_min"] + q["vendita_max"]) / 2) for q in qq if q.get("affitto_min"))
+    return f'<td>{num(int(round(v, -2)))} €</td><td>{dec(r * 100)}%</td>'
+
+
 def apertura(d):
     """Blocco della pagina Nuova apertura: le nove zone a confronto per chi apre o compra (fermata 10 del giro)."""
-    righe = []
+    righe, omi = [], collections.defaultdict(list)
+    for q in d.get("omi") or []:
+        if q.get("vendita_min") and q.get("vendita_max"):
+            omi[q["zona_sito"]].append(q)
     for z in sorted(d["zone"], key=lambda z: -((z["mercato"] or {}).get("sotto_8") or 0)):
         o, m = z["offerta"], z["mercato"] or {}
         dens = num(round(o["strutture"] / z["km2"])) if z.get("km2") else "n.d."
         righe.append(f'<tr><th scope="row">{E(z["nome"])}</th><td>{dens}</td><td>{num(o.get("alberghi", 0))}</td><td>{num(o.get("camere_alberghi", 0))}</td>'
                      f'<td>{str(m["sabato"]) + " €" if m.get("sabato") else "n.d."}</td><td>{dec(m["voto"]) if m.get("voto") else "n.d."}</td>'
-                     f'<td><b>{pct(m["sotto_8"], False) if m.get("sotto_8") is not None else "n.d."}</b></td></tr>')
+                     f'<td><b>{pct(m["sotto_8"], False) if m.get("sotto_8") is not None else "n.d."}</b></td>{casa(omi.get(z["nome"]))}</tr>')
     return (f'<div class="ix-blk oz"><div class="ix-sh ar"><span class="ap-tag">Dall’Osservatorio · {data(d["aggiornato"])}</span>'
             f'<h2>Dove aprire a Roma: nove zone a confronto</h2>'
             f'<p class="ix-p">Quanto è affollata ogni zona, quanto costa una camera il sabato e quanti alberghi hanno un voto sotto 8 su Booking. '
             f'Più alta è quella quota, più spazio c’è per un albergo che lavora meglio dei vicini</p></div>'
             f'<div class="oz-w ar"><table class="oz-t"><thead><tr><th>Zona</th><th>Strutture ricettive per km²</th><th>Alberghi</th><th>Camere d’albergo</th>'
-            f'<th>Sabato, valore mediano</th><th>Voto mediano</th><th>Alberghi sotto 8</th></tr></thead><tbody>{"".join(righe)}</tbody></table></div>'
+            f'<th>Sabato, valore mediano</th><th>Voto mediano</th><th>Alberghi sotto 8</th><th>Casa al m²</th><th>Rendimento lordo da affitto</th></tr></thead><tbody>{"".join(righe)}</tbody></table></div>'
             f'<p class="oz-s">Fonte: registro delle strutture ricettive di Roma Capitale ({E(d["registro"]["file"])}) e Booking, prezzi letti dal {data(d["letture_dal"])} '
-            f'al {data(d["aggiornato"])}, camera per 2 persone. Costo d’ingresso e rendimento per zona arrivano con le quotazioni immobiliari OMI</p>'
+            f'al {data(d["aggiornato"])}, camera per 2 persone. Casa al m² e rendimento: quotazioni OMI dell’Agenzia delle Entrate, 1° semestre 2026, abitazioni civili in stato normale, valore mediano delle zone OMI della zona; il rendimento è l’affitto annuo diviso il prezzo, prima di tasse e spese</p>'
             f'<p class="oz-c"><a class="z-btn" href="#pg-osservatorio">Le zone nell’Osservatorio <span class="arr">→</span></a></p></div>')
 
 
@@ -233,7 +284,7 @@ def pagina(d):
     dati = {"zone": d["zone"], "date": d["date"], "letti": d["alberghi_letti"], "agg": d["aggiornato"], "dal": d["letture_dal"],
             "vie": d["vie"], "fonte": fonti(d), "ver": d.get("ver", ""), "hs": d.get("hs_tutti", [])}
     js = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    return (hero(d) + prezzi(d) + classifiche(d) + zone(d) + vie(d) + hotel() + metodo()
+    return (hero(d) + prezzi(d) + classifiche(d) + zone(d) + flussi(d) + vie(d) + hotel() + metodo()
             + '<a href="#pg-pagella" id="o2Hs" hidden>Hotel Score</a><a href="#contatti" id="o2Ct" hidden>Contatti</a>'
             + f'<script type="application/json" id="o2Dati">{js}</script>')
 
@@ -260,6 +311,14 @@ def main():
         with open(os.path.join(DATI, f), "rb") as x:
             h.update(x.read())
     d["ver"] = h.hexdigest()[:10]
+    om = os.path.join(DATI, "omi.json")
+    if os.path.exists(om):
+        with open(om, encoding="utf-8") as f:
+            d["omi"] = json.load(f)
+    fl = os.path.join(DATI, "flussi.json")
+    if os.path.exists(fl):
+        with open(fl, encoding="utf-8") as f:
+            d["flussi"] = json.load(f)
     p = os.path.join(ROOT, "index.html")
     with open(p, encoding="utf-8") as f:
         t = f.read()
