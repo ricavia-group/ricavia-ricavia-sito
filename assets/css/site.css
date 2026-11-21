@@ -5692,6 +5692,7 @@ html.o2-nosc{overflow:hidden}
 
 /* la casella della conversazione nella sezione Il tuo hotel: come i campi email della conversazione, suggerimenti sotto */
 .o2-cq{grid-template-columns:1fr auto;align-items:center}
+#o2-hotel .o2-hg2{align-items:start}
 .o2-cqi{position:relative;min-width:0}
 .o2-cq input[type=search]{width:100%;box-sizing:border-box;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:var(--o2t);font:500 14.5px var(--zf);-webkit-appearance:none;appearance:none}
 .o2-cq .o2-sug{z-index:5}
