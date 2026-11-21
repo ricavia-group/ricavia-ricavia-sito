@@ -398,6 +398,8 @@ document.addEventListener('click',function(e){var b=e.target.closest('[data-o2-t
   if(i>-1)t.splice(i,1);else t.push(n);if(t.length)TOLTI[s.id_comune]=t;else delete TOLTI[s.id_comune];try{localStorage.setItem('o2-tolti',JSON.stringify(TOLTI))}catch(_){}
   var y=rep.scrollTop;rep.querySelector('.o2-rc').innerHTML=report(applica(s));rep.scrollTop=y;var nb=rep.querySelector('[data-o2-tg="'+n.replace(/"/g,'\\"')+'"]');if(nb)nb.focus()});
 try{var rq=new URL(location.href).searchParams.get('report');if(rq)apriReport(rq)}catch(_){}
+/* link personale delle mail: /osservatorio/?hotel=ID apre la chat già sul suo hotel, senza scrivere niente */
+try{var hq=new URL(location.href).searchParams.get('hotel');if(hq&&/^\d{1,10}$/.test(hq)&&chatEl)setTimeout(function(){apriChat(hq)},400)}catch(_){}
 
 /* ---------- Top 10 per zona e categoria (6.1), nota cliente (6.2) ---------- */
 var hsP=$('.o2-p[data-i="hotel_score"]');
