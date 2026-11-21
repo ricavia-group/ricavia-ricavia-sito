@@ -5545,3 +5545,7 @@ html.mp #pg-osservatorio .o2-nav{top:64px}
 #pg-osservatorio .o2-hm>span{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.05);min-width:0}
 #pg-osservatorio .o2-hm b{display:block;font:600 20px/1.2 var(--zf);color:var(--o2t)}
 #pg-osservatorio .o2-hm small{display:block;font-size:12px;line-height:1.35;color:var(--o2m)}
+#pg-osservatorio .o2-inv{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:22px 24px;border-radius:22px;border:1px solid var(--o2l);background:rgba(255,255,255,.04)}
+#pg-osservatorio .o2-inv>div{display:grid;gap:4px;flex:1 1 320px;min-width:0}
+#pg-osservatorio .o2-inv b{font:600 19px/1.3 var(--zf);color:var(--o2t)}
+#pg-osservatorio .o2-inv span{font-size:14.5px;line-height:1.5;color:var(--o2m)}

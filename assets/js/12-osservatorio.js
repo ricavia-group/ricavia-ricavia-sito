@@ -22,10 +22,10 @@ function lev(a,b){if(Math.abs(a.length-b.length)>8)return 99;var v=[],i,j;for(j=
 
 /* ---------- dati caricati quando servono ---------- */
 var VIE=null,VL=null,RC={},RS={},M=null,ML=null;
-function vie(){if(!VL)VL=fetch('/assets/data/vie.json').then(function(r){return r.json()}).then(function(d){VIE=d;var k=Object.keys(d);
+function vie(){if(!VL)VL=fetch('/assets/data/vie.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){VIE=d;var k=Object.keys(d);
   k.slice().sort(function(a,b){return d[b].camere-d[a].camere}).forEach(function(v,i){RC[v]=i+1});
   k.slice().sort(function(a,b){return d[b].strutture-d[a].strutture}).forEach(function(v,i){RS[v]=i+1});return d}).catch(function(e){VL=null;throw e});return VL}
-function mappa(){if(!ML)ML=fetch('/assets/data/mappa.json').then(function(r){return r.json()}).then(function(d){M=d;M.bb=[];if(big)big.v=[0,0,d.w,d.h];
+function mappa(){if(!ML)ML=fetch('/assets/data/mappa.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){M=d;M.bb=[];if(big)big.v=[0,0,d.w,d.h];
   d.contorni.forEach(function(c){var b=M.bb[c[0]]||(M.bb[c[0]]=[1e9,1e9,-1e9,-1e9]),p=c[1];for(var i=0;i<p.length;i+=2){b[0]=Math.min(b[0],p[i]);b[1]=Math.min(b[1],p[i+1]);b[2]=Math.max(b[2],p[i]);b[3]=Math.max(b[3],p[i+1])}});return d}).catch(function(e){ML=null;throw e});return ML}
 
 /* ---------- la mappa: un punto per ogni struttura ricettiva ---------- */
@@ -148,7 +148,7 @@ var f=$('#o2Cerca'),sug=$('#o2Sug'),nf=$('#o2Nf'),modo='h',PH={h:'Nome del tuo h
 var VIA=/^(via|viale|piazza|piazzale|largo|corso|vicolo|lungotevere|circonvallazione|salita|borgo|clivo|vico)\b/i;
 var DOM=/\?|^(come|quanto|quanti|quante|cosa|che cosa|perche|perché|dove|quando|chi|posso|si puo|si può|e possibile|è possibile)\b/i;
 function zoneDi(t){var k=norm(t);if(k.length<3)return [];return D.zone.map(function(z,i){return [z,i]}).filter(function(x){var n=norm(x[0].nome);return n.indexOf(k)>-1||k.indexOf(n)>-1})}
-var HL,HOT=null;function hotel(){if(!HL)HL=fetch('/assets/data/hotel.json').then(function(r){return r.json()}).then(function(d){HOT=d}).catch(function(){HOT=[]});return HL}
+var HL,HOT=null;function hotel(){if(!HL)HL=fetch('/assets/data/hotel.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){HOT=d}).catch(function(){HOT=[]});return HL}
 function trovaHotel(t){var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});return r.sort(function(a,b){return norm(HOT[a].n).length-norm(HOT[b].n).length})}
 function bel(n){var P={di:1,de:1,del:1,della:1,delle:1,dei:1,al:1,alla:1,e:1,a:1,in:1,da:1,the:1,of:1,and:1};return n.toLowerCase().split(' ').map(function(w,i){return i&&P[w]?w:w.charAt(0).toUpperCase()+w.slice(1)}).join(' ').replace(/b&b/gi,'B&B')}
 function mostraHotel(i){var h=HOT[i],c=[[num(h.s),'strutture ricettive'],[num(h.a),'alberghi']];if(h.mar)c.push([h.mar+' €','il martedì']);if(h.sab)c.push([h.sab+' €','il sabato']);if(h.cap)c.push([h.cap+' €','a Capodanno']);if(h.v)c.push([h.v.toFixed(1).replace('.',','),'voto mediano su Booking']);

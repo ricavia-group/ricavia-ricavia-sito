@@ -6,7 +6,7 @@ CARTELLA contiene osservatorio.json, vie.json e mappa.json prodotti da tools/oss
 Riscrive la parte tra <!--oss:pagina--> e <!--/oss:pagina-->: si rilancia a ogni edizione, poi build e controlli.
 Il percorso segue il giro delle pagine del 13/11 (fermate 1, 6, 7, 8, 9).
 """
-import datetime, html, json, os, re, shutil, sys
+import datetime, hashlib, html, json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATI = os.path.join(ROOT, "assets", "data")
@@ -147,7 +147,8 @@ def zone(d):
 <p class="ar">Scegli una zona: l'offerta dal registro di Roma Capitale e il mercato letto su Booking. Solo numeri d'insieme, nessun hotel nominato</p></div>
 <div class="o2-zc ar" role="group" aria-label="Scegli la zona">{chips}</div>
 <div class="o2-zg ar"><div class="o2-zm"><canvas id="o2ZMap" role="img" aria-label="Mappa della zona scelta"></canvas></div><div class="o2-zp" id="o2Zona" aria-live="polite"></div></div>
-<p class="o2-soon2 ar">Da gennaio, per ogni zona: arrivi, presenze e passeggeri di Fiumicino e Ciampino, con fonte e data</p>
+<p class="o2-soon2 ar">Da gennaio, ogni mese: arrivi e presenze turistiche di Roma e passeggeri di Fiumicino e Ciampino, con fonte e data</p>
+<div class="o2-inv ar"><div><b>Vuoi aprire o comprare una struttura ricettiva a Roma?</b><span>Dai numeri della zona al business plan: studio di fattibilità, ricavi, costi e GOP anno per anno</span></div><a class="ap-btn solid" href="#apertura">Nuova apertura <span class="arr">→</span></a></div>
 </div></section>'''
 
 
@@ -204,7 +205,7 @@ def metodo():
 
 def pagina(d):
     dati = {"zone": d["zone"], "date": d["date"], "letti": d["alberghi_letti"], "agg": d["aggiornato"], "dal": d["letture_dal"],
-            "vie": d["vie"], "fonte": fonti(d)}
+            "vie": d["vie"], "fonte": fonti(d), "ver": d.get("ver", "")}
     js = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return (hero(d) + prezzi(d) + classifiche(d) + zone(d) + vie(d) + hotel() + metodo()
             + '<a href="#pg-pagella" id="o2Hs" hidden>Hotel Score</a><a href="#contatti" id="o2Ct" hidden>Contatti</a>'
@@ -222,7 +223,13 @@ def main():
         d["vie"] = len(json.load(f))
     with open(os.path.join(DATI, "mappa.json"), encoding="utf-8") as f:
         m = json.load(f)
-        d["mappa_wh"] = f'{m["w"]}/{m["h"]}'  
+        d["mappa_wh"] = f'{m["w"]}/{m["h"]}'
+    # /assets/ resta in cache un anno: la pagina chiede i file dei dati con una versione che cambia quando cambia il contenuto
+    h = hashlib.sha1()
+    for f in ("vie.json", "mappa.json", "hotel.json"):
+        with open(os.path.join(DATI, f), "rb") as x:
+            h.update(x.read())
+    d["ver"] = h.hexdigest()[:10]
     p = os.path.join(ROOT, "index.html")
     with open(p, encoding="utf-8") as f:
         t = f.read()
