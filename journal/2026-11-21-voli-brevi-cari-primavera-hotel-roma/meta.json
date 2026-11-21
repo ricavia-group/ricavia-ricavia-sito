@@ -1,0 +1,228 @@
+{
+  "titolo": "Ryanair prevede voli brevi più cari: a Roma i weekend di primavera sono i più esposti",
+  "sottotitolo": "Per l'esercizio che parte ad aprile 2027 Ryanair ha fissato in anticipo il prezzo di solo un quarto del carburante e prevede voli brevi più cari in Europa. Quali notti di primavera sono più esposte, perché per il tuo hotel uno sconto sulla camera difficilmente compensa il volo e come leggere il pick-up per paese e per settimana",
+  "mood": {
+    "scelta": "serio",
+    "perche": "Notizia di trasporti con una componente di mercato (carburante, coperture, prezzi al consumo) e sullo sfondo il conflitto in Medio Oriente: la matrice ammette serio, o drammatico solo con impatto alto e certo, mentre qui l'impatto è basso e condizionato a una previsione di Ryanair; anche il corpo ha un registro serio"
+  },
+  "alternative_titolo": [
+    "Voli brevi più cari nel 2027: quante notti di primavera dipendono dagli ospiti europei?",
+    "Trasporto aereo +8,8% a ottobre per l'ISTAT: il pick-up di primavera diviso per paese",
+    "Voli brevi più cari: l'ospite europeo può rimandare, il lungo raggio prenota prima"
+  ],
+  "tesi": "Ryanair, che fino a marzo 2027 ha coperto l'80% del carburante a circa 67 dollari al barile e da aprile ne ha coperto solo il 25% a circa 95 dollari, prevede tariffe dei voli brevi in Europa più alte in modo sensibile per il carburante più caro e i tagli di capacità dei concorrenti, mentre l'ISTAT registra a ottobre prezzi del trasporto aereo in aumento dell'8,8% su base annua: se le tariffe aeree salgono, gli ospiti europei che arrivano a Roma con voli brevi per un fine settimana pagano di più il viaggio prima ancora della camera e una parte può rimandare o rinunciare, mentre l'incertezza del conflitto tiene le prenotazioni vicine alla partenza; il prezzo del volo si decide al momento della prenotazione, quindi le notti da aprile a giugno 2027 sono le più esposte ma anche Pasqua (28 marzo) può risentirne; per il tuo hotel la risposta non è uno sconto anticipato, ma leggere il pick-up di quelle notti per provenienza e per settimana (Pasqua il 5 aprile nel 2026) sapendo che anche la base 2026 è stata più tardiva, individuare le notti più esposte e decidere le tariffe con i propri dati, tenendo in vendita alle condizioni giuste gli ospiti italiani e di lungo raggio",
+  "tema": "carburante-tariffe-voli-brevi-primavera-2027",
+  "categoria": "trasporti",
+  "fonti": [
+    {
+      "titolo": "Ryanair H1 PAT falls 15% to €2.15bn as unhedged oil doubles & traffic grows 6% at lower fares",
+      "editore": "Ryanair Holdings plc",
+      "url": "https://corporate.ryanair.com/news/ryanair-h1-pat-falls-15-to-e2-15bn-as-unhedged-oil-doubles-traffic-grows-6-at-lower-fares/",
+      "data": "2026-11-21"
+    },
+    {
+      "titolo": "Prezzi al consumo. Ottobre 2026. Dati definitivi",
+      "editore": "ISTAT",
+      "url": "https://www.istat.it/wp-content/uploads/2026/11/CS_Prezzi-al-consumo_Def_Ottobre2026.pdf",
+      "data": "2026-11-21"
+    },
+    {
+      "titolo": "Aerei, così molte compagnie europee rischiano di sparire a causa del caro carburante",
+      "editore": "Milano Finanza",
+      "url": "https://www.milanofinanza.it/news/compagnie-aeree-nel-2026-il-costo-del-carburante-e-quasi-raddoppiato-si-va-verso-un-consolidamento-in-202611201314545308",
+      "data": "2026-11-21"
+    },
+    {
+      "titolo": "Ryanair, Wilson boccia Roma Fiumicino e Ita",
+      "editore": "L'Agenzia di Viaggi Magazine",
+      "url": "https://www.lagenziadiviaggimag.it/ryanair-wilson-boccia-roma-fiumicino-e-ita/",
+      "data": "2026-11-21"
+    },
+    {
+      "titolo": "Ryanair annuncia l'operativo invernale 2026 su Roma senza crescita",
+      "editore": "Ryanair",
+      "url": "https://corporate.ryanair.com/novita/ryanair-annuncia-loperativo-invernale-2026-su-roma-senza-crescita-a-causa-del-limite-impostoai-voli-di-ciampino-delle-tasse-elevate-e-dellaumento-delle-tariffe-aeroportuali/",
+      "data": "2026-11-21"
+    }
+  ],
+  "slug": "voli-brevi-cari-primavera-hotel-roma",
+  "title_seo": "Voli brevi più cari e hotel a Roma in primavera · Ricavia",
+  "description": "Ryanair prevede voli brevi più cari nel 2027: quali notti di primavera del tuo hotel a Roma sono esposte e come leggere il pick-up per provenienza e settimana",
+  "keyword": {
+    "principale": "voli brevi hotel Roma",
+    "secondarie": [
+      "tariffe voli brevi 2027",
+      "carburante Ryanair tariffe aeree",
+      "pick-up per provenienza",
+      "ospiti europei weekend Roma"
+    ]
+  },
+  "related_intro": "Per leggere le prenotazioni di primavera mercato per mercato, approfondisci",
+  "related": [
+    {
+      "label": "le rotte dal Nord America prima di Pasqua",
+      "url": "/journal/rotte-fiumicino-nord-america-hotel/"
+    },
+    {
+      "label": "gli ospiti britannici nel pick-up per provenienza",
+      "url": "/journal/sterlina-tassi-ospiti-britannici-roma/"
+    }
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 975771,
+      "titolo": "Airport with seats and big windows",
+      "anteprima": "https://img.magnific.com/free-photo/airport-with-seats-big-windows_1203-1979.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: file di sedute vuote all'area d'imbarco di un terminal, davanti a una grande vetrata; oltre il vetro, lontano e sfocato, un aereo sulla pista senza livrea leggibile; nessuna persona, nessuna scritta, nessun logo\nInquadratura: tre quarti, sedute al centro dell'immagine con pavimento lucido sotto e vetrata sopra, ampio spazio negativo in alto; nel ritaglio 16:9 e social tenere le sedute nella fascia centrale, togliendo più pavimento in basso che vetrata in alto\nLuce: diurna, diffusa, che entra dalla vetrata e si riflette sul pavimento\nPalette: grigio-azzurro freddo vicino a #3CCDFA e bianchi; niente rosso, niente toni caldi\nAtmosfera: seria e sospesa, il posto d'imbarco che resta libero quando il volo costa di più e l'ospite europeo rimanda il weekend; diversa dal piazzale con aerei fermi del 4 novembre e dall'ala in volo del 7 novembre",
+    "libreria": "assets/img/67868d0855.webp",
+    "alt_libreria": "Piazza San Pietro e la Basilica vaticana viste dall'alto, con i tetti di Roma fino all'orizzonte sotto un cielo azzurro con nuvole",
+    "testo_sovrapposto": null
+  },
+  "alt": "File di sedute vuote all'area d'imbarco di un aeroporto, davanti a una grande vetrata con un aereo lontano sulla pista",
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Tema nuovo per il Journal (costo del viaggio aereo per gli ospiti europei dalla primavera 2027), con fonte primaria del 2 novembre, dato ISTAT del 17 novembre e analisi del 20 novembre; guarda avanti su una finestra precisa (notti da aprile a giugno 2027) con azioni sui dati di ogni hotel",
+      "correzioni": [],
+      "segnalazioni": [
+        "La previsione di tariffe aeree più alte è un'opinione di Ryanair (comunicato del 2 novembre) e del suo amministratore delegato: nel testo è attribuita e scritta come scenario condizionato ('se le tariffe dei voli brevi salgono'). Nessuna fonte quantifica l'aumento delle tariffe per la primavera 2027 e l'articolo non lo fa",
+        "Il comunicato Ryanair è del 2 novembre, cioè 19 giorni fa: lo uso perché nessun articolo l'ha trattato e il fatto produce effetti futuri; le notizie recenti che lo rilanciano sono del 13 novembre (interviste di Wilson) e del 20 novembre (Scope Ratings su Milano Finanza), più il dato ISTAT del 17 novembre",
+        "Il dato ISTAT (trasporto aereo +8,8% a ottobre) misura i prezzi pagati dalle famiglie in Italia, non i voli dall'estero verso Roma: il testo lo dice e lo usa solo come segnale di direzione",
+        "Il dato IATA (1.413 dollari a tonnellata, settimana al 6 novembre) e la citazione di Wilson vengono ciascuno da una sola testata: sono fatti di contorno, attribuiti nel testo (regole comuni, sezione 4); le interviste originali a La Stampa e Repubblica non le ho lette",
+        "La frase 'uno sconto sulla camera difficilmente compensa un biglietto più caro' è un ragionamento senza numeri, non un dato: il revenue manager valuti se tenerla",
+        "Nessuna fonte dice quanto pesano a Roma gli ospiti europei con voli brevi tra aprile e giugno: il testo non dà quote e rimanda ai dati di ogni hotel. Ho evitato i dati di traffico di ADR (pagina con totali di settembre non coerenti con Assaeroporti, non verificabili oggi)",
+        "Collegamento interno all'articolo del 4 novembre sul traffico aereo di Roma: il tema là era l'inverno, qui la primavera; il SEO director verifichi che non sia un duplicato",
+        "Il conteggio delle parole del corpo è circa 1.060, vicino al massimo di 1.100",
+        "Paragrafo Ricavia: solo la voce 4.1 n. 8 (traffico aereo come segnale anticipato), usata l'ultima volta il 7 novembre; ho evitato la voce 2 (pick-up a 90 giorni), già usata il 13 e il 18 novembre"
+      ],
+      "ruolo_ricavia": "Ricavia segue il traffico aereo di Fiumicino e Ciampino e le rotte come segnale anticipato della domanda, insieme ai prezzi della zona: per la primavera 2027 conta anche quanto costa arrivare a Roma dai mercati europei dei fine settimana"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Il meccanismo regge (volo breve più caro, costo del viaggio più alto per gli ospiti europei dei fine settimana, pick-up più lento e più tardivo) e le azioni lavorano sui dati del singolo hotel senza sconti generalizzati; ho corretto la lettura della finestra temporale, che legava il rialzo dei voli alla data di scadenza delle coperture di Ryanair",
+      "correzioni": [
+        "Tesi: riscritta per correggere il nesso tra coperture e tariffe aeree (il prezzo del volo si decide alla prenotazione, Pasqua non è al riparo), per attribuire il ritardo delle prenotazioni al conflitto come fa Ryanair e per aggiungere che anche la base 2026 è stata tardiva",
+        "Apertura, seconda frase: 'perché da aprile la quota… scende' diventa 'per il carburante più caro, e da aprile la quota… scende'. Ryanair motiva il rialzo delle tariffe con il prezzo del carburante e i tagli di capacità dei concorrenti, non con la propria copertura",
+        "Sezione 'Cosa cambia per le notti di Roma', paragrafo sulla finestra: tolta la frase che metteva Pasqua 'al riparo' perché dentro l'esercizio coperto e quella che faceva entrare le nuove tariffe aeree nei voli da aprile; ora il testo dice che il prezzo del volo si decide quando l'ospite prenota e che i prezzi di ottobre mostrano un rialzo già in corso, quindi anche Pasqua può risentirne",
+        "Impatto, Pick-up: ragionamento accorciato (il peso del segmento è già nella voce Mix di segmento)",
+        "Impatto, Lead time: il ragionamento attribuiva il ritardo delle prenotazioni a un volo più caro; Ryanair lo attribuisce all'incertezza del conflitto ('the booking window remains closer-in'), e ora il testo dice questo",
+        "Impatto, Mix di segmento: aggiunta la virgola dopo '?' come nel formato del manuale; ragionamento accorciato",
+        "Azione 1: aggiunto che anche la base 2026 non è normale, perché Ryanair ha già registrato prenotazioni più tardive per il conflitto nel semestre aprile-settembre 2026",
+        "Azione 2: 'ospiti europei arrivati con voli brevi' diventa 'ospiti dai mercati europei dei voli brevi': il gestionale registra il paese di provenienza, non il mezzo di arrivo",
+        "Azione 3: resa concreta (prima diceva solo di controllare come i canali 'presentano' le notti): soggiorno minimo, disponibilità aperta e lingua delle pagine sul sito diretto e sulle OTA per italiani e lungo raggio, con il perché (il lungo raggio prenota prima e per più notti)"
+      ],
+      "segnalazioni": [
+        "Fonti verificate oggi: comunicato Ryanair del 2 novembre (coperture 80% a 67 dollari e 25% a 95 dollari, circa 2 miliardi di euro in più, 'increase materially', 'booking window remains closer-in') e PDF ISTAT del 17 novembre (trasporto aereo da -6,1% a +8,8%, +12,6% su settembre): i numeri del testo coincidono. Pasqua 2026 il 5 aprile e 2027 il 28 marzo: corretto. Milano Finanza e L'Agenzia di Viaggi Magazine non le ho riaperte",
+        "Lo stesso comunicato Ryanair dice che il rialzo delle tariffe probabilmente non compenserà del tutto il costo del carburante e che per l'estate 2027 la compagnia prevede traffico in crescita del 3%, con l'Italia tra i mercati in cui cresce; Roma non è citata. Non contraddice la tesi, che parla di prezzo del volo e non di posti, ma il capo redattore valuti se serve una frase per non far pensare a meno voli verso Roma",
+        "Il corpo è a circa 1.099 parole dopo le correzioni, al limite delle 1.100: ogni aggiunta degli altri ruoli va compensata",
+        "Indicatori: ho confermato la scelta del giornalista di non mettere occupazione, ADR e RevPAR. La notizia agisce sul ritmo delle prenotazioni di un segmento, non su un livello finale dimostrabile; per lo stesso motivo il RevPAR non serve",
+        "La frase 'uno sconto sulla camera difficilmente compensa un biglietto più caro' la tengo: è un ragionamento qualitativo, senza numeri, coerente con le azioni",
+        "Frase citabile (ambito del virality director): 'abbassare la camera' è un'espressione colloquiale ('abbassare la tariffa'); inoltre una frase generale su non abbassare i prezzi va letta con la regola 9 ter, punto 1: è rivolta al singolo hotel e non indica livelli, ma il capo redattore la controlli",
+        "Titolo dell'h3 'Ryanair: da aprile 2027 il carburante costa di più' (non è del mio ambito): è corretto per Ryanair, ma il carburante costa di più già oggi; da aprile cambia la quota coperta"
+      ],
+      "ruolo_ricavia": "Ricavia segue nell'Osservatorio il traffico aereo di Fiumicino e Ciampino come segnale anticipato e aggiorna ogni giorno tariffe e disponibilità in base all'andamento delle prenotazioni: per la primavera 2027 un volo più caro diventa una decisione sulla tariffa solo quando il pick-up di un mercato rallenta davvero"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo per il Journal (prezzo del volo breve per gli ospiti europei nella primavera 2027): nessun articolo pubblicato o proposto negli ultimi 14 giorni ha la stessa tesi o la stessa keyword; campi SEO compilati e keyword presente in apertura e in un h3",
+      "correzioni": [
+        "Compilati slug (voli-brevi-cari-primavera-hotel-roma, 6 parole, senza giorni, mesi o anni, unico), title_seo (57 caratteri), description (158 caratteri, senza punto finale e senza cifre provvisorie), keyword, related_intro e related; lunghezze contate con Python. Categoria 'trasporti' confermata: la causa della notizia è il costo del trasporto aereo",
+        "Terzo h3: 'Cosa cambia per le notti di Roma tra aprile e giugno' diventa 'Voli brevi e hotel di Roma tra aprile e giugno', per inserire la keyword principale; nessun fatto, numero o fonte cambiato; una parola in meno",
+        "Apertura non toccata: la keyword principale c'è già nella terza frase ('il tuo hotel a Roma … con un volo breve')",
+        "Collegamenti interni del corpo controllati: 2 naturali (/journal/guardare-voli-calendario-leggiamo-fiumicino-ciampino/ e /journal/traffico-aereo-roma-inverno-hotel/, entrambi su main, nella forma /journal/) più /revenue-management/ di chiusura; nessun collegamento a un articolo della giornata",
+        "related: rotte dal Nord America del 7 novembre (lungo raggio di primavera, azione 3) e ospiti britannici del 9 novembre (pick-up per mercato di provenienza, azione 1); nessuno dei due ripete un collegamento del corpo"
+      ],
+      "segnalazioni": [
+        "Corpo a 1.098 parole dopo la mia correzione (era 1.099): al limite delle 1.100, il virality director compensi ogni aggiunta",
+        "Confronto con gli articoli vicini, nessun duplicato: 4 novembre, traffico aereo d'inverno (volumi di Assaeroporti e capacità Ryanair su Roma, 17 giorni fa, keyword 'traffico aereo Roma hotel'); 7 novembre, rotte Delta dal Nord America (lungo raggio, keyword 'rotte Fiumicino hotel Roma'); 9 novembre, sterlina e ospiti britannici (stessa famiglia di azione, pick-up per mercato di provenienza, ma causa diversa, il cambio, e keyword diversa); scartato del 19 novembre sugli avvisi EASA (cancellazioni sul Golfo nelle feste, bloccato fino al 26 novembre): tema diverso, qui il fatto è il prezzo dei voli brevi. Il capo redattore valuti l'effetto fotocopia dell'azione 'pick-up per provenienza' rispetto al 9 novembre",
+        "Primo h3 'Ryanair: da aprile 2027 il carburante costa di più' (segnalato anche dal revenue manager): il carburante costa di più già oggi, da aprile cambia la quota coperta. Non l'ho riscritto perché il mio unico h3 serve alla keyword; una forma possibile, con due parole in meno, è 'Ryanair: da aprile 2027 copre meno carburante'. Decide il capo redattore",
+        "La parola 'primavera' nello slug non è una data (né giorno, né mese, né anno) e descrive la finestra dell'articolo; lo slug resta valido anche quando la primavera 2027 sarà passata"
+      ],
+      "ruolo_ricavia": "Per il lettore che cerca come il prezzo dei voli cambia la primavera del suo hotel, il passo successivo naturale è la pagina del revenue management, dove Ricavia legge il pick-up per mercato e decide le tariffe data per data: il collegamento di chiusura su /revenue-management/ è quello giusto"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia concreta da raccontare all'albergatore: un costo che l'hotel non controlla (il volo breve) cambia la domanda dei weekend di primavera, e l'articolo indica quali notti guardare e con quali dati; titolo, sottotitolo, mood e frase citabile scritti senza toccare i fatti",
+      "correzioni": [
+        "Titolo: 'Voli brevi più cari da aprile 2027: le notti di Roma da leggere per provenienza' diventa 'Ryanair prevede voli brevi più cari: a Roma i weekend di primavera sono i più esposti' (85 caratteri, tipo conseguenza). Il titolo di lavoro legava il rialzo dei voli ad aprile 2027, il nesso corretto dal revenue manager (il prezzo si decide alla prenotazione, anche Pasqua può risentirne), e presentava la previsione come un fatto: ora la previsione è attribuita a Ryanair. Varietà: il 19 novembre contrasto, il 18 dato e domanda",
+        "Sottotitolo scritto (due frasi, senza punto finale): copertura del carburante di Ryanair dall'esercizio che parte ad aprile 2027, notti più esposte, sconto che difficilmente compensa il volo, pick-up per paese e per settimana; tutto ciò che annuncia si trova nel corpo",
+        "Mood: serio (trasporti con componente di mercato; impatto basso e condizionato, quindi niente drammatico)",
+        "Alternative: domanda (quante notti di primavera dipendono dagli ospiti europei, la domanda dell'apertura), dato con fonte nel titolo (ISTAT, +8,8% a ottobre, dato definitivo), contrasto tra segmenti (ospite europeo che può rimandare, lungo raggio che prenota prima); tutte sotto i 90 caratteri, contate con Python",
+        "Frase citabile: 'Un volo più caro non è una ragione per abbassare la camera. Il pick-up mostra quale mercato rallenta, e solo quello' diventa 'Il prezzo del volo lo decide la compagnia aerea. Quale mercato rallenta lo mostrano i tuoi dati'. Tolta l'espressione colloquiale 'abbassare la camera' segnalata dal revenue manager; tolto anche il messaggio generale sul non abbassare i prezzi, che letto da molti hotel della stessa zona poteva sembrare un'indicazione comune sulle tariffe (regola 9 ter, punto 1): ora la frase descrive il meccanismo e rimanda ai dati del singolo hotel. Contrasto compagnia aerea e hotel, senza numeri né nomi, dopo il paragrafo che la dimostra. Corpo da 1.098 a 1.094 parole"
+      ],
+      "segnalazioni": [
+        "Primo h3 'Ryanair: da aprile 2027 il carburante costa di più' (non è del mio ambito, segnalato anche da revenue manager e SEO director): con il titolo nuovo non c'è contraddizione, ma l'h3 resta impreciso; la forma proposta dal SEO director ('Ryanair: da aprile 2027 copre meno carburante') è coerente con il sottotitolo. Decide il capo redattore",
+        "La frase citabile non usa più 'pick-up' per non ripetere la chiusa della citazione del 4 novembre ('La domanda di un hotel si legge nel suo pick-up'); l'alternativa 'dato' ha la stessa costruzione del titolo del 4 novembre (percentuale, fonte, pick-up): se il capo redattore la sceglie, valuti l'effetto fotocopia",
+        "Il sottotitolo riprende 'uno sconto sulla camera difficilmente compensa il volo', frase del corpo tenuta dal revenue manager: è un meccanismo rivolto al singolo hotel e non indica livelli di prezzo, ma rientra nel controllo della regola 9 ter, punto 1, che spetta al capo redattore"
+      ],
+      "ruolo_ricavia": "Il racconto funziona se Ricavia appare come chi separa il rumore dal segnale: segue il costo del viaggio verso Roma dai mercati europei dei fine settimana e lo traduce in una decisione sulla tariffa solo quando il pick-up di quel mercato lo conferma, notte per notte"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera, gratuita, non generata): sedute vuote all'imbarco di un terminal con un aereo lontano oltre la vetrata, il viaggio aereo che l'ospite europeo può rimandare; palette fredda grigio-azzurra in tono col brand, senza persone, loghi o scritte, diversa dalle copertine aeree del 4 e del 7 novembre",
+      "correzioni": [
+        "Compilati immagine (fonte stock, id 975771, scheda, libreria 67868d0855, alt_libreria, testo_sovrapposto null) e alt",
+        "Libreria scartata come fonte principale: l'unica foto di trasporti, cb8c5b135f (corridoio di un terminal), ha in primo piano una figura con un cappotto rosso acceso, fuori dai vincoli di palette, e persone in movimento; nessun'altra foto della libreria racconta voli o aeroporti",
+        "Scartate tra le anteprime stock: sale d'attesa con moquette marrone e luce piatta (1273969), sala d'attesa con persone sullo sfondo (1273972), sedute vicine al tema ma con riflessi più scuri e un ramo che entra nell'inquadratura (975770); piazzale con aerei e ala in volo evitati perché già usati il 4 e il 7 novembre"
+      ],
+      "segnalazioni": [
+        "Per l'editore: la foto originale è 3:2 con le sedute nella fascia centrale; nel ritaglio 16:9 e social togliere più pavimento in basso che vetrata in alto. Il viraggio azzurro è della foto originale: non aggiungere filtri",
+        "Riserva 67868d0855 (piazza San Pietro dall'alto): ultima volta come riserva il 6 novembre, fuori dagli ultimi 10 articoli; è una foto neutra di città, non racconta i voli",
+        "Per ampliare la libreria: mancano ancora foto di voli e aeroporti senza persone e senza loghi (soggetto già segnalato il 4 e il 7 novembre)",
+        "Nessuna nota AI da aggiungere: foto vera dell'archivio stock"
+      ],
+      "ruolo_ricavia": "Un posto d'imbarco vuoto non si vede nel gestionale finché non diventa una notte invenduta: Ricavia legge il pick-up per paese di provenienza per accorgersi in anticipo di quale mercato europeo rallenta"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Primo h3: 'Ryanair: da aprile 2027 il carburante costa di più' diventa 'Ryanair: da aprile 2027 meno carburante a prezzo fisso'. Il carburante costa di più già oggi, da aprile cambia la quota a prezzo fisso (segnalazione di revenue manager, SEO e virality director). Non uso la proposta 'copre meno carburante': 'coprire' è tra i verbi da evitare, come nella correzione del capo redattore del 19 novembre",
+        "Stesso motivo ('coprire' da evitare) e più precisione sul termine tecnico: prima sezione 'ha coperto l'80% del carburante' diventa 'ha fissato in anticipo il prezzo dell'80% del carburante' e 'la copertura scende al 25%' diventa 'la quota a prezzo fisso scende al 25%'; terza sezione 'nel primo esercizio in cui Ryanair ha coperto solo un quarto del carburante' diventa 'nel primo esercizio con solo un quarto del carburante di Ryanair a prezzo fisso'; In breve 'Ryanair copre un quarto del carburante da aprile 2027' diventa 'Ryanair ha un quarto del carburante a prezzo fisso da aprile 2027'; sottotitolo 'ha coperto solo un quarto del carburante' diventa 'ha fissato in anticipo il prezzo di solo un quarto del carburante'. 'Coperture' (sostantivo, Scope Ratings) resta",
+        "Apertura: 'la quota del suo carburante acquistata in anticipo a prezzo fisso' diventa 'la quota del suo carburante con il prezzo fissato in anticipo': la copertura fissa il prezzo, non è un acquisto anticipato del carburante (precisione, nessun fatto nuovo)",
+        "Prima sezione: 'Ai prezzi futuri di oggi' diventa 'Ai prezzi a termine di oggi' ('current forward prices' del comunicato)",
+        "Terza sezione: aggiunte due frasi dallo stesso comunicato Ryanair, riletto oggi: per l'estate 2027 la compagnia prevede il 3% di passeggeri in più, con l'Italia tra i paesi in cui aggiunge capacità; il comunicato non cita Roma. Senza questa precisazione il testo poteva far credere a meno voli verso Roma (segnalazione del revenue manager). La frase sull'operativo invernale senza crescita resta, riscritta dentro la stessa precisazione con i due collegamenti invariati; chiude 'La notizia riguarda il prezzo del volo, non il numero dei posti'",
+        "Prima sezione, paragrafo Scope Ratings: tolta la frase sul dato IATA (1.413 dollari a tonnellata), numero di contorno letto su una sola testata, per compensare le parole aggiunte; Milano Finanza resta nelle fonti per l'analisi di Scope Ratings",
+        "Terza sezione: 'il costo del volo si divide su poche notti' diventa 'il costo del volo pesa su poche notti'; 'Il prezzo del volo però si decide quando l'ospite prenota' diventa 'La compagnia però stabilisce il prezzo del volo quando l'ospite prenota' (niente 'si' impersonale, soggetto esplicito)",
+        "Seconda sezione: ', con un rialzo del 12,6% in un solo mese' diventa ' e del 12,6% in un mese'; prima sezione: 'lo ha detto in modo più diretto' diventa 'è stato più diretto' (tagli per restare sotto le 1.100 parole)",
+        "Impatto, Pick-up: 'una parte di questi ospiti rimanda o rinuncia' diventa 'può rimandare o rinunciare' (scenario, non certezza)",
+        "Sottotitolo, regola 9 ter punto 1: 'perché uno sconto sulla camera difficilmente compensa il volo' diventa 'perché per il tuo hotel uno sconto…': la frase descrive un meccanismo per il singolo hotel, senza livelli di prezzo, e ora lo dice in modo esplicito. Il corpo dice già 'rischi di abbassare l'ADR' al tu, l'azione 2 rimanda al pick-up e al competitive set del singolo hotel: nessun invito ad allinearsi",
+        "Paragrafo Ricavia definitivo scritto, fondendo giornalista e art director (voce 4.1 n. 8, Osservatorio e traffico aereo) e revenue manager (voce 4.1 n. 1, tariffe e disponibilità aggiornate ogni giorno in base alle prenotazioni) con la decisione legata al pick-up del singolo mercato (virality director); tolta la costruzione della bozza vicina all'esempio 'Nuova rotta aerea' di ricavia.md ('lo legge insieme ai prezzi della zona'); terza persona in tutto il paragrafo, un solo collegamento a /revenue-management/, che non compare in related",
+        "Tolto il punto finale rimasto alla fine del paragrafo su Scope Ratings dopo il taglio. Corpo finale: circa 1.097 parole, paragrafo Ricavia compreso"
+      ],
+      "segnalazioni": [
+        "Per l'editore, da ricontrollare prima del merge: comunicato Ryanair del 2 novembre, riletto oggi da me (coperture FY27 80% a 67 dollari, FY28 25% a 95 dollari, circa 2 miliardi di euro in più ai prezzi a termine, 'increase materially', prezzi del carburante alti 'well into 2027', 'booking window remains closer-in', estate 2027 +3% con l'Italia tra i mercati con più capacità, rialzo delle tariffe 'unlikely to provide a full offset'). fonti.md ricorda che una pagina di Investing.com indica il 26 novembre come data dei risultati: se prima del merge Ryanair pubblica un aggiornamento che cambia coperture o previsione sulle tariffe, l'articolo non si pubblica così (regole 9 bis)",
+        "Per l'editore: L'Agenzia di Viaggi Magazine (citazione di Wilson, interviste originali non lette) e Milano Finanza (analisi Scope Ratings) sono fatti di contorno da una sola testata ciascuno, attribuiti nel testo: verificare che i link si aprano e che citazione e contenuto siano quelli. Il PDF ISTAT del 17 novembre è stato verificato dal revenue manager, non riaperto da me",
+        "Per l'editore: copertina stock 975771 non vista da me; guarda l'anteprima e, con persone riconoscibili, scritte o loghi, usa la riserva 67868d0855 con alt_libreria. Ritaglio come indicato dall'art director",
+        "Effetto fotocopia, valutato e accettato: il fatto (prezzo del volo breve dalla primavera 2027) e la tesi (costo del viaggio come fattore di domanda per i weekend europei) sono nuovi; con il 9 novembre (sterlina) cambiano causa, periodo, mercato, indicatori e azioni 2 e 3. Restano però vicine ad articoli usciti l'azione 1 (pick-up per paese confrontato con l'anno scorso, come il 9 novembre; confronto per settimana per Pasqua 5 aprile e 28 marzo, come l'azione 2 del 7 novembre) e lo 'sconto solo su date precise' (4 novembre). Per i prossimi 14 giorni il pick-up per provenienza non regge più da solo un'azione principale: serve un'azione diversa",
+        "Per il virality director (forma, nessuna modifica fatta): la frase citabile ha la stessa costruzione di quelle del 4 e del 9 novembre ('X descrive/decide…, Y si legge/decide…'); dal prossimo articolo variare lo schema. Anche il titolo ha la forma del 7 novembre (compagnia aerea + verbo + conseguenza per Roma): accettabile oggi, da non ripetere",
+        "Quadro della giornata: una sola bozza, legata a Roma e che guarda avanti (notti da aprile a giugno 2027); meno di 2 GO va bene, la riserva del giornalista non ha candidati pronti senza condizioni",
+        "Il campo di lavoro 'tesi' in meta.json usa ancora 'ha coperto': non si pubblica, non l'ho toccato"
+      ],
+      "ruolo_ricavia": "Paragrafo finale: nell'Osservatorio Ricavia segue il traffico aereo di Fiumicino e Ciampino come segnale anticipato della domanda e ogni giorno aggiorna tariffe e disponibilità in base alle prenotazioni; per la primavera 2027 un volo più caro diventa una decisione sulla tariffa solo quando il pick-up di un mercato europeo rallenta; chiusura su /revenue-management/",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED dopo la correzione del nesso tra coperture e prezzo dei voli; aggiunta la previsione di traffico di Ryanair per l'estate 2027 per non far credere a meno voli; intensità bassa dichiarata)",
+        "[x] Ogni numero ha fonte (comunicato Ryanair riletto oggi, PDF ISTAT verificato dal revenue manager; tolto il dato IATA da una sola testata; nessuna stima)",
+        "[x] Fonti citate con link, nessuna copia o parafrasi stretta (citazioni brevi tra virgolette e attribuite: 'increase materially', Wilson)",
+        "[x] Ruolo di Ricavia presente, 1 paragrafo, voci 4.1 n. 8 e n. 1 non usate negli ultimi 7 giorni, nessuna frase degli esempi di ricavia.md, non pubblicitario",
+        "[x] Regole di brand e di copy di CLAUDE.md (dopo correzione: tolti 'coperto/copre', 'si divide', 'si decide'; nessun punto finale; il lettore con il tu; OTA senza glossa; ADR con glossa)",
+        "[x] Tono coerente con la matrice del mood (trasporti con conflitto sullo sfondo: serio, nessun allarmismo)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; fotocopia valutata: tema e tesi nuovi, azione 1 vicina al 7 e al 9 novembre, vedi segnalazioni)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate (Ryanair, Wilson, Scope Ratings citati solo per i fatti)",
+        "[x] Rischi legali 9 ter: nessun livello di prezzo né invito ad allinearsi, sottotitolo riportato al singolo hotel, azioni sui dati del singolo hotel; foto stock vera, nessuna nota AI",
+        "[x] Da 700 a 1.100 parole (circa 1.097 con il paragrafo Ricavia), 5 h3, struttura completa (apertura, sezioni, citazione, impatto, azioni, In breve, paragrafo Ricavia)"
+      ]
+    }
+  ],
+  "data": "2026-11-21",
+  "autore": "Tito · Redazione Ricavia"
+}
