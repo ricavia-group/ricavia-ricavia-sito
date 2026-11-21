@@ -149,7 +149,7 @@ var VIA=/^(via|viale|piazza|piazzale|largo|corso|vicolo|lungotevere|circonvallaz
 var DOM=/\?|^(come|quanto|quanti|quante|cosa|che cosa|perche|perché|dove|quando|chi|posso|si puo|si può|e possibile|è possibile)\b/i;
 function zoneDi(t){var k=norm(t);if(k.length<3)return [];return D.zone.map(function(z,i){return [z,i]}).filter(function(x){var n=norm(x[0].nome);return n.indexOf(k)>-1||k.indexOf(n)>-1})}
 var HL,HOT=null;function hotel(){if(!HL)HL=fetch('/assets/data/hotel.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){HOT=d}).catch(function(){HOT=[]});return HL}
-function trovaHotel(t){var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});return r.sort(function(a,b){return norm(HOT[a].n).length-norm(HOT[b].n).length})}
+function trovaHotel(t){var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});var pe=function(i){var h=HOT[i];return (h.r?0:2)+(h.t==='albergo'?0:1)};return r.sort(function(a,b){return pe(a)-pe(b)||norm(HOT[a].n).length-norm(HOT[b].n).length})}
 function bel(n){var P={di:1,de:1,del:1,della:1,delle:1,dei:1,al:1,alla:1,e:1,a:1,in:1,da:1,the:1,of:1,and:1};return n.toLowerCase().split(' ').map(function(w,i){return i&&P[w]?w:w.charAt(0).toUpperCase()+w.slice(1)}).join(' ').replace(/b&b/gi,'B&B')}
 function mostraHotel(i){var h=HOT[i],c=[[num(h.s),'strutture ricettive'],[num(h.a),'alberghi']];if(h.mar)c.push([h.mar+' €','il martedì']);if(h.sab)c.push([h.sab+' €','il sabato']);if(h.cap)c.push([h.cap+' €','a Capodanno']);if(h.v)c.push([h.v.toFixed(1).replace('.',','),'voto mediano su Booking']);
   nf.innerHTML='<b>'+esc(bel(h.n))+'</b><p>'+esc(h.i)+(h.z&&h.z!=='n.d.'?' · '+esc(h.z):'')+'. Il mercato entro 1 km dal tuo hotel</p><div class="o2-hm">'+c.map(function(x){return '<span><b>'+x[0]+'</b><small>'+x[1]+'</small></span>'}).join('')+'</div>'+
@@ -267,7 +267,7 @@ function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'
   /* 4.11 la scala */
   if(sc){var su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
     h+='<section class="o2-rs"><h3>La tua posizione</h3><p class="o2-rbig"><b>'+sc.pos+'°</b> su '+sc.su+' alberghi a '+(s.stelle||'')+' stelle in '+esc(s.zona_sito||'')+'</p>'+
-      (su?'<p>L’albergo al '+su.pos+'° posto ha '+d1(su.hs)+' di Hotel Score: ti servono '+d1(su.hs-s.hotel_score)+' punti per salire di un posto</p>':'<p>Sei il primo della tua zona e della tua categoria</p>')+'</section>'}
+      (su?(su.hs-s.hotel_score<0.05?'<p>Sei a pari punteggio con l’albergo al '+su.pos+'° posto: davanti va chi ha più recensioni</p>':'<p>L’albergo al '+su.pos+'° posto ha '+d1(su.hs)+' di Hotel Score: ti servono '+d1(su.hs-s.hotel_score)+' punti per salire di un posto</p>'):'<p>Sei il primo della tua zona e della tua categoria</p>')+'</section>'}
   /* 4.2 i prezzi e 4.14 il termometro di Capodanno */
   var P=[m,b,ev].filter(Boolean),mx=Math.max.apply(null,P.map(function(p){return Math.max(p.prezzo||0,p.mediano||0,1)}));
   if(P.length){h+='<section class="o2-rs"><h3>Il tuo prezzo e quello dei competitor</h3><div class="o2-rpz">'+P.map(function(p){return '<div><strong>'+ETI[p.etichetta]+'</strong><small>'+gg(p.arrivo,1)+(p.notti===2?' · 2 notti, prezzo per notte':'')+'</small>'+
@@ -278,7 +278,7 @@ function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'
     h+='</section>'}
   /* 4.4 cosa dicono gli ospiti */
   if(s.parziali&&s.parziali.length)h+='<section class="o2-rs"><h3>Cosa dicono gli ospiti</h3><div class="o2-tw"><table class="o2-tb"><thead><tr><th>Tema</th><th>Tu</th><th>Competitor</th><th>Differenza</th></tr></thead><tbody>'+
-    s.parziali.map(function(p){var d=p.tu!=null&&p.mediano!=null?p.tu-p.mediano:null;return '<tr><td>'+esc(p.nome)+'</td><td>'+d1(p.tu)+'</td><td>'+d1(p.mediano)+'</td><td class="'+(d>0.05?'pos':d<-0.05?'neg':'')+'">'+(d==null?'n.d.':(d>0.05?'+':d<-0.05?'−':'')+d1(Math.abs(d)))+'</td></tr>'}).join('')+
+    s.parziali.map(function(p){var d=p.tu!=null&&p.mediano!=null?p.tu-p.mediano:null;return '<tr><td>'+esc(p.nome)+'</td><td>'+d1(p.tu)+'</td><td>'+d1(p.mediano)+'</td><td class="'+(d>0.05?'pos':d<-0.05?'neg':'')+'">'+(d==null?'n.d.':Math.abs(d)<=0.05?'in linea':(d>0?'+':'−')+d1(Math.abs(d)))+'</td></tr>'}).join('')+
     '</tbody></table></div><p class="o2-rn">Punteggi parziali di Booking. Competitor: valore mediano</p></section>';
   /* 4.5 le priorità */
   if(s.fatti&&s.fatti.length)h+='<section class="o2-rs"><h3>Le cose da guardare</h3><ol class="o2-rf">'+s.fatti.slice(0,3).map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ol></section>';
