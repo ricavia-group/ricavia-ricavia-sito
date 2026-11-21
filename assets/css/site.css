@@ -5617,3 +5617,4 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio .o2-rco b{font-variant-numeric:tabular-nums}
 #pg-osservatorio .o2-rl0{color:var(--o2m);padding:40px 0}
 @media (max-width:560px){#pg-osservatorio .o2-rv li{grid-template-columns:minmax(0,1fr) 70px}#pg-osservatorio .o2-rv li i{grid-column:1 / -1;grid-row:2}}
+#pg-osservatorio .o2-nf .o2-ht{margin:4px 0 -2px;font:600 11px var(--zf);letter-spacing:.08em;text-transform:uppercase;color:var(--o2t)}
