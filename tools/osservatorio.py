@@ -126,7 +126,7 @@ def classifiche(d):
     panes.append('<div class="o2-p" data-i="hs"><div class="o2-ph"><b>Top 10 Hotel Score</b><small>da dicembre</small></div><div class="o2-soon">'
                  '<div class="o2-seal"><span>Top 10<b>Centro storico</b>Osservatorio Ricavia</span></div>'
                  '<p>La classifica degli alberghi per zona e categoria esce quando ogni albergo ha almeno 4 voti su 6 dell\'Hotel Score. '
-                 'Gli hotel in Top 10 ricevono il sigillo per il proprio sito e l\'invito a una puntata di Turismo da Bar</p></div></div>')
+                 'Gli hotel in Top 10 ricevono il sigillo per il proprio sito</p></div></div>')
     return f'''<section class="o2-sec o2-lt2" id="o2-classifiche"><div class="wrap">
 <div class="o2-sh"><span class="o2-tag ar">Le classifiche</span><h2 class="ar">Le classifiche,<br>{g("una sola Roma")}</h2>
 <p class="ar">Dove si trovano le strutture ricettive, dove costano di più, dove a Capodanno non c'è più posto. Ogni classifica con fonte, data e metodo, ogni mese una nuova edizione</p></div>
@@ -190,7 +190,7 @@ def metodo():
               ("Il competitive set", "Le strutture ricettive più vicine, con stesso tipo, categoria vicina e dimensione simile"),
               ("I clienti Ricavia", "Compaiono nelle classifiche con una nota accanto al nome"),
               ("Le correzioni", "Puoi segnalare un dato sbagliato o chiedere di non comparire: una persona di Ricavia controlla ogni richiesta")]
-    arr = [("Dicembre", "Top 10 Hotel Score", "Per zona e categoria, con il sigillo e l'invito a Turismo da Bar"),
+    arr = [("Dicembre", "Top 10 Hotel Score", "Per zona e categoria, con il sigillo per il sito dell'hotel"),
            ("Dicembre", "Le prime tre di ogni via", "Per tariffa letta e per Hotel Score"),
            ("Dicembre", "Investitori", "Affollamento, rendimento e costo d'ingresso delle zone, sulla pagina Nuova apertura"),
            ("Gennaio", "Domanda e flussi", "Arrivi, presenze, passeggeri di Fiumicino e Ciampino, eventi e giornate di picco")]
