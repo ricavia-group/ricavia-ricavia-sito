@@ -129,6 +129,7 @@ function schedaVia(v){var d=VIE[v],tot=d.strutture;
     '<div class="o2-vbar">'+COL.filter(function(c){return d[c[0]]}).map(function(c){return '<i style="width:'+(d[c[0]]/tot*100)+'%;background:'+c[2]+'"></i>'}).join('')+'</div>'+
     '<div class="o2-vleg">'+COL.filter(function(c){return d[c[0]]}).map(function(c){return '<span><i style="background:'+c[2]+'"></i>'+c[1]+' '+num(d[c[0]])+'</span>'}).join('')+(d.altro?'<span>Altre '+num(d.altro)+'</span>':'')+'</div>'+
     '<div class="o2-vrk"><span><em>'+num(RC[v])+'ª</em> via di Roma per camere</span><span><em>'+num(RS[v])+'ª</em> per strutture ricettive</span></div>'+
+    (d.top&&d.top.length?'<div class="o2-vtop"><span class="o2-tag">Le prime '+d.top.length+' per Hotel Score</span><ol>'+d.top.map(function(x,i){return '<li><button type="button" data-o2-rep="'+esc(x[0])+'"><em>'+(i+1)+'</em><span>'+esc(x[1])+'</span><b>'+d1(x[2])+'</b></button></li>'}).join('')+'</ol></div>':'')+
     '<small>Su '+num(D.vie)+' vie. Nome della via come scritto nel registro</small><a href="#pg-pagella" data-o2-hs>Il tuo hotel è in questa via? Calcola l\'Hotel Score →</a></div>'}
 function trovaVie(t){var k=norm(t);if(k.length<3)return [];var ex=Object.keys(VIE).filter(function(v){return norm(v)===k});if(ex.length)return ex;
   return Object.keys(VIE).filter(function(v){return norm(v).indexOf(k)>-1}).sort(function(a,b){return VIE[b].strutture-VIE[a].strutture})}
@@ -272,6 +273,7 @@ function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'
   if(sc){var su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
     h+='<section class="o2-rs"><h3>La tua posizione</h3><p class="o2-rbig"><b>'+sc.pos+'°</b> su '+sc.su+' alberghi a '+(s.stelle||'')+' stelle in '+esc(s.zona_sito||'')+'</p>'+
       (su?(su.hs-s.hotel_score<0.05?'<p>Sei a pari punteggio con l’albergo al '+su.pos+'° posto: davanti va chi ha più recensioni</p>':'<p>L’albergo al '+su.pos+'° posto ha '+d1(su.hs)+' di Hotel Score: ti servono '+d1(su.hs-s.hotel_score)+' punti per salire di un posto</p>'):'<p>Sei il primo della tua zona e della tua categoria</p>')+'</section>'}
+  h+=sezSigillo(s);
   /* 4.2 i prezzi e 4.14 il termometro di Capodanno */
   var P=[m,b,ev].filter(Boolean),mx=Math.max.apply(null,P.map(function(p){return Math.max(p.prezzo||0,p.mediano||0,1)}));
   if(P.length){h+='<section class="o2-rs"><h3>Il tuo prezzo e quello dei competitor</h3><div class="o2-rpz">'+P.map(function(p){return '<div><strong>'+ETI[p.etichetta]+'</strong><small>'+gg(p.arrivo,1)+(p.notti===2?' · 2 notti, prezzo per notte':'')+'</small>'+
@@ -299,6 +301,30 @@ function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'
   h+='<section class="o2-rs o2-rcta"><h3>Vuoi leggerlo con noi?</h3><p>Venti minuti su Google Meet: ti spieghiamo i numeri e da dove partire</p><div class="o2-ops"><button type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per leggere insieme il report di '+esc(s.nome)+'">Prenota la call conoscitiva →</button><button type="button" data-o2-msg="Nel report di '+esc(s.nome)+' c’è un dato sbagliato: ">Segnala un dato sbagliato</button></div></section>';
   return h}
 try{var rq=new URL(location.href).searchParams.get('report');if(rq)apriReport(rq)}catch(_){}
+
+/* ---------- Top 10 per zona e categoria (6.1), nota cliente (6.2) ---------- */
+var hsP=$('.o2-p[data-i="hotel_score"]');
+if(hsP&&D.hs&&D.hs.length){var fz=hsP.querySelector('[data-hz]'),fs=hsP.querySelector('[data-hst]');
+  var topHs=function(){var z=fz?fz.value:'',st=fs?fs.value:'',l=D.hs.filter(function(x){return (!z||x[2]===z)&&(!st||String(x[3])===st)}).slice(0,10),ol=hsP.querySelector('.o2-l'),mx=l.length?l[0][4]:1;
+    ol.innerHTML=l.length?l.map(function(x,j){var n=[z?'':x[2],!st&&x[3]?x[3]+' stelle':'',num(x[5])+' recensioni',x[6]?'cliente Ricavia':''].filter(Boolean).join(' · ');
+      return '<li style="--w:'+(x[4]/mx*100).toFixed(0)+'%;--i:'+(j+1)+'" data-o2-rep="'+esc(x[0])+'" tabindex="0" role="button"><em>'+(j<9?'0':'')+(j+1)+'</em><b>'+esc(x[1])+'<small>'+esc(n)+'</small></b><i><u></u></i><span>'+d1(x[4])+'</span></li>'}).join('')
+      :'<li class="o2-l0">Nessun albergo in classifica con questi filtri: servono almeno 100 recensioni e 4 aree su 6</li>';
+    hsP.dataset.t='Top 10 Hotel Score'+(z?' · '+z:'')+(st?' · '+st+' stelle':'');hsP.querySelector('.o2-ph b').textContent=hsP.dataset.t;if(hsP.classList.contains('on'))scheda(hsP)};
+  if(fz)fz.addEventListener('change',topHs);if(fs)fs.addEventListener('change',topHs);
+  hsP.addEventListener('keydown',function(e){var li=e.target.closest('[data-o2-rep]');if(li&&(e.key==='Enter'||e.key===' ')){e.preventDefault();apriReport(li.getAttribute('data-o2-rep'))}})}
+
+/* ---------- il sigillo Top 10 per il sito dell'hotel (6.3) ---------- */
+function sigillo(nome,zona,pos){var W=1000,cv=document.createElement('canvas');cv.width=cv.height=W;var c=cv.getContext('2d'),F='Geist, system-ui, sans-serif',gr=c.createLinearGradient(0,W,W,0);
+  gr.addColorStop(0,'#3CCDFA');gr.addColorStop(.7,'#1F2DD0');gr.addColorStop(1,'#724AF8');
+  c.beginPath();c.arc(W/2,W/2,W/2-6,0,7);c.fillStyle=gr;c.fill();c.beginPath();c.arc(W/2,W/2,W/2-34,0,7);c.fillStyle='#0B0D12';c.fill();
+  c.textAlign='center';c.fillStyle='#A1A1A6';c.font='600 34px '+F;c.fillText('OSSERVATORIO RICAVIA',W/2,250);
+  c.fillStyle='#fff';c.font='700 150px '+F;c.fillText('Top 10',W/2,440);
+  c.font='600 58px '+F;c.fillText(zona,W/2,540);c.fillStyle='#A1A1A6';c.font='500 40px '+F;c.fillText(pos+'° posto · Hotel Score · '+mese,W/2,620);
+  c.fillStyle='#fff';c.font='600 40px '+F;var n=nome.length>32?nome.slice(0,31)+'…':nome;c.fillText(n,W/2,730);
+  var a=document.createElement('a');a.download='sigillo-top10-ricavia.png';a.href=cv.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove()}
+function sezSigillo(s){var l=(D.hs||[]).filter(function(x){return x[2]===s.zona_sito}).slice(0,10),i=l.map(function(x){return x[0]}).indexOf(s.id_comune);
+  if(i<0)return '';return '<section class="o2-rs o2-rsig"><h3>Sei nella Top 10 di '+esc(s.zona_sito)+': '+(i+1)+'° posto</h3><p>Metti il sigillo sul sito del tuo hotel: è un’immagine da scaricare, aggiornata a '+mese+'</p><div class="o2-ops"><button type="button" data-sig="'+esc(s.zona_sito)+'|'+(i+1)+'">Scarica il sigillo →</button></div></section>'}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-sig]');if(!b||!rep||!rep.contains(b))return;var p=b.getAttribute('data-sig').split('|'),t=rep.querySelector('.o2-rh h2');sigillo(t?t.textContent:'',p[0],p[1])});
 
 /* ---------- la conversazione dell'Hotel Score, una riga alla volta ---------- */
 var ch=$('#o2Chat');if(ch){var bub=[].slice.call(ch.querySelectorAll('.q,.a'));vis(ch,function(){bub.forEach(function(b,i){setTimeout(function(){b.classList.add('show')},RM?0:300+i*750)})},.35)}

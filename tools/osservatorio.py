@@ -124,7 +124,13 @@ def classifiche(d):
                        + f'</b><i><u></u></i><span>{fmt(x["valore"])}</span></li>' for j, x in enumerate(voci, 1))
         on = " on" if i == 0 else ""
         tabs[gr].append(f'<button type="button" class="o2-t{on}" data-i="{k}" aria-pressed="{"true" if on else "false"}">{E(titolo)}</button>')
-        panes.append(f'<div class="o2-p{on}" data-i="{k}" data-t="{E(titolo)}" data-u="{E(unita)}"><div class="o2-ph"><b>{E(titolo)}</b><small>{E(unita)}</small></div>'
+        filtri = ""
+        if k == "hotel_score" and d.get("hs_tutti"):
+            zo = "".join(f'<option value="{E(z["nome"])}">{E(z["nome"])}</option>' for z in d["zone"])
+            st = "".join(f'<option value="{s}">{s} stelle</option>' for s in range(1, 6))
+            filtri = (f'<div class="o2-fl"><label><span>Zona</span><select data-hz><option value="">Tutta Roma</option>{zo}</select></label>'
+                      f'<label><span>Categoria</span><select data-hst><option value="">Tutte le stelle</option>{st}</select></label></div>')
+        panes.append(f'<div class="o2-p{on}" data-i="{k}" data-t="{E(titolo)}" data-u="{E(unita)}"><div class="o2-ph"><b>{E(titolo)}</b><small>{E(unita)}</small></div>{filtri}'
                      f'<ol class="o2-l">{rows}</ol><p class="o2-src">Fonte: {E(f.get(k, f[gr]))}</p></div>')
     return f'''<section class="o2-sec o2-lt2" id="o2-classifiche"><div class="wrap">
 <div class="o2-sh"><span class="o2-tag ar">Le classifiche</span><h2 class="ar">Le classifiche,<br>{g("una sola Roma")}</h2>
@@ -203,9 +209,29 @@ def metodo():
 </div></div></section>'''
 
 
+def apertura(d):
+    """Blocco della pagina Nuova apertura: le nove zone a confronto per chi apre o compra (fermata 10 del giro)."""
+    righe = []
+    for z in sorted(d["zone"], key=lambda z: -((z["mercato"] or {}).get("sotto_8") or 0)):
+        o, m = z["offerta"], z["mercato"] or {}
+        dens = num(round(o["strutture"] / z["km2"])) if z.get("km2") else "n.d."
+        righe.append(f'<tr><th scope="row">{E(z["nome"])}</th><td>{dens}</td><td>{num(o.get("alberghi", 0))}</td><td>{num(o.get("camere_alberghi", 0))}</td>'
+                     f'<td>{str(m["sabato"]) + " €" if m.get("sabato") else "n.d."}</td><td>{dec(m["voto"]) if m.get("voto") else "n.d."}</td>'
+                     f'<td><b>{pct(m["sotto_8"], False) if m.get("sotto_8") is not None else "n.d."}</b></td></tr>')
+    return (f'<div class="ix-blk oz"><div class="ix-sh ar"><span class="ap-tag">Dall’Osservatorio · {data(d["aggiornato"])}</span>'
+            f'<h2>Dove aprire a Roma: nove zone a confronto</h2>'
+            f'<p class="ix-p">Quanto è affollata ogni zona, quanto costa una camera il sabato e quanti alberghi hanno un voto sotto 8 su Booking. '
+            f'Più alta è quella quota, più spazio c’è per un albergo che lavora meglio dei vicini</p></div>'
+            f'<div class="oz-w ar"><table class="oz-t"><thead><tr><th>Zona</th><th>Strutture ricettive per km²</th><th>Alberghi</th><th>Camere d’albergo</th>'
+            f'<th>Sabato, valore mediano</th><th>Voto mediano</th><th>Alberghi sotto 8</th></tr></thead><tbody>{"".join(righe)}</tbody></table></div>'
+            f'<p class="oz-s">Fonte: registro delle strutture ricettive di Roma Capitale ({E(d["registro"]["file"])}) e Booking, prezzi letti dal {data(d["letture_dal"])} '
+            f'al {data(d["aggiornato"])}, camera per 2 persone. Costo d’ingresso e rendimento per zona arrivano con le quotazioni immobiliari OMI</p>'
+            f'<p class="oz-c"><a class="z-btn" href="#pg-osservatorio">Le zone nell’Osservatorio <span class="arr">→</span></a></p></div>')
+
+
 def pagina(d):
     dati = {"zone": d["zone"], "date": d["date"], "letti": d["alberghi_letti"], "agg": d["aggiornato"], "dal": d["letture_dal"],
-            "vie": d["vie"], "fonte": fonti(d), "ver": d.get("ver", "")}
+            "vie": d["vie"], "fonte": fonti(d), "ver": d.get("ver", ""), "hs": d.get("hs_tutti", [])}
     js = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return (hero(d) + prezzi(d) + classifiche(d) + zone(d) + vie(d) + hotel() + metodo()
             + '<a href="#pg-pagella" id="o2Hs" hidden>Hotel Score</a><a href="#contatti" id="o2Ct" hidden>Contatti</a>'
@@ -240,6 +266,9 @@ def main():
     pat = re.compile(r"<!--oss:pagina-->.*?<!--/oss:pagina-->", re.S)
     assert pat.search(t), "segnaposto <!--oss:pagina--> mancante in index.html"
     t = pat.sub(lambda _: "<!--oss:pagina-->" + pagina(d) + "<!--/oss:pagina-->", t)
+    pa = re.compile(r"<!--oss:apertura-->.*?<!--/oss:apertura-->", re.S)
+    assert pa.search(t), "segnaposto <!--oss:apertura--> mancante in index.html"
+    t = pa.sub(lambda _: "<!--oss:apertura-->" + apertura(d) + "<!--/oss:apertura-->", t)
     with open(p, "w", encoding="utf-8", newline="") as f:
         f.write(t)
     print("ok", d["aggiornato"], d["alberghi_letti"], "alberghi letti")

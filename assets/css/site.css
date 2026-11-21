@@ -5618,3 +5618,25 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio .o2-rl0{color:var(--o2m);padding:40px 0}
 @media (max-width:560px){#pg-osservatorio .o2-rv li{grid-template-columns:minmax(0,1fr) 70px}#pg-osservatorio .o2-rv li i{grid-column:1 / -1;grid-row:2}}
 #pg-osservatorio .o2-nf .o2-ht{margin:4px 0 -2px;font:600 11px var(--zf);letter-spacing:.08em;text-transform:uppercase;color:var(--o2t)}
+#pg-osservatorio .o2-fl{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 14px}
+#pg-osservatorio .o2-fl label{display:grid;gap:4px;flex:1 1 160px;min-width:0}
+#pg-osservatorio .o2-fl span{font:600 10.5px var(--zf);letter-spacing:.08em;text-transform:uppercase;color:#6E6E73}
+#pg-osservatorio .o2-fl select{width:100%;padding:9px 12px;border-radius:12px;border:1px solid #E2E2E8;background:#fff;color:var(--zink);font:500 14px var(--zf)}
+#pg-osservatorio .o2-l li[data-o2-rep]{cursor:pointer}
+#pg-osservatorio .o2-l li[data-o2-rep]:hover b{text-decoration:underline;text-underline-offset:3px}
+#pg-osservatorio .o2-l .o2-l0{display:block;padding:14px 0;color:#6E6E73;font-size:14px}
+#pg-osservatorio .o2-vtop{display:grid;gap:8px;margin:6px 0 4px}
+#pg-osservatorio .o2-vtop ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+#pg-osservatorio .o2-vtop button{width:100%;display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;padding:10px 12px;border:1px solid #E2E2E8;border-radius:14px;background:#fff;color:var(--zink);font:500 14px var(--zf);cursor:pointer}
+#pg-osservatorio .o2-vtop button:hover{border-color:var(--zink)}
+#pg-osservatorio .o2-vtop em{font-style:normal;font-weight:600;color:#6E6E73}
+#pg-osservatorio .o2-vtop b{font-variant-numeric:tabular-nums}
+#pg-osservatorio .o2-rsig{border-top-color:transparent;background:rgba(255,255,255,.05);border-radius:20px;padding:20px;margin-top:24px}
+#apertura .oz-w{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:18px}
+#apertura .oz-t{border-collapse:collapse;width:100%;min-width:640px;font-size:14px;font-variant-numeric:tabular-nums}
+#apertura .oz-t th,#apertura .oz-t td{padding:10px 0 10px 12px;border-top:1px solid #E2E2E8;text-align:right;white-space:nowrap}
+#apertura .oz-t thead th{border-top:0;font:600 10.5px var(--zf);letter-spacing:.06em;text-transform:uppercase;color:#6E6E73;white-space:normal;vertical-align:bottom}
+#apertura .oz-t th:first-child{text-align:left;padding-left:0;font-weight:600}
+#apertura .oz-t td b{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent}
+#apertura .oz-s{margin:12px 0 0;font-size:13px;line-height:1.5;color:#6E6E73}
+#apertura .oz-c{margin:16px 0 0}
