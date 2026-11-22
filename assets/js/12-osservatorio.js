@@ -295,6 +295,24 @@ if(ZT){var m0=zpOk(D.zd)||zpOk(D.zs);if(m0){zpModello(m0);var zq=ZT.querySelecto
   zq.addEventListener('input',function(){ZP.q=zq.value;zpDisegna()});
   zpDisegna()}}
 
+/* ---------- case vacanze e affitti brevi per zona (Inside Airbnb, o2Dati.cv): ordinamento, prime 10 righe e riga Tu.
+   Stesse righe di cv_righe() in tools/osservatorio.py ---------- */
+var CV=$('#o3Cv'),CVS={by:'prezzo',dir:-1,tutte:false},CVK=['nome','prezzo','libere','annunci'];
+function cvDisegna(){if(!CV||!D.cv)return;var L=D.cv.slice().sort(function(a,b){return CVS.by==='nome'?CVS.dir*a.nome.localeCompare(b.nome,'it'):CVS.dir*(a[CVS.by]-b[CVS.by])||a.nome.localeCompare(b.nome,'it')}),mia=zonaDi(L);
+  [].forEach.call(CV.querySelectorAll('thead th'),function(t,i){t.setAttribute('aria-sort',CVK[i]===CVS.by?(CVS.dir>0?'ascending':'descending'):'none')});
+  CV.querySelector('tbody').innerHTML=L.map(function(z,i){var me=z===mia;return '<tr class="'+(i>=10&&!CVS.tutte&&!me?'o3-x':'')+(me?' o3-mia':'')+'"><th scope="row">'+(me?'<span class="o3-pill" data-tu>Tu</span> ':'')+esc(z.nome)+'</th><td>'+eu(z.prezzo)+'</td><td>'+Math.round(z.libere)+' su 30</td><td>'+num(z.annunci)+'</td></tr>'}).join('');
+  var tt=$('#o3-case .o3-cvt');tt.hidden=L.length<=10||CVS.tutte;tt.textContent='Mostra tutte le '+L.length+' zone';
+  var tus=$('.o3-tus[data-b="case"]');if(!tus)return;tus.innerHTML='';if(!ME)return;
+  var k=mio('martedi')!=null?'martedi':'sabato',v=mio(k),t;
+  if(mia){t='Nella tua zona, <b>'+esc(mia.nome)+'</b>, una casa vacanze su Airbnb costava <b>'+eu(mia.prezzo)+'</b> a notte a settembre, per l’annuncio intero';
+    t+=v!=null?'. Il tuo hotel chiede <b>'+eu(v)+'</b> '+gg(D.date[k],1)+' per 2 persone'+(Math.round(v-mia.prezzo)?': '+eu(Math.abs(v-mia.prezzo))+(v>mia.prezzo?' in più':' in meno'):''):'. Non leggiamo ancora i prezzi del tuo hotel: confrontali con questa riga'}
+  else t='Nella tua zona ci sono meno di 30 case vacanze attive su Airbnb, oppure non la riconosciamo: confronta i tuoi prezzi con la riga di Roma';
+  tus.innerHTML=tu(t)}
+if(CV&&D.cv){[].forEach.call(CV.querySelectorAll('thead th'),function(t,i){t.innerHTML='<button type="button" data-s="'+CVK[i]+'">'+t.textContent+'</button>'});
+  CV.addEventListener('click',function(e){var b=e.target.closest('[data-s]');if(!b)return;var s=b.getAttribute('data-s');CVS.dir=CVS.by===s?-CVS.dir:(s==='nome'?1:-1);CVS.by=s;cvDisegna()});
+  $('#o3-case .o3-cvt').addEventListener('click',function(){CVS.tutte=true;cvDisegna()});
+  cvDisegna()}
+
 /* ---------- (d) il modulo delle classifiche (punto 7 di George del 22/11): cinque classifiche, stelle e zona; la Top 10 si rifà da classifiche.json.
    Riga: [id, nome, zona, stelle, hotel_score, voto, recensioni, martedi, sabato]. Stesse regole di top() in tools/osservatorio.py ---------- */
 var CM=$('#o3Cm'),CR=null,CRP=null,CS={t:'hs',st:'',z:''},CSP={};try{CSP=JSON.parse(CM.getAttribute('data-sp'))}catch(_){}
@@ -367,6 +385,8 @@ function disegnaTu(){pulisci();if(!ME)return;
   tuOggi();
   /* (b) prezzi per zona: la sua riga evidenziata e la riga Tu, ridisegnate a ogni cambio di data */
   zpDisegna();
+  /* case vacanze: la sua zona evidenziata e il confronto con il suo prezzo */
+  cvDisegna();
   /* (c) chi alza il prezzo il sabato: il segnaposto sopra la barra */
   var SB=$('.o3-sb'),a1=mio('martedi'),b1=mio('sabato'),gr=a1!=null&&b1!=null?(b1>a1?0:b1===a1?1:2):-1,NOMI=['alzano il prezzo','chiedono lo stesso prezzo del martedì','abbassano il prezzo'];
   if(gr>-1&&SB){var q=SB.getAttribute('data-q').split(',').map(Number),qx=q.slice(0,gr).reduce(function(a,b){return a+b},0)+q[gr]/2;

@@ -1,0 +1,569 @@
+{
+ "fonte": "Inside Airbnb",
+ "url": "https://insideairbnb.com",
+ "licenza": "CC BY 4.0",
+ "data": "2026-09-17",
+ "zone_da": "rioni e quartieri (OpenStreetMap)",
+ "minimo": 30,
+ "roma": {
+  "annunci": 26202,
+  "prezzo": 187,
+  "interi": 0.795,
+  "libere": 6.0,
+  "voto": 4.79
+ },
+ "zone": [
+  {
+   "nome": "Trevi",
+   "annunci": 441,
+   "prezzo": 327,
+   "interi": 0.855,
+   "libere": 5.5,
+   "voto": 4.78
+  },
+  {
+   "nome": "Pigna",
+   "annunci": 175,
+   "prezzo": 306,
+   "interi": 0.909,
+   "libere": 5.0,
+   "voto": 4.74
+  },
+  {
+   "nome": "Colonna",
+   "annunci": 408,
+   "prezzo": 304,
+   "interi": 0.88,
+   "libere": 4.8,
+   "voto": 4.76
+  },
+  {
+   "nome": "Campo Marzio",
+   "annunci": 794,
+   "prezzo": 303,
+   "interi": 0.863,
+   "libere": 5.6,
+   "voto": 4.8
+  },
+  {
+   "nome": "Sant'Eustachio",
+   "annunci": 252,
+   "prezzo": 287,
+   "interi": 0.937,
+   "libere": 4.4,
+   "voto": 4.76
+  },
+  {
+   "nome": "Sant'Angelo",
+   "annunci": 134,
+   "prezzo": 284,
+   "interi": 0.978,
+   "libere": 5.7,
+   "voto": 4.81
+  },
+  {
+   "nome": "Campitelli",
+   "annunci": 64,
+   "prezzo": 278,
+   "interi": 0.922,
+   "libere": 5.2,
+   "voto": 4.73
+  },
+  {
+   "nome": "Parione",
+   "annunci": 615,
+   "prezzo": 269,
+   "interi": 0.906,
+   "libere": 4.3,
+   "voto": 4.79
+  },
+  {
+   "nome": "Ponte",
+   "annunci": 598,
+   "prezzo": 269,
+   "interi": 0.92,
+   "libere": 4.6,
+   "voto": 4.78
+  },
+  {
+   "nome": "Regola",
+   "annunci": 428,
+   "prezzo": 259,
+   "interi": 0.958,
+   "libere": 4.9,
+   "voto": 4.74
+  },
+  {
+   "nome": "Monti",
+   "annunci": 1755,
+   "prezzo": 254,
+   "interi": 0.859,
+   "libere": 4.1,
+   "voto": 4.79
+  },
+  {
+   "nome": "Ludovisi",
+   "annunci": 195,
+   "prezzo": 252,
+   "interi": 0.723,
+   "libere": 4.7,
+   "voto": 4.69
+  },
+  {
+   "nome": "Borgo",
+   "annunci": 316,
+   "prezzo": 243,
+   "interi": 0.896,
+   "libere": 5.9,
+   "voto": 4.82
+  },
+  {
+   "nome": "Celio",
+   "annunci": 307,
+   "prezzo": 243,
+   "interi": 0.84,
+   "libere": 4.8,
+   "voto": 4.81
+  },
+  {
+   "nome": "Prati",
+   "annunci": 1200,
+   "prezzo": 239,
+   "interi": 0.76,
+   "libere": 5.1,
+   "voto": 4.8
+  },
+  {
+   "nome": "Trastevere",
+   "annunci": 1609,
+   "prezzo": 233,
+   "interi": 0.904,
+   "libere": 5.0,
+   "voto": 4.79
+  },
+  {
+   "nome": "Ripa",
+   "annunci": 42,
+   "prezzo": 222,
+   "interi": 0.881,
+   "libere": 5.0,
+   "voto": 4.85
+  },
+  {
+   "nome": "Sallustiano",
+   "annunci": 205,
+   "prezzo": 212,
+   "interi": 0.585,
+   "libere": 4.8,
+   "voto": 4.72
+  },
+  {
+   "nome": "Flaminio",
+   "annunci": 221,
+   "prezzo": 209,
+   "interi": 0.842,
+   "libere": 6.5,
+   "voto": 4.79
+  },
+  {
+   "nome": "Pinciano",
+   "annunci": 157,
+   "prezzo": 204,
+   "interi": 0.854,
+   "libere": 7.0,
+   "voto": 4.79
+  },
+  {
+   "nome": "Castro Pretorio",
+   "annunci": 756,
+   "prezzo": 199,
+   "interi": 0.459,
+   "libere": 5.2,
+   "voto": 4.64
+  },
+  {
+   "nome": "Testaccio",
+   "annunci": 317,
+   "prezzo": 189,
+   "interi": 0.899,
+   "libere": 5.1,
+   "voto": 4.81
+  },
+  {
+   "nome": "San Saba",
+   "annunci": 38,
+   "prezzo": 188,
+   "interi": 0.921,
+   "libere": 4.8,
+   "voto": 4.79
+  },
+  {
+   "nome": "Salario",
+   "annunci": 150,
+   "prezzo": 186,
+   "interi": 0.76,
+   "libere": 4.7,
+   "voto": 4.76
+  },
+  {
+   "nome": "Esquilino",
+   "annunci": 1613,
+   "prezzo": 180,
+   "interi": 0.59,
+   "libere": 4.8,
+   "voto": 4.74
+  },
+  {
+   "nome": "Trionfale",
+   "annunci": 1340,
+   "prezzo": 180,
+   "interi": 0.772,
+   "libere": 5.5,
+   "voto": 4.79
+  },
+  {
+   "nome": "Aurelio",
+   "annunci": 1694,
+   "prezzo": 178,
+   "interi": 0.805,
+   "libere": 6.3,
+   "voto": 4.8
+  },
+  {
+   "nome": "Parioli",
+   "annunci": 67,
+   "prezzo": 172,
+   "interi": 0.731,
+   "libere": 8.5,
+   "voto": 4.84
+  },
+  {
+   "nome": "Della Vittoria",
+   "annunci": 729,
+   "prezzo": 169,
+   "interi": 0.772,
+   "libere": 6.1,
+   "voto": 4.81
+  },
+  {
+   "nome": "Appio-Latino",
+   "annunci": 879,
+   "prezzo": 163,
+   "interi": 0.813,
+   "libere": 5.2,
+   "voto": 4.82
+  },
+  {
+   "nome": "Gianicolense",
+   "annunci": 1298,
+   "prezzo": 158,
+   "interi": 0.809,
+   "libere": 6.2,
+   "voto": 4.81
+  },
+  {
+   "nome": "Trieste",
+   "annunci": 259,
+   "prezzo": 157,
+   "interi": 0.803,
+   "libere": 6,
+   "voto": 4.83
+  },
+  {
+   "nome": "Nomentano",
+   "annunci": 362,
+   "prezzo": 156,
+   "interi": 0.619,
+   "libere": 6.1,
+   "voto": 4.81
+  },
+  {
+   "nome": "Tiburtino",
+   "annunci": 530,
+   "prezzo": 154,
+   "interi": 0.787,
+   "libere": 5.8,
+   "voto": 4.73
+  },
+  {
+   "nome": "Ostiense",
+   "annunci": 737,
+   "prezzo": 149,
+   "interi": 0.722,
+   "libere": 5.8,
+   "voto": 4.81
+  },
+  {
+   "nome": "Portuense",
+   "annunci": 479,
+   "prezzo": 145,
+   "interi": 0.808,
+   "libere": 7.5,
+   "voto": 4.83
+  },
+  {
+   "nome": "E.U.R.",
+   "annunci": 33,
+   "prezzo": 144,
+   "interi": 0.758,
+   "libere": 9.2,
+   "voto": 4.82
+  },
+  {
+   "nome": "Torrino",
+   "annunci": 47,
+   "prezzo": 143,
+   "interi": 0.915,
+   "libere": 10.6,
+   "voto": 4.79
+  },
+  {
+   "nome": "Tuscolano",
+   "annunci": 1118,
+   "prezzo": 143,
+   "interi": 0.745,
+   "libere": 5.9,
+   "voto": 4.82
+  },
+  {
+   "nome": "Appio Claudio",
+   "annunci": 67,
+   "prezzo": 135,
+   "interi": 0.806,
+   "libere": 9.3,
+   "voto": 4.79
+  },
+  {
+   "nome": "Primavalle",
+   "annunci": 270,
+   "prezzo": 134,
+   "interi": 0.844,
+   "libere": 7.6,
+   "voto": 4.8
+  },
+  {
+   "nome": "Ardeatino",
+   "annunci": 130,
+   "prezzo": 133,
+   "interi": 0.762,
+   "libere": 8.2,
+   "voto": 4.86
+  },
+  {
+   "nome": "Giuliano-Dalmata",
+   "annunci": 31,
+   "prezzo": 131,
+   "interi": 0.677,
+   "libere": 8.3,
+   "voto": 4.82
+  },
+  {
+   "nome": "Ponte Galeria",
+   "annunci": 31,
+   "prezzo": 130,
+   "interi": 0.774,
+   "libere": 13.0,
+   "voto": 4.82
+  },
+  {
+   "nome": "Tor di Quinto",
+   "annunci": 89,
+   "prezzo": 130,
+   "interi": 0.82,
+   "libere": 8.2,
+   "voto": 4.76
+  },
+  {
+   "nome": "Prenestino-Labicano",
+   "annunci": 738,
+   "prezzo": 129,
+   "interi": 0.809,
+   "libere": 5.9,
+   "voto": 4.78
+  },
+  {
+   "nome": "Lido di Ostia Levante",
+   "annunci": 230,
+   "prezzo": 128,
+   "interi": 0.93,
+   "libere": 14.1,
+   "voto": 4.77
+  },
+  {
+   "nome": "Monte Sacro",
+   "annunci": 223,
+   "prezzo": 128,
+   "interi": 0.807,
+   "libere": 6.0,
+   "voto": 4.84
+  },
+  {
+   "nome": "Pietralata",
+   "annunci": 164,
+   "prezzo": 128,
+   "interi": 0.652,
+   "libere": 6.8,
+   "voto": 4.8
+  },
+  {
+   "nome": "Val Melaina",
+   "annunci": 40,
+   "prezzo": 128,
+   "interi": 0.675,
+   "libere": 8.9,
+   "voto": 4.86
+  },
+  {
+   "nome": "Alessandrino",
+   "annunci": 50,
+   "prezzo": 125,
+   "interi": 0.94,
+   "libere": 9.3,
+   "voto": 4.84
+  },
+  {
+   "nome": "Casal Palocco",
+   "annunci": 31,
+   "prezzo": 125,
+   "interi": 0.968,
+   "libere": 17.1,
+   "voto": 4.73
+  },
+  {
+   "nome": "Collatino",
+   "annunci": 157,
+   "prezzo": 125,
+   "interi": 0.682,
+   "libere": 8.3,
+   "voto": 4.73
+  },
+  {
+   "nome": "Don Bosco",
+   "annunci": 156,
+   "prezzo": 123,
+   "interi": 0.724,
+   "libere": 7.2,
+   "voto": 4.84
+  },
+  {
+   "nome": "Monte Sacro Alto",
+   "annunci": 40,
+   "prezzo": 121,
+   "interi": 0.7,
+   "libere": 10.3,
+   "voto": 4.87
+  },
+  {
+   "nome": "Tomba di Nerone",
+   "annunci": 58,
+   "prezzo": 121,
+   "interi": 0.897,
+   "libere": 7.7,
+   "voto": 4.8
+  },
+  {
+   "nome": "Lido di Ostia Ponente",
+   "annunci": 216,
+   "prezzo": 118,
+   "interi": 0.912,
+   "libere": 14.5,
+   "voto": 4.8
+  },
+  {
+   "nome": "Prenestino-Centocelle",
+   "annunci": 228,
+   "prezzo": 117,
+   "interi": 0.776,
+   "libere": 6.9,
+   "voto": 4.8
+  },
+  {
+   "nome": "Ostia Antica",
+   "annunci": 31,
+   "prezzo": 116,
+   "interi": 0.774,
+   "libere": 11.9,
+   "voto": 4.91
+  },
+  {
+   "nome": "Acilia Sud",
+   "annunci": 57,
+   "prezzo": 115,
+   "interi": 0.895,
+   "libere": 11.9,
+   "voto": 4.89
+  },
+  {
+   "nome": "Casalotti",
+   "annunci": 30,
+   "prezzo": 114,
+   "interi": 0.767,
+   "libere": 19.4,
+   "voto": 4.62
+  },
+  {
+   "nome": "Ponte Mammolo",
+   "annunci": 43,
+   "prezzo": 114,
+   "interi": 0.698,
+   "libere": 9.5,
+   "voto": 4.84
+  },
+  {
+   "nome": "Castel di Leva",
+   "annunci": 37,
+   "prezzo": 112,
+   "interi": 0.946,
+   "libere": 11.9,
+   "voto": 4.81
+  },
+  {
+   "nome": "Torrenova",
+   "annunci": 41,
+   "prezzo": 109,
+   "interi": 0.634,
+   "libere": 9.5,
+   "voto": 4.91
+  },
+  {
+   "nome": "Borghesiana",
+   "annunci": 37,
+   "prezzo": 106,
+   "interi": 0.784,
+   "libere": 12.7,
+   "voto": 4.85
+  },
+  {
+   "nome": "Casal Morena",
+   "annunci": 39,
+   "prezzo": 103,
+   "interi": 0.692,
+   "libere": 12.1,
+   "voto": 4.86
+  },
+  {
+   "nome": "Labaro",
+   "annunci": 30,
+   "prezzo": 94,
+   "interi": 0.7,
+   "libere": 9.2,
+   "voto": 4.63
+  },
+  {
+   "nome": "Torre Angela",
+   "annunci": 42,
+   "prezzo": 94,
+   "interi": 0.595,
+   "libere": 12.6,
+   "voto": 4.78
+  },
+  {
+   "nome": "Castel Fusano",
+   "annunci": 30,
+   "prezzo": 92,
+   "interi": 0.767,
+   "libere": 15.0,
+   "voto": 4.62
+  }
+ ]
+}
