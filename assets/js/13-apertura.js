@@ -233,7 +233,7 @@ if(V&&window.fetch)fetch('/assets/data/annunci.json?v='+new Date().toISOString()
   var fo={};A.forEach(function(x){fo[x.a.fonte]=1});
   V.querySelector('#npVendN').textContent=A.length+(A.length===1?' annuncio letto':' annunci letti')+(d.aggiornato?' fino al '+d.aggiornato.split('-').reverse().join('/'):'')+' su '+Object.keys(fo).join(', ')+'. Per ogni annuncio valgono il testo e le condizioni dell’originale, al link. Ricavia non è parte della vendita. Il ritorno è una stima, non una promessa: il calcolo è scritto in ogni scheda';
   V.hidden=false;
-  if(RM||!('IntersectionObserver' in window))box.classList.add('in');else{var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){box.classList.add('in');io.disconnect()}},{threshold:.12});io.observe(box)}
+  if(RM||!('IntersectionObserver' in window))box.classList.add('in');else{var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){box.classList.add('in');io.disconnect()}},{threshold:0,rootMargin:'0px 0px -10% 0px'});io.observe(box)}/* soglia 0: sul telefono le schede impilate superano 4.000 px e una percentuale del blocco arriva troppo tardi */
 }).catch(function(){});
 
 P.hidden=false;go(0);
