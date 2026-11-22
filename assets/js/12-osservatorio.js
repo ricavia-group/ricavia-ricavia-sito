@@ -370,7 +370,7 @@ function zpDisegna(){if(!ZT||!ZP)return;var m=ZP.m,k=ZP.k,dt=m.date.filter(funct
   var tus=$('.o3-tus[data-b="prezzi"]');if(!tus)return;tus.innerHTML='';if(!ME)return;
   var t=mia?'La tua zona, <b>'+esc(mia.nome)+'</b>: '+(zpv(mia,k)!=null?'<b>'+eu(zpv(mia,k))+'</b> '+esc(dt.data?gg(dt.data,1):dt.etichetta.toLowerCase())+', '+rispetto(zpv(mia,k),r)+' rispetto a Roma':'prezzo non letto per questa data')+'. '
       :'La tua zona non è in questa tabella: il confronto è con Roma. ',ZS=zpOk(D.zs),zs=ZS&&zonaDi(ZS.zone),b1=mio('sabato'),ref=zs?zpv(zs,'sabato'):ZS&&ZS.roma.sabato;
-  if(b1!=null&&ref){var df=Math.round(b1-ref);t+='Il tuo prezzo di '+gg(D.date.sabato,1)+' è <b>'+eu(b1)+'</b>'+(df?', '+eu(Math.abs(df))+' '+(df>0?'più':'meno')+' '+(zs?'della tua zona':'di Roma')+' ('+eu(ref)+')':', lo stesso '+(zs?'della tua zona':'di Roma'))}
+  if(b1!=null&&ref){var df=Math.round(b1-ref);t+='Il tuo prezzo di '+gg(D.date.sabato,1)+' è <b>'+eu(b1)+'</b>'+(df?', '+eu(Math.abs(df))+' '+(df>0?'in più':'in meno')+' rispetto '+(zs?'alla tua zona':'a Roma')+' ('+eu(ref)+')':', lo stesso '+(zs?'della tua zona':'di Roma'))}
   else t+=ME.s?maiu(gg(D.date.sabato,1))+': '+esc(perche('sabato')):'Non leggiamo ancora i prezzi del tuo hotel: confrontali con la riga della tua zona';
   tus.innerHTML=tu(t)}
 if(ZT){var m0=zpOk(D.zd)||zpOk(D.zs);if(m0){zpModello(m0);var zq=ZT.querySelector('.o3-zq');zq.hidden=false;

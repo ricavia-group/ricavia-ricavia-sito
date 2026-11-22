@@ -6055,6 +6055,8 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio .o3-t tbody tr:last-child :is(th,td){border-bottom:0}
 #pg-osservatorio .o3-t :is(th,td):not(:first-child){text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 #pg-osservatorio .o3-t thead th{font:600 13px/1.2 var(--zf);color:var(--o2m);background:var(--o3c2);white-space:normal}
+#pg-osservatorio .o3-t thead th:not(:first-child){white-space:normal}
+#pg-osservatorio .o3-zt :is(.o3-tus,.o3-znota){max-width:760px}
 #pg-osservatorio .o3-t thead button{background:none;border:0;padding:4px 0;font:inherit;color:inherit;cursor:pointer}
 #pg-osservatorio .o3-t thead button::after{content:"↕";margin-left:5px;opacity:.35}
 #pg-osservatorio .o3-t th[aria-sort=ascending] button::after{content:"↑";opacity:1}
