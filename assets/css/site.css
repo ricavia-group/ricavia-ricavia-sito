@@ -6069,3 +6069,26 @@ html.o2-nosc{overflow:hidden}
   #pg-osservatorio .o3-tipi{--cl:minmax(0,104px)}
 }
 @media (prefers-reduced-motion:reduce){#pg-osservatorio :is(.o3-bar i,.o3-q100 i,.o3-trc,.o3-me){transition:none!important}}
+
+/* 22/11, George: "rimettila chiara come il resto del sito". I blocchi dei dati (o3-blk e la chiusura) passano su fondo chiaro
+   ridefinendo i colori che erano pensati per il fondo scuro; primo schermo e "Il tuo hotel" restano scuri per dare ritmo, come ieri */
+#pg-osservatorio .o2-dk:is(.o3-blk,.o3-fine){background:var(--zbg)!important;color:var(--zink);
+  --o2t:var(--zink);--o2m:#6E6E73;--o2l:rgba(11,11,18,.09);--o3c:#fff;--o3c2:#F5F5F7;--o3m3:#86868B;--o3tu:rgba(31,45,208,.06);--o3tub:rgba(31,45,208,.28)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o2-sh p,#pg-osservatorio :is(.o3-blk,.o3-fine) .o2-src{color:var(--o2m)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-card{box-shadow:0 1px 2px rgba(11,11,18,.04),0 12px 32px -18px rgba(11,11,18,.18)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-bar{background:rgba(11,11,18,.06)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-bar i,#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-leg i{background:rgba(11,11,18,.18)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-r.o3-zo .o3-bar i{background:rgba(11,11,18,.4)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-r.o3-cap .o3-bar i,#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-leg .c i{background:var(--zink)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-q100 i{background:rgba(11,11,18,.22)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-q100 i.a{background:var(--zgr)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-q100 i.c{background:none;border-color:rgba(11,11,18,.35)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-q100 i.me1{box-shadow:0 0 0 2px #fff,0 0 0 4.5px var(--zink)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-rif{border-top-color:rgba(11,11,18,.25)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-pt{background:var(--zink)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) :is(.o3-r.o3-io1 .o3-rl,.o3-cento li b,.o3-cl .o3-rl,.o3-zs ul b){color:var(--zink)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-zs button:hover{border-color:rgba(11,11,18,.2)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-btn{background:var(--zink);color:#fff}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-btn:hover{background:var(--zgr);background-color:var(--zink)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-btn:hover span{color:#fff;-webkit-text-fill-color:#fff}
+#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-lnk:hover{color:var(--zink)}
