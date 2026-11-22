@@ -6160,11 +6160,12 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio .o3-cvr b{font-weight:600;color:var(--o2t);font-variant-numeric:tabular-nums}
 #pg-osservatorio .o3-cv tr.o3-mia{background:var(--o3tu)}
 #pg-osservatorio .o3-cv thead th{vertical-align:bottom}
-#pg-osservatorio .o3-cv thead th:nth-child(3){min-width:7.5em}
 #pg-osservatorio #o3-case .o2-src a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:760px){
-  #pg-osservatorio .o3-cv .o3-t{font-size:14px}
-  #pg-osservatorio .o3-cv .o3-t :is(th,td){padding:9px 6px}
+  #pg-osservatorio .o3-cv .o3-t{font-size:13.5px}
+  #pg-osservatorio .o3-cv .o3-t :is(th,td){padding:9px 5px}
+  #pg-osservatorio .o3-cv .o3-t thead th{font-size:12px}
+  #pg-osservatorio .o3-cv .o3-t thead button::after{margin-left:2px}
   #pg-osservatorio .o3-zq,#pg-osservatorio .o3-cz{width:100%}
   #pg-osservatorio .o3-t :is(th,td){padding:10px 8px}
   #pg-osservatorio .o3-t :is(th,td):first-child{padding-left:12px}
