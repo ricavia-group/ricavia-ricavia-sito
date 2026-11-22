@@ -263,7 +263,7 @@ function presenta(s){var bk=s.booking||{},st=s.set||{},n=st.quanti||0;
 function sopra(p){return p.prezzo!=null&&p.mediano!=null}
 function var1(a,b){return Math.round((a/b-1)*100)}
 /* le domande: quando ha senso farle (ok), la risposta (r) e le domande che vengono naturali dopo (poi) */
-var DOM={
+var DMD={
   classifica:{d:'Dove sei in classifica nella tua zona?',ok:function(s){return !!(s.scala&&s.hotel_score!=null)},poi:['competitor','score'],
     r:function(s){var sc=s.scala,su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
       return ['Per Hotel Score sei <b>'+sc.pos+'° su '+sc.su+'</b> alberghi a '+s.stelle+' stelle in '+esc(s.zona_sito||'')+(sc.pos<=10?': sei nella Top 10 della tua zona e della tua categoria':''),
@@ -294,13 +294,13 @@ var DOM={
     r:function(s){return ['Il tuo voto su Booking è '+d1(s.booking.voto)+', quello mediano dei tuoi competitor '+d1(s.voto.mediano),
       'Uno studio della Cornell University stima circa l’11% di tariffa in più per un punto su una scala da 1 a 5: sulla scala di Booking, da 1 a 10, un punto vale circa la metà. È un ordine di grandezza']}}};
 var ORDINE=['classifica','competitor','prezzo','ospiti','capodanno','score','punto'];
-function offri(s,dopo){var fatte=chatEl._fatte,lista=((DOM[dopo]||{}).poi||[]).concat(ORDINE).filter(function(k,i,a){return a.indexOf(k)===i&&fatte.indexOf(k)<0&&DOM[k].ok(s)}).slice(0,3);
+function offri(s,dopo){var fatte=chatEl._fatte,lista=((DMD[dopo]||{}).poi||[]).concat(ORDINE).filter(function(k,i,a){return a.indexOf(k)===i&&fatte.indexOf(k)<0&&DMD[k].ok(s)}).slice(0,3);
   if(!lista.length)return;
-  bolla('<div class="o2-ops">'+lista.map(function(k){return '<button type="button" data-c="d:'+k+'">'+DOM[k].d+'</button>'}).join('')+'</div>','q o2-qo')}
-function rispondi(s,k){var q=DOM[k];if(!q)return;chatEl._fatte.push(k);bolla(q.d,'a');
+  bolla('<div class="o2-ops">'+lista.map(function(k){return '<button type="button" data-c="d:'+k+'">'+DMD[k].d+'</button>'}).join('')+'</div>','q o2-qo')}
+function rispondi(s,k){var q=DMD[k];if(!q)return;chatEl._fatte.push(k);bolla(q.d,'a');
   q.r(s).forEach(function(x){if(!x)return;if(typeof x==='string')bolla(x);else bolla(x[0],x[1])});
   var n=chatEl._fatte.length;
-  if(!chatEl._em&&n===DOPO_EMAIL){var tot=ORDINE.filter(function(k2){return DOM[k2].ok(s)}).length;
+  if(!chatEl._em&&n===DOPO_EMAIL){var tot=ORDINE.filter(function(k2){return DMD[k2].ok(s)}).length;
     bolla('Ti ho mostrato '+n+' cose su '+tot+'. L’analisi completa, con l’Hotel Score per ogni area, le cose da guardare, i prezzi di Capodanno e il report in PDF, te la mando via email');
     bolla(moduloEm(2,true),'q o2-qf');return}
   offri(s,k)}
