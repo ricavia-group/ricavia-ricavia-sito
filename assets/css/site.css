@@ -5754,7 +5754,7 @@ html.o2-nosc{overflow:hidden}
 @media(max-width:760px){#consulenza .zx-dash-bars span{font-size:11px}#revenue-management .zx-ev-c b{font-size:11px}}
 /* Nuova apertura, 22/11: percorso a tappe (scelta 7), strutture ricettive in vendita (6), migliorie 19 e 32. Script: assets/js/13-apertura.js */
 #apertura{--np2:#15181F;--np3:#1c2029;--npl:rgba(255,255,255,.1);--npl2:rgba(255,255,255,.22);--npm:#aab0c4;--npm2:#8f95ab;--npez:cubic-bezier(.22,1,.36,1)}
-#apertura :is(.np,.np-vend,.np-mail,.np-card,.np-btn,.np-note)[hidden]{display:none!important}
+#apertura :is(.np,.np-vend,.np-mail,.np-det,.np-btn,.np-note)[hidden]{display:none!important}
 #apertura .np-g{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 #apertura .np-t,#apertura .np-tag{display:block;font:600 12px/1.4 var(--zf);letter-spacing:.08em;text-transform:uppercase;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;margin-bottom:8px}
 #apertura .np-btn{font:600 15px/1 var(--zf);border-radius:999px;padding:15px 22px;border:1px solid #fff;cursor:pointer;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;text-align:center}
@@ -5770,9 +5770,6 @@ html.o2-nosc{overflow:hidden}
 #apertura .oz-hint{display:none;margin:14px 0 0;font-size:13px;color:#6E6E73}
 #apertura .oz-t th:first-child{position:sticky;left:0;z-index:1;background:var(--zbg);padding-right:10px}
 @media(max-width:700px){#apertura .oz-hint{display:block}#apertura .oz-w{margin-top:8px}#apertura .oz-t th:first-child{max-width:132px;white-space:normal;box-shadow:6px 0 8px -6px rgba(0,0,0,.18)}}
-/* 32: business plan di esempio con i ricavi */
-#apertura .zx-bp-k{grid-template-columns:repeat(5,minmax(0,1fr))}
-@media(max-width:900px){#apertura .zx-bp-k{grid-template-columns:1fr 1fr}#apertura .zx-bp-k>div:last-child{grid-column:1/-1}}
 /* il percorso */
 #apertura .np{margin-top:clamp(40px,6vw,72px);padding-top:clamp(28px,4vw,40px);border-top:1px solid #E2E2E8}
 #apertura .np>.ix-sh{display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:760px}
@@ -5868,39 +5865,73 @@ html.o2-nosc{overflow:hidden}
 #apertura .np-chk a{color:#fff;text-decoration:underline}
 #apertura .np-mail .np-fn{font-size:12px;color:var(--npm2)}
 #apertura .np-mail .np-ok{font-size:14px;color:#fff;min-height:20px}
-/* strutture ricettive in vendita */
+/* le tappe sono le fasi del servizio (George, 22/11 sera): in testa la fase e cosa riceve il cliente */
+#apertura .np-fase{grid-column:1/-1;display:flex;gap:14px;align-items:flex-start;padding:0 0 18px;border-bottom:1px solid var(--npl)}
+#apertura .np-n{flex:none;width:40px;height:40px;border-radius:50%;background:var(--zgr);color:#fff;font:600 17px/40px var(--zf);text-align:center}
+#apertura .np-fase h3{margin:0 0 6px}
+#apertura .np-fase p{margin:0;color:#fff;font-size:15px;line-height:1.5;max-width:760px}
+#apertura .np-fase small{display:block;font:600 12px/1.4 var(--zf);letter-spacing:.08em;text-transform:uppercase;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;margin-bottom:2px}
+#apertura .np-q>h4{font-size:17px;margin-bottom:6px}
+/* strutture ricettive in vendita: una riga a scorrimento di schede piccole, il dettaglio sotto la riga */
 #apertura .np-vend .np-h2{font:600 clamp(28px,3.6vw,46px)/1.1 var(--zf);letter-spacing:-.03em;margin:12px 0;color:#fff}
 #apertura .np-vend .np-lead{font-size:17px}
-#apertura .np-sale{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
-#apertura .np-card{background:var(--np2);border:1px solid var(--npl);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .7s var(--npez);transition-delay:calc(var(--i)*90ms)}
+#apertura .np-row{position:relative;margin-top:24px}
+#apertura .np-sale{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;padding:4px 2px 8px;scroll-padding:0 2px}
+#apertura .np-sale::-webkit-scrollbar{display:none}
+#apertura .np-card{flex:0 0 268px;scroll-snap-align:start;background:var(--np2);border:1px solid var(--npl);border-radius:18px;padding:0;overflow:hidden;display:flex;flex-direction:column;text-align:left;color:#fff;font:inherit;cursor:pointer;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .7s var(--npez),border-color .2s;transition-delay:calc(var(--i)*80ms),calc(var(--i)*80ms),0s}
 #apertura .np-sale.in .np-card{opacity:1;transform:none}
-#apertura .np-card h3{font:600 19px/1.25 var(--zf);margin:0;color:#fff}
-#apertura .np-zn{color:var(--npm);font-size:14px;margin-top:2px}
+#apertura .np-card:hover,#apertura .np-card.on{border-color:#fff}
+#apertura .np-ph{position:relative;display:block;aspect-ratio:16/10;background:var(--np3)}
+#apertura .np-ph img{display:block;width:100%;height:100%;object-fit:cover}
+#apertura .np-ph em{position:absolute;left:10px;bottom:8px;font:500 11px/1 var(--zf);font-style:normal;color:#fff;background:rgba(11,11,18,.6);padding:4px 7px;border-radius:6px}
+#apertura .np-vt{position:absolute;right:10px;top:10px;background:rgba(11,11,18,.78);border-radius:12px;padding:6px 10px;text-align:right}
+#apertura .np-vt small{display:block;font:500 10.5px/1.2 var(--zf);color:var(--npm)}
+#apertura .np-vt b{font:600 20px/1.1 var(--zf);color:#fff}
+#apertura .np-ci{display:flex;flex-direction:column;gap:4px;padding:12px 14px 14px}
+#apertura .np-ct{font:600 15px/1.3 var(--zf)}
+#apertura .np-zn{color:var(--npm);font-size:13.5px;margin-top:2px}
+#apertura .np-cr{display:flex;justify-content:space-between;gap:8px;font-size:13.5px;color:var(--npm);border-top:1px solid var(--npl);padding-top:6px;margin-top:4px}
+#apertura .np-cr b{color:#fff;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+#apertura .np-arr{position:absolute;top:calc(50% - 22px);width:44px;height:44px;border-radius:50%;border:1px solid var(--npl2);background:var(--znt);color:#fff;font:500 18px/1 var(--zf);cursor:pointer;z-index:2;display:none}
+#apertura #npPrev{left:-14px}
+#apertura #npNext{right:-14px}
+#apertura .np-arr:hover{border-color:#fff}
+#apertura .np-arr[disabled]{opacity:0;pointer-events:none}
+@media(hover:hover) and (pointer:fine){#apertura .np-arr{display:block}#apertura .np-fit .np-arr{display:none}}
+#apertura .np-det{margin-top:16px;background:var(--np2);border:1px solid var(--npl2);border-radius:20px;padding:20px;animation:npSu .4s var(--npez)}
+#apertura .np-dh{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:14px}
+#apertura .np-dh h3{font:600 20px/1.25 var(--zf);margin:0;color:#fff}
+#apertura .np-x{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--npl2);background:transparent;color:#fff;font:400 22px/1 var(--zf);cursor:pointer}
+#apertura .np-x:hover{border-color:#fff}
+#apertura .np-dg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+#apertura .np-dg>div{display:flex;flex-direction:column;gap:12px;min-width:0}
+#apertura .np-dc{font-size:13.5px;color:var(--npm);line-height:1.5}
+#apertura .np-dc h4{font:600 16px/1.3 var(--zf);color:#fff;margin:0}
+#apertura .np-dc p{margin:0}
 #apertura .np-voto{display:flex;align-items:center;gap:14px;background:var(--np3);border-radius:14px;padding:12px 14px}
 #apertura .np-voto b{font:600 34px/1 var(--zf);letter-spacing:-.02em}
 #apertura .np-voto span{font-size:13px;color:var(--npm);line-height:1.35}
 #apertura .np-crit{list-style:none;margin:0;padding:0;font-size:13px}
 #apertura .np-crit li{display:grid;grid-template-columns:minmax(0,1fr) 70px 22px;gap:8px;align-items:center;padding:4px 0;color:var(--npm)}
 #apertura .np-crit i{height:6px;border-radius:3px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
-#apertura .np-crit i u{position:absolute;inset:0;width:0;background:var(--zgr);border-radius:3px;transition:width .9s var(--npez) .3s}
-#apertura .np-sale.in .np-crit i u{width:var(--w)}
+#apertura .np-crit i u{position:absolute;inset:0;width:var(--w);background:var(--zgr);border-radius:3px}
 #apertura .np-crit b{color:#fff;text-align:right;font-weight:600}
 #apertura .np-fz{margin:0;font-size:14px;line-height:1.45;color:#fff}
 #apertura .np-fz span{color:var(--npm)}
-#apertura .np-card details,#apertura .np-come{font-size:13px;color:var(--npm);line-height:1.5}
-#apertura .np-card summary,#apertura .np-come summary{cursor:pointer;color:#fff;font-weight:500;padding:6px 0;min-height:32px}
-#apertura .np-card details p{margin:6px 0}
-#apertura .np-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+#apertura .np-come{font-size:13px;color:var(--npm);line-height:1.5}
+#apertura .np-come summary{cursor:pointer;color:#fff;font-weight:500;padding:6px 0;min-height:32px}
+#apertura .np-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
 #apertura .np-acts .np-btn{flex:1 1 auto;padding:13px 16px;font-size:14px}
 #apertura .np-fo{margin:0;font-size:12px;color:var(--npm2)}
-#apertura .np-more{margin:18px 0 0}
-#apertura .np-come{margin-top:28px;border-top:1px solid var(--npl);padding-top:14px;max-width:860px}
+#apertura .np-come{margin-top:24px;border-top:1px solid var(--npl);padding-top:14px;max-width:860px}
 #apertura .np-come ul{padding-left:18px}
 #apertura .np-come li{margin:6px 0}
 #apertura .np-come b{color:#fff;font-weight:600}
 #apertura .np-src{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--npm2);max-width:860px}
 @media(max-width:860px){
-#apertura .np-sale{grid-template-columns:minmax(0,1fr)}
+#apertura .np-card{flex-basis:260px}
+#apertura .np-dg{grid-template-columns:minmax(0,1fr)}
+#apertura .np-det{padding:16px}
 #apertura .np-step.on{grid-template-columns:minmax(0,1fr);gap:18px}
 #apertura .np-step{min-height:0}
 #apertura .np-res{position:static}
