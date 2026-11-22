@@ -5,7 +5,7 @@
    - dopo la terza risposta sul tuo hotel chiede l'email per l'analisi completa (stesso invio di prima: RK.deliver, tipo hotel-score)
    Il riconoscimento gira anche in Node per le prove: tests/chat_qa.test.js. Gli attrezzi della pagina arrivano da window.O2 (12-osservatorio.js) */
 (function(){
-var SOGLIA=1.6,QV='1';/* QV: cambialo quando cambi chat-qa.json, /assets/ resta in cache un anno */
+var SOGLIA=1.6,QV='2';/* QV: cambialo quando cambi chat-qa.json, /assets/ resta in cache un anno */
 var STOP={};('a ad al alla alle allo agli ai anche avete c ce che chi ci come con cosa da dal dalla dai dei del della delle dello degli di dimmi dirmi do e ed fammi gli ha hai ho i il in io l la le lo ma me mi mia mie miei mio ne nel nella nelle nei negli non o per piu po potete potresti potrei puoi puo qua qual quale quali quanto quanta quante quanti questo questa questi queste se si sei sono sta sto su sul sulla sui te ti tu tua tue tuo tuoi un una uno vi voi vorrei volevo voglio vuoi sapere scusa scusi favore perfavore please essere mai')
   .split(' ').forEach(function(w){STOP[w]=1});
 function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
@@ -57,9 +57,9 @@ function nome(){return S?bel(S.nome):H?bel(H.n):''}
 function giu(){LOG.scrollTop=LOG.scrollHeight}
 function bolla(cls,h){var p=document.createElement('div');p.className='ch-msg '+cls;if(h!=null)p.innerHTML=h;LOG.appendChild(p);giu();return p}
 function aspetta(ms){return new Promise(function(r){setTimeout(r,ms)})}
-function una(x){var h=typeof x==='string'?x:x.h,wide=typeof x==='object'&&x.wide,tutta=/<(table|button|label|div)/.test(h);
+function una(x){var h=typeof x==='string'?x:x.h,wide=typeof x==='object'&&x.wide,act=typeof x==='object'&&x.act,tutta=/<(table|button|label|div)/.test(h);
   var ty=bolla('ch-bot ch-ty','<i></i><i></i><i></i>');ty.setAttribute('aria-label','Sta scrivendo');
-  return aspetta(RM?250:Math.min(1500,600+h.replace(/<[^>]*>/g,'').length*6)).then(function(){LOG.removeChild(ty);var p=bolla(wide?'ch-bot ch-wide':'ch-bot');
+  return aspetta(RM?250:Math.min(1500,600+h.replace(/<[^>]*>/g,'').length*6)).then(function(){LOG.removeChild(ty);var p=bolla(act?'ch-bot ch-act':wide?'ch-bot ch-wide':'ch-bot');
     if(RM||tutta){p.innerHTML=h;giu();return}
     var tk=h.match(/<[^>]*>|[^<\s]+|\s+/g)||[],i=0;
     return new Promise(function(fine){(function passo(){var n=0;while(i<tk.length&&n<2){if(tk[i].charAt(0)!=='<'&&/\S/.test(tk[i]))n++;i++}
@@ -67,7 +67,7 @@ function una(x){var h=typeof x==='string'?x:x.h,wide=typeof x==='object'&&x.wide
 function dici(l){var c=Promise.resolve();l.forEach(function(x){if(x)c=c.then(function(){return una(x)})});return c}
 function fai(fn){Q=Q.then(fn).catch(function(e){window.__DBG&&console.warn('chat',e)});return Q}
 function chips(l){CH.innerHTML=l.map(function(c){return '<button type="button" class="ch-chip" data-k="'+esc(c[0])+'"><span>'+esc(c[1])+'</span></button>'}).join('');CH.hidden=!l.length;CH.scrollLeft=0;giu()}
-function tasto(t,msg){return {h:'<button type="button" class="ch-btn" data-ch-msg="'+esc(msg)+'">'+esc(t)+' →</button>'}}
+function tasto(t,msg){return {act:1,h:'<button type="button" class="ch-btn" data-ch-msg="'+esc(msg)+'">'+esc(t)+' →</button>'}}
 
 /* ---------- le risposte sul tuo hotel (stessi numeri del report) ---------- */
 function sopra(p){return !!(p&&p.prezzo!=null&&p.mediano!=null)}
@@ -118,7 +118,7 @@ var R={
   migliorare:{ok:function(s){return !!(s.fatti&&s.fatti.length)},
     r:function(s){return ['Le cose da guardare, dai dati letti su Booking'].concat(s.fatti.slice(0,3).map(esc))}},
   report:{ok:function(){return true},
-    r:function(s){return ['Ecco il report completo di <b>'+esc(bel(s.nome))+'</b>: voti per area, prezzi, competitor e traguardi',{h:'<button type="button" class="ch-btn" data-ch="rep">Apri il report →</button>'}]}}};
+    r:function(s){return ['Ecco il report completo di <b>'+esc(bel(s.nome))+'</b>: voti per area, prezzi, competitor e traguardi',{act:1,h:'<button type="button" class="ch-btn" data-ch="rep">Apri il report →</button>'}]}}};
 
 /* ---------- la conversazione ---------- */
 function prossime(v){var l=((v&&v.poi)||[]).concat(S?ORDINE.concat(['email','call']):['cos-e-hotel-score','dati-fonte','chi-siamo','call']),out=[],seen={};
@@ -175,7 +175,7 @@ function email(t){var ck=[].slice.call(LOG.querySelectorAll('.ch-pv input')).pop
     if(nb)return dici(['Ricevuto. Prepariamo il report di '+esc(n)+' e lo mandiamo a <b>'+esc(t)+'</b>','Se vuoi, intanto chiedimi altro su Ricavia']).then(function(){chips(prossime(null))});
     return dici([m==='lento'?'Sto ancora inviando la richiesta: l’analisi completa con il PDF arriva a <b>'+esc(t)+'</b>':'Fatto: l’analisi completa con il PDF sta arrivando a <b>'+esc(t)+'</b>',
       'Intanto puoi aprire il report qui, oppure leggerlo con noi: venti minuti su Google Meet, senza impegno',
-      {h:'<button type="button" class="ch-btn" data-ch="rep">Apri il report →</button> <button type="button" class="ch-btn ch-btn2" data-ch-msg="'+esc('Vorrei prenotare la call conoscitiva per leggere insieme il report di '+S.nome)+'">Prenota la call</button>'}])
+      {act:1,h:'<button type="button" class="ch-btn" data-ch="rep">Apri il report →</button> <button type="button" class="ch-btn ch-btn2" data-ch-msg="'+esc('Vorrei prenotare la call conoscitiva per leggere insieme il report di '+S.nome)+'">Prenota la call</button>'}])
       .then(function(){chips(prossime(null))})})}
 /* l'invio di prima, invariato: foglio, CRM e mail con il PDF li fa il ricevitore dei lead */
 function urlRep(s){return location.origin+'/osservatorio/?report='+encodeURIComponent(s.id_comune)}

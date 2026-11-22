@@ -173,7 +173,7 @@ function pz(s,k){return (s.prezzi||[]).filter(function(p){return p.etichetta===k
 function emOk(e){return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(e)}
 /* la chat del tuo hotel sta in 14-chat.js (chat vera, George 22/11): qui gli attrezzi che le servono e il punto di aggancio window.RC */
 window.O2={ver:D.ver||'',hotel:hotel,hot:function(){return HOT},trova:trovaHotel,bel:bel,esc:esc,num:num,d1:d1,eu:eu,gg:gg,pz:pz,scheda:schedaH,scrivici:scrivici,emOk:emOk,vai:vai,report:function(id){apriReport(id)}};
-function apriChat(id){if(window.RC)RC.apri(id)}
+function apriChat(id){if(window.RC)window.RC.apri(id)}/* window.: RC qui sopra è la classifica delle vie */
 
 /* il report: si apre dalla conversazione o dal link nell'email (/osservatorio/?report=ID) */
 var rep=null;
@@ -290,7 +290,7 @@ function classZona(Z){if(!ME||!Z)return null;var l=(D.hs||[]).filter(function(x)
 function personalizza(id,h){var ok=function(s,hh){var zs=(s&&s.zona_sito)||(hh&&D.rioni[hh.z])||(s&&D.rioni[s.zona])||null,zi=-1;D.zone.forEach(function(z,i){if(z.nome===zs)zi=i});
     ME={id:String(id),s:s,h:hh,nome:s?bel(s.nome):bel(hh.n),zi:zi};
     try{var u=new URL(location.href);u.searchParams.set('hotel',id);history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
-    disegnaTu();if(s&&window.RC)RC.sa(String(id))};
+    disegnaTu();if(s&&window.RC)window.RC.sa(String(id))};
   schedaH(id).then(function(s){ok(s,h||null)},function(){if(h)return ok(null,h);
     hotel().then(function(){var hh=(HOT||[]).filter(function(x){return x.id===String(id)})[0];if(hh)ok(null,hh);else{spersonalizza();avviso('Non troviamo un hotel con questo indirizzo. Cercalo per nome qui sopra')}})})}
 function avviso(t){var io=$('#o2Io');io.hidden=false;io.innerHTML='<div><p class="o3-nota">'+esc(t)+'</p></div>'}

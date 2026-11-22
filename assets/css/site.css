@@ -6121,6 +6121,7 @@ html.o2-nosc{overflow:hidden}
 .ch-msg a{color:inherit;text-underline-offset:3px}
 .ch-bot{align-self:flex-start;background:#F2F2F5;color:var(--zink);border-bottom-left-radius:6px}
 .ch-me{align-self:flex-end;background:var(--zink);color:#fff;border-bottom-right-radius:6px;margin:6px 0 2px}
+.ch-act{background:none;padding:2px 0}
 .ch-wide{max-width:100%;width:100%;box-sizing:border-box;padding:12px 12px 10px}
 .ch-ty{display:flex;gap:4px;padding:14px 16px}
 .ch-ty i{width:7px;height:7px;border-radius:50%;background:#A1A1A6;animation:ch-ty 1s infinite}

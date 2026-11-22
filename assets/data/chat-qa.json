@@ -196,7 +196,7 @@
     {"id": "saluto", "tipo": "chat", "azione": "nome", "chip": "Ciao",
      "parole": ["ciao:2", "buongiorno:2", "buonasera:2", "salve:2", "ehi:1.5", "hey:1.5", "hello:1.5", "hi:1", "come stai:2", "come va:1.5"],
      "frasi": ["ciao", "buongiorno", "salve", "ehi ciao", "ciao come va"],
-     "risposte": [["Ciao, sono l’analista dell’Osservatorio Ricavia"], ["Buongiorno, ben trovato"], ["Ciao, eccomi"]],
+     "risposte": [["Ciao, eccomi"], ["Buongiorno, ben trovato"], ["Ciao, sono l’analista dell’Osservatorio Ricavia"]],
      "poi": ["aiuto", "cos-e-hotel-score", "chi-siamo"]},
     {"id": "grazie", "tipo": "chat", "chip": "Grazie",
      "parole": ["grazie:2.5", "gentile:1.5", "gentilissimo:2", "gentilissima:2", "thanks:2", "thank you:2", "ottimo:1", "utile:1.2"],
