@@ -6066,6 +6066,6 @@ html.o2-nosc{overflow:hidden}
   #pg-osservatorio .o3-rv{min-width:50px}
   #pg-osservatorio .o3-linea{height:230px}
   #pg-osservatorio .o3-notti{--cl:132px}
-  #pg-osservatorio .o3-tipi{--cl:minmax(0,130px)}
+  #pg-osservatorio .o3-tipi{--cl:minmax(0,104px)}
 }
 @media (prefers-reduced-motion:reduce){#pg-osservatorio :is(.o3-bar i,.o3-q100 i,.o3-trc,.o3-me){transition:none!important}}
