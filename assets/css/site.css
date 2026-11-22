@@ -6282,3 +6282,4 @@ html.o2-nosc{overflow:hidden}
 @keyframes o3dmUp{from{transform:scaleY(0)}}
 #pg-osservatorio .o3-dmp{max-width:760px}
 @media(max-width:760px){#pg-osservatorio .o3-dmm{padding-top:38px}#pg-osservatorio .o3-dmc b{font-size:13px}}
+#pg-osservatorio .o3-dm+.o3-tus:not(:empty){margin:18px 0 0}
