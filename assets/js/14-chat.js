@@ -205,13 +205,15 @@ function sa(id){id=String(id);if(id===CUR||(S&&S.id_comune===id))return;
 window.RC={sa:sa,apri:function(id){var nv=document.getElementById('o2Nav');O.vai(W,(nv?(parseFloat(getComputedStyle(nv).top)||0)+nv.offsetHeight:90)+24);
   if(id)sa(id);inizio();setTimeout(function(){IN.focus({preventScroll:true})},RM?0:700)},nlu:NLU};
 
-FM.addEventListener('submit',function(e){e.preventDefault();e.stopPropagation();var t=IN.value.trim();if(!t)return;IN.value='';chips([]);bolla('ch-me',esc(t));PARTITA=true;
-  fai(function(){return qa().then(function(){return gestisci(t)},function(){return team(t)})})});
-CH.addEventListener('click',function(e){var b=e.target.closest('.ch-chip');if(!b)return;var k=b.dataset.k;chips([]);bolla('ch-me',esc(b.textContent));PARTITA=true;fai(function(){return qa().then(function(){return tocca(k)})})});
+/* chi scrive prima che la conversazione sia partita (arrivato da ?hotel=ID o dalla ricerca) non deve sentirsi chiedere il nome: prima si carica il suo hotel */
+function prima(){var p=!PARTITA&&VIA?VIA:null;PARTITA=true;VIA=null;return p}
+FM.addEventListener('submit',function(e){e.preventDefault();e.stopPropagation();var t=IN.value.trim();if(!t)return;IN.value='';chips([]);bolla('ch-me',esc(t));var p=prima();
+  fai(function(){return qa().then(function(){return (p?carica(p):Promise.resolve()).then(function(){return gestisci(t)})},function(){return team(t)})})});
+CH.addEventListener('click',function(e){var b=e.target.closest('.ch-chip');if(!b)return;var k=b.dataset.k;chips([]);bolla('ch-me',esc(b.textContent));var p=prima();fai(function(){return qa().then(function(){return (p?carica(p):Promise.resolve()).then(function(){return tocca(k)})})})});
 LOG.addEventListener('click',function(e){var b=e.target.closest('[data-ch-msg],[data-ch]');if(!b)return;e.preventDefault();
   if(b.dataset.ch==='rep'&&S)O.report(S.id_comune);else if(b.hasAttribute('data-ch-msg'))O.scrivici(b.getAttribute('data-ch-msg'))});
 /* la conversazione comincia quando la finestra entra nello schermo */
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();VISTA=true;inizio()}},{root:window.__MP?null:document.getElementById('pg-osservatorio'),threshold:.25});io.observe(W)}else{VISTA=true;inizio()}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();VISTA=true;inizio()}},{root:window.__MP?null:document.getElementById('pg-osservatorio'),threshold:0,rootMargin:'0px 0px -15% 0px'});io.observe(W)}/* soglia 0: la finestra è alta e una percentuale arriva tardi */else{VISTA=true;inizio()}
 /* lo script arriva dopo 12-osservatorio.js (defer): il link /osservatorio/?hotel=ID lo legge anche da sé */
 try{var hq=new URL(location.href).searchParams.get('hotel');if(hq&&/^\d{1,10}$/.test(hq))O.scheda(hq).then(function(){sa(hq)},function(){})}catch(_){}
 }catch(_e){window.__DBG&&console.warn('chat',_e&&_e.message)}
