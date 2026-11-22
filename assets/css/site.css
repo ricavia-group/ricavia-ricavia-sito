@@ -6286,8 +6286,8 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio .o3-dm+.o3-tus:not(:empty){margin:18px 0 0}
 
 /* domanda: grafico degli arrivi negli alberghi dal 2014 (George 22/11) */
-#pg-osservatorio .o3-dmg{margin:26px 0 6px}
-#pg-osservatorio .o3-dmg>p{margin:0 0 34px;font-size:14px;color:var(--o2m)}
+#pg-osservatorio .o3-dmgr{margin:26px 0 6px}
+#pg-osservatorio .o3-dmgr>p{margin:0 0 34px;font-size:14px;color:var(--o2m)}
 #pg-osservatorio .o3-dmtc{position:relative;height:150px}
 #pg-osservatorio .o3-dmtc svg{display:block;width:100%;height:100%;overflow:visible}
 #pg-osservatorio .o3-dmtl{position:absolute;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,3.5px);font-size:12px;line-height:1.25;color:var(--o2m);white-space:nowrap;pointer-events:none}

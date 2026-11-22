@@ -335,7 +335,7 @@ def andamento(an):
     basso = min(an, key=an.get)
     nota = [y for y in dict.fromkeys(["2019", basso, anni[-1]]) if y in an]
     lab = "".join(f'<span class="o3-dmtl{" o3-dmtu" if y == anni[-1] else ""}" style="left:{X(y):.2f}%;bottom:{an[y] / mx * 85:.2f}%">{y}<b>{milioni(an[y])} mln</b></span>' for y in nota)
-    return (f'<div class="o3-dmg"><p>Arrivi negli alberghi di Roma, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
+    return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
             f'<svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Arrivi negli alberghi di Roma dal {anni[0]} al {anni[-1]}: '
             f'{milioni(an["2019"]) + " milioni nel 2019, " if "2019" in an else ""}{milioni(an[basso])} milioni nel {basso}, {milioni(an[anni[-1]])} milioni nel {anni[-1]}">'
             '<defs><linearGradient id="o3dmg" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#1F2DD0"/><stop offset="1" stop-color="#724AF8"/></linearGradient>'
@@ -431,7 +431,7 @@ def schede_domanda(pa, mesi, ae):
                     f'Passeggeri di Fiumicino e Ciampino, {per}, variazioni sullo stesso periodo del {A - 1} · Fonte: {E(ae.get("fonte", "Aeroporti di Roma"))}'))
     if not tab:
         return ""
-    return ('<div class="o3-dm">' + "".join(f'<input type="radio" name="o3dm" id="o3dm{i}" class="o3-dmg"{" checked" if i == 0 else ""}><label for="o3dm{i}">{t}</label>' for i, (t, _, _) in enumerate(tab))
+    return ('<div class="o3-dm">' + "".join(f'<input type="radio" name="o3dm" id="o3dm{i}" class="o3-dmt"{" checked" if i == 0 else ""}><label for="o3dm{i}">{t}</label>' for i, (t, _, _) in enumerate(tab))
             + "".join(f'<div class="o3-dmp o3-dmp{i}">{c}<p class="o3-dms">{s}</p></div>' for i, (_, c, s) in enumerate(tab)) + "</div>")
 
 

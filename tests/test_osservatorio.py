@@ -236,7 +236,7 @@ class TestDomanda(unittest.TestCase):
         h = osservatorio.flussi({'flussi': {'istat': {'annui': self.ANNI, 'fonte': 'ISTAT'}}})
         self.assertIn('o3-n3', h)
         self.assertNotIn('name="o3dm"', h)
-        self.assertIn('class="o3-dmg"', h)  # il grafico dal primo anno c'è anche senza schede
+        self.assertIn('class="o3-dmgr"', h)  # il grafico dal primo anno c'è anche senza schede
         self.assertNotIn('Aeroporti di Roma', h)
         self.assertIn('data-b="domanda"', h)
 
@@ -272,7 +272,7 @@ class TestDomanda(unittest.TestCase):
         self.assertEqual(h.count('name="o3dm"'), 1)
         self.assertIn('A settembre Fiumicino e Ciampino hanno contato 5.226.199 passeggeri, +0,5% sullo stesso mese del 2025', h)
         self.assertNotIn('o3-dmk', h)
-        self.assertIn('id="o3dm0" class="o3-dmg" checked><label for="o3dm0">Come arrivano', h)
+        self.assertIn('id="o3dm0" class="o3-dmt" checked><label for="o3dm0">Come arrivano', h)
 
 
 if __name__ == '__main__':
