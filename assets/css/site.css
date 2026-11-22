@@ -6155,7 +6155,19 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio .o3-spk>span{flex-basis:100%;color:var(--o2m)}
 #pg-osservatorio .o3-spk svg{flex-basis:100%;display:block;width:100%;height:48px;margin:8px 0 4px;overflow:visible}
 #pg-osservatorio .o3-spk+.o3-tus:not(:empty){margin:18px 0 0}
+/* case vacanze e affitti brevi (Inside Airbnb): stessa tabella dei prezzi per zona */
+#pg-osservatorio .o3-cvr{margin:16px 0 12px;font-size:14.5px;line-height:1.5;color:var(--o2m)}
+#pg-osservatorio .o3-cvr b{font-weight:600;color:var(--o2t);font-variant-numeric:tabular-nums}
+#pg-osservatorio .o3-cv tr.o3-mia{background:var(--o3tu)}
+#pg-osservatorio .o3-cv thead th{vertical-align:bottom}
+#pg-osservatorio #o3-case .o2-src a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:760px){
+  #pg-osservatorio .o3-cv .o3-t{font-size:13px}
+  #pg-osservatorio .o3-cv .o3-t :is(th,td){padding:9px 4px}
+  #pg-osservatorio .o3-cv .o3-t :is(th,td):first-child{padding-left:8px}
+  #pg-osservatorio .o3-cv .o3-t :is(th,td):last-child{padding-right:8px}
+  #pg-osservatorio .o3-cv .o3-t thead th{font-size:12px}
+  #pg-osservatorio .o3-cv .o3-t thead button::after{margin-left:2px}
   #pg-osservatorio .o3-zq,#pg-osservatorio .o3-cz{width:100%}
   #pg-osservatorio .o3-t :is(th,td){padding:10px 8px}
   #pg-osservatorio .o3-t :is(th,td):first-child{padding-left:12px}

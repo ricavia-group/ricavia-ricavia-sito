@@ -87,7 +87,7 @@ def hero(d):
 </div>
 </div></section>
 <div class="o3-me" id="o3Me" aria-hidden="true"><div class="wrap"><p>La pagina parla di <b></b></p><button type="button" data-o3="chat">Apri la chat</button></div></div>
-<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Oggi</a><a href="#o2-prezzi">Prezzi</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-vie">Vie</a><a href="#o2-metodo">Metodo</a></div></nav>'''
+<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Oggi</a><a href="#o2-prezzi">Prezzi</a><a href="#o3-case">Case vacanze</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-vie">Vie</a><a href="#o2-metodo">Metodo</a></div></nav>'''
 
 
 def stanotte(d, oggi=None):
@@ -218,6 +218,33 @@ def prezzi_zone(d):
                   + f'<div class="o3-tw"><table class="o3-t"><thead><tr><th scope="col">Zona</th><th scope="col">Prezzo medio</th><th scope="col">Rispetto a Roma</th></tr></thead>'
                   f'<tbody>{zp_righe(m, k)}</tbody></table></div><button type="button" class="o3-tutte" hidden></button>{nota}</div>',
                   fonte)
+
+
+def cv_righe(zz):
+    """Righe della tabella delle case vacanze, dalla zona più cara (la stessa di cvDisegna() in 12-osservatorio.js)"""
+    return "".join(f'<tr><th scope="row">{E(z["nome"])}</th><td>{eu(z["prezzo"])}</td><td>{round(z["libere"])} su 30</td><td>{num(z["annunci"])}</td></tr>'
+                   for z in sorted(zz, key=lambda z: (-z["prezzo"], z["nome"])))
+
+
+def case_vacanze(d):
+    """Case vacanze e affitti brevi per zona (George 22/11: non solo Booking). Dati di tools/airbnb_zone.py in assets/data/airbnb.json:
+    solo annunci attivi con prezzo, zone con almeno 30 annunci. 12-osservatorio.js ordina la tabella e aggiunge la riga Tu"""
+    a = d.get("airbnb")
+    if not a or not a.get("zone"):
+        return ""
+    r, dt = a["roma"], data(a["data"])
+    lib = round(r["libere"] / 30 * 100)
+    fonte = (f'Fonte: <a href="https://insideairbnb.com" target="_blank" rel="noopener">Inside Airbnb</a> (insideairbnb.com), dati del {dt} {a["data"][:4]}, '
+             f'licenza CC BY 4.0; prezzo medio: il prezzo che sta nel mezzo, per l’annuncio intero. Annunci con almeno una recensione negli ultimi 12 mesi e un prezzo; '
+             f'notti libere: media degli annunci nei 30 giorni dopo la lettura, le notti chiuse dall’host contano come non libere; '
+             f'zone con almeno {a.get("minimo", 30)} annunci' + (', confini dei rioni e quartieri di OpenStreetMap' if "OpenStreetMap" in a.get("zone_da", "") else ''))
+    return blocco("o3-case", "Case vacanze e affitti brevi",
+                  f'A Roma ci sono {num(r["annunci"])} case vacanze e affitti brevi attivi su Airbnb: una notte costa {eu(r["prezzo"])} e {art(lib)}{lib}% delle notti del mese dopo il {dt} era ancora libero',
+                  f'<p class="o3-cvr">Roma <b>{eu(r["prezzo"])}</b> a notte · <b>{round(r["interi"] * 100)}%</b> appartamenti interi'
+                  + (f' · voto <b>{dec(r["voto"])}</b> su 5' if r.get("voto") else "") + '</p>' + TUS.format("case")
+                  + '<div class="o3-tw o3-cv" id="o3Cv"><table class="o3-t"><thead><tr><th scope="col">Zona</th><th scope="col">Prezzo medio</th>'
+                  f'<th scope="col">Notti libere nel prossimo mese</th><th scope="col">Annunci</th></tr></thead><tbody>{cv_righe(a["zone"])}</tbody></table></div>'
+                  '<button type="button" class="o3-tutte o3-cvt" hidden></button>', fonte)
 
 
 def dieci(n):
@@ -679,10 +706,11 @@ def pagina(d):
     dati = {"zone": d["zone"], "date": d["date"], "letti": d["alberghi_letti"], "agg": d["aggiornato"], "dal": d["letture_dal"],
             "vie": d["vie"], "ra": d["registro"]["alberghi"], "ver": d.get("ver", ""), "hs": d.get("hs_tutti", []),
             "roma": d["roma"], "sabato100": d["sabato100"], "rioni": d["rioni"], "zs": d.get("zs"),
-            "zd": zp_valido((d.get("indicatori") or {}).get("zone_date"))}
+            "zd": zp_valido((d.get("indicatori") or {}).get("zone_date")),
+            "cv": (d.get("airbnb") or {}).get("zone")}
     js = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     # #o3Oggi: 12-osservatorio.js lo riscrive ogni sera con indicatori.json appena letto (la pagina non si rigenera ogni notte)
-    return (hero(d) + nastro(d) + f'<div id="o3Oggi">{stanotte(d)}{notti(d)}</div>' + prezzi_zone(d) + sabato(d) + classifiche(d) + flussi(d) + fine()
+    return (hero(d) + nastro(d) + f'<div id="o3Oggi">{stanotte(d)}{notti(d)}</div>' + prezzi_zone(d) + case_vacanze(d) + sabato(d) + classifiche(d) + flussi(d) + fine()
             + hotel() + vie(d) + metodo()
             + '<a href="#pg-pagella" id="o2Hs" hidden>Hotel Score</a><a href="#contatti" id="o2Ct" hidden>Contatti</a>'
             + f'<script type="application/json" id="o2Dati">{js}</script>')
@@ -739,6 +767,10 @@ def main():
     if os.path.exists(fl):
         with open(fl, encoding="utf-8") as f:
             d["flussi"] = json.load(f)
+    ab = os.path.join(DATI, "airbnb.json")  # case vacanze per zona, da tools/airbnb_zone.py
+    if os.path.exists(ab):
+        with open(ab, encoding="utf-8") as f:
+            d["airbnb"] = json.load(f)
     ind = os.path.join(DATI, "indicatori.json")
     if os.path.exists(ind):
         with open(ind, encoding="utf-8") as f:
