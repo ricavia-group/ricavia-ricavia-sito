@@ -5664,15 +5664,6 @@ html.o2-nosc{overflow:hidden}
 .o2-ic small{display:block;margin-top:10px;font-size:12.5px;line-height:1.45;color:var(--o2m)}
 .o2-im{grid-column:1/-1;margin:0;font-size:12.5px;color:var(--o2m)}
 @media(max-width:700px){.o2-ind{grid-template-columns:minmax(0,1fr);gap:12px}.o2-ic svg{top:40px;width:30%}}
-/* Nuova apertura: il simulatore (10.5) */
-#apertura .oz-sim{margin-top:clamp(40px,6vw,72px);padding-top:clamp(28px,4vw,40px);border-top:1px solid #E2E2E8}
-#apertura .oz-sf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
-#apertura .oz-sf label{display:flex;flex-direction:column;gap:6px;font:600 10.5px/1.3 var(--zf);letter-spacing:.06em;text-transform:uppercase;color:#6E6E73}
-#apertura .oz-sf input{font:500 17px var(--zf);letter-spacing:0;text-transform:none;color:var(--zink);padding:12px 14px;border:1px solid #E2E2E8;border-radius:12px;background:#fff;min-width:0;width:100%;font-variant-numeric:tabular-nums}
-#apertura .oz-sf input:focus{outline:2px solid #1F2DD0;outline-offset:1px}
-#apertura .oz-sn{margin:16px 0 0;font-size:15px;font-weight:600;color:var(--zink)}
-#apertura .oz-t tr.oz-no th,#apertura .oz-t tr.oz-no td{color:#A1A1A6}
-@media(max-width:700px){#apertura .oz-sf{grid-template-columns:minmax(0,1fr)}}
 /* Osservatorio, 2.8: struttura ricettiva non letta su Booking */
 .o2-nf .o2-nbo{display:flex;flex-wrap:wrap;gap:8px}
 .o2-nbo label{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;cursor:pointer;font-size:13px}
@@ -5681,8 +5672,6 @@ html.o2-nosc{overflow:hidden}
 .o2-cf input[type=url]{width:100%;box-sizing:border-box;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:var(--o2t);font:500 14.5px var(--zf)}
 .o2-nf .o2-nb button{border:0;background:#fff;color:var(--zink)}
 .o2-nf .o2-ok{color:var(--o2t);font-weight:600}
-#apertura .oz-sim .ix-sh{display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:760px}
-#apertura .oz-sim .ix-sh>*{margin:0;max-width:none;width:auto}
 /* Report, 4.8: togli o rimetti un competitor */
 .o2-rco li{align-items:center}
 .o2-rco li>span{flex:1;min-width:0}
@@ -5708,3 +5697,165 @@ html.o2-nosc{overflow:hidden}
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .menu-open .z-mbar,.mp-pg-pagella .z-mbar,.mp-apertura .z-mbar,html:has(#pg-pagella.on) .z-mbar,html:has(#apertura.on) .z-mbar,html:has(.o2-rep:not([hidden])) .z-mbar{display:none}
 }
+/* Nuova apertura, 22/11: percorso a tappe (scelta 7), strutture ricettive in vendita (6), migliorie 19 e 32. Script: assets/js/13-apertura.js */
+#apertura{--np2:#15181F;--np3:#1c2029;--npl:rgba(255,255,255,.1);--npl2:rgba(255,255,255,.22);--npm:#aab0c4;--npm2:#8f95ab;--npez:cubic-bezier(.22,1,.36,1)}
+#apertura :is(.np,.np-vend,.np-mail,.np-card,.np-btn,.np-note)[hidden]{display:none!important}
+#apertura .np-g{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#apertura .np-t,#apertura .np-tag{display:block;font:600 12px/1.4 var(--zf);letter-spacing:.08em;text-transform:uppercase;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;margin-bottom:8px}
+#apertura .np-btn{font:600 15px/1 var(--zf);border-radius:999px;padding:15px 22px;border:1px solid #fff;cursor:pointer;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;text-align:center}
+#apertura .np-btn.w{background:#fff;color:var(--zink)}
+#apertura .np-btn.w:hover span,#apertura .np-btn.w:focus-visible span{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#apertura .np-btn.o{background:transparent;color:#fff;border-color:var(--npl2)}
+#apertura .np-btn.o:hover{border-color:#fff}
+#apertura .np-btn[disabled]{opacity:.35;cursor:default}
+#apertura :is(.np,.np-vend) :is(button,input,summary,a):focus-visible{outline:2px solid #3CCDFA;outline-offset:2px}
+#apertura .np-note{color:var(--npm2);font-size:12.5px;line-height:1.5;margin:14px 0 0}
+#apertura .np-note.np-w{color:#fff}
+/* 19: la tabella delle nove zone sul telefono */
+#apertura .oz-hint{display:none;margin:14px 0 0;font-size:13px;color:#6E6E73}
+#apertura .oz-t th:first-child{position:sticky;left:0;z-index:1;background:var(--zbg);padding-right:10px}
+@media(max-width:700px){#apertura .oz-hint{display:block}#apertura .oz-w{margin-top:8px}#apertura .oz-t th:first-child{max-width:132px;white-space:normal;box-shadow:6px 0 8px -6px rgba(0,0,0,.18)}}
+/* 32: business plan di esempio con i ricavi */
+#apertura .zx-bp-k{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:900px){#apertura .zx-bp-k{grid-template-columns:1fr 1fr}#apertura .zx-bp-k>div:last-child{grid-column:1/-1}}
+/* il percorso */
+#apertura .np{margin-top:clamp(40px,6vw,72px);padding-top:clamp(28px,4vw,40px);border-top:1px solid #E2E2E8}
+#apertura .np>.ix-sh{display:flex;flex-direction:column;align-items:flex-start;gap:12px;max-width:760px}
+#apertura .np>.ix-sh>*{margin:0;max-width:none;width:auto}
+#apertura .np-box{margin-top:24px;background:var(--znt);color:#fff;border-radius:28px;padding:clamp(16px,2.4vw,28px);box-shadow:0 60px 120px -60px rgba(31,45,208,.5)}
+#apertura .np-box h3{font:600 clamp(20px,2.4vw,26px)/1.2 var(--zf);letter-spacing:-.01em;margin:0 0 8px;color:#fff}
+#apertura .np-box h4{font:600 17px/1.3 var(--zf);margin:0 0 6px;color:#fff}
+#apertura .np-prog{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:0 0 18px}
+#apertura .np-prog button{background:none;border:0;padding:0;cursor:pointer;text-align:left;color:var(--npm2);font:500 12.5px/1.3 var(--zf);min-height:44px}
+#apertura .np-prog i{display:block;height:5px;border-radius:3px;background:rgba(255,255,255,.1);margin-bottom:8px;position:relative;overflow:hidden}
+#apertura .np-prog i u{position:absolute;inset:0;background:var(--zgr);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--npez)}
+#apertura .np-prog .done i u,#apertura .np-prog .on i u{transform:none}
+#apertura .np-prog .on{color:#fff}
+#apertura .np-prog .done{color:var(--npm)}
+#apertura .np-prog em{font-style:normal;display:block;color:inherit}
+#apertura .np-step{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start;min-height:420px}
+#apertura .np-step.on{display:grid;animation:npSu .5s var(--npez)}
+@keyframes npSu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+#apertura .np-q>p{color:var(--npm);margin:0 0 18px;font-size:15px;line-height:1.5}
+#apertura .np-lbl{display:block;font:600 13px/1.3 var(--zf);margin:18px 0 8px;color:#fff}
+#apertura .np-lbl small{font-weight:400;color:var(--npm2);margin-left:6px}
+#apertura .np-pick{display:flex;flex-wrap:wrap;gap:6px}
+#apertura .np-pick button{font:500 14px/1.1 var(--zf);color:#fff;background:transparent;border:1px solid var(--npl2);border-radius:999px;padding:11px 14px;cursor:pointer;min-height:42px}
+#apertura .np-pick button.on{background:#fff;color:var(--zink);border-color:#fff}
+#apertura .np-sl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center}
+#apertura .np-sl output{font:600 17px/1 var(--zf);min-width:92px;text-align:right;color:#fff;font-variant-numeric:tabular-nums}
+#apertura .np-sl input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;margin:0;cursor:pointer}
+#apertura .np-sl input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,#3CCDFA,#1F2DD0 var(--p,50%),rgba(255,255,255,.12) var(--p,50%))}
+#apertura .np-sl input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:rgba(255,255,255,.12)}
+#apertura .np-sl input[type=range]::-moz-range-progress{height:6px;border-radius:3px;background:linear-gradient(90deg,#3CCDFA,#1F2DD0)}
+#apertura .np-sl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:0;margin-top:-9px;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+#apertura .np-sl input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:0}
+#apertura .np-ip{font-size:12px;color:var(--npm2);grid-column:1/3;margin-top:-2px;line-height:1.45}
+#apertura .np-res{background:var(--np3);border-radius:18px;padding:20px;position:sticky;top:96px}
+#apertura .np-big{font:600 clamp(32px,5.4vw,48px)/1.05 var(--zf);letter-spacing:-.03em;display:block;color:#fff;font-variant-numeric:tabular-nums}
+#apertura .np-cap{color:var(--npm);font-size:14px;line-height:1.45;margin:4px 0 14px}
+#apertura .np-cap b{color:#fff}
+#apertura .np-kv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;font-size:14px;margin:0}
+#apertura .np-kv dt{color:var(--npm)}
+#apertura .np-kv dd{margin:0;font-weight:600;text-align:right;color:#fff;font-variant-numeric:tabular-nums}
+#apertura .np-res .np-kv{border-top:1px solid var(--npl);padding-top:12px}
+#apertura .np-meter{height:10px;border-radius:5px;background:rgba(255,255,255,.08);position:relative;margin:14px 0 6px}
+#apertura .np-meter u{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--zgr);width:var(--w);max-width:100%;transition:width .5s var(--npez)}
+#apertura .np-meter b{position:absolute;top:-5px;bottom:-5px;width:2px;background:#fff;left:var(--b);transition:left .5s var(--npez)}
+#apertura .np-mcap{display:flex;justify-content:space-between;font-size:12.5px;color:var(--npm);gap:10px}
+#apertura .np-strip{position:relative;height:54px;margin:20px 14px 4px}
+#apertura .np-band{position:absolute;top:22px;height:10px;border-radius:5px;background:rgba(255,255,255,.14);left:var(--a);width:var(--w)}
+#apertura .np-me{position:absolute;top:13px;width:28px;height:28px;border-radius:50%;background:var(--zgr);border:3px solid #fff;left:var(--x);transform:translateX(-50%);transition:left .5s var(--npez)}
+#apertura .np-strip span{position:absolute;top:40px;font-size:12px;color:var(--npm);white-space:nowrap}
+#apertura .np-strip span.l{transform:translateX(-14px)}
+#apertura .np-strip span.r{transform:translateX(calc(-100% + 14px))}
+#apertura .np-mesi{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3px;align-items:end;height:96px;margin:16px 0 4px}
+#apertura .np-mesi i{display:block;background:linear-gradient(0deg,#1F2DD0,#3CCDFA);border-radius:3px 3px 0 0;height:var(--h);transition:height .5s var(--npez);min-height:2px}
+#apertura .np-mesil{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3px;font-size:11px;color:var(--npm2);text-align:center}
+#apertura .np-nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px;flex-wrap:wrap}
+/* il report */
+#apertura .np-rep{display:none}
+#apertura .np-rep.on{display:block;animation:npSu .5s var(--npez)}
+#apertura .np-rep>h3{margin-top:6px}
+#apertura .np-lead{margin:0;color:var(--npm);font-size:15px;line-height:1.5;max-width:760px}
+#apertura .np-rk{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+#apertura .np-rk div{background:var(--np3);border-radius:16px;padding:16px;min-width:0}
+#apertura .np-rk b{font:600 clamp(22px,3.2vw,34px)/1.1 var(--zf);letter-spacing:-.02em;display:block;color:#fff;font-variant-numeric:tabular-nums}
+#apertura .np-rk span{font-size:13px;color:var(--npm);display:block;margin-top:4px;line-height:1.35}
+#apertura .np-alt,#apertura .np-scw{background:var(--np2);border:1px solid var(--npl);border-radius:18px;padding:20px;margin:0 0 14px}
+#apertura .np-bar{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) 64px;gap:12px;align-items:center;font-size:14px;color:var(--npm);padding:8px 0}
+#apertura .np-bar i{height:12px;border-radius:6px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
+#apertura .np-bar i u{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--zgr);width:var(--w);transition:width .6s var(--npez)}
+#apertura .np-bar2 i u{background:rgba(255,255,255,.45)}
+#apertura .np-bar b{font:600 20px/1 var(--zf);text-align:right;color:#fff;font-variant-numeric:tabular-nums}
+#apertura .np-sc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#apertura .np-sc>div{background:var(--np3);border-radius:16px;padding:16px;border:1px solid transparent;min-width:0}
+#apertura .np-sc>div.on{border-color:var(--npl2)}
+#apertura .np-sc b{font:600 30px/1.1 var(--zf);letter-spacing:-.02em;display:block}
+#apertura .np-sc span{display:block;font-size:13px;color:var(--npm);margin:2px 0 12px}
+#apertura .np-sc .np-kv{font-size:13px;border-top:1px solid var(--npl);padding-top:10px}
+#apertura .np-rg{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:8px}
+#apertura .np-calc{width:100%;border-collapse:collapse;font-size:14px;color:#fff}
+#apertura .np-calc td{padding:9px 0;border-top:1px solid var(--npl);vertical-align:top}
+#apertura .np-calc td:last-child{text-align:right;font-weight:600;white-space:nowrap;padding-left:10px;font-variant-numeric:tabular-nums}
+#apertura .np-calc small{display:block;color:var(--npm2);font-size:12px;font-weight:400}
+#apertura .np-calc tr.tot td{border-top:1px solid #fff;font-weight:600}
+#apertura .np-wf svg{display:block;width:100%;height:auto;overflow:visible}
+#apertura .np-wf text{font-family:var(--zf);fill:var(--npm);font-size:12px}
+#apertura .np-wf text.w{fill:#fff;font-weight:600}
+#apertura .np-mail{background:var(--np3);border-radius:18px;padding:22px;margin-top:22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center}
+#apertura .np-mail p,#apertura .np-mail ul{margin:0;color:var(--npm);font-size:15px;line-height:1.5}
+#apertura .np-mail ul{margin-top:10px;padding-left:18px;font-size:14px}
+#apertura .np-mail form{display:grid;gap:10px}
+#apertura .np-mail input[type=text],#apertura .np-mail input[type=email]{font:400 16px/1.2 var(--zf);color:#fff;background:var(--znt);border:1px solid var(--npl2);border-radius:12px;padding:14px;width:100%;box-sizing:border-box}
+#apertura .np-chk{display:flex;gap:10px;font-size:13px;color:var(--npm);align-items:flex-start;line-height:1.45}
+#apertura .np-chk input{width:20px;height:20px;flex:none;margin:0}
+#apertura .np-chk a{color:#fff;text-decoration:underline}
+#apertura .np-mail .np-fn{font-size:12px;color:var(--npm2)}
+#apertura .np-mail .np-ok{font-size:14px;color:#fff;min-height:20px}
+/* strutture ricettive in vendita */
+#apertura .np-vend .np-h2{font:600 clamp(28px,3.6vw,46px)/1.1 var(--zf);letter-spacing:-.03em;margin:12px 0;color:#fff}
+#apertura .np-vend .np-lead{font-size:17px}
+#apertura .np-sale{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+#apertura .np-card{background:var(--np2);border:1px solid var(--npl);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .7s var(--npez);transition-delay:calc(var(--i)*90ms)}
+#apertura .np-sale.in .np-card{opacity:1;transform:none}
+#apertura .np-card h3{font:600 19px/1.25 var(--zf);margin:0;color:#fff}
+#apertura .np-zn{color:var(--npm);font-size:14px;margin-top:2px}
+#apertura .np-voto{display:flex;align-items:center;gap:14px;background:var(--np3);border-radius:14px;padding:12px 14px}
+#apertura .np-voto b{font:600 34px/1 var(--zf);letter-spacing:-.02em}
+#apertura .np-voto span{font-size:13px;color:var(--npm);line-height:1.35}
+#apertura .np-crit{list-style:none;margin:0;padding:0;font-size:13px}
+#apertura .np-crit li{display:grid;grid-template-columns:minmax(0,1fr) 70px 22px;gap:8px;align-items:center;padding:4px 0;color:var(--npm)}
+#apertura .np-crit i{height:6px;border-radius:3px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
+#apertura .np-crit i u{position:absolute;inset:0;width:0;background:var(--zgr);border-radius:3px;transition:width .9s var(--npez) .3s}
+#apertura .np-sale.in .np-crit i u{width:var(--w)}
+#apertura .np-crit b{color:#fff;text-align:right;font-weight:600}
+#apertura .np-fz{margin:0;font-size:14px;line-height:1.45;color:#fff}
+#apertura .np-fz span{color:var(--npm)}
+#apertura .np-card details,#apertura .np-come{font-size:13px;color:var(--npm);line-height:1.5}
+#apertura .np-card summary,#apertura .np-come summary{cursor:pointer;color:#fff;font-weight:500;padding:6px 0;min-height:32px}
+#apertura .np-card details p{margin:6px 0}
+#apertura .np-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+#apertura .np-acts .np-btn{flex:1 1 auto;padding:13px 16px;font-size:14px}
+#apertura .np-fo{margin:0;font-size:12px;color:var(--npm2)}
+#apertura .np-more{margin:18px 0 0}
+#apertura .np-come{margin-top:28px;border-top:1px solid var(--npl);padding-top:14px;max-width:860px}
+#apertura .np-come ul{padding-left:18px}
+#apertura .np-come li{margin:6px 0}
+#apertura .np-come b{color:#fff;font-weight:600}
+#apertura .np-src{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--npm2);max-width:860px}
+@media(max-width:860px){
+#apertura .np-sale{grid-template-columns:minmax(0,1fr)}
+#apertura .np-step.on{grid-template-columns:minmax(0,1fr);gap:18px}
+#apertura .np-step{min-height:0}
+#apertura .np-res{position:static}
+#apertura .np-box{border-radius:20px}
+#apertura .np-rk{grid-template-columns:1fr 1fr}
+#apertura .np-rg,#apertura .np-mail,#apertura .np-sc{grid-template-columns:minmax(0,1fr)}
+#apertura .np-prog em{display:none}
+#apertura .np-prog .on em{display:block;white-space:nowrap}
+#apertura .np-nav .np-btn{flex:1}
+#apertura .np-bar{grid-template-columns:minmax(0,1fr) 64px}
+#apertura .np-bar i{grid-column:1/-1;grid-row:2}
+}
+@media(prefers-reduced-motion:reduce){#apertura :is(.np,.np-vend) *{animation:none!important;transition:none!important}}
