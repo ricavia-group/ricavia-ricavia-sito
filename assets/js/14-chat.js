@@ -212,5 +212,7 @@ LOG.addEventListener('click',function(e){var b=e.target.closest('[data-ch-msg],[
   if(b.dataset.ch==='rep'&&S)O.report(S.id_comune);else if(b.hasAttribute('data-ch-msg'))O.scrivici(b.getAttribute('data-ch-msg'))});
 /* la conversazione comincia quando la finestra entra nello schermo */
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();VISTA=true;inizio()}},{root:window.__MP?null:document.getElementById('pg-osservatorio'),threshold:.25});io.observe(W)}else{VISTA=true;inizio()}
+/* lo script arriva dopo 12-osservatorio.js (defer): il link /osservatorio/?hotel=ID lo legge anche da sé */
+try{var hq=new URL(location.href).searchParams.get('hotel');if(hq&&/^\d{1,10}$/.test(hq))O.scheda(hq).then(function(){sa(hq)},function(){})}catch(_){}
 }catch(_e){window.__DBG&&console.warn('chat',_e&&_e.message)}
 })();
