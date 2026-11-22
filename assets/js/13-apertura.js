@@ -204,7 +204,7 @@ F.addEventListener('submit',function(e){e.preventDefault();var el=F.elements,ok=
 var V=document.getElementById('npVend');
 function txt(c,o,a){var k=c[0];
   if(k==='prezzo')return 'Prezzo richiesto pari a '+dec(o.rap).replace(',0','')+' volte il valore delle case della zona'+(c[2]<6?': da negoziare':'');
-  if(k==='mercato')return 'Sabato mediano della zona a '+o.z.sab+' €, contro '+RS+' € di Roma';
+  if(k==='mercato')return 'Sabato mediano della zona a '+o.z.sab+' €, contro '+RS+' € di Roma';
   if(k==='spazio')return c[2]>=7?pct(o.z.s8)+' degli alberghi della zona ha un voto sotto 8: c’è spazio per lavorare meglio dei vicini':'Solo '+pct(o.z.s8)+' degli alberghi della zona ha un voto sotto 8: i vicini lavorano già bene';
   return 'Ritorno stimato '+pct(o.r.roi,1)+' l’anno, contro il '+pct(o.z.rend,1)+' lordo di una casa in affitto nella zona'}
 var VEND={'immobile e attività':'Immobile e attività','solo attività':'Solo attività','solo immobile':'Solo immobile'},TIPO={albergo:'Albergo',extralberghiero:'Extralberghiero',altro:'Altro'};
@@ -212,7 +212,7 @@ function tipoCam(a,o){return (TIPO[a.tipo]||'Struttura ricettiva')+(a.stelle?' '
 /* la scheda piccola della riga: foto della zona (mai le foto delle agenzie), tipo e camere, zona, prezzo, ritorno, voto */
 function scheda(a,o,i){var f=NP.foto(a.zona_sito);
   return '<button type="button" class="np-card" style="--i:'+Math.min(i,5)+'" aria-controls="npDet" aria-expanded="false">'+
-   '<span class="np-ph"><img src="/assets/img/'+f[0]+'.webp" alt="'+f[1]+'" loading="lazy" decoding="async"><em>Foto della zona</em><span class="np-vt"><small>Voto Ricavia</small><b>'+dec(o.voto)+'</b></span></span>'+
+   '<span class="np-ph"><img src="/assets/img/'+f[0]+'.webp" alt="'+f[1]+'" loading="lazy" decoding="async"><em>'+(f===NP.foto('')?'Foto di Roma':'Foto della zona')+'</em><span class="np-vt"><small>Voto Ricavia</small><b>'+dec(o.voto)+'</b></span></span>'+
    '<span class="np-ci"><span class="np-ct">'+esc(tipoCam(a,o))+'</span><span class="np-zn">'+esc(a.zona_sito)+'</span>'+
    '<span class="np-cr"><span>Prezzo richiesto</span><b>'+mil(a.prezzo)+'</b></span><span class="np-cr"><span>Ritorno stimato</span><b class="np-g">'+pct(o.r.roi,1)+' l’anno</b></span></span></button>'}
 /* il dettaglio: il calcolo, i criteri del voto, l'annuncio originale e la partenza nel percorso */
