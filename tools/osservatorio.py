@@ -77,7 +77,7 @@ def hero(d):
 <div class="o2-hl">
 <span class="o2-tag">Osservatorio Ricavia · Roma</span>
 <h1 id="po-h">Il mercato degli alberghi di Roma, {g("visto dal tuo hotel")}</h1>
-<p class="o2-lead">Prezzi letti su Booking su {num(d["alberghi_letti"])} alberghi, aggiornati ogni notte. Ultima lettura: {data(d["aggiornato"])}</p>
+<p class="o2-lead">Prezzi letti ogni notte su Booking. Ultima lettura: {data(d["aggiornato"])}</p>
 <div class="o2-cerca">
 <form class="o2-f" id="o2Cerca" role="search" novalidate><label class="o3-lab" for="o2Q">Cerca il tuo hotel</label><div class="o2-in"><input id="o2Q" name="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Nome dell'hotel o CIN" aria-controls="o2Sug"><div class="o2-sug" id="o2Sug" role="listbox" hidden></div></div><button type="submit">Cerca <span class="arr">→</span></button></form>
 <small class="o3-sm">Un solo passaggio: ogni blocco della pagina aggiunge i numeri del tuo hotel accanto a quelli della tua zona e di Roma. Gratis, senza registrazione</small>
@@ -87,35 +87,29 @@ def hero(d):
 </div>
 </div></section>
 <div class="o3-me" id="o3Me" aria-hidden="true"><div class="wrap"><p>La pagina parla di <b></b></p><button type="button" data-o3="chat">Apri la chat</button></div></div>
-<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Stanotte</a><a href="#o2-prezzi">Prezzi</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-zone">Zone</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-vie">Vie</a><a href="#o2-metodo">Metodo</a></div></nav>'''
+<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Oggi</a><a href="#o2-prezzi">Prezzi</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-zone">Zone</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-vie">Vie</a><a href="#o2-metodo">Metodo</a></div></nav>'''
 
 
 def stanotte(d, oggi=None):
-    """Blocco (a): alberghi senza camere su Booking e prezzo medio per tipo (indicatori.json, riletto ogni sera dalla pagina).
-    per_tipo: una riga per tipo solo se il prezzo c'è; senza per_tipo resta il prezzo degli alberghi"""
+    """Blocco (a), punto 4 di George del 22/11: in positivo e per tutti. Quota di alberghi con almeno una camera libera su Booking
+    e prezzo medio per tipo (indicatori.json, riletto ogni sera dalla pagina). Niente "Stanotte" e niente numero di alberghi letti.
+    per_tipo: una tessera per tipo solo se il prezzo c'è; senza per_tipo resta il prezzo degli alberghi"""
     I = d.get("indicatori") or {}
     u = I.get("ultimo")
     if not u or not I.get("alberghi_registro") or u.get("alberghi_prenotabili") is None:
         return ""
-    oggi = oggi or datetime.date.today().isoformat()
-    sera = u["notte"] == oggi
-    quando = "Stanotte" if sera else f'La notte del {data(u["notte"])}'
-    senza = I["alberghi_registro"] - u["alberghi_prenotabili"]
-    p = round(senza / I["alberghi_registro"] * 100)
+    p = round(u["alberghi_prenotabili"] / I["alberghi_registro"] * 100)
     righe = [r for r in I.get("per_tipo") or [] if isinstance(r, dict) and r.get("mediana") is not None and (r.get("etichetta") or r.get("tipo"))]
     if not righe and u.get("tariffa_alberghi") is not None:
         righe = [{"etichetta": "Alberghi", "mediana": u["tariffa_alberghi"], "letto_il": u.get("letto_il")}]
     letto = next((r["letto_il"] for r in righe if r.get("letto_il")), u.get("letto_il") or u["notte"])
-    mx = max([r["mediana"] for r in righe] or [1])
-    prezzi = "".join(riga("o3-sab", E(r.get("etichetta") or r["tipo"]), r["mediana"], mx) for r in righe)
-    reg = num(I["alberghi_registro"])
-    corpo = (f'<div class="o3-due"><div class="o3-tile">{big(f"{p}%", f"degli alberghi di Roma non ha più camere su Booking: {num(senza)} su {reg}")}'
-             f'<span class="o3-bar o3-one" role="img" aria-label="{p} alberghi su 100 senza camere su Booking"><i style="--w:{max(2, p)}%"></i></span></div>'
-             + (f'<div class="o3-tile"><h3>Prezzo medio a notte, 2 persone</h3><div class="o3-tipi">{prezzi}</div></div>' if righe else "")
-             + f'</div>{TUS.format("notte")}')
-    return blocco("o3-notte", "Stanotte a Roma" if sera else "Ultima notte letta",
-                  f"{quando} {art(p)}{p}% degli alberghi di Roma non ha più camere su Booking", corpo,
-                  f'Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più. È la disponibilità su Booking, non l’occupazione. Fonte: Booking, lettura del {data(letto[:10])}')
+    tessere = "".join(f'<div class="o3-tp"><span class="o3-tpl">{E(r.get("etichetta") or r["tipo"])}</span>'
+                      f'<b class="o3-tpv" data-v="{round(r["mediana"])}">{eu(r["mediana"])}</b><small>a notte, 2 persone</small></div>' for r in righe)
+    corpo = (f'<div class="o3-tps">{tessere}</div>' if righe else "") + TUS.format("notte")
+    a = art(p)
+    return blocco("o3-notte", "Roma, notte per notte",
+                  f'{a[0].upper()}{a[1:]}{p}% degli alberghi di Roma ha ancora almeno una camera libera per la notte del {data(u["notte"])}', corpo,
+                  f'Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più. Camera libera su Booking: è la disponibilità, non l’occupazione. Fonte: Booking, lettura del {data(letto[:10])}')
 
 
 def notti(d, oggi=None):

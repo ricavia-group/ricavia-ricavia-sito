@@ -6093,3 +6093,17 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio :is(.o3-blk,.o3-fine) .o3-btn:hover span{color:#fff;-webkit-text-fill-color:#fff}
 #pg-osservatorio :is(.o3-blk,.o3-fine) .o3-lnk:hover{color:var(--zink)}
 #pg-osservatorio :is(.o3-blk,.o3-fine) :is(.o3-r.o3-sab,.o3-r.o3-io1,.o3-cl .o3-r) .o3-bar i,#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-one i{background:var(--zgr)}
+
+/* punto 4 (22/11): primo blocco, quattro tessere con il prezzo medio per tipo */
+#pg-osservatorio .o3-tps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0 4px}
+#pg-osservatorio .o3-tp{display:flex;flex-direction:column;gap:6px;padding:20px 18px;border-radius:20px;background:var(--o3c2);min-width:0}
+#pg-osservatorio .o3-tpl{font:600 14px/1.3 var(--zf);color:var(--o2m)}
+#pg-osservatorio .o3-tpv{font:600 clamp(32px,4.6vw,46px)/1 var(--zf);letter-spacing:-.03em;font-variant-numeric:tabular-nums;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#pg-osservatorio .o3-tp small{font-size:13px;color:var(--o3m3)}
+#pg-osservatorio .o3-an .o3-tp{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .7s var(--o3ez)}
+#pg-osservatorio .o3-an.in .o3-tp{opacity:1;transform:none}
+#pg-osservatorio .o3-an.in .o3-tp:nth-child(2){transition-delay:.08s}
+#pg-osservatorio .o3-an.in .o3-tp:nth-child(3){transition-delay:.16s}
+#pg-osservatorio .o3-an.in .o3-tp:nth-child(4){transition-delay:.24s}
+@media(max-width:760px){#pg-osservatorio .o3-tps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){#pg-osservatorio .o3-an .o3-tp{opacity:1;transform:none;transition:none}}

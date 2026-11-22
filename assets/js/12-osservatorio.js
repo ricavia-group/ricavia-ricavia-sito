@@ -359,15 +359,14 @@ function cento(n){var t=n[0]+n[1]+n[2],e=n.map(function(x){return x/t*100}),f=e.
 
 /* blocco (a) e prossime notti: la pagina non si rigenera ogni notte, indicatori.json sì. Stessi testi di stanotte() e notti() in tools/osservatorio.py */
 function oggi(I){var u=I.ultimo,reg=I.alberghi_registro;if(!u||!reg||u.alberghi_prenotabili==null)return '';
-  var t=new Date(),iso=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2),sera=u.notte===iso,
-    senza=reg-u.alberghi_prenotabili,p=Math.round(senza/reg*100),
+  var t=new Date(),iso=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2),
+    p=Math.round(u.alberghi_prenotabili/reg*100),a=art(p),
     R=(I.per_tipo||[]).filter(function(r){return r&&r.mediana!=null&&(r.etichetta||r.tipo)});
   if(!R.length&&u.tariffa_alberghi!=null)R=[{etichetta:'Alberghi',mediana:u.tariffa_alberghi,letto_il:u.letto_il}];
-  var letto=(R.filter(function(r){return r.letto_il})[0]||{}).letto_il||u.letto_il||u.notte,mx=Math.max.apply(null,R.map(function(r){return r.mediana}).concat(1));
-  var h=blk('o3-notte',sera?'Stanotte a Roma':'Ultima notte letta',(sera?'Stanotte':'La notte del '+gg(u.notte))+' '+art(p)+p+'% degli alberghi di Roma non ha più camere su Booking',
-    '<div class="o3-due"><div class="o3-tile">'+big(p+'%','degli alberghi di Roma non ha più camere su Booking: '+num(senza)+' su '+num(reg))+'<span class="o3-bar o3-one" role="img" aria-label="'+p+' alberghi su 100 senza camere su Booking"><i style="--w:'+Math.max(2,p)+'%"></i></span></div>'+
-    (R.length?'<div class="o3-tile"><h3>Prezzo medio a notte, 2 persone</h3><div class="o3-tipi">'+R.map(function(r){return rg('o3-sab',esc(r.etichetta||r.tipo),r.mediana,mx)}).join('')+'</div></div>':'')+'</div><div class="o3-tus" data-b="notte"></div>',
-    'Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più. È la disponibilità su Booking, non l’occupazione. Fonte: Booking, lettura del '+gg(letto));
+  var letto=(R.filter(function(r){return r.letto_il})[0]||{}).letto_il||u.letto_il||u.notte;
+  var h=blk('o3-notte','Roma, notte per notte',a.charAt(0).toUpperCase()+a.slice(1)+p+'% degli alberghi di Roma ha ancora almeno una camera libera per la notte del '+gg(u.notte),
+    (R.length?'<div class="o3-tps">'+R.map(function(r){return '<div class="o3-tp"><span class="o3-tpl">'+esc(r.etichetta||r.tipo)+'</span><b class="o3-tpv" data-v="'+Math.round(r.mediana)+'">'+eu(r.mediana)+'</b><small>a notte, 2 persone</small></div>'}).join('')+'</div>':'')+'<div class="o3-tus" data-b="notte"></div>',
+    'Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più. Camera libera su Booking: è la disponibilità, non l’occupazione. Fonte: Booking, lettura del '+gg(letto));
   var cal=(I.calendario||[]).filter(function(c){return c&&c.mediana!=null&&String(c.data||'').slice(0,10)>=iso});
   if(cal.length>2){var ord=cal.slice().sort(function(a,b){return b.mediana-a.mediana}),pr=ord[0],gd=function(c){return gg(c.data,1)};
     h+=blk('o3-notti','Le prossime notti più care','La notte più cara in arrivo è '+gd(pr)+': una camera d’albergo costa '+eu(pr.mediana),
@@ -378,7 +377,9 @@ var OG=$('#o3Oggi');
 /* il file cambia ogni giorno e /assets/ ha una cache di un anno: un indirizzo nuovo al giorno */
 if(OG)fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(I){var h=oggi(I);if(!h)return;
   var visti={};[].forEach.call(OG.querySelectorAll('.o3-blk.in'),function(s){visti[s.id]=1});OG.innerHTML=h;
-  [].forEach.call(OG.querySelectorAll('.o3-blk'),function(s){if(visti[s.id])s.classList.add('in');else anima(s);if(navIO)navIO.observe(s)});if(ME)tuOggi()}).catch(function(){});
+  [].forEach.call(OG.querySelectorAll('.o3-blk'),function(s){if(visti[s.id])s.classList.add('in');else anima(s);if(navIO)navIO.observe(s)});conta(OG);if(ME)tuOggi()}).catch(function(){});
+/* punto 4: i prezzi medi salgono da 0 al valore quando entrano nello schermo; con meno movimento restano fermi */
+function conta(box){if(RM)return;[].forEach.call(box.querySelectorAll('.o3-tpv[data-v]'),function(b){var v=+b.getAttribute('data-v');if(!v)return;b.textContent=eu(0);vis(b,function(){var t0=null,d=900,f=function(ts){if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/d),e=1-Math.pow(1-k,3);b.textContent=eu(Math.round(v*e));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)},.4)})}
 
 /* ---------- il tuo hotel ---------- */
 function pzM(k){return ME&&ME.s?pz(ME.s,k):null}

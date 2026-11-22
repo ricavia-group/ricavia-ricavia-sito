@@ -21,19 +21,19 @@ def dati(**ind):
 class TestStanotte(unittest.TestCase):
     def test_per_tipo_presente(self):
         h = osservatorio.stanotte(dati(per_tipo=TIPI), OGGI)
-        self.assertIn("Stanotte l'11% degli alberghi di Roma non ha più camere su Booking", h)
-        self.assertIn('Prezzo medio a notte, 2 persone', h)
+        self.assertIn("L'89% degli alberghi di Roma ha ancora almeno una camera libera per la notte del 22 novembre", h)
+        self.assertIn('a notte, 2 persone', h)
         for t in TIPI:
             self.assertIn(t['etichetta'].replace('&', '&amp;'), h)
             self.assertIn(f"{t['mediana']} €", h)
         self.assertIn('Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più', h)
         self.assertIn('lettura del 21 novembre', h)
-        for vietata in ('11,4', 'pieni', 'mediano', 'mediana'):
+        for vietata in ('11,4', 'pieni', 'mediano', 'mediana', 'Stanotte', 'non ha più camere', ' su 990'):
             self.assertNotIn(vietata, h)
 
     def test_per_tipo_assente_resta_il_prezzo_degli_hotel(self):
         h = osservatorio.stanotte(dati(), OGGI)
-        self.assertIn("l'11%", h)
+        self.assertIn("L'89%", h)
         self.assertIn('Alberghi', h)
         self.assertIn('134 €', h)
         self.assertNotIn('Case vacanze', h)
@@ -45,12 +45,11 @@ class TestStanotte(unittest.TestCase):
         self.assertNotIn('134 €', h)
         self.assertIn('87 €', h)
         self.assertIn('205 €', h)
-        self.assertEqual(h.count('class="o3-r '), 2)
+        self.assertEqual(h.count('class="o3-tp"'), 2)
 
     def test_notte_vecchia_e_dati_mancanti(self):
         h = osservatorio.stanotte(dati(), '2026-11-25')
-        self.assertIn('Ultima notte letta', h)
-        self.assertIn("La notte del 22 novembre l'11%", h)
+        self.assertIn("per la notte del 22 novembre", h)
         self.assertEqual(osservatorio.stanotte({}, OGGI), '')
         self.assertEqual(osservatorio.stanotte({'indicatori': {'alberghi_registro': 990}}, OGGI), '')
 
