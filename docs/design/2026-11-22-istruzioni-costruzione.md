@@ -51,372 +51,169 @@ Partono una volta sola, quando il 18% del grafico è nello schermo (`Intersectio
 
 ## PARTE A · Osservatorio
 
-## Osservatorio giocato (scelte del 22/11)
+## Osservatorio semplice e personale (terza versione)
 
-**Questa sezione sostituisce le istruzioni dei punti 1-5 qui sotto.** George ha scelto: 1 A+D, 2 B, 3 A, 4 (nei titoli solo zone con almeno 10 alberghi letti), 5. E ha chiesto uno stile giocato: ogni blocco è una domanda da 1 o 2 tocchi, poi compare il dato vero. Parole sue: "se l'utente fa 1 o 2 azioni, oltre all'aumento della retention è più contento"
+**Questa sezione SOSTITUISCE le due precedenti sull'Osservatorio** (i grafici del mattino del 22/11 e l'"Osservatorio giocato"): sono state tolte da questo documento perché George le ha bocciate ("troppo tecnica", poi "non si capisce più"). Non recuperarle dalla cronologia. Della sezione 0 valgono le regole su file, brand, testi e prove; le parti su assi, tacche e riquadro del numero preciso non servono più, perché qui non ci sono grafici con assi.
 
-- **Riferimento:** `assets/bozze/osservatorio/index.html` (versione giocata). Dove qui c'è scritto "come nella bozza", copia la funzione e adatta i nomi: non reinventare
-- **Non costruire:** 1 B, 1 C, 2 A, 3 B. Le loro istruzioni più sotto restano solo come archivio
-- **Le sezioni 1 A, 1 D, 2 B, 3 A, 4, 5 più sotto** valgono ancora per il disegno dei grafici (assi, colori, numero preciso) dove questa sezione non dice altro. Se le due parti sono in disaccordo, vince questa
-- **Resta com'è:** la chat "Il tuo hotel" (`#o2-hotel`), la ricerca delle vie, il metodo, le schede da scaricare per i social, la mappa delle zone `#o2ZMap`
-- **Tono:** positivo e professionale. Niente coriandoli, punti, livelli, medaglie, suoni. La ricompensa è il dato
+Chi costruisce: Claude Opus. Riferimento visivo e di comportamento: `assets/bozze/osservatorio/index.html` (provala anche con `?hotel=369774`). Dove qui c'è scritto "come nella bozza", copia la funzione e adatta i nomi: non reinventare.
 
-### G.0 Cosa segnalare a George nella PR (non correggere da soli)
+### S.0 L'idea in tre righe
 
-1. **Mese più forte.** Nei dati non c'è il dettaglio mese per mese dei soli alberghi: `flussi.json` → `istat.mesi` conta tutte le strutture ricettive. Il gioco 5 usa quindi gli arrivi mensili dell'ultimo anno (2025, primo ottobre) e lo dichiara nella fonte; la serie degli alberghi dal 2014 sta sotto, anno per anno. Il primo mese cambia: maggio nel 2024 (2.778 arrivi più di ottobre), luglio nel 2023, ottobre nel 2022
-2. **"Pieni".** La domanda del gioco 1 dice "pieni" come ha chiesto George; la risposta e la fonte dicono "senza camere su Booking", che è il dato vero
-3. **Posizione nella zona.** Senza sapere quale hotel è, la posizione vera non esiste: il gioco 4 mostra le classifiche dei rioni e manda alla chat. Con l'hotel noto usa `scala.pos` e `scala.su` della scheda
-4. Restano validi gli avvisi già scritti: scarto tra valori mediani delle schede e pubblicati (A.0), gradiente più chiaro sul fondo scuro (sezione 0)
-5. Nelle schede il prezzo di Capodanno ha `notti: 2`: il report lo tratta come prezzo per notte. Il gioco 2 usa solo i valori di `osservatorio.json`
+1. **Dati visibili subito.** Nessun dato dietro una domanda, un cursore o un tasto "scopri". Niente quiz, niente contatore
+2. **Semplice.** Ogni blocco ha: una frase che dice la cosa (titolo `h2`), UN numero grande, UNA figura che un albergatore capisce in 5 secondi (barre orizzontali con nome e numero scritto accanto, griglia di 100 quadratini, una sola linea). Il termine tecnico e la fonte stanno in una riga piccola sotto
+3. **Un passo avanti: la pagina parla del suo hotel.** In cima una sola casella "Cerca il tuo hotel". Dopo la ricerca OGNI blocco aggiunge una riga "Tu" accanto alla zona e a Roma. Un solo tocco personalizza tutta la pagina; da lì il tasto "Parla con la chat del tuo hotel" porta alla chat vera e all'email
 
-### G.1 File e funzioni da toccare
+**Vietati nell'Osservatorio:** nuvole di punti, istogrammi, cerchi di dimensioni diverse, assi con tacche, tooltip necessari per capire, le parole "mediano/mediana", "distribuzione", "percentile", "ISTAT" in titoli e frasi principali (solo nella riga piccola della fonte).
 
-**`tools/osservatorio.py`**
-- `gioco(n, etichetta, domanda, controlli, rivelazione, skip=True)`: funzione nuova che restituisce l'HTML comune di un gioco (vedi G.2). Tutte le funzioni sotto la usano
-- `hero(d)` → gioco 1 al posto del riquadro `#o2Ind` (il contenitore resta `id="o2Ind"`, riempito dal JavaScript come oggi)
-- `prezzi(d)` → gioco 2 e gioco 3, uno sotto l'altro. I tre riquadri di oggi (33%, 18%, 8,3) restano sotto il gioco 3
-- `classifiche(d)` → gioco 4 sopra le schede. Le barre con il valore di Roma (3 A) si applicano alle `<li>` che la funzione genera già
-- `flussi(d)` → gioco 5
-- `zone(d)` → gioco 6 sopra `#o2Zona`
-- `prezzi_alberghi(dati)` → come A.0, righe `[zona_sito, stelle, martedi, sabato]` (Capodanno non serve più). Nel JSON in pagina come `pa`, con `pa_letto` (data dell'ultima lettura)
-- `pagina(d)` → in `#o2Dati` aggiungi `roma`, `pa`, `pa_letto`, `flussi` (`istat.mesi` dell'ultimo anno con arrivi e notti, i primi mesi degli anni prima, `istat.annui` con `arrivi_alberghi` e `presenze_alberghi`, `aeroporti`), e la riga del contatore dentro `#o2Nav`; prima di `#o2-metodo` la sezione di chiusura `#o3-fine`
+### S.1 Cose da segnalare a George nella PR (non correggere da soli)
 
-**`assets/js/12-osservatorio.js`**: una sezione nuova `/* ---------- Osservatorio giocato ---------- */` dentro la stessa funzione anonima, dopo la chat (usa `pz`, `schedaH`, `apriChat`, `gm`, `num`, `esc`). Funzioni, tutte copiate dalla bozza:
+- **Stanotte non esiste il dato per singolo hotel.** `indicatori.json` ha solo i due numeri di Roma. La riga "Tu" del primo blocco rimanda quindi ai prezzi delle tre date lette (martedì, sabato, Capodanno). Serve la lettura serale per singolo hotel per fare di più
+- **`hotel.json` ha `mar`, `sab`, `cap` ma sono i valori dei competitor, non il prezzo dell'hotel** (Hotel Planet: `mar` 86, prezzo vero 75 €). Il prezzo dell'hotel è solo in `schede/<id>.json` → `prezzi[].prezzo`. Non usare `mar/sab/cap` come "il tuo prezzo"
+- **Hotel Planet (369774), l'esempio del link, sabato 12 dicembre non ha camere su Booking**: la pagina lo dice ("senza camere su Booking") e il suo quadratino resta fuori dalla griglia. È il caso limite più frequente (273 prezzi mancanti con motivo "non disponibile"), bene che George lo veda. Per vedere il quadratino acceso: `?hotel=369541`
+- **Il calendario delle prossime notti non compare**: `indicatori.json` non ha ancora il campo `calendario`. Il blocco è già pronto e si accende da solo quando il campo arriva
+- **La frase che vende il revenue management** ("30 alberghi su 100 non seguono la domanda e rinunciano a quel margine") è un'interpretazione commerciale del dato 18 + 12: George la deve approvare
+- **Hotel Score**: nella riga piccola è descritto come "voto da 0 a 10 calcolato da Ricavia sui dati letti su Booking". Resta aperto il punto 12 della revisione (quanti voti lo compongono)
+- **Il 2025 di ISTAT ha la nota `(f)`** in `flussi.json`: il significato non è scritto nei dati. La bozza usa solo gli arrivi negli alberghi, confrontabili con gli anni prima (vedi `nota_2025`)
 
-| Sul sito | Nella bozza | Cosa fa |
+### S.2 File e funzioni da toccare
+
+**`tools/osservatorio.py`** (genera l'HTML tra `<!--oss:pagina-->` e `<!--/oss:pagina-->`; non scrivere a mano in `index.html`)
+
+- `main()`: dopo aver letto `osservatorio.json`, calcola dalle schede in `assets/data/schede/` e aggiungi a `d`:
+  - `d["sabato100"] = {"alzano": n, "uguale": n, "abbassano": n, "contati": n}` contando le schede che hanno sia il prezzo `martedi` sia il prezzo `sabato` (`prezzi[].prezzo` non nullo). Con i dati di oggi: 353, 90, 60 su 503. Sostituisce `assets/bozze/osservatorio/prezzi-alberghi.json`, che sul sito vero non si usa
+  - `d["rioni"] = {rione: zona_sito}` leggendo `zona` e `zona_sito` di ogni scheda (oggi 22 rioni, nessuno ambiguo; se un rione ha due zone diverse, vince la più frequente). Serve per dare una zona agli hotel non letti
+  - `d["indicatori"]` = contenuto di `indicatori.json` se esiste (già letto dalla pagina: controlla come arriva oggi a `#o2-top` e riusa quello)
+- `pagina(d)`: nell'oggetto `dati` passato allo script aggiungi `roma` (`d["roma"]`), `sabato100`, `rioni`, `registro`, `flussi_alberghi` (anno → `arrivi_alberghi`). `hs` (= `hs_tutti`) c'è già
+- `hero(d)`: sotto il titolo la casella "Cerca il tuo hotel" (vedi S.3) e il contenitore vuoto `<div id="o2Io" hidden aria-live="polite">`. Il primo schermo resta scuro com'è oggi
+- Funzione nuova `stanotte(d)` → blocco (a). Sostituisce il riquadro dei due numeri di oggi
+- Funzione nuova `notti(d)` → blocco calendario; restituisce stringa vuota se `indicatori["calendario"]` manca o ha meno di 3 notti future
+- `prezzi(d)` → riscrivi come blocco (b) e blocco (c)
+- `classifiche(d)` → riscrivi come blocco (d): resta solo la Top 10 Hotel Score in barre. Le altre nove classifiche (`vie_strutture`, `aree_*`) escono dalla pagina: i loro numeri vivono nelle schede delle zone
+- `flussi(d)` → riscrivi come blocco (e): una sola linea. Tabelle mensili e aeroporti escono dalla pagina
+- `zone(d)` → riscrivi come blocco (f). La mappa `#o2ZMap` resta sopra le schede se George la vuole tenere: chiedilo nella PR, nel dubbio tienila
+- Ordine in `pagina(d)`: hero con ricerca · stanotte · notti · prezzi (b, c) · classifiche · flussi · zone · chat `#o2-hotel` · vie · metodo. La chat, la ricerca delle vie, il metodo, il report e il sigillo restano come sono
+- **Ogni blocco esce da Python già completo dei numeri di Roma e delle zone** (senza JavaScript si leggono titoli, numeri, barre e fonti). JavaScript aggiunge solo le righe "Tu" e le animazioni
+
+**`assets/js/12-osservatorio.js`**
+
+- Funzione nuova `personalizza(id, h)` (nella bozza: `scegli` + la parte "Tu" di `disegna`): carica la scheda con `schedaH(id)` che esiste già, calcola la zona (`s.zona_sito`, altrimenti `D.rioni[h.z]`), riempie `#o2Io`, aggiunge le righe "Tu" in ogni blocco, evidenzia la zona, aggiorna l'indirizzo con `history.replaceState` a `/osservatorio/?hotel=ID`
+- Funzione nuova `spersonalizza()` ("Cambia hotel"): toglie tutte le righe "Tu" (ogni elemento aggiunto ha l'attributo `data-tu`, si rimuovono con un solo `querySelectorAll`), toglie `?hotel`, riporta il fuoco nella casella
+- Ricerca: riusa `hotel()`, `trovaHotel()` (già cerca anche per CIN), `bel()`, `suggerisci()`. Alla scelta di un hotel ora chiama `personalizza` invece di `mostraHotel`. La ricerca di vie e zone dalla stessa casella esce da qui: resta nel blocco delle vie
+- **Link `?hotel=ID`** (righe del "link personale delle mail"): oggi apre subito la chat. Da ora: chiama `personalizza(id)` e NON scorre alla chat. La chat si apre con il tasto "Parla con la chat del tuo hotel", che chiama `apriChat(id)` (che a sua volta chiama `presenta(s)`): niente ricarica della pagina. Aggiorna il testo delle email solo se promette "si apre la chat"
+- `apriChat`, `presenta`, `rispondi`, `invia`, `apriReport`, `sezSigillo`: non toccarle
+- Funzioni piccole da copiare dalla bozza: `cento()` (100 quadratini con i resti più alti, la somma fa sempre 100), `classZona()` (posizione nella zona da `D.hs`), `riga()` (una barra con etichetta e numero), `perche()` (motivo del prezzo mancante)
+- Animazioni: `vis()` esiste già; aggiunge la classe `in` al blocco quando entra nello schermo
+
+**`assets/css/site.css`**: regole nuove in fondo al file con prefisso `#pg-osservatorio`. Copia dalla bozza le classi `.r`, `.bar`, `.tu`, `.cfr`, `.zb`, `.q100`, `.cento`, `.cl`, `.linea`, `.zs`, `.io`, `.me` rinominandole `o3-…`. Togli le regole `o2-` dei blocchi riscritti solo dopo aver verificato con una ricerca che nessun altro le usa.
+
+**Non toccare:** `assets/bozze/nuova-apertura/`, la pagina Nuova apertura (`apertura(d)`), `simulatore`, `hotel.json` e la lettura serale.
+
+### S.3 Ricerca e scheda "Il tuo hotel"
+
+- **Casella:** etichetta `Cerca il tuo hotel` · segnaposto `Nome dell'hotel o CIN` · riga sotto: `Un solo passaggio: ogni blocco della pagina aggiunge i numeri del tuo hotel accanto a quelli della tua zona e di Roma. Gratis, senza registrazione`
+- **Suggerimenti** (massimo 6, prima gli hotel letti `r:1`, poi gli alberghi, poi il resto): nome · `indirizzo · rione · tipo` · per i non letti in coda `· prezzi non ancora letti`. Frecce, Invio (prende il primo), Esc. Nessun risultato: `Nessun hotel con questo nome nel registro del Comune di Roma. Prova con una parola sola o con il CIN`
+- **Titolo della pagina:** `Il mercato degli alberghi di Roma, visto dal tuo hotel` ("visto dal tuo hotel" in gradiente) · sotto: `Prezzi letti su Booking su {alberghi_letti} alberghi, aggiornati ogni notte. Ultima lettura: {data}`
+- **Scheda dopo la ricerca** (bordo in gradiente, etichetta `Il tuo hotel`):
+  - titolo `{Nome}: ogni blocco qui sotto ora ha i tuoi numeri` · riga `{indirizzo} · {zona} · {n} stelle · {n} camere`
+  - tre riquadri: `{martedì 15 dicembre}` → `{prezzo} €` → `la tua zona {x} €` · `{sabato 12 dicembre}` → idem · `Hotel Score` → `{voto}` → `{pos}º su {n} nella tua zona`
+  - tasto bianco `Parla con la chat del tuo hotel` · link `Cambia hotel`
+  - riga piccola `Prezzi del tuo hotel letti su Booking il {data}, 2 adulti. Nella chat trovi il confronto con i {set.quanti} alberghi più vicini e il report via email`
+- **Barra fissa in alto** quando la scheda esce dallo schermo: `La pagina parla di {Nome}` · `Apri la chat`. Sul sito vero va sotto la barra di navigazione `#o2Nav` (stesso calcolo di `top` che usa `apriChat`)
+
+### S.4 I blocchi: dati, testi esatti, riga "Tu"
+
+Parole fisse: `prezzo tipico` (mai "mediano"), `alberghi letti`, `la tua zona`. Importi interi con `€`, percentuali dei prezzi senza decimali, voti con una cifra decimale. Nessun punto a fine testo.
+
+**(a) Stanotte** · dati `indicatori.json → ultimo`
+- etichetta `Stanotte a Roma` (se `ultimo.notte` non è oggi: `Ultima notte letta` e nel titolo `La notte del {data}` al posto di `Stanotte`)
+- titolo `Stanotte {alberghi_registro − alberghi_prenotabili} alberghi di Roma non hanno più camere su Booking. Negli altri una camera costa {tariffa_alberghi} €`
+- riquadro 1: numero `113` · `alberghi senza camere su Booking, su 990` · una barra piena per l'11,4% · `11,4 alberghi su 100 sono pieni`
+- riquadro 2: numero `134 €` · `il prezzo tipico di una camera d'albergo per 2 adulti` · `Metà degli alberghi con camere libere chiede meno, metà chiede di più`
+- Tu: `Del tuo hotel leggiamo tre date: {martedì}, {sabato} e Capodanno. I tuoi prezzi sono nel blocco qui sotto`
+- riga piccola `Termine tecnico: tariffa mediana, 2 adulti, 1 notte · Fonte: Booking, lettura del {data}`
+
+**Le prossime notti più care** · solo se `indicatori.calendario` esiste (lista `{data, mediana, prenotabili}`) con almeno 3 notti future
+- le 7 notti future con `mediana` più alta, in ordine di data, una barra ciascuna (`{giorno e data}` · barra · `{mediana} €`), la più cara in gradiente
+- titolo `La notte più cara in arrivo è {giorno e data}: una camera d'albergo costa {x} €` · numero grande `{x} €`
+- Tu: `Controlla il tuo prezzo per queste notti: sono le date in cui Roma vende a una tariffa più alta`
+
+**(b) Quanto costa Roma** · dati `roma` e `zone[].mercato` (`martedi`, `sabato`, `evento`), date in `date`
+- titolo `A Roma una camera d'albergo costa 129 € il martedì, 151 € il sabato e 311 € a Capodanno` · numero grande `151 €` · `il prezzo tipico di sabato 12 dicembre, 2 adulti`
+- figura: un riquadro per zona (9, ordinati per prezzo del sabato; 2 colonne su schermo largo, 1 sul telefono) con tre barre: `Martedì` grigia, `Sabato` in gradiente, `Capodanno` bianca. Tutte le barre sulla stessa scala (il massimo è il Capodanno più alto). Accanto al nome `{n} alberghi letti`. Legenda sopra
+- Tu: sopra le zone tre riquadri (`Martedì`, `Sabato`, `Capodanno · 2 notti, prezzo per notte`), ognuno con tre barre `Tu` (gradiente) · `La tua zona` · `Roma` e una frase: `Vendi a {x} € meno di quanto chiede la tua zona` / `Vendi a {x} € più di quanto chiede la tua zona` / `Vendi allo stesso prezzo della tua zona`. Il riquadro della sua zona sale al primo posto con il bordo e l'etichetta `La tua zona`
+- riga piccola `Termine tecnico: tariffa mediana, 2 adulti; a Capodanno soggiorno di 2 notti, prezzo per notte · Fonte: Booking, {n} alberghi letti dal {data} al {data}`
+
+**(c) Chi alza il prezzo il sabato** · dati `sabato100`
+- titolo `Su 100 alberghi di Roma, 70 alzano il prezzo il sabato` · numero grande `70` · `alberghi su 100 chiedono di più il sabato rispetto al martedì`
+- figura: griglia 10 × 10. 70 quadratini in gradiente, 18 grigi pieni, 12 solo bordo. Accanto: `70 alzano il prezzo il sabato` · `18 chiedono lo stesso prezzo del martedì` · `12 abbassano il prezzo il sabato`
+- frase che vende: `Il sabato Roma costa il 17% in più del martedì. 30 alberghi su 100 non seguono la domanda e rinunciano a quel margine: il revenue management decide il prezzo notte per notte` (17 = `roma.rincaro_sabato`, 30 = uguale + abbassano)
+- Tu: `Sei tra i {n} su 100 che {alzano il prezzo | chiedono lo stesso prezzo del martedì | abbassano il prezzo}: {x} € il martedì, {y} € il sabato (+{z}%). Il tuo quadratino è quello con il bordo bianco` (il primo quadratino del suo gruppo prende il bordo bianco) · seconda riga `Nella tua zona il sabato costa il {x}% in più del martedì` (`zone[].mercato.rincaro_sabato`; se negativo `in meno`, se zero `quanto il martedì`)
+- riga piccola `Contati 503 alberghi con il prezzo di martedì 15 dicembre e di sabato 12 dicembre · Fonte: Booking, lettura del {data}`
+
+**(d) Le classifiche** · dati `hs_tutti` (già ordinato; `[id, nome, zona, stelle, voto, recensioni, …]`)
+- titolo `I 10 alberghi di Roma con l'Hotel Score più alto` · numero grande `9,0` · `{nome del primo}, primo su 486 alberghi`
+- figura: 10 righe `posizione · nome (sotto: zona · stelle) · barra · voto`. La barra è lunga voto/10
+- Tu: `Il tuo Hotel Score è {x}: sei {pos}º su {n} tra gli alberghi di {zona} e {pos}º su 486 a Roma` · sotto la Top 10 il titolo `La tua zona: i primi tre e tu` con 3 righe + `…` + la sua riga evidenziata `Tu · {Nome}`. Se è già nella Top 10, la sua riga lì è evidenziata
+- riga piccola `Hotel Score: voto da 0 a 10 calcolato da Ricavia sui dati letti su Booking · 486 alberghi in classifica, lettura del {data}`
+
+**(e) La domanda** · dati `flussi.json → istat.annui[anno].arrivi_alberghi`
+- titolo `Nel 2025 gli alberghi di Roma hanno registrato 7,9 milioni di arrivi: 1,3% sotto il 2019` (`sopra` se positivo) · numero grande `7,9` · `milioni di arrivi negli alberghi di Roma nel 2025`
+- figura: UNA linea 2014-2025, nessun asse. Solo quattro punti con etichetta: primo anno, 2019, anno più basso, ultimo anno (`7,5 mln` sopra, anno sotto). Una riga tratteggiata `il livello del 2019`
+- Tu: `Questa domanda la dividi con gli altri {alberghi − 1} alberghi di {zona}: tu hai {camere} camere su {camere_alberghi} camere d'albergo della zona` (dati `zone[].offerta`)
+- riga piccola `Termine tecnico: arrivi negli esercizi alberghieri, 2014-2025 · Fonte: {istat.fonte}`
+
+**(f) Le zone** · dati `zone[]`
+- titolo `Nove zone di Roma, tre numeri per ognuna`
+- 9 schede (3 colonne, 1 sul telefono), ordinate per numero di alberghi. Ogni scheda è un tasto: nome e tre numeri sempre visibili (`alberghi` = `offerta.alberghi` · `il sabato` = `mercato.sabato` · `voto su Booking` = `mercato.voto`) e la riga `Tocca per gli altri numeri`. Al tocco si apre sotto un elenco di solo testo: `Martedì {x} € · Capodanno {y} €` · `{n} camere d'albergo` · `{n} strutture ricettive in totale` · `{n} alberghi letti su Booking`. Niente grafici
+- Tu: `La tua zona è {zona}: {n} alberghi, {x} € il sabato, voto {v} su Booking. Il tuo voto è {booking.voto}` · la sua scheda è la prima, aperta, con bordo ed etichetta `La tua zona`
+- riga piccola `Alberghi e camere: registro del Comune di Roma, {registro.file} · Prezzo del sabato: tariffa mediana di {sabato} · Voto: valore mediano su Booking, lettura del {data}`
+
+**Chiusura.** Senza hotel: `Questi sono i numeri di Roma. E i tuoi?` · `Cerca il tuo hotel: ogni blocco della pagina aggiunge i tuoi prezzi e la tua posizione accanto alla tua zona e a Roma` · tasto `Cerca il tuo hotel` (porta alla casella e le dà il fuoco). Con hotel letto: `{Nome}: il confronto con i {n} alberghi più vicini è nella chat` · `Prezzi, voti e posizione rispetto ai tuoi competitor, con il report completo via email` · tasto `Parla con la chat del tuo hotel`.
+
+### S.5 Casi limite
+
+| Caso | Hotel di prova | Cosa fa la pagina |
 |---|---|---|
-| `g3entra(el)`, `g3draw(id, fn)` | `entra`, `draw` | fa partire le animazioni quando l'8% dell'elemento è nello schermo; ridisegna alla larghezza |
-| `g3range(input, fn)` | `range` | riempie la traccia del cursore (`--p`) e aggiorna il numero |
-| `g3count(el, valore, formato, durata)` | `count` | conta da zero |
-| `g3apri(n, risposta, zitto)`, `g3chiudi(n)` | `apri`, `chiudi` | passano da domanda a rivelazione e ritorno |
-| `g3segna(n)`, `g3contatore(anim)` | `segna`, `contatore` | contatore e chiusura |
-| `G3[1]…G3[6]` | `G[1]…G[6]` | disegnano la rivelazione; `risposta` nulla = "Mostrami subito" |
-| `g3hotel(scheda)` | il blocco finale `?hotel=` | accende il punto dell'hotel (G.5) |
-| numero preciso | `#tip`, `show`, `hide` | come sezione 0 |
+| Hotel non letto (in `hotel.json` senza `r`, nessuna scheda) | 395872 | Scheda: `{Nome}: non leggiamo ancora i tuoi prezzi` · `Ogni notte leggiamo su Booking {n} alberghi di Roma e il tuo non è ancora tra questi. La pagina evidenzia la tua zona, {zona}: confronta i tuoi prezzi con le barre qui sotto` · tasto `Chiedi la lettura del tuo hotel` (sul sito vero apre il modulo `senzaDati(h)` che esiste già). Le barre `Tu` mostrano il testo `prezzo non letto`, la zona è evidenziata, la griglia dice `Non abbiamo i tuoi due prezzi: il tuo quadratino non è ancora nella griglia`. Se non è un albergo la frase inizia con `L'Osservatorio oggi legge i prezzi degli alberghi` |
+| Hotel letto ma senza prezzi (`prezzi` vuoto) | 369120 | Nota nella scheda: `Non abbiamo ancora letto i prezzi del tuo hotel su Booking: nei blocchi trovi la tua zona e Roma`. Le righe "Tu" di voto e classifica restano se i dati ci sono |
+| Un prezzo manca (`prezzo` nullo con `motivo`) | 369774 (sabato) | Al posto della barra il testo: `non disponibile` → `senza camere su Booking` · `solo camere per 1 persona` → `solo camere singole su Booking` · altro → `prezzo non letto su Booking`. Frase del riquadro: `Per questa data non hai camere in vendita su Booking: la tua zona chiede {x} €`. Griglia: `{Sabato 12 dicembre}: senza camere su Booking. Senza i due prezzi il tuo quadratino non entra nel conteggio`. Mai una barra a zero |
+| Zona con meno di 10 alberghi letti (`mercato.alberghi < 10`: oggi Testaccio · Ostiense 5, San Lorenzo · Pigneto 8) | 369499 | Accanto al nome della zona `{n} alberghi letti, pochi per un confronto solido`. Nota nella scheda: `Nella tua zona abbiamo letto solo {n} alberghi: il confronto con Roma è più solido`. Un valore nullo della zona (Capodanno a Trastevere e Testaccio) diventa il testo `pochi alberghi letti`, senza barra; in quel caso la frase "Tu" confronta con Roma. Classifica di zona con meno di 10 alberghi: `Nella tua zona gli alberghi con l'Hotel Score sono solo {n}: la classifica di zona non è significativa` |
+| Hotel fuori dalle nove zone (`zona_sito` nullo: 145 schede) | cerca un albergo all'EUR | `Il tuo hotel è fuori dalle nove zone dell'Osservatorio: il confronto è con Roma`. Le barre `La tua zona` non compaiono, nessuna zona evidenziata |
+| Hotel Score non calcolato (123 schede) | 369233 | Riquadro `non ancora calcolato` · riga "Tu": `Il tuo Hotel Score non è ancora calcolato: servono più dati letti su Booking. Nella chat trovi quello che abbiamo già letto` |
+| `?hotel=` con un numero che non esiste | `?hotel=1` | La pagina resta su Roma e sopra i blocchi compare `Non troviamo un hotel con questo indirizzo. Cercalo per nome qui sopra` |
+| Un file di dati non si carica | — | I blocchi generati da Python restano leggibili; mancano solo le righe "Tu" |
 
-**`assets/css/site.css`**: in fondo, prefisso `.o3-`, dentro `:is(#pg-osservatorio)`. Dalla bozza: `.card` → `.o3-card`, `.ask`, `.rev`, `.act`, `.cta`, `.skip`, `.sl`, `.opt` (con `.q3`, `.q4`), `.step2`, `.two-in`, `.pin`, `.you`, `.msg`, `.cm`, `.src` (usa `.o2-src`), `.kpi`, `.inv`, `.bars`, `.bar`, `.zp`, `.prog`, e le classi di animazione `.gx .gy .fd .dr .pop .halo`. Il tasto bianco `.cta` segue la regola di brand: resta bianco, al passaggio solo la scritta va in gradiente
+### S.6 Animazioni
 
-### G.2 Struttura e stati di un gioco
+- Le barre crescono da zero in 1 secondo quando il blocco entra nello schermo; i 100 quadratini compaiono in sequenza (9 ms l'uno); la linea si disegna da sinistra in 1,6 secondi. Una volta sola per blocco
+- Dopo la ricerca i blocchi già visti NON si rianimano: le righe "Tu" compaiono ferme
+- Con `prefers-reduced-motion: reduce` tutto è già al valore finale, senza transizioni
+- Nient'altro: niente contatori che girano, niente effetti al passaggio del mouse sulle barre
 
-```html
-<section class="o3-gm" id="o3-g2" data-g="2">
-  <div class="o3-card">
-    <p class="o2-tag">2 di 6 · Quanto costa Roma</p>
-    <div class="o3-ask">  <!-- h2 con la domanda, controlli, .o3-act con "Scopri il dato" e "Mostrami subito" --></div>
-    <div class="o3-rev" hidden> <!-- .o3-you, h3.o3-msg (tabindex -1), grafico .o3-ch, .o3-cm, .o2-src, .o3-act con "Rispondi di nuovo" --></div>
-  </div>
-</section>
-```
+### S.7 Ordine di costruzione
 
-| Stato | Cosa si vede | Come ci si arriva |
-|---|---|---|
-| `domanda` | `.o3-ask` visibile, `.o3-rev` nascosto | all'apertura |
-| `passo 2` (solo gioco 2) | sotto le zone compare il cursore; "Scopri il dato" si attiva | tocco su una zona |
-| `rivelato con risposta` | `.o3-rev` con riga "La tua risposta", segno della risposta nel grafico, commento | "Scopri il dato" o tocco su un'opzione |
-| `rivelato senza risposta` | `.o3-rev` senza riga, senza segno e senza commento di confronto | "Mostrami subito", ritorno nella sessione |
+1. `main()` e `pagina(d)`: i dati nuovi (`sabato100`, `rioni`, `roma`, `registro`, `flussi_alberghi`)
+2. I sei blocchi in Python con Roma e le zone, CSS `o3-…`, animazioni. La pagina deve già essere completa senza ricerca
+3. Ricerca, `personalizza`, scheda "Il tuo hotel", righe "Tu" blocco per blocco, casi limite della tabella S.5
+4. `?hotel=ID` e tasto verso `apriChat`
+5. Blocco delle prossime notti (si prova con un `calendario` finto, che non si salva nel repository)
+6. Pulizia delle regole `o2-` non più usate
 
-- Giochi a un tocco (4, 5, 6): il tocco sull'opzione rivela subito, non c'è "Scopri il dato"
-- "Rispondi di nuovo" riporta a `domanda` e non toglie il gioco dal contatore
-- Alla rivelazione: la sezione scorre in alto (`scrollIntoView`, `scroll-margin-top` = altezza di `#o2Nav` + 12 px) e il fuoco va sull'`h3.o3-msg`, così lo legge anche chi usa un lettore di schermo
-- Senza JavaScript: `tools/osservatorio.py` genera `.o3-rev` già con titolo, numeri principali e fonte in testo, e `.o3-ask` con `hidden`; il JavaScript all'avvio inverte i due. Così i motori di ricerca leggono i dati
-- Tasti e opzioni alti almeno 48 px, cursori con la maniglia da 32 px, campi con testo da 16 px o più (il telefono non ingrandisce la pagina)
+### S.8 Prove
 
-### G.3 Animazioni
-
-| Cosa | Durata | Curva | Ritardo |
-|---|---|---|---|
-| Passaggio a rivelazione: ogni figlio di `.o3-rev` sale di 12 px e compare | 0,5 s | `cubic-bezier(.22,1,.36,1)` | 0 · 60 · 120 · 180 ms |
-| Passo 2 del gioco 2 che si apre | 0,45 s | stessa | 0 |
-| Barre `.gx`, colonne `.gy`, comparse `.fd`, linee `.dr` | come sezione 0 | | `.fd` accetta `--d` per il ritardo di base |
-| Segno di chi gioca `.pop` (rombo, punto): cresce da 0 con un leggero rimbalzo | 0,5 s | `cubic-bezier(.34,1.56,.64,1)` | 1,3 s (gioco 2: 1,25 s; mese scelto: 1,1 s) |
-| Alone `.halo` attorno al punto: cerchio che si allarga e svanisce, due volte | 1,6 s × 2 | `ease-out` | 1,5 s |
-| Anello del gioco 1 | 1,2 s | `cubic-bezier(.22,1,.36,1)` | 0,35 s |
-| Numeri che contano | 1,1 s | rallentamento cubico | 0,35 s |
-| Contatore: il numero sale di 8 px e compare; il segmento si riempie | 0,45 s · 0,5 s | stessa | 0 |
-| Zona scelta nel gioco 6: le altre al 45% | 0,3 s | `ease` | 0 |
-
-Tutto finisce entro 3,5 s dal tocco. Con `prefers-reduced-motion: reduce`: nessuna transizione e nessuna animazione, l'alone non compare, i numeri mostrano subito il valore, lo scorrimento è immediato
-
-### G.4 I sei giochi: dati, testi esatti, casi limite
-
-Le parole tra `{}` sono dati. Nessun punto finale. Dove c'è `<g>` il testo è in gradiente (`.o2-g`)
-
-**Gioco 1 · primo schermo (scelta 5)** — `indicatori.json`
-- Etichetta: `1 di 6 · Disponibilità`
-- Domanda: `Secondo te, stanotte quanti alberghi di Roma sono pieni?` se `ultimo.notte` è oggi; altrimenti `Secondo te, quanti alberghi di Roma sono pieni la notte di {giorno e data}?`
-- Sottotitolo: `Sposta il cursore: su 100 alberghi, quanti non hanno più una camera su Booking per la notte di {giorno e data}`
-- Controllo: cursore da 0 a 100, passo 1, partenza 30, numero grande `{n} su 100`. Tasti `Scopri il dato` · `Mostrami subito`
-- Rivelazione: riga `La tua risposta: {n} su 100`; titolo `<g>{x} alberghi su 100</g> non hanno più camere per la notte di {giorno e data}`; anello come punto 5 con un trattino bianco sulla risposta (`.fd`, ritardo 0,1 s) e la frase `degli alberghi di Roma non ha più camere. Il trattino bianco è la tua risposta`; secondo riquadro con la tariffa come punto 5
-- Commento, per distanza tra risposta e dato: fino a 3 punti `Eri vicino: hai detto {n}, sono {x}` · fino a 10 `Non lontano: hai detto {n}, sono {x}` · oltre `Sorpresa: hai detto {n}, sono {x}`. Seconda riga: `{100 − x} alberghi su 100 hanno ancora camere da vendere: per quella notte il prezzo si decide adesso`
-- Fonte: come punto 5. Tasto `Rispondi di nuovo`
-- Casi limite: file non caricato o `ultimo` assente → il gioco non compare e il contatore diventa "su 5" (`N` si calcola dai giochi presenti). Lettura più vecchia di 36 ore → resta l'avviso di oggi. L'ora di lettura si prende dal testo di `letto_il` (`slice(11,16)`), non da `Date`, per non dipendere dal fuso
-- Finito quando: con i dati di oggi risposta 12 → "Eri vicino: hai detto 12, sono 11,4"
-
-**Gioco 2 · quanto costa Roma (scelta 1 A)** — `roma`, `zone[].mercato`, `date`
-- Etichetta: `2 di 6 · Quanto costa Roma`
-- Domanda 1: `Scegli la tua zona` · sottotitolo `La zona del tuo hotel, o quella che conosci meglio` · un tasto per zona (solo zone con `mercato.sabato`)
-- Domanda 2 (compare dopo la scelta): `Quanto costa secondo te Capodanno a {zona}?` · sottotitolo `Prezzo mediano a notte di una camera per 2 persone negli alberghi, notte del {data}` · cursore 50-900 €, passo 10, partenza 300
-- Rivelazione: riga `La tua stima per {zona}: {n} €`; titolo `A Capodanno {zona} chiede <g>{x} €</g>, da {martedì} € il martedì`; grafico 1 A con la riga della zona su fondo bianco al 7%, le altre righe al 55%, un rombo bianco vuoto sulla stima (`.pop`) e la scritta `tu {n} €`; in legenda `La tua stima`. Se la stima supera l'asse, l'asse si allarga al centinaio superiore
-- Commento: scarto entro il 10% del dato `Eri vicino: la tua stima dista {n} € dal dato` · stima più bassa `Sorpresa: il dato supera la tua stima di {n} €` · più alta `Sorpresa: il dato è {n} € sotto la tua stima`. Seconda riga: `A {zona} Capodanno vale {+n%} sul martedì. In tutta Roma: {x} €, {+n%}`
-- Senza risposta: titolo del punto 1 A (`A Capodanno {zona più cara} arriva a <g>{x} €</g>, da {y} € il martedì`), nessuna riga evidenziata
-- Fonte: `fonti(d)["bk"]` + `. Dove a destra c'è n.d. abbiamo letto meno di 5 prezzi per Capodanno`. Tasto `Cambia zona`
-- Casi limite: zona senza `evento` (oggi Trastevere e Testaccio · Ostiense) → la domanda 2 diventa `Quanto costa secondo te sabato {data} a {zona}?`, sottotitolo `Per Capodanno in questa zona abbiamo letto meno di 5 prezzi: prova con il sabato. Prezzo mediano a notte di una camera per 2 persone negli alberghi`, cursore 50-500 partenza 150, titolo `Sabato {data} {zona} chiede <g>{x} €</g>`, seconda riga del commento sul rincaro del sabato. Zona scelta ricordata in `sessionStorage` (`o3-zona`) e riusata al ritorno
-- Finito quando: Centro storico con stima 400 → 533 €, "Sorpresa: il dato supera la tua stima di 133 €"
-
-**Gioco 3 · chi alza il prezzo il sabato (scelta 1 D)** — `pa`, `roma.tariffa_ferma`, `roma.rincaro_sabato`
-- Etichetta: `3 di 6 · Martedì e sabato`
-- Domanda: `Metti i tuoi prezzi di martedì e sabato` · sottotitolo `Una camera per 2 persone, una notte: martedì {data} e sabato {data}. Il tuo punto compare tra quelli di {n} alberghi di Roma. Non salviamo i prezzi che scrivi`
-- Controlli: due colonne `Martedì` e `Sabato`, ognuna con un campo numerico (30-1000) e sotto un cursore (40-400, passo 5) legati tra loro; partenza 120 e 135. Tasti `Trova il mio punto` · `Mostrami subito`. I prezzi scritti **non** si salvano e non si inviano
-- Quote: `stesso prezzo` = `roma.tariffa_ferma` arrotondato (oggi 18); il resto si divide tra "di più" e "di meno" in proporzione al conteggio delle righe (oggi 70 e 12). La somma è sempre 100
-- Rivelazione: riga `I tuoi prezzi: martedì {m} €, sabato {s} €`; titolo `Sei tra i <g>{q} su 100</g> che` + `chiedono lo stesso prezzo il martedì e il sabato` / `il sabato chiedono di più` / `il sabato chiedono di meno`; i tre riquadri con il proprio bordato di bianco e l'etichetta `Sei qui`; la nuvola del punto 1 D (i punti compaiono in 1 s), poi il punto di chi gioca: cerchio in gradiente da 9,5 px con bordo bianco da 3 px (`.pop` a 1,3 s), alone a 1,5 s, scritta `Tu` a 1,7 s; in legenda `Tu`
-- Commento: stesso prezzo `Il tuo prezzo non cambia tra martedì e sabato: la tariffa non segue la domanda` · sabato più alto `Il tuo sabato vale {+n%} sul martedì` · più basso `Il tuo sabato vale {−n%} sul martedì: chiedi meno nel giorno con più domanda`. Seconda riga: `A Roma il prezzo mediano del sabato è {x} €, {+n%} sul martedì ({y} €)`
-- Invito sotto il grafico: `Questi sono tutti gli alberghi di Roma` / `La chat del tuo hotel confronta i tuoi prezzi con i tuoi competitor veri, gli alberghi simili più vicini` / tasto `Apri la chat del tuo hotel` (scorre a `#o2-hotel` e mette il fuoco nella ricerca)
-- Senza risposta: titolo `<g>{q} alberghi su 100</g> chiedono lo stesso prezzo il martedì e il sabato`, nessun punto acceso
-- Fonte: come punto 1 D. Tasto `Cambia i prezzi`
-- Casi limite: campo vuoto o fuori da 30-1000 → il fuoco torna sul campo, niente rivelazione. Prezzo oltre 400 € → gli assi si allargano al centinaio superiore (massimo 1000) e la fonte dice "nel grafico i {m} fino a {asse} €". Meno di 50 righe in `pa` → il gioco non compare. Nessun nome di albergo nel DOM
-- Finito quando: 110 e 110 → "Sei tra i 18 su 100…"; le tre quote sommano 100
-
-**Gioco 4 · classifiche (scelta 3 A)** — `classifiche`, `roma`, e la scheda dell'hotel se nota
-- Etichetta: `4 di 6 · Classifiche`
-- Domanda: `In che posizione pensi di essere nella tua zona?` · sottotitolo `Tra gli alberghi della tua zona con le tue stesse stelle` · tre tasti `Nel primo terzo` · `A metà classifica` · `Nell'ultimo terzo` (un tocco rivela)
-- Rivelazione, hotel non noto: riga `La tua risposta: {opzione}`; titolo `La tua posizione dipende dal tuo hotel. Intanto, il rione più caro il sabato è <g>{rione}</g>: {x} € contro {y} € di tutta Roma` (primo rione con almeno 10 alberghi letti); riquadro d'invito `Hai risposto {opzione}: la posizione vera la calcola la chat` / `Scrivi il nome del tuo hotel: la chat ti dice a che posto sei tra gli alberghi della tua zona con le tue stelle` / tasto `Apri la chat del tuo hotel`. Senza risposta la prima riga dell'invito è `Vuoi sapere la posizione del tuo hotel?`
-- Rivelazione, hotel noto (`scala.pos` e `scala.su`): titolo `Per Hotel Score il tuo hotel è <g>{pos}° su {su}</g> alberghi a {stelle} stelle in {zona}`; terzo vero = primo se `pos ≤ su/3`, metà se `pos ≤ su×2/3`, ultimo altrimenti; invito `Esatto: sei {terzo}` oppure `Sorpresa: sei {terzo}` / `La chat ti dice quanti punti servono per salire di un posto` / tasto `Continua nella chat` (chiama `rispondi(s,'classifica')`)
-- Sotto: le classifiche 3 A con le schede di oggi; titolo piccolo `{titolo della classifica}, rione per rione`; legenda e numero preciso come punto 3 A
-- Tasto `Rispondi di nuovo`
-- Casi limite: scheda senza `scala` → come hotel non noto
-- Finito quando: la linea bianca su "Sabato più caro" sta al 54%; con `?hotel=369105` e risposta "Nel primo terzo" si legge "28° su 82" e "Sorpresa: sei a metà classifica"
-
-**Gioco 5 · la domanda (scelta 2 B)** — `flussi.json`
-- Etichetta: `5 di 6 · La domanda`
-- Domanda: `Qual è il mese più forte a Roma?` · sottotitolo `Il mese con più arrivi nelle strutture ricettive di Roma nel {anno}, secondo ISTAT` · quattro tasti: maggio, luglio, ottobre, dicembre. Se il primo mese dell'ultimo anno non è tra i quattro, prende il posto di quello con meno arrivi; ordine di calendario
-- Rivelazione: riga `La tua risposta: {mese}`; titolo `Il mese più forte è <g>{mese}</g>: {x,xx} milioni di arrivi nel {anno}`
-- Due grafici affiancati (uno sotto l'altro sotto i 760 px), alti 260 px (230 sotto i 420 px di contenitore):
-  - `Arrivi a Roma mese per mese, {anno}`: la linea si disegna in 1,4 s (`.dr`, 3 px, in gradiente, area sotto al 13%), poi il mese giusto si accende (`.pop` a 1,3 s, alone a 1,5 s, scritta `{mese} · {x,xx} mln`); il mese scelto, se sbagliato, ha un cerchio vuoto e `{mese} · {x,xx}`. **Un solo anno: niente anni sovrapposti**
-  - `In aeroporto il mese più forte del {anno} è {mese}, per ora` (togli `, per ora` quando i mesi sono 12): le colonne dei voli del punto 2 B, il mese più alto pieno e gli altri al 60%
-- Commento: giusto `Esatto: {mese} è il primo mese del {anno} con {n} arrivi` · sbagliato `Sorpresa: {mese scelto} è {k}° nel {anno} con {n} arrivi. Il primo è {mese} con {n}` · senza risposta `{Mese} è il primo mese del {anno} con {n} arrivi`. Seconda riga: `Il primo mese cambia di anno in anno: {mese} nel {anno}, …. Per numero di notti il primo mese del {anno} è {mese}`
-- Sotto: `Negli alberghi {x} milioni di arrivi nel {anno}: {+n%} sul {anno prima}, ancora sotto il 2019 ({y})` · sottotitolo `Arrivi negli alberghi di Roma, anno per anno: la serie che si confronta dal 2014` · le colonne del punto 2 B
-- Fonti: mesi `Fonte: {istat.fonte}. Tutte le strutture ricettive, in milioni: nei nostri dati il dettaglio mese per mese dei soli alberghi non c'è. Dal 2025 ISTAT conta anche gli alloggi privati: i mesi del {anno} si confrontano tra loro, non con gli anni prima` · voli e alberghi come nella bozza (`#s5b`, `#s5c`)
-- Casi limite: due mesi alla pari → vince il primo in calendario e la seconda riga del commento lo dice. Manca il 2019 → niente linea e niente confronto
-- Finito quando: risposta maggio → "Sorpresa: maggio è 8° nel 2025 con 1.063.019 arrivi. Il primo è ottobre con 1.491.582"; alberghi 7,9 e 8,0
-
-**Gioco 6 · le zone (scelta 4)** — `zone`, `roma`
-- Etichetta: `6 di 6 · Le zone`
-- Domanda: `In quale zona apriresti un hotel?` · sottotitolo `Tocca una zona: vedi quanto costa e quanto spazio lasciano gli alberghi che ci sono già` · un tasto per zona (un tocco rivela)
-- Rivelazione: riga `La tua scelta: {zona}`; titolo `{zona}: <g>{x} €</g> il sabato, {p}% degli alberghi con voto sotto 8`; il grafico del punto 4 con la zona scelta piena e le altre al 45%; a fianco la scheda vera `#o2Zona` (`vistaZona`) con in fondo il tasto bianco `Porta {zona} in Nuova apertura`. Toccare un altro cerchio cambia scheda, titolo e commento, non la riga "La tua scelta"
-- **Regola di George:** una zona con meno di 10 alberghi letti non compare mai in un titolo con i suoi numeri né nei confronti. Titolo: `{zona}: qui abbiamo letto {n} alberghi, pochi per un confronto sicuro`; nella scheda `{n} alberghi letti: numeri da leggere con prudenza`
-- Commento: `Tra le {k} zone con almeno 10 alberghi letti {zona} è {n}ª per prezzo del sabato` oppure, sotto i 10, `Il confronto tra zone conta solo quelle con almeno 10 alberghi letti: sono {k} su {tot}`. Seconda riga: `La più cara è {zona} ({x} €). Quella con più alberghi sotto 8 è {zona} ({p}%): dove tanti alberghi hanno un voto basso, un hotel nuovo e curato ha più spazio per distinguersi`
-- Senza risposta: è scelta la zona più cara tra quelle con almeno 10 alberghi letti, senza riga "La tua scelta"
-- Passaggio a Nuova apertura: il tasto porta a `/nuova-apertura/?zona={nome}`. In `simulatore(d, omi)` e nel suo JavaScript leggi `zona` dall'indirizzo, scegli quella voce nel menu delle zone del simulatore e ricalcola; se il nome non esiste, ignora. Se George sceglie il percorso a tappe (punto 7), `zona` riempie la tappa 1
-- Fonte: come punto 4. Tasto `Torna alla domanda`
-- Finito quando: San Lorenzo · Pigneto (8 alberghi letti) non mostra numeri nel titolo; Centro storico mostra "271 € il sabato, 8%"
-
-### G.5 Il punto già acceso per chi arriva dalla chat "Il tuo hotel"
-
-La scheda dell'hotel (`assets/data/schede/{id}.json`) ha `prezzi` con `etichetta` `martedi` e `sabato`; in `12-osservatorio.js` si leggono con `pz(s,'martedi').prezzo`
-
-1. Scrivi `g3hotel(s)`: salva `S.hotel = s`; se i due prezzi ci sono, mette i valori nei campi del gioco 3 e chiama `g3apri(3, {m, s, hotel:true}, true)` (il terzo argomento vuol dire: non scorrere e non spostare il fuoco); se il gioco 4 è già rivelato lo ridisegna
-2. Chiamala in `apriChat(id)`, dentro il `then` di `schedaH(id)`, dopo `presenta(s)`. Vale per tutti gli ingressi: ricerca in alto, casella della chat, link delle mail `?hotel=ID`
-3. Salva l'id in `sessionStorage` (`o3-hotel`): al ricaricamento, se c'è, chiama `schedaH(id).then(g3hotel)` senza riaprire la chat
-4. Con `hotel:true` cambiano i testi del gioco 3: riga `I prezzi del tuo hotel letti su Booking: martedì {m} €, sabato {s} €`; etichetta del riquadro `Il tuo hotel è qui`; scritta sul punto e in legenda `Il tuo hotel`. Il titolo resta `Sei tra i <g>{q} su 100</g> che…`. Il nome dell'hotel non si scrive nel grafico
-5. Nella chat, dopo la risposta alla domanda `prezzo`, aggiungi una bolla: `Vuoi vedere dove sei tra tutti gli alberghi di Roma?` con il tasto `Mostrami il mio punto`, che scorre al gioco 3. L'animazione del punto parte quando il grafico entra nello schermo, quindi chi arriva lo vede accendersi
-6. Casi limite: manca uno dei due prezzi (`prezzo` nullo, albergo esaurito) → il gioco 3 resta alla domanda, senza errori; hotel non letto su Booking (`h.r` falso) → niente. "Cambia i prezzi" torna alla domanda con i prezzi dell'hotel già nei campi
-
-Nella bozza si prova con `?hotel=369105`
-
-### G.6 Contatore e chiusura
-
-- **Contatore:** una riga dentro `#o2Nav` (fissa in alto come oggi): `Hai scoperto {n} cose su 6 del mercato di Roma`, con `{n}` in bianco 600 e sotto sei segmenti alti 4 px che si riempiono col gradiente. `cosa` al singolare con 1. È un tasto alto 48 px: porta al primo gioco non ancora scoperto, o alla chiusura se sono tutti scoperti. `aria-live="polite"`
-- Un gioco conta quando è rivelato, anche con "Mostrami subito". I giochi scoperti stanno in `sessionStorage` (`o3-gioco`, `{fatte:[…]}`): al ritorno nella stessa sessione sono già rivelati, senza risposta e senza scorrimenti
-- **Chiusura** (`#o3-fine`, prima del metodo): etichetta `Il tuo hotel`; titolo `Hai scoperto <g>{n} cose su 6</g> del mercato di Roma`; testo con 6 su 6 `Questi sono i numeri di tutta la città. I numeri del tuo hotel sono nella chat: scrivi il nome e vedi i tuoi competitor, i tuoi prezzi e il tuo Hotel Score`, prima `I numeri del tuo hotel sono nella chat: scrivi il nome e vedi i tuoi competitor, i tuoi prezzi e il tuo Hotel Score`; riga `Ti mancano: {elenco con i link ai giochi}` (`Ti manca:` con uno solo); tasto bianco `Apri la chat del tuo hotel`. La chat non è mai bloccata: il tasto c'è anche con 0 su 6
-- **Email:** sotto il tasto, `Oppure lascia la tua email: ti mandiamo il link al report del tuo hotel`, campo, spunta della privacy, tasto `Mandami il report`. Errori: `Controlla l'indirizzo email` · `Per usare la tua email serve la spunta sulla privacy`. Se l'hotel è noto chiama `invia(em, S.hotel)` come fa la chat; se non è noto apre la chat con il fuoco sulla ricerca e conserva l'email in `chatEl._em`, così la chat non la chiede di nuovo. Nella bozza il modulo non invia niente
-- La barra mobile "Hotel Score gratuito" (miglioria 16) non deve coprire i tasti dei giochi: finché un gioco è nello schermo resta nascosta
-
-### G.7 Ordine di costruzione
-
-1. G.1 e G.2: dati in pagina, `gioco()`, stati, contatore, stili di base. Prova con un solo gioco
-2. Giochi 1 e 4 (toccano codice che esiste già)
-3. Giochi 2 e 6
-4. Gioco 5
-5. `prezzi_alberghi` e gioco 3, poi G.5
-6. Chiusura ed email, poi il passaggio a Nuova apertura
-
-### G.8 Prove
-
-Oltre alle prove comuni della sezione 0:
-1. A 390 e a 1366 px gioca tutti e sei i giochi con Playwright: nessun errore in console, `scrollWidth === innerWidth` prima e dopo ogni rivelazione, contatore a 6
-2. Ripeti con "Mostrami subito" su tutti: nessuna riga "La tua risposta", nessun commento di confronto, contatore a 6
-3. Nessun tasto, opzione o cursore visibile è alto meno di 44 px a 390 px
-4. Con meno movimento: dopo il tocco il grafico è completo senza attese e l'alone non compare
-5. Solo tastiera: Tab raggiunge cursori, opzioni e tasti; Invio rivela; dopo la rivelazione il fuoco è sul titolo
-6. `?hotel=369105`: gioco 3 già rivelato con 116 € e 127 € e "70 su 100", contatore a 1; gioco 4 mostra "28° su 82"
-7. Zona senza Capodanno (Trastevere) nel gioco 2: la domanda parla del sabato
-8. Prezzi 500 e 650 nel gioco 3: assi fino a 700, punto dentro il grafico
-9. Ricarica la pagina dopo tre giochi: i tre sono rivelati, contatore a 3
-10. Nel DOM del gioco 3 non c'è nessun nome di `hs_tutti`
-11. I numeri dei giochi sono gli stessi dei riquadri della pagina e della chat (11,4% · 129, 151, 311 € · 18%)
-12. Senza JavaScript la pagina mostra titoli, numeri e fonti dei sei blocchi
-
----
-
-*Da qui in giù: istruzioni del mattino del 22/11. I punti 1 A, 1 D, 2 B, 3 A, 4 e 5 valgono solo per il disegno dei grafici, dove la sezione "Osservatorio giocato" non dice altro. I punti 1 B, 1 C, 2 A e 3 B non si costruiscono*
-
-### A.0 Dati nuovi (serve per 1 B e 1 D)
-
-Le alternative 1 B e 1 D usano il prezzo di ogni albergo. Oggi `osservatorio.json` ha solo i valori mediani; i prezzi singoli sono nelle schede.
-
-- In `tools/osservatorio.py` aggiungi `prezzi_alberghi(dati)`: legge `assets/data/schede/*.json` e restituisce una lista di righe `[zona_sito, stelle, martedi, sabato, evento]` (prezzo `prezzi[].prezzo` per `etichetta` `martedi`, `sabato`, `evento`; `None` se manca). **Nessun nome, nessun indirizzo, nessun id.** Ordina per zona, stelle, prezzo, così la posizione non rivela nulla. Lo script di riferimento è `docs/design/bozza-prezzi-alberghi.py`
-- Mettila nel JSON in pagina (`pagina(d)` → `dati["pa"]`), non in un file a parte: sono circa 25 kB
-- **Coerenza dei valori mediani.** Dalle schede il valore mediano del sabato è 152 € e di Capodanno 304 €; `osservatorio.json` dice 151 € e 311 €. Prima di pubblicare 1 B o 1 D: nei grafici disegna la linea del valore mediano su `roma.martedi`, `roma.sabato`, `roma.evento` (i numeri pubblicati), non su quello ricalcolato, e nella PR segnala lo scarto a George perché il calcolo vero sta nel repository commerciale (`tools/oss_pubblico.py`). Non correggere i numeri
-- Caso limite: se le schede sono meno di 50, 1 B e 1 D non si generano e la sezione mostra solo l'alternativa scelta tra A e C
-
-### 1 A · Le zone sulla stessa scala
-
-- **Dove:** `prezzi(d)` in `tools/osservatorio.py` genera titolo, legenda, `<div class="o3-ch" id="o3Zone"></div>` e fonte; il disegno è in `12-osservatorio.js`. Bozza: blocco `1A` (`righe`, `chart('c1a', …)`)
-- **Dati:** `d["roma"]` e `d["zone"][i]["mercato"]`: `martedi`, `sabato`, `evento`, `rincaro_sabato`, `rincaro_evento`, `alberghi`. Date da `d["date"]`. Già presenti in `#o2Dati` come `zone` e `date`; aggiungi `roma`
-- **Comportamento:** prima riga "Tutta Roma" (in grassetto, binario più spesso), poi le zone per prezzo del sabato decrescente. Asse in euro da 50 al massimo di Capodanno arrotondato al centinaio superiore, tacche ogni 100 €. Per riga: segmento azzurro `#3CCDFA` tra martedì e sabato, segmento in gradiente tra sabato e Capodanno, cerchio vuoto bianco (martedì), cerchio azzurro (sabato), cerchio viola chiaro `#8b6bff` (Capodanno), a destra il prezzo di Capodanno. Tutta la riga è l'area sensibile
-- **Animazione:** segmento martedì-sabato `.gx` con posizione = indice di riga; segmento sabato-Capodanno `.gx` con posizione = indice + 4; cerchi e prezzo `.fd` con posizione = indice + 6
-- **390 px:** il nome della zona sta sopra il binario (riga alta 54 px invece di 42), niente colonna dei nomi a sinistra
-- **Testi:**
-  - etichetta: `Quanto costa Roma`
-  - titolo (h2): `A Capodanno {zona più cara} arriva a {evento} €, da {martedi} € il martedì` con il prezzo di Capodanno in gradiente
-  - sottotitolo: `Prezzo mediano a notte di una camera per 2 persone negli alberghi, zona per zona, nelle tre date che leggiamo ogni notte`
-  - legenda: `Martedì {data}` · `Sabato {data}` · `Capodanno, {data}`
-  - numero preciso: `{zona}` / `Martedì {data}: {x} €` / `Sabato {data}: {x} € ({+n%})` / `Capodanno: {x} € ({+n%})` / `{n} alberghi letti`
-  - fonte: `fonti(d)["bk"]`
-- **Casi limite:** `evento` nullo → niente terzo cerchio, a destra `n.d.`, nel numero preciso `Capodanno: non pubblicato` e `meno di 5 prezzi letti per Capodanno`. `sabato` minore di `martedi` (Testaccio · Ostiense) → il segmento va comunque dal minore al maggiore. Zona senza `mercato.sabato` → esclusa. I tre riquadri di oggi (33% senza camere, 18% stessa tariffa, voto 8,3) restano sotto il grafico
-- **Finito quando:** 10 righe; i valori di "Tutta Roma" sono 129, 151, 311 con i dati di oggi; a 390 px i nomi non toccano i cerchi
-
-### 1 B · Tutti gli alberghi
-
-- **Dove:** stessa sezione, `id="o3Dist"`. Bozza: blocco `1B` (`serie`, `chart('c1b', …)`)
-- **Dati:** `pa` (A.0), colonne martedì, sabato, Capodanno
-- **Comportamento:** tre istogrammi uno sotto l'altro sulla stessa scala da 50 a 700 €. Fasce di 20 € (25 € sotto i 600 px). Colonne in gradiente verticale. Dietro, un rettangolo chiaro dal primo al terzo quartile (`qt(v,.25)`, `qt(v,.75)`). Linea bianca verticale sul valore mediano pubblicato (vedi A.0) con l'etichetta `mediano {x} €` (a sinistra della linea se la linea è negli ultimi 120 px). In alto a sinistra la data, a destra `{n} alberghi con un prezzo`. Gli alberghi oltre 700 € non si disegnano: `+ {n} oltre 700 €` in basso a destra, e in quel caso l'ultima tacca dell'asse non si scrive
-- **Animazione:** colonne `.gy` con posizione = indice della fascia; fascia chiara, linea ed etichetta `.fd`
-- **390 px:** fasce da 25 €, tacche dell'asse ogni 200 €
-- **Testi:**
-  - titolo: `Un martedì metà degli alberghi sta tra {q1} e {q3} €. A Capodanno tra {q1} e {q3} €`
-  - numero preciso: `Tra {a} e {b} €` / `{n} alberghi, {p}% del totale` / la data
-  - fonte: `Fonte: Booking, prezzo di ogni albergo letto fino al {data} ({n} alberghi), camera per 2 persone a notte. La fascia chiara contiene la metà centrale degli alberghi`
-- **Casi limite:** meno di 30 prezzi in una data → quella riga non si disegna e la fonte aggiunge `{data}: troppo pochi prezzi letti`
-- **Finito quando:** la somma delle colonne più gli "oltre" è uguale al numero scritto a destra, per ognuna delle tre date
-
-### 1 C · Il calendario delle notti
-
-**Costruire solo se George ha detto sì anche alla scelta 9**, altrimenti resta fuori: con quattro notti il calendario è quasi vuoto.
-
-- **Dato che serve e che oggi non c'è:** in `indicatori.json` un nuovo campo `calendario`: lista di `[notte ISO, tariffa mediana alberghi, quota alberghi senza camere, alberghi letti]` per ogni notte dei 60 giorni successivi. Lo produce la lettura serale nel repository commerciale: non si può creare da qui. Finché `calendario` manca o ha meno di 14 notti, la sezione non si genera
-- **Dove:** `12-osservatorio.js`, vicino al codice che già scarica `indicatori.json` per i due numeri del giorno. Bozza: blocco `1C`
-- **Comportamento:** due mesi affiancati (uno sotto l'altro sotto i 640 px), settimana da lunedì. Casella letta: fondo in gradiente con opacità tra 0,45 e 1 in proporzione al prezzo (minimo e massimo del periodo), giorno in alto a sinistra, prezzo in basso al centro. Casella non letta: bordo tratteggiato, solo il giorno. Altezza casella tra 46 e 64 px
-- **Animazione:** caselle `.fd`, posizione = riga × 2 + colonna
-- **Testi:** numero preciso `{giorno della settimana} {data}: {x} €` / `{p}% di alberghi senza camere` / `{n} alberghi letti`. Fonte: `Fonte: Booking, camera per 2 persone, prezzo mediano degli alberghi di Roma ancora prenotabili, letto la sera del {data}. Le caselle tratteggiate sono notti non lette`
-- **Casi limite:** notte con meno di 5 alberghi letti → trattata come non letta
-- **Finito quando:** il primo giorno del mese cade nella colonna giusta (1° dicembre 2026 è martedì) e a 390 px il prezzo sta dentro la casella
-
-### 1 D · Chi alza il prezzo il sabato
-
-- **Dove:** stessa sezione, `id="o3Sab"`, con tre riquadri sopra. Bozza: blocco `1D`
-- **Dati:** `pa`, solo le righe con martedì e sabato entrambi presenti
-- **Comportamento:** grafico quadrato, largo al massimo 640 px. Assi uguali da 50 a 400 €, griglia ogni 100 €. Diagonale bianca. Un cerchio per albergo, raggio 3,2 px: bianco pieno se sabato = martedì (raggio 3,6), azzurro `#3CCDFA` al 55% se sabato > martedì, viola chiaro `#8b6bff` al 55% se sabato < martedì. Gli alberghi oltre 400 € contano nelle percentuali ma non si disegnano, e la fonte lo dice. Tre riquadri sopra il grafico con le tre quote
-- **La quota "stesso prezzo" deve essere `roma.tariffa_ferma`** (oggi 18,4%, scritto anche nel riquadro della pagina e nella chat): se il conteggio dalle righe dà un numero diverso, vince quello pubblicato e lo scarto va segnalato
-- **Animazione:** diagonale `.dr`; cerchi `.fd` con posizione = indice modulo 20 (compaiono a ondate in meno di un secondo e mezzo)
-- **390 px:** i tre riquadri uno sotto l'altro con numero e testo sulla stessa riga
-- **Testi:**
-  - titolo: `{n} alberghi su 100 chiedono lo stesso prezzo il martedì e il sabato: la tariffa non segue la domanda` (primi tre termini in gradiente)
-  - riquadri: `stesso prezzo martedì e sabato` · `il sabato chiede di più` · `il sabato chiede di meno`
-  - legenda: `Stesso prezzo` · `Sabato più caro` · `Sabato meno caro`
-  - assi: `prezzo del martedì →` e `↑ prezzo del sabato`
-  - numero preciso: `Un albergo a {n} stelle · {zona}` / `Martedì {x} € · sabato {y} €` / `Stesso prezzo` oppure `{+n%} il sabato`. **Mai il nome dell'albergo**
-  - fonte: `Fonte: Booking, prezzo di ogni albergo letto fino al {data}, camera per 2 persone, martedì {data} e sabato {data}. {n} alberghi con entrambi i prezzi; nel grafico i {m} fino a 400 €. Nessun albergo è nominato`
-- **Casi limite:** stelle mancanti → `Un albergo`; zona vuota → si omette
-- **Finito quando:** le tre quote sommano 100 (±1 per gli arrotondamenti) e nessun testo del grafico contiene un nome di albergo (cerca nel DOM i nomi di `hs_tutti`)
-
-### 2 A · La stagione, quattro anni sovrapposti
-
-- **Dove:** `flussi(d)` in `tools/osservatorio.py` (i quattro riquadri numerici in alto restano); disegno in `12-osservatorio.js`, `id="o3Stag"`. Servono i dati in pagina: aggiungi a `#o2Dati` `fl: d["flussi"]["istat"]["mesi"]` e la nota. Bozza: blocco `2A`
-- **Dati:** `flussi.json` → `istat.mesi[anno].arrivi` e `.presenze` (12 valori), `istat.fonte`, `istat.nota_2025`
-- **Comportamento:** una linea per anno. L'ultimo anno in gradiente, spessa 3,5 px; gli altri bianchi con opacità crescente (0,25 il più vecchio, +0,15 per anno), 1,8 px. Asse verticale da zero, tacche ogni 0,5 milioni (arrivi) o 1 milione (notti). L'anno è scritto a destra di ogni linea; se due etichette distano meno di 13 px si allontanano (codice `ly` nella bozza). Due tasti sopra: `Arrivi` (attivo) e `Notti`. Area sensibile: una colonna invisibile per mese
-- **Animazione:** linee `.dr` con ritardo 120 ms × anno, dal più vecchio; etichette `.fd`. Al cambio di tasto ridisegno e `replay`
-- **390 px:** altezza 280 px invece di 360; mesi scritti uno sì e uno no
-- **Testi:**
-  - titolo: `Nel {anno} il mese più forte è {mese}, il più debole {mese}` (mese forte in gradiente)
-  - sopra l'asse: `milioni di arrivi al mese` / `milioni di notti al mese`
-  - numero preciso: `{Mese}` e una riga per anno, dal più recente, con il numero intero e i punti delle migliaia
-  - fonte: `Fonte: {istat.fonte}, dati mensili {primo anno}-{ultimo anno}. {istat.nota_2025}`
-- **Casi limite:** un anno con meno di 12 mesi → la linea si ferma all'ultimo mese e l'etichetta dell'anno sta lì. La nota 2025 è obbligatoria finché nel grafico c'è un anno prima del 2025
-- **Finito quando:** il valore di ottobre 2025 nel numero preciso è 1.491.582
-
-### 2 B · Dodici anni di alberghi e i voli
-
-- **Dove:** stessa sezione, due riquadri affiancati (uno sotto l'altro sotto i 760 px): `id="o3Anni"` e `id="o3Voli"`. Bozza: blocco `2B`. Se George ha scelto "A più il solo grafico dei voli", costruisci solo `o3Voli` sotto 2 A
-- **Dati:** `istat.annui[anno].arrivi_alberghi`, `.presenze_alberghi`, `.arrivi`, `.arrivi_stranieri`; `aeroporti.mesi[]` (`mese`, `fco`, `cia`, `fco_var`, `cia_var`), `aeroporti.totale`, `.var`, `.anno`, `.fonte`
-- **Comportamento, anni:** una colonna per anno, asse da 0 a 9 milioni con tacche ogni 3. Ultimo anno in gradiente, 2020 e 2021 più scuri (bianco al 14%), gli altri bianco al 30%. Linea tratteggiata bianca sul 2019. Valore scritto sopra il primo anno, il 2019, il 2020 e l'ultimo
-- **Comportamento, voli:** dodici posizioni; per i mesi con dato una colonna a due pezzi (Fiumicino in gradiente, sopra Ciampino `#8b6bff`), sopra la variazione di Fiumicino con il segno; per i mesi senza dato un contorno tratteggiato. Asse da 0 a 6 milioni
-- **Animazione:** colonne `.gy` (posizione = indice × 2), valori e linea del 2019 `.fd`
-- **390 px:** anni scritti `'15`, uno sì e uno no; altezza 240 px
-- **Testi:**
-  - titolo: `Negli alberghi di Roma {x} milioni di arrivi nel {anno}: {+n%} sul {anno prima}, ancora sotto il 2019 ({y})` (oppure `sopra il 2019`)
-  - numero preciso anni: `{anno}` / `Arrivi negli alberghi: {n}` / `Notti negli alberghi: {n}` / `Permanenza media: {x} notti` / `Arrivi dall'estero sul totale: {p}%`
-  - numero preciso voli: `{Mese} {anno}` / `Fiumicino: {n} ({+x%})` / `Ciampino: {n} ({+x%})` / `variazione sullo stesso mese del {anno prima}`
-  - fonti: come nella bozza (`#s2b1`, `#s2b2`)
-- **Casi limite:** manca il 2019 → niente linea e niente confronto nel titolo
-- **Finito quando:** il 2025 mostra 7,9 e il 2019 mostra 8,0
-
-### 3 A · Classifiche con il valore di Roma
-
-- **Dove:** `classifiche(d)` in `tools/osservatorio.py` genera già ogni riga come `<li style="--w:…">`. Aggiungi: la linea di riferimento, la variante tratteggiata e la riga di legenda. Il resto della sezione (schede, filtri dell'Hotel Score, scheda da scaricare) **non cambia**
-- **Dati:** `d["classifiche"][chiave]` e il riferimento di Roma: `aree_sabato` → `roma.sabato`; `aree_rincaro` → `roma.rincaro_sabato`; `aree_evento` → `roma.evento`; `aree_esauriti` → `roma.esauriti_evento`; `aree_voto` → `roma.voto`. Le classifiche del registro e l'Hotel Score non hanno riferimento
-- **Comportamento:** la larghezza delle barre è relativa al massimo tra i valori e il riferimento. Per `aree_voto` la barra parte da 7 e non da 0 (altrimenti sono tutte uguali) e la legenda lo dice. Una linea bianca verticale alta quanto la barra più 5 px sopra e sotto segna il valore di Roma (`--r` in percentuale). Se `alberghi` < 10 la barra è tratteggiata (classe `.few`)
-- **Animazione:** le barre crescono in larghezza in 0,9 s, ritardo 50 ms × riga, già presente in parte in `.o2-l`: allinea durata e curva alla tabella sopra
-- **390 px:** `{n} alberghi letti` va a capo sotto il nome
-- **Testi:** sotto l'elenco `Tutta Roma: {valore}` preceduto dal trattino bianco, e `meno di 10 alberghi letti` preceduto dal campione tratteggiato; per il voto aggiungi ` · la barra parte da 7`. Numero preciso: `{rione}: {valore}` / unità / `{n} alberghi letti: pochi, da leggere con prudenza` (solo se < 10) / `Tutta Roma: {valore}`
-- **Casi limite:** riferimento nullo → niente linea e niente legenda
-- **Finito quando:** su "Dove costa di più il sabato" la linea bianca sta al 54% (151 su 282) e Regola e Pigna sono tratteggiate
-
-### 3 B · Una sola tabella
-
-- **Dove:** nuova funzione `tabella_rioni(d)` in `tools/osservatorio.py`, generata in HTML (non serve JavaScript salvo il numero preciso), messa in `classifiche(d)` sopra le schede. Bozza: blocco `3B`
-- **Dati:** le cinque classifiche Booking (`aree_sabato`, `aree_rincaro`, `aree_evento`, `aree_esauriti`, `aree_voto`). Righe = tutti i rioni che compaiono in almeno una. Ordine: numero di classifiche in cui compare, poi somma di (11 − posizione)
-- **Comportamento:** `<table>` vera con intestazioni. Nella casella un cerchio in gradiente con la posizione; diametro 26 px + 1,8 px per ogni posizione guadagnata (22 + 1,2 sotto i 600 px); opacità 0,45 + 0,055 × (11 − posizione). Casella vuota: un punto grigio. Sotto il nome, piccolo, `{n} alberghi letti`
-- **Animazione:** i cerchi crescono da 0 (`scale`) in 0,5 s, ritardo 30 ms × (riga + colonna)
-- **390 px:** prima colonna 34% della larghezza con i puntini se il nome è lungo; intestazioni `Sabato`, `Rincaro`, `31 dic`, `Senza camere`, `Voto` a 11,5 px
-- **Testi:** titolo `{rione} compare in {n} classifiche su 5`; intestazione prima colonna `Rione o quartiere`; numero preciso `{rione}` / titolo della classifica / `Posizione {n}: {valore}`; fonte `fonti(d)["bk"]`
-- **Casi limite:** un rione ha `alberghi` diverso tra le classifiche → usa quello della prima in cui compare
-- **Finito quando:** Campo Marzio è la prima riga con cinque cerchi
-
-### 4 · Le zone: prezzo e spazio di mercato
-
-- **Dove:** `zone(d)` in `tools/osservatorio.py`. Il grafico va sopra i tasti delle zone; il riquadro di dettaglio di oggi (`#o2Zona`, funzione `vistaZona`) resta e si aggiorna al tocco di un cerchio, come già fa al tocco di un tasto. La mappa `#o2ZMap` resta. Bozza: blocco `4` (solo `chart('c4', …)`: il riquadro `p4` della bozza è una versione ridotta di quello vero, non copiarlo)
-- **Dati:** `zone[i].mercato.sabato`, `.sotto_8`, `.alberghi`; `zone[i].offerta.camere_alberghi`; `roma.sabato`, `roma.sotto_8`
-- **Comportamento:** asse orizzontale da 0 a 80% (quota sotto 8), verticale da 100 a 300 €. Raggio del cerchio = 9 + √(camere / camere massime) × 34 px (× 24 sotto i 600 px). Cerchi disegnati dal più grande al più piccolo, numero della zona al centro, bordo tratteggiato se gli alberghi letti sono meno di 10. Due linee tratteggiate sui valori di tutta Roma. La zona scelta resta piena, le altre al 60%
-- **Animazione:** cerchi `.fd`, posizione = indice × 2; cambio di opacità in 0,3 s
-- **390 px:** altezza 340 px; i tasti delle zone, con il numero davanti (`1 · Centro storico`), vanno a capo
-- **Testi:** titolo `{zona più cara} è la zona più cara il sabato ({x} €). A {zona} {p}% degli alberghi ha un voto sotto 8`; assi `alberghi con voto sotto 8 →` e `↑ prezzo mediano del sabato`; etichetta `tutta Roma`; numero preciso `{zona}` / `Sabato: {x} €` / `Voto sotto 8: {p}% degli alberghi` / `{n} camere d'albergo · {m} alberghi letti`. In fondo alla fonte: `Nelle zone con meno di 10 alberghi letti il cerchio ha il bordo tratteggiato`
-- **Casi limite:** se un valore esce dagli assi, allarga l'asse al multiplo di 50 € o di 20% successivo. Zona senza `sotto_8` o `sabato` → non disegnata ma presente tra i tasti
-- **Finito quando:** nove cerchi; il più grande è Esquilino · Termini; toccando un cerchio cambia il riquadro di dettaglio e il tasto attivo
-
-### 5 · Primo schermo: i due numeri del giorno
-
-- **Dove:** il riquadro `#o2Ind`, riempito in `12-osservatorio.js` dal codice che scarica `indicatori.json`. Bozza: blocco `5`
-- **Dati:** `ultimo.alberghi_pieni`, `ultimo.tariffa_alberghi`, `ultimo.tariffa_tutte`, `ultimo.notte`, `ultimo.letto_il`, `ultimo.alberghi_prenotabili`, `alberghi_registro`, `serie`
-- **Comportamento:** anello da 92 px, traccia bianca al 10%, arco in gradiente lungo quanto la quota, partenza in alto. Accanto il numero grande. Secondo riquadro: la tariffa. Sotto, la riga della fonte con l'ora di lettura
-- **Animazione:** l'arco cresce in 1,2 s (`stroke-dashoffset`, `cubic-bezier(.22,1,.36,1)`); i due numeri contano da zero in 1,1 s con rallentamento finale. Con meno movimento: valori finali subito
-- **Andamento:** quando `serie` ha almeno 7 giorni, sotto ogni numero una linea sottile (2 px, in gradiente) degli ultimi 30 valori, senza assi, con il primo e l'ultimo valore scritti. Prima di 7 giorni non compare niente
-- **390 px:** i due riquadri uno sotto l'altro
-- **Testi:** `degli alberghi di Roma non ha più camere per la notte di {giorno e data}` · `tariffa mediana degli alberghi ancora prenotabili, camera per 2 adulti. Tutte le strutture ricettive: {x} €` · fonte: `Fonte: {fonte}. Lettura del {data} alle {ora}: {n} alberghi prenotabili su {m} del registro. Un albergo senza camere su Booking non è per forza pieno: è la disponibilità, non l'occupazione`
-- **Casi limite:** il file non si carica o `ultimo` manca → il riquadro resta nascosto, come oggi. Lettura più vecchia di 36 ore → resta l'avviso sui dati vecchi già presente
-- **Finito quando:** con i dati di oggi si legge 11,4% e 134 €
-
-### Ordine di costruzione della parte A
-
-**Superato dalle scelte del 22/11: segui l'ordine di G.7 nella sezione "Osservatorio giocato"**
-
-1. Funzioni di base, animazioni e riquadro del numero preciso (sezione 0)
-2. Scelta 3 A (tocca codice che esiste già, rischio basso) e scelta 5
-3. Scelta 1 A, poi 4
-4. Scelta 2 A o 2 B
-5. A.0 e poi 1 B e 1 D
-6. Scelta 3 B
-7. 1 C solo con i dati della scelta 9
+1. `python -m unittest discover tests -v`, `python tools/build.py`, `python tools/check_seo.py` senza errori
+2. Browser senza interfaccia a 1366 e 390 px su `/osservatorio/` e `/osservatorio/?hotel=369774`: nessun errore in console, `document.documentElement.scrollWidth` uguale alla larghezza dello schermo, nessun testo fuori dai riquadri
+3. Senza ricerca: nella pagina non compare nessun elemento `[data-tu]`. Con `?hotel=369774`: ogni blocco (a)-(f) ne ha almeno uno
+4. Numeri con i dati del 21-22/11: 113 su 990 e 134 € · 129, 151, 311 € · 70, 18, 12 (503 contati) · 9,0 Sophie Terrace Hotel su 486 · 7,9 milioni e 1,3% sotto il 2019
+5. Hotel Planet (369774): martedì 75 € contro 105 € della zona (`30 € meno`), sabato `senza camere su Booking`, Capodanno 199 € contro 286 €, Hotel Score 5,8, 90º su 200 in Esquilino · Termini e 267º su 486 a Roma, 14 camere su 12.009
+6. `?hotel=369541`: un solo quadratino con il bordo bianco, tra i 70; frase `137 € il martedì, 210 € il sabato (+53%)`
+7. I sei casi della tabella S.5 con gli hotel indicati
+8. Ricerca: per nome ("planet"), per CIN (`IT058091A120VHPLG4`), parola senza risultati; frecce e Invio; "Cambia hotel" toglie `?hotel` e ogni `[data-tu]`
+9. Il tasto "Parla con la chat del tuo hotel" apre la chat vera sullo stesso hotel senza ricaricare la pagina; il report e l'invio dell'email funzionano come prima
+10. `prefers-reduced-motion`: barre, quadratini e linea già al valore finale
+11. Senza JavaScript: titoli, numeri, barre e fonti dei blocchi si leggono
+12. Nessun testo viola o blu pieno (solo gradiente), solo Geist, nessun punto a fine testo, mai "struttura" da sola
+13. Guarda gli screenshot blocco per blocco e chiediti: un albergatore capisce questo blocco in 5 secondi senza leggere la riga piccola? Se no, semplifica il blocco prima di consegnare
 
 ---
 
@@ -493,7 +290,7 @@ Le alternative 1 B e 1 D usano il prezzo di ogni albergo. Oggi `osservatorio.jso
 ### 8, 9, 10
 
 - **8:** i valori confermati o corretti da George diventano le costanti in cima a `13-apertura.js` e in `vendita(d)`. Se cambia i costi operativi, ricalcola le prove del punto 7
-- **9:** nessun lavoro in questo repository finché `indicatori.json` non ha il campo `calendario` (vedi 1 C). Nella PR scrivi che serve la modifica alla lettura serale
+- **9:** nessun lavoro in questo repository finché `indicatori.json` non ha il campo `calendario` (vedi il blocco "Le prossime notti più care" in S.4). Nella PR scrivi che serve la modifica alla lettura serale
 - **10:** decide la frase di conferma del modulo (vedi sopra)
 
 ### Ordine di costruzione della parte B
