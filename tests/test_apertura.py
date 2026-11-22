@@ -93,6 +93,20 @@ class TestRitorno(unittest.TestCase):
             self.assertIn('zona', o['perche'])
         self.assertIsNone(node('NP.calc(s,null)', s=BASE))
 
+    def test_vetrina_solo_annunci_con_ritorno(self):
+        buono = {'titolo': 'A', 'fonte': 'f', 'zona_sito': Z['n'], 'camere': 20, 'prezzo': 3000000, 'vendita': 'immobile e attività'}
+        migliore = dict(buono, titolo='B', prezzo=2000000)
+        senza = [dict(buono, titolo='C', zona_sito=None), dict(buono, titolo='D', camere=None), dict(buono, titolo='E', prezzo=None), dict(buono, fonte=None)]
+        v = node('NP.vetrina(l,[z],151)', l=[buono] + senza + [migliore], z=Z)
+        self.assertEqual([x['a']['titolo'] for x in v], ['B', 'A'])  # dal voto più alto, senza gli annunci senza ritorno
+        self.assertEqual(node('NP.vetrina(null,[z],151)', z=Z), [])
+
+    def test_foto_della_zona(self):
+        self.assertEqual(node('NP.foto("Prati · Vaticano")')[0], '67868d0855')
+        self.assertEqual(node('NP.foto("Zona senza foto")'), node('NP.foto("")'))  # una foto generica di Roma
+        for z in ('Centro storico', 'Prati · Vaticano', 'Monti', ''):  # solo foto della libreria del sito
+            self.assertTrue(os.path.exists(os.path.join(ROOT, 'assets', 'img', node('NP.foto(z)', z=z)[0] + '.webp')))
+
     def test_tre_scenari(self):
         sc = node('NP.scenari(s,z)', s=BASE, z=Z)
         self.assertEqual([(c['n'], c['tar'], c['occ']) for c in sc], [('Prudente', 108, 60), ('Base', 120, 70), ('Favorevole', 132, 80)])
@@ -127,6 +141,10 @@ class TestDatiPercorso(unittest.TestCase):
             self.assertEqual(z['rend'], round(r, 4))
             self.assertIn(f'<th scope="row">{html.escape(z["n"])}</th>', tab)
         self.assertIn(' hidden>', h.split('>', 1)[0] + '>')  # senza JavaScript il percorso non compare
+        # le cinque fasi del servizio sono le cinque tappe: ogni tappa apre con la fase e cosa riceve il cliente
+        fasi = re.findall(r'<div class="np-step" data-s="(\d)"><div class="np-fase"><span class="np-n">\d</span><div><h3>([^<]+)</h3><p><small>Cosa ricevi da noi</small>', h)
+        self.assertEqual(fasi, [(str(i), f[0]) for i, f in enumerate(osservatorio.FASI)])
+        self.assertLess(tab.index('id="npPerc"'), tab.index('nove zone a confronto'))  # prima il percorso, poi la tabella
 
 
 if __name__ == '__main__':
