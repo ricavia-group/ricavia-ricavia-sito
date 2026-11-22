@@ -50,7 +50,9 @@ try{(function(){if(window.__MP||!window.Lenis||window.matchMedia('(prefers-reduc
 try{(function(){var pg=document.getElementById('pg-pagella');if(!pg)return;
 document.addEventListener('click',function(e){var a=e.target.closest('a[data-hs]');if(!a)return;e.preventDefault();e.stopPropagation();var f=document.getElementById('hsForm');if(!f)return;if(window.__MP){var y=f.getBoundingClientRect().top+scrollY-140;if(window.__lenis)window.__lenis.scrollTo(y);else scrollTo({top:y,behavior:'smooth'})}else{var t=f.getBoundingClientRect().top-pg.getBoundingClientRect().top+pg.scrollTop-140;if(pg.__ln)pg.__ln.scrollTo(t);else pg.scrollTo({top:t,behavior:'smooth'})};setTimeout(function(){var i=f.querySelector('input');if(i)i.focus({preventScroll:true})},900)},true);
 var f=document.getElementById('hsForm');if(f)f.addEventListener('submit',function(e){e.preventDefault();var n=f.n.value.trim(),c=f.c.value.trim(),m=f.e.value.trim(),o=f.querySelector('.hs-m');
-if(!n||!c||!/^\S+@\S+\.\S+$/.test(m)){o.textContent='Compila nome della struttura ricettiva, città ed email';o.className='hs-m bad';return}
+[f.n,f.c,f.e].forEach(function(x){x.classList.remove('bad')});
+var bad=!n?[f.n,'Scrivi il nome della struttura ricettiva']:!c?[f.c,'Scrivi la città']:!m?[f.e,'Scrivi la tua email']:!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)?[f.e,'Controlla l’indirizzo email']:null;
+if(bad){bad[0].classList.add('bad');bad[0].focus();o.textContent=bad[1];o.className='hs-m bad';return}
 if(f.privacy&&!f.privacy.checked){o.textContent='Per procedere serve il consenso all’informativa privacy';o.className='hs-m bad';return}
 o.className='hs-m';o.textContent='Invio in corso…';var k=f.k?f.k.value.trim():'',L=[['Struttura ricettiva',n],['Città',c],['Camere',k||'Da indicare'],['Email',m]];
 var fin=function(md){var ok=document.getElementById('hsOk'),tx=document.getElementById('hsOkTx'),e=function(t){return t.replace(/</g,'&lt;')};

@@ -218,7 +218,7 @@ def hotel():
 <div><div class="o2-sh"><span class="o2-tag ar">Hotel Score</span><h2 class="ar">E il tuo hotel,<br>{g("rispetto ai competitor?")}</h2>
 <p class="ar">Scrivi il nome del tuo hotel: scegliamo le strutture ricettive più vicine e simili, leggiamo voti e prezzi e ti mandiamo l'Hotel Score con le cose da guardare. Gratis</p></div>
 <ol class="o2-st">{"".join(f'<li class="ar" style="--d:{.1 + i * .08:.2f}s"><em>{i + 1:02d}</em><b>{a}</b><span>{b}</span></li>' for i, (a, b) in enumerate(passi))}</ol>
-<a class="ap-btn solid ar" href="#pg-pagella">Calcola l'Hotel Score <span class="arr">→</span></a></div>
+<a class="ap-btn solid ar" href="#o2-hotel">Calcola l'Hotel Score <span class="arr">→</span></a></div>
 <div class="o2-chat" id="o2Chat" aria-label="Conversazione dell'Hotel Score" aria-live="polite"><small>Hotel Score · dati veri letti su Booking</small>
 <p class="q show">Come si chiama il tuo hotel? Scrivi il nome o il CIN: ti mostro i tuoi competitor veri, con voti e prezzi</p>
 <form class="o2-cf o2-cq" id="o2ChatQ" novalidate><div class="o2-cqi"><input type="search" name="q" autocomplete="off" aria-label="Nome del tuo hotel o CIN" placeholder="Nome del tuo hotel o CIN"><div class="o2-sug" hidden></div></div><button type="submit">Cerca →</button></form></div>
@@ -318,7 +318,7 @@ def apertura(d):
 
 def pagina(d):
     dati = {"zone": d["zone"], "date": d["date"], "letti": d["alberghi_letti"], "agg": d["aggiornato"], "dal": d["letture_dal"],
-            "vie": d["vie"], "fonte": fonti(d), "ver": d.get("ver", ""), "hs": d.get("hs_tutti", [])}
+            "vie": d["vie"], "ra": d["registro"]["alberghi"], "fonte": fonti(d), "ver": d.get("ver", ""), "hs": d.get("hs_tutti", [])}
     js = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return (hero(d) + hotel() + prezzi(d) + classifiche(d) + zone(d) + flussi(d) + vie(d) + metodo()
             + '<a href="#pg-pagella" id="o2Hs" hidden>Hotel Score</a><a href="#contatti" id="o2Ct" hidden>Contatti</a>'

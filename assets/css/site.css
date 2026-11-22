@@ -5708,3 +5708,58 @@ html.o2-nosc{overflow:hidden}
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .menu-open .z-mbar,.mp-pg-pagella .z-mbar,.mp-apertura .z-mbar,html:has(#pg-pagella.on) .z-mbar,html:has(#apertura.on) .z-mbar,html:has(.o2-rep:not([hidden])) .z-mbar{display:none}
 }
+
+/* Migliorie del 22/11 (revisione 12-31) */
+/* 12 · Hotel Score: quattro aree calcolate, Canali e Sito in arrivo */
+.pg-g.off{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 62px;opacity:.5}
+.pg-g.off b{font-size:11.5px;white-space:nowrap}
+#pg-pagella .hs-ar>div.off{grid-template-columns:minmax(0,1fr) 150px 66px;opacity:.5}
+#pg-pagella .hs-ar>div.off b{font-size:12px;white-space:nowrap}
+.rd-ls{display:none}
+@media(max-width:640px){
+  #pg-pagella .hs-ar>div.off{grid-template-columns:minmax(0,1fr) 90px 62px}
+  /* 28 · le scritte del grafico a ragnatela, illeggibili a 390 px, diventano un elenco sotto il grafico */
+  .rd-l{display:none}
+  .rd-ls{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;list-style:none;margin:14px 0 0;padding:0;font-size:13px;color:#b8bdd4}
+  .rd-ls b{color:#fff;font-weight:700}
+}
+/* 17 · per gli hotel di Roma l'Hotel Score si vede subito nell'Osservatorio */
+#pg-pagella .hs-os{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;margin:0 0 clamp(20px,3vw,32px);padding:clamp(18px,2.4vw,26px) clamp(18px,2.6vw,30px);border-radius:24px;background:var(--zsf);color:var(--zink)}
+#pg-pagella .hs-os p{margin:0;font-size:16px;line-height:1.45;max-width:560px}
+@media(max-width:600px){#pg-pagella .hs-os .ap-btn{width:100%;justify-content:center}}
+/* 15 · secondo tasto nel primo schermo della Home */
+.z-hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.z-btn-os{border:1px solid rgba(11,11,18,.14)}
+/* 22 · chiusura della Home: due tasti */
+.z-cta-2{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.z-cta-2 .z-btn+.z-btn{background:transparent;color:#fff!important;border:1px solid rgba(255,255,255,.35)}
+/* 16 · barra Hotel Score: nascosta su Contatti e mentre si scrive; sull'Osservatorio la nasconde lo script */
+.mp-contatti .z-mbar,html:has(#contatti.on) .z-mbar,.z-mbar.off,.z-mbar.scr{display:none!important}
+/* 20 · suggerimenti della ricerca dell'Osservatorio: nome sopra, tipo e indirizzo completo sotto, larghi quanto la ricerca */
+#pg-osservatorio #o2Sug button{flex-direction:column;align-items:flex-start;gap:2px}
+#pg-osservatorio #o2Sug small{white-space:normal}
+@media(max-width:600px){#pg-osservatorio #o2Cerca{position:relative}#pg-osservatorio #o2Cerca .o2-in{position:static}}
+/* 23 · Contatti: spazio tra il titolo e il modulo sul telefono */
+@media(max-width:600px){#contatti .ctp-card h2{line-height:1.12!important}#contatti #ctForm{margin-top:32px!important}}
+/* 24 · campo da correggere nel modulo dell'Hotel Score */
+#pg-pagella .hs-f input.bad{border-color:#d0455c}
+/* 26 · evidenze solo in gradiente */
+.jr-box small,.jr-k,.cd em span{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+/* 27 · sul telefono non c'è il passaggio del mouse */
+@media(hover:none),(max-width:760px){.z-hint-mouse{display:none}}
+/* 28 · tasti e collegamenti più grandi sul telefono */
+@media(max-width:760px){
+  :is(#revenue-management,#consulenza,#apertura,#contatti,#pg-metodo,#pg-chi-siamo,#pg-partner,#pg-pagella,#pg-osservatorio,#pg-journal,#pg-indicatori,#pg-privacy,#pg-cookie,#pg-termini) .ap-back{min-height:40px}
+  .z-ft-col{gap:0}.z-ft-col a,.z-ft-bot nav a{display:inline-flex;align-items:center;min-height:40px}
+  .z-ft-bot nav{flex-wrap:wrap;gap:0 20px}
+  #pg-osservatorio .o2-nav a{min-height:40px;display:inline-flex;align-items:center}
+  #pg-osservatorio .o2-cq button,#pg-osservatorio .o2-cf button{min-height:44px}
+  .ctp-f .chk input,.hs-chk input,.os-chk input{width:22px!important;height:22px!important}
+}
+/* 13 · sul computer l'avviso dei cookie sta in un angolo, stretto, e non copre la ricerca dell'Osservatorio (a sinistra) */
+@media(min-width:761px){.ck{left:auto;right:20px;transform:translateY(24px);width:min(440px,calc(100% - 40px))}.ck.on{transform:none}}
+/* 31 · le vie: il termine di paragone */
+#pg-osservatorio .o2-vpar{margin:10px 0 0;font:600 14px var(--zf);color:var(--zink)}
+/* 28 · nessun testo sotto 11 px sul telefono: Partner, Consulenza, Revenue management */
+@media(max-width:640px){#pg-partner .eco-t small{font-size:11px;letter-spacing:.04em}}
+@media(max-width:760px){#consulenza .zx-dash-bars span{font-size:11px}#revenue-management .zx-ev-c b{font-size:11px}}
