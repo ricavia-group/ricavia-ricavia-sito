@@ -1,4 +1,5 @@
 /* Nuova apertura: il percorso a tappe con il report e le strutture ricettive in vendita (scelte 6, 7, 8, 10 di George, 22/11).
+   22/11 sera: le cinque fasi del servizio sono le cinque tappe; gli annunci stanno in una riga a scorrimento.
    Dati delle zone negli attributi di #npPerc (tools/osservatorio.py, percorso). Le formule stanno in NP, provate da tests/test_apertura.py */
 var NP=(function(){
 'use strict';
@@ -50,6 +51,15 @@ function annuncio(a,Z,romaSab){
   o.voto=Math.round(o.crit.reduce(function(t,c){return t+c[2]},0)/o.crit.length*10)/10;
   return o}
 
+/* la riga degli annunci (George, 22/11 sera): solo gli annunci con il ritorno calcolato, dal voto più alto */
+function vetrina(lista,Z,romaSab){
+  return (lista||[]).filter(function(a){return a&&a.titolo&&a.fonte}).map(function(a){return {a:a,o:annuncio(a,Z,romaSab)}})
+    .filter(function(x){return x.o.r&&x.o.r.roi!=null}).sort(function(x,y){return y.o.voto-x.o.voto})}
+/* foto della zona dalla libreria del sito (le foto degli annunci sono delle agenzie e non si usano); '' = Roma in generale */
+var FOTO={'Centro storico':['db705b531a','Facciate del centro storico di Roma'],'Prati · Vaticano':['67868d0855','Piazza San Pietro dall’alto'],
+  'Monti':['bb5d2ac53b','Il Colosseo e il centro di Roma dall’alto'],'':['9dc9005512','Tetti di Roma con San Pietro']};
+function foto(zona){return FOTO[zona]||FOTO['']}
+
 /* il giudizio del report: prima il punto di forza, che parla del ritorno accanto all'affitto di una casa nella stessa zona */
 function giudizio(r,s,z,romaSab){var d=r.roi!=null&&z.rend!=null?r.roi-z.rend:null,f,o;
   if(r.ut<=0)f=z.s8>=.3?'molti alberghi della zona hanno un voto sotto 8, c’è spazio per chi lavora meglio dei vicini':'una zona con il sabato a '+z.sab+' €'+(z.sab>=romaSab?', sopra il valore mediano di Roma':'');
@@ -63,7 +73,7 @@ function giudizio(r,s,z,romaSab){var d=r.roi!=null&&z.rend!=null?r.roi-z.rend:nu
   else o='Da verificare: occupazione e costi operativi sono ipotesi, lo studio di fattibilità le misura sul tuo immobile';
   return {forza:'Punto di forza: '+f,occhio:o}}
 
-return {IP:IP,LAV_ADEG:LAV_ADEG,RAMPA:RAMPA,calc:calc,rientro:rientro,scenari:scenari,annuncio:annuncio,giudizio:giudizio,num:num,dec:dec,eur:eur,mil:mil,pct:pct,ext:ext}})();
+return {IP:IP,LAV_ADEG:LAV_ADEG,RAMPA:RAMPA,calc:calc,rientro:rientro,scenari:scenari,annuncio:annuncio,vetrina:vetrina,foto:foto,giudizio:giudizio,num:num,dec:dec,eur:eur,mil:mil,pct:pct,ext:ext}})();
 
 if(typeof module==='object'&&module.exports)module.exports=NP;
 else (function(){try{
@@ -190,7 +200,7 @@ F.addEventListener('submit',function(e){e.preventDefault();var el=F.elements,ok=
   var fin=function(m){ok.textContent=m==='sent'?CONFERMA:'Si apre la tua email con il messaggio già compilato per info@ricavia.com: premi Invia per completare la richiesta'};
   if(window.RK)RK.deliver('apertura','Report Nuova apertura: '+el.nome.value.trim(),L,{tipo:s.tipo,camere:s.cam,citta:'Roma'},fin)});
 
-/* ---------- strutture ricettive in vendita (scelta 6): annunci veri da assets/data/annunci.json ---------- */
+/* ---------- strutture ricettive in vendita (scelta 6; George, 22/11 sera: una riga a scorrimento di schede piccole, il dettaglio al tocco) ---------- */
 var V=document.getElementById('npVend');
 function txt(c,o,a){var k=c[0];
   if(k==='prezzo')return 'Prezzo richiesto pari a '+dec(o.rap).replace(',0','')+' volte il valore delle case della zona'+(c[2]<6?': da negoziare':'');
@@ -198,43 +208,55 @@ function txt(c,o,a){var k=c[0];
   if(k==='spazio')return c[2]>=7?pct(o.z.s8)+' degli alberghi della zona ha un voto sotto 8: c’è spazio per lavorare meglio dei vicini':'Solo '+pct(o.z.s8)+' degli alberghi della zona ha un voto sotto 8: i vicini lavorano già bene';
   return 'Ritorno stimato '+pct(o.r.roi,1)+' l’anno, contro il '+pct(o.z.rend,1)+' lordo di una casa in affitto nella zona'}
 var VEND={'immobile e attività':'Immobile e attività','solo attività':'Solo attività','solo immobile':'Solo immobile'},TIPO={albergo:'Albergo',extralberghiero:'Extralberghiero',altro:'Altro'};
-function scheda(a,o,i){var r=o.r,link=/^https?:\/\//i.test(a.link||'')?a.link:'',h='<article class="np-card" style="--i:'+(i%6)+'"'+(i>=6?' hidden':'')+'>';
-  h+='<div><h3>'+esc(a.titolo)+'</h3><div class="np-zn">'+esc([a.area,a.zona_sito].filter(Boolean).join(' · '))+'</div></div>';
-  h+='<dl class="np-kv"><dt>Tipo</dt><dd>'+esc(TIPO[a.tipo]||a.tipo||'n.d.')+(a.stelle?', '+a.stelle+' stelle':'')+'</dd><dt>In vendita</dt><dd>'+esc(VEND[a.vendita]||a.vendita||'n.d.')+'</dd>'+
-     '<dt>Camere</dt><dd>'+(o.cam?o.cam+(a.camere_stimate?', stima':''):'n.d.')+'</dd><dt>Prezzo richiesto</dt><dd>'+(a.prezzo>0?mil(a.prezzo):'n.d.')+'</dd>'+
-     (o.cam&&a.prezzo>0?'<dt>Prezzo per camera</dt><dd>'+eur(Math.round(a.prezzo/o.cam/1000)*1000)+'</dd>':'')+
-     (r?'<dt>Ritorno stimato all’anno</dt><dd><span class="np-g">'+(r.roi!=null?pct(r.roi,1):'n.d.')+'</span></dd><dt>Casa in affitto nella zona</dt><dd>'+pct(o.z.rend,1)+' lordo</dd>':'')+'</dl>';
-  if(r){var cs=o.crit.slice().sort(function(x,y){return y[2]-x[2]||(x[0]==='rend'?-1:y[0]==='rend'?1:0)}),best=cs[0],worst=cs[cs.length-1];
-    h+='<div class="np-voto"><b class="np-g">'+dec(o.voto)+'</b><span>Voto Ricavia su 10<br>media di '+o.crit.length+' criteri</span></div>'+
-     '<ul class="np-crit">'+o.crit.map(function(c){return '<li><span>'+c[1]+'</span><i><u style="--w:'+c[2]*10+'%"></u></i><b>'+c[2]+'</b></li>'}).join('')+'</ul>'+
-     '<p class="np-fz"><b>Punto di forza.</b> <span>'+txt(best,o,a)+'</span></p><p class="np-fz"><b>Da guardare.</b> <span>'+txt(worst,o,a)+'</span></p>'+
-     '<details><summary>Come è calcolato il ritorno</summary><p>Ricavi stimati: '+o.cam+' camere × '+eur(r.tar)+' (tariffa mediana della zona) × 365 notti × '+IP.occ+'% = '+mil(r.ric)+'</p>'+
-     '<p>Utile operativo stimato: ricavi − commissioni ('+(100-IP.dir)+'% sulle OTA × '+IP.com+'%) − costi operativi ('+IP.cop+'%)'+(r.aff?' − affitto stimato dell’immobile ('+o.cam+' × '+o.s.mq+' m² × '+dec(o.z.aff,2)+' € × 12 = '+mil(r.aff)+')':'')+' = '+mil(r.ut)+'</p>'+
-     '<p>Investimento: prezzo richiesto'+(o.sa?' per l’attività':'')+' + '+(a.vendita==='solo immobile'?'lavori e arredi':'lavori di adeguamento')+' (ipotesi '+eur(o.s.lav)+' per camera) = '+mil(r.inv)+'</p>'+
-     '<p>Ritorno: '+mil(r.ut)+' diviso '+mil(r.inv)+' = '+(r.roi!=null?pct(r.roi,1):'n.d.')+' all’anno, prima di imposte, interessi e ammortamenti</p>'+
-     (o.sa?'<p>Solo attività: l’immobile resta in affitto. L’affitto è stimato con le quotazioni OMI delle abitazioni della zona: il canone vero è nell’annuncio o nel contratto</p>':'')+
-     (a.tipo==='extralberghiero'?'<p>Le tariffe lette su Booking sono degli alberghi: per una struttura ricettiva extralberghiera la stima è meno precisa</p>':'')+'</details>'}
-  else h+='<p class="np-note">Ritorno e voto non calcolati: '+o.perche+'</p>';
-  h+='<div class="np-acts">'+(link?'<a class="np-btn o" href="'+esc(link)+'" target="_blank" rel="noopener nofollow">Vedi l’annuncio ↗</a>':'')+'<button type="button" class="np-btn w" data-ann="'+i+'"><span>Parti da questa nel percorso →</span></button></div>'+
-     '<p class="np-fo">Fonte dell’annuncio: '+esc(a.fonte)+(a.letto_il?', letto il '+esc(a.letto_il.split('-').reverse().join('/')):'')+'</p></article>';
-  return h}
-function parti(a,o){if(o.z)S.zi=Z.indexOf(o.z);if(o.cam)S.cam=o.cam;S.tar=null;S.pos=1;
+function tipoCam(a,o){return (TIPO[a.tipo]||'Struttura ricettiva')+(a.stelle?' '+a.stelle+' stelle':'')+' · '+o.cam+(o.cam===1?' camera':' camere')}
+/* la scheda piccola della riga: foto della zona (mai le foto delle agenzie), tipo e camere, zona, prezzo, ritorno, voto */
+function scheda(a,o,i){var f=NP.foto(a.zona_sito);
+  return '<button type="button" class="np-card" style="--i:'+Math.min(i,5)+'" aria-controls="npDet" aria-expanded="false">'+
+   '<span class="np-ph"><img src="/assets/img/'+f[0]+'.webp" alt="'+f[1]+'" loading="lazy" decoding="async"><em>Foto della zona</em><span class="np-vt"><small>Voto Ricavia</small><b>'+dec(o.voto)+'</b></span></span>'+
+   '<span class="np-ci"><span class="np-ct">'+esc(tipoCam(a,o))+'</span><span class="np-zn">'+esc(a.zona_sito)+'</span>'+
+   '<span class="np-cr"><span>Prezzo richiesto</span><b>'+mil(a.prezzo)+'</b></span><span class="np-cr"><span>Ritorno stimato</span><b class="np-g">'+pct(o.r.roi,1)+' l’anno</b></span></span></button>'}
+/* il dettaglio: il calcolo, i criteri del voto, l'annuncio originale e la partenza nel percorso */
+function dettaglio(a,o){var r=o.r,link=/^https?:\/\//i.test(a.link||'')?a.link:'',cs=o.crit.slice().sort(function(x,y){return y[2]-x[2]||(x[0]==='rend'?-1:y[0]==='rend'?1:0)}),best=cs[0],worst=cs[cs.length-1];
+  return '<div class="np-dh"><div><small class="np-t">L’annuncio</small><h3>'+esc(a.titolo)+'</h3><div class="np-zn">'+esc([a.area,a.zona_sito].filter(Boolean).join(' · '))+'</div></div><button type="button" class="np-x" aria-label="Chiudi la scheda">×</button></div>'+
+   '<div class="np-dg"><div><dl class="np-kv"><dt>Tipo</dt><dd>'+esc(TIPO[a.tipo]||a.tipo||'n.d.')+(a.stelle?', '+a.stelle+' stelle':'')+'</dd><dt>In vendita</dt><dd>'+esc(VEND[a.vendita]||a.vendita||'n.d.')+'</dd>'+
+     '<dt>Camere</dt><dd>'+o.cam+(a.camere_stimate?', stima':'')+'</dd><dt>Prezzo richiesto</dt><dd>'+mil(a.prezzo)+'</dd><dt>Prezzo per camera</dt><dd>'+eur(Math.round(a.prezzo/o.cam/1000)*1000)+'</dd>'+
+     '<dt>Ritorno stimato all’anno</dt><dd><span class="np-g">'+pct(r.roi,1)+'</span></dd><dt>Casa in affitto nella zona</dt><dd>'+pct(o.z.rend,1)+' lordo</dd></dl>'+
+    '<div class="np-voto"><b class="np-g">'+dec(o.voto)+'</b><span>Voto Ricavia su 10<br>media di '+o.crit.length+' criteri</span></div>'+
+    '<ul class="np-crit">'+o.crit.map(function(c){return '<li><span>'+c[1]+'</span><i><u style="--w:'+c[2]*10+'%"></u></i><b>'+c[2]+'</b></li>'}).join('')+'</ul>'+
+    '<p class="np-fz"><b>Punto di forza.</b> <span>'+txt(best,o,a)+'</span></p><p class="np-fz"><b>Da guardare.</b> <span>'+txt(worst,o,a)+'</span></p></div>'+
+   '<div class="np-dc"><h4>Come è calcolato il ritorno</h4><p>Ricavi stimati: '+o.cam+' camere × '+eur(r.tar)+' (tariffa mediana della zona) × 365 notti × '+IP.occ+'% = '+mil(r.ric)+'</p>'+
+    '<p>Utile operativo stimato: ricavi − commissioni ('+(100-IP.dir)+'% sulle OTA × '+IP.com+'%) − costi operativi ('+IP.cop+'%)'+(r.aff?' − affitto stimato dell’immobile ('+o.cam+' × '+o.s.mq+' m² × '+dec(o.z.aff,2)+' € × 12 = '+mil(r.aff)+')':'')+' = '+mil(r.ut)+'</p>'+
+    '<p>Investimento: prezzo richiesto'+(o.sa?' per l’attività':'')+' + '+(a.vendita==='solo immobile'?'lavori e arredi':'lavori di adeguamento')+' (ipotesi '+eur(o.s.lav)+' per camera) = '+mil(r.inv)+'</p>'+
+    '<p>Ritorno: '+mil(r.ut)+' diviso '+mil(r.inv)+' = '+pct(r.roi,1)+' all’anno, prima di imposte, interessi e ammortamenti</p>'+
+    (o.sa?'<p>Solo attività: l’immobile resta in affitto. L’affitto è stimato con le quotazioni OMI delle abitazioni della zona: il canone vero è nell’annuncio o nel contratto</p>':'')+
+    (a.tipo==='extralberghiero'?'<p>Le tariffe lette su Booking sono degli alberghi: per una struttura ricettiva extralberghiera la stima è meno precisa</p>':'')+
+    '<div class="np-acts">'+(link?'<a class="np-btn o" href="'+esc(link)+'" target="_blank" rel="noopener nofollow">Vedi l’annuncio ↗</a>':'')+'<button type="button" class="np-btn w" data-parti><span>Parti da questa nel percorso →</span></button></div>'+
+    '<p class="np-fo">Fonte dell’annuncio: '+esc(a.fonte)+(a.letto_il?', letto il '+esc(a.letto_il.split('-').reverse().join('/')):'')+'. La foto della scheda mostra la zona, non l’immobile</p></div></div>'}
+function parti(a,o){S.zi=Z.indexOf(o.z);S.cam=o.cam;S.tar=null;S.pos=1;
   S.tipo=a.tipo==='albergo'?'Hotel':a.tipo==='extralberghiero'?'Extralberghiero':'Da definire';
-  if(a.prezzo>0){var s=o.s||{modo:o.sa?'affitta':'compra',lav:a.vendita==='solo immobile'?IP.lav:NP.LAV_ADEG,mq:S.mq};S.modo=s.modo;S.lav=s.lav;S.mq=s.mq;S.prezzo=a.prezzo;S.ann={titolo:a.titolo,fonte:a.fonte,link:a.link};
-    S.bud=Math.ceil((a.prezzo+S.cam*S.lav)/1e5)*1e5}
-  go(0);vai(P)}
+  S.modo=o.s.modo;S.lav=o.s.lav;S.mq=o.s.mq;S.prezzo=a.prezzo;S.ann={titolo:a.titolo,fonte:a.fonte,link:a.link};
+  S.bud=Math.ceil((a.prezzo+S.cam*S.lav)/1e5)*1e5;go(0);vai(P)}
 if(V&&window.fetch)fetch('/assets/data/annunci.json?v='+new Date().toISOString().slice(0,10)).then(function(x){if(!x.ok)throw 0;return x.json()}).then(function(d){
-  var A=(d&&d.annunci||[]).filter(function(a){return a&&a.titolo&&a.fonte}).map(function(a){return {a:a,o:NP.annuncio(a,Z,RS)}});
-  if(!A.length)return;
-  A.sort(function(x,y){return (y.o.voto==null?-1:y.o.voto)-(x.o.voto==null?-1:x.o.voto)});
-  var box=V.querySelector('#npSale');box.innerHTML=A.map(function(x,i){return scheda(x.a,x.o,i)}).join('');
-  $$('[data-ann]',box).forEach(function(b){b.onclick=function(){var x=A[+b.getAttribute('data-ann')];parti(x.a,x.o)}});
-  var tu=V.querySelector('#npTutti');if(A.length>6){tu.hidden=false;tu.onclick=function(){$$('.np-card[hidden]',box).forEach(function(c){c.hidden=false});tu.hidden=true}}
+  var A=NP.vetrina(d&&d.annunci,Z,RS);if(!A.length)return;
+  var box=V.querySelector('#npSale'),det=V.querySelector('#npDet'),row=V.querySelector('.np-row'),prev=V.querySelector('#npPrev'),next=V.querySelector('#npNext'),cur=-1;
+  box.innerHTML=A.map(function(x,i){return scheda(x.a,x.o,i)}).join('');
+  var cards=$$('.np-card',box);
+  function spegni(){if(cur<0)return null;var c=cards[cur];c.setAttribute('aria-expanded','false');c.classList.remove('on');cur=-1;return c}
+  function chiudi(){var c=spegni();det.hidden=true;det.innerHTML='';if(c)c.focus({preventScroll:true})}
+  cards.forEach(function(b,i){b.onclick=function(){if(cur===i){chiudi();return}spegni();
+    cur=i;b.setAttribute('aria-expanded','true');b.classList.add('on');det.innerHTML=dettaglio(A[i].a,A[i].o);det.hidden=false;
+    det.querySelector('.np-x').onclick=chiudi;det.querySelector('[data-parti]').onclick=function(){parti(A[i].a,A[i].o)};
+    var t=det.getBoundingClientRect().top;if(t<0||t>innerHeight*.75)vai(row)}});
+  /* frecce sul computer; sul telefono si scorre col dito */
+  function freccia(){var m=box.scrollWidth-box.clientWidth;prev.disabled=box.scrollLeft<=2;next.disabled=box.scrollLeft>=m-2;row.classList.toggle('np-fit',m<=2)}
+  function passo(k){box.scrollBy({left:k*box.clientWidth*.8,behavior:RM?'auto':'smooth'})}
+  prev.onclick=function(){passo(-1)};next.onclick=function(){passo(1)};
+  box.addEventListener('scroll',freccia,{passive:true});addEventListener('resize',freccia);
   var fo={};A.forEach(function(x){fo[x.a.fonte]=1});
-  V.querySelector('#npVendN').textContent=A.length+(A.length===1?' annuncio letto':' annunci letti')+(d.aggiornato?' fino al '+d.aggiornato.split('-').reverse().join('/'):'')+' su '+Object.keys(fo).join(', ')+'. Per ogni annuncio valgono il testo e le condizioni dell’originale, al link. Ricavia non è parte della vendita. Il ritorno è una stima, non una promessa: il calcolo è scritto in ogni scheda';
-  V.hidden=false;
-  if(RM||!('IntersectionObserver' in window))box.classList.add('in');else{var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){box.classList.add('in');io.disconnect()}},{threshold:0,rootMargin:'0px 0px -10% 0px'});io.observe(box)}/* soglia 0: sul telefono le schede impilate superano 4.000 px e una percentuale del blocco arriva troppo tardi */
-}).catch(function(){});
+  V.querySelector('#npVendN').textContent=A.length+(A.length===1?' annuncio con il ritorno calcolato':' annunci con il ritorno calcolato')+(d.aggiornato?', letti fino al '+d.aggiornato.split('-').reverse().join('/'):'')+' su '+Object.keys(fo).join(', ')+'. Per ogni annuncio valgono il testo e le condizioni dell’originale, al link. Ricavia non è parte della vendita. Il ritorno è una stima, non una promessa: il calcolo è scritto nella scheda';
+  V.hidden=false;freccia();
+  if(RM||!('IntersectionObserver' in window))box.classList.add('in');else{var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){box.classList.add('in');io.disconnect()}},{threshold:0});io.observe(box)}
+}).catch(function(e){window.__DBG&&console.warn('annunci',e&&e.message)});
 
 P.hidden=false;go(0);
 }catch(_e){window.__DBG&&console.warn('apertura',_e&&_e.message)}})();

@@ -304,11 +304,18 @@ def casa(qq):
 # da ricalcolare con un registro nuovo
 LETTI_ALBERGHI = 104724
 OCC_PARTENZA = 70  # scelta 8 di George (22/11): occupazione di partenza del percorso, la stessa di assets/js/13-apertura.js
+# George, 22/11 sera: le cinque fasi del servizio e le cinque tappe sono una cosa sola. Ogni tappa apre con la fase e cosa riceve il cliente
+FASI = [("Studio di fattibilità", "Un’analisi di fattibilità con il potenziale del progetto: mercato, domanda, concorrenza e location"),
+        ("Business plan", "Un business plan pluriennale, pronto per soci e banche: investimento, ricavi, costi e GOP anno per anno"),
+        ("Posizionamento", "Target, concept ed esperienza dell’ospite: il posto giusto nel mercato, con un prezzo coerente"),
+        ("Prezzi di lancio", "La strategia dei primi mesi: tariffe, calendario, canali e commissioni"),
+        ("Tecnologia", "La mappa degli strumenti e l’affiancamento nella fase di lancio: PMS, channel manager, booking engine e strumenti di revenue")]
 
 
 def percorso(d, omi):
     """Il percorso a tappe di Nuova apertura (scelta 7 del 22/11, sostituisce il simulatore): dati delle zone negli attributi,
-    calcoli e testi in assets/js/13-apertura.js. Senza JavaScript resta nascosto e si legge la tabella delle nove zone."""
+    calcoli e testi in assets/js/13-apertura.js. Senza JavaScript resta nascosto e si legge la tabella delle nove zone.
+    Le tappe sono le cinque fasi del servizio: la pagina non ha più le fasi in blocchi statici (George, 22/11 sera)"""
     fl = (d.get("flussi") or {}).get("istat") or {}
     a, mesi = fl.get("annui", {}), fl.get("mesi", {})
     anno = max((k for k in a if (a[k] or {}).get("presenze_alberghi")), default=None)
@@ -342,17 +349,19 @@ def percorso(d, omi):
     slider = lambda i, lab, nota, mn, mx, st, extra="": (
         f'<div class="np-sl"><label class="np-lbl" for="{i}">{lab}{f"<small>{nota}</small>" if nota else ""}</label><span></span>'
         f'<input type="range" id="{i}" min="{mn}" max="{mx}" step="{st}"><output for="{i}"></output>{extra}</div>')
+    fase = lambda k: (f'<div class="np-fase"><span class="np-n">{k + 1}</span><div><h3>{FASI[k][0]}</h3>'
+                      f'<p><small>Cosa ricevi da noi</small>{FASI[k][1]}</p></div></div>')
     return (f'<div class="np" id="npPerc" data-z="{at(zz)}" data-occ="{occ:.4f}" data-anno="{anno}" data-stag="{at(stag)}" data-roma-sab="{d["roma"]["sabato"]}" hidden>'
-            f'<div class="ix-sh"><span class="ap-tag">Il percorso a tappe</span><h2>Cinque tappe, <span class="np-g">poi il tuo report</span></h2>'
-            f'<p class="ix-p">Le tappe seguono le cinque fasi del servizio. Puoi tornare indietro e cambiare ogni numero: il risultato si aggiorna subito</p></div>'
+            f'<div class="ix-sh"><span class="ap-tag">Le cinque fasi, una tappa alla volta</span><h2>Cinque fasi, <span class="np-g">poi il tuo report</span></h2>'
+            f'<p class="ix-p">Ogni tappa è una fase del servizio: in alto cosa ricevi da noi, sotto i numeri del tuo progetto. Puoi tornare indietro e cambiare ogni numero: il risultato si aggiorna subito</p></div>'
             f'<div class="np-box"><div class="np-prog" id="npProg"></div>'
-            f'<div class="np-step" data-s="0"><div class="np-q"><h3>Dove vuoi aprire, e che cosa</h3>'
+            f'<div class="np-step" data-s="0">{fase(0)}<div class="np-q"><h4>Dove vuoi aprire, e che cosa</h4>'
             f'<p>Lo studio di fattibilità parte dal mercato: scegli la zona e guarda quanto vale una camera il sabato e quanti alberghi hanno un voto sotto 8</p>'
             f'<span class="np-lbl">Zona di Roma</span><div class="np-pick" id="npZona"></div>'
             f'<span class="np-lbl">Tipo di struttura ricettiva</span><div class="np-pick" id="npTipo"></div>'
             f'<p class="np-note" id="npNTipo" hidden>Le tariffe lette su Booking sono degli alberghi: per una struttura ricettiva extralberghiera la stima è meno precisa, la tappa 4 ti lascia cambiare la tariffa</p></div>'
             f'<div class="np-res" id="npR0" aria-live="polite"></div></div>'
-            f'<div class="np-step" data-s="1"><div class="np-q"><h3>Quanto investi e quante camere</h3>'
+            f'<div class="np-step" data-s="1">{fase(1)}<div class="np-q"><h4>Quanto investi e quante camere</h4>'
             f'<p>Il business plan parte dall’investimento. Muovi budget e camere e guarda quanto costa entrare nella zona scelta</p>'
             f'<span class="np-lbl">L’immobile</span><div class="np-pick" id="npModo"><button type="button" data-v="compra">Lo compro</button><button type="button" data-v="affitta">Lo prendo in affitto</button></div>'
             f'<p class="np-note" id="npNAnn" hidden></p>'
@@ -360,18 +369,18 @@ def percorso(d, omi):
             + slider("npMq", "m² per camera", "ipotesi, spazi comuni compresi", 20, 60, 1)
             + slider("npLav", "Lavori e arredi per camera", "ipotesi, da sostituire con il tuo preventivo", 0, 80000, 1000)
             + f'</div><div class="np-res" id="npR1" aria-live="polite"></div></div>'
-            f'<div class="np-step" data-s="2"><div class="np-q"><h3>Dove ti metti nel mercato</h3>'
+            f'<div class="np-step" data-s="2">{fase(2)}<div class="np-q"><h4>Dove ti metti nel mercato</h4>'
             f'<p>Il posizionamento decide la tariffa. Scegli la fascia rispetto agli alberghi della zona: sotto, in linea o sopra</p>'
             f'<span class="np-lbl">La tua fascia di prezzo</span><div class="np-pick" id="npPos"><button type="button" data-v="0.9">Sotto la zona, −10%</button>'
             f'<button type="button" data-v="1">In linea con la zona</button><button type="button" data-v="1.15">Sopra la zona, +15%</button><button type="button" data-v="1.3">Fascia alta, +30%</button></div>'
             f'<p class="np-note">Stare sopra la zona richiede un prodotto e un servizio migliori dei vicini: lo studio di fattibilità verifica se il progetto lo permette</p></div>'
             f'<div class="np-res" id="npR2" aria-live="polite"></div></div>'
-            f'<div class="np-step" data-s="3"><div class="np-q"><h3>Tariffa e occupazione</h3>'
+            f'<div class="np-step" data-s="3">{fase(3)}<div class="np-q"><h4>Tariffa e occupazione</h4>'
             f'<p>I prezzi di lancio partono più bassi e salgono con le prime recensioni. Qui scegli i valori a regime, dal terzo anno</p>'
             + slider("npTar", "Tariffa media a notte", "", 60, 450, 1)
             + slider("npOcc", "Occupazione", "ipotesi", 40, 95, 1, f'<span class="np-ip">Partenza: {OCC_PARTENZA}%, ipotesi. Riferimento: {dec(occ * 100)}%, occupazione lorda dei letti negli alberghi di Roma nel {anno}</span>')
             + f'</div><div class="np-res" id="npR3" aria-live="polite"></div></div>'
-            f'<div class="np-step" data-s="4"><div class="np-q"><h3>Canali, tecnologia e costi</h3>'
+            f'<div class="np-step" data-s="4">{fase(4)}<div class="np-q"><h4>Canali, tecnologia e costi</h4>'
             f'<p>La tecnologia serve a vendere di più sul sito e meno sulle OTA. Muovi la quota di vendita diretta e guarda le commissioni</p>'
             + slider("npDir", "Vendita diretta dal sito", "ipotesi", 0, 70, 1) + slider("npCom", "Commissione media delle OTA", "ipotesi", 10, 25, 1)
             + slider("npCop", "Costi operativi sui ricavi", "ipotesi", 30, 70, 1, '<span class="np-ip">Personale, pulizie, utenze, manutenzione, colazioni, tecnologia</span>')
@@ -402,7 +411,8 @@ def apertura(d):
         righe.append(f'<tr><th scope="row">{E(z["nome"])}</th><td>{dens}</td><td>{num(o.get("alberghi", 0))}</td><td>{num(o.get("camere_alberghi", 0))}</td>'
                      f'<td>{str(m["sabato"]) + " €" if m.get("sabato") else "n.d."}</td><td>{dec(m["voto"]) if m.get("voto") else "n.d."}</td>'
                      f'<td><b>{pct(m["sotto_8"], False) if m.get("sotto_8") is not None else "n.d."}</b></td>{casa(omi.get(z["nome"]))}</tr>')
-    return (f'<div class="ix-blk oz"><div class="ix-sh ar"><span class="ap-tag">Dall’Osservatorio · {data(d["aggiornato"])}</span>'
+    # prima il percorso a tappe, subito sotto «In 30 secondi», poi le nove zone a confronto
+    return (f'{percorso(d, omi)}<div class="ix-blk oz"><div class="ix-sh ar"><span class="ap-tag">Dall’Osservatorio · {data(d["aggiornato"])}</span>'
             f'<h2>Dove aprire a Roma: nove zone a confronto</h2>'
             f'<p class="ix-p">Quanto è affollata ogni zona, quanto costa una camera il sabato e quanti alberghi hanno un voto sotto 8 su Booking. '
             f'Più alta è quella quota, più spazio c’è per un albergo che lavora meglio dei vicini</p></div>'
@@ -410,7 +420,6 @@ def apertura(d):
             f'<th>Sabato, valore mediano</th><th>Voto mediano</th><th>Alberghi sotto 8</th><th>Casa al m²</th><th>Rendimento lordo da affitto</th></tr></thead><tbody>{"".join(righe)}</tbody></table></div>'
             f'<p class="oz-s">Fonte: registro delle strutture ricettive di Roma Capitale ({E(d["registro"]["file"])}) e Booking, prezzi letti dal {data(d["letture_dal"])} '
             f'al {data(d["aggiornato"])}, camera per 2 persone. Casa al m² e rendimento: quotazioni OMI dell’Agenzia delle Entrate, 1° semestre 2026, abitazioni civili in stato normale, valore mediano delle zone OMI della zona; il rendimento è l’affitto annuo diviso il prezzo, prima di tasse e spese</p>'
-            f'{percorso(d, omi)}'
             f'<p class="oz-c"><a class="z-btn" href="#pg-osservatorio">Le zone nell’Osservatorio <span class="arr">→</span></a></p></div>')
 
 
