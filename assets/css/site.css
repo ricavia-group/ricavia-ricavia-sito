@@ -6219,3 +6219,16 @@ html.o2-nosc{overflow:hidden}
 .ch-go svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:760px){.ch-win{height:clamp(440px,78svh,620px);border-radius:22px}.ch-msg{max-width:88%}.ch-hd{padding:12px 14px}}
 @media(prefers-reduced-motion:reduce){.ch-msg{animation:none}.ch-ty i{animation:none;opacity:.6}}
+
+/* nastro dei numeri di Roma sotto il primo schermo dell'Osservatorio (George 22/11: scorre come le notizie) */
+#pg-osservatorio .o3-tk{background:var(--zink);color:#fff;overflow:hidden;border-top:1px solid rgba(255,255,255,.08)}
+#pg-osservatorio .o3-tkt{display:flex;width:max-content;animation:o3tk 80s linear infinite}
+#pg-osservatorio .o3-tk:hover .o3-tkt{animation-play-state:paused}
+#pg-osservatorio .o3-tkg{display:flex;flex-shrink:0}
+#pg-osservatorio .o3-tkv{display:inline-flex;align-items:baseline;gap:8px;padding:14px 22px 14px 0;margin-left:22px;font:500 14px/1.2 var(--zf);white-space:nowrap;position:relative}
+#pg-osservatorio .o3-tkv::after{content:"";position:absolute;right:0;top:50%;width:5px;height:5px;margin-top:-2px;border-radius:50%;background:var(--zgr)}
+#pg-osservatorio .o3-tkv>span{color:rgba(255,255,255,.66)}
+#pg-osservatorio .o3-tkv b{font-weight:600;color:#fff;font-variant-numeric:tabular-nums}
+@keyframes o3tk{to{transform:translateX(-50%)}}
+@media(max-width:760px){#pg-osservatorio .o3-tkt{animation-duration:60s}#pg-osservatorio .o3-tkv{font-size:13px;padding-block:12px}}
+@media(prefers-reduced-motion:reduce){#pg-osservatorio .o3-tkt{animation:none}#pg-osservatorio .o3-tk{overflow-x:auto}#pg-osservatorio .o3-tkg[aria-hidden]{display:none}}

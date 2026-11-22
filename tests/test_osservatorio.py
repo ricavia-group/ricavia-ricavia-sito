@@ -226,3 +226,17 @@ class TestDomanda(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestNastro(unittest.TestCase):
+    def test_voci_e_doppia_copia(self):
+        I = {'per_tipo': [{'etichetta': 'Hotel 4-5 stelle', 'mediana': 194, 'letto_il': '2026-11-22T21:00'}, {'etichetta': 'Vuoto', 'mediana': None}],
+             'ultimo': {'alberghi_prenotabili': 840}, 'alberghi_registro': 1000}
+        h = osservatorio.nastro({'indicatori': I})
+        self.assertIn('Prezzo medio, Hotel 4-5 stelle</span><b>194 €', h)
+        self.assertIn('84%', h)
+        self.assertNotIn('Vuoto', h)
+        self.assertEqual(h.count('class="o3-tkg"'), 2)
+
+    def test_senza_dati_niente_nastro(self):
+        self.assertEqual(osservatorio.nastro({}), '')

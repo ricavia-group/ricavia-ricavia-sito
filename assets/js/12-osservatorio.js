@@ -230,8 +230,19 @@ function oggi(I){var u=I.ultimo,reg=I.alberghi_registro;if(!u||!reg||u.alberghi_
       'Prezzo medio degli alberghi con camere libere, 2 persone · Fonte: Booking, lettura del '+gg(u.letto_il||pr.data))}
   return h}
 var OG=$('#o3Oggi');
+/* nastro sotto il primo schermo: stesse voci di nastro_voci() in tools/osservatorio.py, riscritte con indicatori.json; le voci fisse (.o3-tkf: domanda e voli) restano */
+function nastro(I){var tk=$('#o3Tk');if(!tk)return;var v=[],e=function(a,b){v.push('<span class="o3-tkv"><span>'+esc(a)+'</span><b>'+esc(b)+'</b></span>')};
+  var pt=(I.per_tipo||[]).filter(function(r){return r&&r.mediana!=null&&(r.etichetta||r.tipo)});
+  if(pt.length&&pt[0].letto_il)e('Aggiornato il',gg(pt[0].letto_il.slice(0,10)));
+  pt.forEach(function(r){e('Prezzo medio, '+(r.etichetta||r.tipo),eu(r.mediana))});
+  var u=I.ultimo||{};if(I.alberghi_registro&&u.alberghi_prenotabili!=null)e('Alberghi con almeno una camera libera',Math.round(u.alberghi_prenotabili/I.alberghi_registro*100)+'%');
+  var zd=I.zone_date||{};(zd.date||[]).forEach(function(c){var m=(zd.roma||{})[c.chiave];if(m!=null)e('Hotel a Roma, '+String(c.etichetta).toLowerCase(),eu(m))});
+  var zw=(zd.zone||[]).filter(function(z){return z.prezzi&&z.prezzi.weekend&&z.prezzi.weekend.mediana!=null}).sort(function(a,b){return b.prezzi.weekend.mediana-a.prezzi.weekend.mediana});
+  if(zw.length>1){e('Zona più cara questo weekend, '+zw[0].nome,eu(zw[0].prezzi.weekend.mediana));e('Zona meno cara questo weekend, '+zw[zw.length-1].nome,eu(zw[zw.length-1].prezzi.weekend.mediana))}
+  if(!v.length)return;var g=tk.querySelectorAll('.o3-tkg'),f=[].map.call(g[0].querySelectorAll('.o3-tkf'),function(x){return x.outerHTML}).join('');
+  [].forEach.call(g,function(x){x.innerHTML=v.join('')+f})}
 /* il file cambia ogni giorno e /assets/ ha una cache di un anno: un indirizzo nuovo al giorno */
-if(OG)fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(I){var zd=ZT&&ZP&&zpOk(I.zone_date);if(zd){zpModello(zd);zpDisegna()}var h=oggi(I);if(!h)return;
+if(OG)fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(I){var zd=ZT&&ZP&&zpOk(I.zone_date);if(zd){zpModello(zd);zpDisegna()}nastro(I);var h=oggi(I);if(!h)return;
   var visti={};[].forEach.call(OG.querySelectorAll('.o3-blk.in'),function(s){visti[s.id]=1});OG.innerHTML=h;
   [].forEach.call(OG.querySelectorAll('.o3-blk'),function(s){if(visti[s.id])s.classList.add('in');else anima(s);if(navIO)navIO.observe(s)});conta(OG);if(ME)tuOggi()}).catch(function(){});
 /* punto 4: i prezzi medi salgono da 0 al valore quando entrano nello schermo; con meno movimento restano fermi */

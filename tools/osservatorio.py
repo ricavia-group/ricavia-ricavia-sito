@@ -554,6 +554,51 @@ def apertura(d):
             f'<p class="oz-c"><a class="z-btn" href="#pg-osservatorio">Le zone nell’Osservatorio <span class="arr">→</span></a></p></div>')
 
 
+def nastro_voci(I):
+    """Voci del nastro che si aggiornano ogni sera con indicatori.json (stesse di nastro() in 12-osservatorio.js)"""
+    v = []
+    pt = [r for r in I.get("per_tipo") or [] if isinstance(r, dict) and r.get("mediana") is not None and (r.get("etichetta") or r.get("tipo"))]
+    if pt and pt[0].get("letto_il"):
+        v.append(("Aggiornato il", data(pt[0]["letto_il"][:10])))
+    v += [(f'Prezzo medio, {r.get("etichetta") or r["tipo"]}', eu(r["mediana"])) for r in pt]
+    u, reg = I.get("ultimo") or {}, I.get("alberghi_registro")
+    if reg and u.get("alberghi_prenotabili") is not None:
+        v.append(("Alberghi con almeno una camera libera", f'{round(u["alberghi_prenotabili"] / reg * 100)}%'))
+    zd = I.get("zone_date") or {}
+    for c in zd.get("date") or []:
+        m = (zd.get("roma") or {}).get(c.get("chiave"))
+        if m is not None:
+            v.append((f'Hotel a Roma, {c["etichetta"].lower()}', eu(m)))
+    zw = [(z["nome"], z["prezzi"]["weekend"]["mediana"]) for z in zd.get("zone") or []
+          if ((z.get("prezzi") or {}).get("weekend") or {}).get("mediana") is not None]
+    if len(zw) > 1:
+        zw.sort(key=lambda x: -x[1])
+        v += [(f"Zona più cara questo weekend, {zw[0][0]}", eu(zw[0][1])), (f"Zona meno cara questo weekend, {zw[-1][0]}", eu(zw[-1][1]))]
+    return v
+
+
+def nastro(d):
+    """Nastro che scorre sotto il primo schermo (George 22/11: "come notizie che si aggiornano di continuo"): prezzi medi per tipo,
+    camere libere, Roma per data e zone, più domanda e voli (fissi, classe o3-tkf: 12-osservatorio.js riscrive solo le altre voci)"""
+    v = [(a, b, "") for a, b in nastro_voci(d.get("indicatori") or {})]
+    fl = d.get("flussi") or {}
+    an = {y: x["arrivi_alberghi"] for y, x in ((fl.get("istat") or {}).get("annui") or {}).items() if x.get("arrivi_alberghi")}
+    if len(an) > 1:
+        a = sorted(an)
+        v.append((f"Arrivi negli alberghi di Roma nel {a[-1]}", f"{milioni(an[a[-1]])} mln, {var(an[a[-1]], an[a[-2]])}", " o3-tkf"))
+    ae = fl.get("aeroporti") or {}
+    mm = [m for m in ae.get("mesi") or [] if m.get("fco") and m.get("cia") and m.get("fco_var") is not None and m.get("cia_var") is not None]
+    if mm:
+        m = mm[-1]
+        ora, prima = m["fco"] + m["cia"], m["fco"] / (1 + m["fco_var"] / 100) + m["cia"] / (1 + m["cia_var"] / 100)
+        v.append((f"Passeggeri a Fiumicino e Ciampino, {MESI[m['mese'] - 1]}", f"{milioni(ora)} mln, {var(ora, prima)}", " o3-tkf"))
+    if not v:
+        return ""
+    voci = "".join(f'<span class="o3-tkv{c}"><span>{E(a)}</span><b>{E(b)}</b></span>' for a, b, c in v)
+    return (f'<div class="o3-tk" id="o3Tk" role="region" aria-label="I numeri di Roma"><div class="o3-tkt">'
+            f'<div class="o3-tkg">{voci}</div><div class="o3-tkg" aria-hidden="true">{voci}</div></div></div>')
+
+
 def pagina(d):
     dati = {"zone": d["zone"], "date": d["date"], "letti": d["alberghi_letti"], "agg": d["aggiornato"], "dal": d["letture_dal"],
             "vie": d["vie"], "ra": d["registro"]["alberghi"], "ver": d.get("ver", ""), "hs": d.get("hs_tutti", []),
@@ -561,7 +606,7 @@ def pagina(d):
             "zd": zp_valido((d.get("indicatori") or {}).get("zone_date"))}
     js = json.dumps(dati, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     # #o3Oggi: 12-osservatorio.js lo riscrive ogni sera con indicatori.json appena letto (la pagina non si rigenera ogni notte)
-    return (hero(d) + f'<div id="o3Oggi">{stanotte(d)}{notti(d)}</div>' + prezzi_zone(d) + sabato(d) + classifiche(d) + flussi(d) + fine()
+    return (hero(d) + nastro(d) + f'<div id="o3Oggi">{stanotte(d)}{notti(d)}</div>' + prezzi_zone(d) + sabato(d) + classifiche(d) + flussi(d) + fine()
             + hotel() + vie(d) + metodo()
             + '<a href="#pg-pagella" id="o2Hs" hidden>Hotel Score</a><a href="#contatti" id="o2Ct" hidden>Contatti</a>'
             + f'<script type="application/json" id="o2Dati">{js}</script>')
