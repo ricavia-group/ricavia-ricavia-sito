@@ -212,16 +212,66 @@ class TestSabato(unittest.TestCase):
 
 
 class TestDomanda(unittest.TestCase):
+    ANNI = {str(y): {'arrivi_alberghi': v} for y, v in [(2014, 7537029), (2019, 8043616), (2020, 1767084), (2024, 7636163), (2025, 7939639)]}
+    AE = {'anno': 2026, 'fonte': 'Aeroporti di Roma, dati di traffico di Fiumicino e Ciampino',
+          'mesi': [{'mese': 8, 'pax': 5627083, 'pax_var': 1.6}, {'mese': 9, 'pax': 5226199, 'pax_var': 0.5}],
+          'progressivo': {'pax': 42673221, 'pax_var': 0.9, 'int': 34702790, 'int_var': 1.8, 'ue': 20187138, 'ue_var': 2.5, 'extra': 14515652, 'extra_var': 0.9,
+                          'fco': 39688456, 'cia': 2984765}}
+    PAESI = {'anno': 2025, 'prima': 2024, 'totale': 1000, 'var': 2.0,
+             'italia': {'cod': 'IT', 'nome': 'Italia', 'arrivi': 400, 'quota': 40.0, 'quota_prima': 41.0},
+             'esteri': [{'cod': 'US', 'nome': 'Stati Uniti', 'arrivi': 115, 'quota': 11.5, 'quota_prima': 10.9},
+                        {'cod': 'UK', 'nome': 'Regno Unito', 'arrivi': 50, 'quota': 5.0, 'quota_prima': None}]}
+    MESI = {'2025': {'arrivi': [705373, 767097, 968470, 1066982, 1063019, 1370584, 1341114, 1167624, 1380670, 1491582, 1102177, 1057637]},
+            '2026': {'arrivi': [1, 2, 3]}}
+
     def test_tre_numeri_veri(self):
-        anni = {str(y): {'arrivi_alberghi': v} for y, v in [(2014, 7537029), (2019, 8043616), (2020, 1767084), (2024, 7636163), (2025, 7939639)]}
-        d = {'flussi': {'istat': {'annui': anni, 'fonte': 'ISTAT'}, 'aeroporti': {'anno': 2026, 'fonte': 'Assaeroporti',
-             'mesi': [{'mese': 9, 'fco': 4903208, 'cia': 322991, 'fco_var': 0.6, 'cia_var': -1.2}]}}}
-        h = osservatorio.flussi(d)
+        h = osservatorio.flussi({'flussi': {'istat': {'annui': self.ANNI, 'fonte': 'ISTAT'}, 'aeroporti': self.AE}})
         self.assertIn('Nel 2025 gli alberghi di Roma hanno registrato 7,9 milioni di arrivi, il 4% in più del 2024', h)
         self.assertIn('+4,0% sul 2024', h)
         self.assertIn('<b>−1,3%</b>', h)
         self.assertIn('passeggeri a Fiumicino e Ciampino a settembre 2026, +0,5% sullo stesso mese del 2025', h)
         self.assertIn('<b>5,2 mln</b>', h)
+
+    def test_senza_dati_nuovi_niente_schede(self):
+        h = osservatorio.flussi({'flussi': {'istat': {'annui': self.ANNI, 'fonte': 'ISTAT'}}})
+        self.assertIn('o3-n3', h)
+        self.assertNotIn('o3-dm', h)
+        self.assertNotIn('Aeroporti di Roma', h)
+        self.assertIn('data-b="domanda"', h)
+
+    def test_tre_schede(self):
+        h = osservatorio.flussi({'flussi': {'istat': {'annui': self.ANNI, 'fonte': 'ISTAT', 'mesi': self.MESI}, 'aeroporti': self.AE, 'paesi': self.PAESI}})
+        self.assertEqual(h.count('type="radio" name="o3dm"'), 3)
+        self.assertEqual(h.count(' checked'), 1)
+        for t in ('>Da dove</label>', '>Quando</label>', '>Come arrivano</label>'):
+            self.assertIn(t, h)
+        # da dove: quota, variazione, bandiera, Regno Unito con la bandiera GB e senza variazione
+        self.assertIn("Nel 2025 il 60% degli arrivi nella provincia di Roma viene dall’estero. Primo paese: Stati Uniti, con l'11,5%", h)
+        self.assertIn('11,5%<small>era 10,9%</small>', h)
+        self.assertIn('il confronto è sulle quote e non sugli arrivi', h)
+        self.assertIn('🇺🇸', h)
+        self.assertIn('🇬🇧', h)
+        self.assertIn('5,0%<small></small>', h)
+        # quando: 12 mesi del 2025 (il 2026 è incompleto), ottobre evidenziato
+        self.assertIn('Ottobre è il mese con più arrivi a Roma: 1.491.582 nel 2025, 2,1 volte gennaio', h)
+        self.assertEqual(h.count('o3-dmx'), 2)
+        self.assertIn('<b>ottobre 2025 · 1.491.582 arrivi</b><span>ott</span>', h)
+        # come arrivano: settembre evidenziato, quote internazionali ed extra UE
+        self.assertIn('<b>settembre 2026 · 5.226.199 passeggeri, +0,5%</b>', h)
+        self.assertIn('Agosto-settembre 2026: 8 passeggeri su 10 di Fiumicino e Ciampino hanno preso un volo internazionale', h)
+        self.assertIn('<b>47%</b><span>su voli da e per l’Unione europea, +2,5%</span>', h)
+        self.assertIn('<b>34%</b>', h)
+        self.assertIn('Fiumicino 39,7 mln, Ciampino 3,0 mln', h)
+        self.assertIn('Passeggeri di Fiumicino e Ciampino, agosto-settembre 2026', h)
+        self.assertNotRegex(h, r'[^.\d]\.</(p|span|b|label)>')  # nessun punto finale
+
+    def test_solo_aeroporti(self):
+        ae = dict(self.AE, progressivo={})
+        h = osservatorio.flussi({'flussi': {'istat': {'annui': self.ANNI, 'fonte': 'ISTAT'}, 'aeroporti': ae}})
+        self.assertEqual(h.count('name="o3dm"'), 1)
+        self.assertIn('A settembre Fiumicino e Ciampino hanno contato 5.226.199 passeggeri, +0,5% sullo stesso mese del 2025', h)
+        self.assertNotIn('o3-dmk', h)
+        self.assertIn('id="o3dm0" class="o3-dmt" checked><label for="o3dm0">Come arrivano', h)
 
 
 if __name__ == '__main__':
