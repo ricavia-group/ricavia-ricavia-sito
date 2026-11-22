@@ -113,11 +113,11 @@ def stanotte(d, oggi=None):
 
 
 def notti(d, oggi=None):
-    """Le prossime notti più care: solo se indicatori.json ha il campo calendario con almeno 3 notti future"""
+    """Le prossime notti più care: solo con almeno 21 notti future nel calendario (George 22/11: con 3 notti "la più cara" non dice niente)"""
     oggi = oggi or datetime.date.today().isoformat()
     cal = [c for c in (d.get("indicatori") or {}).get("calendario") or []
            if isinstance(c, dict) and c.get("mediana") is not None and str(c.get("data", ""))[:10] >= oggi]
-    if len(cal) < 3:
+    if len(cal) < 21:
         return ""
     pr = max(cal, key=lambda c: c["mediana"])
     top = sorted(sorted(cal, key=lambda c: -c["mediana"])[:7], key=lambda c: c["data"])

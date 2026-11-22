@@ -224,7 +224,7 @@ function oggi(I){var u=I.ultimo,reg=I.alberghi_registro;if(!u||!reg||u.alberghi_
     (R.length?'<div class="o3-tps">'+R.map(function(r){return '<div class="o3-tp"><span class="o3-tpl">'+esc(r.etichetta||r.tipo)+'</span><b class="o3-tpv" data-v="'+Math.round(r.mediana)+'">'+eu(r.mediana)+'</b><small>a notte, 2 persone</small></div>'}).join('')+'</div>':'')+'<div class="o3-tus" data-b="notte"></div>',
     'Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più. Camera libera su Booking: è la disponibilità, non l’occupazione. Fonte: Booking, lettura del '+gg(letto));
   var cal=(I.calendario||[]).filter(function(c){return c&&c.mediana!=null&&String(c.data||'').slice(0,10)>=iso});
-  if(cal.length>2){var ord=cal.slice().sort(function(a,b){return b.mediana-a.mediana}),pr=ord[0],gd=function(c){return gg(c.data,1)};
+  if(cal.length>20){var ord=cal.slice().sort(function(a,b){return b.mediana-a.mediana}),pr=ord[0],gd=function(c){return gg(c.data,1)};
     h+=blk('o3-notti','Le prossime notti più care','La notte più cara in arrivo è '+gd(pr)+': una camera d’albergo costa '+eu(pr.mediana),
       big(eu(pr.mediana),gd(pr)+', 2 persone')+'<div class="o3-notti">'+ord.slice(0,7).sort(function(a,b){return a.data<b.data?-1:1}).map(function(c){return rg(c===pr?'o3-sab':'',gd(c),c.mediana,pr.mediana)}).join('')+'</div><div class="o3-tus" data-b="notti"></div>',
       'Prezzo medio degli alberghi con camere libere, 2 persone · Fonte: Booking, lettura del '+gg(u.letto_il||pr.data))}

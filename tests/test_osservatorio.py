@@ -64,12 +64,14 @@ class TestNotti(unittest.TestCase):
            {'data': '2026-12-08', 'mediana': 260, 'prenotabili': 500},
            {'data': '2026-12-31', 'mediana': 420, 'prenotabili': 300},
            {'data': '2026-12-05', 'mediana': None, 'prenotabili': 0}]
+    # il blocco compare solo con almeno 21 notti future (George 22/11)
+    CAL = CAL + [{'data': f'2027-01-{g:02d}', 'mediana': 100} for g in range(1, 21)]
 
     def test_calendario_presente(self):
         h = osservatorio.notti(dati(calendario=self.CAL), OGGI)
         self.assertIn('La notte più cara in arrivo è giovedì 31 dicembre: una camera d’albergo costa 420 €', h)
         self.assertNotIn('900 €', h)
-        self.assertEqual(h.count('class="o3-r '), 4)
+        self.assertEqual(h.count('class="o3-r '), 7)
         self.assertLess(h.index('domenica 22 novembre'), h.index('giovedì 31 dicembre</span>'))
 
     def test_calendario_assente_o_troppo_corto(self):
@@ -78,11 +80,12 @@ class TestNotti(unittest.TestCase):
         self.assertEqual(osservatorio.notti(dati(calendario=[None, {'data': '2026-12-01'}, 'x']), OGGI), '')
 
     def test_al_massimo_sette_notti(self):
-        cal = [{'data': f'2026-12-{g:02d}', 'mediana': 100 + g} for g in range(1, 20)]
+        cal = [{'data': f'2026-12-{g:02d}', 'mediana': 100 + g} for g in range(1, 25)]
         h = osservatorio.notti(dati(calendario=cal), OGGI)
         self.assertEqual(h.count('class="o3-r '), 7)
-        self.assertNotIn('112 €', h)
-        self.assertIn('119 €', h)
+        self.assertNotIn('117 €', h)
+        self.assertIn('124 €', h)
+        self.assertEqual(osservatorio.notti(dati(calendario=cal[:20]), OGGI), '')
 
 
 class TestCento(unittest.TestCase):
