@@ -352,7 +352,7 @@ function zonaDi(L){if(!ME)return null;var s=ME.s,h=ME.h,c=[s&&s.zona,s&&s.zona_s
   for(i=0;i<c.length;i++)for(j=0;j<L.length;j++){var n=norm(L[j].nome);if(n.length>4&&c[i].length>4&&(c[i].indexOf(n)>-1||n.indexOf(c[i])>-1))return L[j]}return null}
 function zpModello(m){ZP={m:m,k:m.date[0].chiave,by:ZP?ZP.by:'prezzo',dir:ZP?ZP.dir:-1,q:ZP?ZP.q:'',open:{},tutte:false};
   ZT.querySelector('.o3-chips').innerHTML=m.date.map(function(x){return '<button type="button" data-k="'+esc(x.chiave)+'" aria-pressed="false">'+esc(x.etichetta)+'</button>'}).join('');
-  var nt=ZT.querySelector('.o3-znota');if(nt)nt.hidden=m.schede;
+  var nt=ZT.querySelector('.o3-znota');if(nt)nt.hidden=!m.schede;
   if(!m.schede){var src=ZT.parentNode.querySelector('.o2-src');if(src)src.textContent='Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più. Camera per 2 persone, una notte · Zone come le divide Booking · Fonte: Booking, lettura del '+gg(String(m.letto_il||D.agg))}}
 function zpDisegna(){if(!ZT||!ZP)return;var m=ZP.m,k=ZP.k,dt=m.date.filter(function(x){return x.chiave===k})[0],r=m.roma[k],q=norm(ZP.q),mia=zonaDi(m.zone),
     L=m.zone.filter(function(z){return !q||norm(z.nome).indexOf(q)>-1}).sort(function(a,b){if(ZP.by==='nome')return ZP.dir*a.nome.localeCompare(b.nome,'it');

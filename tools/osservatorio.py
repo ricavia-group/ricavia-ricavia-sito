@@ -256,8 +256,8 @@ def sabato(d):
 # Riga di classifiche.json: [id, nome, zona, stelle, hotel_score, voto, recensioni, martedi, sabato]
 VOTO_REC = 100  # il voto degli ospiti conta da 100 recensioni in su
 VOTO_QP = 8  # rapporto voto/prezzo: alberghi con voto da 8 in su, dal martedì più economico
-CLASSIFICHE = [("hs", "Hotel Score"), ("voto", "Voto degli ospiti su Booking"), ("rec", "Più recensioni"),
-               ("sab", "Prezzo più alto il sabato"), ("qp", "Miglior rapporto voto/prezzo")]
+CLASSIFICHE = [("hs", "Hotel Score"), ("voto", "Voto degli ospiti"), ("rec", "Più recensioni"),
+               ("sab", "Sabato più caro"), ("qp", "Rapporto voto/prezzo")]  # nomi corti: sul telefono stanno in due righe
 
 
 def top(righe, k):
