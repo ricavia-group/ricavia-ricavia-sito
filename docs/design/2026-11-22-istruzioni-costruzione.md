@@ -297,4 +297,181 @@ Le alternative 1 B e 1 D usano il prezzo di ogni albergo. Oggi `osservatorio.jso
 
 ## PARTE C · Revisione del sito
 
-<!--ISTRUZIONI-C-->
+Stessi numeri delle scelte (da 11 a 32). Ogni punto ha pagina, difetto osservato, proposta con i testi esatti e la prova. Costruisci solo i numeri a cui George ha detto sì. Le correzioni di testo in `index.html` fuori dai segnaposto `oss:` si fanno a mano; quelle dentro l'Osservatorio si fanno in `tools/osservatorio.py`.
+
+**Attenzione a questi punti:**
+- **11** è l'unico difetto che rompe una funzione: in `assets/js/12-osservatorio.js` `var DOM` è dichiarato alla riga 159 (espressione regolare) e di nuovo alla riga 266 (oggetto); la riga 218 chiama `DOM.test`. Rinomina la prima in `DOM_RE` (righe 159 e 218). Va fatta per prima e può andare in una PR a parte sul ramo `osservatorio-pagina`
+- **12, 15, 17** cambiano la promessa fatta all'albergatore: usa solo i testi approvati da George
+- **21**: la domanda "Turismo da Bar" è a `index.html` riga 563: verifica se sta dentro o fuori dai segnaposto `oss:` prima di modificarla
+- **30** non si può chiudere senza il sito generato: misura i pesi su `site/` dopo la build
+- La revisione è stata fatta sul sorgente, non sul sito generato: dopo ogni correzione ripeti la prova su `site/` a 390 e 1366 px
+
+**Ordine:** 11 → 12, 14, 21 (testi non allineati) → 13, 16, 20 (primo schermo e ricerca dell'Osservatorio sul telefono) → 15, 17, 22 (richiami all'azione) → 18, 19, 23, 24 → 25, 26, 27, 28 → 29, 30, 31, 32
+
+### 11. Il tasto "Cerca" dell'Osservatorio non fa niente
+- **Pagina**: /osservatorio/, 390 e 1366
+- **Cosa non va**: nella ricerca in cima alla pagina ("Nome del tuo hotel o CIN"), se scrivo un nome e premo **Cerca** o **Invio** non succede nulla: nessun risultato, nessun messaggio. Provato con "126 Gracchi Suites" (nome esatto) e con "zzzzqq" (nome inesistente): la pagina resta ferma e lo script va in errore (`DOM.test is not a function`). Funziona solo se tocco una voce dell'elenco che compare mentre scrivo. Lo stesso tasto serve anche "Una zona o una via". Causa per chi costruisce: in `assets/js/12-osservatorio.js` il nome `DOM` è usato due volte, alla riga 159 (elenco delle parole che indicano una domanda) e alla riga 266 (domande della conversazione, aggiunte con l'ultimo lavoro sulla chat): la seconda cancella la prima e la riga 218 si rompe.
+- **Proposta**: dare un nome diverso a una delle due (per esempio `DOM_RE` alla riga 159 e 218). Poi controllare che con un nome inesistente compaia il messaggio "Non troviamo «…» tra le … strutture ricettive del registro di Roma Capitale".
+- **Tipo**: solo correzione
+- **Prova**: su /osservatorio/ scrivere "zzzzqq" e premere Cerca: deve comparire il messaggio "Non troviamo…". Scrivere il nome esatto di un hotel e premere Invio: deve aprirsi la scheda. Nessun errore in console.
+
+### 12. La pagina Hotel Score promette sei voti e tre interventi, il resto del sito ne dichiara quattro
+- **Pagina**: /hotel-score/, 390 e 1366
+- **Cosa non va**: nella stessa pagina convivono due promesse diverse. In alto: "Sei voti sulle aree che determinano i tuoi ricavi e tre interventi prioritari. Gratuito, chiaro, immediatamente operativo" (index.html riga 468), "Più tre interventi prioritari" (riga 471), riquadro "Sei voti" (riga 475), "Analizziamo sei aree", "Media delle sei aree", "Le tre priorità di questo esempio". In basso e nella conferma: "I voti di 4 aree, con Canali e Sito in arrivo". L'Osservatorio dice "4 aree oggi, Canali e Sito in arrivo". Il lavoro del 21/11 ha tolto "sei voti e tre priorità" altrove, ma qui sono rimasti.
+- **Proposta**: 
+  - sottotitolo: "Quattro voti sulle aree che determinano i tuoi ricavi e le cose da guardare. Gratuito, chiaro, immediatamente operativo"
+  - riquadro "Sei voti" → "Quattro voti", con sotto "Prezzi, reputazione, foto, posizionamento"
+  - "Più tre interventi prioritari" → "Più le cose da guardare"
+  - "Analizziamo sei aree" → "Analizziamo quattro aree, Canali e Sito in arrivo"; nell'esempio lasciare accese solo le quattro aree calcolate oggi
+  - "Media delle sei aree" → "Media delle aree calcolate"
+- **Tipo**: cambia l'offerta (è la promessa fatta all'albergatore: da confermare dal titolare)
+- **Prova**: cercare nella pagina "sei" e "tre interventi": nessun risultato fuori dalla spiegazione del metodo.
+
+### 13. All'arrivo sull'Osservatorio la ricerca del proprio hotel non si vede
+- **Pagina**: /osservatorio/, 390 e 1366
+- **Cosa non va**: sul telefono il primo schermo mostra solo i due riquadri "Alberghi pieni a Roma 11,4%" e "Tariffa mediana 134 €"; il titolo inizia a 619 px e la casella "Nome del tuo hotel o CIN" è a 969 px, cioè oltre il primo schermo (alto 844). Sul computer la casella è a 879 px su 900 ed è coperta dall'avviso dei cookie. Chi arriva dalla mail per "vedere il suo hotel" non trova subito dove scrivere.
+- **Proposta**: mettere titolo e ricerca per primi e i due riquadri subito dopo; oppure, sul telefono, i due riquadri affiancati e bassi (solo numero e una riga). Sul computer spostare l'avviso dei cookie in basso a sinistra, stretto.
+- **Tipo**: solo correzione
+- **Prova**: aprire /osservatorio/ a 390×844 e a 1366×900: la casella di ricerca deve essere visibile e toccabile senza scorrere, anche con l'avviso dei cookie aperto.
+
+### 14. La Home parla dell'Osservatorio al futuro e con esempi inventati
+- **Pagina**: / (sezione "Osservatorio"), 390 e 1366
+- **Cosa non va**: il testo dice "Ogni mese con l'Hotel Score pubblicheremo il ranking basato su prezzi della concorrenza, flussi turistici e andamento dei voli in arrivo, elaborato con il metodo Ricavia" (index.html riga 994). Sotto ci sono una "Top 10 · Roma centro" con "Struttura ricettiva A, B, C…" e un Hotel Score d'esempio con sei voti (righe 1001–1026). L'Osservatorio vero è già pubblicato con numeri veri e quattro voti.
+- **Proposta**: testo "Ogni mese con l'Hotel Score pubblichiamo le classifiche basate su prezzi della concorrenza, voti degli ospiti e flussi turistici, elaborate con il metodo Ricavia". Tasto principale della sezione: "Cerca il tuo hotel →" verso /osservatorio/. Al posto della Top 10 inventata, le prime righe di una classifica vera (per esempio "Vie con più strutture ricettive") o i due numeri del giorno.
+- **Tipo**: solo correzione (testo non aggiornato); la scelta di cosa mostrare al posto dell'esempio spetta al titolare
+- **Prova**: nella Home non compaiono più "pubblicheremo" e "Struttura ricettiva A".
+
+### 15. Il primo schermo della Home non porta né all'Osservatorio né all'Hotel Score
+- **Pagina**: /, 390
+- **Cosa non va**: sul telefono il primo schermo ha solo il tasto "Contattaci". I tasti "Osservatorio" e "Hotel Score gratuito" dell'intestazione ci sono solo sul computer; sul telefono c'è il menu. La barra "Hotel Score gratuito →" compare solo dopo aver chiuso l'avviso dei cookie. La Home sul telefono è lunga 19.285 px (circa 23 schermi) e l'Osservatorio arriva verso il sesto.
+- **Proposta**: sotto "Contattaci" un secondo tasto bianco "Cerca il tuo hotel nell'Osservatorio →".
+- **Tipo**: cambia l'offerta (ordine dei richiami all'azione)
+- **Prova**: a 390 px, senza scorrere, si vedono due tasti e il secondo apre /osservatorio/.
+
+### 16. La barra "Hotel Score gratuito" sul telefono copre i tasti e porta fuori dall'Osservatorio
+- **Pagina**: /osservatorio/ e /contatti/, 390
+- **Cosa non va**: sull'Osservatorio la barra fissa in basso (`.z-mbar`, site.css righe 5704–5709) copre l'elenco dei suggerimenti della ricerca e, nella conversazione, il tasto "Preparate il mio report →". In più porta a /hotel-score/ (un modulo con attesa), mentre l'Hotel Score si calcola subito nella stessa pagina. Su /contatti/ resta sopra il modulo mentre lo si compila.
+- **Proposta**: sull'Osservatorio la barra diventa "Calcola l'Hotel Score →" e scorre alla sezione "E il tuo hotel, rispetto ai competitor?" (`#o2-hotel`); sparisce quando una casella di testo è attiva. Su /contatti/ nasconderla, come già avviene su /hotel-score/ e /nuova-apertura/.
+- **Tipo**: solo correzione
+- **Prova**: a 390 px, nella conversazione dell'Osservatorio il tasto "Preparate il mio report →" si tocca senza scorrere; su /contatti/ la barra non c'è.
+
+### 17. Due strade diverse con lo stesso nome "Hotel Score"
+- **Pagina**: /hotel-score/ e /osservatorio/, 390 e 1366
+- **Cosa non va**: sull'Osservatorio scrivo il nome e vedo subito voti e competitor. Su /hotel-score/ compilo un modulo e leggo "Grazie, richiesta ricevuta… Ti inviamo l'Hotel Score". Un albergatore di Roma che arriva dalla mail su /hotel-score/ non sa che può vederlo subito.
+- **Proposta**: sopra il modulo di /hotel-score/ una riga con tasto: "Il tuo hotel è a Roma? Vedi subito i voti nell'Osservatorio →". Il modulo resta per gli hotel fuori Roma e per quelli non ancora letti.
+- **Tipo**: cambia l'offerta
+- **Prova**: da /hotel-score/ si arriva alla ricerca dell'Osservatorio con un solo tocco.
+
+### 18. Domande frequenti della Home: sul telefono la risposta compare fuori dallo schermo
+- **Pagina**: / (sezione "Le risposte, prima della chiamata"), 390
+- **Cosa non va**: toccando una domanda (provato con "Quanto costa?") la risposta viene scritta in un riquadro che sta sotto l'elenco delle otto domande. Dopo il tocco il riquadro inizia a 1.211 px dall'alto dello schermo (alto 844): non si vede e sembra che il tocco non abbia fatto nulla (`#aiChips`, riquadro di `#aiForm`).
+- **Proposta**: sul telefono aprire la risposta subito sotto la domanda toccata, oppure scorrere al riquadro della risposta dopo il tocco.
+- **Tipo**: solo correzione
+- **Prova**: a 390 px toccare "Quanto costa?": la risposta è leggibile senza scorrere.
+
+### 19. Nuova apertura: sul telefono le tabelle mostrano 3 colonne su 9
+- **Pagina**: /nuova-apertura/, 390
+- **Cosa non va**: la tabella "Dove aprire a Roma: nove zone a confronto" è larga 717 px in uno spazio di 342: si vedono Zona, Strutture ricettive per km² e Alberghi; restano nascoste Camere d'albergo, Sabato, Voto mediano, Alberghi sotto 8, Casa al m², Rendimento. Nel simulatore (640 px su 342) restano nascosti proprio "Ricavo camere stimato all'anno" e "Ricavo sul costo". Le tabelle scorrono di lato ma niente lo fa capire (`.oz-w`).
+- **Proposta**: sul telefono tenere ferma la colonna Zona e aggiungere sopra la tabella la riga "Scorri la tabella di lato →"; nel simulatore mettere "Ricavo camere stimato all'anno" subito dopo "Costo d'ingresso stimato", oppure una scheda per zona.
+- **Tipo**: solo correzione
+- **Prova**: a 390 px il ricavo stimato di ogni zona si legge senza scorrere di lato.
+
+### 20. Ricerca dell'Osservatorio: sul telefono i suggerimenti sono stretti e l'indirizzo è tagliato
+- **Pagina**: /osservatorio/ (ricerca in alto), 390
+- **Cosa non va**: scrivendo "gracchi" i nomi vanno su quattro righe ("Hotel Les / Chambres / D'or Gracchi / 32") e l'indirizzo a fianco è tagliato senza numero civico ("affittacamere · Via dei Gracchi"): quattro strutture ricettive della stessa via sembrano uguali. Nella conversazione più in basso lo stesso elenco è già su due righe ed è leggibile.
+- **Proposta**: usare anche qui nome sopra e tipo con indirizzo completo sotto, largo quanto lo schermo.
+- **Tipo**: solo correzione
+- **Prova**: a 390 px scrivere "gracchi": ogni voce mostra nome su una o due righe e indirizzo con numero civico.
+
+### 21. Osservatorio: è rimasta la domanda su "Turismo da Bar"
+- **Pagina**: /osservatorio/ ("Le domande che ci fanno più spesso"), 390 e 1366
+- **Cosa non va**: c'è ancora "Come si partecipa a Turismo da Bar?" con la risposta "Le strutture ricettive in classifica ricevono un invito gratuito…" (index.html riga 563), mentre il blocco Turismo da Bar è stato tolto. Nella prima risposta si legge "prezzi online, recensioni, sito, foto e presenza sui canali", ma Sito e Canali sono dichiarati "in arrivo".
+- **Proposta**: togliere la domanda. Prima risposta: "Le classifiche si basano su dati pubblici: prezzi online, recensioni, foto e posizione. Sito e canali sono in arrivo. Tutte le strutture ricettive della stessa zona e categoria sono valutate con le stesse regole".
+- **Tipo**: solo correzione
+- **Prova**: cercare "Turismo da Bar" nella pagina: nessun risultato.
+
+### 22. Chiusura della Home: il testo invita all'Hotel Score, il tasto dice "Contattaci"
+- **Pagina**: / (ultimo blocco "Trasformiamo il fatturato in utile"), 390 e 1366
+- **Cosa non va**: il testo è "Inizia dall'Hotel Score gratuito: i voti della tua struttura ricettiva contro i competitor veri" ma l'unico tasto è "Contattaci" (index.html riga 1205). In fondo all'Osservatorio lo stesso blocco ha due tasti: "Richiedi l'Hotel Score →" e "Contattaci".
+- **Proposta**: stessi due tasti anche nella Home, con "Richiedi l'Hotel Score →" per primo.
+- **Tipo**: solo correzione
+- **Prova**: in fondo alla Home ci sono due tasti e il primo apre /hotel-score/.
+
+### 23. Contatti: sul telefono il titolo del modulo tocca la prima etichetta
+- **Pagina**: /contatti/, 390
+- **Cosa non va**: nel riquadro "Prenota una chiamata" il titolo "Prenota la call conoscitiva" va su due righe e finisce sopra l'etichetta "NOME E COGNOME" (il titolo termina a 299 px, l'etichetta inizia a 296). A 1366 lo spazio c'è.
+- **Proposta**: almeno 24 px di spazio tra il titolo e il modulo `#ctForm` sotto i 600 px di larghezza.
+- **Tipo**: solo correzione
+- **Prova**: a 390 px tra "conoscitiva" e "NOME E COGNOME" si vede uno spazio vuoto.
+
+### 24. Modulo Hotel Score: "Tre semplici dati" ma i campi sono quattro, e l'errore non dice quale
+- **Pagina**: /hotel-score/, 390 e 1366
+- **Cosa non va**: il titolo è "Tre semplici dati", i campi sono Nome, Città, Numero di camere, Email; "Numero di camere" non è segnato come facoltativo (nel modulo dei Contatti lo è). Con il modulo vuoto, e anche con l'email scritta male ("prova"), compare sempre la stessa frase grigia sotto il tasto: "Compila nome della struttura ricettiva, città ed email". Nessun campo viene evidenziato.
+- **Proposta**: scrivere "Facoltativo" dentro "Numero di camere". Messaggio per l'email sbagliata: "Controlla l'indirizzo email". Bordo evidenziato sul campo da correggere, come nel modulo dei Contatti (che mostra "Scrivi nome e cognome", "Controlla il numero di telefono").
+- **Tipo**: solo correzione
+- **Prova**: scrivere "prova" nell'email e inviare: il messaggio parla dell'email e il campo è evidenziato.
+
+### 25. "Struttura" da sola in quattro punti
+- **Pagina**: /, 390 e 1366
+- **Cosa non va**: la regola dei testi vieta "struttura" da sola. Trovata in:
+  - domanda "La mia struttura è adatta?" (`assets/js/01-main.js` riga 139)
+  - risposta "Il preventivo dipende dalla struttura e dai servizi scelti" (`01-main.js` riga 140 e index.html riga 269)
+  - nota del simulatore "L'Hotel Score parte dai numeri reali della tua struttura" (`01-main.js` riga 357)
+  - etichetta "Struttura A · Monti" nell'esempio dell'Hotel Score (index.html riga 142)
+- **Proposta**: "Il mio hotel è adatto?" · "Il preventivo dipende dall'hotel e dai servizi scelti" · "L'Hotel Score parte dai numeri reali del tuo hotel" · "Hotel A · Monti".
+- **Tipo**: solo correzione
+- **Prova**: cercare "struttura" non seguita da "ricettiva" nei file indicati: nessun risultato (restano ammesse "strutture extralberghiere").
+
+### 26. Testi in azzurro, blu o viola pieno
+- **Pagina**: articoli del Journal, /nuova-apertura/, /, 390 e 1366
+- **Cosa non va**: la regola chiede le evidenze solo in gradiente. Colore pieno trovato in: etichetta "In breve" degli articoli, azzurro pieno (index.html righe 613, 641, 681); etichetta di categoria "Zone di Roma" dentro l'articolo aperto, blu pieno (`.jr-k`); "GOPPAR" nel riquadro "Business plan · 20 camere" di Nuova apertura, viola pieno; "(+1)" nel calendario "Stesso hotel, stesso mese" della Home, azzurro pieno.
+- **Proposta**: applicare a questi quattro elementi il gradiente sul testo, come le altre etichette.
+- **Tipo**: solo correzione
+- **Prova**: i quattro testi hanno la stessa sfumatura delle etichette vicine.
+
+### 27. "Passa sopra le card" non vale sul telefono
+- **Pagina**: / (sezione "Un solo obiettivo: il tuo utile"), 390
+- **Cosa non va**: sopra le schede dei servizi si legge "PASSA SOPRA LE CARD PER SCOPRIRE COSA FACCIAMO" (index.html riga 1137): sul telefono non c'è un mouse. Non ho verificato se le schede reagiscono al tocco: a 390 px il contenuto era già tutto visibile.
+- **Proposta**: sul telefono nascondere la riga, oppure "Tocca una card per scoprire cosa facciamo" se il tocco fa qualcosa.
+- **Tipo**: solo correzione
+- **Prova**: a 390 px la frase non compare o corrisponde a ciò che accade.
+
+### 28. Testi e tasti troppo piccoli sul telefono
+- **Pagina**: varie, 390
+- **Cosa non va**: 
+  - /hotel-score/: le scritte del grafico a ragnatela ("Prezzi 5,2", "Canali 6,4"…) sono alte 7 px
+  - /: nel calendario "Stesso hotel, stesso mese" prezzi e camere a 8–9 px ("€138", "12/20", "11/20"); "Ricavi del mese" a 9,5 px
+  - /partner/: "PMS e channel manager" a 9,5 px; /consulenza/ e /revenue-management/: mesi dei grafici a 8–9 px
+  - tutte le pagine interne: "← Torna alla home" alto 33 px; collegamenti del piè di pagina alti 17 px; casella della privacy 18×18 px
+  - /osservatorio/: linguette "Il tuo hotel / Prezzi / Classifiche…" alte 34 px, tasto "Cerca →" della conversazione 36 px
+- **Proposta**: nessun testo sotto 11 px (le scritte del grafico a ragnatela a 11 px o spostate in un elenco sotto il grafico); tasti e collegamenti alti almeno 40 px; nel piè di pagina almeno 12 px di spazio sopra e sotto ogni voce.
+- **Tipo**: solo correzione
+- **Prova**: a 390 px le scritte del grafico si leggono senza ingrandire; "Torna alla home" è alto almeno 40 px.
+
+### 29. Tre numeri diversi di alberghi nei primi schermi dell'Osservatorio
+- **Pagina**: /osservatorio/, 390 e 1366
+- **Cosa non va**: in poche righe si leggono "877 alberghi su 990 hanno ancora camere su Booking", "615 alberghi letti su Booking" e "1.008 alberghi" (registro). Non so quale sia il rapporto tra 990 e 615: lo segnalo, non lo correggo. Sotto i riquadri c'è anche "media di novembre su 1 notte: 11,4% di alberghi pieni", che è uguale al numero del giorno e non aggiunge nulla finché le notti sono poche.
+- **Proposta**: una riga sotto i riquadri che spiega i tre numeri (quanti nel registro, quanti presenti su Booking, quanti letti con prezzi e voti). Mostrare la media del mese solo da 7 notti in su.
+- **Tipo**: solo correzione (i numeri li conferma chi gestisce i dati)
+- **Prova**: un lettore capisce in una frase perché i tre numeri sono diversi.
+
+### 30. Da verificare sul sito generato: peso della pagina e testo alternativo delle foto
+- **Pagina**: tutte
+- **Cosa non va**: nel sorgente il foglio di stile `assets/css/site.css` pesa 639 KB e `index.html` 342 KB; al primo caricamento partono anche tre foto da 130–180 KB e la mappa (135 KB). Non ho potuto misurare il sito generato, che riduce questi file e divide le pagine. Nell'articolo aperto dal Journal la foto di apertura ha il testo alternativo vuoto (lo script lo legge da un elenco che per la foto `s027` non dà nulla). Le foto di apertura delle pagine dei servizi hanno il testo alternativo vuoto: va bene se sono solo decorative.
+- **Proposta**: dopo la build, misurare su telefono il peso del primo schermo di /, /osservatorio/ e /hotel-score/ (obiettivo: sotto 1 MB in tutto) e caricare le foto della Home dalla seconda in poi solo quando servono. Dare un testo alternativo alla foto di apertura degli articoli.
+- **Tipo**: solo correzione
+- **Prova**: peso misurato sul sito generato; ogni foto di apertura di un articolo ha una descrizione.
+
+### 31. Osservatorio, le vie: manca il termine di paragone
+- **Pagina**: /osservatorio/ (sezione "Le vie"), 390 e 1366
+- **Cosa non va**: il risultato dice quante strutture ricettive e quante camere ha una via, ma non se sono tante o poche
+- **Proposta**: sotto il risultato una riga "Più strutture ricettive di {n} vie su 10 a Roma", calcolata sulle 5.329 vie di `assets/data/vie.json` (posizione della via nell'elenco ordinato per `strutture`, arrotondata al decile; per le vie nel primo 1% scrivere "Tra le {n} vie con più strutture ricettive di Roma")
+- **Tipo**: solo correzione
+- **Prova**: Via Aurelia (230 strutture ricettive) risulta la prima; una via con 1 struttura ricettiva non mostra la riga
+
+### 32. Nuova apertura: nel business plan di esempio mancano i ricavi
+- **Pagina**: /nuova-apertura/ (riquadro "Business plan · 20 camere"), 390 e 1366
+- **Cosa non va**: il riquadro mostra ADR 140 €, occupazione 72%, GOP 297.124 € e GOPPAR 40,70 €. I numeri tornano tra loro (20 × 140 × 72% × 365 = 735.840 € di ricavi; 297.124 ÷ 7.300 notti disponibili = 40,70 €), ma i ricavi non sono scritti e il lettore non può rifare il conto
+- **Proposta**: aggiungere una quinta casella "Ricavi · 735.840 € · Camere vendute × ADR" prima del GOP. Se George sceglie il percorso a tappe (scelta 7) il riquadro resta come esempio illustrativo sopra il percorso
+- **Tipo**: solo correzione
+- **Prova**: nel riquadro si leggono cinque caselle e 20 × 140 × 0,72 × 365 dà il numero scritto
