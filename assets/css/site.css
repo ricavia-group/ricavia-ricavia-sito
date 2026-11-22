@@ -5740,7 +5740,7 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio #o2Sug small{white-space:normal}
 @media(max-width:600px){#pg-osservatorio #o2Cerca{position:relative}#pg-osservatorio #o2Cerca .o2-in{position:static}}
 /* 23 · Contatti: spazio tra il titolo e il modulo sul telefono */
-@media(max-width:600px){#contatti .ctp-card h2{line-height:1.12!important}#contatti #ctForm{margin-top:24px!important}}
+@media(max-width:600px){#contatti .ctp-card h2{line-height:1.12!important}#contatti #ctForm{margin-top:32px!important}}
 /* 24 · campo da correggere nel modulo dell'Hotel Score */
 #pg-pagella .hs-f input.bad{border-color:#d0455c}
 /* 26 · evidenze solo in gradiente */
@@ -5755,7 +5755,6 @@ html.o2-nosc{overflow:hidden}
   #pg-osservatorio .o2-nav a{min-height:40px;display:inline-flex;align-items:center}
   #pg-osservatorio .o2-cq button,#pg-osservatorio .o2-cf button{min-height:44px}
   .ctp-f .chk input,.hs-chk input,.os-chk input{width:22px!important;height:22px!important}
-  #calendario .cd b,#calendario .cd em,.cd small{font-size:11px!important}
 }
 /* 13 · sul computer l'avviso dei cookie sta in un angolo, stretto, e non copre la ricerca dell'Osservatorio (a sinistra) */
 @media(min-width:761px){.ck{left:auto;right:20px;transform:translateY(24px);width:min(440px,calc(100% - 40px))}.ck.on{transform:none}}

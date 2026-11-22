@@ -159,13 +159,14 @@ if(vf){vf.q.addEventListener('focus',vie,{once:true});vf.addEventListener('submi
   $$('.o2-ex button').forEach(function(b){b.addEventListener('click',function(){vf.q.value=b.dataset.v;cercaVia(b.dataset.v)})})}
 pg.addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(b&&vr&&vr.contains(b)){vf.q.value=b.dataset.v;cercaVia(b.dataset.v)}
   var m=e.target.closest('[data-o2-msg]');if(m){e.preventDefault();scrivici(m.dataset.o2Msg)}
-  var h=e.target.closest('[data-o2-hs]');if(h){e.preventDefault();var a=$('#o2Hs');if(a)a.click()}
-  /* 17 (22/11): ogni "Calcola l'Hotel Score" dell'Osservatorio porta alla chat della sezione Il tuo hotel, non al modulo */
-  var hh=e.target.closest('a[href="#o2-hotel"]');if(hh&&!hh.closest('.o2-nav')){e.preventDefault();vaiChat(true)}});
+  var h=e.target.closest('[data-o2-hs]');if(h){e.preventDefault();var a=$('#o2Hs');if(a)a.click()}});
 function vaiChat(fuoco){var s=$('#o2-hotel');if(!s)return;vai(s,90);if(fuoco)setTimeout(function(){var i=$('#o2ChatQ input');if(i)i.focus({preventScroll:true})},800)}
 /* 16 (22/11): sull'Osservatorio la barra del telefono non porta fuori dalla pagina ma alla chat, e sparisce quando la chat è in vista */
+/* 17 (22/11): ogni "Calcola l'Hotel Score" dell'Osservatorio porta alla chat della sezione Il tuo hotel, non al modulo.
+   Su window e in cattura: lo script delle ancore della pagina ferma il clic prima che arrivi a document */
+window.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.z-mbar,a[href="#o2-hotel"]');if(!a||a.closest('.o2-nav')||!(MP||pg.classList.contains('on')))return;
+  if(!a.classList.contains('z-mbar')&&!pg.contains(a))return;e.preventDefault();e.stopPropagation();vaiChat(true)},true);
 if(MB){if(MP){MB.textContent='Calcola l’Hotel Score →';MB.setAttribute('href','#o2-hotel')}
-  document.addEventListener('click',function(e){if(e.target.closest('.z-mbar')&&(MP||pg.classList.contains('on'))){e.preventDefault();e.stopPropagation();vaiChat(true)}},true);
   var sh=$('#o2-hotel');if(sh&&'IntersectionObserver' in window)new IntersectionObserver(function(es){MB.classList.toggle('off',es[0].isIntersecting)},{root:ROOT}).observe(sh)}
 if(MP&&location.hash==='#o2-hotel')setTimeout(function(){vaiChat(false)},700);
 
