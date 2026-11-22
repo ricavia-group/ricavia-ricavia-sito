@@ -245,51 +245,112 @@ def metodo():
 </div></div></section>'''
 
 
+def omi_zona(qq):
+    """Valori mediani delle zone OMI di una zona del sito (abitazioni civili): prezzo €/m², affitto €/m² al mese,
+    rendimento lordo da affitto (affitto annuo diviso prezzo). Lo stesso rendimento della tabella e del report del percorso."""
+    aa = [q for q in qq if q.get("affitto_min")]
+    v = statistics.median((q["vendita_min"] + q["vendita_max"]) / 2 for q in qq)
+    a = statistics.median((q["affitto_min"] + q["affitto_max"]) / 2 for q in aa) if aa else None
+    r = statistics.median((q["affitto_min"] + q["affitto_max"]) / 2 * 12 / ((q["vendita_min"] + q["vendita_max"]) / 2) for q in aa) if aa else None
+    return v, a, r
+
+
 def casa(qq):
     """Prezzo delle case (abitazioni civili, OMI) e rendimento lordo da affitto di una zona: valori mediani delle zone OMI."""
     if not qq:
         return "<td>n.d.</td><td>n.d.</td>"
-    v = statistics.median((q["vendita_min"] + q["vendita_max"]) / 2 for q in qq)
-    r = statistics.median((q["affitto_min"] + q["affitto_max"]) / 2 * 12 / ((q["vendita_min"] + q["vendita_max"]) / 2) for q in qq if q.get("affitto_min"))
-    return f'<td>{num(int(round(v, -2)))} €</td><td>{dec(r * 100)}%</td>'
+    v, _, r = omi_zona(qq)
+    return f'<td>{num(int(round(v, -2)))} €</td><td>{dec(r * 100) + "%" if r else "n.d."}</td>'
 
 
 # shortcut: posti letto di alberghi, dipendenze alberghiere e residence nel registro di giugno 2025 (100.693 + 1.330 + 2.701);
 # da ricalcolare con un registro nuovo
 LETTI_ALBERGHI = 104724
-MQ_CAMERA = 35  # superficie lorda per camera, spazi comuni compresi: ipotesi dichiarata, il visitatore la cambia
+OCC_PARTENZA = 70  # scelta 8 di George (22/11): occupazione di partenza del percorso, la stessa di assets/js/13-apertura.js
 
 
-def simulatore(d, omi):
-    """Il simulatore (fermata 10.5): budget e camere → zone compatibili e ricavo stimato, tutto dichiarato come stima.
-    Occupazione: occupazione lorda dei letti negli alberghi di Roma (notti ISTAT dell'anno diviso posti letto del registro per 365)."""
-    a = ((d.get("flussi") or {}).get("istat") or {}).get("annui", {})
+def percorso(d, omi):
+    """Il percorso a tappe di Nuova apertura (scelta 7 del 22/11, sostituisce il simulatore): dati delle zone negli attributi,
+    calcoli e testi in assets/js/13-apertura.js. Senza JavaScript resta nascosto e si legge la tabella delle nove zone."""
+    fl = (d.get("flussi") or {}).get("istat") or {}
+    a, mesi = fl.get("annui", {}), fl.get("mesi", {})
     anno = max((k for k in a if (a[k] or {}).get("presenze_alberghi")), default=None)
-    if not anno:
+    am = max((k for k in mesi if sum((mesi[k] or {}).get("presenze") or [0])), default=None)
+    if not anno or not am:
         return ""
     occ = a[anno]["presenze_alberghi"] / (LETTI_ALBERGHI * 365)
+    pm = mesi[am]["presenze"]
+    stag = [round(v / sum(pm), 4) for v in pm]
     zz = []
     for z in d["zone"]:
-        m, qq = z["mercato"] or {}, omi.get(z["nome"])
-        if m.get("martedi") and m.get("sabato") and qq:
-            zz.append([z["nome"], (m["martedi"] + m["sabato"]) / 2, statistics.median((q["vendita_min"] + q["vendita_max"]) / 2 for q in qq)])
+        m, o, qq = z["mercato"] or {}, z["offerta"], omi.get(z["nome"])
+        if not (m.get("martedi") and m.get("sabato") and qq):
+            continue
+        v, af, r = omi_zona(qq)
+        if not af:
+            continue
+        zz.append({"n": z["nome"], "mar": m["martedi"], "sab": m["sabato"], "voto": m.get("voto"), "s8": m.get("sotto_8"),
+                   "letti": m.get("alberghi") or 0, "alb": o.get("alberghi", 0),
+                   "dens": round(o["strutture"] / z["km2"]) if z.get("km2") else None,
+                   "st": [o.get(f"stelle_{k}", 0) for k in range(1, 6)], "casa": round(v, 1), "aff": round(af, 2), "rend": round(r, 4)})
     if not zz:
         return ""
-    js = html.escape(json.dumps(zz, ensure_ascii=False, separators=(",", ":")), quote=True)
-    return (f'<div class="oz-sim ar" id="ozSim" data-z="{js}" data-occ="{occ:.4f}">'
-            f'<div class="ix-sh"><span class="ap-tag">Il simulatore</span><h2>Quanto costa entrare e quanto può incassare</h2>'
-            f'<p class="ix-p">Scrivi il budget e le camere: vedi le zone compatibili e il ricavo stimato delle camere in un anno</p></div>'
-            f'<form class="oz-sf" novalidate><label>Budget<input name="b" type="number" inputmode="numeric" min="0" step="100000" value="5000000"></label>'
-            f'<label>Camere<input name="c" type="number" inputmode="numeric" min="1" max="500" value="20"></label>'
-            f'<label>m² per camera, spazi comuni compresi<input name="m" type="number" inputmode="numeric" min="10" max="200" value="{MQ_CAMERA}"></label></form>'
-            f'<p class="oz-sn" role="status" aria-live="polite"></p>'
-            f'<div class="oz-w"><table class="oz-t"><thead><tr><th>Zona</th><th>Costo d’ingresso stimato</th><th>Ricavo camere stimato all’anno</th>'
-            f'<th>Ricavo sul costo</th><th>Budget</th></tr></thead><tbody></tbody></table></div>'
-            f'<p class="oz-s">Stima, non una promessa. Costo: camere × m² × prezzo delle case della zona (OMI, 1° semestre 2026): '
-            f'non esistono quotazioni pubbliche degli alberghi. Ricavo: camere × tariffa mediana della zona (media tra martedì e sabato, letti su Booking dal '
-            f'{data(d["letture_dal"])} al {data(d["aggiornato"])}) × 365 notti × {dec(occ * 100)}% di occupazione. Il {dec(occ * 100)}% è l’occupazione lorda dei letti '
-            f'negli alberghi di Roma nel {anno}: notti in albergo ISTAT diviso i posti letto del registro di Roma Capitale. '
-            f'Ricavo prima di commissioni, costi di gestione e tasse</p></div>')
+    at = lambda x: html.escape(json.dumps(x, ensure_ascii=False, separators=(",", ":")), quote=True)
+    fonte = (f'Da dove vengono i numeri. Tariffe, voti e alberghi della zona: Booking, prezzi letti dal {data(d["letture_dal"])} al {data(d["aggiornato"])} 2026, '
+             f'e registro delle strutture ricettive di Roma Capitale ({E(d["registro"]["file"])}). Prezzo, affitto e rendimento lordo da affitto degli immobili: '
+             f'quotazioni OMI dell’Agenzia delle Entrate, 1° semestre 2026, abitazioni civili: non esistono quotazioni pubbliche degli alberghi. '
+             f'Occupazione di partenza: {OCC_PARTENZA}%, un’ipotesi; come riferimento, l’occupazione lorda dei letti negli alberghi di Roma nel {anno} è {dec(occ * 100)}% '
+             f'(notti in albergo ISTAT diviso i posti letto del registro). Stagionalità: notti a Roma per mese nel {am} (ISTAT). '
+             f'Tutto il resto è un’ipotesi che puoi cambiare. È una stima, non una promessa')
+    slider = lambda i, lab, nota, mn, mx, st, extra="": (
+        f'<div class="np-sl"><label class="np-lbl" for="{i}">{lab}{f"<small>{nota}</small>" if nota else ""}</label><span></span>'
+        f'<input type="range" id="{i}" min="{mn}" max="{mx}" step="{st}"><output for="{i}"></output>{extra}</div>')
+    return (f'<div class="np" id="npPerc" data-z="{at(zz)}" data-occ="{occ:.4f}" data-anno="{anno}" data-stag="{at(stag)}" data-roma-sab="{d["roma"]["sabato"]}" hidden>'
+            f'<div class="ix-sh"><span class="ap-tag">Il percorso a tappe</span><h2>Cinque tappe, <span class="np-g">poi il tuo report</span></h2>'
+            f'<p class="ix-p">Le tappe seguono le cinque fasi del servizio. Puoi tornare indietro e cambiare ogni numero: il risultato si aggiorna subito</p></div>'
+            f'<div class="np-box"><div class="np-prog" id="npProg"></div>'
+            f'<div class="np-step" data-s="0"><div class="np-q"><h3>Dove vuoi aprire, e che cosa</h3>'
+            f'<p>Lo studio di fattibilità parte dal mercato: scegli la zona e guarda quanto vale una camera il sabato e quanti alberghi hanno un voto sotto 8</p>'
+            f'<span class="np-lbl">Zona di Roma</span><div class="np-pick" id="npZona"></div>'
+            f'<span class="np-lbl">Tipo di struttura ricettiva</span><div class="np-pick" id="npTipo"></div>'
+            f'<p class="np-note" id="npNTipo" hidden>Le tariffe lette su Booking sono degli alberghi: per una struttura ricettiva extralberghiera la stima è meno precisa, la tappa 4 ti lascia cambiare la tariffa</p></div>'
+            f'<div class="np-res" id="npR0" aria-live="polite"></div></div>'
+            f'<div class="np-step" data-s="1"><div class="np-q"><h3>Quanto investi e quante camere</h3>'
+            f'<p>Il business plan parte dall’investimento. Muovi budget e camere e guarda quanto costa entrare nella zona scelta</p>'
+            f'<span class="np-lbl">L’immobile</span><div class="np-pick" id="npModo"><button type="button" data-v="compra">Lo compro</button><button type="button" data-v="affitta">Lo prendo in affitto</button></div>'
+            f'<p class="np-note" id="npNAnn" hidden></p>'
+            + slider("npBud", "Budget", "", 300000, 15000000, 100000) + slider("npCam", "Camere", "", 4, 80, 1)
+            + slider("npMq", "m² per camera", "ipotesi, spazi comuni compresi", 20, 60, 1)
+            + slider("npLav", "Lavori e arredi per camera", "ipotesi, da sostituire con il tuo preventivo", 0, 80000, 1000)
+            + f'</div><div class="np-res" id="npR1" aria-live="polite"></div></div>'
+            f'<div class="np-step" data-s="2"><div class="np-q"><h3>Dove ti metti nel mercato</h3>'
+            f'<p>Il posizionamento decide la tariffa. Scegli la fascia rispetto agli alberghi della zona: sotto, in linea o sopra</p>'
+            f'<span class="np-lbl">La tua fascia di prezzo</span><div class="np-pick" id="npPos"><button type="button" data-v="0.9">Sotto la zona, −10%</button>'
+            f'<button type="button" data-v="1">In linea con la zona</button><button type="button" data-v="1.15">Sopra la zona, +15%</button><button type="button" data-v="1.3">Fascia alta, +30%</button></div>'
+            f'<p class="np-note">Stare sopra la zona richiede un prodotto e un servizio migliori dei vicini: lo studio di fattibilità verifica se il progetto lo permette</p></div>'
+            f'<div class="np-res" id="npR2" aria-live="polite"></div></div>'
+            f'<div class="np-step" data-s="3"><div class="np-q"><h3>Tariffa e occupazione</h3>'
+            f'<p>I prezzi di lancio partono più bassi e salgono con le prime recensioni. Qui scegli i valori a regime, dal terzo anno</p>'
+            + slider("npTar", "Tariffa media a notte", "", 60, 450, 1)
+            + slider("npOcc", "Occupazione", "ipotesi", 40, 95, 1, f'<span class="np-ip">Partenza: {OCC_PARTENZA}%, ipotesi. Riferimento: {dec(occ * 100)}%, occupazione lorda dei letti negli alberghi di Roma nel {anno}</span>')
+            + f'</div><div class="np-res" id="npR3" aria-live="polite"></div></div>'
+            f'<div class="np-step" data-s="4"><div class="np-q"><h3>Canali, tecnologia e costi</h3>'
+            f'<p>La tecnologia serve a vendere di più sul sito e meno sulle OTA. Muovi la quota di vendita diretta e guarda le commissioni</p>'
+            + slider("npDir", "Vendita diretta dal sito", "ipotesi", 0, 70, 1) + slider("npCom", "Commissione media delle OTA", "ipotesi", 10, 25, 1)
+            + slider("npCop", "Costi operativi sui ricavi", "ipotesi", 30, 70, 1, '<span class="np-ip">Personale, pulizie, utenze, manutenzione, colazioni, tecnologia</span>')
+            + f'</div><div class="np-res" id="npR4" aria-live="polite"></div></div>'
+            f'<div class="np-rep" id="npRep"></div>'
+            f'<div class="np-mail" id="npMail" hidden><div><h3>Ricevi il report completo</h3><p>Te lo mandiamo gratis, con i tuoi numeri e in più</p>'
+            f'<ul><li>L’utile anno per anno fino al quinto, nei tre scenari</li><li>Le zone di Roma con un ritorno migliore per il tuo budget</li>'
+            f'<li>Il calcolo riga per riga, da portare a soci e banche</li></ul></div>'
+            f'<form id="npForm" novalidate><input type="text" name="nome" placeholder="Nome e cognome" autocomplete="name" aria-label="Nome e cognome">'
+            f'<input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email">'
+            f'<label class="ctp-hp" aria-hidden="true">Sito<input type="text" name="sito" tabindex="-1" autocomplete="off"></label>'
+            f'<label class="np-chk"><input type="checkbox" name="privacy"><span>Ho letto l’<a href="#pg-privacy">informativa privacy</a> e accetto di essere ricontattato</span></label>'
+            f'<p class="np-fn">Insieme alla richiesta riceviamo le pagine viste e il tempo di navigazione di questa visita</p>'
+            f'<button type="submit" class="np-btn w"><span>Mandami il report →</span></button><p class="np-ok" role="status" aria-live="polite"></p></form></div>'
+            f'<div class="np-nav"><button type="button" class="np-btn o" id="npInd">← Indietro</button><button type="button" class="np-btn w" id="npAv"><span>Avanti →</span></button></div></div>'
+            f'<p class="oz-s">{fonte}</p></div>')
 
 
 def apertura(d):
@@ -308,11 +369,11 @@ def apertura(d):
             f'<h2>Dove aprire a Roma: nove zone a confronto</h2>'
             f'<p class="ix-p">Quanto è affollata ogni zona, quanto costa una camera il sabato e quanti alberghi hanno un voto sotto 8 su Booking. '
             f'Più alta è quella quota, più spazio c’è per un albergo che lavora meglio dei vicini</p></div>'
-            f'<div class="oz-w ar"><table class="oz-t"><thead><tr><th>Zona</th><th>Strutture ricettive per km²</th><th>Alberghi</th><th>Camere d’albergo</th>'
+            f'<p class="oz-hint" aria-hidden="true">Scorri la tabella di lato →</p><div class="oz-w ar"><table class="oz-t"><thead><tr><th>Zona</th><th>Strutture ricettive per km²</th><th>Alberghi</th><th>Camere d’albergo</th>'
             f'<th>Sabato, valore mediano</th><th>Voto mediano</th><th>Alberghi sotto 8</th><th>Casa al m²</th><th>Rendimento lordo da affitto</th></tr></thead><tbody>{"".join(righe)}</tbody></table></div>'
             f'<p class="oz-s">Fonte: registro delle strutture ricettive di Roma Capitale ({E(d["registro"]["file"])}) e Booking, prezzi letti dal {data(d["letture_dal"])} '
             f'al {data(d["aggiornato"])}, camera per 2 persone. Casa al m² e rendimento: quotazioni OMI dell’Agenzia delle Entrate, 1° semestre 2026, abitazioni civili in stato normale, valore mediano delle zone OMI della zona; il rendimento è l’affitto annuo diviso il prezzo, prima di tasse e spese</p>'
-            f'{simulatore(d, omi)}'
+            f'{percorso(d, omi)}'
             f'<p class="oz-c"><a class="z-btn" href="#pg-osservatorio">Le zone nell’Osservatorio <span class="arr">→</span></a></p></div>')
 
 

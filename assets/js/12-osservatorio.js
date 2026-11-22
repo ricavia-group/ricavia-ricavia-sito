@@ -4,15 +4,6 @@
 try{var hf=document.getElementById('hsForm'),hv=sessionStorage.getItem('hs-n');if(hf&&hf.n&&hv){sessionStorage.removeItem('hs-n');if(!hf.n.value)hf.n.value=hv}
 var cf=document.getElementById('ctForm'),cv=sessionStorage.getItem('o2-msg');if(cf&&cf.msg&&cv){sessionStorage.removeItem('o2-msg');if(!cf.msg.value)cf.msg.value=cv}}catch(_){}
 
-/* il simulatore di Nuova apertura (10.5): budget e camere → zone compatibili e ricavo stimato. Dati e formula in tools/osservatorio.py, simulatore() */
-var sim=document.getElementById('ozSim');if(sim)try{var SZ=JSON.parse(sim.getAttribute('data-z')),OC=+sim.getAttribute('data-occ'),sf=sim.querySelector('form'),stb=sim.querySelector('tbody'),sn=sim.querySelector('.oz-sn');
-  var mil=function(x){x=Math.round(x/1e3)*1e3;return x>=1e6?(Math.round(x/1e5)/10).toFixed(1).replace('.',',')+' mln €':String(Math.round(x/1e3)*1e3).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'};
-  var calc=function(){var b=Math.max(0,+sf.b.value||0),c=Math.max(1,Math.round(+sf.c.value||1)),mq=Math.max(10,+sf.m.value||35);
-    var r=SZ.map(function(z){var co=c*mq*z[2],ri=c*z[1]*365*OC;return {n:z[0],co:co,ri:ri,ok:co<=b}}).sort(function(x,y){return (y.ok-x.ok)||(y.ri/y.co-x.ri/x.co)}),k=r.filter(function(x){return x.ok}).length;
-    stb.innerHTML=r.map(function(x){return '<tr'+(x.ok?'':' class="oz-no"')+'><th scope="row">'+x.n+'</th><td>'+mil(x.co)+'</td><td>'+mil(x.ri)+'</td><td><b>'+(x.ri/x.co*100).toFixed(1).replace('.',',')+'%</b></td><td>'+(x.ok?'Nel budget':'Oltre il budget')+'</td></tr>'}).join('');
-    sn.textContent=k?k+(k===1?' zona compatibile':' zone compatibili')+' con '+mil(b)+' per '+c+(c===1?' camera':' camere'):'Nessuna zona compatibile: con '+mil(b)+' servono meno camere o un budget più alto'};
-  sf.addEventListener('input',calc);sf.addEventListener('submit',function(e){e.preventDefault();calc()});calc()}catch(_s){}
-
 /* 16 (22/11): sul telefono la barra Hotel Score sparisce mentre si scrive in una casella, per non coprire suggerimenti e tasti */
 var MB=document.querySelector('.z-mbar');if(MB){document.addEventListener('focusin',function(e){if(e.target.matches&&e.target.matches('input:not([type=checkbox]):not([type=radio]),textarea,select'))MB.classList.add('scr')});document.addEventListener('focusout',function(){MB.classList.remove('scr')})}
 
