@@ -51,6 +51,215 @@ Partono una volta sola, quando il 18% del grafico è nello schermo (`Intersectio
 
 ## PARTE A · Osservatorio
 
+## Osservatorio giocato (scelte del 22/11)
+
+**Questa sezione sostituisce le istruzioni dei punti 1-5 qui sotto.** George ha scelto: 1 A+D, 2 B, 3 A, 4 (nei titoli solo zone con almeno 10 alberghi letti), 5. E ha chiesto uno stile giocato: ogni blocco è una domanda da 1 o 2 tocchi, poi compare il dato vero. Parole sue: "se l'utente fa 1 o 2 azioni, oltre all'aumento della retention è più contento"
+
+- **Riferimento:** `assets/bozze/osservatorio/index.html` (versione giocata). Dove qui c'è scritto "come nella bozza", copia la funzione e adatta i nomi: non reinventare
+- **Non costruire:** 1 B, 1 C, 2 A, 3 B. Le loro istruzioni più sotto restano solo come archivio
+- **Le sezioni 1 A, 1 D, 2 B, 3 A, 4, 5 più sotto** valgono ancora per il disegno dei grafici (assi, colori, numero preciso) dove questa sezione non dice altro. Se le due parti sono in disaccordo, vince questa
+- **Resta com'è:** la chat "Il tuo hotel" (`#o2-hotel`), la ricerca delle vie, il metodo, le schede da scaricare per i social, la mappa delle zone `#o2ZMap`
+- **Tono:** positivo e professionale. Niente coriandoli, punti, livelli, medaglie, suoni. La ricompensa è il dato
+
+### G.0 Cosa segnalare a George nella PR (non correggere da soli)
+
+1. **Mese più forte.** Nei dati non c'è il dettaglio mese per mese dei soli alberghi: `flussi.json` → `istat.mesi` conta tutte le strutture ricettive. Il gioco 5 usa quindi gli arrivi mensili dell'ultimo anno (2025, primo ottobre) e lo dichiara nella fonte; la serie degli alberghi dal 2014 sta sotto, anno per anno. Il primo mese cambia: maggio nel 2024 (2.778 arrivi più di ottobre), luglio nel 2023, ottobre nel 2022
+2. **"Pieni".** La domanda del gioco 1 dice "pieni" come ha chiesto George; la risposta e la fonte dicono "senza camere su Booking", che è il dato vero
+3. **Posizione nella zona.** Senza sapere quale hotel è, la posizione vera non esiste: il gioco 4 mostra le classifiche dei rioni e manda alla chat. Con l'hotel noto usa `scala.pos` e `scala.su` della scheda
+4. Restano validi gli avvisi già scritti: scarto tra valori mediani delle schede e pubblicati (A.0), gradiente più chiaro sul fondo scuro (sezione 0)
+5. Nelle schede il prezzo di Capodanno ha `notti: 2`: il report lo tratta come prezzo per notte. Il gioco 2 usa solo i valori di `osservatorio.json`
+
+### G.1 File e funzioni da toccare
+
+**`tools/osservatorio.py`**
+- `gioco(n, etichetta, domanda, controlli, rivelazione, skip=True)`: funzione nuova che restituisce l'HTML comune di un gioco (vedi G.2). Tutte le funzioni sotto la usano
+- `hero(d)` → gioco 1 al posto del riquadro `#o2Ind` (il contenitore resta `id="o2Ind"`, riempito dal JavaScript come oggi)
+- `prezzi(d)` → gioco 2 e gioco 3, uno sotto l'altro. I tre riquadri di oggi (33%, 18%, 8,3) restano sotto il gioco 3
+- `classifiche(d)` → gioco 4 sopra le schede. Le barre con il valore di Roma (3 A) si applicano alle `<li>` che la funzione genera già
+- `flussi(d)` → gioco 5
+- `zone(d)` → gioco 6 sopra `#o2Zona`
+- `prezzi_alberghi(dati)` → come A.0, righe `[zona_sito, stelle, martedi, sabato]` (Capodanno non serve più). Nel JSON in pagina come `pa`, con `pa_letto` (data dell'ultima lettura)
+- `pagina(d)` → in `#o2Dati` aggiungi `roma`, `pa`, `pa_letto`, `flussi` (`istat.mesi` dell'ultimo anno con arrivi e notti, i primi mesi degli anni prima, `istat.annui` con `arrivi_alberghi` e `presenze_alberghi`, `aeroporti`), e la riga del contatore dentro `#o2Nav`; prima di `#o2-metodo` la sezione di chiusura `#o3-fine`
+
+**`assets/js/12-osservatorio.js`**: una sezione nuova `/* ---------- Osservatorio giocato ---------- */` dentro la stessa funzione anonima, dopo la chat (usa `pz`, `schedaH`, `apriChat`, `gm`, `num`, `esc`). Funzioni, tutte copiate dalla bozza:
+
+| Sul sito | Nella bozza | Cosa fa |
+|---|---|---|
+| `g3entra(el)`, `g3draw(id, fn)` | `entra`, `draw` | fa partire le animazioni quando l'8% dell'elemento è nello schermo; ridisegna alla larghezza |
+| `g3range(input, fn)` | `range` | riempie la traccia del cursore (`--p`) e aggiorna il numero |
+| `g3count(el, valore, formato, durata)` | `count` | conta da zero |
+| `g3apri(n, risposta, zitto)`, `g3chiudi(n)` | `apri`, `chiudi` | passano da domanda a rivelazione e ritorno |
+| `g3segna(n)`, `g3contatore(anim)` | `segna`, `contatore` | contatore e chiusura |
+| `G3[1]…G3[6]` | `G[1]…G[6]` | disegnano la rivelazione; `risposta` nulla = "Mostrami subito" |
+| `g3hotel(scheda)` | il blocco finale `?hotel=` | accende il punto dell'hotel (G.5) |
+| numero preciso | `#tip`, `show`, `hide` | come sezione 0 |
+
+**`assets/css/site.css`**: in fondo, prefisso `.o3-`, dentro `:is(#pg-osservatorio)`. Dalla bozza: `.card` → `.o3-card`, `.ask`, `.rev`, `.act`, `.cta`, `.skip`, `.sl`, `.opt` (con `.q3`, `.q4`), `.step2`, `.two-in`, `.pin`, `.you`, `.msg`, `.cm`, `.src` (usa `.o2-src`), `.kpi`, `.inv`, `.bars`, `.bar`, `.zp`, `.prog`, e le classi di animazione `.gx .gy .fd .dr .pop .halo`. Il tasto bianco `.cta` segue la regola di brand: resta bianco, al passaggio solo la scritta va in gradiente
+
+### G.2 Struttura e stati di un gioco
+
+```html
+<section class="o3-gm" id="o3-g2" data-g="2">
+  <div class="o3-card">
+    <p class="o2-tag">2 di 6 · Quanto costa Roma</p>
+    <div class="o3-ask">  <!-- h2 con la domanda, controlli, .o3-act con "Scopri il dato" e "Mostrami subito" --></div>
+    <div class="o3-rev" hidden> <!-- .o3-you, h3.o3-msg (tabindex -1), grafico .o3-ch, .o3-cm, .o2-src, .o3-act con "Rispondi di nuovo" --></div>
+  </div>
+</section>
+```
+
+| Stato | Cosa si vede | Come ci si arriva |
+|---|---|---|
+| `domanda` | `.o3-ask` visibile, `.o3-rev` nascosto | all'apertura |
+| `passo 2` (solo gioco 2) | sotto le zone compare il cursore; "Scopri il dato" si attiva | tocco su una zona |
+| `rivelato con risposta` | `.o3-rev` con riga "La tua risposta", segno della risposta nel grafico, commento | "Scopri il dato" o tocco su un'opzione |
+| `rivelato senza risposta` | `.o3-rev` senza riga, senza segno e senza commento di confronto | "Mostrami subito", ritorno nella sessione |
+
+- Giochi a un tocco (4, 5, 6): il tocco sull'opzione rivela subito, non c'è "Scopri il dato"
+- "Rispondi di nuovo" riporta a `domanda` e non toglie il gioco dal contatore
+- Alla rivelazione: la sezione scorre in alto (`scrollIntoView`, `scroll-margin-top` = altezza di `#o2Nav` + 12 px) e il fuoco va sull'`h3.o3-msg`, così lo legge anche chi usa un lettore di schermo
+- Senza JavaScript: `tools/osservatorio.py` genera `.o3-rev` già con titolo, numeri principali e fonte in testo, e `.o3-ask` con `hidden`; il JavaScript all'avvio inverte i due. Così i motori di ricerca leggono i dati
+- Tasti e opzioni alti almeno 48 px, cursori con la maniglia da 32 px, campi con testo da 16 px o più (il telefono non ingrandisce la pagina)
+
+### G.3 Animazioni
+
+| Cosa | Durata | Curva | Ritardo |
+|---|---|---|---|
+| Passaggio a rivelazione: ogni figlio di `.o3-rev` sale di 12 px e compare | 0,5 s | `cubic-bezier(.22,1,.36,1)` | 0 · 60 · 120 · 180 ms |
+| Passo 2 del gioco 2 che si apre | 0,45 s | stessa | 0 |
+| Barre `.gx`, colonne `.gy`, comparse `.fd`, linee `.dr` | come sezione 0 | | `.fd` accetta `--d` per il ritardo di base |
+| Segno di chi gioca `.pop` (rombo, punto): cresce da 0 con un leggero rimbalzo | 0,5 s | `cubic-bezier(.34,1.56,.64,1)` | 1,3 s (gioco 2: 1,25 s; mese scelto: 1,1 s) |
+| Alone `.halo` attorno al punto: cerchio che si allarga e svanisce, due volte | 1,6 s × 2 | `ease-out` | 1,5 s |
+| Anello del gioco 1 | 1,2 s | `cubic-bezier(.22,1,.36,1)` | 0,35 s |
+| Numeri che contano | 1,1 s | rallentamento cubico | 0,35 s |
+| Contatore: il numero sale di 8 px e compare; il segmento si riempie | 0,45 s · 0,5 s | stessa | 0 |
+| Zona scelta nel gioco 6: le altre al 45% | 0,3 s | `ease` | 0 |
+
+Tutto finisce entro 3,5 s dal tocco. Con `prefers-reduced-motion: reduce`: nessuna transizione e nessuna animazione, l'alone non compare, i numeri mostrano subito il valore, lo scorrimento è immediato
+
+### G.4 I sei giochi: dati, testi esatti, casi limite
+
+Le parole tra `{}` sono dati. Nessun punto finale. Dove c'è `<g>` il testo è in gradiente (`.o2-g`)
+
+**Gioco 1 · primo schermo (scelta 5)** — `indicatori.json`
+- Etichetta: `1 di 6 · Disponibilità`
+- Domanda: `Secondo te, stanotte quanti alberghi di Roma sono pieni?` se `ultimo.notte` è oggi; altrimenti `Secondo te, quanti alberghi di Roma sono pieni la notte di {giorno e data}?`
+- Sottotitolo: `Sposta il cursore: su 100 alberghi, quanti non hanno più una camera su Booking per la notte di {giorno e data}`
+- Controllo: cursore da 0 a 100, passo 1, partenza 30, numero grande `{n} su 100`. Tasti `Scopri il dato` · `Mostrami subito`
+- Rivelazione: riga `La tua risposta: {n} su 100`; titolo `<g>{x} alberghi su 100</g> non hanno più camere per la notte di {giorno e data}`; anello come punto 5 con un trattino bianco sulla risposta (`.fd`, ritardo 0,1 s) e la frase `degli alberghi di Roma non ha più camere. Il trattino bianco è la tua risposta`; secondo riquadro con la tariffa come punto 5
+- Commento, per distanza tra risposta e dato: fino a 3 punti `Eri vicino: hai detto {n}, sono {x}` · fino a 10 `Non lontano: hai detto {n}, sono {x}` · oltre `Sorpresa: hai detto {n}, sono {x}`. Seconda riga: `{100 − x} alberghi su 100 hanno ancora camere da vendere: per quella notte il prezzo si decide adesso`
+- Fonte: come punto 5. Tasto `Rispondi di nuovo`
+- Casi limite: file non caricato o `ultimo` assente → il gioco non compare e il contatore diventa "su 5" (`N` si calcola dai giochi presenti). Lettura più vecchia di 36 ore → resta l'avviso di oggi. L'ora di lettura si prende dal testo di `letto_il` (`slice(11,16)`), non da `Date`, per non dipendere dal fuso
+- Finito quando: con i dati di oggi risposta 12 → "Eri vicino: hai detto 12, sono 11,4"
+
+**Gioco 2 · quanto costa Roma (scelta 1 A)** — `roma`, `zone[].mercato`, `date`
+- Etichetta: `2 di 6 · Quanto costa Roma`
+- Domanda 1: `Scegli la tua zona` · sottotitolo `La zona del tuo hotel, o quella che conosci meglio` · un tasto per zona (solo zone con `mercato.sabato`)
+- Domanda 2 (compare dopo la scelta): `Quanto costa secondo te Capodanno a {zona}?` · sottotitolo `Prezzo mediano a notte di una camera per 2 persone negli alberghi, notte del {data}` · cursore 50-900 €, passo 10, partenza 300
+- Rivelazione: riga `La tua stima per {zona}: {n} €`; titolo `A Capodanno {zona} chiede <g>{x} €</g>, da {martedì} € il martedì`; grafico 1 A con la riga della zona su fondo bianco al 7%, le altre righe al 55%, un rombo bianco vuoto sulla stima (`.pop`) e la scritta `tu {n} €`; in legenda `La tua stima`. Se la stima supera l'asse, l'asse si allarga al centinaio superiore
+- Commento: scarto entro il 10% del dato `Eri vicino: la tua stima dista {n} € dal dato` · stima più bassa `Sorpresa: il dato supera la tua stima di {n} €` · più alta `Sorpresa: il dato è {n} € sotto la tua stima`. Seconda riga: `A {zona} Capodanno vale {+n%} sul martedì. In tutta Roma: {x} €, {+n%}`
+- Senza risposta: titolo del punto 1 A (`A Capodanno {zona più cara} arriva a <g>{x} €</g>, da {y} € il martedì`), nessuna riga evidenziata
+- Fonte: `fonti(d)["bk"]` + `. Dove a destra c'è n.d. abbiamo letto meno di 5 prezzi per Capodanno`. Tasto `Cambia zona`
+- Casi limite: zona senza `evento` (oggi Trastevere e Testaccio · Ostiense) → la domanda 2 diventa `Quanto costa secondo te sabato {data} a {zona}?`, sottotitolo `Per Capodanno in questa zona abbiamo letto meno di 5 prezzi: prova con il sabato. Prezzo mediano a notte di una camera per 2 persone negli alberghi`, cursore 50-500 partenza 150, titolo `Sabato {data} {zona} chiede <g>{x} €</g>`, seconda riga del commento sul rincaro del sabato. Zona scelta ricordata in `sessionStorage` (`o3-zona`) e riusata al ritorno
+- Finito quando: Centro storico con stima 400 → 533 €, "Sorpresa: il dato supera la tua stima di 133 €"
+
+**Gioco 3 · chi alza il prezzo il sabato (scelta 1 D)** — `pa`, `roma.tariffa_ferma`, `roma.rincaro_sabato`
+- Etichetta: `3 di 6 · Martedì e sabato`
+- Domanda: `Metti i tuoi prezzi di martedì e sabato` · sottotitolo `Una camera per 2 persone, una notte: martedì {data} e sabato {data}. Il tuo punto compare tra quelli di {n} alberghi di Roma. Non salviamo i prezzi che scrivi`
+- Controlli: due colonne `Martedì` e `Sabato`, ognuna con un campo numerico (30-1000) e sotto un cursore (40-400, passo 5) legati tra loro; partenza 120 e 135. Tasti `Trova il mio punto` · `Mostrami subito`. I prezzi scritti **non** si salvano e non si inviano
+- Quote: `stesso prezzo` = `roma.tariffa_ferma` arrotondato (oggi 18); il resto si divide tra "di più" e "di meno" in proporzione al conteggio delle righe (oggi 70 e 12). La somma è sempre 100
+- Rivelazione: riga `I tuoi prezzi: martedì {m} €, sabato {s} €`; titolo `Sei tra i <g>{q} su 100</g> che` + `chiedono lo stesso prezzo il martedì e il sabato` / `il sabato chiedono di più` / `il sabato chiedono di meno`; i tre riquadri con il proprio bordato di bianco e l'etichetta `Sei qui`; la nuvola del punto 1 D (i punti compaiono in 1 s), poi il punto di chi gioca: cerchio in gradiente da 9,5 px con bordo bianco da 3 px (`.pop` a 1,3 s), alone a 1,5 s, scritta `Tu` a 1,7 s; in legenda `Tu`
+- Commento: stesso prezzo `Il tuo prezzo non cambia tra martedì e sabato: la tariffa non segue la domanda` · sabato più alto `Il tuo sabato vale {+n%} sul martedì` · più basso `Il tuo sabato vale {−n%} sul martedì: chiedi meno nel giorno con più domanda`. Seconda riga: `A Roma il prezzo mediano del sabato è {x} €, {+n%} sul martedì ({y} €)`
+- Invito sotto il grafico: `Questi sono tutti gli alberghi di Roma` / `La chat del tuo hotel confronta i tuoi prezzi con i tuoi competitor veri, gli alberghi simili più vicini` / tasto `Apri la chat del tuo hotel` (scorre a `#o2-hotel` e mette il fuoco nella ricerca)
+- Senza risposta: titolo `<g>{q} alberghi su 100</g> chiedono lo stesso prezzo il martedì e il sabato`, nessun punto acceso
+- Fonte: come punto 1 D. Tasto `Cambia i prezzi`
+- Casi limite: campo vuoto o fuori da 30-1000 → il fuoco torna sul campo, niente rivelazione. Prezzo oltre 400 € → gli assi si allargano al centinaio superiore (massimo 1000) e la fonte dice "nel grafico i {m} fino a {asse} €". Meno di 50 righe in `pa` → il gioco non compare. Nessun nome di albergo nel DOM
+- Finito quando: 110 e 110 → "Sei tra i 18 su 100…"; le tre quote sommano 100
+
+**Gioco 4 · classifiche (scelta 3 A)** — `classifiche`, `roma`, e la scheda dell'hotel se nota
+- Etichetta: `4 di 6 · Classifiche`
+- Domanda: `In che posizione pensi di essere nella tua zona?` · sottotitolo `Tra gli alberghi della tua zona con le tue stesse stelle` · tre tasti `Nel primo terzo` · `A metà classifica` · `Nell'ultimo terzo` (un tocco rivela)
+- Rivelazione, hotel non noto: riga `La tua risposta: {opzione}`; titolo `La tua posizione dipende dal tuo hotel. Intanto, il rione più caro il sabato è <g>{rione}</g>: {x} € contro {y} € di tutta Roma` (primo rione con almeno 10 alberghi letti); riquadro d'invito `Hai risposto {opzione}: la posizione vera la calcola la chat` / `Scrivi il nome del tuo hotel: la chat ti dice a che posto sei tra gli alberghi della tua zona con le tue stelle` / tasto `Apri la chat del tuo hotel`. Senza risposta la prima riga dell'invito è `Vuoi sapere la posizione del tuo hotel?`
+- Rivelazione, hotel noto (`scala.pos` e `scala.su`): titolo `Per Hotel Score il tuo hotel è <g>{pos}° su {su}</g> alberghi a {stelle} stelle in {zona}`; terzo vero = primo se `pos ≤ su/3`, metà se `pos ≤ su×2/3`, ultimo altrimenti; invito `Esatto: sei {terzo}` oppure `Sorpresa: sei {terzo}` / `La chat ti dice quanti punti servono per salire di un posto` / tasto `Continua nella chat` (chiama `rispondi(s,'classifica')`)
+- Sotto: le classifiche 3 A con le schede di oggi; titolo piccolo `{titolo della classifica}, rione per rione`; legenda e numero preciso come punto 3 A
+- Tasto `Rispondi di nuovo`
+- Casi limite: scheda senza `scala` → come hotel non noto
+- Finito quando: la linea bianca su "Sabato più caro" sta al 54%; con `?hotel=369105` e risposta "Nel primo terzo" si legge "28° su 82" e "Sorpresa: sei a metà classifica"
+
+**Gioco 5 · la domanda (scelta 2 B)** — `flussi.json`
+- Etichetta: `5 di 6 · La domanda`
+- Domanda: `Qual è il mese più forte a Roma?` · sottotitolo `Il mese con più arrivi nelle strutture ricettive di Roma nel {anno}, secondo ISTAT` · quattro tasti: maggio, luglio, ottobre, dicembre. Se il primo mese dell'ultimo anno non è tra i quattro, prende il posto di quello con meno arrivi; ordine di calendario
+- Rivelazione: riga `La tua risposta: {mese}`; titolo `Il mese più forte è <g>{mese}</g>: {x,xx} milioni di arrivi nel {anno}`
+- Due grafici affiancati (uno sotto l'altro sotto i 760 px), alti 260 px (230 sotto i 420 px di contenitore):
+  - `Arrivi a Roma mese per mese, {anno}`: la linea si disegna in 1,4 s (`.dr`, 3 px, in gradiente, area sotto al 13%), poi il mese giusto si accende (`.pop` a 1,3 s, alone a 1,5 s, scritta `{mese} · {x,xx} mln`); il mese scelto, se sbagliato, ha un cerchio vuoto e `{mese} · {x,xx}`. **Un solo anno: niente anni sovrapposti**
+  - `In aeroporto il mese più forte del {anno} è {mese}, per ora` (togli `, per ora` quando i mesi sono 12): le colonne dei voli del punto 2 B, il mese più alto pieno e gli altri al 60%
+- Commento: giusto `Esatto: {mese} è il primo mese del {anno} con {n} arrivi` · sbagliato `Sorpresa: {mese scelto} è {k}° nel {anno} con {n} arrivi. Il primo è {mese} con {n}` · senza risposta `{Mese} è il primo mese del {anno} con {n} arrivi`. Seconda riga: `Il primo mese cambia di anno in anno: {mese} nel {anno}, …. Per numero di notti il primo mese del {anno} è {mese}`
+- Sotto: `Negli alberghi {x} milioni di arrivi nel {anno}: {+n%} sul {anno prima}, ancora sotto il 2019 ({y})` · sottotitolo `Arrivi negli alberghi di Roma, anno per anno: la serie che si confronta dal 2014` · le colonne del punto 2 B
+- Fonti: mesi `Fonte: {istat.fonte}. Tutte le strutture ricettive, in milioni: nei nostri dati il dettaglio mese per mese dei soli alberghi non c'è. Dal 2025 ISTAT conta anche gli alloggi privati: i mesi del {anno} si confrontano tra loro, non con gli anni prima` · voli e alberghi come nella bozza (`#s5b`, `#s5c`)
+- Casi limite: due mesi alla pari → vince il primo in calendario e la seconda riga del commento lo dice. Manca il 2019 → niente linea e niente confronto
+- Finito quando: risposta maggio → "Sorpresa: maggio è 8° nel 2025 con 1.063.019 arrivi. Il primo è ottobre con 1.491.582"; alberghi 7,9 e 8,0
+
+**Gioco 6 · le zone (scelta 4)** — `zone`, `roma`
+- Etichetta: `6 di 6 · Le zone`
+- Domanda: `In quale zona apriresti un hotel?` · sottotitolo `Tocca una zona: vedi quanto costa e quanto spazio lasciano gli alberghi che ci sono già` · un tasto per zona (un tocco rivela)
+- Rivelazione: riga `La tua scelta: {zona}`; titolo `{zona}: <g>{x} €</g> il sabato, {p}% degli alberghi con voto sotto 8`; il grafico del punto 4 con la zona scelta piena e le altre al 45%; a fianco la scheda vera `#o2Zona` (`vistaZona`) con in fondo il tasto bianco `Porta {zona} in Nuova apertura`. Toccare un altro cerchio cambia scheda, titolo e commento, non la riga "La tua scelta"
+- **Regola di George:** una zona con meno di 10 alberghi letti non compare mai in un titolo con i suoi numeri né nei confronti. Titolo: `{zona}: qui abbiamo letto {n} alberghi, pochi per un confronto sicuro`; nella scheda `{n} alberghi letti: numeri da leggere con prudenza`
+- Commento: `Tra le {k} zone con almeno 10 alberghi letti {zona} è {n}ª per prezzo del sabato` oppure, sotto i 10, `Il confronto tra zone conta solo quelle con almeno 10 alberghi letti: sono {k} su {tot}`. Seconda riga: `La più cara è {zona} ({x} €). Quella con più alberghi sotto 8 è {zona} ({p}%): dove tanti alberghi hanno un voto basso, un hotel nuovo e curato ha più spazio per distinguersi`
+- Senza risposta: è scelta la zona più cara tra quelle con almeno 10 alberghi letti, senza riga "La tua scelta"
+- Passaggio a Nuova apertura: il tasto porta a `/nuova-apertura/?zona={nome}`. In `simulatore(d, omi)` e nel suo JavaScript leggi `zona` dall'indirizzo, scegli quella voce nel menu delle zone del simulatore e ricalcola; se il nome non esiste, ignora. Se George sceglie il percorso a tappe (punto 7), `zona` riempie la tappa 1
+- Fonte: come punto 4. Tasto `Torna alla domanda`
+- Finito quando: San Lorenzo · Pigneto (8 alberghi letti) non mostra numeri nel titolo; Centro storico mostra "271 € il sabato, 8%"
+
+### G.5 Il punto già acceso per chi arriva dalla chat "Il tuo hotel"
+
+La scheda dell'hotel (`assets/data/schede/{id}.json`) ha `prezzi` con `etichetta` `martedi` e `sabato`; in `12-osservatorio.js` si leggono con `pz(s,'martedi').prezzo`
+
+1. Scrivi `g3hotel(s)`: salva `S.hotel = s`; se i due prezzi ci sono, mette i valori nei campi del gioco 3 e chiama `g3apri(3, {m, s, hotel:true}, true)` (il terzo argomento vuol dire: non scorrere e non spostare il fuoco); se il gioco 4 è già rivelato lo ridisegna
+2. Chiamala in `apriChat(id)`, dentro il `then` di `schedaH(id)`, dopo `presenta(s)`. Vale per tutti gli ingressi: ricerca in alto, casella della chat, link delle mail `?hotel=ID`
+3. Salva l'id in `sessionStorage` (`o3-hotel`): al ricaricamento, se c'è, chiama `schedaH(id).then(g3hotel)` senza riaprire la chat
+4. Con `hotel:true` cambiano i testi del gioco 3: riga `I prezzi del tuo hotel letti su Booking: martedì {m} €, sabato {s} €`; etichetta del riquadro `Il tuo hotel è qui`; scritta sul punto e in legenda `Il tuo hotel`. Il titolo resta `Sei tra i <g>{q} su 100</g> che…`. Il nome dell'hotel non si scrive nel grafico
+5. Nella chat, dopo la risposta alla domanda `prezzo`, aggiungi una bolla: `Vuoi vedere dove sei tra tutti gli alberghi di Roma?` con il tasto `Mostrami il mio punto`, che scorre al gioco 3. L'animazione del punto parte quando il grafico entra nello schermo, quindi chi arriva lo vede accendersi
+6. Casi limite: manca uno dei due prezzi (`prezzo` nullo, albergo esaurito) → il gioco 3 resta alla domanda, senza errori; hotel non letto su Booking (`h.r` falso) → niente. "Cambia i prezzi" torna alla domanda con i prezzi dell'hotel già nei campi
+
+Nella bozza si prova con `?hotel=369105`
+
+### G.6 Contatore e chiusura
+
+- **Contatore:** una riga dentro `#o2Nav` (fissa in alto come oggi): `Hai scoperto {n} cose su 6 del mercato di Roma`, con `{n}` in bianco 600 e sotto sei segmenti alti 4 px che si riempiono col gradiente. `cosa` al singolare con 1. È un tasto alto 48 px: porta al primo gioco non ancora scoperto, o alla chiusura se sono tutti scoperti. `aria-live="polite"`
+- Un gioco conta quando è rivelato, anche con "Mostrami subito". I giochi scoperti stanno in `sessionStorage` (`o3-gioco`, `{fatte:[…]}`): al ritorno nella stessa sessione sono già rivelati, senza risposta e senza scorrimenti
+- **Chiusura** (`#o3-fine`, prima del metodo): etichetta `Il tuo hotel`; titolo `Hai scoperto <g>{n} cose su 6</g> del mercato di Roma`; testo con 6 su 6 `Questi sono i numeri di tutta la città. I numeri del tuo hotel sono nella chat: scrivi il nome e vedi i tuoi competitor, i tuoi prezzi e il tuo Hotel Score`, prima `I numeri del tuo hotel sono nella chat: scrivi il nome e vedi i tuoi competitor, i tuoi prezzi e il tuo Hotel Score`; riga `Ti mancano: {elenco con i link ai giochi}` (`Ti manca:` con uno solo); tasto bianco `Apri la chat del tuo hotel`. La chat non è mai bloccata: il tasto c'è anche con 0 su 6
+- **Email:** sotto il tasto, `Oppure lascia la tua email: ti mandiamo il link al report del tuo hotel`, campo, spunta della privacy, tasto `Mandami il report`. Errori: `Controlla l'indirizzo email` · `Per usare la tua email serve la spunta sulla privacy`. Se l'hotel è noto chiama `invia(em, S.hotel)` come fa la chat; se non è noto apre la chat con il fuoco sulla ricerca e conserva l'email in `chatEl._em`, così la chat non la chiede di nuovo. Nella bozza il modulo non invia niente
+- La barra mobile "Hotel Score gratuito" (miglioria 16) non deve coprire i tasti dei giochi: finché un gioco è nello schermo resta nascosta
+
+### G.7 Ordine di costruzione
+
+1. G.1 e G.2: dati in pagina, `gioco()`, stati, contatore, stili di base. Prova con un solo gioco
+2. Giochi 1 e 4 (toccano codice che esiste già)
+3. Giochi 2 e 6
+4. Gioco 5
+5. `prezzi_alberghi` e gioco 3, poi G.5
+6. Chiusura ed email, poi il passaggio a Nuova apertura
+
+### G.8 Prove
+
+Oltre alle prove comuni della sezione 0:
+1. A 390 e a 1366 px gioca tutti e sei i giochi con Playwright: nessun errore in console, `scrollWidth === innerWidth` prima e dopo ogni rivelazione, contatore a 6
+2. Ripeti con "Mostrami subito" su tutti: nessuna riga "La tua risposta", nessun commento di confronto, contatore a 6
+3. Nessun tasto, opzione o cursore visibile è alto meno di 44 px a 390 px
+4. Con meno movimento: dopo il tocco il grafico è completo senza attese e l'alone non compare
+5. Solo tastiera: Tab raggiunge cursori, opzioni e tasti; Invio rivela; dopo la rivelazione il fuoco è sul titolo
+6. `?hotel=369105`: gioco 3 già rivelato con 116 € e 127 € e "70 su 100", contatore a 1; gioco 4 mostra "28° su 82"
+7. Zona senza Capodanno (Trastevere) nel gioco 2: la domanda parla del sabato
+8. Prezzi 500 e 650 nel gioco 3: assi fino a 700, punto dentro il grafico
+9. Ricarica la pagina dopo tre giochi: i tre sono rivelati, contatore a 3
+10. Nel DOM del gioco 3 non c'è nessun nome di `hs_tutti`
+11. I numeri dei giochi sono gli stessi dei riquadri della pagina e della chat (11,4% · 129, 151, 311 € · 18%)
+12. Senza JavaScript la pagina mostra titoli, numeri e fonti dei sei blocchi
+
+---
+
+*Da qui in giù: istruzioni del mattino del 22/11. I punti 1 A, 1 D, 2 B, 3 A, 4 e 5 valgono solo per il disegno dei grafici, dove la sezione "Osservatorio giocato" non dice altro. I punti 1 B, 1 C, 2 A e 3 B non si costruiscono*
+
 ### A.0 Dati nuovi (serve per 1 B e 1 D)
 
 Le alternative 1 B e 1 D usano il prezzo di ogni albergo. Oggi `osservatorio.json` ha solo i valori mediani; i prezzi singoli sono nelle schede.
@@ -198,6 +407,8 @@ Le alternative 1 B e 1 D usano il prezzo di ogni albergo. Oggi `osservatorio.jso
 - **Finito quando:** con i dati di oggi si legge 11,4% e 134 €
 
 ### Ordine di costruzione della parte A
+
+**Superato dalle scelte del 22/11: segui l'ordine di G.7 nella sezione "Osservatorio giocato"**
 
 1. Funzioni di base, animazioni e riquadro del numero preciso (sezione 0)
 2. Scelta 3 A (tocca codice che esiste già, rischio basso) e scelta 5
