@@ -6092,3 +6092,4 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio :is(.o3-blk,.o3-fine) .o3-btn:hover{background:var(--zgr);background-color:var(--zink)}
 #pg-osservatorio :is(.o3-blk,.o3-fine) .o3-btn:hover span{color:#fff;-webkit-text-fill-color:#fff}
 #pg-osservatorio :is(.o3-blk,.o3-fine) .o3-lnk:hover{color:var(--zink)}
+#pg-osservatorio :is(.o3-blk,.o3-fine) :is(.o3-r.o3-sab,.o3-r.o3-io1,.o3-cl .o3-r) .o3-bar i,#pg-osservatorio :is(.o3-blk,.o3-fine) .o3-one i{background:var(--zgr)}
