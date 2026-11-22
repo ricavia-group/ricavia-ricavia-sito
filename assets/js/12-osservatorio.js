@@ -13,6 +13,9 @@ var sim=document.getElementById('ozSim');if(sim)try{var SZ=JSON.parse(sim.getAtt
     sn.textContent=k?k+(k===1?' zona compatibile':' zone compatibili')+' con '+mil(b)+' per '+c+(c===1?' camera':' camere'):'Nessuna zona compatibile: con '+mil(b)+' servono meno camere o un budget più alto'};
   sf.addEventListener('input',calc);sf.addEventListener('submit',function(e){e.preventDefault();calc()});calc()}catch(_s){}
 
+/* 16 (22/11): sul telefono la barra Hotel Score sparisce mentre si scrive in una casella, per non coprire suggerimenti e tasti */
+var MB=document.querySelector('.z-mbar');if(MB){document.addEventListener('focusin',function(e){if(e.target.matches&&e.target.matches('input:not([type=checkbox]):not([type=radio]),textarea,select'))MB.classList.add('scr')});document.addEventListener('focusout',function(){MB.classList.remove('scr')})}
+
 var pg=document.getElementById('pg-osservatorio'),DT=document.getElementById('o2Dati');if(!pg||!DT)return;
 var D=JSON.parse(DT.textContent),MP=!!window.__MP,ROOT=MP?null:pg;
 var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -30,10 +33,10 @@ function scrivici(t){try{sessionStorage.setItem('o2-msg',t)}catch(_){}var cf=doc
 function lev(a,b){if(Math.abs(a.length-b.length)>8)return 99;var v=[],i,j;for(j=0;j<=b.length;j++)v[j]=j;for(i=1;i<=a.length;i++){var p=v[0];v[0]=i;for(j=1;j<=b.length;j++){var t=v[j];v[j]=Math.min(v[j]+1,v[j-1]+1,p+(a[i-1]===b[j-1]?0:1));p=t}}return v[b.length]}
 
 /* ---------- dati caricati quando servono ---------- */
-var VIE=null,VL=null,RC={},RS={},M=null,ML=null;
+var VIE=null,VL=null,RC={},RS={},CNT=[],M=null,ML=null;
 function vie(){if(!VL)VL=fetch('/assets/data/vie.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){VIE=d;var k=Object.keys(d);
   k.slice().sort(function(a,b){return d[b].camere-d[a].camere}).forEach(function(v,i){RC[v]=i+1});
-  k.slice().sort(function(a,b){return d[b].strutture-d[a].strutture}).forEach(function(v,i){RS[v]=i+1});return d}).catch(function(e){VL=null;throw e});return VL}
+  k.slice().sort(function(a,b){return d[b].strutture-d[a].strutture}).forEach(function(v,i){RS[v]=i+1});CNT=k.map(function(v){return d[v].strutture});return d}).catch(function(e){VL=null;throw e});return VL}
 function mappa(){if(!ML)ML=fetch('/assets/data/mappa.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){M=d;M.bb=[];if(big)big.v=[0,0,d.w,d.h];
   d.contorni.forEach(function(c){var b=M.bb[c[0]]||(M.bb[c[0]]=[1e9,1e9,-1e9,-1e9]),p=c[1];for(var i=0;i<p.length;i+=2){b[0]=Math.min(b[0],p[i]);b[1]=Math.min(b[1],p[i+1]);b[2]=Math.max(b[2],p[i]);b[3]=Math.max(b[3],p[i+1])}});return d}).catch(function(e){ML=null;throw e});return ML}
 
@@ -137,9 +140,14 @@ function schedaVia(v){var d=VIE[v],tot=d.strutture;
   vr.innerHTML='<div class="o2-vc"><span class="o2-tag">Registro di Roma Capitale · giugno 2025</span><h3>'+esc(v)+'</h3><div class="o2-vn"><div><b>'+num(d.strutture)+'</b><span>strutture ricettive</span></div><div><b>'+num(d.camere||0)+'</b><span>camere dichiarate</span></div></div>'+
     '<div class="o2-vbar">'+COL.filter(function(c){return d[c[0]]}).map(function(c){return '<i style="width:'+(d[c[0]]/tot*100)+'%;background:'+c[2]+'"></i>'}).join('')+'</div>'+
     '<div class="o2-vleg">'+COL.filter(function(c){return d[c[0]]}).map(function(c){return '<span><i style="background:'+c[2]+'"></i>'+c[1]+' '+num(d[c[0]])+'</span>'}).join('')+(d.altro?'<span>Altre '+num(d.altro)+'</span>':'')+'</div>'+
-    '<div class="o2-vrk"><span><em>'+num(RC[v])+'ª</em> via di Roma per camere</span><span><em>'+num(RS[v])+'ª</em> per strutture ricettive</span></div>'+
+    '<div class="o2-vrk"><span><em>'+num(RC[v])+'ª</em> via di Roma per camere</span><span><em>'+num(RS[v])+'ª</em> per strutture ricettive</span></div>'+paragone(v)+
     (d.top&&d.top.length?'<div class="o2-vtop"><span class="o2-tag">Le prime '+d.top.length+' per Hotel Score</span><ol>'+d.top.map(function(x,i){return '<li><button type="button" data-o2-rep="'+esc(x[0])+'"><em>'+(i+1)+'</em><span>'+esc(x[1])+'</span><b>'+d1(x[2])+'</b></button></li>'}).join('')+'</ol></div>':'')+
-    '<small>Su '+num(D.vie)+' vie. Nome della via come scritto nel registro</small><a href="#pg-pagella" data-o2-hs>Il tuo hotel è in questa via? Calcola l\'Hotel Score →</a></div>'}
+    '<small>Su '+num(D.vie)+' vie. Nome della via come scritto nel registro</small><a href="#o2-hotel">Il tuo hotel è in questa via? Calcola l\'Hotel Score →</a></div>'}
+/* 31 (22/11): il termine di paragone, sulle vie del registro. Conta solo le vie con meno strutture ricettive (a pari numero non si è "più di") */
+function paragone(v){var s=VIE[v].strutture,N=CNT.length,r=RS[v];if(s<2||!N)return '';
+  if(r===1)return '<p class="o2-vpar">La via di Roma con più strutture ricettive</p>';
+  if(r<=N/100)return '<p class="o2-vpar">Tra le '+(Math.ceil(r/10)*10)+' vie con più strutture ricettive di Roma</p>';
+  var meno=CNT.filter(function(x){return x<s}).length,n=Math.floor(meno/N*10);return n?'<p class="o2-vpar">Più strutture ricettive di '+n+' vie su 10 a Roma</p>':''}
 function trovaVie(t){var k=norm(t);if(k.length<3)return [];var ex=Object.keys(VIE).filter(function(v){return norm(v)===k});if(ex.length)return ex;
   return Object.keys(VIE).filter(function(v){return norm(v).indexOf(k)>-1}).sort(function(a,b){return VIE[b].strutture-VIE[a].strutture})}
 function simili(t,n){var k=norm(t);return Object.keys(VIE).map(function(v){return [v,lev(k,norm(v))]}).sort(function(a,b){return a[1]-b[1]}).slice(0,n).filter(function(x){return x[1]<=Math.max(3,k.length/3)}).map(function(x){return x[0]})}
@@ -151,7 +159,15 @@ if(vf){vf.q.addEventListener('focus',vie,{once:true});vf.addEventListener('submi
   $$('.o2-ex button').forEach(function(b){b.addEventListener('click',function(){vf.q.value=b.dataset.v;cercaVia(b.dataset.v)})})}
 pg.addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(b&&vr&&vr.contains(b)){vf.q.value=b.dataset.v;cercaVia(b.dataset.v)}
   var m=e.target.closest('[data-o2-msg]');if(m){e.preventDefault();scrivici(m.dataset.o2Msg)}
-  var h=e.target.closest('[data-o2-hs]');if(h){e.preventDefault();var a=$('#o2Hs');if(a)a.click()}});
+  var h=e.target.closest('[data-o2-hs]');if(h){e.preventDefault();var a=$('#o2Hs');if(a)a.click()}
+  /* 17 (22/11): ogni "Calcola l'Hotel Score" dell'Osservatorio porta alla chat della sezione Il tuo hotel, non al modulo */
+  var hh=e.target.closest('a[href="#o2-hotel"]');if(hh&&!hh.closest('.o2-nav')){e.preventDefault();vaiChat(true)}});
+function vaiChat(fuoco){var s=$('#o2-hotel');if(!s)return;vai(s,90);if(fuoco)setTimeout(function(){var i=$('#o2ChatQ input');if(i)i.focus({preventScroll:true})},800)}
+/* 16 (22/11): sull'Osservatorio la barra del telefono non porta fuori dalla pagina ma alla chat, e sparisce quando la chat è in vista */
+if(MB){if(MP){MB.textContent='Calcola l’Hotel Score →';MB.setAttribute('href','#o2-hotel')}
+  document.addEventListener('click',function(e){if(e.target.closest('.z-mbar')&&(MP||pg.classList.contains('on'))){e.preventDefault();e.stopPropagation();vaiChat(true)}},true);
+  var sh=$('#o2-hotel');if(sh&&'IntersectionObserver' in window)new IntersectionObserver(function(es){MB.classList.toggle('off',es[0].isIntersecting)},{root:ROOT}).observe(sh)}
+if(MP&&location.hash==='#o2-hotel')setTimeout(function(){vaiChat(false)},700);
 
 /* ---------- la ricerca del hero: due pulsanti, una casella che riconosce hotel, zone e vie ---------- */
 var f=$('#o2Cerca'),sug=$('#o2Sug'),nf=$('#o2Nf'),modo='h',PH={h:'Nome del tuo hotel o CIN',z:'Una zona o una via, per esempio Monti o Via Nazionale'},SI=-1;
@@ -439,7 +455,9 @@ var ind=$('#o2Ind');if(ind){
       +'<small>'+num(u.alberghi_prenotabili)+' alberghi su '+num(d.alberghi_registro)+' hanno ancora camere su Booking</small></div>'
       +'<div class="o2-ic"><span>Tariffa mediana degli hotel · notte di '+esc(gg)+'</span><b>'+num(u.tariffa_alberghi)+' €</b>'+dl(u.tariffa_alberghi,p&&p.tariffa_alberghi,1)+sp(2)
       +'<small>Per 2 adulti, negli hotel ancora prenotabili su Booking</small></div>'
-      +'<p class="o2-im">Aggiornati ogni sera · media di '+esc(nm)+' su '+m.giorni+(m.giorni===1?' notte':' notti')+': '+d1(m.alberghi_pieni)+'% di alberghi pieni, '+num(m.tariffa_alberghi)+' € di tariffa mediana</p>';
+      /* 29 (22/11): la media del mese compare da 7 notti in su; una riga spiega i tre numeri di alberghi della pagina */
+      +'<p class="o2-im">Aggiornati ogni sera'+(m.giorni>=7?' · media di '+esc(nm)+' su '+m.giorni+' notti: '+d1(m.alberghi_pieni)+'% di alberghi pieni, '+num(m.tariffa_alberghi)+' € di tariffa mediana':'')+'</p>'
+      +(D.ra?'<p class="o2-im">Tre numeri, tre misure: '+num(D.ra)+' alberghi nel registro di Roma Capitale; '+num(d.alberghi_registro)+' alberghi del registro confrontati ogni sera con quelli ancora prenotabili su Booking; '+num(D.letti)+' alberghi letti uno per uno, con prezzi e voti, per classifiche e Hotel Score</p>':'');
     ind.hidden=false}).catch(function(){})}
 
 var ch=$('#o2Chat');if(ch){var bub=[].slice.call(ch.querySelectorAll('.q,.a'));vis(ch,function(){bub.forEach(function(b,i){setTimeout(function(){b.classList.add('show')},RM?0:300+i*750)})},.35)}
