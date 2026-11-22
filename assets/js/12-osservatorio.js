@@ -24,46 +24,11 @@ function scrivici(t){try{sessionStorage.setItem('o2-msg',t)}catch(_){}var cf=doc
 function lev(a,b){if(Math.abs(a.length-b.length)>8)return 99;var v=[],i,j;for(j=0;j<=b.length;j++)v[j]=j;for(i=1;i<=a.length;i++){var p=v[0];v[0]=i;for(j=1;j<=b.length;j++){var t=v[j];v[j]=Math.min(v[j]+1,v[j-1]+1,p+(a[i-1]===b[j-1]?0:1));p=t}}return v[b.length]}
 
 /* ---------- dati caricati quando servono ---------- */
-var VIE=null,VL=null,RC={},RS={},CNT=[],M=null,ML=null;
+var VIE=null,VL=null,RC={},RS={},CNT=[];
 function vie(){if(!VL)VL=fetch('/assets/data/vie.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){VIE=d;var k=Object.keys(d);
   k.slice().sort(function(a,b){return d[b].camere-d[a].camere}).forEach(function(v,i){RC[v]=i+1});
   k.slice().sort(function(a,b){return d[b].strutture-d[a].strutture}).forEach(function(v,i){RS[v]=i+1});CNT=k.map(function(v){return d[v].strutture});return d}).catch(function(e){VL=null;throw e});return VL}
-function mappa(){if(!ML)ML=fetch('/assets/data/mappa.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){M=d;M.bb=[];
-  d.contorni.forEach(function(c){var b=M.bb[c[0]]||(M.bb[c[0]]=[1e9,1e9,-1e9,-1e9]),p=c[1];for(var i=0;i<p.length;i+=2){b[0]=Math.min(b[0],p[i]);b[1]=Math.min(b[1],p[i+1]);b[2]=Math.max(b[2],p[i]);b[3]=Math.max(b[3],p[i+1])}});return d}).catch(function(e){ML=null;throw e});return ML}
 
-/* ---------- la mappa: un punto per ogni struttura ricettiva ---------- */
-function dentro(x,y,p){var c=false;for(var i=0,j=p.length-2;i<p.length;j=i,i+=2){var xi=p[i],yi=p[i+1],xj=p[j],yj=p[j+1];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)c=!c}return c}
-function zonaIn(x,y){if(!M)return -1;for(var i=0;i<M.contorni.length;i++)if(dentro(x,y,M.contorni[i][1]))return M.contorni[i][0];return -1}
-function Carta(cv,opt){this.cv=cv;this.o=opt;this.v=[0,0,1000,982];this.t=1;this.hi=-1;this.sel=-1}
-Carta.prototype.geo=function(){var r=this.cv.getBoundingClientRect(),W=r.width,H=r.height,v=this.v,s=Math.min(W/(v[2]-v[0]),H/(v[3]-v[1]));return {W:W,H:H,s:s,ox:(W-(v[2]-v[0])*s)/2-v[0]*s,oy:(H-(v[3]-v[1])*s)/2-v[1]*s}};
-Carta.prototype.draw=function(){if(!M)return;var cv=this.cv,g=this.geo(),dpr=Math.min(window.devicePixelRatio||1,2),c=cv.getContext('2d');if(!g.W)return;
-  if(cv.width!==Math.round(g.W*dpr)){cv.width=Math.round(g.W*dpr);cv.height=Math.round(g.H*dpr)}
-  c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,g.W,g.H);
-  var s=g.s,ox=g.ox,oy=g.oy,lim=this.v[0]+(this.v[2]-this.v[0])*this.t,self=this;
-  function pts(a,size,col){c.fillStyle=col;var h=size/2;for(var i=0;i<a.length;i+=2){if(a[i]>lim)break;c.fillRect(a[i]*s+ox-h,a[i+1]*s+oy-h,size,size)}}
-  function poly(z){c.beginPath();M.contorni.forEach(function(k){if(k[0]!==z)return;var p=k[1];c.moveTo(p[0]*s+ox,p[1]*s+oy);for(var i=2;i<p.length;i+=2)c.lineTo(p[i]*s+ox,p[i+1]*s+oy);c.closePath()})}
-  var gr=c.createLinearGradient(0,g.H,g.W,0);gr.addColorStop(0,'#3CCDFA');gr.addColorStop(.7,'#1F2DD0');gr.addColorStop(1,'#724AF8');
-  c.lineWidth=1;c.strokeStyle='rgba(255,255,255,.07)';for(var z=0;z<M.zone.length;z++){poly(z);c.stroke()}
-  [this.sel,this.hi].forEach(function(z,k){if(z<0||(k&&z===self.sel))return;poly(z);c.fillStyle='rgba(60,205,250,.09)';c.fill();c.lineWidth=1.6;c.strokeStyle=gr;c.stroke()});
-  var d=Math.max(1,Math.min(3,s*1.3));pts(M.l,d,'rgba(255,255,255,.16)');pts(M.g,d,'rgba(255,255,255,.45)');
-  c.fillStyle=gr;var r=Math.max(1.5,Math.min(3,s*2));c.beginPath();for(var i=0;i<M.k.length;i+=2){if(M.k[i]>lim)break;var x=M.k[i]*s+ox,y=M.k[i+1]*s+oy;c.moveTo(x+r,y);c.arc(x,y,r,0,6.2832)}c.fill();
-  if(this.t<1){var lx=lim*s+ox,sg=c.createLinearGradient(lx-60,0,lx,0);sg.addColorStop(0,'rgba(60,205,250,0)');sg.addColorStop(1,'rgba(60,205,250,.35)');c.fillStyle=sg;c.fillRect(lx-60,0,60,g.H);c.fillStyle='#3CCDFA';c.fillRect(lx-1,0,2,g.H)}
-  if(this.o.labels&&this.t>=1){var fs=g.W<420?9:10.5;c.font='600 '+fs+'px Geist, system-ui, sans-serif';c.textAlign='center';c.textBaseline='middle';
-    var fatti=[];M.etichette.forEach(function(e){var on=e[2]===self.hi||e[2]===self.sel,t=M.zone[e[2]].toUpperCase(),x=e[0]*s+ox,y=e[1]*s+oy,w=c.measureText(t).width+12;
-      for(var q=0;q<6&&fatti.some(function(f){return Math.abs(f[0]-x)<(f[2]+w)/2&&Math.abs(f[1]-y)<fs*2.1});q++)y+=fs*2.2;fatti.push([x,y,w]);
-      c.fillStyle=on?'#fff':'rgba(11,13,18,.72)';c.beginPath();if(c.roundRect)c.roundRect(x-w/2,y-fs,w,fs*2,fs);else c.rect(x-w/2,y-fs,w,fs*2);c.fill();c.fillStyle=on?'#1D1D1F':'rgba(245,245,247,.92)';c.fillText(t,x,y+.5)})}};
-Carta.prototype.at=function(e){var g=this.geo(),r=this.cv.getBoundingClientRect();return [(e.clientX-r.left-g.ox)/g.s,(e.clientY-r.top-g.oy)/g.s,e.clientX-r.left,e.clientY-r.top]};
-Carta.prototype.vola=function(v,ms){var self=this,a=this.v.slice(),t0=performance.now();if(RM||!ms){this.v=v;return this.draw()}
-  (function f(now){var k=Math.min(1,(now-t0)/ms),e=1-Math.pow(1-k,3);self.v=a.map(function(x,i){return x+(v[i]-x)*e});self.draw();if(k<1)requestAnimationFrame(f)})(t0)};
-Carta.prototype.leggi=function(){var self=this;if(RM){this.t=1;return this.draw()}this.t=0;var t0=performance.now();(function f(now){self.t=Math.min(1,(now-t0)/2200);self.draw();if(self.t<1)requestAnimationFrame(f)})(t0)};
-
-var small=$('#o2ZMap')?new Carta($('#o2ZMap'),{}):null,ZS=0;
-function vistaZona(z){var b=M.bb[z];if(!b)return [0,0,M.w,M.h];var w=b[2]-b[0],h=b[3]-b[1],m=Math.max(w,h)*.3,cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2,L=Math.max(w,h)/2+m;return [cx-L,cy-L,cx+L,cy+L]}
-function prova(fn,n){mappa().then(fn,function(){if(n<4)setTimeout(function(){prova(fn,n+1)},1500)})}
-var z0=$('[data-o3z]');if(z0)ZS=+z0.dataset.o3z;
-if(small)vis(small.cv,function(){prova(function(){small.sel=ZS;small.v=vistaZona(ZS);small.draw()},0)},.1);
-var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(M&&small)small.draw()},150)});
-pg.addEventListener('pgopen',function(){setTimeout(function(){if(M&&small)small.draw()},300)});
 var mese=MESI[+D.agg.split('-')[1]-1]+' '+D.agg.split('-')[0];
 
 /* ---------- menu della pagina ---------- */
@@ -71,10 +36,6 @@ var nav=$$('.o2-nav a'),navIO=null;nav.forEach(function(a){a.addEventListener('c
 if('IntersectionObserver' in window){navIO=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)nav.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id)})})},{root:ROOT,rootMargin:'-40% 0px -55% 0px'});
   nav.forEach(function(a){var s=$(a.getAttribute('href'));if(s)navIO.observe(s)})}
 
-/* ---------- le zone (blocco f): tre numeri sempre visibili, gli altri al tocco; la mappa mostra la zona aperta ---------- */
-function apriZona(b,on){b.setAttribute('aria-expanded',on?'true':'false');b.querySelector('ul').hidden=!on;b.querySelector('.o3-piu').textContent=on?'Tocca per chiudere':'Tocca per gli altri numeri';
-  if(on){ZS=+b.dataset.o3z;if(small&&M){small.sel=ZS;small.vola(vistaZona(ZS),700)}}}
-pg.addEventListener('click',function(e){var b=e.target.closest('[data-o3z]');if(b)apriZona(b,b.getAttribute('aria-expanded')!=='true')});
 
 /* ---------- le vie ---------- */
 var vr=$('#o2VRis'),vf=$('#o2Via');
@@ -349,14 +310,9 @@ function blk(id,tag,h2,corpo,fonte){return '<section class="o2-sec ap-dark2 o2-d
 function big(n,t){return '<div class="o3-big"><b>'+n+'</b><span>'+t+'</span></div>'}
 function p0(x){return Math.round(Math.abs(x)*100)+'%'}
 function art(n){return n===1||n===11||String(n).charAt(0)==='8'?'l\'':'il '}/* l'11%, l'8%, il 12% (come art() di tools/osservatorio.py) */
-function ilp(x){var n=Math.round(Math.abs(x)*100);return art(n)+n+'%'}
 function maiu(t){return t.charAt(0).toUpperCase()+t.slice(1)}
 function anima(s){if(RM)return;s.classList.add('o3-an');vis(s,function(){s.classList.add('in')},.18)}
 $$('.o3-blk').forEach(anima);
-/* 100 quadratini: resti più alti, la somma fa sempre 100 (come cento() di tools/osservatorio.py) */
-function cento(n){var t=n[0]+n[1]+n[2],e=n.map(function(x){return x/t*100}),f=e.map(Math.floor),r=100-f[0]-f[1]-f[2];
-  e.map(function(x,i){return [x-f[i],i]}).sort(function(a,b){return b[0]-a[0]}).slice(0,r).forEach(function(x){f[x[1]]++});return f}
-
 /* blocco (a) e prossime notti: la pagina non si rigenera ogni notte, indicatori.json sì. Stessi testi di stanotte() e notti() in tools/osservatorio.py */
 function oggi(I){var u=I.ultimo,reg=I.alberghi_registro;if(!u||!reg||u.alberghi_prenotabili==null)return '';
   var t=new Date(),iso=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2),
@@ -375,11 +331,85 @@ function oggi(I){var u=I.ultimo,reg=I.alberghi_registro;if(!u||!reg||u.alberghi_
   return h}
 var OG=$('#o3Oggi');
 /* il file cambia ogni giorno e /assets/ ha una cache di un anno: un indirizzo nuovo al giorno */
-if(OG)fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(I){var h=oggi(I);if(!h)return;
+if(OG)fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(I){var zd=ZT&&ZP&&zpOk(I.zone_date);if(zd){zpModello(zd);zpDisegna()}var h=oggi(I);if(!h)return;
   var visti={};[].forEach.call(OG.querySelectorAll('.o3-blk.in'),function(s){visti[s.id]=1});OG.innerHTML=h;
   [].forEach.call(OG.querySelectorAll('.o3-blk'),function(s){if(visti[s.id])s.classList.add('in');else anima(s);if(navIO)navIO.observe(s)});conta(OG);if(ME)tuOggi()}).catch(function(){});
 /* punto 4: i prezzi medi salgono da 0 al valore quando entrano nello schermo; con meno movimento restano fermi */
 function conta(box){if(RM)return;[].forEach.call(box.querySelectorAll('.o3-tpv[data-v]'),function(b){var v=+b.getAttribute('data-v');if(!v)return;b.textContent=eu(0);vis(b,function(){var t0=null,d=900,f=function(ts){if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/d),e=1-Math.pow(1-k,3);b.textContent=eu(Math.round(v*e));if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)},.4)})}
+
+/* ---------- (b) prezzi per zona (punto 5 di George del 22/11): date, ordinamento, ricerca e dettaglio al tocco.
+   Dati: zone_date di indicatori.json (riletto ogni giorno con il blocco (a)); finché manca, il sabato delle schede (o2Dati.zs).
+   Stesse regole di prezzi_zone() e rispetto() in tools/osservatorio.py ---------- */
+var ZT=$('#o3Zt'),ZP=null;
+function zpOk(z){if(!z||typeof z!=='object'||!z.roma||typeof z.roma!=='object')return null;
+  var dd=(z.date||[]).filter(function(x){return x&&x.chiave&&x.etichetta}),zz=(z.zone||[]).filter(function(x){return x&&x.nome&&x.prezzi&&typeof x.prezzi==='object'});
+  return dd.length&&zz.length?{date:dd,zone:zz,roma:z.roma,letto_il:z.letto_il,schede:!!z.schede}:null}
+function zpv(z,k){var p=z&&z.prezzi[k];return p&&p.mediana!=null?p.mediana:null}
+function rispetto(v,r){if(v==null||!r)return 'n.d.';var x=Math.round((v/r-1)*100);return x===0?'in linea':(x>0?'+':'−')+Math.abs(x)+'%'}
+/* la zona del tuo hotel in un elenco di zone: stesso nome, oppure un nome dentro l'altro (Booking: "Termini", sito: "Esquilino · Termini") */
+function zonaDi(L){if(!ME)return null;var s=ME.s,h=ME.h,c=[s&&s.zona,s&&s.zona_sito,h&&h.z,h&&D.rioni[h.z]].filter(Boolean).map(norm),i,j;
+  for(i=0;i<c.length;i++)for(j=0;j<L.length;j++)if(norm(L[j].nome)===c[i])return L[j];
+  for(i=0;i<c.length;i++)for(j=0;j<L.length;j++){var n=norm(L[j].nome);if(n.length>4&&c[i].length>4&&(c[i].indexOf(n)>-1||n.indexOf(c[i])>-1))return L[j]}return null}
+function zpModello(m){ZP={m:m,k:m.date[0].chiave,by:ZP?ZP.by:'prezzo',dir:ZP?ZP.dir:-1,q:ZP?ZP.q:'',open:{},tutte:false};
+  ZT.querySelector('.o3-chips').innerHTML=m.date.map(function(x){return '<button type="button" data-k="'+esc(x.chiave)+'" aria-pressed="false">'+esc(x.etichetta)+'</button>'}).join('');
+  var nt=ZT.querySelector('.o3-znota');if(nt)nt.hidden=m.schede;
+  if(!m.schede){var src=ZT.parentNode.querySelector('.o2-src');if(src)src.textContent='Prezzo medio: il prezzo che sta nel mezzo, metà chiede meno e metà di più. Camera per 2 persone, una notte · Zone come le divide Booking · Fonte: Booking, lettura del '+gg(String(m.letto_il||D.agg))}}
+function zpDisegna(){if(!ZT||!ZP)return;var m=ZP.m,k=ZP.k,dt=m.date.filter(function(x){return x.chiave===k})[0],r=m.roma[k],q=norm(ZP.q),mia=zonaDi(m.zone),
+    L=m.zone.filter(function(z){return !q||norm(z.nome).indexOf(q)>-1}).sort(function(a,b){if(ZP.by==='nome')return ZP.dir*a.nome.localeCompare(b.nome,'it');
+      var x=zpv(a,k),y=zpv(b,k);if(x==null||y==null)return (x==null)-(y==null)||a.nome.localeCompare(b.nome,'it');return ZP.dir*(x-y)||a.nome.localeCompare(b.nome,'it')});
+  [].forEach.call(ZT.querySelectorAll('[data-k]'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-k')===k?'true':'false')});
+  ZT.querySelector('.o3-zroma').innerHTML='Roma <b>'+(r?eu(r):'n.d.')+'</b> <span>'+esc(dt.data?gg(dt.data,1):dt.etichetta)+'</span>';
+  [].forEach.call(ZT.querySelectorAll('thead th'),function(t,i){var s=i?'prezzo':'nome';t.setAttribute('aria-sort',(i<2&&ZP.by===s)?(ZP.dir>0?'ascending':'descending'):'none')});
+  ZT.querySelector('tbody').innerHTML=L.length?L.map(function(z,i){var v=zpv(z,k),p=z.prezzi[k]||{},ap=!!ZP.open[z.nome],x=i>=10&&!ZP.tutte?' o3-x':'',me=z===mia?' o3-mia':'';
+      var alt=m.date.filter(function(d){return d.chiave!==k&&zpv(z,d.chiave)!=null}).map(function(d){return esc(d.etichetta)+' <b>'+eu(zpv(z,d.chiave))+'</b>'});
+      return '<tr class="o3-zr'+x+me+'" data-n="'+esc(z.nome)+'"><th scope="row"><button type="button" aria-expanded="'+ap+'">'+(me?'<span class="o3-pill" data-tu>Tu</span>':'')+esc(z.nome)+'</button></th><td>'+(v!=null?eu(v):'n.d.')+'</td><td class="'+(v!=null&&r?(v>r?'su':v<r?'giu':''):'')+'">'+rispetto(v,r)+'</td></tr>'+
+        (ap?'<tr class="o3-zd'+x+'"><td colspan="3">'+(p.hotel?'<b>'+num(p.hotel)+'</b> alberghi letti in questa zona':'Alberghi letti: n.d.')+(alt.length?' · '+alt.join(' · '):'')+'</td></tr>':'')}).join('')
+    :'<tr><td colspan="3" class="o3-z0">Nessuna zona con questo nome</td></tr>';
+  var tt=ZT.querySelector('.o3-tutte');tt.hidden=L.length<=10||ZP.tutte;tt.textContent='Mostra tutte le '+L.length+' zone';
+  /* la riga Tu: la sua zona per la data scelta, e il suo prezzo del sabato letto nella scheda contro la sua zona nello stesso sabato */
+  var tus=$('.o3-tus[data-b="prezzi"]');if(!tus)return;tus.innerHTML='';if(!ME)return;
+  var t=mia?'La tua zona, <b>'+esc(mia.nome)+'</b>: '+(zpv(mia,k)!=null?'<b>'+eu(zpv(mia,k))+'</b> '+esc(dt.data?gg(dt.data,1):dt.etichetta.toLowerCase())+', '+rispetto(zpv(mia,k),r)+' rispetto a Roma':'prezzo non letto per questa data')+'. '
+      :'La tua zona non è in questa tabella: il confronto è con Roma. ',ZS=zpOk(D.zs),zs=ZS&&zonaDi(ZS.zone),b1=mio('sabato'),ref=zs?zpv(zs,'sabato'):ZS&&ZS.roma.sabato;
+  if(b1!=null&&ref){var df=Math.round(b1-ref);t+='Il tuo prezzo di '+gg(D.date.sabato,1)+' è <b>'+eu(b1)+'</b>'+(df?', '+eu(Math.abs(df))+' '+(df>0?'più':'meno')+' '+(zs?'della tua zona':'di Roma')+' ('+eu(ref)+')':', lo stesso '+(zs?'della tua zona':'di Roma'))}
+  else t+=ME.s?maiu(gg(D.date.sabato,1))+': '+esc(perche('sabato')):'Non leggiamo ancora i prezzi del tuo hotel: confrontali con la riga della tua zona';
+  tus.innerHTML=tu(t)}
+if(ZT){var m0=zpOk(D.zd)||zpOk(D.zs);if(m0){zpModello(m0);var zq=ZT.querySelector('.o3-zq');zq.hidden=false;
+  [].forEach.call(ZT.querySelectorAll('thead th'),function(t,i){var s=i?'prezzo':'nome';t.innerHTML='<button type="button" data-s="'+s+'">'+t.textContent+'</button>'});
+  ZT.addEventListener('click',function(e){var b=e.target.closest('[data-k],[data-s],.o3-zr,.o3-tutte');if(!b)return;
+    if(b.hasAttribute('data-k'))ZP.k=b.getAttribute('data-k');
+    else if(b.hasAttribute('data-s')){var s=b.getAttribute('data-s');ZP.dir=ZP.by===s?-ZP.dir:(s==='nome'?1:-1);ZP.by=s}
+    else if(b.classList.contains('o3-tutte'))ZP.tutte=true;
+    else{var n=b.getAttribute('data-n');ZP.open[n]=!ZP.open[n]}
+    zpDisegna();if(b.classList.contains('o3-zr')){var bb=ZT.querySelector('.o3-zr[data-n="'+b.getAttribute('data-n').replace(/"/g,'\\"')+'"] button');if(bb)bb.focus({preventScroll:true})}});
+  zq.addEventListener('input',function(){ZP.q=zq.value;zpDisegna()});
+  zpDisegna()}}
+
+/* ---------- (d) il modulo delle classifiche (punto 7 di George del 22/11): cinque classifiche, stelle e zona; la Top 10 si rifà da classifiche.json.
+   Riga: [id, nome, zona, stelle, hotel_score, voto, recensioni, martedi, sabato]. Stesse regole di top() in tools/osservatorio.py ---------- */
+var CM=$('#o3Cm'),CR=null,CRP=null,CS={t:'hs',st:'',z:''},CSP={};try{CSP=JSON.parse(CM.getAttribute('data-sp'))}catch(_){}
+function clDati(){if(!CRP)CRP=fetch('/assets/data/classifiche.json?v='+(D.ver||'')).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){CR=d;return d}).catch(function(e){CRP=null;throw e});return CRP}
+function REC(r){return r[6]||0}
+var CLT={hs:{ok:function(r){return r[4]!=null},o:function(a,b){return b[4]-a[4]||REC(b)-REC(a)},v:function(r){return d1(r[4])},no:'Il tuo Hotel Score non è ancora calcolato: servono più dati letti su Booking'},
+  voto:{ok:function(r){return r[5]!=null&&REC(r)>=100},o:function(a,b){return b[5]-a[5]||REC(b)-REC(a)},v:function(r){return d1(r[5])},no:'In questa classifica entrano gli alberghi con almeno 100 recensioni su Booking'},
+  rec:{ok:function(r){return REC(r)>0},o:function(a,b){return REC(b)-REC(a)},v:function(r){return num(r[6])},no:'Non abbiamo letto le tue recensioni su Booking'},
+  sab:{ok:function(r){return r[8]!=null},o:function(a,b){return b[8]-a[8]||REC(b)-REC(a)},v:function(r){return eu(r[8])},no:'Il tuo prezzo del sabato non è letto su Booking'},
+  qp:{ok:function(r){return r[5]!=null&&r[5]>=8&&r[7]!=null},o:function(a,b){return a[7]-b[7]||b[5]-a[5]||REC(b)-REC(a)},v:function(r){return d1(r[5])+' · '+eu(r[7])},no:'In questa classifica entrano gli alberghi con voto da 8 in su su Booking e il prezzo del martedì letto'}};
+function clStelle(r){return !CS.st||(CS.st==='12'?r[3]===1||r[3]===2:r[3]===+CS.st)}
+function clZona(r){return !CS.z||r[2]===CS.z}
+function clDisegna(){if(!CM)return;if(!CR){clDati().then(clDisegna,function(){});return}
+  var t=CLT[CS.t],L=CR.filter(function(r){return t.ok(r)&&clStelle(r)&&clZona(r)}).sort(t.o),id=ME&&ME.id;
+  [].forEach.call(CM.querySelectorAll('[data-t],[data-st]'),function(b){b.setAttribute('aria-pressed',(b.hasAttribute('data-t')?b.getAttribute('data-t')===CS.t:b.getAttribute('data-st')===CS.st)?'true':'false')});
+  CM.querySelector('.o3-csp').textContent=CSP[CS.t]||'';
+  CM.querySelector('.o3-cl2').innerHTML=L.slice(0,10).map(function(r,i){var io=r[0]===id;return '<li'+(io?' class="o3-io1"':'')+' data-id="'+esc(r[0])+'"><span class="o3-n">'+(i+1)+'</span><span class="o3-rl">'+(io?'<span class="o3-p" data-tu>Tu</span>':'')+esc(r[1])+'<small>'+esc(r[2]||'Roma')+(r[3]?' · '+r[3]+' stelle':'')+'</small></span><b class="o3-rv">'+t.v(r)+'</b></li>'}).join('');
+  CM.querySelector('.o3-cn').textContent=L.length?num(L.length)+(L.length===1?' albergo':' alberghi')+' in questa classifica':'Nessun albergo con questi filtri';
+  var tus=$('.o3-tus[data-b="hs"]');if(!tus)return;tus.innerHTML='';if(!ME)return;
+  var me=CR.filter(function(r){return r[0]===id})[0],i=me?L.indexOf(me):-1;
+  tus.innerHTML=tu(!me?'Il tuo hotel non è ancora tra gli alberghi letti su Booking: le classifiche nascono da quella lettura'
+    :!t.ok(me)?t.no:i<0?'Con questi filtri il tuo hotel non compare: '+(me[3]?'ha '+me[3]+' stelle ed ':'')+'è in '+esc(me[2]||'una zona di Roma')
+    :'<b>'+(i+1)+'º su '+num(L.length)+'</b> in questa classifica · '+t.v(me))}
+if(CM){vis(CM,function(){clDati().catch(function(){})},0);
+  CM.addEventListener('click',function(e){var b=e.target.closest('[data-t],[data-st]');if(!b)return;if(b.hasAttribute('data-t'))CS.t=b.getAttribute('data-t');else CS.st=b.getAttribute('data-st');clDisegna()});
+  CM.querySelector('.o3-cz').addEventListener('change',function(e){CS.z=e.target.value;clDisegna()})}
 
 /* ---------- il tuo hotel ---------- */
 function pzM(k){return ME&&ME.s?pz(ME.s,k):null}
@@ -395,7 +425,7 @@ function personalizza(id,h){var ok=function(s,hh){var zs=(s&&s.zona_sito)||(hh&&
     hotel().then(function(){var hh=(HOT||[]).filter(function(x){return x.id===String(id)})[0];if(hh)ok(null,hh);else{spersonalizza();avviso('Non troviamo un hotel con questo indirizzo. Cercalo per nome qui sopra')}})})}
 function avviso(t){var io=$('#o2Io');io.hidden=false;io.innerHTML='<div><p class="o3-nota">'+esc(t)+'</p></div>'}
 function pulisci(){$$('[data-tu]').forEach(function(x){x.parentNode.removeChild(x)});
-  $$('.o3-mia').forEach(function(x){x.classList.remove('o3-mia');if(x.hasAttribute('data-o3z'))apriZona(x,false)});
+  $$('.o3-mia').forEach(function(x){x.classList.remove('o3-mia')});
   $$('.me1,.o3-io1').forEach(function(x){x.classList.remove('me1','o3-io1')});
   var io=$('#o2Io');io.hidden=true;io.innerHTML='';if(FC&&FINE0!=null)FC.innerHTML=FINE0;barra()}
 function spersonalizza(fuoco){ME=null;pulisci();try{var u=new URL(location.href);u.searchParams.delete('hotel');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
@@ -424,34 +454,19 @@ function disegnaTu(){pulisci();if(!ME)return;
   var mb=$('#o3Me');if(mb){mb.querySelector('b').textContent=ME.nome;var mc=mb.querySelector('button');mc.dataset.o3=s?'chat':'leggi';mc.textContent=s?'Apri la chat':'Chiedi la lettura'}
   /* (a) e prossime notti */
   tuOggi();
-  /* (b) quanto costa Roma: tre riquadri Tu · la tua zona · Roma; la sua zona sale al primo posto */
-  var zb=$('.o3-zb'),mx=zb?+zb.dataset.mx:1,GI=[['martedi','Martedì',gg(dt.martedi)],['sabato','Sabato',gg(dt.sabato)],['evento','Capodanno','2 notti, prezzo per notte']];
-  put('prezzi','<div class="o3-cfr" data-tu>'+GI.map(function(g){var k=g[0],v=mio(k),zv=zm?zm[k]:null,ref=zv!=null?zv:R[k],dove=zv!=null?'la tua zona':'Roma',ver;
-      if(v==null)ver=letti?(pzM(k)&&pzM(k).motivo==='non disponibile'?'Per questa data non hai camere in vendita su Booking: '+dove+' chiede '+eu(ref):g[1]+': '+esc(perche(k))):'Confronta il tuo prezzo con queste due barre';
-      else{var df=Math.round(v-ref);ver=df===0?'Vendi allo stesso prezzo '+(dove==='Roma'?'di Roma':'della tua zona'):'Vendi a '+eu(Math.abs(df))+' '+(df<0?'meno':'più')+' di '+(dove==='Roma'?'Roma':'quanto chiede la tua zona')}
-      return '<div><h3>'+g[1]+'<small>'+esc(g[2])+'</small></h3>'+rg('o3-io1','Tu',v,mx,s?perche(k):'prezzo non letto')+(Z?rg('o3-zo','La tua zona',zv,mx):'')+rg('','Roma',R[k],mx)+'<p>'+ver+'</p></div>'}).join('')+'</div>');
-  if(Z){var zt=$('.o3-zb [data-z="'+Z.nome+'"]');if(zt){zt.classList.add('o3-mia');zt.querySelector('h3 small').insertAdjacentHTML('beforebegin','<span class="o3-pill" data-tu>La tua zona</span> ')}}
-  /* (c) chi alza il prezzo il sabato */
-  var S=D.sabato100,q3=cento([S.alzano,S.uguale,S.abbassano]),a1=mio('martedi'),b1=mio('sabato'),gr=a1!=null&&b1!=null?(b1>a1?0:b1===a1?1:2):-1,
-    NOMI=['alzano il prezzo','chiedono lo stesso prezzo del martedì','abbassano il prezzo'];
-  if(gr>-1){put('sabato',tu('Sei tra i <b>'+q3[gr]+' su 100</b> che '+NOMI[gr]+': '+eu(a1)+' il martedì, '+eu(b1)+' il sabato'+(gr!==1?' ('+(b1>a1?'+':'−')+p0(b1/a1-1)+')':'')+'. Il tuo quadratino è quello con il bordo bianco'));
-    var me1=$('.o3-q100 i.'+'abc'.charAt(gr));if(me1)me1.classList.add('me1')}
-  else if(letti&&(a1!=null||b1!=null))put('sabato',tu(maiu(b1==null?gs:gm)+': '+esc(perche(b1==null?'sabato':'martedi'))+'. Senza i due prezzi il tuo quadratino non entra nel conteggio'));
-  else put('sabato',tu('Non abbiamo i tuoi due prezzi: il tuo quadratino non è ancora nella griglia'));
-  if(zm&&zm.rincaro_sabato!=null)put('sabato',tu('Nella tua zona il sabato costa '+(Math.abs(zm.rincaro_sabato)<.005?'quanto il martedì':ilp(zm.rincaro_sabato)+' '+(zm.rincaro_sabato>0?'in più':'in meno')+' del martedì')+(zm.alberghi<POCHI?' (solo '+zm.alberghi+' alberghi letti)':'')));
-  /* (d) le classifiche */
-  var iR=(D.hs||[]).map(function(x){return x[0]}).indexOf(ME.id),riH=function(pos,r,io1){return '<div class="o3-r'+(io1?' o3-io1':'')+'"><span class="o3-n">'+pos+'</span><span class="o3-rl">'+(io1?'<span class="o3-p">Tu</span>':'')+esc(r[1])+'<small>'+esc(r[2]||'Roma')+(r[3]?' · '+r[3]+' stelle':'')+'</small></span><span class="o3-bar"><i style="--w:'+(r[4]*10)+'%"></i></span><b class="o3-rv">'+d1(r[4])+'</b></div>'};
-  if(iR>-1){var mx0=D.hs[iR];put('hs',tu('Il tuo Hotel Score è <b>'+d1(mx0[4])+'</b>: '+(cz?'sei <b>'+cz.pos+'º su '+cz.su+'</b> tra gli alberghi di '+esc(Z.nome)+' e ':'sei ')+'<b>'+(iR+1)+'º su '+D.hs.length+'</b> a Roma'));
-    var r10=$('.o3-cl [data-id="'+ME.id+'"]');if(r10){r10.classList.add('o3-io1');r10.querySelector('.o3-rl').insertAdjacentHTML('afterbegin','<span class="o3-p" data-tu>Tu</span>')}
-    if(cz&&cz.su>=POCHI)put('hs2','<div class="o3-cl" data-tu><h3>La tua zona: i primi tre e tu</h3>'+cz.lista.slice(0,3).map(function(r,i){return riH(i+1,r,r[0]===ME.id)}).join('')+(cz.pos>3?(cz.pos>4?'<p class="o3-salto">…</p>':'')+riH(cz.pos,mx0,1):'')+'</div>');
-    else if(cz)put('hs',tu('Nella tua zona gli alberghi con l’Hotel Score sono solo '+cz.su+': la classifica di zona non è significativa'))}
-  else put('hs',tu(s?'Il tuo Hotel Score non è ancora calcolato: servono più dati letti su Booking. Nella chat trovi quello che abbiamo già letto':'Il tuo hotel non è ancora in classifica: l’Hotel Score nasce dai dati letti su Booking'));
+  /* (b) prezzi per zona: la sua riga evidenziata e la riga Tu, ridisegnate a ogni cambio di data */
+  zpDisegna();
+  /* (c) chi alza il prezzo il sabato: il segnaposto sopra la barra */
+  var SB=$('.o3-sb'),a1=mio('martedi'),b1=mio('sabato'),gr=a1!=null&&b1!=null?(b1>a1?0:b1===a1?1:2):-1,NOMI=['alzano il prezzo','chiedono lo stesso prezzo del martedì','abbassano il prezzo'];
+  if(gr>-1&&SB){var q=SB.getAttribute('data-q').split(',').map(Number),qx=q.slice(0,gr).reduce(function(a,b){return a+b},0)+q[gr]/2;
+    SB.insertAdjacentHTML('afterbegin','<span class="o3-qui" data-tu style="--x:'+qx+'%"><span>Tu sei qui</span></span>');
+    put('sabato',tu('Sei tra i <b>'+q[gr]+' su 100</b> che '+NOMI[gr]+': '+eu(a1)+' il martedì, '+eu(b1)+' il sabato'+(gr!==1?' ('+(b1>a1?'+':'−')+p0(b1/a1-1)+')':'')))}
+  else if(letti&&(a1!=null||b1!=null))put('sabato',tu(maiu(b1==null?gs:gm)+': '+esc(perche(b1==null?'sabato':'martedi'))+'. Senza i due prezzi il tuo hotel non entra nel conteggio'));
+  else put('sabato',tu('Non abbiamo i tuoi due prezzi: il tuo hotel non è ancora nel conteggio'));
+  /* (d) le classifiche: la sua posizione nella classifica scelta, in fondo al modulo */
+  clDisegna();
   /* (e) la domanda */
   put('domanda',tu(zf?'Questa domanda la dividi con gli altri '+num(zf.alberghi-1)+' alberghi di '+esc(Z.nome)+': '+(s&&s.camere?'tu hai <b>'+s.camere+' camere</b> su '+num(zf.camere_alberghi)+' camere d’albergo della zona':'la zona ha '+num(zf.camere_alberghi)+' camere d’albergo'):'Questa domanda la dividi con i '+num(D.ra)+' alberghi di Roma'));
-  /* (f) le zone: la sua scheda è la prima, aperta */
-  if(Z){put('zone',tu('La tua zona è <b>'+esc(Z.nome)+'</b>: '+num(zf.alberghi)+' alberghi, '+eu(zm.sabato)+' il sabato, voto '+d1(zm.voto)+' su Booking'+(s&&s.booking&&s.booking.voto!=null?'. Il tuo voto è <b>'+d1(s.booking.voto)+'</b>':'')));
-    var zc=$('[data-o3z="'+ME.zi+'"]');if(zc){zc.classList.add('o3-mia');zc.querySelector('h3').insertAdjacentHTML('beforeend',' <span class="o3-pill" data-tu>La tua zona</span>');apriZona(zc,true)}}
-  else put('zone',tu('Il tuo hotel è fuori da queste nove zone: il tuo confronto è con Roma, voto '+d1(R.voto)+' su Booking'));
   /* chiusura */
   if(FC)FC.innerHTML=s?'<h2>'+esc(ME.nome)+': il confronto con i '+n+' alberghi più vicini è nella chat</h2><p>Prezzi, voti e posizione rispetto ai tuoi competitor, con il report completo via email</p><button class="o3-btn" type="button" data-o3="chat"><span>Parla con la chat del tuo hotel</span></button>'
     :'<h2>Vuoi questi numeri anche per '+esc(ME.nome)+'?</h2><p>Chiedi la lettura del tuo hotel: da quel momento ogni blocco della pagina mostra i tuoi prezzi accanto alla tua zona e a Roma</p><button class="o3-btn" type="button" data-o3="leggi"><span>Chiedi la lettura del tuo hotel</span></button>';
