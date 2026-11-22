@@ -235,7 +235,8 @@ class TestDomanda(unittest.TestCase):
     def test_senza_dati_nuovi_niente_schede(self):
         h = osservatorio.flussi({'flussi': {'istat': {'annui': self.ANNI, 'fonte': 'ISTAT'}}})
         self.assertIn('o3-n3', h)
-        self.assertNotIn('o3-dm', h)
+        self.assertNotIn('name="o3dm"', h)
+        self.assertIn('class="o3-dmt"', h)  # il grafico dal primo anno c'è anche senza schede
         self.assertNotIn('Aeroporti di Roma', h)
         self.assertIn('data-b="domanda"', h)
 
@@ -290,3 +291,17 @@ class TestNastro(unittest.TestCase):
 
     def test_senza_dati_niente_nastro(self):
         self.assertEqual(osservatorio.nastro({}), '')
+
+
+class TestAndamento(unittest.TestCase):
+    def test_etichette_2019_minimo_ultimo(self):
+        an = {str(y): 5000000 + (y - 2014) * 100000 for y in range(2014, 2026)}
+        an['2020'] = 1800000
+        h = osservatorio.andamento(an)
+        self.assertEqual(h.count('class="o3-dmtl'), 3)
+        for y in ('2019', '2020', '2025'):
+            self.assertIn(f'>{y}<b>', h)
+        self.assertIn('o3-dmtu', h)
+
+    def test_pochi_anni_niente_grafico(self):
+        self.assertEqual(osservatorio.andamento({'2024': 1, '2025': 2}), '')

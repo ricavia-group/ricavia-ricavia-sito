@@ -322,6 +322,29 @@ def var(a, b):
     return ("+" if x > 0 else MENO if x < 0 else "") + f"{abs(x):.1f}".replace(".", ",") + "%"
 
 
+def andamento(an):
+    """Grafico degli arrivi negli alberghi dal primo anno all'ultimo (George 22/11: "è bello vedere un grafico dal 2014 a oggi"):
+    area con base zero, etichette sul 2019 (prima della pandemia), sull'anno più basso e sull'ultimo"""
+    anni = sorted(an)
+    if len(anni) < 5:
+        return ""
+    mx, n = max(an.values()), len(anni) - 1
+    X = lambda y: anni.index(y) / n * 100
+    Y = lambda v: 40 - v / mx * 34
+    pts = " ".join(f"{X(y):.2f},{Y(an[y]):.2f}" for y in anni)
+    basso = min(an, key=an.get)
+    nota = [y for y in dict.fromkeys(["2019", basso, anni[-1]]) if y in an]
+    lab = "".join(f'<span class="o3-dmtl{" o3-dmtu" if y == anni[-1] else ""}" style="left:{X(y):.2f}%;bottom:{an[y] / mx * 85:.2f}%">{y}<b>{milioni(an[y])} mln</b></span>' for y in nota)
+    return (f'<div class="o3-dmt"><p>Arrivi negli alberghi di Roma, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
+            f'<svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Arrivi negli alberghi di Roma dal {anni[0]} al {anni[-1]}: '
+            f'{milioni(an["2019"]) + " milioni nel 2019, " if "2019" in an else ""}{milioni(an[basso])} milioni nel {basso}, {milioni(an[anni[-1]])} milioni nel {anni[-1]}">'
+            '<defs><linearGradient id="o3dmg" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#1F2DD0"/><stop offset="1" stop-color="#724AF8"/></linearGradient>'
+            '<linearGradient id="o3dma" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3CCDFA" stop-opacity=".22"/><stop offset="1" stop-color="#3CCDFA" stop-opacity="0"/></linearGradient></defs>'
+            f'<path d="M0,40 L{pts.replace(" ", " L")} L100,40 Z" fill="url(#o3dma)"/>'
+            f'<polyline class="o3-trc" points="{pts}" fill="none" stroke="url(#o3dmg)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>'
+            f'{lab}</div><div class="o3-dmta"><span>{anni[0]}</span><span>{anni[-1]}</span></div></div>')
+
+
 def flussi(d):
     """Blocco (e), punto 8 di George del 22/11: tre numeri grandi con una frase e una linea piccola degli arrivi negli alberghi (ISTAT)"""
     fl = d.get("flussi") or {}
@@ -346,7 +369,7 @@ def flussi(d):
     return blocco("o2-flussi", "La domanda",
                   f"Nel {ult} gli alberghi di Roma hanno registrato {milioni(an[ult])} milioni di arrivi, {art(round(abs(df) * 100))}{round(abs(df) * 100)}% {'in più' if df >= 0 else 'in meno'} del {pr}",
                   '<div class="o3-n3">' + "".join(f'<div><b>{n}</b><span>{t}</span></div>' for n, t in tre) + "</div>"
-                  + schede_domanda(fl.get("paesi"), ist.get("mesi"), ae if mm else None) + TUS.format("domanda"),
+                  + andamento(an) + schede_domanda(fl.get("paesi"), ist.get("mesi"), ae if mm else None) + TUS.format("domanda"),
                   f'Arrivi negli esercizi alberghieri del Comune di Roma · Fonti: {" e ".join(fonti)}')
 
 
