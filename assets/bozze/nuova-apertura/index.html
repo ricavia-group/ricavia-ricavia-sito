@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Bozza Nuova apertura · Ricavia</title>
+<style>
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/geist-latin.woff2) format('woff2')}
+:root{--bg:#0B0D12;--bg2:#11141c;--bg3:#181c27;--ln:rgba(255,255,255,.1);--ln2:rgba(255,255,255,.2);--tx:#fff;--tx2:#aab0c4;--tx3:#737a92;--zink:#1D1D1F;
+--zgr:linear-gradient(100deg,#3CCDFA,#1F2DD0 70%,#724AF8);--zgl:linear-gradient(100deg,#3CCDFA,#6f7bff 70%,#9a7bff);--zf:'Geist',system-ui,-apple-system,sans-serif;--ez:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.5 var(--zf);overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.g{background:var(--zgl);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.tag{display:inline-block;font:600 12px/1.4 var(--zf);letter-spacing:.08em;text-transform:uppercase;background:var(--zgl);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.top{border-bottom:1px solid var(--ln);padding:14px 0;font-size:13px;color:var(--tx2)}.top b{color:#fff;font-weight:600}
+h1{font:600 clamp(30px,5vw,52px)/1.08 var(--zf);letter-spacing:-.02em;margin:10px 0 14px}
+h2{font:600 clamp(24px,3.6vw,38px)/1.12 var(--zf);letter-spacing:-.02em;margin:8px 0 10px}
+h3{font:600 clamp(20px,2.6vw,26px)/1.2 var(--zf);letter-spacing:-.01em;margin:0 0 8px}
+.lead{color:var(--tx2);max-width:680px;margin:0}
+section.blk{padding:48px 0;border-top:1px solid var(--ln)}
+.hero{padding:44px 0 36px}
+.btn{font:600 15px/1 var(--zf);border-radius:999px;padding:15px 22px;border:1px solid #fff;cursor:pointer;min-height:48px;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn.w{background:#fff;color:var(--zink)}
+.btn.w:hover span,.btn.w:focus-visible span{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.btn.o{background:transparent;color:#fff;border-color:var(--ln2)}.btn.o:hover{border-color:#fff}
+.btn[disabled]{opacity:.35;cursor:default}
+.es{display:inline-block;font:600 11px/1 var(--zf);letter-spacing:.08em;text-transform:uppercase;color:var(--zink);background:#fff;border-radius:6px;padding:6px 8px}
+/* in vendita */
+.sale{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.card{background:var(--bg2);border:1px solid var(--ln);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .7s var(--ez);transition-delay:calc(var(--i)*90ms)}
+.in .card{opacity:1;transform:none}
+.card h4{font:600 19px/1.25 var(--zf);margin:0}
+.card .zn{color:var(--tx2);font-size:14px;margin-top:2px}
+.kv{display:grid;grid-template-columns:1fr auto;gap:6px 10px;font-size:14px;margin:0}
+.kv dt{color:var(--tx2)}.kv dd{margin:0;font-weight:600;text-align:right}
+.voto{display:flex;align-items:center;gap:14px;background:var(--bg3);border-radius:14px;padding:12px 14px}
+.voto b{font:600 34px/1 var(--zf);letter-spacing:-.02em}
+.voto span{font-size:13px;color:var(--tx2);line-height:1.35}
+.crit{list-style:none;margin:0;padding:0;font-size:13px}
+.crit li{display:grid;grid-template-columns:minmax(0,1fr) 70px 22px;gap:8px;align-items:center;padding:4px 0;color:var(--tx2)}
+.crit i{height:6px;border-radius:3px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
+.crit i u{position:absolute;inset:0;width:0;background:var(--zgr);border-radius:3px;transition:width .9s var(--ez) .3s}
+.in .crit i u{width:var(--w)}
+.crit b{color:#fff;text-align:right;font-weight:600}
+details{font-size:13px;color:var(--tx2)}
+details summary{cursor:pointer;color:#fff;font-weight:500;padding:6px 0;min-height:32px}
+details p{margin:6px 0}
+.note{color:var(--tx3);font-size:12.5px;line-height:1.5;margin:14px 0 0}
+/* percorso */
+.prog{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:22px 0 8px}
+.prog button{background:none;border:0;padding:0;cursor:pointer;text-align:left;color:var(--tx3);font:500 12.5px/1.3 var(--zf);min-height:44px}
+.prog i{display:block;height:5px;border-radius:3px;background:rgba(255,255,255,.1);margin-bottom:8px;position:relative;overflow:hidden}
+.prog i u{position:absolute;inset:0;background:var(--zgr);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ez)}
+.prog .done i u,.prog .on i u{transform:none}
+.prog .on{color:#fff}.prog .done{color:var(--tx2)}
+.prog em{font-style:normal;display:block;color:inherit}
+.stage{background:var(--bg2);border:1px solid var(--ln);border-radius:22px;padding:26px;min-height:420px}
+.step{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+.step.on{display:grid;animation:su .5s var(--ez)}
+@keyframes su{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.step .q>p{color:var(--tx2);margin:0 0 18px;font-size:15px}
+.lbl{display:block;font:600 13px/1.3 var(--zf);margin:18px 0 8px;color:#fff}
+.lbl small{font-weight:400;color:var(--tx3);margin-left:6px}
+.pick{display:flex;flex-wrap:wrap;gap:6px}
+.pick button{font:500 14px/1 var(--zf);color:#fff;background:transparent;border:1px solid var(--ln2);border-radius:999px;padding:11px 14px;cursor:pointer;min-height:42px}
+.pick button.on{background:#fff;color:var(--zink);border-color:#fff}
+.sl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center}
+.sl output{font:600 17px/1 var(--zf);min-width:92px;text-align:right}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;margin:0;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(90deg,#3CCDFA,#4d5cff var(--p,50%),rgba(255,255,255,.12) var(--p,50%))}
+input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:rgba(255,255,255,.12)}
+input[type=range]::-moz-range-progress{height:6px;border-radius:3px;background:#3CCDFA}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:0;margin-top:-9px;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:0}
+input:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #3CCDFA;outline-offset:2px}
+.ip{font-size:12px;color:var(--tx3);grid-column:1/3;margin-top:-2px}
+.res{background:var(--bg3);border-radius:18px;padding:20px;position:sticky;top:14px}
+.res small.t{display:block;font:600 12px/1.4 var(--zf);letter-spacing:.08em;text-transform:uppercase;background:var(--zgl);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.big{font:600 clamp(32px,5.4vw,48px)/1.05 var(--zf);letter-spacing:-.03em;display:block}
+.res .cap{color:var(--tx2);font-size:14px;margin:4px 0 14px}
+.res .kv{border-top:1px solid var(--ln);padding-top:12px}
+.meter{height:10px;border-radius:5px;background:rgba(255,255,255,.08);position:relative;margin:14px 0 6px}
+.meter u{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--zgr);width:var(--w);max-width:100%;transition:width .5s var(--ez)}
+.meter b{position:absolute;top:-5px;bottom:-5px;width:2px;background:#fff;left:var(--b);transition:left .5s var(--ez)}
+.mcap{display:flex;justify-content:space-between;font-size:12.5px;color:var(--tx2);gap:10px}
+.strip{position:relative;height:54px;margin:20px 0 4px}
+.strip .band{position:absolute;top:22px;height:10px;border-radius:5px;background:rgba(255,255,255,.14);left:var(--a);width:var(--w)}
+.strip .me{position:absolute;top:13px;width:28px;height:28px;border-radius:50%;background:var(--zgr);border:3px solid #fff;left:var(--x);transform:translateX(-50%);transition:left .5s var(--ez)}
+.strip span{position:absolute;top:40px;font-size:12px;color:var(--tx2);transform:translateX(-50%);white-space:nowrap}
+.strip span.l{transform:none}.strip span.r{transform:translateX(-100%)}
+.mesi{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;align-items:end;height:96px;margin:16px 0 4px}
+.mesi i{display:block;background:linear-gradient(0deg,#1F2DD0,#3CCDFA);border-radius:3px 3px 0 0;height:var(--h);transition:height .5s var(--ez);min-height:2px}
+.mesil{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;font-size:11px;color:var(--tx3);text-align:center}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px;flex-wrap:wrap}
+/* report */
+.rep{display:none}.rep.on{display:block;animation:su .5s var(--ez)}
+.rk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0}
+.rk div{background:var(--bg3);border-radius:16px;padding:16px}
+.rk b{font:600 clamp(24px,3.4vw,34px)/1.1 var(--zf);letter-spacing:-.02em;display:block}
+.rk span{font-size:13px;color:var(--tx2);display:block;margin-top:4px;line-height:1.35}
+.rg{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;margin-top:8px}
+.calc{width:100%;border-collapse:collapse;font-size:14px}
+.calc td{padding:9px 0;border-top:1px solid var(--ln);vertical-align:top}
+.calc td:last-child{text-align:right;font-weight:600;white-space:nowrap;padding-left:10px}
+.calc small{display:block;color:var(--tx3);font-size:12px;font-weight:400}
+.calc tr.tot td{border-top:1px solid #fff;font-weight:600}
+.wf svg{display:block;width:100%;height:auto;overflow:visible}
+.wf text{font-family:var(--zf);fill:var(--tx2);font-size:12px}.wf text.w{fill:#fff;font-weight:600}
+.mail{background:var(--bg3);border-radius:18px;padding:22px;margin-top:22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center}
+.mail form{display:grid;gap:10px}
+.mail input[type=text],.mail input[type=email]{font:400 16px/1.2 var(--zf);color:#fff;background:var(--bg);border:1px solid var(--ln2);border-radius:12px;padding:14px;width:100%}
+.mail label.c{display:flex;gap:10px;font-size:13px;color:var(--tx2);align-items:flex-start}
+.mail label.c input{width:20px;height:20px;flex:none;margin:0}
+.mail ul{margin:10px 0 0;padding-left:18px;color:var(--tx2);font-size:14px}
+.ok{font-size:14px;color:#fff;min-height:20px}
+@media (max-width:860px){
+.sale{grid-template-columns:1fr}.step.on{grid-template-columns:1fr;gap:18px}.res{position:static}
+.stage{padding:16px;border-radius:18px}.rk{grid-template-columns:1fr 1fr}.rg,.mail{grid-template-columns:1fr}
+.prog em{display:none}.prog .on em{display:block;white-space:nowrap}
+.nav .btn{flex:1;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><b>Bozza da scegliere</b> · Nuova apertura · dati di zona veri, ipotesi dichiarate · non è la pagina pubblicata</div></div>
+
+<header class="hero"><div class="wrap">
+<span class="tag">Servizi · Nuova apertura</span>
+<h1>Il tuo progetto a Roma,<br><span class="g">in cinque tappe e un numero</span></h1>
+<p class="lead">Scegli la zona, il budget, le camere e la tariffa: a ogni tappa vedi subito cosa cambia. Alla fine ricevi una stima del ritorno sull'investimento, con il calcolo scritto in chiaro</p>
+<p style="margin:22px 0 0;display:flex;gap:10px;flex-wrap:wrap"><a class="btn w" href="#percorso"><span>Inizia il percorso →</span></a><a class="btn o" href="#vendita">Guarda le strutture ricettive in vendita</a></p>
+</div></header>
+
+<section class="blk" id="vendita"><div class="wrap">
+<span class="tag">Scelta 6 · In cima alla pagina</span>
+<h2>Strutture ricettive in vendita, <span class="g">con il voto Ricavia</span></h2>
+<p class="lead">Ogni annuncio con il prezzo richiesto, una stima del ritorno sull'investimento e un voto da 1 a 10 con i criteri spiegati. Prima il punto di forza, poi cosa guardare con attenzione</p>
+<p style="margin:16px 0 0"><span class="es">Esempio · dati inventati per la bozza</span></p>
+<div class="sale" id="sale"></div>
+<p class="note" id="saleN"></p>
+</div></section>
+
+<section class="blk" id="percorso"><div class="wrap">
+<span class="tag">Scelta 7 · Il percorso a tappe</span>
+<h2>Cinque tappe, <span class="g">poi il tuo report</span></h2>
+<p class="lead">Le tappe seguono le cinque fasi del servizio. Puoi tornare indietro e cambiare ogni numero: il risultato si aggiorna subito</p>
+<div class="prog" id="prog"></div>
+<div class="stage">
+
+<div class="step" data-s="0"><div class="q"><h3>Dove vuoi aprire, e che cosa</h3><p>Lo studio di fattibilità parte dal mercato: scegli la zona e guarda quanto vale una camera il sabato e quanti alberghi hanno un voto sotto 8</p>
+<span class="lbl">Zona di Roma</span><div class="pick" id="pZona"></div>
+<span class="lbl">Tipo di struttura ricettiva</span><div class="pick" id="pTipo"></div>
+<p class="note" id="nTipo" hidden>Le tariffe lette su Booking sono degli alberghi: per una struttura ricettiva extralberghiera la stima è meno precisa, la tappa 4 ti lascia cambiare la tariffa</p></div>
+<div class="res" id="r0" aria-live="polite"></div></div>
+
+<div class="step" data-s="1"><div class="q"><h3>Quanto investi e quante camere</h3><p>Il business plan parte dall'investimento. Muovi budget e camere e guarda quanto costa entrare nella zona scelta</p>
+<span class="lbl">L'immobile</span><div class="pick" id="pModo"><button type="button" data-v="compra">Lo compro</button><button type="button" data-v="affitta">Lo prendo in affitto</button></div>
+<div class="sl"><label class="lbl" for="iBud">Budget</label><span></span><input type="range" id="iBud" min="300000" max="15000000" step="100000"><output for="iBud"></output></div>
+<div class="sl"><label class="lbl" for="iCam">Camere</label><span></span><input type="range" id="iCam" min="4" max="80" step="1"><output for="iCam"></output></div>
+<div class="sl"><label class="lbl" for="iMq">m² per camera<small>ipotesi, spazi comuni compresi</small></label><span></span><input type="range" id="iMq" min="20" max="60" step="1"><output for="iMq"></output></div>
+<div class="sl"><label class="lbl" for="iLav">Lavori e arredi per camera<small>ipotesi, da sostituire con il tuo preventivo</small></label><span></span><input type="range" id="iLav" min="0" max="80000" step="1000"><output for="iLav"></output></div></div>
+<div class="res" id="r1" aria-live="polite"></div></div>
+
+<div class="step" data-s="2"><div class="q"><h3>Dove ti metti nel mercato</h3><p>Il posizionamento decide la tariffa. Scegli la fascia rispetto agli alberghi della zona: sotto, in linea o sopra</p>
+<span class="lbl">La tua fascia di prezzo</span><div class="pick" id="pPos"><button type="button" data-v="0.9">Sotto la zona, −10%</button><button type="button" data-v="1">In linea con la zona</button><button type="button" data-v="1.15">Sopra la zona, +15%</button><button type="button" data-v="1.3">Fascia alta, +30%</button></div>
+<p class="note">Stare sopra la zona richiede un prodotto e un servizio migliori dei vicini: lo studio di fattibilità verifica se il progetto lo permette</p></div>
+<div class="res" id="r2" aria-live="polite"></div></div>
+
+<div class="step" data-s="3"><div class="q"><h3>Tariffa e occupazione</h3><p>I prezzi di lancio partono più bassi e salgono con le prime recensioni. Qui scegli i valori a regime, dal terzo anno</p>
+<div class="sl"><label class="lbl" for="iTar">Tariffa media a notte</label><span></span><input type="range" id="iTar" min="60" max="450" step="1"><output for="iTar"></output></div>
+<div class="sl"><label class="lbl" for="iOcc">Occupazione<small>ipotesi</small></label><span></span><input type="range" id="iOcc" min="40" max="95" step="1"><output for="iOcc"></output><span class="ip" id="ipOcc"></span></div></div>
+<div class="res" id="r3" aria-live="polite"></div></div>
+
+<div class="step" data-s="4"><div class="q"><h3>Canali, tecnologia e costi</h3><p>La tecnologia serve a vendere di più sul sito e meno sulle OTA. Muovi la quota di vendita diretta e guarda le commissioni</p>
+<div class="sl"><label class="lbl" for="iDir">Vendita diretta dal sito</label><span></span><input type="range" id="iDir" min="0" max="70" step="1"><output for="iDir"></output></div>
+<div class="sl"><label class="lbl" for="iCom">Commissione media delle OTA<small>ipotesi</small></label><span></span><input type="range" id="iCom" min="10" max="25" step="1"><output for="iCom"></output></div>
+<div class="sl"><label class="lbl" for="iCop">Costi operativi sui ricavi<small>ipotesi</small></label><span></span><input type="range" id="iCop" min="30" max="70" step="1"><output for="iCop"></output><span class="ip">Personale, pulizie, utenze, manutenzione, colazioni, tecnologia</span></div></div>
+<div class="res" id="r4" aria-live="polite"></div></div>
+
+<div class="rep" id="rep"></div>
+
+<div class="nav"><button type="button" class="btn o" id="bInd">← Indietro</button><button type="button" class="btn w" id="bAv"><span>Avanti →</span></button></div>
+</div>
+<p class="note" id="fonti"></p>
+</div></section>
+
+<footer class="blk"><div class="wrap"><p class="note">Bozza di lavoro, non indicizzata. Nessun dato inserito qui viene inviato o salvato. Le scelte e le istruzioni di costruzione sono in docs/design/2026-11-22-design.md e docs/design/2026-11-22-istruzioni-costruzione.md</p></div></footer>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var MB=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'],MESI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+function num(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function dec(x,d){return x.toFixed(d==null?1:d).replace('.',',')}
+function eur(x){return num(x)+' €'}
+function mil(x){var a=Math.abs(x);return a>=1e6?dec(Math.round(x/1e4)/100,2).replace(/,?0+$/,'')+' mln €':num(Math.round(x/1e3)*1e3)+' €'}
+function pct(x,d){return dec(x*100,d||0)+'%'}
+function med(a){a=a.slice().sort(function(x,y){return x-y});var n=a.length;return n%2?a[(n-1)/2]:(a[n/2-1]+a[n/2])/2}
+function gm(iso){var d=new Date(iso+'T12:00:00');return d.getDate()+' '+MESI[d.getMonth()]}
+function get(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(u);return r.json()})}
+
+/* numeri che il sito usa già (tools/osservatorio.py, simulatore) */
+var LETTI_ALBERGHI=104724,MQ_CAMERA=35;
+/* dal business plan di esempio della pagina Nuova apertura (valori illustrativi): utile del 1° e del 2° anno sull'anno a regime */
+var RAMPA=[128000/297124,214000/297124];
+/* ipotesi della bozza, tutte modificabili dal visitatore */
+var S={zi:0,tipo:'Hotel',modo:'compra',bud:5000000,cam:20,mq:MQ_CAMERA,lav:30000,pos:1,tar:null,occ:null,dir:30,com:17,cop:48},step=0,ZN=[],OCC=0,ANNO='',STAG=[],O;
+
+Promise.all([get('/assets/data/osservatorio.json'),get('/assets/data/omi.json'),get('/assets/data/flussi.json')]).then(function(r){avvia(r[0],r[1],r[2])}).catch(function(e){document.body.insertAdjacentHTML('afterbegin','<p style="padding:16px;background:#fff;color:#1D1D1F">I dati non si caricano ('+e.message+'). La bozza funziona solo dentro il sito generato o nell\'anteprima</p>')});
+
+function calc(s){var z=ZN[s.zi],imm=s.modo==='compra'?s.cam*s.mq*z.casa:0,lav=s.cam*s.lav,inv=imm+lav,aff=s.modo==='affitta'?s.cam*s.mq*z.aff*12:0;
+  var tar=s.tar!=null?s.tar:Math.round(z.base*s.pos),occ=(s.occ!=null?s.occ:Math.round(OCC*100))/100,ric=s.cam*tar*365*occ,comm=ric*(1-s.dir/100)*s.com/100,cop=ric*s.cop/100,gop=ric-comm-cop,ut=gop-aff;
+  var roi=inv>0?ut/inv:null,anni=null;if(ut>0&&inv>0){var cum=0;for(var y=1;y<=40;y++){var u=ut*(y<=2?RAMPA[y-1]:1);if(cum+u>=inv){anni=y-1+(inv-cum)/u;break}cum+=u}}
+  return {z:z,imm:imm,lav:lav,inv:inv,aff:aff,tar:tar,occ:occ,ric:ric,comm:comm,cop:cop,gop:gop,ut:ut,roi:roi,anni:anni,revpar:tar*occ,goppar:gop/(s.cam*365)}}
+
+function avvia(o,omi,fl){O=o;
+var per={};omi.forEach(function(q){if(q.vendita_min&&q.vendita_max)(per[q.zona_sito]=per[q.zona_sito]||[]).push(q)});
+o.zone.forEach(function(z){var m=z.mercato||{},qq=per[z.nome];if(!(m.martedi&&m.sabato&&qq))return;
+  ZN.push({n:z.nome,m:m,o:z.offerta,km2:z.km2,base:(m.martedi+m.sabato)/2,casa:med(qq.map(function(q){return (q.vendita_min+q.vendita_max)/2})),aff:med(qq.filter(function(q){return q.affitto_min}).map(function(q){return (q.affitto_min+q.affitto_max)/2}))})});
+var an=fl.istat.annui;ANNO=Object.keys(an).sort().pop();OCC=an[ANNO].presenze_alberghi/(LETTI_ALBERGHI*365);
+var pm=fl.istat.mesi[ANNO].presenze,tp=pm.reduce(function(a,b){return a+b},0);STAG=pm.map(function(v){return v/tp});
+S.zi=Math.max(0,ZN.map(function(z){return z.n}).indexOf('Esquilino · Termini'));
+
+$('#fonti').textContent='Da dove vengono i numeri. Tariffe, voti e alberghi della zona: Booking, prezzi letti dal '+gm(o.letture_dal)+' al '+gm(o.aggiornato)+' 2026, e registro delle strutture ricettive di Roma Capitale ('+o.registro.file+'). Prezzo e affitto degli immobili: quotazioni OMI dell\'Agenzia delle Entrate, 1° semestre 2026, abitazioni civili: non esistono quotazioni pubbliche degli alberghi. Occupazione di partenza: '+dec(OCC*100)+'%, occupazione lorda dei letti negli alberghi di Roma nel '+ANNO+' (notti ISTAT diviso posti letto del registro). Tutto il resto è un\'ipotesi che puoi cambiare. È una stima, non una promessa';
+
+/* ---------- strutture ricettive in vendita: tre esempi inventati ---------- */
+var ES=[{t:'Albergo 3 stelle',z:'Esquilino · Termini',cam:24,prezzo:3900000,imm:6,forza:'Metà degli alberghi della zona ha un voto sotto 8: c\'è spazio per lavorare meglio dei vicini',occhio:'Le camere sono da rinnovare: il preventivo dei lavori pesa sul rendimento'},
+{t:'Guest house',z:'Prati · Vaticano',cam:9,prezzo:2100000,imm:8,forza:'Immobile già ristrutturato, a pochi minuti dai Musei Vaticani',occhio:'Poche camere: i costi fissi incidono di più su ogni notte venduta'},
+{t:'Boutique hotel',z:'Monti',cam:14,prezzo:4600000,imm:7,forza:'Tariffe della zona tra le più alte di Roma il sabato',occhio:'Prezzo richiesto sopra il costo stimato della zona: da negoziare'}];
+function fascia(v,sog){for(var i=0;i<sog.length;i++)if(v>=sog[i][0])return sog[i][1];return sog[sog.length-1][1]}
+$('#sale').innerHTML=ES.map(function(e,i){var zi=ZN.map(function(z){return z.n}).indexOf(e.z);if(zi<0)return '';var z=ZN[zi],LAV=10000;
+  var r=calc({zi:zi,modo:'affitta',cam:e.cam,mq:MQ_CAMERA,lav:0,pos:1,tar:null,occ:null,dir:S.dir,com:S.com,cop:S.cop}),gop=r.gop,inv=e.prezzo+e.cam*LAV,roi=gop/inv,rap=e.prezzo/(e.cam*MQ_CAMERA*z.casa);
+  var v=[['Prezzo richiesto rispetto alla zona',fascia(-rap,[[-.8,9],[-1,7],[-1.2,5],[-99,3]])],['Mercato della zona',fascia(z.m.sabato/o.roma.sabato,[[1.5,9],[1.1,7],[.9,6],[0,4]])],['Spazio per fare meglio dei vicini',fascia(z.m.sotto_8,[[.5,9],[.25,7],[.1,5],[0,4]])],['Rendimento stimato',fascia(roi,[[.1,9],[.07,7],[.05,6],[.03,4],[-9,3]])],['Immobile e licenze',e.imm]];
+  var voto=v.reduce(function(a,b){return a+b[1]},0)/v.length;
+  return '<article class="card" style="--i:'+i+'"><div><span class="es">Esempio</span></div><div><h4>'+e.t+', '+e.cam+' camere</h4><div class="zn">'+e.z+'</div></div>'+
+  '<dl class="kv"><dt>Prezzo richiesto</dt><dd>'+mil(e.prezzo)+'</dd><dt>Prezzo per camera</dt><dd>'+eur(Math.round(e.prezzo/e.cam/1000)*1000)+'</dd><dt>Ritorno stimato all\'anno</dt><dd><span class="g">'+pct(roi,1)+'</span></dd></dl>'+
+  '<div class="voto"><b class="g">'+dec(voto)+'</b><span>Voto Ricavia su 10<br>media di cinque criteri</span></div>'+
+  '<ul class="crit">'+v.map(function(c){return '<li><span>'+c[0]+'</span><i><u style="--w:'+c[1]*10+'%"></u></i><b>'+c[1]+'</b></li>'}).join('')+'</ul>'+
+  '<p style="margin:0;font-size:14px"><b>Punto di forza.</b> <span style="color:var(--tx2)">'+e.forza+'</span></p><p style="margin:0;font-size:14px"><b>Da guardare.</b> <span style="color:var(--tx2)">'+e.occhio+'</span></p>'+
+  '<details><summary>Come è calcolato il ritorno</summary><p>Ricavi stimati: '+e.cam+' camere × '+Math.round(z.base)+' € (tariffa mediana della zona) × 365 notti × '+dec(OCC*100)+'% = '+mil(r.ric)+'</p><p>Utile operativo stimato: ricavi − commissioni ('+pct((1-S.dir/100)*S.com/100,1)+') − costi operativi ('+S.cop+'%) = '+mil(gop)+'</p><p>Investimento: prezzo richiesto + lavori di adeguamento (ipotesi '+eur(LAV)+' per camera) = '+mil(inv)+'</p><p>Ritorno: '+mil(gop)+' diviso '+mil(inv)+' = '+pct(roi,1)+' all\'anno, prima di imposte, interessi e ammortamenti</p></details>'+
+  '<button type="button" class="btn o" data-es="'+i+'" style="justify-content:center">Parti da questa nel percorso →</button></article>'}).join('');
+$('#saleN').textContent='Annunci, prezzi e voti di queste tre schede sono inventati per mostrare la forma. Il voto è la media di cinque criteri da 1 a 10: quattro calcolati dai dati dell\'Osservatorio e dal prezzo richiesto, uno (immobile e licenze) dato da Ricavia dopo il sopralluogo. Il ritorno è una stima, non una promessa: il calcolo è scritto in ogni scheda';
+$$('[data-es]').forEach(function(b){b.onclick=function(){var e=ES[+b.getAttribute('data-es')],zi=ZN.map(function(z){return z.n}).indexOf(e.z),z=ZN[zi];
+  S.zi=zi;S.cam=e.cam;S.modo='compra';S.bud=Math.ceil((e.prezzo+e.cam*10000)/1e5)*1e5;S.lav=10000;S.mq=Math.max(20,Math.min(60,Math.round(e.prezzo/(e.cam*z.casa))));S.tar=null;S.tipo=e.t==='Guest house'?'Extralberghiero':e.t==='Boutique hotel'?'Boutique hotel':'Hotel';
+  step=0;sync();go(0);$('#percorso').scrollIntoView()}});
+var sio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){if(es[0].isIntersecting){$('#sale').classList.add('in');sio.disconnect()}},{threshold:.12}):null;if(sio)sio.observe($('#sale'));else $('#sale').classList.add('in');
+
+/* ---------- percorso ---------- */
+var TAPPE=['Fattibilità','Business plan','Posizionamento','Prezzi di lancio','Tecnologia','Il tuo report'];
+$('#prog').innerHTML=TAPPE.map(function(t,i){return '<button type="button" data-i="'+i+'" aria-label="Tappa '+(i+1)+': '+t+'"><i><u></u></i><em>'+(i<5?(i+1)+' · ':'')+t+'</em></button>'}).join('');
+$$('#prog button').forEach(function(b){b.onclick=function(){go(+b.getAttribute('data-i'))}});
+$('#pZona').innerHTML=ZN.map(function(z,i){return '<button type="button" data-v="'+i+'">'+z.n+'</button>'}).join('');
+$('#pTipo').innerHTML=['Hotel','Boutique hotel','Extralberghiero','Da definire'].map(function(t){return '<button type="button" data-v="'+t+'">'+t+'</button>'}).join('');
+function pick(id,key,conv,after){$$('#'+id+' button').forEach(function(b){b.onclick=function(){S[key]=conv?conv(b.getAttribute('data-v')):b.getAttribute('data-v');if(after)after();sync()}})}
+pick('pZona','zi',Number,function(){S.tar=null});pick('pTipo','tipo');pick('pModo','modo');pick('pPos','pos',Number,function(){S.tar=null});
+var RNG={iBud:['bud',mil],iCam:['cam',function(v){return v+' camere'}],iMq:['mq',function(v){return v+' m²'}],iLav:['lav',eur],iTar:['tar',eur],iOcc:['occ',function(v){return v+'%'}],iDir:['dir',function(v){return v+'%'}],iCom:['com',function(v){return v+'%'}],iCop:['cop',function(v){return v+'%'}]};
+Object.keys(RNG).forEach(function(id){$('#'+id).addEventListener('input',function(e){S[RNG[id][0]]=+e.target.value;sync()})});
+
+function sync(){var r=calc(S),z=r.z,rk=function(f){return ZN.slice().sort(function(a,b){return f(b)-f(a)}).indexOf(z)+1};
+  [['pZona',S.zi],['pTipo',S.tipo],['pModo',S.modo],['pPos',S.pos]].forEach(function(p){$$('#'+p[0]+' button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-v')==String(p[1]))})});
+  $('#nTipo').hidden=S.tipo!=='Extralberghiero';
+  var val={bud:S.bud,cam:S.cam,mq:S.mq,lav:S.lav,tar:r.tar,occ:Math.round(r.occ*100),dir:S.dir,com:S.com,cop:S.cop};
+  Object.keys(RNG).forEach(function(id){var el=$('#'+id),k=RNG[id][0],v=val[k];el.value=v;el.style.setProperty('--p',((v-el.min)/(el.max-el.min)*100)+'%');el.parentNode.querySelector('output').textContent=RNG[id][1](v)});
+  $('#ipOcc').textContent='Partenza: '+dec(OCC*100)+'%, occupazione lorda dei letti negli alberghi di Roma nel '+ANNO;
+  /* tappa 1 */
+  $('#r0').innerHTML='<small class="t">'+z.n+'</small><b class="big">'+z.m.sabato+' €</b><p class="cap">prezzo mediano di una camera il sabato, '+rk(function(a){return a.m.sabato})+'ª zona su '+ZN.length+' per prezzo</p>'+
+   '<dl class="kv"><dt>Martedì, valore mediano</dt><dd>'+z.m.martedi+' €</dd><dt>Voto mediano su Booking</dt><dd>'+dec(z.m.voto)+'</dd><dt>Alberghi con voto sotto 8</dt><dd>'+pct(z.m.sotto_8)+' · '+rk(function(a){return a.m.sotto_8})+'ª su '+ZN.length+'</dd><dt>Alberghi nel registro</dt><dd>'+num(z.o.alberghi)+'</dd><dt>Strutture ricettive per km²</dt><dd>'+num(z.o.strutture/z.km2)+'</dd><dt>Casa al m² (OMI)</dt><dd>'+eur(Math.round(z.casa/100)*100)+'</dd></dl>'+
+   '<p class="note">'+(z.m.sotto_8>=.3?'Punto di forza: molti alberghi con voto sotto 8, c\'è spazio per chi lavora meglio dei vicini':z.m.sabato>=O.roma.sabato*1.2?'Punto di forza: tariffe sopra il valore mediano di Roma ('+O.roma.sabato+' € il sabato)':'Punto di forza: costo d\'ingresso più basso delle zone centrali')+(z.m.alberghi<10?'. Da sapere: solo '+z.m.alberghi+' alberghi letti, numeri da prendere con prudenza':'')+'</p>';
+  /* tappa 2 */
+  var perCam=r.inv/S.cam,unit=(S.modo==='compra'?S.mq*z.casa:0)+S.lav,quante=unit>0?Math.floor(S.bud/unit):0,ok=r.inv<=S.bud,mx=Math.max(r.inv,S.bud)*1.1;
+  $('#r1').innerHTML='<small class="t">Costo d\'ingresso stimato</small><b class="big">'+mil(r.inv)+'</b><p class="cap">'+eur(Math.round(perCam/1000)*1000)+' per camera · '+(ok?'<b style="color:#fff">nel budget</b>, restano '+mil(S.bud-r.inv):'<b style="color:#fff">oltre il budget</b> di '+mil(r.inv-S.bud))+'</p>'+
+   '<div class="meter" style="--w:'+r.inv/mx*100+'%;--b:'+S.bud/mx*100+'%"><u></u><b></b></div><div class="mcap"><span>Investimento</span><span>La linea bianca è il tuo budget</span></div>'+
+   '<dl class="kv" style="margin-top:14px">'+(S.modo==='compra'?'<dt>Immobile: '+S.cam+' × '+S.mq+' m² × '+eur(Math.round(z.casa))+'</dt><dd>'+mil(r.imm)+'</dd>':'<dt>Affitto: '+S.cam+' × '+S.mq+' m² × '+dec(z.aff,2)+' € × 12 mesi</dt><dd>'+mil(r.aff)+' l\'anno</dd>')+'<dt>Lavori e arredi: '+S.cam+' × '+eur(S.lav)+'</dt><dd>'+mil(r.lav)+'</dd><dt>Camere che entrano nel budget</dt><dd>'+quante+'</dd></dl>'+
+   '<p class="note">Prezzo e affitto al m²: quotazioni OMI delle abitazioni della zona, valore mediano. Un albergo già avviato può costare di più</p>';
+  /* tappa 3 */
+  var lo=Math.min(z.m.martedi,z.m.sabato)*.8,hi=Math.max(z.m.martedi,z.m.sabato)*1.4,P=function(v){return Math.max(0,Math.min(100,(v-lo)/(hi-lo)*100))},st=[1,2,3,4,5].map(function(k){return z.o['stelle_'+k]||0}),ts=st.reduce(function(a,b){return a+b},0),top=st.indexOf(Math.max.apply(0,st))+1;
+  $('#r2').innerHTML='<small class="t">La tua tariffa di partenza</small><b class="big">'+eur(r.tar)+'</b><p class="cap">a notte, media tra giorni feriali e fine settimana. La zona: '+z.m.martedi+' € il martedì, '+z.m.sabato+' € il sabato</p>'+
+   '<div class="strip"><div class="band" style="--a:'+P(Math.min(z.m.martedi,z.m.sabato))+'%;--w:'+(P(Math.max(z.m.martedi,z.m.sabato))-P(Math.min(z.m.martedi,z.m.sabato)))+'%"></div><div class="me" style="--x:'+P(r.tar)+'%"></div><span class="l" style="left:0">'+Math.round(lo)+' €</span><span class="r" style="left:100%">'+Math.round(hi)+' €</span></div>'+
+   '<p class="note" style="margin-top:8px">La fascia grigia va dal martedì al sabato della zona, il cerchio sei tu</p>'+
+   '<dl class="kv" style="margin-top:14px"><dt>Alberghi della zona nel registro</dt><dd>'+num(ts)+'</dd><dt>Categoria più diffusa</dt><dd>'+top+' stelle ('+pct(st[top-1]/ts)+')</dd><dt>Alberghi a 4 e 5 stelle</dt><dd>'+(st[3]+st[4])+'</dd></dl>';
+  /* tappa 4 */
+  var mxs=Math.max.apply(0,STAG);
+  $('#r3').innerHTML='<small class="t">Ricavi delle camere, anno a regime</small><b class="big">'+mil(r.ric)+'</b><p class="cap">'+S.cam+' camere × '+eur(r.tar)+' × 365 notti × '+pct(r.occ)+' · ricavo per camera disponibile: '+dec(r.revpar,0)+' € a notte</p>'+
+   '<div class="mesi">'+STAG.map(function(v){return '<i style="--h:'+v/mxs*100+'%" title="'+mil(r.ric*v)+'"></i>'}).join('')+'</div><div class="mesil">'+MB.map(function(m){return '<span>'+m.charAt(0)+'</span>'}).join('')+'</div>'+
+   '<p class="note">Come si distribuiscono i ricavi nei mesi se seguono le notti a Roma nel '+ANNO+' (ISTAT). Mese più forte: '+mil(r.ric*mxs)+'. Nel primo anno i ricavi sono più bassi: la tariffa d\'ingresso serve alle prime recensioni</p>';
+  /* tappa 5 */
+  var dieci=r.ric*.1*S.com/100;
+  $('#r4').innerHTML='<small class="t">Utile operativo stimato, anno a regime</small><b class="big">'+mil(r.gop)+'</b><p class="cap">'+pct(r.gop/r.ric)+' dei ricavi · '+dec(r.goppar,0)+' € per camera disponibile a notte (GOPPAR)</p>'+
+   '<dl class="kv"><dt>Ricavi delle camere</dt><dd>'+mil(r.ric)+'</dd><dt>Commissioni di distribuzione</dt><dd>− '+mil(r.comm)+'</dd><dt>Costi operativi</dt><dd>− '+mil(r.cop)+'</dd>'+(r.aff?'<dt>Affitto dell\'immobile</dt><dd>− '+mil(r.aff)+'</dd>':'')+'</dl>'+
+   '<p class="note" style="color:#fff">Ogni 10 punti di vendita diretta in più valgono '+mil(dieci)+' l\'anno di commissioni risparmiate</p>';
+  if(step===5)report(r)}
+
+function report(r){var s=S,z=r.z,nar=innerWidth<860,W=nar?330:560,H=nar?220:230,vals=[['Ricavi',r.ric,1],['Commissioni',-r.comm,0],[nar?'Costi':'Costi operativi',-r.cop,0]].concat(r.aff?[['Affitto',-r.aff,0]]:[]).concat([['Utile',r.ut,2]]),n=vals.length,bw=W/n,mx=r.ric||1,Y=function(v){return 30+(1-v/mx)*(H-70)},cum=0,g='';
+  vals.forEach(function(v,i){var a,b;if(v[2]===1){a=0;b=v[1];cum=v[1]}else if(v[2]===2){a=0;b=Math.max(0,v[1])}else{a=cum+v[1];b=cum;cum=a}
+    var y=Y(Math.max(a,b)),h=Math.max(2,Y(Math.min(a,b))-y);g+='<rect x="'+(i*bw+bw*.15)+'" y="'+y+'" width="'+bw*.7+'" height="'+h+'" rx="4" fill="'+(v[2]?'url(#wg)':'rgba(255,255,255,.22)')+'"><animate attributeName="height" from="0" to="'+h+'" dur=".7s" begin="'+i*.12+'s" fill="freeze" calcMode="spline" keySplines=".22 1 .36 1" keyTimes="0;1"/></rect><text class="w" x="'+(i*bw+bw/2)+'" y="'+(y-6)+'" text-anchor="middle">'+(v[1]<0?'− ':'')+mil(Math.abs(v[1])).replace(' €','')+'</text><text x="'+(i*bw+bw/2)+'" y="'+(H-22)+'" text-anchor="middle">'+v[0]+'</text>'});
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;if(rm)g=g.replace(/<animate[^>]*\/>/g,'');
+  var anni=r.anni!=null?dec(r.anni)+' anni':'oltre 40 anni',forza=r.roi==null?'':r.roi>=.08?'Punto di forza: il ritorno stimato supera l\'8% l\'anno':r.inv<=s.bud?'Punto di forza: l\'investimento rientra nel budget':'Punto di forza: una zona con domanda '+(z.m.sabato>=O.roma.sabato?'sopra il valore mediano di Roma':'costante'),
+      occhio=r.ut<=0?'Da migliorare: con queste ipotesi i costi superano i ricavi':r.inv>s.bud?'Da migliorare: l\'investimento supera il budget di '+mil(r.inv-s.bud):r.anni!=null&&r.anni>15?'Da migliorare: il rientro supera i 15 anni, tariffa e vendita diretta sono le prime leve':'Da verificare: occupazione e costi operativi sono ipotesi, lo studio di fattibilità le misura sul tuo immobile';
+  $('#rep').innerHTML='<span class="tag">Il tuo report · stima</span><h3 style="margin-top:6px">'+s.tipo+', '+s.cam+' camere, '+z.n+'</h3><p style="margin:0;color:var(--tx2);font-size:15px">'+forza+'. '+occhio+'</p>'+
+  '<div class="rk"><div><b>'+mil(r.inv)+'</b><span>investimento</span></div><div><b>'+mil(r.ric)+'</b><span>ricavi delle camere a regime</span></div><div><b>'+mil(r.ut)+'</b><span>utile operativo a regime</span></div><div><b class="g">'+(r.roi!=null?pct(r.roi,1):'n.d.')+'</b><span>ritorno sull\'investimento all\'anno · rientro in '+anni+'</span></div></div>'+
+  '<div class="rg"><div><table class="calc"><tbody>'+
+  '<tr><td>Investimento<small>'+(s.modo==='compra'?'immobile '+s.cam+' × '+s.mq+' m² × '+eur(Math.round(z.casa))+' + ':'')+'lavori e arredi '+s.cam+' × '+eur(s.lav)+'</small></td><td>'+mil(r.inv)+'</td></tr>'+
+  '<tr><td>Ricavi delle camere<small>'+s.cam+' × '+eur(r.tar)+' × 365 × '+pct(r.occ)+'</small></td><td>'+mil(r.ric)+'</td></tr>'+
+  '<tr><td>Commissioni di distribuzione<small>'+(100-s.dir)+'% dei ricavi sulle OTA × '+s.com+'%</small></td><td>− '+mil(r.comm)+'</td></tr>'+
+  '<tr><td>Costi operativi<small>'+s.cop+'% dei ricavi</small></td><td>− '+mil(r.cop)+'</td></tr>'+
+  (r.aff?'<tr><td>Affitto dell\'immobile<small>'+s.cam+' × '+s.mq+' m² × '+dec(z.aff,2)+' € × 12</small></td><td>− '+mil(r.aff)+'</td></tr>':'')+
+  '<tr class="tot"><td>Utile operativo a regime</td><td>'+mil(r.ut)+'</td></tr>'+
+  '<tr><td>Ritorno sull\'investimento<small>utile diviso investimento</small></td><td>'+(r.roi!=null?pct(r.roi,1):'n.d.')+'</td></tr>'+
+  '<tr><td>Anni per rientrare<small>1° anno al '+pct(RAMPA[0])+' dell\'utile a regime, 2° anno al '+pct(RAMPA[1])+', dal 3° a regime</small></td><td>'+anni+'</td></tr></tbody></table></div>'+
+  '<div class="wf"><svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Dai ricavi all\'utile"><defs><linearGradient id="wg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1F2DD0"/><stop offset="1" stop-color="#3CCDFA"/></linearGradient></defs>'+g+'</svg>'+
+  '<p class="note">Stima, non una promessa. Prima di imposte, interessi e ammortamenti. Mancano i ricavi diversi dalle camere e i costi di avviamento. Le ipotesi (occupazione, commissioni, costi operativi, lavori, m² per camera) sono quelle che hai scelto nelle tappe</p></div></div>'+
+  '<div class="mail"><div><h3>Ricevi il report completo</h3><p style="margin:0;color:var(--tx2);font-size:15px">Te lo mandiamo in PDF, gratis, con i tuoi numeri e in più</p><ul><li>I tre scenari: prudente, base e favorevole</li><li>L\'utile anno per anno fino al quinto</li><li>Le zone di Roma con un ritorno migliore per il tuo budget</li></ul></div>'+
+  '<form id="fMail" novalidate><input type="text" name="nome" placeholder="Nome e cognome" autocomplete="name" aria-label="Nome e cognome"><input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email"><label class="c"><input type="checkbox" name="privacy"><span>Ho letto l\'informativa privacy e accetto di essere ricontattato</span></label><button type="submit" class="btn w" style="justify-content:center"><span>Mandami il report →</span></button><p class="ok" role="status" aria-live="polite"></p></form></div>';
+  $('#fMail').onsubmit=function(e){e.preventDefault();var f=e.target,ok=f.querySelector('.ok');
+    if(!f.nome.value.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value)){ok.textContent='Scrivi nome ed email per ricevere il report';return}
+    if(!f.privacy.checked){ok.textContent='Per ricevere il report serve accettare l\'informativa privacy';return}
+    ok.textContent='Nella bozza non parte nessuna mail: sul sito vero qui arriva il report in PDF'}}
+
+function go(i){step=Math.max(0,Math.min(5,i));$$('.step').forEach(function(e){e.classList.toggle('on',+e.getAttribute('data-s')===step)});$('#rep').classList.toggle('on',step===5);
+  $$('#prog button').forEach(function(b,k){b.classList.toggle('on',k===step);b.classList.toggle('done',k<step);if(k===step)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
+  $('#bInd').disabled=step===0;$('#bAv').firstChild.textContent=step===4?'Guarda il tuo report →':step===5?'Ricomincia':'Avanti →';sync()}
+$('#bInd').onclick=function(){go(step-1)};
+$('#bAv').onclick=function(){go(step===5?0:step+1);var t=$('#prog').getBoundingClientRect().top;if(t<0||t>innerHeight*.5)$('#prog').scrollIntoView()};
+go(0)}
+})();
+</script>
+</body>
+</html>

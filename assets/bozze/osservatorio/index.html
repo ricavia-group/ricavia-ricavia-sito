@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Bozza Osservatorio · Ricavia</title>
+<style>
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(/assets/fonts/geist-latin.woff2) format('woff2')}
+:root{--bg:#0B0D12;--bg2:#11141c;--bg3:#181c27;--ln:rgba(255,255,255,.1);--ln2:rgba(255,255,255,.2);--tx:#fff;--tx2:#aab0c4;--tx3:#737a92;
+--c1:#3CCDFA;--c2:#1F2DD0;--c3:#724AF8;--zgr:linear-gradient(100deg,#3CCDFA,#1F2DD0 70%,#724AF8);--zgl:linear-gradient(100deg,#3CCDFA,#6f7bff 70%,#9a7bff);
+--zf:'Geist',system-ui,-apple-system,sans-serif;--ez:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.5 var(--zf);overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.g{background:var(--zgl);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.tag{display:inline-block;font:600 12px/1.4 var(--zf);letter-spacing:.08em;text-transform:uppercase;background:var(--zgl);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.top{border-bottom:1px solid var(--ln);padding:14px 0;font-size:13px;color:var(--tx2)}
+.top b{color:#fff;font-weight:600}
+.hero{padding:48px 0 20px}
+h1{font:600 clamp(30px,5vw,52px)/1.08 var(--zf);letter-spacing:-.02em;margin:10px 0 14px}
+h2{font:600 clamp(24px,3.6vw,38px)/1.12 var(--zf);letter-spacing:-.02em;margin:8px 0 10px}
+.lead{color:var(--tx2);max-width:680px;margin:0}
+.idx{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}
+.idx a{color:#fff;text-decoration:none;font-size:14px;border:1px solid var(--ln2);border-radius:999px;padding:9px 14px}
+.idx a:hover{border-color:#fff}
+section.blk{padding:56px 0;border-top:1px solid var(--ln)}
+.alt{background:var(--bg2);border:1px solid var(--ln);border-radius:20px;padding:22px;margin:26px 0 0;position:relative}
+.alt-h{display:flex;gap:14px;align-items:flex-start;margin-bottom:6px}
+.let{flex:none;width:44px;height:44px;border-radius:12px;background:var(--zgr);display:grid;place-items:center;font:600 20px/1 var(--zf);color:#fff}
+.alt-h h3{font:600 20px/1.25 var(--zf);margin:0 0 4px;letter-spacing:-.01em}
+.alt-h p{margin:0;color:var(--tx2);font-size:14.5px}
+.msg{font:600 clamp(19px,2.6vw,26px)/1.25 var(--zf);letter-spacing:-.01em;margin:20px 0 4px;max-width:820px}
+.sub{color:var(--tx2);font-size:14.5px;margin:0 0 14px;max-width:760px}
+.src{color:var(--tx3);font-size:12.5px;line-height:1.5;margin:14px 0 0}
+.manca{font-size:13.5px;color:var(--tx2);border-left:2px solid var(--c1);padding:2px 0 2px 12px;margin:14px 0 0}
+.manca b{color:#fff;font-weight:600}
+.ch{position:relative;width:100%}
+.ch svg{display:block;width:100%;height:auto;overflow:visible}
+.ch text{font-family:var(--zf);fill:var(--tx2);font-size:12px}
+.ch text.w{fill:#fff}.ch text.b{font-weight:600}.ch text.s{font-size:11px;fill:var(--tx3)}
+.ax{stroke:var(--ln);stroke-width:1}
+/* animazioni di entrata: partono quando il grafico entra nello schermo */
+.gx{transform:scaleX(0);transform-origin:left center;transform-box:fill-box;transition:transform .9s var(--ez);transition-delay:calc(var(--i,0)*45ms)}
+.gy{transform:scaleY(0);transform-origin:center bottom;transform-box:fill-box;transition:transform .8s var(--ez);transition-delay:calc(var(--i,0)*18ms)}
+.fd{opacity:0;transition:opacity .6s ease;transition-delay:calc(var(--i,0)*45ms + .25s)}
+.dr{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s var(--ez);transition-delay:calc(var(--i,0)*120ms)}
+.in .gx,.in .gy{transform:none}.in .fd{opacity:1}.in .dr{stroke-dashoffset:0}
+.hit{fill:transparent;cursor:pointer}
+.hit:hover,.hit:focus{fill:rgba(255,255,255,.05);outline:none}
+@media (prefers-reduced-motion:reduce){.gx,.gy,.fd,.dr,.bar i,.ring c{transition:none!important}}
+#tip{position:fixed;z-index:50;pointer-events:none;background:#fff;color:#1D1D1F;border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.45;max-width:260px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+#tip b{font-weight:600}#tip small{display:block;color:#5b6072;font-size:12px}
+.leg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--tx2);margin:6px 0 10px}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px}
+.seg button,.chips button{font:500 14px/1 var(--zf);color:#fff;background:transparent;border:1px solid var(--ln2);border-radius:999px;padding:10px 14px;cursor:pointer;min-height:40px}
+.seg button.on,.chips button.on{background:#fff;color:#1D1D1F;border-color:#fff}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin:4px 0 12px;scrollbar-width:thin}
+.chips button{flex:none;white-space:nowrap}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 14px}
+.kpi div{background:var(--bg3);border-radius:14px;padding:14px}
+.kpi b{display:block;font:600 clamp(22px,4vw,32px)/1.1 var(--zf);letter-spacing:-.02em}
+.kpi span{font-size:13px;color:var(--tx2);display:block;margin-top:4px;line-height:1.35}
+/* primo schermo */
+.day{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.day>div{background:var(--bg3);border-radius:18px;padding:20px;display:flex;gap:18px;align-items:center;min-width:0}.day>div>div{min-width:0}
+.day b{font:600 clamp(34px,6vw,56px)/1 var(--zf);letter-spacing:-.03em;display:block}
+.day span{color:var(--tx2);font-size:14px;display:block;margin-top:6px}
+.ch svg.ring{flex:none;width:92px;height:92px}
+.ring circle{fill:none;stroke-width:9}
+.ring c{}
+/* classifiche a barre */
+.bars{position:relative;margin:0;padding:0;list-style:none}
+.bars li{display:grid;grid-template-columns:26px minmax(0,1fr) 62px;gap:2px 10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--ln);cursor:default}
+.bars em{font-style:normal;color:var(--tx3);font-size:13px;grid-row:1/3}
+.bars .nm{font-weight:500;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bars .nm small{color:var(--tx3);font-size:12px;font-weight:400;margin-left:8px}
+.bars .vl{font-weight:600;text-align:right;grid-row:1/3;grid-column:3;font-size:16px}
+.bar{position:relative;height:8px;border-radius:4px;background:rgba(255,255,255,.07);grid-column:2}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--zgr);width:0;transition:width .9s var(--ez);transition-delay:calc(var(--i)*50ms)}
+.bar.few i{background:repeating-linear-gradient(90deg,#3CCDFA 0 4px,transparent 4px 7px)}
+.in .bar i{width:var(--w)}
+.bar u{position:absolute;top:-5px;bottom:-5px;width:2px;background:#fff;left:var(--r);border-radius:1px}
+.refl{font-size:12.5px;color:var(--tx2);margin:8px 0 0}
+.refl u{display:inline-block;width:2px;height:12px;background:#fff;vertical-align:-2px;margin-right:6px}
+.refl i{display:inline-block;width:22px;height:8px;border-radius:4px;vertical-align:0;margin:0 6px 0 14px;background:repeating-linear-gradient(90deg,#3CCDFA 0 4px,transparent 4px 7px)}
+/* matrice */
+.mx{width:100%;border-collapse:collapse;table-layout:fixed}
+.mx th{font:500 11.5px/1.2 var(--zf);color:var(--tx2);padding:6px 1px;text-align:center;vertical-align:bottom}
+.mx th:first-child,.mx td:first-child{text-align:left;width:34%;font-size:14px;color:#fff;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mx td{padding:5px 2px;text-align:center;border-top:1px solid var(--ln)}
+.mx td small{display:block;color:var(--tx3);font-size:11px;font-weight:400}
+.mx .c{display:inline-grid;place-items:center;width:var(--s);height:var(--s);border-radius:50%;background:var(--zgr);color:#fff;font:600 12px/1 var(--zf);cursor:pointer;border:0;transform:scale(0);transition:transform .5s var(--ez);transition-delay:calc(var(--i)*30ms);opacity:var(--o)}
+.in .mx .c{transform:none}
+.mx .n{color:var(--tx3);font-size:12px}
+/* zone */
+.zg{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;align-items:start}
+.zg2{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.zp{background:var(--bg3);border-radius:16px;padding:18px}
+.zp h4{margin:0 0 10px;font:600 20px/1.2 var(--zf)}
+.zp dl{display:grid;grid-template-columns:1fr auto;gap:7px 12px;margin:0;font-size:14px}
+.zp dt{color:var(--tx2)}.zp dd{margin:0;font-weight:600;text-align:right}
+.stk{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:12px 0 6px;gap:2px}
+.stk i{display:block;height:100%}
+.stl{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--tx2)}
+.stl i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px}
+.bub{cursor:pointer;transition:opacity .3s}
+.bub.off{opacity:.6}
+@media (max-width:760px){
+section.blk{padding:40px 0}.alt{padding:16px;border-radius:16px}
+.day{grid-template-columns:1fr}.zg,.zg2{grid-template-columns:1fr}
+.kpi{grid-template-columns:1fr}.kpi div{display:flex;align-items:baseline;gap:10px;padding:12px}.kpi span{margin:0}
+.bars .nm small{display:block;margin:0}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><b>Bozza da scegliere</b> · Osservatorio Ricavia · numeri veri, letti il <span id="agg">…</span> · non è la pagina pubblicata</div></div>
+
+<header class="hero"><div class="wrap">
+<span class="tag">Osservatorio · proposte di grafici</span>
+<h1>Gli stessi numeri,<br><span class="g">raccontati meglio</span></h1>
+<p class="lead">Ogni blocco ha una lettera. Ogni grafico dice una cosa sola, con il numero preciso al tocco o al passaggio del mouse, la fonte e la data. George sceglie per numero e lettera, per esempio "1 B, 2 A"</p>
+<nav class="idx"><a href="#b5">5 · I numeri del giorno</a><a href="#b1">1 · Quanto costa Roma</a><a href="#b2">2 · La domanda</a><a href="#b3">3 · Le classifiche</a><a href="#b4">4 · Le zone</a></nav>
+</div></header>
+
+<section class="blk" id="b5"><div class="wrap">
+<span class="tag">Scelta 5 · Primo schermo</span>
+<h2>I due numeri <span class="g">del giorno</span></h2>
+<p class="lead">Cosa deve capire un albergatore in 5 secondi: stanotte Roma è piena o no, e a quanto vende</p>
+<div class="alt"><div class="alt-h"><div class="let">A</div><div><h3>Anello e numero grande</h3><p>L'anello mostra la quota di alberghi senza camere, il numero accanto la tariffa mediana. Sotto, la riga che spiega da dove viene il dato</p></div></div>
+<div class="day ch" id="c5"></div>
+<p class="src" id="s5"></p>
+<p class="manca"><b>Cosa manca.</b> L'andamento: la lettura serale è partita il 21 novembre e oggi la serie ha un solo giorno. Dal settimo giorno sotto i due numeri compare la linea degli ultimi 30 giorni</p>
+</div>
+</div></section>
+
+<section class="blk" id="b1"><div class="wrap">
+<span class="tag">Scelta 1 · Quanto costa Roma</span>
+<h2>Quanto costa Roma, <span class="g">quattro modi di dirlo</span></h2>
+<p class="lead">Oggi la pagina mostra tre colonne: martedì, sabato, Capodanno. Sono corrette ma dicono solo "Capodanno costa di più". Un albergatore vuole sapere dove si trova lui rispetto agli altri</p>
+
+<div class="alt"><div class="alt-h"><div class="let">A</div><div><h3>Le zone sulla stessa scala</h3><p>Una riga per zona, tre punti: martedì, sabato, Capodanno. Mostra quanto si allunga ogni zona e chi parte più in alto. È la più leggibile sul telefono</p></div></div>
+<p class="msg" id="m1a"></p>
+<div class="leg"><span><i style="background:transparent;border:2px solid #fff"></i>Martedì <span data-d="martedi"></span></span><span><i style="background:#3CCDFA"></i>Sabato <span data-d="sabato"></span></span><span><i style="background:#8b6bff"></i>Capodanno, <span data-d="evento"></span></span></div>
+<div class="ch" id="c1a"></div>
+<p class="src" data-src="bk"></p>
+</div>
+
+<div class="alt"><div class="alt-h"><div class="let">B</div><div><h3>Tutti gli alberghi, non solo il valore mediano</h3><p>Tre profili sulla stessa scala in euro: quanti alberghi chiedono ogni prezzo. Mostra la realtà: non esiste "il prezzo di Roma", esiste una fascia larga, che a Capodanno si sposta e si allarga</p></div></div>
+<p class="msg" id="m1b"></p>
+<div class="ch" id="c1b"></div>
+<p class="src" id="s1b"></p>
+</div>
+
+<div class="alt"><div class="alt-h"><div class="let">C</div><div><h3>Il calendario delle notti</h3><p>Ogni notte una casella, più intensa dove Roma costa di più. È la forma più utile per un albergatore, ma oggi leggiamo solo quattro notti: il resto è dichiarato come non letto</p></div></div>
+<p class="msg">Le notti che leggiamo oggi sono quattro: il calendario si riempie solo se allarghiamo la lettura</p>
+<div class="ch" id="c1c"></div>
+<p class="src" id="s1c"></p>
+<p class="manca"><b>Cosa manca.</b> I prezzi di tutte le notti dei prossimi 60 giorni. Servono più letture su Booking ogni sera: è una scelta di costo, la trovi tra le scelte per George</p>
+</div>
+
+<div class="alt"><div class="alt-h"><div class="let">D</div><div><h3>Chi alza il prezzo il sabato e chi no</h3><p>Ogni punto è un albergo: in orizzontale il prezzo del martedì, in verticale quello del sabato. I punti sulla linea bianca chiedono lo stesso prezzo. È il grafico che parla di revenue management</p></div></div>
+<p class="msg" id="m1d"></p>
+<div class="kpi" id="k1d"></div>
+<div class="leg"><span><i style="background:#fff"></i>Stesso prezzo</span><span><i style="background:#3CCDFA"></i>Sabato più caro</span><span><i style="background:#8b6bff"></i>Sabato meno caro</span></div>
+<div class="ch" id="c1d" style="max-width:640px"></div>
+<p class="src" id="s1d"></p>
+</div>
+</div></section>
+
+<section class="blk" id="b2"><div class="wrap">
+<span class="tag">Scelta 2 · La domanda</span>
+<h2>Quante persone arrivano, <span class="g">e quando</span></h2>
+<p class="lead">Oggi ci sono quattro numeri e due serie di colonne. Mancano il confronto tra gli anni e la stagionalità, cioè le due cose che servono per decidere le tariffe</p>
+
+<div class="alt"><div class="alt-h"><div class="let">A</div><div><h3>La stagione di Roma, quattro anni sovrapposti</h3><p>Una linea per anno, mese per mese. Mostra i mesi forti, i mesi deboli e quanto è cresciuta la domanda. Si passa da arrivi a notti con un tasto</p></div></div>
+<p class="msg" id="m2a"></p>
+<div class="seg" id="g2a"><button type="button" class="on" data-k="arrivi">Arrivi</button><button type="button" data-k="presenze">Notti</button></div>
+<div class="ch" id="c2a"></div>
+<p class="src" id="s2a"></p>
+</div>
+
+<div class="alt"><div class="alt-h"><div class="let">B</div><div><h3>Dodici anni di alberghi e i voli di quest'anno</h3><p>A sinistra gli arrivi negli alberghi dal 2014: la sola serie confrontabile nel tempo. A destra i passeggeri di Fiumicino e Ciampino mese per mese, con la variazione sull'anno prima</p></div></div>
+<p class="msg" id="m2b"></p>
+<div class="zg zg2"><div><div class="ch" id="c2b1"></div><p class="src" id="s2b1"></p></div><div><div class="ch" id="c2b2"></div><p class="src" id="s2b2"></p></div></div>
+</div>
+</div></section>
+
+<section class="blk" id="b3"><div class="wrap">
+<span class="tag">Scelta 3 · Le classifiche</span>
+<h2>Le classifiche, <span class="g">con il metro accanto</span></h2>
+<p class="lead">Oggi ogni classifica è un elenco con una barra. Manca il termine di paragone: 282 € il sabato è tanto o poco? E manca il legame tra le classifiche: gli stessi rioni tornano più volte</p>
+
+<div class="alt"><div class="alt-h"><div class="let">A</div><div><h3>Barre con il valore di Roma come riferimento</h3><p>La stessa classifica di oggi, ma ogni barra si confronta con il valore di tutta Roma (la linea bianca) e le barre tratteggiate avvisano quando gli alberghi letti sono pochi</p></div></div>
+<div class="chips" id="g3a"></div>
+<p class="msg" id="m3a"></p>
+<div class="ch" id="c3a"></div>
+<p class="refl" id="r3a"></p>
+<p class="src" id="s3a"></p>
+</div>
+
+<div class="alt"><div class="alt-h"><div class="let">B</div><div><h3>Una sola tabella: chi è in testa, e in cosa</h3><p>Una riga per rione, una colonna per classifica, un cerchio con la posizione. Mostra in un colpo quali rioni guidano più classifiche insieme</p></div></div>
+<p class="msg" id="m3b"></p>
+<div class="ch" id="c3b"></div>
+<p class="src" data-src="bk"></p>
+</div>
+</div></section>
+
+<section class="blk" id="b4"><div class="wrap">
+<span class="tag">Scelta 4 · Le zone</span>
+<h2>Nove zone, <span class="g">una mappa del mercato</span></h2>
+<p class="lead">Oggi si sceglie una zona e si leggono i suoi numeri. Manca la vista d'insieme: quali zone costano di più e in quali c'è spazio per un albergo che lavora meglio dei vicini</p>
+<div class="alt"><div class="alt-h"><div class="let">A</div><div><h3>Prezzo e spazio di mercato</h3><p>Ogni cerchio è una zona: più in alto costa di più il sabato, più a destra ha più alberghi con voto sotto 8. La grandezza del cerchio sono le camere d'albergo. Tocca una zona per i dettagli</p></div></div>
+<p class="msg" id="m4"></p>
+<div class="zg"><div><div class="ch" id="c4"></div><div class="chips" id="g4" style="flex-wrap:wrap;overflow:visible"></div></div><div class="zp" id="p4" aria-live="polite"></div></div>
+<p class="src" id="s4"></p>
+</div>
+</div></section>
+
+<footer class="blk"><div class="wrap"><p class="src">Bozza di lavoro, non indicizzata. Le scelte e le istruzioni di costruzione sono in docs/design/2026-11-22-design.md e docs/design/2026-11-22-istruzioni-costruzione.md</p></div></footer>
+<div id="tip" hidden></div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var MESI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'],MB=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'],GG=['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+function num(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')}
+function dec(x,d){return x.toFixed(d==null?1:d).replace('.',',')}
+function pct(x,s){return (s&&x>0?'+':'')+Math.round(x*100)+'%'}
+function mln(x){return dec(x/1e6,1)}
+function gm(iso,g){var d=new Date(iso+'T12:00:00');return (g?GG[d.getDay()]+' ':'')+d.getDate()+' '+MESI[d.getMonth()]}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function T(h){return ' data-tip="'+esc(h)+'"'}
+function med(a){a=a.slice().sort(function(x,y){return x-y});var n=a.length;return n?(n%2?a[(n-1)/2]:(a[n/2-1]+a[n/2])/2):null}
+function qt(a,p){a=a.slice().sort(function(x,y){return x-y});var i=(a.length-1)*p,l=Math.floor(i);return a[l]+(a[Math.min(l+1,a.length-1)]-a[l])*(i-l)}
+function sc(d0,d1,r0,r1){return function(v){return r0+(v-d0)/(d1-d0)*(r1-r0)}}
+
+/* tooltip: passaggio del mouse, tocco e tastiera */
+var tip=$('#tip');
+function show(t,x,y){tip.innerHTML=t.getAttribute('data-tip');tip.hidden=false;var w=tip.offsetWidth,h=tip.offsetHeight,W=innerWidth;
+  var l=Math.max(8,Math.min(W-w-8,x-w/2)),tp=y-h-14;if(tp<8)tp=y+18;tip.style.left=l+'px';tip.style.top=tp+'px'}
+function hide(){tip.hidden=true}
+document.addEventListener('pointermove',function(e){var t=e.target.closest&&e.target.closest('[data-tip]');if(t)show(t,e.clientX,e.clientY);else if(e.pointerType==='mouse')hide()});
+document.addEventListener('pointerdown',function(e){var t=e.target.closest&&e.target.closest('[data-tip]');if(t)show(t,e.clientX,e.clientY);else hide()});
+document.addEventListener('focusin',function(e){var t=e.target.closest&&e.target.closest('[data-tip]');if(t){var r=t.getBoundingClientRect();show(t,r.left+r.width/2,r.top)}});
+document.addEventListener('focusout',hide);addEventListener('scroll',hide,{passive:true});
+
+/* ogni grafico si ridisegna alla larghezza del suo contenitore ed entra quando arriva nello schermo */
+var charts=[],io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.18}):null;
+function chart(id,draw){var el=$('#'+id);if(!el)return;charts.push([el,draw]);draw(el,el.clientWidth);if(io)io.observe(el);else el.classList.add('in')}
+function redraw(id){charts.forEach(function(c){if(c[0].id===id){c[1](c[0],c[0].clientWidth);replay(c[0])}})}
+function replay(el){el.classList.remove('in');void el.offsetWidth;requestAnimationFrame(function(){requestAnimationFrame(function(){el.classList.add('in')})})}
+var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){charts.forEach(function(c){c[1](c[0],c[0].clientWidth)})},150)});
+function svg(w,h,inner,label){return '<svg viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'" role="img" aria-label="'+esc(label)+'"><defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#4d5cff"/><stop offset="1" stop-color="#8b6bff"/></linearGradient><linearGradient id="gv" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1F2DD0"/><stop offset="1" stop-color="#3CCDFA"/></linearGradient></defs>'+inner+'</svg>'}
+
+function get(u){return fetch(u).then(function(r){if(!r.ok)throw new Error(u);return r.json()})}
+Promise.all([get('/assets/data/osservatorio.json'),get('/assets/data/flussi.json'),get('/assets/data/indicatori.json'),get('/assets/bozze/osservatorio/prezzi-alberghi.json')]).then(function(r){avvia(r[0],r[1],r[2],r[3])}).catch(function(e){document.body.insertAdjacentHTML('afterbegin','<p style="padding:16px;background:#fff;color:#1D1D1F">I dati non si caricano ('+esc(e.message)+'). La bozza funziona solo dentro il sito generato o nell\'anteprima</p>')});
+
+function avvia(O,F,I,P){
+var R=O.roma,D=O.date,Z=O.zone;
+$('#agg').textContent=gm(O.aggiornato)+' 2026';
+$$('[data-d]').forEach(function(e){var k=e.getAttribute('data-d');e.textContent=gm(D[k])});
+var FBK='Fonte: Booking, prezzi letti dal '+gm(O.letture_dal)+' al '+gm(O.aggiornato)+' 2026 su '+num(O.alberghi_letti)+' alberghi, camera per 2 persone. Valori mediani: metà degli alberghi chiede di meno, metà di più';
+var FREG='Fonte: registro delle strutture ricettive di Roma Capitale, file di '+O.registro.file;
+$$('[data-src=bk]').forEach(function(e){e.textContent=FBK});
+
+/* ---------- 5 · i due numeri del giorno ---------- */
+(function(){var u=I.ultimo,el=$('#c5'),C=2*Math.PI*38,q=u.alberghi_pieni/100;
+el.innerHTML='<div><svg class="ring" viewBox="0 0 92 92" role="img" aria-label="'+dec(u.alberghi_pieni)+'% di alberghi senza camere"><circle cx="46" cy="46" r="38" stroke="rgba(255,255,255,.1)"/><circle id="rg" cx="46" cy="46" r="38" stroke="url(#gr5)" stroke-linecap="round" transform="rotate(-90 46 46)" stroke-dasharray="'+C+'" stroke-dashoffset="'+C+'" style="transition:stroke-dashoffset 1.2s cubic-bezier(.22,1,.36,1)"/><defs><linearGradient id="gr5"><stop offset="0" stop-color="#3CCDFA"/><stop offset="1" stop-color="#8b6bff"/></linearGradient></defs></svg>'+
+'<div><b data-cu="'+u.alberghi_pieni+'" data-dc="1" data-sf="%">0%</b><span>degli alberghi di Roma non ha più camere per la notte di '+gm(u.notte,true)+'</span></div></div>'+
+'<div><div><b data-cu="'+u.tariffa_alberghi+'" data-sf=" €">0 €</b><span>tariffa mediana degli alberghi ancora prenotabili, camera per 2 adulti. Tutte le strutture ricettive: '+u.tariffa_tutte+' €</span></div></div>';
+var d=new Date(u.letto_il);
+$('#s5').textContent='Fonte: '+I.fonte+'. Lettura del '+d.getDate()+' '+MESI[d.getMonth()]+' alle '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)+': '+num(u.alberghi_prenotabili)+' alberghi prenotabili su '+num(I.alberghi_registro)+' del registro. Un albergo senza camere su Booking non è per forza pieno: è la disponibilità, non l\'occupazione';
+var go=function(){$('#rg').style.strokeDashoffset=C*(1-q);$$('[data-cu]',el).forEach(function(b){var v=+b.getAttribute('data-cu'),dc=+b.getAttribute('data-dc')||0,sf=b.getAttribute('data-sf'),t0=null,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var st=function(t){if(!t0)t0=t;var k=rm?1:Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3);b.textContent=dec(v*e,dc)+sf;if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)})};
+if(io){var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();o.disconnect()}},{threshold:.3});o.observe(el)}else go()})();
+
+/* ---------- 1A · le zone sulla stessa scala ---------- */
+var righe=[{n:'Tutta Roma',m:R,roma:1}].concat(Z.filter(function(z){return z.mercato&&z.mercato.sabato}).map(function(z){return {n:z.nome,m:z.mercato}}).sort(function(a,b){return b.m.sabato-a.m.sabato}));
+(function(){var zz=righe.filter(function(x){return !x.roma&&x.m.evento}),top=zz.slice().sort(function(a,b){return b.m.evento-a.m.evento})[0],low=righe[righe.length-1];
+$('#m1a').innerHTML='A Capodanno '+top.n+' arriva a <span class="g">'+top.m.evento+' €</span>: il martedì parte da '+top.m.martedi+' €. '+low.n+' il sabato vale '+low.m.sabato+' €'})();
+chart('c1a',function(el,w){var nar=w<600,lab=nar?0:170,rg=58,rh=nar?54:42,top=26,x0=lab+8,x1=w-rg,mx=Math.ceil(Math.max.apply(0,righe.map(function(x){return x.m.evento||x.m.sabato}))/100)*100,mn=50,X=sc(mn,mx,x0,x1),h=top+righe.length*rh+8,s='';
+for(var v=100;v<=mx;v+=100)s+='<line class="ax" x1="'+X(v)+'" x2="'+X(v)+'" y1="'+top+'" y2="'+(h-6)+'"/><text class="s" x="'+X(v)+'" y="14" text-anchor="middle">'+v+' €</text>';
+righe.forEach(function(r,i){var m=r.m,y=top+i*rh+(nar?34:rh/2),end=m.evento||m.sabato,a=Math.min(m.martedi,m.sabato),b=Math.max(m.martedi,m.sabato);
+  var t='<b>'+r.n+'</b><br>Martedì '+gm(D.martedi)+': <b>'+m.martedi+' €</b><br>Sabato '+gm(D.sabato)+': <b>'+m.sabato+' €</b> ('+pct(m.rincaro_sabato,1)+')<br>Capodanno: <b>'+(m.evento?m.evento+' €</b> ('+pct(m.rincaro_evento,1)+')':'non pubblicato</b>')+'<small>'+num(m.alberghi)+' alberghi letti'+(m.evento?'':' · meno di 5 prezzi letti per Capodanno')+'</small>';
+  s+='<text class="w'+(r.roma?' b':'')+'" x="'+(nar?x0:lab-6)+'" y="'+(nar?y-16:y+4)+'" text-anchor="'+(nar?'start':'end')+'" style="font-size:14px">'+r.n+'</text>';
+  s+='<line x1="'+x0+'" x2="'+x1+'" y1="'+y+'" y2="'+y+'" stroke="rgba(255,255,255,.07)" stroke-width="'+(r.roma?10:6)+'" stroke-linecap="round"/>';
+  s+='<rect class="gx" style="--i:'+i+'" x="'+X(a)+'" y="'+(y-3)+'" width="'+Math.max(1,X(b)-X(a))+'" height="6" rx="3" fill="#3CCDFA"/>';
+  if(m.evento)s+='<rect class="gx" style="--i:'+(i+4)+'" x="'+X(m.sabato)+'" y="'+(y-3)+'" width="'+(X(m.evento)-X(m.sabato))+'" height="6" rx="3" fill="url(#gr)"/>';
+  s+='<g class="fd" style="--i:'+(i+6)+'"><circle cx="'+X(m.martedi)+'" cy="'+y+'" r="6" fill="#0B0D12" stroke="#fff" stroke-width="2"/><circle cx="'+X(m.sabato)+'" cy="'+y+'" r="6.5" fill="#3CCDFA"/>'+(m.evento?'<circle cx="'+X(m.evento)+'" cy="'+y+'" r="7.5" fill="#8b6bff"/>':'')+
+     '<text class="w b" x="'+(w-2)+'" y="'+(y+4)+'" text-anchor="end" style="font-size:13px">'+(m.evento?m.evento+' €':'n.d.')+'</text></g>';
+  s+='<rect class="hit" tabindex="0" x="0" y="'+(top+i*rh)+'" width="'+w+'" height="'+rh+'"'+T(t)+'/>'});
+el.innerHTML=svg(w,h,s,'Prezzo mediano di martedì, sabato e Capodanno per ogni zona di Roma')});
+
+/* ---------- 1B · tutti gli alberghi ---------- */
+var A=P.alberghi,serie=[['Martedì '+gm(D.martedi),A.map(function(a){return a[2]}).filter(Boolean)],['Sabato '+gm(D.sabato),A.map(function(a){return a[3]}).filter(Boolean)],['Capodanno, '+gm(D.evento),A.map(function(a){return a[4]}).filter(Boolean)]];
+(function(){var m=serie[0][1],e=serie[2][1];$('#m1b').innerHTML='Un martedì metà degli alberghi sta tra <span class="g">'+Math.round(qt(m,.25))+' e '+Math.round(qt(m,.75))+' €</span>. A Capodanno la stessa metà sta tra '+Math.round(qt(e,.25))+' e '+Math.round(qt(e,.75))+' €';
+$('#s1b').textContent='Fonte: Booking, prezzo di ogni albergo letto fino al '+gm(P.letto_il)+' 2026 ('+A.length+' alberghi), camera per 2 persone a notte. La fascia chiara contiene la metà centrale degli alberghi. I valori sono calcolati sulle schede dei singoli alberghi e possono differire di pochi euro dai valori mediani pubblicati'})();
+chart('c1b',function(el,w){var step=w<600?25:20,mn=50,mx=700,nb=(mx-mn)/step,ph=118,gap=58,top=14,h=top+3*(ph+gap),X=sc(mn,mx,2,w-2),s='',bw=(w-4)/nb;
+serie.forEach(function(S,k){var v=S[1],y0=top+k*(ph+gap)+26,base=y0+ph-26,bins=[],over=0;for(var i=0;i<nb;i++)bins.push(0);
+  v.forEach(function(p){if(p>=mx){over++;return}var i=Math.max(0,Math.floor((p-mn)/step));bins[i]++});
+  var pk=Math.max.apply(0,bins),md=med(v),q1=qt(v,.25),q3=qt(v,.75),H=ph-30;
+  s+='<text class="w b" x="2" y="'+(y0-22)+'" style="font-size:14px">'+S[0]+'</text><text class="s" x="'+(w-2)+'" y="'+(y0-22)+'" text-anchor="end">'+v.length+' alberghi con un prezzo</text>';
+  s+='<rect class="fd" x="'+X(q1)+'" y="'+(base-H-4)+'" width="'+(X(q3)-X(q1))+'" height="'+(H+4)+'" fill="rgba(255,255,255,.07)" rx="4"/>';
+  bins.forEach(function(n,i){if(!n)return;var bh=Math.max(2,n/pk*H),a=mn+i*step;
+    s+='<rect class="gy" style="--i:'+i+'" x="'+(2+i*bw+1)+'" y="'+(base-bh)+'" width="'+Math.max(1,bw-2)+'" height="'+bh+'" rx="2" fill="url(#gv)"/><rect class="hit" x="'+(2+i*bw)+'" y="'+(base-H-4)+'" width="'+bw+'" height="'+(H+4)+'"'+T('<b>Tra '+a+' e '+(a+step)+' €</b><br>'+n+' alberghi, '+pct(n/v.length)+' del totale<small>'+S[0]+'</small>')+'/>'});
+  s+='<line class="fd" x1="'+X(md)+'" x2="'+X(md)+'" y1="'+(base-H-10)+'" y2="'+base+'" stroke="#fff" stroke-width="2"/>';
+  var an=X(md)>w-120?'end':'start';s+='<text class="w b fd" x="'+(X(md)+(an==='end'?-6:6))+'" y="'+(base-H-2)+'" text-anchor="'+an+'" style="font-size:13px">mediano '+Math.round(md)+' €</text>';
+  s+='<line class="ax" x1="2" x2="'+(w-2)+'" y1="'+base+'" y2="'+base+'"/>';
+  for(var t=100;t<=mx-(over?(w<600?200:100):0);t+=(w<600?200:100))s+='<text class="s" x="'+X(t)+'" y="'+(base+14)+'" text-anchor="middle">'+t+' €</text>';
+  if(over)s+='<text class="s" x="'+(w-2)+'" y="'+(base+14)+'" text-anchor="end">+ '+over+' oltre '+mx+' €</text>'});
+el.innerHTML=svg(w,h,s,'Quanti alberghi chiedono ogni prezzo, in tre date')});
+
+/* ---------- 1C · calendario delle notti ---------- */
+(function(){var u=I.ultimo,L={};L[u.notte]={p:u.tariffa_alberghi,t:'Notte letta ieri sera',x:dec(u.alberghi_pieni)+'% di alberghi senza camere'};
+L[D.sabato]={p:R.sabato,t:'Il sabato che leggiamo ogni notte',x:pct(R.rincaro_sabato,1)+' sul martedì'};L[D.martedi]={p:R.martedi,t:'Il martedì di riferimento',x:'un giorno feriale'};
+L[D.evento]={p:R.evento,t:'Capodanno',x:pct(R.rincaro_evento,1)+' sul martedì · '+pct(R.esauriti_evento)+' di alberghi senza camere'};
+var ps=Object.keys(L).map(function(k){return L[k].p}),lo=Math.min.apply(0,ps),hi=Math.max.apply(0,ps);
+$('#s1c').textContent='Fonte: Booking, camera per 2 persone, prezzo mediano degli alberghi di Roma. '+gm(u.notte)+': lettura serale degli alberghi ancora prenotabili. '+gm(D.sabato)+', '+gm(D.martedi)+' e '+gm(D.evento)+': letture dal '+gm(O.letture_dal)+' al '+gm(O.aggiornato)+' 2026. Le caselle tratteggiate sono notti non lette';
+chart('c1c',function(el,w){var two=w>=640,gapM=28,mw=two?(w-gapM)/2:w,cs=Math.floor((mw-6*4)/7),ch=Math.max(46,Math.min(cs,64)),s='',mesi=[[2026,10],[2026,11]],hT=0;
+mesi.forEach(function(ym,k){var ox=two?k*(mw+gapM):0,oy=two?0:hT,first=(new Date(ym[0],ym[1],1).getDay()+6)%7,nd=new Date(ym[0],ym[1]+1,0).getDate(),rows=Math.ceil((first+nd)/7);
+  s+='<text class="w b" x="'+ox+'" y="'+(oy+16)+'" style="font-size:15px">'+MESI[ym[1]].charAt(0).toUpperCase()+MESI[ym[1]].slice(1)+' '+ym[0]+'</text>';
+  ['lun','mar','mer','gio','ven','sab','dom'].forEach(function(g,i){s+='<text class="s" x="'+(ox+i*(cs+4)+cs/2)+'" y="'+(oy+38)+'" text-anchor="middle">'+g+'</text>'});
+  for(var d=1;d<=nd;d++){var c=(first+d-1)%7,r=Math.floor((first+d-1)/7),x=ox+c*(cs+4),y=oy+46+r*(ch+4),iso=ym[0]+'-'+('0'+(ym[1]+1)).slice(-2)+'-'+('0'+d).slice(-2),l=L[iso];
+    if(l){var k2=(l.p-lo)/(hi-lo||1);s+='<g class="fd" style="--i:'+(r*2+c)+'"><rect x="'+x+'" y="'+y+'" width="'+cs+'" height="'+ch+'" rx="8" fill="url(#gr)" opacity="'+(.45+.55*k2)+'"/><text class="w" x="'+(x+6)+'" y="'+(y+15)+'" style="font-size:11px">'+d+'</text><text class="w b" x="'+(x+cs/2)+'" y="'+(y+ch-10)+'" text-anchor="middle" style="font-size:'+(cs<44?12:15)+'px">'+l.p+'€</text><rect class="hit" tabindex="0" x="'+x+'" y="'+y+'" width="'+cs+'" height="'+ch+'" rx="8"'+T('<b>'+gm(iso,true)+': '+l.p+' €</b><br>'+l.t+'<small>'+l.x+'</small>')+'/></g>'}
+    else s+='<rect x="'+(x+.5)+'" y="'+(y+.5)+'" width="'+(cs-1)+'" height="'+(ch-1)+'" rx="8" fill="none" stroke="rgba(255,255,255,.14)" stroke-dasharray="3 4"/><text class="s" x="'+(x+6)+'" y="'+(y+15)+'">'+d+'</text>'}
+  hT=Math.max(two?hT:0,oy+46+rows*(ch+4)+(two?0:18))});
+el.innerHTML=svg(w,two?hT:hT-10,s,'Calendario di novembre e dicembre 2026 con il prezzo mediano delle quattro notti lette')})})();
+
+/* ---------- 1D · martedì contro sabato, un punto per albergo ---------- */
+var cop=A.filter(function(a){return a[2]&&a[3]}),CAP=400,dentro=cop.filter(function(a){return a[2]<=CAP&&a[3]<=CAP});
+(function(){var n=cop.length,eq=cop.filter(function(a){return a[2]===a[3]}).length,up=cop.filter(function(a){return a[3]>a[2]}).length,dn=n-eq-up;
+$('#m1d').innerHTML='<span class="g">'+Math.round(eq/n*100)+' alberghi su 100</span> chiedono lo stesso prezzo il martedì e il sabato: la tariffa non segue la domanda';
+$('#k1d').innerHTML='<div><b>'+pct(eq/n)+'</b><span>stesso prezzo martedì e sabato</span></div><div><b>'+pct(up/n)+'</b><span>il sabato chiede di più</span></div><div><b>'+pct(dn/n)+'</b><span>il sabato chiede di meno</span></div>';
+$('#s1d').textContent='Fonte: Booking, prezzo di ogni albergo letto fino al '+gm(P.letto_il)+' 2026, camera per 2 persone, martedì '+gm(D.martedi)+' e sabato '+gm(D.sabato)+'. '+n+' alberghi con entrambi i prezzi; nel grafico i '+dentro.length+' fino a '+CAP+' €. Nessun albergo è nominato'})();
+chart('c1d',function(el,w){var pl=44,pb=34,sz=w-pl-6,h=sz+pb+10,X=sc(50,CAP,pl,pl+sz),Y=sc(50,CAP,10+sz,10),s='';
+for(var v=100;v<=CAP;v+=100)s+='<line class="ax" x1="'+X(v)+'" x2="'+X(v)+'" y1="10" y2="'+(10+sz)+'"/><line class="ax" x1="'+pl+'" x2="'+(pl+sz)+'" y1="'+Y(v)+'" y2="'+Y(v)+'"/><text class="s" x="'+X(v)+'" y="'+(10+sz+16)+'" text-anchor="middle">'+v+' €</text><text class="s" x="'+(pl-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+v+' €</text>';
+s+='<text class="s" x="'+(pl+sz)+'" y="'+(h-2)+'" text-anchor="end">prezzo del martedì →</text><text class="s" x="'+(pl+4)+'" y="22">↑ prezzo del sabato</text>';
+s+='<line class="dr" pathLength="1" x1="'+X(50)+'" y1="'+Y(50)+'" x2="'+X(CAP)+'" y2="'+Y(CAP)+'" stroke="#fff" stroke-width="1.5"/>';
+dentro.forEach(function(a,i){var e=a[3]===a[2],c=e?'#fff':a[3]>a[2]?'#3CCDFA':'#8b6bff';
+  s+='<circle class="fd" style="--i:'+(i%20)+'" cx="'+X(a[2])+'" cy="'+Y(a[3])+'" r="'+(e?3.6:3.2)+'" fill="'+c+'" fill-opacity="'+(e?.95:.55)+'"'+T('<b>Un albergo'+(a[1]?' a '+a[1]+' stelle':'')+'</b>'+(a[0]?' · '+a[0]:'')+'<br>Martedì <b>'+a[2]+' €</b> · sabato <b>'+a[3]+' €</b><small>'+(e?'Stesso prezzo':pct(a[3]/a[2]-1,1)+' il sabato')+'</small>')+'/>'});
+el.innerHTML=svg(w,h,s,'Prezzo del martedì e del sabato di ogni albergo')});
+
+/* ---------- 2A · la stagione, quattro anni ---------- */
+var IS=F.istat,anni=Object.keys(IS.mesi).sort(),ult=anni[anni.length-1],k2a='arrivi';
+(function(){var a=IS.mesi[ult].arrivi,mx=a.indexOf(Math.max.apply(0,a)),mn=a.indexOf(Math.min.apply(0,a));
+$('#m2a').innerHTML='Nel '+ult+' il mese più forte è <span class="g">'+MESI[mx]+'</span>, il più debole '+MESI[mn]+': tra i due ci sono '+mln(a[mx]-a[mn])+' milioni di arrivi di differenza';
+$('#s2a').textContent='Fonte: '+IS.fonte+', dati mensili '+anni[0]+'-'+ult+'. '+IS.nota_2025})();
+chart('c2a',function(el,w){var pl=40,pr=44,pt=14,pb=26,h=w<600?280:360,mx=0;anni.forEach(function(y){mx=Math.max(mx,Math.max.apply(0,IS.mesi[y][k2a]))});
+var st=k2a==='arrivi'?5e5:1e6;mx=Math.ceil(mx/st)*st;var X=sc(0,11,pl,w-pr),Y=sc(0,mx,h-pb,pt),s='';
+for(var v=0;v<=mx;v+=st)s+='<line class="ax" x1="'+pl+'" x2="'+(w-pr)+'" y1="'+Y(v)+'" y2="'+Y(v)+'"/><text class="s" x="'+(pl-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+dec(v/1e6,k2a==='arrivi'?1:0)+'</text>';
+s+='<text class="s" x="'+pl+'" y="'+(pt-2)+'">milioni di '+(k2a==='arrivi'?'arrivi':'notti')+' al mese</text>';
+MB.forEach(function(m,i){if(w<600&&i%2)return;s+='<text class="s" x="'+X(i)+'" y="'+(h-6)+'" text-anchor="middle">'+m+'</text>'});
+var ly={},pv=1e9;anni.slice().sort(function(a,b){return IS.mesi[b][k2a][11]-IS.mesi[a][k2a][11]}).reverse().forEach(function(y){var v=Math.min(Y(IS.mesi[y][k2a][11])+4,pv-13);ly[y]=v;pv=v});
+anni.forEach(function(y,j){var d=IS.mesi[y][k2a],last=y===ult,p=d.map(function(v,i){return (i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)}).join('');
+  s+='<path class="dr" style="--i:'+j+'" pathLength="1" d="'+p+'" fill="none" stroke="'+(last?'url(#gr)':'rgba(255,255,255,'+(.25+j*.15)+')')+'" stroke-width="'+(last?3.5:1.8)+'" stroke-linejoin="round" stroke-linecap="round"/>';
+  s+='<text class="fd '+(last?'w b':'')+'" style="--i:'+(j*3+8)+'" x="'+(w-pr+6)+'" y="'+ly[y]+'">'+y+'</text>'});
+var bw=(w-pl-pr)/11;MB.forEach(function(m,i){var t='<b>'+MESI[i].charAt(0).toUpperCase()+MESI[i].slice(1)+'</b>';anni.slice().reverse().forEach(function(y){t+='<br>'+y+': <b>'+num(IS.mesi[y][k2a][i])+'</b>'});
+  s+='<rect class="hit" tabindex="0" x="'+(X(i)-bw/2)+'" y="'+pt+'" width="'+bw+'" height="'+(h-pb-pt)+'"'+T(t+'<small>'+(k2a==='arrivi'?'arrivi':'notti')+' negli esercizi ricettivi</small>')+'/>'});
+el.innerHTML=svg(w,h,s,'Arrivi a Roma mese per mese, dal '+anni[0]+' al '+ult)});
+$$('#g2a button').forEach(function(b){b.onclick=function(){$$('#g2a button').forEach(function(x){x.classList.toggle('on',x===b)});k2a=b.getAttribute('data-k');redraw('c2a')}});
+
+/* ---------- 2B · dodici anni di alberghi e i voli ---------- */
+var AN=IS.annui,ya=Object.keys(AN).sort(),AE=F.aeroporti;
+(function(){var l=AN[ya[ya.length-1]],p=AN[ya[ya.length-2]],v19=AN['2019'];
+$('#m2b').innerHTML='Negli alberghi di Roma '+mln(l.arrivi_alberghi)+' milioni di arrivi nel '+ya[ya.length-1]+': <span class="g">'+pct(l.arrivi_alberghi/p.arrivi_alberghi-1,1)+' sul '+ya[ya.length-2]+'</span>'+(v19?', '+(l.arrivi_alberghi<v19.arrivi_alberghi?'ancora sotto il':'sopra il')+' 2019 ('+mln(v19.arrivi_alberghi)+')':'');
+$('#s2b1').textContent='Fonte: '+IS.fonte+', arrivi negli esercizi alberghieri '+ya[0]+'-'+ya[ya.length-1]+'. La linea tratteggiata è il 2019';
+$('#s2b2').textContent='Fonte: '+AE.fonte+', gennaio-'+MESI[AE.mesi[AE.mesi.length-1].mese-1]+' '+AE.anno+': '+mln(AE.totale)+' milioni di passeggeri, '+(AE.var>=0?'+':'')+dec(AE.var)+'% sullo stesso periodo del '+(AE.anno-1)+'. Il numero sopra ogni colonna è la variazione di Fiumicino sullo stesso mese'})();
+chart('c2b1',function(el,w){var pl=30,pt=30,pb=24,h=w<420?240:300,mx=9e6,X=sc(0,ya.length,pl,w),Y=sc(0,mx,h-pb,pt),bw=(w-pl)/ya.length,s='';
+for(var v=0;v<=mx;v+=3e6)s+='<line class="ax" x1="'+pl+'" x2="'+w+'" y1="'+Y(v)+'" y2="'+Y(v)+'"/><text class="s" x="'+(pl-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+v/1e6+'</text>';
+s+='<text class="s" x="'+pl+'" y="12">milioni di arrivi negli alberghi</text>';
+ya.forEach(function(y,i){var d=AN[y],v=d.arrivi_alberghi,last=i===ya.length-1,cov=y==='2020'||y==='2021';
+  s+='<rect class="gy" style="--i:'+i*2+'" x="'+(X(i)+bw*.14)+'" y="'+Y(v)+'" width="'+bw*.72+'" height="'+(h-pb-Y(v))+'" rx="3" fill="'+(last?'url(#gv)':'rgba(255,255,255,'+(cov?.14:.3)+')')+'"/>';
+  if(last||y==='2019'||y==='2020'||i===0)s+='<text class="w b fd" style="--i:'+i+'" x="'+(X(i)+bw/2)+'" y="'+(Y(v)-6)+'" text-anchor="middle" style="font-size:12px">'+mln(v)+'</text>';
+  if(w>=420||i%2===1)s+='<text class="s" x="'+(X(i)+bw/2)+'" y="'+(h-6)+'" text-anchor="middle">'+(w<600?"'"+y.slice(2):y)+'</text>';
+  s+='<rect class="hit" tabindex="0" x="'+X(i)+'" y="'+pt+'" width="'+bw+'" height="'+(h-pb-pt)+'"'+T('<b>'+y+'</b><br>Arrivi negli alberghi: <b>'+num(v)+'</b><br>Notti negli alberghi: <b>'+num(d.presenze_alberghi)+'</b><br>Permanenza media: <b>'+dec(d.presenze_alberghi/v)+' notti</b><small>Arrivi dall\'estero sul totale: '+pct(d.arrivi_stranieri/d.arrivi)+'</small>')+'/>'});
+if(AN['2019']){var yr=Y(AN['2019'].arrivi_alberghi);s+='<line class="fd" x1="'+pl+'" x2="'+w+'" y1="'+yr+'" y2="'+yr+'" stroke="#fff" stroke-dasharray="4 4" stroke-width="1"/>'}
+el.innerHTML=svg(w,h,s,'Arrivi negli alberghi di Roma dal '+ya[0]+' al '+ya[ya.length-1])});
+chart('c2b2',function(el,w){var pl=24,pt=30,pb=24,h=w<420?240:300,pm=AE.mesi,mx=6e6,X=sc(0,12,pl,w),Y=sc(0,mx,h-pb,pt),bw=(w-pl)/12,s='';
+for(var v=0;v<=mx;v+=2e6)s+='<line class="ax" x1="'+pl+'" x2="'+w+'" y1="'+Y(v)+'" y2="'+Y(v)+'"/><text class="s" x="'+(pl-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+v/1e6+'</text>';
+s+='<text class="s" x="'+pl+'" y="12">milioni di passeggeri, '+AE.anno+'</text>';
+for(var i=0;i<12;i++){var p=pm.filter(function(q){return q.mese===i+1})[0],x=X(i);
+  s+='<text class="s" x="'+(x+bw/2)+'" y="'+(h-6)+'" text-anchor="middle">'+MB[i].charAt(0)+'</text>';
+  if(!p){s+='<rect x="'+(x+bw*.14)+'" y="'+Y(1e6)+'" width="'+bw*.72+'" height="'+(h-pb-Y(1e6))+'" rx="3" fill="none" stroke="rgba(255,255,255,.14)" stroke-dasharray="3 4"/>';continue}
+  var yf=Y(p.fco),yt=Y(p.fco+p.cia);
+  s+='<rect class="gy" style="--i:'+i*2+'" x="'+(x+bw*.14)+'" y="'+yf+'" width="'+bw*.72+'" height="'+(h-pb-yf)+'" fill="url(#gv)"/><rect class="gy" style="--i:'+i*2+'" x="'+(x+bw*.14)+'" y="'+yt+'" width="'+bw*.72+'" height="'+(yf-yt-1)+'" fill="#8b6bff"/>';
+  s+='<text class="'+(p.fco_var>=0?'w':'')+' fd" style="--i:'+i+'" x="'+(x+bw/2)+'" y="'+(yt-6)+'" text-anchor="middle" style="font-size:'+(w<420?9.5:11)+'px">'+(p.fco_var>0?'+':'')+dec(p.fco_var)+'</text>';
+  s+='<rect class="hit" tabindex="0" x="'+x+'" y="'+pt+'" width="'+bw+'" height="'+(h-pb-pt)+'"'+T('<b>'+MESI[i].charAt(0).toUpperCase()+MESI[i].slice(1)+' '+AE.anno+'</b><br>Fiumicino: <b>'+num(p.fco)+'</b> ('+(p.fco_var>0?'+':'')+dec(p.fco_var)+'%)<br>Ciampino: <b>'+num(p.cia)+'</b> ('+(p.cia_var>0?'+':'')+dec(p.cia_var)+'%)<small>variazione sullo stesso mese del '+(AE.anno-1)+'</small>')+'/>'}
+el.innerHTML=svg(w,h,s,'Passeggeri di Fiumicino e Ciampino nel '+AE.anno)});
+
+/* ---------- 3A · classifiche con il riferimento di Roma ---------- */
+var CL=[['aree_sabato','Dove costa di più il sabato','bk',function(v){return v+' €'},R.sabato,'€ a notte, valore mediano'],
+['aree_rincaro','Dove il sabato rincara di più','bk',function(v){return pct(v,1)},R.rincaro_sabato,'sul martedì'],
+['aree_evento','Dove costa di più Capodanno','bk',function(v){return v+' €'},R.evento,'€ a notte, valore mediano'],
+['aree_esauriti','Dove non c\'è più posto a Capodanno','bk',function(v){return pct(v)},R.esauriti_evento,'alberghi senza camere per 2'],
+['aree_voto','Dove gli ospiti danno il voto più alto','bk',function(v){return dec(v)},R.voto,'voto mediano su Booking'],
+['aree_alberghi','Rioni con più alberghi','reg',num,null,'alberghi'],
+['vie_camere','Vie con più camere','reg',num,null,'camere'],
+['vie_strutture','Vie con più strutture ricettive','reg',num,null,'strutture ricettive'],
+['aree_extra','Rioni con più B&B, case vacanze e affittacamere','reg',num,null,'strutture ricettive']],c3=0;
+$('#g3a').innerHTML=CL.map(function(c,i){return '<button type="button"'+(i?'':' class="on"')+' data-i="'+i+'">'+c[1]+'</button>'}).join('');
+function d3a(el){var c=CL[c3],v=O.classifiche[c[0]]||[],f=c[3],ref=c[4],voto=c[0]==='aree_voto',lo=voto?7:0,top=Math.max.apply(0,v.map(function(x){return x.valore}).concat(ref||0)),W=function(x){return Math.max(2,(x-lo)/(top-lo)*100)};
+  $('#m3a').innerHTML=v.length?v[0].nome+': <span class="g">'+f(v[0].valore)+'</span>'+(ref!=null?', contro '+f(ref)+' di tutta Roma':' '+c[5]):'';
+  el.innerHTML='<ol class="bars">'+v.map(function(x,i){var few=x.alberghi!=null&&x.alberghi<10;
+    return '<li tabindex="0"'+T('<b>'+esc(x.nome)+': '+f(x.valore)+'</b><br>'+c[5]+(x.alberghi!=null?'<small>'+x.alberghi+' alberghi letti'+(few?': pochi, da leggere con prudenza':'')+'</small>':'')+(x.camere?'<small>'+num(x.camere)+' camere</small>':'')+(ref!=null?'<small>Tutta Roma: '+f(ref)+'</small>':''))+'><em>'+('0'+(i+1)).slice(-2)+'</em><span class="nm">'+esc(x.nome)+(x.alberghi!=null?'<small>'+x.alberghi+' alberghi letti</small>':'')+'</span><span class="vl">'+f(x.valore)+'</span><span class="bar'+(few?' few':'')+'" style="--i:'+i+'"><i style="--w:'+W(x.valore)+'%"></i>'+(ref!=null?'<u style="--r:'+W(ref)+'%"></u>':'')+'</span></li>'}).join('')+'</ol>';
+  $('#r3a').innerHTML=ref!=null?'<u></u>Tutta Roma: '+f(ref)+'<i></i>meno di 10 alberghi letti'+(voto?' · la barra parte da 7':''):'';
+  $('#s3a').textContent=c[2]==='bk'?FBK+'. Solo rioni e quartieri con almeno 5 alberghi letti':FREG}
+chart('c3a',d3a);
+$$('#g3a button').forEach(function(b){b.onclick=function(){$$('#g3a button').forEach(function(x){x.classList.toggle('on',x===b)});c3=+b.getAttribute('data-i');redraw('c3a')}});
+
+/* ---------- 3B · la tabella dei rioni ---------- */
+(function(){var cols=CL.slice(0,5),short=['Sabato','Rincaro','Capodanno','Senza camere','Voto'],shortN=['Sabato','Rincaro','31 dic','Senza camere','Voto'],rn={};
+cols.forEach(function(c,j){(O.classifiche[c[0]]||[]).forEach(function(x,i){(rn[x.nome]=rn[x.nome]||{n:x.nome,al:x.alberghi,c:{}}).c[j]=[i+1,c[3](x.valore)]})});
+var rows=Object.keys(rn).map(function(k){var r=rn[k],ks=Object.keys(r.c);r.q=ks.length;r.s=ks.reduce(function(a,j){return a+(11-r.c[j][0])},0);return r}).sort(function(a,b){return b.q-a.q||b.s-a.s});
+var top=rows[0];$('#m3b').innerHTML='<span class="g">'+top.n+'</span> compare in '+top.q+' classifiche su 5. '+rows.filter(function(r){return r.q>=3}).length+' rioni sono tra i primi dieci in almeno tre classifiche';
+chart('c3b',function(el,w){var nar=w<600;el.innerHTML='<table class="mx"><thead><tr><th>Rione o quartiere</th>'+short.map(function(s,j){return '<th>'+(nar?shortN[j]:s)+'</th>'}).join('')+'</tr></thead><tbody>'+
+  rows.map(function(r,i){return '<tr><td>'+esc(r.n)+'<small>'+r.al+' alberghi letti</small></td>'+cols.map(function(c,j){var x=r.c[j];if(!x)return '<td><span class="n">·</span></td>';var sz=(nar?22:26)+(10-x[0])*(nar?1.2:1.8);
+    return '<td><button type="button" class="c" style="--s:'+sz+'px;--i:'+(i+j)+';--o:'+(.45+.055*(11-x[0]))+'"'+T('<b>'+esc(r.n)+'</b><br>'+c[1]+'<br>Posizione <b>'+x[0]+'</b>: <b>'+x[1]+'</b><small>'+c[5]+'</small>')+' aria-label="'+esc(c[1]+', posizione '+x[0]+', '+x[1])+'">'+x[0]+'</button></td>'}).join('')+'</tr>'}).join('')+'</tbody></table>'})})();
+
+/* ---------- 4 · le zone: prezzo e spazio di mercato ---------- */
+var ZZ=Z.filter(function(z){return z.mercato&&z.mercato.sabato&&z.mercato.sotto_8!=null}),z4=0;
+(function(){var a=ZZ.slice().sort(function(x,y){return y.mercato.sotto_8-x.mercato.sotto_8})[0],b=ZZ.slice().sort(function(x,y){return y.mercato.sabato-x.mercato.sabato})[0];
+$('#m4').innerHTML=b.nome+' è la zona più cara il sabato ('+b.mercato.sabato+' €). A '+a.nome+' <span class="g">'+pct(a.mercato.sotto_8)+' degli alberghi</span> ha un voto sotto 8';
+$('#s4').textContent=FBK+'. '+FREG+'. Voto sotto 8: quota degli alberghi letti con voto Booking inferiore a 8. Nelle zone con meno di 10 alberghi letti il cerchio ha il bordo tratteggiato';
+$('#g4').innerHTML=ZZ.map(function(z,i){return '<button type="button" data-i="'+i+'">'+(i+1)+' · '+z.nome+'</button>'}).join('')})();
+function p4(){var z=ZZ[z4],m=z.mercato,o=z.offerta,st=[1,2,3,4,5].map(function(k){return o['stelle_'+k]||0}),tot=st.reduce(function(a,b){return a+b},0),col=['#39405a','#5b6690','#3CCDFA','#4d5cff','#8b6bff'];
+  $('#p4').innerHTML='<h4>'+z.nome+'</h4><dl><dt>Sabato '+gm(D.sabato)+', valore mediano</dt><dd>'+m.sabato+' €</dd><dt>Martedì '+gm(D.martedi)+'</dt><dd>'+m.martedi+' €</dd><dt>Capodanno</dt><dd>'+(m.evento?m.evento+' €':'n.d.')+'</dd><dt>Voto mediano su Booking</dt><dd>'+dec(m.voto)+'</dd><dt>Alberghi con voto sotto 8</dt><dd>'+pct(m.sotto_8)+'</dd><dt>Stesso prezzo martedì e sabato</dt><dd>'+pct(m.tariffa_ferma)+'</dd><dt>Alberghi letti su Booking</dt><dd>'+m.alberghi+'</dd><dt>Alberghi nel registro</dt><dd>'+num(o.alberghi)+'</dd><dt>Camere d\'albergo</dt><dd>'+num(o.camere_alberghi)+'</dd><dt>Strutture ricettive per km²</dt><dd>'+num(o.strutture/z.km2)+'</dd></dl>'+
+  '<div class="stk">'+st.map(function(n,k){return n?'<i style="width:'+n/tot*100+'%;background:'+col[k]+'"'+T('<b>'+(k+1)+' stelle</b>: '+n+' alberghi')+'></i>':''}).join('')+'</div><div class="stl">'+st.map(function(n,k){return n?'<span><i style="background:'+col[k]+'"></i>'+(k+1)+' stelle: '+n+'</span>':''}).join('')+'</div>';
+  $$('#g4 button').forEach(function(b,i){b.classList.toggle('on',i===z4)});$$('#c4 .bub').forEach(function(b){b.classList.toggle('off',+b.getAttribute('data-i')!==z4)})}
+chart('c4',function(el,w){var pl=40,pb=40,pt=14,h=w<600?340:420,X=sc(0,.8,pl,w-10),Y=sc(100,300,h-pb,pt),mxc=Math.max.apply(0,ZZ.map(function(z){return z.offerta.camere_alberghi})),rr=function(c){return 9+Math.sqrt(c/mxc)*(w<600?24:34)},s='';
+for(var v=100;v<=300;v+=50)s+='<line class="ax" x1="'+pl+'" x2="'+(w-10)+'" y1="'+Y(v)+'" y2="'+Y(v)+'"/><text class="s" x="'+(pl-6)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+v+' €</text>';
+for(var q=0;q<=.8;q+=.2)s+='<text class="s" x="'+X(q)+'" y="'+(h-pb+16)+'" text-anchor="middle">'+pct(q)+'</text>';
+s+='<text class="s" x="'+(w-10)+'" y="'+(h-4)+'" text-anchor="end">alberghi con voto sotto 8 →</text><text class="s" x="'+(pl+4)+'" y="'+(pt+10)+'">↑ prezzo mediano del sabato</text>';
+s+='<line class="fd" x1="'+X(R.sotto_8)+'" x2="'+X(R.sotto_8)+'" y1="'+pt+'" y2="'+(h-pb)+'" stroke="#fff" stroke-dasharray="4 4" stroke-opacity=".5"/><line class="fd" x1="'+pl+'" x2="'+(w-10)+'" y1="'+Y(R.sabato)+'" y2="'+Y(R.sabato)+'" stroke="#fff" stroke-dasharray="4 4" stroke-opacity=".5"/><text class="s fd" x="'+(X(R.sotto_8)+5)+'" y="'+(h-pb-6)+'">tutta Roma</text>';
+ZZ.map(function(z,i){return [z,i]}).sort(function(a,b){return b[0].offerta.camere_alberghi-a[0].offerta.camere_alberghi}).forEach(function(p){var z=p[0],i=p[1],m=z.mercato,r=rr(z.offerta.camere_alberghi),few=m.alberghi<10;
+  s+='<g class="bub fd" style="--i:'+i*2+'" data-i="'+i+'" tabindex="0" role="button" aria-label="'+esc(z.nome)+'"'+T('<b>'+z.nome+'</b><br>Sabato: <b>'+m.sabato+' €</b><br>Voto sotto 8: <b>'+pct(m.sotto_8)+'</b> degli alberghi<small>'+num(z.offerta.camere_alberghi)+' camere d\'albergo · '+m.alberghi+' alberghi letti</small>')+'><circle cx="'+X(m.sotto_8)+'" cy="'+Y(m.sabato)+'" r="'+r+'" fill="url(#gr)" fill-opacity=".78" stroke="#fff" stroke-width="1.5"'+(few?' stroke-dasharray="3 3"':'')+'/><text class="w b" x="'+X(m.sotto_8)+'" y="'+(Y(m.sabato)+4.5)+'" text-anchor="middle" style="font-size:13px;pointer-events:none">'+(i+1)+'</text></g>'});
+el.innerHTML=svg(w,h,s,'Le zone di Roma per prezzo del sabato e quota di alberghi con voto sotto 8');
+$$('.bub',el).forEach(function(b){var f=function(){z4=+b.getAttribute('data-i');p4()};b.onclick=f;b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}}});p4()});
+$$('#g4 button').forEach(function(b){b.onclick=function(){z4=+b.getAttribute('data-i');p4()}});
+}
+})();
+</script>
+</body>
+</html>
