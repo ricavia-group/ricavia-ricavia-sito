@@ -336,27 +336,80 @@ def flussi(d):
     tre = [(f"{milioni(an[ult])} mln", f"arrivi negli alberghi di Roma nel {ult}, {var(an[ult], an[pr])} sul {pr}"),
            (var(an[ult], an["2019"]), f"gli arrivi negli alberghi nel {ult} rispetto al 2019, l’anno prima della pandemia")]
     ae = fl.get("aeroporti") or {}
-    mm = [m for m in ae.get("mesi") or [] if m.get("fco") and m.get("cia") and m.get("fco_var") is not None and m.get("cia_var") is not None]
-    fa = ""
+    mm = [m for m in ae.get("mesi") or [] if m.get("pax") and m.get("pax_var") is not None]
+    fonti = ["ISTAT"]
     if mm:
         m = mm[-1]
-        ora = m["fco"] + m["cia"]
-        prima = m["fco"] / (1 + m["fco_var"] / 100) + m["cia"] / (1 + m["cia_var"] / 100)  # stesso mese dell'anno prima, dalle variazioni di Assaeroporti
-        tre.append((f"{milioni(ora)} mln", f"passeggeri a Fiumicino e Ciampino a {MESI[m['mese'] - 1]} {ae['anno']}, {var(ora, prima)} sullo stesso mese del {ae['anno'] - 1}"))
-        fa = f" · Aeroporti: {E(ae.get('fonte', 'Assaeroporti'))}"
-    mx, mn = max(an.values()), min(an.values())
-    X = lambda y: anni.index(y) / (len(anni) - 1) * 100
-    Y = lambda v: 4 + (mx - v) / (mx - mn) * 32
-    pts = " ".join(f"{X(y):.2f},{Y(an[y]):.2f}" for y in anni)
+        tre.append((f"{milioni(m['pax'])} mln", f"passeggeri a Fiumicino e Ciampino a {MESI[m['mese'] - 1]} {ae['anno']}, {vp(m['pax_var'])} sullo stesso mese del {ae['anno'] - 1}"))
+        fonti.append("Aeroporti di Roma")
     df = an[ult] / an[pr] - 1
     return blocco("o2-flussi", "La domanda",
                   f"Nel {ult} gli alberghi di Roma hanno registrato {milioni(an[ult])} milioni di arrivi, {art(round(abs(df) * 100))}{round(abs(df) * 100)}% {'in più' if df >= 0 else 'in meno'} del {pr}",
                   '<div class="o3-n3">' + "".join(f'<div><b>{n}</b><span>{t}</span></div>' for n, t in tre) + "</div>"
-                  + f'<div class="o3-spk"><span>Arrivi negli alberghi, {anni[0]}-{ult}</span><svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Arrivi negli alberghi di Roma dal {anni[0]} al {ult}: minimo nel {min(an, key=an.get)}, {milioni(mn)} milioni">'
-                  f'<polyline class="o3-trc" points="{pts}" fill="none" stroke="url(#o3lg)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>'
-                  '<defs><linearGradient id="o3lg" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#1F2DD0"/><stop offset="1" stop-color="#724AF8"/></linearGradient></defs></svg>'
-                  f'<small>{anni[0]}</small><small>{ult}</small></div>' + TUS.format("domanda"),
-                  f'Arrivi negli esercizi alberghieri · Fonte: {E(ist["fonte"])}{fa}')
+                  + schede_domanda(fl.get("paesi"), ist.get("mesi"), ae if mm else None) + TUS.format("domanda"),
+                  f'Arrivi negli esercizi alberghieri del Comune di Roma · Fonti: {" e ".join(fonti)}')
+
+
+def vp(x):
+    """Variazione già in punti percentuali (ISTAT, ADR): +1,8%, −3,6%"""
+    return ("+" if x > 0 else MENO if x < 0 else "") + f"{abs(x):.1f}".replace(".", ",") + "%"
+
+
+def bandiera(c):
+    c = "GB" if c == "UK" else c
+    return "".join(chr(0x1F1E6 + ord(x) - 65) for x in c) if len(c) == 2 and c.isalpha() else ""
+
+
+def colonne(voci, ev, aria):
+    """Barre verticali, una per mese: la barra ev è evidenziata con il valore scritto; al tocco o al passaggio compare il valore del mese
+    (voci = [(etichetta corta, valore, testo del valore)])"""
+    mx = max(v for _, v, _ in voci)
+    return (f'<div class="o3-dmm" role="list" aria-label="{E(aria)}">' + "".join(
+        f'<div class="o3-dmc{" o3-dmx" if i == ev else ""}" role="listitem" tabindex="0"><i style="--h:{max(3, v / mx * 100):.1f}%"></i>'
+        f'<b>{t}</b><span>{lb}</span></div>' for i, (lb, v, t) in enumerate(voci)) + "</div>")
+
+
+def schede_domanda(pa, mesi, ae):
+    """Tre schede a tab sotto i tre numeri (George, 22/11: "voli, flussi, paesi"): da dove, quando, come arrivano.
+    Solo HTML e CSS (radio + label): le schede funzionano anche senza 12-osservatorio.js. Ogni scheda compare solo con i suoi dati"""
+    tab = []
+    if pa and pa.get("esteri"):
+        es, it = pa["esteri"], pa["italia"]
+        estero = round(100 - it["quota"])
+        mx = max(x["quota"] for x in es + [it])
+        rg = lambda x, c: (f'<div class="o3-r o3-dmr {c}"><span class="o3-rl"><span aria-hidden="true">{bandiera(x["cod"])}</span> {E(x["nome"])}</span>'
+                           f'<span class="o3-bar"><i style="--w:{max(2, x["quota"] / mx * 100):.1f}%"></i></span>'
+                           f'<b class="o3-rv">{dec(x["quota"])}%<small>{"era " + dec(x["quota_prima"]) + "%" if x.get("quota_prima") is not None else ""}</small></b></div>')
+        p1 = es[0]
+        tab.append(("Da dove", f'<p class="o3-dmf">Nel {pa["anno"]} {art(estero)}{estero}% degli arrivi nella provincia di Roma viene dall’estero. Primo paese: {E(p1["nome"])}, con {art(int(p1["quota"]))}{dec(p1["quota"])}%</p>'
+                    + rg(it, "o3-dmi") + "".join(rg(x, "o3-cap" if i == 0 else "") for i, x in enumerate(es)),
+                    f'Quota sugli arrivi in tutti gli esercizi ricettivi della provincia di Roma nel {pa["anno"]}, sotto la quota del {pa["prima"]} · Fonte: ISTAT, per paese di residenza dei clienti. Il dato per paese è provinciale: comprende anche i comuni intorno a Roma'
+                    + (". Dal 2025 ISTAT conta anche gli alloggi privati in affitto: per questo il confronto è sulle quote e non sugli arrivi" if pa["anno"] >= 2025 > pa["prima"] else "")))
+    ym = max((y for y, v in (mesi or {}).items() if len(v.get("arrivi") or []) == 12 and all(v["arrivi"])), default=None)
+    if ym:
+        a = mesi[ym]["arrivi"]
+        hi, lo = a.index(max(a)), a.index(min(a))
+        tab.append(("Quando", f'<p class="o3-dmf">{MESI[hi].capitalize()} è il mese con più arrivi a Roma: {num(a[hi])} nel {ym}, {dec(a[hi] / a[lo])} volte {MESI[lo]}</p>'
+                    + colonne([(MESI[i][:3], v, f"{MESI[i]} {ym} · {num(v)} arrivi") for i, v in enumerate(a)], hi, f"Arrivi a Roma mese per mese nel {ym}"),
+                    f'Arrivi in tutti gli esercizi ricettivi del Comune di Roma, gennaio-dicembre {ym} · Fonte: ISTAT. Dal 2025 ISTAT conta anche gli alloggi privati in affitto'))
+    if ae:
+        mm, P = ae["mesi"], ae.get("progressivo") or {}
+        u, A = mm[-1], ae["anno"]
+        per = (f"{MESI[mm[0]['mese'] - 1]}-" if len(mm) > 1 else "") + f"{MESI[u['mese'] - 1]} {A}"
+        k, frase = "", f'A {MESI[u["mese"] - 1]} Fiumicino e Ciampino hanno contato {num(u["pax"])} passeggeri, {vp(u["pax_var"])} sullo stesso mese del {A - 1}'
+        if P.get("pax") and P.get("int") and P.get("ue") and P.get("extra"):
+            frase = f'{per[0].upper() + per[1:]}: {round(P["int"] / P["pax"] * 10)} passeggeri su 10 di Fiumicino e Ciampino hanno preso un volo internazionale'
+            k = ('<div class="o3-dmk">' + "".join(f'<div><b>{b}</b><span>{t}</span></div>' for b, t in [
+                (f'{round(P["ue"] / P["pax"] * 100)}%', f'su voli da e per l’Unione europea, {vp(P["ue_var"])}'),
+                (f'{round(P["extra"] / P["pax"] * 100)}%', f'su voli da e per paesi fuori dall’UE, {vp(P["extra_var"])}'),
+                (f'{milioni(P["pax"])} mln', f'passeggeri in tutto, {vp(P["pax_var"])}' + (f': Fiumicino {milioni(P["fco"])} mln, Ciampino {milioni(P["cia"])} mln' if P.get("fco") and P.get("cia") else ""))]) + "</div>")
+        tab.append(("Come arrivano", f'<p class="o3-dmf">{frase}</p>'
+                    + colonne([(MESI[x["mese"] - 1][:3], x["pax"], f'{MESI[x["mese"] - 1]} {A} · {num(x["pax"])} passeggeri, {vp(x["pax_var"])}') for x in mm], len(mm) - 1, f"Passeggeri di Fiumicino e Ciampino mese per mese, {per}") + k,
+                    f'Passeggeri di Fiumicino e Ciampino, {per}, variazioni sullo stesso periodo del {A - 1} · Fonte: {E(ae.get("fonte", "Aeroporti di Roma"))}'))
+    if not tab:
+        return ""
+    return ('<div class="o3-dm">' + "".join(f'<input type="radio" name="o3dm" id="o3dm{i}" class="o3-dmt"{" checked" if i == 0 else ""}><label for="o3dm{i}">{t}</label>' for i, (t, _, _) in enumerate(tab))
+            + "".join(f'<div class="o3-dmp o3-dmp{i}">{c}<p class="o3-dms">{s}</p></div>' for i, (_, c, s) in enumerate(tab)) + "</div>")
 
 
 def fine():

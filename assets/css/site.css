@@ -6232,3 +6232,53 @@ html.o2-nosc{overflow:hidden}
 @keyframes o3tk{to{transform:translateX(-50%)}}
 @media(max-width:760px){#pg-osservatorio .o3-tkt{animation-duration:60s}#pg-osservatorio .o3-tkv{font-size:13px;padding-block:12px}}
 @media(prefers-reduced-motion:reduce){#pg-osservatorio .o3-tkt{animation:none}#pg-osservatorio .o3-tk{overflow-x:auto}#pg-osservatorio .o3-tkg[aria-hidden]{display:none}}
+/* La domanda (George 22/11, "voli, flussi, paesi"): tre schede Da dove, Quando, Come arrivano, scritte da schede_domanda() in tools/osservatorio.py.
+   Solo CSS: le schede sono radio con label, i valori dei mesi compaiono al tocco (focus) o al passaggio */
+#pg-osservatorio .o3-dm{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0 0;min-width:0}
+#pg-osservatorio .o3-dmt{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+#pg-osservatorio .o3-dm>label{display:inline-flex;align-items:center;min-height:40px;padding:8px 15px;border-radius:999px;background:var(--o3c2);color:var(--o2t);font:600 14px/1.2 var(--zf);cursor:pointer;transition:background .2s,color .2s}
+#pg-osservatorio .o3-dm>label:hover{background:rgba(11,11,18,.09)}
+#pg-osservatorio .o3-dmt:checked+label{background:var(--zink);color:#fff}
+#pg-osservatorio .o3-dmt:focus-visible+label{outline:2px solid var(--zink);outline-offset:2px}
+#pg-osservatorio .o3-dmp{display:none;flex-basis:100%;min-width:0;margin-top:16px}
+#pg-osservatorio #o3dm0:checked~.o3-dmp0,#pg-osservatorio #o3dm1:checked~.o3-dmp1,#pg-osservatorio #o3dm2:checked~.o3-dmp2{display:block}
+#pg-osservatorio .o3-dmf{margin:0 0 14px;font-size:16px;line-height:1.45;color:var(--o2t);max-width:640px}
+#pg-osservatorio .o3-dms{margin:14px 0 0;font-size:13px;line-height:1.4;color:var(--o3m3)}
+#pg-osservatorio .o3-dmr{--cl:150px;margin-top:6px}
+#pg-osservatorio .o3-dmr .o3-rl{display:flex;gap:6px;align-items:baseline}
+#pg-osservatorio .o3-dmr .o3-rv{min-width:64px}
+#pg-osservatorio .o3-dmr .o3-rv small{display:block;margin-top:3px;font:400 12.5px/1.2 var(--zf);color:var(--o3m3)}
+#pg-osservatorio .o3-dmi{padding-bottom:10px;margin-bottom:8px;border-bottom:1px solid var(--o2l)}
+#pg-osservatorio .o3-dmi .o3-rl{color:var(--o2t);font-weight:600}
+#pg-osservatorio .o3-dmm{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:4px;height:180px;padding-top:30px;max-width:640px}
+#pg-osservatorio .o3-dmc{display:flex;flex-direction:column;justify-content:flex-end;min-width:0;outline:0;cursor:default}
+#pg-osservatorio .o3-dmc i{display:block;height:calc(var(--h) * .85);border-radius:5px 5px 2px 2px;background:rgba(11,11,18,.14);transform-origin:bottom;transition:background .2s}
+#pg-osservatorio .o3-dmc>span{margin-top:6px;font-size:11.5px;line-height:1;text-align:center;color:var(--o3m3)}
+#pg-osservatorio .o3-dmc b{position:absolute;left:0;right:0;top:0;font:600 14.5px/1.3 var(--zf);color:var(--o2t);opacity:0;pointer-events:none;transition:opacity .15s;font-variant-numeric:tabular-nums}
+#pg-osservatorio .o3-dmx i{background:var(--zgr)}
+#pg-osservatorio .o3-dmx b{opacity:1}
+#pg-osservatorio .o3-dmm:is(:hover,:focus-within) .o3-dmc b{opacity:0}
+#pg-osservatorio .o3-dmm .o3-dmc:is(:hover,:focus) b{opacity:1}
+#pg-osservatorio .o3-dmc:not(.o3-dmx):is(:hover,:focus) i{background:var(--zink)}
+#pg-osservatorio .o3-dmc:focus-visible>span{color:var(--o2t);font-weight:600}
+#pg-osservatorio .o3-dmk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 0}
+#pg-osservatorio .o3-dmk>div{background:var(--o3c2);border-radius:16px;padding:14px 16px;min-width:0}
+#pg-osservatorio .o3-dmk b{display:block;font:600 26px/1 var(--zf);letter-spacing:-.02em;color:var(--o2t);font-variant-numeric:tabular-nums}
+#pg-osservatorio .o3-dmk span{display:block;margin-top:6px;font-size:13.5px;line-height:1.35;color:var(--o2m)}
+@media(max-width:760px){
+  #pg-osservatorio .o3-dm>label{padding:7px 12px;font-size:13.5px}
+  #pg-osservatorio .o3-dmr{--cl:116px}
+  #pg-osservatorio .o3-dmr .o3-rl{font-size:13.5px}
+  #pg-osservatorio .o3-dmm{height:160px;gap:3px}
+  #pg-osservatorio .o3-dmc>span{font-size:10.5px}
+  #pg-osservatorio .o3-dmk{grid-template-columns:minmax(0,1fr);gap:8px}
+  #pg-osservatorio .o3-dmk>div{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px;padding:12px 14px}
+  #pg-osservatorio .o3-dmk span{margin:0}}
+@media(prefers-reduced-motion:no-preference){
+  #pg-osservatorio .o3-dmp{animation:o3dmIn .35s var(--o3ez)}
+  #pg-osservatorio .o3-an:not(.in) .o3-dmc i{transform:scaleY(0)}
+  #pg-osservatorio .o3-an.in .o3-dmc i{animation:o3dmUp .8s var(--o3ez) both}}
+@keyframes o3dmIn{from{opacity:0;transform:translateY(6px)}}
+@keyframes o3dmUp{from{transform:scaleY(0)}}
+#pg-osservatorio .o3-dmp{max-width:760px}
+@media(max-width:760px){#pg-osservatorio .o3-dmm{padding-top:38px}#pg-osservatorio .o3-dmc b{font-size:13px}}
