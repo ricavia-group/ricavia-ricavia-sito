@@ -141,12 +141,18 @@ function carica(id){CUR=String(id);ST='carico';
 function senza(h){S=null;H=h;CUR=h.id;PEND=null;pronto();
   return dici(['Non abbiamo ancora letto <b>'+esc(bel(h.n))+'</b> su Booking: per questo non ho ancora voti e prezzi da mostrarti'+(h.t&&h.t!=='albergo'?'. L’Osservatorio oggi legge i prezzi degli alberghi':'')])
     .then(function(){return chiediEmail('nb','Se vuoi, lo leggiamo noi e ti mandiamo il report. Scrivimi la tua email')})}
-function cerca(t,domanda){return O.hotel().then(function(){var HOT=O.hot()||[],r=O.trova(t).slice(0,4),k=norm(t).replace(/^(hotel|albergo) /,'');
-  if(r.length===1||(r.length&&norm(HOT[r[0]].n).replace(/^(hotel|albergo) /,'')===k))return scegli(r[0]);
-  if(r.length){ST='scelta';return una('Ho trovato più strutture ricettive con questo nome: qual è la tua?').then(function(){chips(r.map(function(i){return ['h:'+i,bel(HOT[i].n)+' · '+HOT[i].i]}).concat([['x:no','Nessuna di queste']]))})}
+/* George 22/11: più registrazioni al Comune allo stesso indirizzo e dello stesso tipo sono spesso una struttura sola su Booking (Superb e Unique Via Veneto Suites): la chat le propone come una, prima quella letta su Booking */
+function gruppi(r,HOT){var g={},o=[];r.forEach(function(i){var k=norm(HOT[i].i)+'|'+HOT[i].t;if(!g[k]){g[k]=[];o.push(g[k])}g[k].push(i)});
+  return o.map(function(a){return a.sort(function(x,y){return (HOT[y].r?1:0)-(HOT[x].r?1:0)})})}
+function cerca(t,domanda){return O.hotel().then(function(){var HOT=O.hot()||[],r=gruppi(O.trova(t).slice(0,8),HOT).slice(0,4),k=norm(t).replace(/^(hotel|albergo) /,'');
+  if(r.length===1||(r.length&&norm(HOT[r[0][0]].n).replace(/^(hotel|albergo) /,'')===k))return scegli(r[0][0],r[0]);
+  if(r.length){ST='scelta';return una('Ho trovato più strutture ricettive con questo nome: qual è la tua?').then(function(){chips(r.map(function(a){return ['h:'+a.join(','),a.map(function(i){return bel(HOT[i].n)}).join(' / ')+' · '+HOT[a[0]].i]}).concat([['x:no','Nessuna di queste']]))})}
   if(domanda)return team(t);
   ST='nome';return una('Non trovo «'+esc(t)+'» tra le '+num(HOT.length)+' strutture ricettive del registro di Roma Capitale. Prova con una parola sola del nome o con il CIN').then(function(){chips(prossime(null))})})}
-function scegli(i){var h=(O.hot()||[])[i];if(!h)return;chips([]);if(h.r){H=h;return carica(h.id)}return senza(h)}
+function scegli(i,a){var HOT=O.hot()||[],h=HOT[i];if(!h)return;chips([]);
+  var vai=function(){if(h.r){H=h;return carica(h.id)}return senza(h)};
+  if(!a||a.length<2)return vai();
+  return una('Al Comune risultano '+a.length+' registrazioni a '+esc(h.i)+' ('+a.map(function(j){return esc(bel(HOT[j].n))}).join(', ')+'): di solito su Booking sono una struttura sola, quindi le tratto come una').then(vai)}
 function team(t){var msg='Domanda dalla chat dell’Osservatorio'+(nome()?' ('+nome()+')':'')+': '+t;
   return dici(['Su questo preferisco che ti risponda una persona del team',una_di('team',['Premi qui sotto: il modulo contatti si apre con la tua domanda già scritta','Ti preparo il messaggio: il modulo contatti si apre con la tua domanda già scritta']),tasto('Chiedi al team',msg)])
     .then(function(){chips(prossime(null))})}
@@ -192,7 +198,7 @@ function gestisci(t){var n=norm(t);
   return team(t)}
 function tocca(k){var p=k.slice(2);
   if(k.indexOf('v:')===0&&QA.idx[p])return rispondi(QA.idx[p]);
-  if(k.indexOf('h:')===0)return scegli(+p);
+  if(k.indexOf('h:')===0){var a=p.split(',').map(Number);return scegli(a[0],a)}
   if(k==='x:no'){S=null;H=null;CUR=null;ST='nome';IN.placeholder='Scrivi il nome del tuo hotel';return una('Scrivimi il nome in un altro modo, anche solo una parola, oppure il CIN')}
   if(k==='x:tardi'){pronto();return una('Va bene. Quando vuoi il PDF, scrivimi la tua email').then(function(){chips(prossime(null))})}}
 function inizio(){if(PARTITA)return;PARTITA=true;
