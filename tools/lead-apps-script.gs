@@ -65,6 +65,7 @@ function doPost(e) {
     var ss = SpreadsheetApp.openById(FOGLIO_ID);
     var rep = preparaReport(v('Report'));
     var invio = rep && v('Email') ? mandaReport(v('Email'), rep, ss) : null;
+    if (d.tipo === 'apertura' && v('Email')) invio = mandaApertura(v('Email'), c);
     var esitoCrm = mandaAlCrm(d.tipo, c);
     riga[riga.length - 1] = [invio ? invio.esito : '', esitoCrm].filter(String).join(' · ');
     var sh = ss.getSheetByName('Lead');
@@ -163,6 +164,41 @@ function preparaReport(link, base) {
     console.error(err); // senza PDF la mail parte con il solo link
   }
   return rep;
+}
+
+/**
+ * Nuova apertura (scelta 10 del 22/11): a chi compila il percorso arriva subito il riepilogo dei suoi numeri; il team lo riceve in copia con l'avviso del lead.
+ * Il modulo e' pubblico: nella mail entrano solo testo fisso e valori controllati (zone e tipi da elenco, cifre e percentuali), mai testo libero,
+ * cosi' nessuno puo' usare il modulo per far partire da info@ un messaggio scritto da lui.
+ */
+var ZONE_AP = ['Centro storico', 'Monti', 'Trastevere', 'Prati · Vaticano', 'Esquilino · Termini', 'Testaccio · Ostiense', 'San Lorenzo · Pigneto', 'Flaminio · Parioli', 'Via Veneto'];
+var TIPI_AP = ['Hotel', 'Boutique hotel', 'Extralberghiero', 'Da definire'];
+var VOCI_AP = ['Camere', 'Budget', 'Tariffa media', 'Occupazione', 'Investimento', 'Ricavi', 'Commissioni', 'Costi operativi in euro', 'Utile operativo', 'Ritorno', 'Anni di rientro', 'Rendimento lordo da affitto della zona', 'Ritorno meno rendimento da affitto', 'Scenario prudente', 'Scenario base', 'Scenario favorevole'];
+var PAROLE_AP = ['tariffa', 'occupazione', 'ricavi', 'utile', 'ritorno', 'rientro', 'anni', 'anno', 'punti', 'mln', 'n', 'd'];
+function cifra(x) {
+  x = String(x || '').slice(0, 160);
+  if (!/^[0-9\s.,€%+\-−()a-z:]*$/i.test(x)) return '';
+  // solo cifre, simboli e le parole che scrive il nostro modulo: nessun testo libero (indirizzi, link) arriva nella mail
+  var parole = x.toLowerCase().match(/[a-z]+/g) || [];
+  return parole.every(function (w) { return PAROLE_AP.indexOf(w) > -1; }) ? x : '';
+}
+
+function mandaApertura(email, c) {
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email || '')) return null;
+  var zona = ZONE_AP.indexOf(c['Zona']) > -1 ? c['Zona'] : '';
+  var tipo = TIPI_AP.indexOf(c['Tipo']) > -1 ? c['Tipo'] : '';
+  var righe = VOCI_AP.map(function (k) { return [k, cifra(c[k])]; }).filter(function (r) { return r[1]; });
+  if (!righe.length) return {inviata: false, a: email, esito: 'Riepilogo Nuova apertura NON inviato: numeri mancanti'};
+  var titolo = 'Il tuo progetto' + (tipo ? ' (' + tipo.toLowerCase() + ')' : '') + (zona ? ' a ' + zona : ' a Roma');
+  var testo = 'Buongiorno,\n\necco il riepilogo dei numeri che hai scelto sul sito di Ricavia. ' + titolo + ':\n\n' +
+    righe.map(function (r) { return r[0] + ': ' + r[1]; }).join('\n') +
+    '\n\nSono stime, non promesse: prima di imposte, interessi e ammortamenti. Per leggerle insieme e trasformarle in un business plan vero, rispondi a questa email: fissiamo una call conoscitiva di venti minuti.\n\nRicavia · Nuova apertura\n\nHai ricevuto questa email perché hai chiesto il riepilogo su ricavia.com/nuova-apertura/.';
+  var html = '<p>Buongiorno,</p><p>ecco il riepilogo dei numeri che hai scelto sul sito di Ricavia. <b>' + esc(titolo) + '</b></p>' +
+    '<table style="border-collapse:collapse;font-size:14px">' + righe.map(function (r) { return '<tr><td style="padding:5px 14px 5px 0;color:#6E6E73">' + esc(r[0]) + '</td><td style="padding:5px 0;font-weight:600">' + esc(r[1]) + '</td></tr>'; }).join('') + '</table>' +
+    '<p>Sono stime, non promesse: prima di imposte, interessi e ammortamenti. Per leggerle insieme e trasformarle in un business plan vero, rispondi a questa email: fissiamo una call conoscitiva di venti minuti</p><p>Ricavia · Nuova apertura</p>' +
+    '<p style="color:#6E6E73;font-size:12px">Hai ricevuto questa email perché hai chiesto il riepilogo su ricavia.com/nuova-apertura/</p>';
+  GmailApp.sendEmail(email, 'Il tuo progetto di apertura a Roma · i tuoi numeri', testo, {htmlBody: html, name: 'Ricavia', replyTo: AVVISO_A});
+  return {inviata: true, a: email, esito: 'Riepilogo Nuova apertura inviato subito a ' + email};
 }
 
 function testoMail(rep) {

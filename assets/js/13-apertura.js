@@ -76,7 +76,7 @@ var $=function(s){return document.querySelector(s)},$$=function(s,r){return [].s
 var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
 var MB=['g','f','m','a','m','g','l','a','s','o','n','d'];
 /* scelta 10: finché il servizio dei lead non manda il report da solo, la conferma promette il controllo di una persona */
-var CONFERMA='Fatto: una persona di Ricavia controlla i numeri e ti manda il report entro un giorno lavorativo';
+var CONFERMA='Fatto: il riepilogo con i tuoi numeri sta arrivando alla tua email. Una persona di Ricavia lo riceve in copia e ti ricontatta per il business plan';
 function zi(n){for(var i=0;i<Z.length;i++)if(Z[i].n===n)return i;return -1}
 var S={zi:Math.max(0,zi('Esquilino · Termini')),tipo:'Hotel',modo:'compra',bud:5000000,cam:20,mq:IP.mq,lav:IP.lav,pos:1,tar:null,occ:IP.occ,dir:IP.dir,com:IP.com,cop:IP.cop,prezzo:null,ann:null},step=0;
 function vai(el){if(!el)return;if(MP){var y=el.getBoundingClientRect().top+scrollY-90;if(window.__lenis)window.__lenis.scrollTo(y);else scrollTo({top:y,behavior:RM?'auto':'smooth'})}
