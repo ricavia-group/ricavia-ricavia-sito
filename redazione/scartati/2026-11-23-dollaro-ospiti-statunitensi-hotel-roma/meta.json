@@ -1,0 +1,224 @@
+{
+  "titolo": "Euro a 1,0990 dollari per la Banca d'Italia: gli ospiti statunitensi hanno già lo sconto",
+  "tesi": "Il dollaro si è rafforzato sull'euro (1,0990 dollari per euro il 20 novembre 2026 contro 1,1514 un anno prima, cambi Banca d'Italia): la stessa tariffa in euro costa circa il 4,5% in meno a un ospite statunitense proprio mentre gli statunitensi, il mercato con la spesa per notte più alta tra i primi otto in Italia (178,1 euro nel 2025) e il primo per i pernottamenti culturali a Roma (CNR su dati Banca d'Italia), prenotano con mesi di anticipo le notti da marzo a maggio 2027; per il tuo hotel il cambio funziona come uno sconto già concesso all'ospite, quindi non è un motivo per abbassare le tariffe in euro (si sommerebbe al cambio) né per alzarle (l'ADR non cambia), ma per leggere ora il pick-up statunitense di primavera per settimana contro il 2026 (non contro il 2025 del Giubileo), controllare il prezzo che l'ospite vede in dollari sul sito diretto e sulle OTAs e togliere le regole che bloccano i soggiorni lunghi a cavallo di Pasqua",
+  "tema": "dollaro-forte-ospiti-statunitensi-primavera-2027",
+  "categoria": "macro",
+  "fonti": [
+    {
+      "titolo": "Cambi di riferimento del 20 novembre 2026",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/compiti/operazioni-cambi/cambio/cambi_rif_20261120",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Cambi di riferimento del 20 novembre 2025",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/compiti/operazioni-cambi/cambio/cambi_rif_20251120",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Euro/dollaro a 1,10, faro sulla Fed",
+      "editore": "Milano Finanza",
+      "url": "https://www.milanofinanza.it/news/euro-dollaro-a-1-10-faro-sulla-fed-202611170754382051",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Euro/dollaro ad un passo da 1,0950",
+      "editore": "Milano Finanza",
+      "url": "https://www.milanofinanza.it/news/euro-dollaro-ad-un-passo-da-1-0950-202611181904574309",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Indagine sul turismo internazionale, statistiche 2025",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/pubblicazioni/indagine-turismo-internazionale/2026-indagine-turismo-internazionale/statistiche_ITI_26062026.pdf",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "XXVII Rapporto sul Turismo Italiano 2024-2025",
+      "editore": "CNR Edizioni (CNR-IRISS)",
+      "url": "https://www.cnr.it/sites/default/files/public/media/attivita/editoria/CNR_XXVII_Rapporto%20sul%20Turismo%20Italiano%202024-2025%20web.pdf",
+      "data": "2026-11-23"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Fatto recente (cambio sotto 1,10 dal 17-18 novembre, cambio di riferimento del 20 novembre) con fonte primaria Banca d'Italia, su un mercato chiave per Roma documentato da Banca d'Italia e CNR; guarda avanti su una finestra precisa (notti da marzo a maggio 2027) con azioni sui dati di ogni hotel",
+      "correzioni": [],
+      "segnalazioni": [
+        "Rischio fotocopia da valutare: il 9 novembre è uscito l'articolo sulla sterlina e gli ospiti britannici (14 giorni fa esatti), con la stessa idea di fondo (il cambio non sposta l'ADR) e due azioni simili (pick-up per mercato, prezzo in valuta sui canali). Le differenze: mercato diverso (Stati Uniti, primo mercato culturale di Roma), finestra diversa (marzo-maggio 2027 e Pasqua, non gennaio-marzo), base 2025 alterata dal Giubileo con gli statunitensi primo mercato dei viaggiatori giubilari, terza azione nuova sui soggiorni lunghi. Il SEO director e il capo redattore valutino se basta",
+        "Il calo del 4,5% è un mio calcolo sui due cambi di riferimento Banca d'Italia (1,0990/1,1514 − 1 = −4,55%); l'esempio dei 200 euro è dichiarato nel testo come calcolo di esempio, non come prezzo di mercato",
+        "I dati Banca d'Italia sulla spesa (6,6 miliardi, 11,6%, 178,1 euro per notte) sono nazionali, non di Roma; il dato su Roma (primo mercato culturale) viene dal CNR, livello 3, su dati Banca d'Italia 2024, ed è attribuito così nel testo",
+        "Nessuna fonte letta oggi misura l'effetto del cambio sulle prenotazioni statunitensi verso Roma: per questo il pick-up è ↑ bassa e il testo resta condizionato ('se il cambio si mantiene su questi livelli'). Federalberghi aveva segnalato ad aprile 2026 un rallentamento delle prenotazioni statunitensi per il conflitto, ma la pagina AGI non si è aperta (403) e non l'ho usato",
+        "Il livello del 18 novembre (area 1,0955) e la lettura sulla Fed vengono ciascuno da una sola testata (Milano Finanza): sono fatti di contorno, attribuiti; la tesi regge sui cambi Banca d'Italia",
+        "La frase 'il lungo raggio prenota con più anticipo e soggiorna più notti' viene da un articolo storico di Ricavia (Voli), non da una fonte esterna letta oggi",
+        "Il ritorno dei voli Delta a marzo 2027 è citato tramite il collegamento interno all'articolo del 7 novembre, senza rileggere oggi la fonte Delta",
+        "Antitrust: il testo dice esplicitamente che il cambio non giustifica né un taglio né un aumento e rimanda ai dati del singolo hotel; nessun livello di prezzo indicato",
+        "Paragrafo Ricavia: voce 4.1 n. 5 (mix dei canali e parità), non usata nelle ultime settimane per quanto vedo; ho evitato la n. 2 (pick-up a 90 giorni) e la n. 8 (traffico aereo), usate il 13, il 18 e il 21 novembre",
+        "Corpo di circa 960 parole"
+      ],
+      "ruolo_ricavia": "Ricavia lavora sul mix dei canali e sulla parità tra sito e OTA: con un cambio che si muove controlla anche il prezzo che l'ospite statunitense vede nella sua valuta sul sito diretto e sulle OTA prima di toccare una tariffa"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge (cambio Banca d'Italia verificato: 1,0990 contro 1,1514, −4,55%; il cambio sposta il prezzo in dollari, non la tariffa in euro né l'ADR) e le azioni sono per il singolo hotel, senza livelli di prezzo; ho corretto il meccanismo dell'azione sui soggiorni lunghi e una motivazione imprecisa dell'ADR",
+      "correzioni": [
+        "Cosa fare adesso, azione 3: 'chiusure all'arrivo, soggiorni minimi del ponte o tariffe valide solo per una o due notti' diventa 'chiusure all'arrivo o alla partenza, durate massime del soggiorno o tariffe valide solo per una o due notti': un soggiorno minimo non esclude un soggiorno di quattro o cinque notti, lo escludono durate massime e chiusure alla partenza",
+        "Impatto sugli indicatori, ADR: 'l'ADR cambia solo se il tuo hotel cambia le tariffe' diventa 'da solo non sposta l'ADR': l'ADR cambia anche con il mix di camere, segmenti e canali",
+        "Impatto sugli indicatori, mix di segmento: aggiunto 'da monitorare' accanto al '?' (manuale, sezione 5)",
+        "Tesi in meta.json confermata senza modifiche"
+      ],
+      "segnalazioni": [
+        "Rischio fotocopia nelle mie sezioni, da valutare con il SEO director: l'azione 1 (pick-up per provenienza confrontato per settimana per lo spostamento di Pasqua, 2026 contro 2027) è quasi uguale all'azione 2 del 7 novembre e all'azione 1 del 21 novembre, e vicina all'azione 1 del 9 novembre; l'azione 2 (prezzo mostrato nella valuta dell'ospite sui canali) riprende l'azione 2 del 9 novembre; l'azione 3 è vicina all'azione 3 del 21 novembre (condizioni di vendita per il lungo raggio). Indicatori quasi identici al 9 novembre (ADR = per il cambio). Non ho trovato una terza azione alternativa davvero utile e diversa senza inventarla: se il capo redattore giudica la sovrapposizione eccessiva, la bozza non ha un meccanismo revenue nuovo rispetto a 7, 9 e 21 novembre",
+        "Elemento davvero nuovo rispetto al 9 novembre: il cambio qui agisce in una sola direzione (nessun freno sul reddito come per i britannici), quindi pick-up ↑ bassa invece di '?'; e la base 2025 alterata dal Giubileo per gli statunitensi",
+        "Il vantaggio del cambio vale per tutte le destinazioni dell'area euro, non solo per Roma (lo diceva l'articolo del 9 novembre): il corpo non lo dice; è la ragione per cui ho lasciato l'intensità del pick-up bassa. Il capo redattore valuti se aggiungere una frase",
+        "Corpo, fuori dal mio ambito: 'Le notti di primavera ... si vendono in questi mesi agli ospiti statunitensi' usa il si impersonale; 'gonfiata dal Giubileo' (azione 1, lasciata) è un po' colloquiale",
+        "Il lead time lungo e i soggiorni più lunghi del lungo raggio vengono dall'articolo storico Voli, non da una fonte esterna letta oggi; nessuna fonte misura l'effetto del cambio sulle prenotazioni statunitensi verso Roma",
+        "Verificati sulla fonte primaria i cambi di riferimento Banca d'Italia del 20 novembre 2026 (1,0990) e 2025 (1,1514); calcolo −4,55% e esempio 200 euro (230,28 e 219,80 dollari) corretti; Pasqua 28 marzo 2027 e 5 aprile 2026 corrette"
+      ],
+      "ruolo_ricavia": "Quando un cambio rende Roma più economica per un mercato, Ricavia non tocca la tariffa in euro: legge ogni settimana il pick-up di quel mercato per le date coinvolte e controlla sui canali il prezzo che l'ospite vede nella sua valuta, prima di qualsiasi decisione sulle tariffe"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "VETO",
+      "motivo": "Tema già trattato negli ultimi 14 giorni senza un fatto che cambia la tesi: il 9 novembre (14 giorni fa, dentro la finestra) l'articolo sulla sterlina ha pubblicato la stessa tesi (il cambio rende Roma più economica a un mercato straniero ma non sposta l'ADR; pick-up separato per mercato; prezzo nella valuta dell'ospite sui canali) e citava già il dollaro (da 1,1491 a 1,1165, circa il 3% in meno); il 7 novembre l'articolo sulle rotte ha già chiesto di leggere ogni settimana il pick-up statunitense di marzo e aprile 2027 confrontato per settimana rispetto a Pasqua. Il fatto nuovo (euro a 1,0990, circa il 4,5% in meno in un anno) rafforza un numero, non cambia la tesi né le azioni",
+      "correzioni": [
+        "slug: dollaro-ospiti-statunitensi-hotel-roma (5 parole, senza la stagione, con hotel per l'intento dell'albergatore); la cartella di lavoro resta 1-dollaro-ospiti-statunitensi-primavera",
+        "categoria: confermata macro (la causa è il cambio)",
+        "title_seo: 'Dollaro forte, ospiti statunitensi e hotel a Roma · Ricavia' (59 caratteri, contati), unico tra seo.json e journal/",
+        "description: 155 caratteri contati, senza cifre, senza punto finale; formulata in modo diverso da quella della sterlina, che iniziava con lo stesso schema 'perché il cambio non sposta l'ADR'",
+        "related_intro e related: l'articolo sulla sterlina (stesso meccanismo del cambio) e /indicatori/ (ADR al centro della tesi); escluso /journal/rotte-fiumicino-nord-america-hotel/, già linkato nel corpo",
+        "keyword: principale 'dollaro ospiti statunitensi Roma', 4 secondarie",
+        "Apertura, prima frase: 'ospiti americani' diventa 'ospiti statunitensi', per avere la keyword principale nella stessa frase (fatti invariati)",
+        "Primo h3: 'Il cambio: 1,0990 dollari per un euro' diventa 'Euro a 1,0990 dollari: Roma costa meno agli ospiti statunitensi' (keyword in un h3; cambio e fonte invariati)",
+        "Collegamenti interni nel corpo: 1 naturale (rotte dal Nord America) più la chiusura verso /revenue-management/, che non si conta: nessuna modifica"
+      ],
+      "segnalazioni": [
+        "VETO per tema già trattato: se il capo redattore lo accoglie, motivo 'Tema già trattato', bloccato_fino 2026-12-07. Confronto: azione 1 (pick-up statunitense di primavera per settimana, Pasqua 28 marzo contro 5 aprile) = azione 2 del 7 novembre e azione 1 del 21 novembre; azione 2 (prezzo in valuta sui canali) = azione 2 del 9 novembre; azione 3 (regole che bloccano i soggiorni lunghi) vicina all'azione 3 del 21 novembre; indicatori come il 9 novembre (ADR =). Lo conferma anche il revenue manager, che non trova un meccanismo revenue nuovo rispetto al 7, al 9 e al 21 novembre",
+        "Cosa renderebbe il tema nuovo: un dato con fonte sulle prenotazioni o sugli arrivi statunitensi verso Roma per la primavera 2027 (per esempio Federalberghi, ENIT, Aeroporti di Roma), che oggi nessuna fonte letta fornisce",
+        "Anti-obiettivo 2 (fotocopia) anche nel titolo, fuori dal mio ambito: 'Dollaro forte: Roma costa meno agli americani, ma...' ricalca 'Sterlina forte: Roma costa meno ai britannici, ma il cambio non sposta l'ADR' del 9 novembre; al virality director",
+        "Fuori ambito: il corpo non dice che il vantaggio del cambio vale per tutte le città dell'area euro (lo diceva l'articolo del 9 novembre); 'si vendono' (si impersonale) nel paragrafo sui voli Delta; nell'apertura 'statunitensi' compare ora due volte in due frasi (ospiti e viaggiatori), da alleggerire se il capo redattore lo ritiene utile",
+        "Lo slug è diverso dal nome della cartella: la cartella non è stata rinominata"
+      ],
+      "ruolo_ricavia": "Per un albergatore che cerca come leggere il cambio nelle proprie prenotazioni, il passo successivo naturale è la pagina /revenue-management/, dove Ricavia descrive il controllo del mix dei canali e della parità: il collegamento di chiusura è già quello giusto"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è qualcosa da raccontare che il 9 novembre non diceva: il cambio funziona come uno sconto già concesso al mercato con la spesa per notte più alta, proprio mentre prenota la primavera 2027, con il 2025 del Giubileo come base da escludere; ho tolto il titolo fotocopia della sterlina e una citazione che poteva leggersi come invito a tenere le tariffe",
+      "correzioni": [
+        "titolo: 'Dollaro forte: Roma costa meno agli americani, ma lo sconto lo fa già il cambio' (fotocopia di 'Sterlina forte: Roma costa meno ai britannici, ma...' del 9 novembre, e 'americani' contro 'statunitensi' del corpo) diventa 'Euro a 1,0990 dollari per la Banca d'Italia: gli ospiti statunitensi hanno già lo sconto' (88 caratteri, tipo dato con fonte nominata nel titolo; l'ultimo titolo uscito, del 21 novembre, è di tipo conseguenza)",
+        "sottotitolo: scritto (mancava), due frasi che annunciano solo ciò che il corpo contiene: cambio e tariffa in euro, pick-up statunitense, prezzo mostrato sui canali, regole sui soggiorni lunghi",
+        "alternative_titolo: tre tagli diversi, domanda (81 caratteri), contrasto 2026 contro Giubileo (87), conseguenza sui tempi di prenotazione (84)",
+        "mood: serio",
+        "blockquote: 'Il cambio fa già lo sconto all'ospite americano. Il tuo hotel non deve fargliene un secondo' diventa 'Un dollaro più forte cambia il prezzo che l'ospite vede, non il valore della tua notte': la frase originale prescriveva di non scontare e, letta da molti hotel della stessa zona, poteva sembrare un invito a tenere le tariffe (9 ter, punto 1); usava 'americano' contro 'statunitense'; la nuova è un contrasto senza numeri né nomi, chiude il paragrafo sul prezzo percepito e non riprende l'attacco della citazione del 9 novembre ('Il cambio decide quanto costa Roma in sterline')"
+      ],
+      "segnalazioni": [
+        "Il mio esito giudica solo il racconto: restano al capo redattore il veto del SEO director (tema già trattato il 9 novembre) e il rischio fotocopia delle azioni segnalato dal revenue manager. Il titolo nuovo cambia taglio, ma non risolve la sovrapposizione di tesi e azioni",
+        "Il titolo e il primo h3 (correzione SEO) cominciano entrambi con 'Euro a 1,0990 dollari': ripetizione a una riga di distanza. Non tocco l'h3 (ambito SEO); se il capo redattore preferisce, l'h3 può tornare a 'Il cambio: 1,0990 dollari per un euro' con la keyword spostata, oppure si usa la prima alternativa come titolo",
+        "Fuori ambito, corpo: 'gli ospiti americani' nel paragrafo 'Cosa cambia per le tue tariffe' (il resto dell'articolo, titolo e citazione dicono 'statunitensi'); 'si vendono' (si impersonale) nel paragrafo sui voli Delta; 'gonfiata dal Giubileo' nell'azione 1",
+        "Fuori ambito, corpo: 'Abbassare la tariffa per attirare gli ospiti americani vorrebbe dire aggiungere il tuo sconto a quello del cambio' descrive il meccanismo; il capo redattore verifichi che il paragrafo resti descrittivo e non prescrittivo (9 ter, punto 1)",
+        "Il corpo non dice che lo sconto del cambio vale per tutte le destinazioni dell'area euro: il titolo non promette un vantaggio di Roma sulle altre città, quindi resta onesto; una frase nel corpo lo renderebbe più preciso (già segnalato da revenue manager e SEO director)",
+        "Titolo-hook e title_seo ('Dollaro forte, ospiti statunitensi e hotel a Roma') descrivono lo stesso articolo: nessun allineamento necessario"
+      ],
+      "ruolo_ricavia": "Per il racconto la frase Ricavia più forte è quella che separa prezzo percepito e tariffa: Ricavia controlla il prezzo che l'ospite statunitense vede in dollari su sito diretto e OTA prima di toccare la tariffa in euro"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock (foto vera, gratuita): una banconota da un dollaro piegata su ardesia scura racconta la valuta dell'ospite statunitense in modo diretto e sobrio; la libreria non ha nulla su valute o cambi",
+      "correzioni": [
+        "immagine: fonte stock, id 10419639, scheda compilata, prompt nullo, testo_sovrapposto nullo",
+        "immagine.libreria: riserva assets/img/9dc9005512.webp (tetti di Roma con San Pietro, non usata negli ultimi 10 articoli; ultima volta come riserva l'8 novembre), con alt_libreria scritto guardando il file",
+        "alt: scritto sulla foto stock scelta"
+      ],
+      "segnalazioni": [
+        "Scartate le banconote con il ritratto (Franklin, Washington, Lincoln: persone reali riconoscibili), le monete statunitensi (ritratto sul fronte; il lato senza ritratto avrebbe ripetuto quasi uguale la copertina della sterlina del 9 novembre), il misto euro-dollaro (banconote in euro arancioni, fuori palette), le composizioni con passaporto e accessori da viaggio (cliché da stock) e i fiori di primavera a Roma (nessuna foto vera di Roma, e il tema del cambio non si capisce)",
+        "Scritte parziali leggibili sulla banconota (\"THE UN\", numero di serie, cifra 1): sono parte dell'oggetto e identificano la valuta, non sono marchi; stessa scelta motivata della moneta da una sterlina del 9 novembre. Se il capo redattore preferisce nessuna scritta, si passa alla riserva",
+        "Coerenza di serie con il 9 novembre (valuta vista da vicino su superficie scura): utile per riconoscere il filone dei cambi, ma rafforza la somiglianza con l'articolo sulla sterlina segnalata dal SEO director (veto) e dal revenue manager; decide il capo redattore",
+        "Ritaglio: originale 3:2 con poco margine sotto la banconota; all'editore: ritaglio 16:9 e social spostati verso l'alto, si accetta di perdere la punta del lembo piegato in basso",
+        "Libreria: ancora nessuna foto su valute, cambi o ospiti stranieri senza persone; soggetto da valutare per ampliare la libreria",
+        "Riserva: tetti in cotto caldi come accento, cielo azzurro dominante; tema romano generico, va bene come riserva ma non racconta il cambio"
+      ],
+      "ruolo_ricavia": "Ricavia guarda il prezzo con gli occhi dell'ospite: la copertina mostra la valuta in cui paga l'ospite statunitense, mentre la tariffa e l'ADR del tuo hotel restano in euro"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "NO-GO",
+      "motivo": "Tema già trattato",
+      "correzioni": [],
+      "segnalazioni": [
+        "Veto del SEO director accolto: è fondato e non contiene errori dimostrabili. Tesi e azioni sono già uscite negli ultimi 14 giorni: il 9 novembre (sterlina, 14 giorni fa, dentro la finestra) con lo stesso meccanismo (il cambio sposta il prezzo in valuta, non la tariffa in euro né l'ADR), gli stessi indicatori (ADR =) e l'azione sul prezzo nella valuta dell'ospite sui canali; quell'articolo citava già l'euro in calo sul dollaro (da 1,1491 a 1,1165). Il 21 novembre (2 giorni fa) con il pick-up di primavera per provenienza e per settimana, Pasqua 28 marzo contro 5 aprile, e con le condizioni di vendita per il lungo raggio; il 7 novembre (16 giorni fa) con il pick-up statunitense di marzo e aprile 2027 confrontato per settimana rispetto a Pasqua",
+        "Il fatto nuovo (euro a 1,0990, circa il 4,5% in meno in un anno) cambia l'intensità di un numero, non la tesi né le azioni; il revenue manager conferma che non esiste una terza azione diversa e utile. Lo stesso criterio delle lezioni del 19 e del 20 novembre: un fatto nuovo che non cambia la tesi non regge un articolo nuovo",
+        "Non è un problema di forma: un RIMANDA non può togliere la sovrapposizione, che riguarda tesi, indicatori e azioni. Titolo e citazione nuovi del virality director cambiano il taglio, non il contenuto",
+        "Dati e fonti a posto, verificati: cambi Banca d'Italia 1,0990 e 1,1514 (−4,55%), esempio 200 euro = 230,28 e 219,80 dollari, Tavola 3 e riquadro Giubileo della Banca d'Italia, p. 239 del rapporto CNR. Per questo la motivazione è il tema già trattato e non i dati",
+        "Registro: bloccato_fino 2026-12-07, fonte_nuova_richiesta false. Il tema torna proponibile prima solo con un fatto che cambia la tesi: un dato con fonte su prenotazioni o arrivi statunitensi verso Roma per la primavera 2027 (Federalberghi, ENIT, Aeroporti di Roma, ISTAT)",
+        "Forma, solo per l'archivio (non corretta, la bozza non passa): 'gli ospiti americani' nel paragrafo sulle tariffe contro 'statunitensi' nel resto; 'si vendono' (si impersonale) nel paragrafo sui voli Delta; 'gonfiata dal Giubileo' nell'azione 1; manca la frase sul vantaggio del cambio comune a tutte le città dell'area euro; titolo e primo h3 cominciano entrambi con 'Euro a 1,0990 dollari'",
+        "Sostituzione dalla riserva: candidato 2 (Thompson Rome) proponibile solo alle condizioni scritte in decisione-capo-redattore.md; candidato 3 (affitti brevi, CNR) non adatto"
+      ],
+      "ruolo_ricavia": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; il meccanismo è corretto, ma è lo stesso del 9 novembre)",
+        "[x] Ogni numero ha fonte o è dichiarato stima Ricavia come intervallo (cambi Banca d'Italia verificati; −4,55% e l'esempio dei 200 euro sono calcoli dichiarati e tornano)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta (fatti di contorno di Milano Finanza attribuiti; CNR attribuito su dati Banca d'Italia)",
+        "[x] Ruolo di Ricavia presente, al massimo 2 paragrafi, utile e non pubblicitario (paragrafo del giornalista, voce 4.1 n. 5; con NO-GO non scrivo il paragrafo finale)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (con correzioni di forma possibili: 'americani', 'si vendono', 'gonfiata'; non eseguite perché la bozza non passa)",
+        "[x] Tono coerente con la matrice del mood (macro: serio)",
+        "[ ] Non ripete un tema degli ultimi 14 giorni (VETO del SEO director fondato: tesi del 9 novembre, azioni del 7, del 9 e del 21 novembre)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali della sezione 9 ter (nessun livello di prezzo né invito ad allinearsi; il paragrafo sulle tariffe descrive il meccanismo e rimanda ai dati del singolo hotel)",
+        "[x] Da 700 a 1.100 parole, struttura completa (circa 950 parole, 5 h3, apertura, impatto, azioni, In breve)"
+      ]
+    }
+  ],
+  "slug": "dollaro-ospiti-statunitensi-hotel-roma",
+  "title_seo": "Dollaro forte, ospiti statunitensi e hotel a Roma · Ricavia",
+  "description": "Dollaro forte e ospiti statunitensi a Roma: cosa controllare nel pick-up di primavera, nel prezzo in dollari sui canali e nelle regole sui soggiorni lunghi",
+  "related_intro": "Per leggere la domanda straniera mercato per mercato, approfondisci",
+  "related": [
+    {
+      "label": "la sterlina e gli ospiti britannici nel pick-up",
+      "url": "/journal/sterlina-tassi-ospiti-britannici-roma/"
+    },
+    {
+      "label": "ADR, RevPAR, GOP e GOPPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "keyword": {
+    "principale": "dollaro ospiti statunitensi Roma",
+    "secondarie": [
+      "cambio euro dollaro hotel",
+      "mercato statunitense hotel Roma",
+      "prezzo in dollari sulle OTA",
+      "pick-up di primavera per provenienza"
+    ]
+  },
+  "sottotitolo": "Il cambio abbassa il prezzo in dollari delle notti da marzo a maggio 2027, non la tua tariffa in euro. Cosa controllare nel pick-up statunitense, nel prezzo mostrato sui canali e nelle regole sui soggiorni lunghi",
+  "alternative_titolo": [
+    "Dollaro forte: il tuo hotel deve cambiare le tariffe per gli ospiti statunitensi?",
+    "Ospiti statunitensi in primavera: confronta il pick-up con il 2026, non con il Giubileo",
+    "Il dollaro forte arriva mentre gli ospiti statunitensi prenotano la primavera a Roma"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Notizia di mercati (cambio euro-dollaro): la matrice ammette serio o provocatorio; il corpo ha un registro di servizio e il tema tocca le tariffe, dove un tono provocatorio potrebbe sembrare un invito a muovere i prezzi (regole-comuni 9 ter, punto 1)"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 10419639,
+      "titolo": "Dollar bill on a black surface",
+      "anteprima": "https://img.magnific.com/free-photo/dollar-bill-black-surface_181624-16837.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: una banconota da un dollaro piegata a metà, appoggiata su una superficie di ardesia grigio-blu scura; sopra si vede il fronte con il sigillo e la grande cifra 1, sotto il retro con la piramide; nessun ritratto (il volto sulla banconota non è inquadrato), nessuna persona, nessun marchio. Le scritte stampate sulla banconota sono piccole e parziali: scelta motivata, identificano la valuta dell'ospite di cui parla l'articolo\nInquadratura: dall'alto in leggera diagonale, banconota al centro, ampio spazio negativo scuro a destra e in alto; il formato originale è 3:2: per il 16:9 e per il social il ritaglio va tenuto alto (dal bordo superiore della banconota), così resta intera la parte superiore e si perde al massimo la punta del lembo piegato in basso\nLuce: naturale, morbida, laterale da sinistra, ombra leggera sotto la piega\nPalette: grigio-blu scuro dominante, vicino al blu #1F2DD0 desaturato, il bianco e il verde-grigio della carta come unico accento; niente rosso\nAtmosfera: seria e sobria, la valuta dell'ospite statunitense vista da vicino, ferma e senza enfasi; diversa dalle copertine recenti (sedute d'imbarco, personale ai piani, porto, camera, palco, cupola sul Foro)",
+    "libreria": "assets/img/9dc9005512.webp",
+    "alt_libreria": "Tetti e terrazze di Roma con piante in vaso, e in fondo la cupola di San Pietro sotto un cielo azzurro con nuvole bianche",
+    "testo_sovrapposto": null
+  },
+  "alt": "Banconota da un dollaro piegata a metà su una superficie di ardesia grigio-blu scura"
+}

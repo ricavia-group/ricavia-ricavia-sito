@@ -310,5 +310,29 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-23",
+    "slug": "dollaro-ospiti-statunitensi-hotel-roma",
+    "tema": "dollaro-forte-ospiti-statunitensi-primavera-2027",
+    "keyword": "dollaro ospiti statunitensi Roma",
+    "categoria": "macro",
+    "esito": "NO-GO",
+    "motivo": "Tema già trattato",
+    "bloccato_fino": "2026-12-07",
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-23",
+    "slug": "nuovo-hotel-lusso-roma-competitive-set",
+    "tema": "apertura-thompson-rome-competitive-set-centro-storico",
+    "keyword": "nuovo hotel competitive set",
+    "categoria": "mercato",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
