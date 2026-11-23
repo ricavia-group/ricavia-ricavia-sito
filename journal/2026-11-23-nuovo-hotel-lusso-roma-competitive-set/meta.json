@@ -1,0 +1,240 @@
+{
+  "titolo": "Thompson Rome a Botteghe Oscure: per il tuo hotel cambia più il confronto che la domanda",
+  "sottotitolo": "Il primo hotel Thompson di Hyatt in Italia ha aperto con 69 camere nuove vicino a piazza Venezia. Quando inserirlo nel tuo competitive set, perché tenerlo fuori dalle regole tariffarie automatiche fino a fine febbraio e come confrontarlo per tipologia di camera e per notte",
+  "alternative_titolo": [
+    "Nuovo hotel di lusso nel centro storico: lo inserisci subito nel tuo competitive set?",
+    "Un hotel appena aperto nella media del competitive set può spostare la tua tariffa",
+    "Thompson Rome ha 19 suite su 69 camere, secondo Hyatt: confronta tipologia con tipologia"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Nuova apertura alberghiera e competitive set: notizia di mercato (serio o provocatorio). Serio perché il corpo ha un registro di servizio, l'articolo nomina un hotel di una catena (regola 9: nessun giudizio, nessuna ironia) e un taglio provocatorio sulle tariffe potrebbe sembrare un invito ad allinearsi (9 ter, punto 1)"
+  },
+  "tesi": "Thompson Rome (Hyatt) ha aperto il 27 ottobre in via delle Botteghe Oscure con 69 camere e suite, di cui 19 suite, in un edificio che era la sede del PCI e poi uffici, mai un albergo: sono camere nuove di fascia alta nel centro storico, ma l'effetto sulla domanda della zona è basso, perché nel 2026 gli hotel di categoria superiore di Roma hanno venduto più notti (Banca d'Italia); per un hotel di fascia alta vicino a piazza Venezia il cambiamento è nel confronto delle tariffe da dicembre a marzo, quando le tariffe di un hotel in fase di lancio possono spostare la media del competitive set e le regole tariffarie collegate (verso il basso con una tariffa d'ingresso, verso l'alto se il nuovo hotel è di categoria superiore) senza un cambiamento della domanda del tuo hotel: il tuo hotel decide con criteri scritti se il nuovo hotel entra nel set, lo osserva a parte fino a fine febbraio fuori dalle regole automatiche e lo confronta per tipologia di camera e per notte, invece di inseguire tariffe di lancio con ribassi",
+  "tema": "apertura-thompson-rome-competitive-set-centro-storico",
+  "categoria": "mercato",
+  "fonti": [
+    {
+      "titolo": "Thompson Rome Opens, Marking the Thompson Hotels Brand's Debut in Italy",
+      "editore": "Hyatt Hotels Corporation",
+      "url": "https://newsroom.hyatt.com/thompson-rome-oct-2026",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Botteghe Oscure: the former headquarters of the Italian Communist Party is being turned into a luxury hotel",
+      "editore": "Il Sole 24 Ore",
+      "url": "https://en.ilsole24ore.com/art/botteghe-oscure-l-ex-sede-pci-diventa-hotel-lusso-AJtBKPAC",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Botteghe Oscure, al posto della sede del PCI un hotel di lusso",
+      "editore": "Open",
+      "url": "https://www.open.online/2025/08/09/botteghe-oscure-sede-pci-hotel-lusso-cimeli-storici/",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Botteghe Oscure si arrende al capitalismo: l'ex sede del PCI diventa un cinque stelle americano",
+      "editore": "Financialounge",
+      "url": "https://www.financialounge.com/news/2026/11/03/botteghe-oscure-il-cuore-del-comunismo-italiano-diventa-un-cinque-stelle-americano/",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Botteghe Oscure, ex quartier generale del PCI, oggi hotel di lusso",
+      "editore": "Affaritaliani",
+      "url": "https://www.affaritaliani.it/roma/botteghe-oscure-ex-quartier-generale-del-pci-oggi-hotel-di-lusso-e-il-cinema-maestoso-si-prepara-a-rinascere-dopo-il-degrado.html",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "Hotel a Botteghe Oscure: cosa c'è dietro il 5 stelle nell'ex Bottegone",
+      "editore": "Soldionline",
+      "url": "https://www.soldionline.it/notizie/economia-politica/hotel-a-botteghe-oscure-cosa-ce-dietro-il-5-stelle-nellex-bottegone",
+      "data": "2026-11-23"
+    },
+    {
+      "titolo": "L'economia del Lazio. Aggiornamento congiunturale",
+      "editore": "Banca d'Italia",
+      "url": "https://www.bancaditalia.it/pubblicazioni/economie-regionali/2026/2026-0033/2633-lazio.pdf?language_id=1",
+      "data": "2026-11-23"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Bozza sostitutiva dal primo candidato della riserva dopo il NO-GO della bozza 1: tutte le condizioni del capo redattore sono verificate oggi (comunicato Hyatt letto sulla newsroom, uso precedente dell'edificio su due testate indipendenti, tesi limitata agli hotel di fascia alta del centro, nessun prezzo di lancio, azione sul competitive set diversa dal 7 novembre)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Forza 2, come in lista candidati: un solo hotel di 69 camere, aperto il 27 ottobre (27 giorni fa, oltre i 7 giorni; l'inaugurazione ufficiale del 19 novembre è di 4 giorni fa). Il capo redattore il 9 novembre aveva scritto che Thompson Rome da solo non regge un articolo sulla domanda: per questo la tesi non parla di domanda (effetto basso, dichiarato) ma del meccanismo del confronto tariffario. Se la war room giudica il meccanismo troppo sottile, è da NO-GO e oggi non esce nessun articolo",
+        "Fonte primaria: newsroom.hyatt.com/thompson-rome-oct-2026, 27 ottobre 2026, letta oggi. Hospitality Net non è più usata",
+        "Uso precedente dell'edificio (lezione del 9 novembre): sede del PCI dal 1946 (Il Sole 24 Ore, Affaritaliani), venduto nel 2000, poi uffici dell'ABI e usi commerciali (Open del 9 agosto 2025 e Financialounge del 3 novembre 2026, indipendenti); nessuna fonte indica un uso alberghiero. Per questo il testo dice 'camere nuove'",
+        "Numero di camere discordante: Hyatt 69 camere e suite di cui 19 suite (usato); Il Sole 24 Ore '69 più 20 suite'; Affaritaliani '69 e due suite'; Open 70 (progetto del 2025). 'Più di una camera su quattro è una suite' è un mio calcolo sulla fonte primaria: 19 / 69 = 27,5%",
+        "Categoria cinque stelle: non nel comunicato Hyatt; la riportano Affaritaliani, Soldionline, Open e Financialounge. Nel testo è attribuita alle testate",
+        "Fatti di contorno da una sola testata, attribuiti: inaugurazione del 19 novembre e 'cento posti di lavoro nuovi' (Soldionline, che riporta le parole dell'assessore Onorato); il secondo è scritto al condizionale",
+        "Prezzi di lancio: nessuna fonte primaria leggibile (hyatt.com in 403). L'articolo non riporta né stima tariffe di Thompson Rome; la tariffa d'ingresso è descritta come schema generale che Ricavia stessa indica nella pagina /nuova-apertura/ (ricavia.md 4.1 n. 16), con collegamento. Il capo redattore valuti se questa frase basta o se toglierla",
+        "Antitrust (9 ter, punto 1): nessun livello di prezzo, nessuna percentuale, nessun invito collettivo; tutte le azioni sono del singolo hotel sui propri dati; l'azione 2 chiede di non far pesare automaticamente il nuovo concorrente sulle regole tariffarie, non di allinearsi. Nessun giudizio sull'hotel, sul gruppo o sui proprietari; i proprietari dell'edificio non sono nominati",
+        "Sovrapposizioni controllate: 7 novembre (extralberghiero nel competitive set) azione diversa; 17 novembre (totale contributo compreso nel confronto con il set) diversa; 18 novembre (tariffe riservate fuori dai prezzi pubblici del set) diversa. La Banca d'Italia del 7 novembre è usata solo come contesto, con collegamento all'articolo",
+        "Il personale (cento posti di lavoro) tocca il tema del 19 novembre (alloggio del personale): qui è solo un paragrafo di contesto e una voce '?' negli indicatori, senza azione",
+        "Collegamenti interni nel corpo: 2 (/journal/presenze-hotel-roma-extralberghiero/ e /nuova-apertura/), più /hotel-score/ nel paragrafo Ricavia. Paragrafo Ricavia: voce 4.1 n. 6 con parole e costruzione diverse dal 17 novembre (aggiunge recensioni e la lettura a parte delle prime settimane); la n. 1 è già uscita il 17 e il 21 novembre",
+        "Parole del corpo: circa 1.040, vicino al limite di 1.100",
+        "Mix: articolo unico della giornata; Roma sì; guarda avanti sulle notti da dicembre a marzo 2027 con azioni datate (osservazione fino a fine febbraio)",
+        "ISTAT, flussi turistici III trimestre 2026: alle 6.40 non pubblicati (feed ISTAT fermo al 20 novembre, URL del comunicato in 404). Dettaglio in note-giornalista.md"
+      ],
+      "ruolo_ricavia": "Quando nella zona apre un concorrente nuovo, Ricavia rifà il confronto con il competitive set su tariffe per notte, canali, recensioni e conto economico, e osserva a parte le prime settimane di vendita del nuovo hotel prima di farle pesare sulle decisioni tariffarie"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta e limitata con prudenza: effetto sulla domanda basso e dichiarato, meccanismo revenue reale (un hotel in fase di lancio dentro la media o la mediana di un competitive set di tre o quattro hotel sposta il riferimento delle regole tariffarie automatiche). Indicatori coerenti con il glossario, azioni concrete, eseguibili in pochi giorni, per il singolo hotel e diverse da quelle del 7, 17 e 18 novembre. Il meccanismo andava reso simmetrico: corretto",
+      "correzioni": [
+        "Tesi (meta.json): 'possono spostare verso il basso la media del competitive set' diventa 'possono spostare la media del competitive set … (verso il basso con una tariffa d'ingresso, verso l'alto se il nuovo hotel è di categoria superiore) senza un cambiamento della domanda del tuo hotel'. Motivo: nessuna fonte indica che Thompson Rome venda sotto il centro di fascia alta (le testate riportano prezzi alti, non usati); per un quattro stelle che lo inserisce nel set il rischio più probabile è un riferimento spinto verso l'alto. Il meccanismo è lo stesso in entrambe le direzioni: una tariffa decisa da una regola e non dalla domanda",
+        "Corpo, paragrafo 'Il rischio, per il tuo hotel, è meccanico' (frase sul meccanismo della tesi): 'può spostare verso il basso il riferimento … Il risultato è una tariffa più bassa decisa da una regola' diventa 'può spostare il riferimento …: verso il basso se parte con una tariffa d'ingresso, verso l'alto se è di una categoria superiore alla tua. Il risultato è una tariffa decisa da una regola'",
+        "Impatto sugli indicatori, voce ADR: aggiunta la direzione verso l'alto ('o verso l'alto se è di una categoria superiore alla tua'), coerente con il '?'",
+        "Cosa fare adesso, azione 2: aggiunta una frase che chiude l'osservazione ('A fine febbraio decidi con i criteri del punto 1 se il nuovo hotel entra nella media'), per legare la data di fine febbraio a una decisione invece di lasciarla aperta"
+      ],
+      "segnalazioni": [
+        "Fatti verificati oggi: comunicato Hyatt del 27 ottobre (69 camere e suite, di cui 19 suite, via delle Botteghe Oscure; nessuna tariffa, nessuna categoria in stelle, nessun uso precedente dell'edificio) e PDF Banca d'Italia Lazio n. 33 ('l'aumento dei pernottamenti negli hotel, in particolare quelli di categoria superiore, non ha compensato la flessione registrata presso le strutture extra-alberghiere'). 19 su 69 = 27,5%: 'più di una camera su quattro' torna",
+        "Forza del tema: il meccanismo regge un articolo di servizio, ma solo perché la tesi non parla di domanda. L'effetto pratico riguarda pochi hotel (fascia alta vicino a piazza Venezia con regole tariffarie legate alla media del set). Non do il veto: la scelta tra GO e nessun articolo oggi è del capo redattore",
+        "La frase sulla tariffa d'ingresso ('una nuova apertura parte spesso da una tariffa d'ingresso') si appoggia alla pagina /nuova-apertura/, che descrive l'approccio di Ricavia per le aperture indipendenti, non la prassi di un marchio di catena di lusso. Dopo la mia correzione il meccanismo regge anche senza: il capo redattore valuti se attenuarla ('può partire da una tariffa d'ingresso')",
+        "Voce Occupazione: il dato Banca d'Italia riguarda la Città metropolitana e il primo semestre, non il centro storico né l'inverno; è usato come motivazione dell'intensità bassa, non come previsione. Lettura accettabile, ma da non rafforzare",
+        "Voce Costi operativi (personale): regge su una sola testata ('cento posti di lavoro', al condizionale) e l'hotel è già aperto, quindi le assunzioni di avvio sono in buona parte fatte: l'effetto riguarda il ricambio e la tenuta del personale qualificato. Senza azione dedicata, il paragrafo del personale e la voce si possono togliere senza toccare la tesi se il capo redattore vuole stare lontano dal tema del 19 novembre",
+        "Nota tecnica sull'azione 3: gli strumenti di confronto tariffario rilevano di solito la tariffa pubblica più bassa per notte, cioè la tipologia d'ingresso; il confronto per tipologia richiesto dall'azione è corretto ma chiede una rilevazione manuale o uno strumento che legga più tipologie. Non è un errore, è un limite pratico per un hotel indipendente",
+        "Antitrust (9 ter, punto 1): nessun livello di prezzo, nessuna percentuale, nessun invito collettivo; osservare le tariffe pubbliche di un concorrente è ammesso. Le azioni sono tutte del singolo hotel sui propri dati",
+        "Parole del corpo dopo le mie modifiche: circa 1.070 (conteggio grezzo dei tag rimossi), sotto il limite di 1.100"
+      ],
+      "ruolo_ricavia": "Quando apre un concorrente nuovo nella zona, Ricavia separa il suo periodo di lancio dal riferimento che guida le tariffe: lo osserva per tipologia e per notte accanto al competitive set e lo inserisce nel gruppo di confronto solo quando le sue tariffe si stabilizzano e il prodotto è davvero comparabile"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema non duplicato: nessun articolo pubblicato tratta nuove aperture o l'ingresso di un nuovo hotel nel competitive set; la bozza scartata del 9 novembre (NO-GO per dati non verificabili, fonte_nuova_richiesta true, non bloccata) aveva un'altra tesi (offerta in più tra Termini e centro e pick-up per segmento) e un'altra keyword, e il fatto nuovo richiesto c'è (comunicato di apertura sulla newsroom Hyatt, inaugurazione del 19 novembre, nessuna dipendenza dalla data del Regency)",
+      "correzioni": [
+        "slug: nuovo-hotel-lusso-roma-competitive-set (6 parole, senza date, unico; 'roma' al posto di 'centro' per l'aggancio reale e la ricerca). Diverso dal nome della cartella 2-nuovo-hotel-lusso-centro-competitive-set, che resta com'è: l'editore usi lo slug di meta.json",
+        "categoria: mercato (confermata: la causa è un'offerta nuova sul mercato del centro storico)",
+        "title_seo: 'Nuovo hotel di lusso a Roma e competitive set · Ricavia' (55 caratteri contati con script), keyword all'inizio, diverso da ogni title di tools/seo.json e di journal/",
+        "description: 158 caratteri contati con script, senza punto finale, senza cifre e senza marchio; dice cosa trova il lettore (criteri per il competitive set, lancio fuori dalle regole tariffarie, confronto)",
+        "keyword: principale 'nuovo hotel competitive set' (intento dell'albergatore; 'hotel di lusso centro storico Roma' porta il turista), 4 secondarie",
+        "Apertura, prima frase: 'Nel centro storico di Roma c'è un hotel di lusso in più' diventa 'Nel centro storico di Roma c'è un nuovo hotel di lusso, che può entrare nel tuo competitive set', per inserire la keyword; fatti, numeri e fonti invariati",
+        "Secondo h3: 'Centro storico di fascia alta: cosa cambia e cosa no' diventa 'Un nuovo hotel nel competitive set del centro: cosa cambia e cosa no', per inserire la keyword",
+        "related_intro e related: articolo storico sui tre errori di prezzo (copiare l'hotel vicino invece di un gruppo di comparabili) e /revenue-management/; nessuno ripete i collegamenti del corpo",
+        "Collegamenti interni del corpo verificati: 2 naturali (/journal/presenze-hotel-roma-extralberghiero/, /nuova-apertura/) più /hotel-score/ nel paragrafo Ricavia; tutti esistenti su main, nessuno verso la bozza 1 né sotto /osservatorio/"
+      ],
+      "segnalazioni": [
+        "Confronto con la bozza scartata del 9 novembre (nuove-aperture-hotel-roma-competitive-set, 14 giorni fa): stessa notizia di partenza (Thompson Rome) e un'azione vicina (decidere con un criterio se il nuovo hotel entra nel competitive set, non inseguire tariffe di lancio con ribassi); tesi diversa (lì offerta in più nella zona di Termini e pick-up per segmento, qui il lancio che sposta il riferimento delle regole tariffarie e il confronto per tipologia). Quella bozza non è pubblicata, quindi non c'è cannibalizzazione in ricerca. Il 9 novembre il capo redattore aveva scritto che Thompson Rome da solo non regge un articolo: la valutazione della forza resta sua",
+        "Confronto con i pubblicati: il 7 novembre (presenze) allargava il competitive set all'extralberghiero, keyword 'presenze hotel Roma'; nessun title o description simile. title_seo e description confrontati con tools/seo.json, con i 19 meta.json di journal/ e con la bozza 1 della giornata",
+        "Il titolo di lavoro (virality director) contiene '69 camere nuove' e 'piazza Venezia': nessun problema SEO, ma se il titolo resta con il marchio, la keyword del title_seo non lo ripete apposta",
+        "build e check_seo.py non eseguiti su questa bozza: i file restano nella cartella di lavoro fino all'editore"
+      ],
+      "ruolo_ricavia": "Per l'albergatore che cerca come trattare un nuovo concorrente nel competitive set il passo successivo naturale è l'Hotel Score, che mostra dove il suo hotel si colloca oggi nella zona, e poi il revenue management per il confronto settimanale per tipologia e per notte: la chiusura su /hotel-score/ è quella giusta"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è qualcosa da raccontare a un albergatore di fascia alta del centro: un hotel nuovo cambia più il confronto delle tariffe che la domanda; titolo, sottotitolo, alternative e mood compilati senza giudizi sull'hotel nominato",
+      "correzioni": [
+        "Titolo: \"Thompson Rome apre a piazza Venezia: 69 camere nuove nel competitive set del centro\" → \"Thompson Rome a Botteghe Oscure: per il tuo hotel cambia più il confronto che la domanda\" (88 caratteri, tipo contrasto). Il vecchio era cronaca, metteva l'hotel \"a piazza Venezia\" (è in via delle Botteghe Oscure, a pochi passi) e dava per certo l'ingresso nel tuo competitive set, che l'articolo invece lascia a una tua decisione con criteri scritti",
+        "Sottotitolo scritto (mancava): fatto in una frase, poi le tre azioni dell'articolo",
+        "Alternative scritte: domanda (85 caratteri), conseguenza (82), dato con fonte nel titolo, Hyatt (88)",
+        "Mood: serio",
+        "Frase citabile invariata: \"La tariffa di un hotel appena aperto racconta il suo lancio, non il tuo mercato\". Aforisma di contrasto, senza numeri né nomi, dopo il paragrafo sul rischio meccanico; non nomina Thompson Rome e non dice in che direzione si muovono le sue tariffe, quindi regge anche con il meccanismo reso simmetrico dal revenue manager"
+      ],
+      "segnalazioni": [
+        "Regola 9: nel titolo, nel sottotitolo e nelle alternative Thompson Rome compare solo con fatti della fonte primaria (nome, luogo, 69 camere, 19 suite); il meccanismo della tariffa di lancio è attribuito a \"un hotel appena aperto\", mai a Thompson Rome, perché nessuna fonte riporta le sue tariffe. Scartati titoli come \"Le tariffe di lancio di Thompson Rome...\" (fatto senza fonte, possibile lettura negativa)",
+        "Varietà: tipo contrasto; i titoli recenti con dato e fonte nel titolo sono già molti (7, 13, 18 novembre e la bozza 1 di oggi), per questo il dato è solo alternativa",
+        "Fuori ambito, al capo redattore: la frase \"una nuova apertura parte spesso da una tariffa d'ingresso\" nel paragrafo che nomina Thompson Rome può essere letta come riferita all'hotel nominato; \"può partire\" (già proposto dal revenue manager) riduce il rischio rispetto alla regola 9",
+        "Fuori ambito: il titolo-hook nomina il marchio, title_seo e description no; descrivono lo stesso articolo, quindi nessun allineamento necessario",
+        "La forza del tema (2) e il precedente del 9 novembre restano decisioni del capo redattore"
+      ],
+      "ruolo_ricavia": "Ricavia racconta al tuo hotel il nuovo concorrente con i tuoi dati: lo confronta tipologia per tipologia e notte per notte, e lo tiene fuori dal riferimento che guida le tue tariffe finché le sue tariffe descrivono un lancio"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock: largo di Torre Argentina, a pochi passi da via delle Botteghe Oscure, mostra la zona e i palazzi vicini senza mostrare l'hotel nominato, senza insegne, loghi o persone riconoscibili; palette azzurra, mood serio",
+      "correzioni": [
+        "immagine.fonte: stock, id 419368192 (foto vera, non generata, premium, 150 crediti, autore samael334); scheda, alt, libreria e alt_libreria compilati",
+        "Perché non la libreria: le foto di interni di lusso (lobby con banco in marmo, ristorante con vista su Roma) sembrerebbero l'hotel nominato e hanno persone riconoscibili; le altre foto libere da persone sono già usate negli ultimi 10 articoli o come riserva della bozza 1 di oggi",
+        "Perché premium: tra le gratuite pertinenti, il Vittoriano ha bandiere tricolori con il rosso in primo piano e controluce arancio; la vista dei Fori dal Vittoriano ripete la copertina del 13 novembre; il gabbiano sulla terrazza del Vittoriano porta un tono ironico che, accanto a un hotel nominato, può sembrare un commento (regola 9); i tetti al tramonto hanno una fascia arancio dominante",
+        "Riserva: assets/img/50ef15e328.webp (Colosseo, usata l'ultima volta il 7 novembre, fuori dagli ultimi 10 articoli); scartata 9dc9005512, già riserva della bozza 1 di oggi"
+      ],
+      "segnalazioni": [
+        "All'editore: l'anteprima è piccola; nel file intero controllare le scritte a livello strada (insegne dei negozi, iscrizione sulla facciata del palazzo chiaro al centro). Se un'insegna o un nome d'albergo si legge, ritagliare la fascia bassa o usare la riserva. Dall'anteprima l'edificio di via delle Botteghe Oscure non sembra in questa inquadratura (la cupola sullo sfondo indica che la foto guarda verso ovest, lato opposto alla via): se nel file intero compare, usare la riserva",
+        "Ritaglio: originale 3:2; per il 16:9 togliere soprattutto cielo in alto e una parte dei gradini in basso a destra, tenendo colonne e facciate al centro; il social 1200x630 resta nella stessa fascia",
+        "Nessuna nota AI da aggiungere: foto vera dell'archivio stock",
+        "Libreria: manca un esterno sobrio del centro storico (strade e palazzi, senza persone) da usare per articoli su offerta e concorrenza nel centro"
+      ],
+      "ruolo_ricavia": "Ricavia guarda il nuovo concorrente dentro la zona, accanto ai vicini con cui il tuo hotel si confronta ogni giorno: la copertina mostra il centro storico intorno a via delle Botteghe Oscure, non l'hotel nominato"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "Paragrafo 'Cambia di più il confronto': 'una nuova apertura parte spesso da una tariffa d'ingresso e la alza per gradi' diventa 'un hotel indipendente appena aperto può partire da una tariffa d'ingresso e alzarla per gradi', con la frase aggiunta 'Non è detto che un hotel con un marchio internazionale segua lo stesso schema'. Motivo: la frase, nel paragrafo che nomina Thompson Rome, poteva far credere una tariffa di lancio dell'hotel nominato che nessuna fonte riporta (regola 9); la pagina /nuova-apertura/ descrive lo schema di Ricavia per le aperture indipendenti. Nessun fatto nuovo, tesi invariata",
+        "Paragrafo 'Il rischio, per il tuo hotel, è meccanico': 'in Thompson Rome più di una camera su quattro è una suite' diventa 'delle 69 camere di Thompson Rome più di una su quattro è una suite' (forma; il calcolo 19 su 69 = 27,5% torna)",
+        "Tolto il paragrafo sul personale ('cento posti di lavoro nuovi', Soldionline) e la voce 'Costi operativi ? (personale)' in Impatto sugli indicatori: fatto di contorno su una sola testata, scritto al condizionale, senza azione, estraneo alla tesi e vicino al tema dell'articolo del 19 novembre (personale); il revenue manager lo indicava come eliminabile senza toccare la tesi. Soldionline resta nelle fonti per l'inaugurazione del 19 novembre",
+        "Paragrafo Ricavia finale scritto (1 paragrafo, 3 frasi, terza persona): voce 4.1 n. 6 (analisi confrontata con il competitive set) con parole e costruzione diverse dal 17 novembre e dagli esempi di ricavia.md; fusione delle frasi ruolo_ricavia di giornalista, revenue manager e virality director (ospiti, tipologie di camera e notti condivisi; tariffe di lancio fuori dal riferimento delle regole). Chiusura su /hotel-score/ come proposto dal SEO director, senza la formula 'il primo passo è l'Hotel Score' già usata il 13 e il 18 novembre",
+        "Corpo dopo le correzioni: circa 950 parole senza il paragrafo Ricavia, circa 1.050 con il paragrafo (conteggio grezzo, tag esclusi); 4 sezioni h3; 3 voci negli indicatori (occupazione ↓ e ADR ? danno RevPAR ?, coerente con il glossario)"
+      ],
+      "segnalazioni": [
+        "Condizioni della decisione di stamattina verificate tutte: comunicato Hyatt letto sulla newsroom (non su Hospitality Net); uso precedente dell'edificio su due testate indipendenti (Open e Financialounge), con Il Sole 24 Ore sulla sede del PCI, quindi 'camere nuove' regge (lezione del 9 novembre); tesi limitata alla fascia alta del centro, 69 camere dalla fonte primaria, pagina di Turismo Roma esclusa; nessun prezzo di Thompson Rome, nessun giudizio su hotel, gruppo o proprietari; azioni sul competitive set diverse dal 7, 17 e 18 novembre; paragrafo Ricavia sulla n. 6 con parole nuove",
+        "Forza del tema (2): GO perché la tesi non promette un effetto sulla domanda (dichiarato basso) ma un meccanismo concreto e verificabile da ogni hotel di fascia alta che lega le regole tariffarie alla media o alla mediana del competitive set, con tre azioni eseguibili sui propri dati. Il giudizio del 9 novembre ('Thompson Rome da solo non regge un articolo') riguardava un articolo sulla domanda: questa bozza non lo contraddice. Pubblico ristretto, ma l'articolo lo dichiara già nell'apertura",
+        "All'editore, da ricontrollare prima del merge: inaugurazione del 19 novembre su una sola testata (Soldionline), attribuita nel testo; categoria cinque stelle attribuita alle testate (non è nel comunicato Hyatt)",
+        "All'editore: lo slug è quello di meta.json (nuovo-hotel-lusso-roma-competitive-set), non il nome della cartella né slug_proposto; nella copertina stock controllare insegne leggibili e l'assenza dell'edificio di via delle Botteghe Oscure (segnalazioni dell'art director), altrimenti la riserva 50ef15e328",
+        "Registro: alla pubblicazione il tema delle aperture Hyatt passa da fonte_nuova_richiesta true a una voce GO; lo Hyatt Regency Rome Central (ex Radisson Es) resta non trattato e richiede ancora la fonte nuova sulla data di apertura",
+        "Mix della giornata: unico articolo; Roma sì; guarda avanti sì (notti da dicembre 2026 a marzo 2027, osservazione fino a fine febbraio)"
+      ],
+      "ruolo_ricavia": "Nel metodo di Ricavia il competitive set è il termine di paragone di ogni analisi su tariffe, calendario, canali, recensioni e conto economico, e comprende tre o quattro hotel comparabili al tuo. Quando nella zona apre un concorrente nuovo, questa analisi mostra se il nuovo hotel condivide davvero ospiti, tipologie di camera e notti con il tuo, prima che le sue tariffe di lancio entrino nel riferimento delle tue regole tariffarie. Prima di rivedere il tuo competitive set, l'Hotel Score assegna un voto da uno a dieci a prezzi, canali, reputazione e posizionamento del tuo hotel, partendo dai soli dati pubblici",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; meccanismo reso simmetrico; effetto sulla domanda dichiarato basso)",
+        "[x] Ogni numero ha fonte o è dichiarato stima Ricavia come intervallo (69 camere e 19 suite dal comunicato Hyatt; 'più di una su quattro' calcolo su fonte primaria; dato Banca d'Italia riletto sul PDF; 'cento posti di lavoro' tolto)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta (fonte primaria Hyatt e Banca d'Italia; uso precedente su due testate indipendenti; contorno su una testata, attribuito)",
+        "[x] Ruolo di Ricavia presente, al massimo 2 paragrafi, utile e non pubblicitario (1 paragrafo, voce 4.1 n. 6, collegamento unico a /hotel-score/)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (nessun punto finale, nessun verbo vietato, tu al lettore, OTA non presente, sigle con glossa)",
+        "[x] Tono coerente con la matrice del mood (mercato, serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; bozza del 9 novembre mai pubblicata e con tesi diversa; personale del 19 novembre tolto)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate (tariffa d'ingresso non più riferibile a Thompson Rome dopo la correzione)",
+        "[x] Rischi legali della sezione 9 ter (nessun livello di prezzo né invito collettivo; azioni del singolo hotel sui propri dati; osservare tariffe pubbliche è ammesso; nessun consiglio legale o fiscale; foto stock vera, nessuna nota AI)",
+        "[x] Da 700 a 1.100 parole, struttura completa (circa 950 parole senza paragrafo Ricavia, 4 h3, apertura, impatto, azioni, In breve)"
+      ]
+    }
+  ],
+  "slug": "nuovo-hotel-lusso-roma-competitive-set",
+  "title_seo": "Nuovo hotel di lusso a Roma e competitive set · Ricavia",
+  "description": "Un nuovo hotel di lusso nel centro storico di Roma: quando inserirlo nel tuo competitive set, perché tenerlo fuori dalle regole tariffarie e come confrontarlo",
+  "keyword": {
+    "principale": "nuovo hotel competitive set",
+    "secondarie": [
+      "nuovo hotel di lusso Roma",
+      "competitive set hotel centro storico Roma",
+      "tariffe di lancio nuovo hotel",
+      "confronto tariffe per tipologia di camera"
+    ]
+  },
+  "related_intro": "Per scegliere i concorrenti giusti con cui confrontare il tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "tre errori di prezzo da evitare",
+      "url": "/journal/tre-errori-prezzo-vediamo-settimana-strutture/"
+    },
+    {
+      "label": "il servizio di revenue management",
+      "url": "/revenue-management/"
+    }
+  ],
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 419368192,
+      "titolo": "Roman square largo di torre argentina in rome italy ancient ruins of four roman republican temples",
+      "anteprima": "https://img.magnific.com/premium-photo/roman-square-largo-di-torre-argentina-rome-italy-ancient-ruins-four-roman-republican-temples_166342-4223.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: largo di Torre Argentina, nel centro storico a pochi passi da via delle Botteghe Oscure: in primo piano le colonne e i basamenti dei templi romani, dietro una fila di palazzi del centro uno accanto all'altro, la cupola di una chiesa e i pini marittimi; nessun hotel riconoscibile, nessuna insegna, nessuna persona vicina. Racconta la zona e i vicini, non l'hotel nominato. Inquadratura: orizzontale, frontale, ampio cielo azzurro in alto, palazzi e colonne nella fascia centrale (ritaglio 16:9 e social sicuri). Luce: naturale di giorno, cielo limpido. Palette: azzurro del cielo dominante, pietra chiara e intonaci tenui, verde dei pini; il rosa e l'ocra delle facciate solo come accento. Mood serio: composizione statica, nessun dettaglio inatteso",
+    "libreria": "assets/img/50ef15e328.webp",
+    "alt_libreria": "Le arcate del Colosseo viste dal basso sotto un cielo azzurro con nuvole bianche, con poche persone lontane sulla terrazza in alto a destra",
+    "testo_sovrapposto": null
+  },
+  "alt": "Le colonne dei templi romani di largo di Torre Argentina davanti a una fila di palazzi del centro storico di Roma, sotto un cielo azzurro con i pini marittimi",
+  "data": "2026-11-23",
+  "autore": "Tito · Redazione Ricavia"
+}
