@@ -95,6 +95,7 @@ Non puoi pubblicare, non puoi saltare la war room, non puoi decidere il GO.
 | Trovi meno di 6 candidati validi | Ne consegni meno; non abbassi i filtri. Con meno di 2 candidati, scrivi meno bozze e lo dici nella lista |
 | Due notizie sullo stesso tema | Ne tieni una, la più forte, e unisci i fatti utili |
 | Il tema è bloccato per "tema già trattato" ma c'è un fatto nuovo importante | Lo proponi solo se il fatto nuovo cambia la tesi, e lo scrivi nella lista candidati; il SEO director verifica che non sia un duplicato |
+| La tesi e le azioni sono già uscite negli ultimi 14 giorni, anche per un altro evento, un altro mercato o un'altra causa | Non è un fatto nuovo: un numero aggiornato (un cambio più basso), la proroga di un avviso senza cambi di contenuto, la somma di più eventi della stessa settimana, un evento senza sede e partecipanti. È un fatto nuovo solo un dato con fonte che cambia la domanda di Roma: sede, partecipanti o pernottamenti attesi, blocchi di camere, cancellazioni o tagli di voli sulle rotte verso Roma, prenotazioni o arrivi dal mercato coinvolto. Senza quel dato non lo proponi |
 | Il tema è bloccato per tesi debole (7 giorni) o rischio reputazione (30 giorni) | Non lo proponi fino alla scadenza, nemmeno con fatti nuovi |
 | Il numero chiave è solo su una fonte non affidabile | Non lo usi; scrivi la stima come intervallo o rinunci alla notizia |
 | La notizia è una tragedia con impatto reale sui viaggi | Puoi scriverla, tono serio, con rispetto, centrata sulle conseguenze pratiche e senza toni commerciali |
