@@ -349,6 +349,15 @@ def var(a, b):
     return ("+" if x > 0 else MENO if x < 0 else "") + f"{abs(x):.1f}".replace(".", ",") + "%"
 
 
+# Tariffa media degli hotel 4 stelle di Roma, prezzo pagato dal cliente con IVA e colazione (George 24/11: "trova un bel modo").
+# Fonte: Trademark Italia, Italian Hotel Monitor, colonna "Prezzo 4 Stelle" (PDF su trademarkitalia.com/news/Allegati/, verificati il 24/11/2026;
+# dettaglio in ricavia-commerciale/docs/ricerche/2026-11-24-tariffe-medie-roma.md). True = calcolato dalle tabelle mensili (media pesata
+# sulle camere vendute; prova sul 2023: 155,14 contro 155,04 pubblicato); 2025 = gennaio-novembre. 2014 e 2020 non pubblicati.
+# shortcut: valori scritti qui, da aggiornare a mano ogni anno quando esce il consuntivo Trademark
+TARIFFA_4S = {"2015": (118.95, False), "2016": (120.28, False), "2017": (120.63, False), "2018": (122.15, False), "2019": (122.02, True),
+              "2021": (117.53, True), "2022": (140.98, False), "2023": (155.04, False), "2024": (164.63, False), "2025": (175.60, True)}
+
+
 def andamento(an):
     """Grafico degli arrivi negli alberghi dal primo anno all'ultimo (George 22/11: "è bello vedere un grafico dal 2014 a oggi"):
     area con base zero, etichette sul 2019 (prima della pandemia), sull'anno più basso e sull'ultimo"""
@@ -362,14 +371,37 @@ def andamento(an):
     basso = min(an, key=an.get)
     nota = [y for y in dict.fromkeys(["2019", basso, anni[-1]]) if y in an]
     lab = "".join(f'<span class="o3-dmtl{" o3-dmtu" if y == anni[-1] else ""}" style="left:{X(y):.2f}%;bottom:{an[y] / mx * 85:.2f}%">{y}<b>{milioni(an[y])} mln</b></span>' for y in nota)
-    return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
+    # seconda linea: tariffa media con scala propria (non da zero, altrimenti sembra piatta); piena se pubblicata, tratteggiata se calcolata,
+    # interrotta dove manca un anno (2020)
+    tr = {y: v for y, v in TARIFFA_4S.items() if y in an}
+    prezzo, nota_p = "", ""
+    if len(tr) >= 5:
+        vv = [v for v, _ in tr.values()]
+        lo, hi = int(min(vv) * 0.85 // 10 * 10), max(vv) * 1.04
+        YP = lambda v: 38 - (v - lo) / (hi - lo) * 32
+        ya = sorted(tr)
+        for a_, b_ in zip(ya, ya[1:]):
+            if int(b_) - int(a_) != 1:
+                continue
+            tratto = ' stroke-dasharray="6 5"' if tr[a_][1] or tr[b_][1] else ""
+            prezzo += (f'<line x1="{X(a_):.2f}" y1="{YP(tr[a_][0]):.2f}" x2="{X(b_):.2f}" y2="{YP(tr[b_][0]):.2f}" stroke="#1D1D1F" stroke-width="3"{tratto} '
+                       'stroke-linecap="round" vector-effect="non-scaling-stroke"/>')
+        base = "2019" if "2019" in tr else ya[0]
+        cresc = round((tr[ya[-1]][0] / tr[base][0] - 1) * 100)
+        etich = {ya[0]: ya[0], base: base, ya[-1]: f"{ya[-1]} · +{cresc}% sul {base}"}
+        lab += "".join(f'<span class="o3-dmtl o3-dmtp{"" if y == ya[0] else " o3-dmtu"}" style="left:{X(y):.2f}%;bottom:{(40 - YP(tr[y][0])) / 40 * 100:.2f}%">{t}<b>{eu(tr[y][0])}</b></span>'
+                       for y, t in etich.items())
+        nota_p = ('<p class="o3-dmnt"><i class="o3-lgk a"></i>Arrivi negli alberghi (ISTAT) <i class="o3-lgk p"></i>Tariffa media degli hotel 4 stelle di Roma, '
+                  'IVA e colazione incluse (Trademark Italia, Italian Hotel Monitor): tratteggiata negli anni calcolati dai dati mensili, '
+                  f'{ya[-1]} da gennaio a novembre; {", ".join(y for y in anni if y not in tr)} non pubblicati</p>')
+    return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma{" e tariffa media degli hotel 4 stelle" if prezzo else ""}, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
             f'<svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Arrivi negli alberghi di Roma dal {anni[0]} al {anni[-1]}: '
             f'{milioni(an["2019"]) + " milioni nel 2019, " if "2019" in an else ""}{milioni(an[basso])} milioni nel {basso}, {milioni(an[anni[-1]])} milioni nel {anni[-1]}">'
             '<defs><linearGradient id="o3dmg" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#1F2DD0"/><stop offset="1" stop-color="#724AF8"/></linearGradient>'
             '<linearGradient id="o3dma" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3CCDFA" stop-opacity=".22"/><stop offset="1" stop-color="#3CCDFA" stop-opacity="0"/></linearGradient></defs>'
             f'<path d="M0,40 L{pts.replace(" ", " L")} L100,40 Z" fill="url(#o3dma)"/>'
-            f'<polyline class="o3-trc" points="{pts}" fill="none" stroke="url(#o3dmg)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>'
-            f'{lab}</div><div class="o3-dmta"><span>{anni[0]}</span><span>{anni[-1]}</span></div></div>')
+            f'<polyline class="o3-trc" points="{pts}" fill="none" stroke="url(#o3dmg)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>{prezzo}</svg>'
+            f'{lab}</div><div class="o3-dmta"><span>{anni[0]}</span><span>{anni[-1]}</span></div>{nota_p}</div>')
 
 
 def flussi(d):
