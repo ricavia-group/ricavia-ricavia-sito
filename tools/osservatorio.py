@@ -390,7 +390,7 @@ def andamento(an):
         seg = lambda ys: " ".join(f"{X(y):.2f},{YP(tr[y][0]):.2f}" for y in ys)
         prezzo = (f'<polyline points="{seg(vere)}" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>'
                   + (f'<polyline points="{seg(vere[-1:] + stime)}" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-dasharray="4 4" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>' if stime and vere else ""))
-        lab += "".join(f'<span class="o3-dmtl o3-dmtp{" o3-dmtu" if y == ya[-1] else ""}" style="left:{X(y):.2f}%;bottom:{tr[y][0] / pm * 85:.2f}%">{y}<b>{eu(tr[y][0])}{" stima" if tr[y][1] else ""}</b></span>'
+        lab += "".join(f'<span class="o3-dmtl o3-dmtp o3-dmtu" style="left:{X(y):.2f}%;bottom:{tr[y][0] / pm * 85:.2f}%">{y}<b>{eu(tr[y][0])}{" stima" if tr[y][1] else ""}</b></span>'
                        for y in dict.fromkeys([vere[-1], ya[-1]]))
         nota_p = (f'<p class="o3-dmnt"><i class="o3-lgk a"></i>Arrivi negli alberghi (ISTAT) <i class="o3-lgk p"></i>Tariffa media di una camera a Roma: '
                   f'{vere[0]}-{vere[-1]} STR per Federalberghi, euro senza IVA e colazione; dal {stime[0]} stima, la tariffa del {vere[-1]} fatta crescere come l’indice ISTAT dei prezzi degli alloggi nel Lazio</p>')
