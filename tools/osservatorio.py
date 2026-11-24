@@ -374,7 +374,7 @@ def andamento(an):
     # seconda linea: tariffa media con scala propria (non da zero, altrimenti sembra piatta); piena se pubblicata, tratteggiata se calcolata,
     # interrotta dove manca un anno (2020)
     tr = {y: v for y, v in TARIFFA_4S.items() if y in an}
-    prezzo, nota_p = "", ""
+    prezzo, nota_p, titolo_p = "", "", f", {anni[0]}-{anni[-1]}"
     if len(tr) >= 5:
         vv = [v for v, _ in tr.values()]
         lo, hi = int(min(vv) * 0.85 // 10 * 10), max(vv) * 1.04
@@ -388,13 +388,14 @@ def andamento(an):
                        'stroke-linecap="round" vector-effect="non-scaling-stroke"/>')
         base = "2019" if "2019" in tr else ya[0]
         cresc = round((tr[ya[-1]][0] / tr[base][0] - 1) * 100)
-        etich = {ya[0]: ya[0], base: base, ya[-1]: f"{ya[-1]} · +{cresc}% sul {base}"}
+        etich = {base: base, ya[-1]: ya[-1]}  # due sole etichette: sul telefono di più si sovrappongono
+        titolo_p = f" e tariffa media degli hotel 4 stelle, {anni[0]}-{anni[-1]}: la tariffa è salita del {cresc}% dal {base}"
         lab += "".join(f'<span class="o3-dmtl o3-dmtp{"" if y == ya[0] else " o3-dmtu"}" style="left:{X(y):.2f}%;bottom:{(40 - YP(tr[y][0])) / 40 * 100:.2f}%">{t}<b>{eu(tr[y][0])}</b></span>'
                        for y, t in etich.items())
         nota_p = ('<p class="o3-dmnt"><i class="o3-lgk a"></i>Arrivi negli alberghi (ISTAT) <i class="o3-lgk p"></i>Tariffa media degli hotel 4 stelle di Roma, '
                   'IVA e colazione incluse (Trademark Italia, Italian Hotel Monitor): tratteggiata negli anni calcolati dai dati mensili, '
                   f'{ya[-1]} da gennaio a novembre; {", ".join(y for y in anni if y not in tr)} non pubblicati</p>')
-    return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma{" e tariffa media degli hotel 4 stelle" if prezzo else ""}, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
+    return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma{titolo_p}</p><div class="o3-dmtc">'
             f'<svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Arrivi negli alberghi di Roma dal {anni[0]} al {anni[-1]}: '
             f'{milioni(an["2019"]) + " milioni nel 2019, " if "2019" in an else ""}{milioni(an[basso])} milioni nel {basso}, {milioni(an[anni[-1]])} milioni nel {anni[-1]}">'
             '<defs><linearGradient id="o3dmg" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#1F2DD0"/><stop offset="1" stop-color="#724AF8"/></linearGradient>'
