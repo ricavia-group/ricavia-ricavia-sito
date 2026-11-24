@@ -56,13 +56,13 @@ function scheda(v){var d=VIE[v],c=el('div','av-c'),top=el('div','av-top'),h=el('
   ST.textContent=v+': '+num(d.strutture)+' strutture ricettive registrate. '+(zv?'Zona di riferimento '+zv:zs?'La via attraversa più zone':'Confronto di zona non disponibile')}
 
 function cerca(t){ultima=t;if(!t){tutte();return}
-  if(norm(t).length<3){ST.textContent='Scrivi almeno tre lettere del nome della via o della piazza';return}
+  if(norm(t).length<3){tutte();ST.textContent='Scrivi almeno tre lettere del nome della via o della piazza';return}
   ST.textContent='Cerco «'+t+'» nel registro';
   carica().then(function(){if(t!==ultima)return;var r=trova(t);
     if(r.length===1)return scheda(r[0]);
     if(r.length){mostra(elenco('Più vie corrispondono a «'+t+'». Scegli la tua',r.slice(0,8)),true);ST.textContent=(r.length>8?'Più di 8':r.length)+' vie corrispondono a «'+t+'»';return}
     var s=simili(t,3),c=elenco('Nel registro di Roma Capitale non troviamo «'+t+'»'+(s.length?'. Forse cercavi':'. Controlla come è scritto il nome: Via, Viale, Piazza, Largo'),s);
-    mostra(c,true);ST.textContent='Nessuna via trovata per «'+t+'»'+(s.length?', '+s.length+' suggerimenti':'')})
+    mostra(c,true);ST.textContent='Nessuna via trovata per «'+t+'»'+(s.length?', '+s.length+(s.length===1?' suggerimento':' suggerimenti'):'')})
   .catch(function(){if(t!==ultima)return;var c=el('div','av-c av-l');c.appendChild(el('p',null,'Non riusciamo a caricare l’elenco delle vie. Controlla la connessione e riprova'));
     c.appendChild(bottone('Riprova',null,function(){cerca(ultima)}));mostra(c,true);ST.textContent='Elenco delle vie non caricato'})}
 
