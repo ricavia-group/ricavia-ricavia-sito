@@ -6674,3 +6674,25 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 /* === 2.0 hotel score senza foto === */
 /* «Le cose da guardare» ha due schede su una griglia da tre: senza la foto sotto, le due schede prendono tutta la riga */
 @media(min-width:1001px){#pg-pagella .hs-pr{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* === 2.0 indicatori: calcolatore di una notte nella testata === */
+#pg-indicatori .ic{align-self:start}
+#pg-indicatori .ic-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+#pg-indicatori .ic-in label{display:flex;flex-direction:column;justify-content:flex-end;gap:6px;min-width:0}
+#pg-indicatori .ic-in .ic-w{grid-column:1/-1}
+#pg-indicatori .ic-in span{font-size:12.5px;font-weight:500;line-height:1.3;color:rgba(255,255,255,.62)}
+#pg-indicatori .ic-in input{box-sizing:border-box;width:100%;min-width:0;margin:0;padding:10px 12px;font:600 17px/1.2 var(--zf);color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;-moz-appearance:textfield;appearance:textfield}
+#pg-indicatori .ic-in input::-webkit-outer-spin-button,#pg-indicatori .ic-in input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+#pg-indicatori .ic-in input:hover{border-color:rgba(255,255,255,.28)}
+#pg-indicatori .ic-in input:focus-visible{outline:2px solid #3CCDFA;outline-offset:1px}
+#pg-indicatori .ic-nt{margin:12px 0 0;font-size:12px;line-height:1.45;color:rgba(255,255,255,.5)}
+#pg-indicatori .ic-out{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden}
+#pg-indicatori .ic-out div{padding:12px 14px;background:#0b0d18;min-width:0}
+#pg-indicatori .ic-out small{display:block;font-size:11px;line-height:1.3;color:#8a90aa}
+#pg-indicatori .ic-out b{display:block;margin-top:5px;font-size:clamp(16px,1.5vw,20px);font-weight:700;letter-spacing:-.03em;color:#fff;overflow-wrap:anywhere}
+#pg-indicatori .ic-out .hl b{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#pg-indicatori .ic-err{grid-column:1/-1;margin:0;padding:10px 14px;font-size:12.5px;color:#fff;background:#0b0d18}
+#pg-indicatori .ic-err[hidden]{display:none}
+#pg-indicatori .ic-cta{display:inline-flex;gap:6px;margin-top:16px;font-size:14.5px;font-weight:600;color:#fff;text-decoration:none}
+#pg-indicatori .ic-cta:hover,#pg-indicatori .ic-cta:focus-visible{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+@media(max-width:480px){#pg-indicatori .ic-out{grid-template-columns:repeat(2,minmax(0,1fr))}}
