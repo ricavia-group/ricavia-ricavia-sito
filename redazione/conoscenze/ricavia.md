@@ -76,7 +76,7 @@ Un percorso in cinque fasi, "dalla prima idea al primo ospite", con un solo crit
 
 Hotel, boutique hotel ed extralberghiero; si può partire dalla fase in cui si trova il progetto (pagina: Nuova apertura).
 
-### Metodo (`/metodo/`)
+### Metodo (`/#metodo`, sezione «Come lavoriamo» della home; la pagina /metodo/ è stata tolta il 24/11/2026)
 
 Quattro passi che si ripetono ogni mese, "perché ogni mese il mercato cambia" (pagina: Metodo):
 
@@ -140,14 +140,14 @@ Il capo redattore sceglie la voce più pertinente e, nel limite del possibile, n
 | 3 | Definiamo la strategia tariffaria seguendo la stagionalità e i picchi di domanda | Concerti, partite, ponti, festività | `/revenue-management/` | pagina: Revenue management |
 | 4 | Anticipiamo i picchi di eventi, fiere, concerti e festività e prepariamo i prezzi in anticipo | Annunci di eventi, calendario religioso, festività | `/revenue-management/` | pagina: Revenue management |
 | 5 | Lavoriamo sul mix dei canali (quante notti da ogni canale e a quale costo) e sulla parità tra sito e OTA | Notizie su OTA, commissioni, regole di parità | `/revenue-management/` | pagina: Revenue management |
-| 6 | Analizziamo tariffe, calendario, mix dei canali, recensioni e conto economico e li confrontiamo con il competitive set dell'hotel | Nuove aperture in zona, notizie sui prezzi medi della città | `/metodo/` | pagina: Metodo |
+| 6 | Analizziamo tariffe, calendario, mix dei canali, recensioni e conto economico e li confrontiamo con il competitive set dell'hotel | Nuove aperture in zona, notizie sui prezzi medi della città | `/#metodo` | home, sezione «Come lavoriamo» |
 | 7 | Leggiamo l'Hotel Score dai dati pubblici su prezzi, canali, sito e vendita diretta, reputazione, foto e contenuti, posizionamento, e indichiamo tre interventi prioritari | Notizie su recensioni, comportamento di ricerca, OTA | `/hotel-score/` | pagina: Hotel Score |
 | 8 | Nell'Osservatorio seguiamo il traffico aereo di Fiumicino e Ciampino e le rotte come segnale anticipato della domanda, insieme ai prezzi della zona | Nuove rotte, chiusure di rotte, dati degli aeroporti | `/revenue-management/` | articolo: Voli; pagina: Osservatorio |
 | 9 | Riclassifichiamo il conto economico secondo lo standard USALI, mese per mese e per reparto | Notizie su costi, inflazione, fisco | `/consulenza/` | pagina: Consulenza |
 | 10 | Trattiamo come voci di costo prioritarie il costo del lavoro, letto in rapporto ai ricavi, e le commissioni di distribuzione | Contratti di lavoro, bassa stagione, cambi di commissioni delle OTA | `/consulenza/` | pagina: Consulenza |
 | 11 | Rivediamo contratti e consumi di forniture ed energia con i numeri alla mano | Prezzi dell'energia, inflazione | `/consulenza/` | pagina: Consulenza |
-| 12 | Prepariamo ogni mese un report con ADR, RevPAR, GOP e GOPPAR, cosa è cambiato e le azioni del mese successivo | Notizie che toccano costi, margini o risultati economici degli hotel (GOP e GOPPAR solo in questi casi, `regole-comuni.md` sezione 6 bis) | `/metodo/` | pagina: Metodo; pagina: Revenue management |
-| 13 | Ordiniamo gli interventi in un piano di una pagina, ognuno con priorità, scadenza e responsabile, per impatto sull'utile | Notizie macro o normative con più effetti insieme | `/metodo/` | pagina: Metodo |
+| 12 | Prepariamo ogni mese un report con ADR, RevPAR, GOP e GOPPAR, cosa è cambiato e le azioni del mese successivo | Notizie che toccano costi, margini o risultati economici degli hotel (GOP e GOPPAR solo in questi casi, `regole-comuni.md` sezione 6 bis) | `/#metodo` | home, sezione «Come lavoriamo»; pagina: Revenue management |
+| 13 | Ordiniamo gli interventi in un piano di una pagina, ognuno con priorità, scadenza e responsabile, per impatto sull'utile | Notizie macro o normative con più effetti insieme | `/#metodo` | home, sezione «Come lavoriamo» |
 | 14 | Valutiamo PMS, channel manager e fornitori in base al loro impatto sul conto economico, partendo dagli strumenti già in uso | Notizie su tecnologia, distribuzione, pagamenti | `/consulenza/` | pagina: Consulenza; pagina: Revenue management |
 | 15 | Prima dell'investimento studiamo domanda, concorrenza e location, e prepariamo un business plan leggibile da banche e investitori | Nuove aperture, grandi opere, cambi di zona, bandi | `/nuova-apertura/` | pagina: Nuova apertura |
 | 16 | Per una nuova apertura impostiamo i prezzi di lancio con una tariffa d'ingresso per le prime recensioni e un piano di aumento progressivo | Aperture annunciate, riposizionamenti | `/nuova-apertura/` | pagina: Nuova apertura |
