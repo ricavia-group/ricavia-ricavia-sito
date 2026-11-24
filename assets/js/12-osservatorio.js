@@ -362,9 +362,9 @@ var MAIL=false,CASA=null,DOPO=null;
 function primo(s,zm){var bk=s.booking||{},st=s.set||{},r=[],p=[pzM('sabato'),pzM('martedi')].filter(function(q){return q&&q.prezzo!=null&&q.mediano!=null})[0];
   if(bk.voto!=null)r.push(['Voto su Booking','<b>'+d1(bk.voto)+'</b>'+(bk.recensioni?' · '+num(bk.recensioni)+' recensioni':'')]);
   if(s.confronto&&s.posizione&&s.su)r.push(['Tra i tuoi vicini','<b>'+s.posizione+'º su '+s.su+'</b> per voto'+(st.quanti?': tu e i '+num(st.quanti)+' alberghi simili più vicini'+(st.piu_lontano_m?', entro '+num(st.piu_lontano_m)+' m':''):'')]);
-  if(p)r.push([maiu(gg(p.arrivo,1)),'Tu <b>'+eu(p.prezzo)+'</b> · gli alberghi simili più vicini <b>'+eu(p.mediano)+'</b>']);
-  else{var k=['sabato','martedi'].filter(function(k){return mio(k)!=null&&zm&&zm[k]!=null})[0];if(k)r.push([maiu(gg(D.date[k],1)),'Tu <b>'+eu(mio(k))+'</b> · la tua zona <b>'+eu(zm[k])+'</b>'])}
-  return '<h2 class="o3-nm">'+esc(ME.nome)+'</h2><p class="o3-chi">'+esc([s.indirizzo,s.zona_sito||s.zona||'Roma',s.stelle?s.stelle+' stelle':'',s.camere?s.camere+' camere':''].filter(Boolean).join(' · '))+'</p>'+
+  if(p)r.push([maiu(gg(p.arrivo,1)),'Tu <b>'+eu(p.prezzo)+'</b><br>Gli alberghi simili più vicini <b>'+eu(p.mediano)+'</b>']);
+  else{var k=['sabato','martedi'].filter(function(k){return mio(k)!=null&&zm&&zm[k]!=null})[0];if(k)r.push([maiu(gg(D.date[k],1)),'Tu <b>'+eu(mio(k))+'</b><br>La tua zona <b>'+eu(zm[k])+'</b>'])}
+  return '<h2 class="o3-nm">'+esc(ME.nome)+'</h2><p class="o3-chi">'+esc([s.indirizzo,s.zona_sito||s.zona||'Roma',s.stelle?s.stelle+(s.stelle===1?' stella':' stelle'):'',s.camere?s.camere+' camere':''].filter(Boolean).join(' · '))+'</p>'+
     (r.length?'<dl class="o3-pr">'+r.map(function(x){return '<div><dt>'+esc(x[0])+'</dt><dd>'+x[1]+'</dd></div>'}).join('')+'</dl>':'')+
     '<div class="o3-az"><button class="o3-btn" type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per '+esc(ME.nome)+'"><span>Prenota la call conoscitiva</span></button><button class="o3-lnk" type="button" data-o3="togli">Cambia hotel</button></div>'+
     '<p class="o2-src">Booking, camera per 2 adulti, letto il '+gg(s.letto_il)+(p?'. Alberghi simili: valore mediano di '+p.con_prezzo:'')+'. Nella chat qui sotto trovi i competitor, i prezzi e il report</p>'}
