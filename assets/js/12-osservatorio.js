@@ -3,6 +3,8 @@
 /* il nome cercato dall'Osservatorio arriva già scritto nell'Hotel Score; il messaggio nei contatti */
 try{var hf=document.getElementById('hsForm'),hv=sessionStorage.getItem('hs-n');if(hf&&hf.n&&hv){sessionStorage.removeItem('hs-n');if(!hf.n.value)hf.n.value=hv}
 var cf=document.getElementById('ctForm'),cv=sessionStorage.getItem('o2-msg'),ch=sessionStorage.getItem('o2-hotel');if(cf&&cf.msg&&cv){sessionStorage.removeItem('o2-msg');if(!cf.msg.value)cf.msg.value=cv}
+/* chi arriva dall'Osservatorio con il messaggio già scritto vede subito il modulo, anche sul telefono */
+if(cf&&(cv||ch))setTimeout(function(){cf.scrollIntoView({block:'start'})},400);
 if(cf&&cf.struttura&&ch){sessionStorage.removeItem('o2-hotel');if(!cf.struttura.value)cf.struttura.value=ch}}catch(_){}
 
 /* 16 (22/11): sul telefono la barra Hotel Score sparisce mentre si scrive in una casella, per non coprire suggerimenti e tasti */

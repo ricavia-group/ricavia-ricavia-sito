@@ -6591,3 +6591,6 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 @media(max-width:620px){.pc-pick li{flex:1 1 100%}.pc-pick a{width:100%;justify-content:space-between}}
 /* Partner e Journal: il primo testo non ha interlinea sopra, +5px per pareggiare le altre pagine */
 #pg-partner .ap-hero .ap-back{margin-bottom:calc(var(--sp-after) + 5px)!important}
+
+/* contatti: il modulo arriva sotto la barra fissa quando la pagina ci porta direttamente (Osservatorio, ?tipo=) */
+#ctForm{scroll-margin-top:84px}

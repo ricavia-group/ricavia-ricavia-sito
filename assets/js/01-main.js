@@ -268,7 +268,7 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
     var BOOK=(document.querySelector('meta[name="ricavia-booking"]')||{}).content||($('ctCal')&&$('ctCal').href);
     var f=$('ctForm'),sent=0;
     /* /contatti/?tipo=…: tipo di struttura ricettiva già scelto (link della home) */
-    try{var tp=new URLSearchParams(location.search).get('tipo');if(tp&&f.tipo&&[].some.call(f.tipo.options,function(x){return x.text===tp}))f.tipo.value=tp}catch(_){}
+    try{var tp=new URLSearchParams(location.search).get('tipo');if(tp&&f.tipo&&[].some.call(f.tipo.options,function(x){return x.text===tp})){f.tipo.value=tp;setTimeout(function(){f.scrollIntoView({block:'start'})},400)}}catch(_){}
     f.addEventListener('submit',function(e){e.preventDefault();var el=f.elements,err='',re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       if(el.sito.value)return;
       [el.nome,el.tel,el.email].forEach(function(x){x.classList.remove('bad')});f.querySelector('.chk').classList.remove('bad');
