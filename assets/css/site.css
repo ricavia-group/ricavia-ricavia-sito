@@ -6317,7 +6317,7 @@ html.o2-nosc{overflow:hidden}
 #pg-osservatorio #o2-top{padding-top:calc(var(--sp-nav) + var(--sp-top))!important}
 main.jr-pgm{padding-top:calc(var(--sp-nav) + var(--sp-top))!important}
 main.jr-pgm .jr-arp{padding-top:0!important}
-@media(min-width:600px){#pg-journal #os-journal{padding-top:calc(var(--sp-nav) + var(--sp-top))!important}#pg-journal #os-journal>.wrap>.ap-back{margin-bottom:var(--sp-after)!important}}
+@media(min-width:600px){#pg-journal #os-journal{padding-top:calc(var(--sp-nav) + var(--sp-top))!important}#pg-journal #os-journal>.wrap>.ap-back{margin-bottom:calc(var(--sp-after) + 5px)!important}}
 /* Partner: il pulsante torna nel flusso come nelle altre pagine */
 #pg-partner .ap-hero .ap-back{position:static!important;top:auto!important}
 /* sotto «Torna alla home» (Nuova apertura, Hotel Score e Osservatorio restano ai loro agenti) */
@@ -6403,3 +6403,5 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 .pc-pick a:hover .arr{transform:translateX(3px)}
 #per-chi .z-feature{margin-bottom:0}
 @media(max-width:620px){.pc-pick li{flex:1 1 100%}.pc-pick a{width:100%;justify-content:space-between}}
+/* Partner e Journal: il primo testo non ha interlinea sopra, +5px per pareggiare le altre pagine */
+#pg-partner .ap-hero .ap-back{margin-bottom:calc(var(--sp-after) + 5px)!important}
