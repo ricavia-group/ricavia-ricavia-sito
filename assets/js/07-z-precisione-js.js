@@ -8,15 +8,22 @@ var acts=[].slice.call(document.querySelectorAll('.z-ice,.z-method'));
 var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('z-act');io2.unobserve(e.target)}})},{threshold:.3});
 acts.forEach(function(r){io2.observe(r)});
 }catch(e){console.warn('z-rev',e)}
-try{
-var st=document.getElementById('zStage');if(st){var ims=[].slice.call(st.querySelectorAll('img')),ds=[].slice.call(st.querySelectorAll('.z-stage-dots i')),k=0;
-var go=function(n){ims[k].classList.remove('on');ds[k]&&ds[k].classList.remove('on');k=n%ims.length;ims[k].classList.add('on');ds[k]&&ds[k].classList.add('on')};
-var t=setInterval(function(){go(k+1)},5200);
-var hero=document.getElementById('hero');
-var sc=function(){var y=Math.min(window.scrollY,700);st.style.transform='scale('+(1-y/700*.06)+')';};
-window.addEventListener('scroll',sc,{passive:true});
-var rp=document.getElementById('zReplay');if(rp)rp.addEventListener('click',function(){var a=[].slice.call(hero.querySelectorAll('.z-in,.z-ln>span'));a.forEach(function(x){x.style.animation='none';void x.offsetWidth;x.style.animation=''});clearInterval(t);go(0);t=setInterval(function(){go(k+1)},5200)});
-}}catch(e){console.warn('z-hero',e)}
+try{(function(){var T=document.getElementById('h2hTiles');if(!T)return;
+/* apertura della home: numero vero dell'Osservatorio e copertina dell'ultimo articolo del Journal */
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,n=document.getElementById('h2hN');
+var fmt=function(v){return Math.round(v).toLocaleString('it-IT')};
+if(n){var to=+n.getAttribute('data-n');if(!RM&&to&&window.requestAnimationFrame){var t0=null;n.textContent='0';requestAnimationFrame(function f(ts){if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/1600);n.textContent=fmt(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);else n.setAttribute('data-ok','')})}
+ if(window.fetch&&location.protocol!=='file:')fetch('/assets/data/osservatorio.json').then(function(r){return r.ok?r.json():null}).then(function(d){var v=d&&(d.alberghi_letti||(d.roma&&d.roma.alberghi));if(v&&v!==to){to=v;n.setAttribute('data-n',v);n.textContent=fmt(v)}}).catch(function(){})}
+var cv=document.getElementById('h2hCv'),jt=document.getElementById('h2hJt');
+if(cv&&window.__MP&&window.fetch&&window.DOMParser)fetch('/journal/').then(function(r){return r.ok?r.text():''}).then(function(h){if(!h)return;
+ var M=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'],best=null,bd=-1;
+ [].forEach.call(new DOMParser().parseFromString(h,'text/html').querySelectorAll('article'),function(c){var im=c.querySelector('img[src]'),tt=c.querySelector('h2,h3');if(!im||!tt)return;
+  var m=/(\d{1,2}) ([a-z]+) (\d{4})/.exec(c.textContent),d=m&&M.indexOf(m[2])>=0?+m[3]*10000+(M.indexOf(m[2])+1)*100+ +m[1]:0;if(d>bd){bd=d;best={src:im.getAttribute('src'),t:tt.textContent.trim()}}});
+ if(best){cv.removeAttribute('data-photo');cv.src=best.src;cv.alt='';jt.textContent='Ultimo articolo: '+best.t;jt.hidden=false}}).catch(function(){});
+})()}catch(e){console.warn('z-hero',e)}
+try{(function(){var jr=document.querySelector('section.os-rel'),fq=document.getElementById('faq');
+/* il blocco Journal che la build aggiunge dopo </main> va prima delle domande frequenti */
+if(jr&&fq&&document.getElementById('h2hTiles')&&!fq.parentNode.contains(jr))fq.parentNode.insertBefore(jr,fq)})()}catch(e){}
 try{document.addEventListener('click',function(e){var a=e.target.closest('a[data-home]');if(!a)return;if(window.__MP&&location.pathname!=='/'){return}e.preventDefault();if(window.__menu)window.__menu(false);var pg=document.querySelector('.pgv.on .ap-back,.pgv.on .ctp-back,.pgv.on [data-ct-close]');if(pg)pg.click();setTimeout(function(){window.scrollTo({top:0,behavior:'smooth'});try{history.replaceState(null,'',location.pathname+location.search)}catch(_){}},60)});}catch(e){}
 try{var nav=document.getElementById('nav');var dk=[].slice.call(document.querySelectorAll('#simulatore,#inizia,footer.z-ft'));
 var DS='.ap-dark2,.ix.dk,.sv-band,.ap-foot,.phb,.tdb';
