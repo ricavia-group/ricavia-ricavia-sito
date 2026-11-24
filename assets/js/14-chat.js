@@ -219,7 +219,7 @@ FM.addEventListener('submit',function(e){e.preventDefault();e.stopPropagation();
   fai(function(){return qa().then(function(){return (p?carica(p):Promise.resolve()).then(function(){return gestisci(t)})},function(){return team(t)})})});
 CH.addEventListener('click',function(e){var b=e.target.closest('.ch-chip');if(!b)return;var k=b.dataset.k;chips([]);bolla('ch-me',esc(b.textContent));var p=prima();fai(function(){return qa().then(function(){return (p?carica(p):Promise.resolve()).then(function(){return tocca(k)})})})});
 LOG.addEventListener('click',function(e){var b=e.target.closest('[data-ch-msg],[data-ch]');if(!b)return;e.preventDefault();
-  if(b.dataset.ch==='rep'&&S)O.report(S.id_comune);else if(b.hasAttribute('data-ch-msg'))O.scrivici(b.getAttribute('data-ch-msg'))});
+  if(b.dataset.ch==='rep'&&S)O.report(S.id_comune);else if(b.hasAttribute('data-ch-msg'))O.scrivici(b.getAttribute('data-ch-msg'),S&&S.nome)});
 /* la conversazione comincia quando la finestra entra nello schermo */
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();VISTA=true;inizio()}},{root:window.__MP?null:document.getElementById('pg-osservatorio'),threshold:0,rootMargin:'0px 0px -15% 0px'});io.observe(W)}/* soglia 0: la finestra è alta e una percentuale arriva tardi */else{VISTA=true;inizio()}
 /* lo script arriva dopo 12-osservatorio.js (defer): il link /osservatorio/?hotel=ID lo legge anche da sé */

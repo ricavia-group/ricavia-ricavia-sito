@@ -195,7 +195,7 @@ function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'
     (tl.length?'<p class="o2-rn">Hai tolto '+tl.length+(tl.length===1?' albergo':' alberghi')+'. Capodanno e cosa dicono gli ospiti restano sul gruppo completo</p>':'')+
     '<button type="button" class="o2-lk" data-o2-msg="Nel report di '+esc(s.nome)+' manca un competitor: ">Manca un competitor? Scrivici e lo aggiungiamo</button></section>';
   /* 4.9 e 4.10 */
-  h+='<section class="o2-rs o2-rcta"><h3>Vuoi leggerlo con noi?</h3><p>Venti minuti su Google Meet: ti spieghiamo i numeri e da dove partire</p><div class="o2-ops"><button type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per leggere insieme il report di '+esc(s.nome)+'">Prenota la call conoscitiva →</button><button type="button" data-o2-msg="Nel report di '+esc(s.nome)+' c’è un dato sbagliato: ">Segnala un dato sbagliato</button></div></section>';
+  h+='<section class="o2-rs o2-rcta"><h3>Vuoi leggerlo con noi?</h3><p>Venti minuti su Google Meet: ti spieghiamo i numeri e da dove partire</p><div class="o2-ops"><button type="button" data-o2-hotel="'+esc(s.nome)+'" data-o2-msg="Vorrei prenotare la call conoscitiva per leggere insieme il report di '+esc(s.nome)+'">Prenota la call conoscitiva →</button><button type="button" data-o2-msg="Nel report di '+esc(s.nome)+' c’è un dato sbagliato: ">Segnala un dato sbagliato</button></div></section>';
   return h}
 document.addEventListener('click',function(e){var b=e.target.closest('[data-o2-tg]');if(!b||!rep||!rep.contains(b)||!rep._s)return;var s=rep._s,n=b.getAttribute('data-o2-tg'),t=(TOLTI[s.id_comune]||[]).slice(),i=t.indexOf(n);
   if(i>-1)t.splice(i,1);else t.push(n);if(t.length)TOLTI[s.id_comune]=t;else delete TOLTI[s.id_comune];try{localStorage.setItem('o2-tolti',JSON.stringify(TOLTI))}catch(_){}
@@ -367,7 +367,7 @@ function primo(s,zm){var bk=s.booking||{},st=s.set||{},r=[],p=[pzM('sabato'),pzM
   else{var k=['sabato','martedi'].filter(function(k){return mio(k)!=null&&zm&&zm[k]!=null})[0];if(k)r.push([maiu(gg(D.date[k],1)),'Tu <b>'+eu(mio(k))+'</b><br>La tua zona <b>'+eu(zm[k])+'</b>'])}
   return '<h2 class="o3-nm">'+esc(ME.nome)+'</h2><p class="o3-chi">'+esc([s.indirizzo,s.zona_sito||s.zona||'Roma',s.stelle?s.stelle+(s.stelle===1?' stella':' stelle'):'',s.camere?s.camere+' camere':''].filter(Boolean).join(' · '))+'</p>'+
     (r.length?'<dl class="o3-pr">'+r.map(function(x){return '<div><dt>'+esc(x[0])+'</dt><dd>'+x[1]+'</dd></div>'}).join('')+'</dl>':'')+
-    '<div class="o3-az"><button class="o3-btn" type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per '+esc(ME.nome)+'"><span>Prenota la call conoscitiva</span></button><button class="o3-lnk" type="button" data-o3="togli">Cambia hotel</button></div>'+
+    '<div class="o3-az"><button class="o3-btn" type="button" data-o2-hotel="'+esc(ME.nome)+'" data-o2-msg="Vorrei prenotare la call conoscitiva per '+esc(ME.nome)+'"><span>Prenota la call conoscitiva</span></button><button class="o3-lnk" type="button" data-o3="togli">Cambia hotel</button></div>'+
     '<p class="o2-src">Booking, camera per 2 adulti, letto il '+gg(s.letto_il)+(p?'. Alberghi simili: valore mediano di '+p.con_prezzo:'')+'. Nella chat qui sotto trovi i competitor, i prezzi e il report</p>'}
 /* la chat sale sotto la scheda e torna al suo posto con «Cambia hotel». Si sposta #o2Chat: prima o dopo 14-chat.js è sempre la finestra giusta */
 function chatSu(on){var c=document.getElementById('o2Chat'),io=$('#o2Io'),a=$('#o2Nav a[href="#o2-hotel"],#o2Nav a[href="#o2Chat"]');
