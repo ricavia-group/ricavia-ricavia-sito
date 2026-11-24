@@ -70,3 +70,21 @@ if(window.RK)RK.deliver('hotel-score','Richiesta Hotel Score · '+n,L,{tipo:'hot
 else{location.href='mailto:info@ricavia.com?subject='+encodeURIComponent('Richiesta Hotel Score · '+n)+'&body='+L.map(function(x){return encodeURIComponent(x[0]+': '+x[1])}).join('%0D%0A');fin('mail')}});
 })()}catch(e){}
 try{(function(){var c=document.querySelector('#pg-indicatori .kc');if(!c)return;function u(){[].forEach.call(c.querySelectorAll('input[type=range]'),function(i){var p=(i.value-i.min)/(i.max-i.min)*100;i.style.setProperty('--p',p+'%')})}c.addEventListener('input',function(){setTimeout(u,0)});document.getElementById('pg-indicatori').addEventListener('pgopen',function(){setTimeout(u,50)});u();setInterval(function(){if(document.getElementById('pg-indicatori').classList.contains('on'))u()},800)})()}catch(e){}
+try{(function(){var S=document.getElementById('h3Show');if(!S)return;
+/* vetrina della home: le schermate vere scorrono da sole; mouse sopra = pausa, tocco o scelta di una scheda = ferma */
+var tabs=[].slice.call(S.querySelectorAll('[role=tab]')),sl=[].slice.call(S.querySelectorAll('.h3-sl')),i=0,T=5000,tm=null,hover=false,stop=false,vis=true;
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+S.style.setProperty('--h3t',T/1000+'s');
+function riparti(){clearTimeout(tm);S.classList.remove('gira');void S.offsetWidth;if(stop||hover||RM||document.hidden||!vis)return;S.classList.add('gira');tm=setTimeout(function(){vai(i+1)},T)}
+function vai(k,fuoco){i=(k+tabs.length)%tabs.length;tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;sl[j].classList.toggle('on',on);sl[j].tabIndex=on?0:-1;sl[j].setAttribute('aria-hidden',on?'false':'true')});if(fuoco)tabs[i].focus();riparti()}
+function ferma(){stop=true;clearTimeout(tm);S.classList.add('ferma')}
+tabs.forEach(function(t,j){t.addEventListener('click',function(){ferma();vai(j)});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();ferma();vai(i+(e.key==='ArrowRight'?1:-1),true)}})});
+S.addEventListener('mouseenter',function(){hover=true;clearTimeout(tm);S.classList.add('ferma')});
+S.addEventListener('mouseleave',function(){hover=false;if(!stop){S.classList.remove('ferma');riparti()}});
+S.addEventListener('touchstart',ferma,{passive:true});S.addEventListener('focusin',ferma);
+document.addEventListener('visibilitychange',riparti);
+if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;riparti()})}).observe(S);
+vai(0);
+var n=document.getElementById('h3n0');
+if(n&&window.fetch&&location.protocol!=='file:')fetch('/assets/data/osservatorio.json').then(function(r){return r.ok?r.json():null}).then(function(d){var v=d&&(d.alberghi_letti||(d.roma&&d.roma.alberghi));if(v){n.setAttribute('data-n',v);n.textContent=Math.round(v).toLocaleString('it-IT')}}).catch(function(){});
+})()}catch(e){console.warn('h3',e)}
