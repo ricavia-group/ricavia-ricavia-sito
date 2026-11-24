@@ -18,6 +18,7 @@ pg.addEventListener('click',function(e){var b=e.target.closest('[data-art]');if(
   var sec=f.closest('.jr'),st=pg.querySelector('.jr-fs');if(c==='all')sec.removeAttribute('data-f');else sec.setAttribute('data-f',c);
   if(st)st.textContent=c==='all'?'':n?f.textContent+': '+(n===1?'1 articolo':n+' articoli'):'Nessun articolo recente in questa categoria: cerca nell’archivio mensile';return}
  var z=e.target.closest('.jz-tabs button');if(z){[].forEach.call(pg.querySelectorAll('.jz-tabs button'),function(x){x.setAttribute('aria-selected',x===z?'true':'false');if(x===z)x.removeAttribute('tabindex');else x.tabIndex=-1});
+  if(z.parentNode.scrollWidth>z.parentNode.clientWidth)try{z.scrollIntoView({block:'nearest',inline:'center'})}catch(_){} // sul telefono la zona scelta resta visibile nella fila
   [].forEach.call(pg.querySelectorAll('.jz-p'),function(p){p.hidden=p.dataset.zp!==z.dataset.z});return}});
 pg.addEventListener('keydown',function(e){var z=e.target.closest&&e.target.closest('.jz-tabs button');if(!z||(e.key!=='ArrowRight'&&e.key!=='ArrowLeft'))return;var bs=[].slice.call(pg.querySelectorAll('.jz-tabs button')),i=bs.indexOf(z)+(e.key==='ArrowRight'?1:-1);i=(i+bs.length)%bs.length;bs[i].focus();bs[i].click();e.preventDefault()});
 rd.addEventListener('click',function(e){if(e.target.closest('[data-jr-x]')){e.preventDefault();e.stopPropagation();close();return}
