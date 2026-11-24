@@ -1,0 +1,211 @@
+{
+  "slug": "permanenza-media-hotel-istat",
+  "data": "2026-11-24",
+  "categoria": "dati",
+  "titolo": "ISTAT, più notti per ospite in hotel: nei soggiorni lunghi controlla la tariffa del sabato",
+  "sottotitolo": "I dati provvisori ISTAT del terzo trimestre mostrano meno arrivi e più notti per ospite negli hotel italiani. Come misurare la permanenza media del tuo hotel e controllare la tariffa di ogni notte nei soggiorni che attraversano un picco",
+  "title_seo": "Permanenza media in hotel: meno arrivi, più notti · Ricavia",
+  "description": "ISTAT, terzo trimestre: negli hotel meno arrivi e più notti. Come misurare la permanenza media del tuo hotel e verificare la tariffa delle notti di picco",
+  "related_intro": "Per leggere la durata dei soggiorni nei numeri del tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "le tariffe per data della bassa stagione a Roma",
+      "url": "/journal/bassa-stagione-hotel-roma-tariffe/"
+    },
+    {
+      "label": "come si calcolano occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "alt": "Valigia rigida grigia in piedi accanto alla finestra di una camera, davanti a una tenda bianca illuminata dalla luce del giorno",
+  "autore": "Tito · Redazione Ricavia",
+  "tema": "istat-flussi-terzo-trimestre-2026-durata-soggiorno-hotel",
+  "tesi": "Nel terzo trimestre 2026, secondo l'ISTAT (23 novembre), negli alberghi italiani gli arrivi sono scesi del 3,1% e le presenze sono salite dell'1,7%: gli italiani calano (arrivi −5,5%, notti −2,0%), gli stranieri arrivano in numero quasi uguale (−1,1%) ma si fermano più notti (+5,3%), e la permanenza media in hotel sale per entrambi (calcolo Ricavia: stranieri da circa 3,1 a circa 3,3 notti); per Roma, dove gli stranieri sono oltre tre quarti delle presenze (CNR su dati ISTAT 2025), il dato conta meno per il volume e più per la durata dei soggiorni, ma è nazionale ed estivo e non dice se l'allungamento continua a Roma nel primo trimestre 2027: per questo il tuo hotel misura la propria permanenza media (presenze diviso arrivi, come l'ISTAT) per mercato e canale, confrontandola con il 2025 e con il 2024 perché il 2025 è l'anno del Giubileo; verifica che i soggiorni che attraversano le notti di picco del primo trimestre 2027 (sabati del Sei Nazioni, settimana di Pasqua del 28 marzo) paghino la tariffa di ogni notte e non quella della notte di arrivo o uno sconto per durata uguale per tutte le notti; conta nel reparto camere le partenze per camera venduta e organizza i turni sulle partenze previste",
+  "fonti": [
+    {
+      "titolo": "Flussi turistici, III trimestre 2026",
+      "editore": "ISTAT",
+      "url": "https://www.istat.it/comunicato-stampa/flussi-turistici-iii-trimestre-2026/",
+      "data": "2026-11-24"
+    },
+    {
+      "titolo": "Statistica Flash · Flussi turistici III trimestre 2026",
+      "editore": "ISTAT",
+      "url": "https://www.istat.it/wp-content/uploads/2026/11/Statistica-Flash_III_Trimestre.pdf",
+      "data": "2026-11-24"
+    },
+    {
+      "titolo": "XXVII Rapporto sul Turismo Italiano 2024-2025",
+      "editore": "CNR Edizioni (CNR-IRISS)",
+      "url": "https://www.cnr.it/sites/default/files/public/media/attivita/editoria/CNR_XXVII_Rapporto%20sul%20Turismo%20Italiano%202024-2025%20web.pdf",
+      "data": "2026-11-24"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Unica bozza della giornata: dato ufficiale ISTAT pubblicato ieri (23 novembre), letto sulla fonte primaria (comunicato e PDF), con un meccanismo revenue nuovo rispetto agli ultimi 14 giorni (durata del soggiorno e tariffa per notte sui soggiorni che attraversano i picchi) e azioni datate sul primo trimestre 2027",
+      "correzioni": [],
+      "segnalazioni": [
+        "Forza 3: dato nazionale, la nota ISTAT non ha dati per regione o città. Il legame con Roma passa dal rapporto CNR (stranieri oltre tre quarti delle presenze a Roma nel 2025, pag. 77 del PDF, verificata oggi) ed è scritto come lettura, non come misura",
+        "Permanenza media in hotel (circa 3,3 contro 3,1 notti per gli stranieri, circa 3,8 contro 3,7 per gli italiani): calcolo mio, presenze diviso arrivi del Prospetto 1; i valori 2025 sono ricostruiti dividendo i valori 2026 per le variazioni ISTAT arrotondate a un decimale, quindi l'ultima cifra può spostarsi di poco. Nel testo è dichiarato come calcolo Ricavia. Il revenue manager e il capo redattore valutino se tenerlo o scrivere solo 'si fermano più notti'",
+        "I dati ISTAT del trimestre sono provvisori; il definitivo del quarto trimestre esce il 9 marzo 2027",
+        "Sovrapposizioni controllate: 7 novembre (Banca d'Italia, presenze Roma e competitive set con extralberghiero) usato solo come contesto con collegamento, nessuna azione ripresa; 13 novembre (tariffa per soggiorni di più notti nei giorni feriali) diversa: qui l'azione è escludere le notti di picco dagli sconti per durata e verificare il calcolo per notte; 21 novembre (pick-up per provenienza) non ripreso. L'azione sui costi di partenza tocca il personale (tema del 19 novembre) solo come organizzazione dei turni sul reparto camere",
+        "Antitrust (9 ter): nessun livello di prezzo, nessuna percentuale, azioni solo sui dati del singolo hotel",
+        "Nessuna affermazione su come funzionano i gestionali in generale: il rischio della tariffa della notte di arrivo è scritto come condizione ('se il tuo sistema applica...')",
+        "Mix: bozza unica; Roma con la lettura CNR; guarda avanti con azioni sulle notti di picco di febbraio-marzo 2027 e sui turni del primo trimestre 2027. Il CNR è usato come fonte di supporto, non come notizia: oggi nessun articolo esce dal rapporto come tema",
+        "Collegamenti interni nel corpo: 2 (/journal/presenze-hotel-roma-extralberghiero/, /journal/sei-nazioni-hotel-roma-tariffe/), più /consulenza/ nel paragrafo Ricavia (voci 4.1 n. 9 e n. 12)",
+        "Parole del corpo: circa 1.020"
+      ],
+      "ruolo_ricavia": "Ricavia riclassifica il conto economico secondo lo standard USALI per reparto, e nel reparto camere il costo per camera venduta mostra se i soggiorni più lunghi migliorano davvero il margine"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Numeri e calcolo della permanenza media verificati sul Prospetto 1 della nota ISTAT; il meccanismo (meno arrivi, più notti per arrivo, soggiorni che attraversano notti con domanda diversa, meno partenze per camera venduta) regge, ma un dato nazionale del terzo trimestre non dà la direzione per un hotel di Roma nel primo trimestre 2027: tesi resa condizionata e indicatori portati a '?'",
+      "correzioni": [
+        "tesi: aggiunto che il dato è nazionale ed estivo e non dice se l'allungamento continua a Roma nel primo trimestre 2027; aggiunti il calcolo presenze diviso arrivi, il confronto con il 2024 (il 2025 è l'anno del Giubileo) e il conteggio delle partenze per camera venduta al posto del costo per camera venduta",
+        "apertura, terza frase: 'che cambia il modo di leggere' diventa 'se anche nel tuo hotel i soggiorni si allungano, cambia il modo di leggere': il dato nazionale non dimostra che la durata cambi nel singolo hotel",
+        "sezione 'Roma', secondo paragrafo: 'le notti di picco escono dalla vendita al prezzo di una notte feriale' diventa 'il tuo hotel vende le notti di picco al prezzo di una notte feriale' ('escono dalla vendita' si legge come notti tolte dalla vendita, il contrario del meccanismo)",
+        "Impatto: Durata del soggiorno da '↑ bassa, primo trimestre e primavera 2027' a '?': il dato misura luglio-settembre a livello nazionale, nessuna fonte dice se l'allungamento continua in inverno a Roma; da monitorare sulle prenotazioni già acquisite",
+        "Impatto: tolta la voce Mix di segmento: la quota straniera nazionale dell'estate non dà una direzione per il mix di un hotel di Roma nel primo trimestre, dove gli stranieri sono già oltre tre quarti delle presenze",
+        "Impatto: Costi operativi da '↓ bassa' a '?': il calo delle partenze per camera venduta vale solo se la durata sale anche nel singolo hotel; 'per ogni notte venduta' diventa 'per ogni camera venduta'",
+        "Impatto: ADR lasciato a '?', riformulato al singolare e con 'sconto per durata'; finestra 'notti di picco di febbraio e marzo 2027'",
+        "Azione 1: 'dividi le notti vendute per gli arrivi' diventa 'dividi le presenze per gli arrivi degli ospiti': camere vendute diviso ospiti arrivati mescola due unità e non è confrontabile con la permanenza media ISTAT; aggiunto il confronto con il 2024, perché a Roma il 2025 è l'anno del Giubileo (consiglio F di ricavia.md)",
+        "Azione 3: il costo per camera venduta da solo non mostra il peso delle partenze; ora si contano le partenze per camera venduta (2026 contro 2025 e 2024) accanto al costo del reparto",
+        "Azione 2 confermata: date verificate (sabati del Sei Nazioni 13 febbraio, 6 e 13 marzo 2027; Pasqua domenica 28 marzo 2027, sabato 27; un soggiorno da mercoledì di quattro notti comprende venerdì e sabato)"
+      ],
+      "segnalazioni": [
+        "Calcolo della permanenza media verificato sul PDF ISTAT (Prospetto 1, pag. 3, scaricato oggi): stranieri in hotel 61.513.138 / 18.568.212 = 3,31 nel 2026; 2025 ricostruito 3,11 (con le variazioni arrotondate l'intervallo è 3,11-3,12); italiani 3,83 contro 3,70 (intervallo 3,69-3,70); totale hotel 3,54 contro 3,38. Le somme residenti più non residenti tornano. L'arrotondamento a un decimale ('circa 3,3 / 3,1', 'circa 3,8 / 3,7') regge: si può tenere, dichiarato come calcolo Ricavia",
+        "Per completezza: la nota ISTAT pubblica una permanenza media solo per tutte le strutture ricettive (4,12 notti; italiani 4,43, stranieri 3,89), non per gli alberghi; la cifra per gli alberghi resta un calcolo Ricavia, come scritto nel testo",
+        "Tutti i numeri del primo paragrafo (arrivi oltre 60 milioni −0,5%, presenze 249 milioni +3,0%, extralberghiero +4,2%, alberghi 33,4 milioni di arrivi −3,1% e quasi 118,5 milioni di presenze +1,7%, italiani −5,5% e −2,0%, stranieri −1,1% e +5,3%) e la citazione CNR di pag. 77 ('oltre i tre quarti del totale a Roma') verificati sulle fonti",
+        "Forza della tesi per Roma: il dato è nazionale e di luglio-settembre; il legame con Roma (CNR) e con il primo trimestre 2027 è una lettura. Per questo tutti e tre gli indicatori sono '?': il valore dell'articolo sta nel metodo (permanenza media propria, tariffa per notte sui soggiorni che attraversano i picchi, partenze per camera venduta), non in una previsione. Il capo redattore valuti se basta per il GO",
+        "Paragrafo Ricavia (non è del mio ambito): 'nel reparto camere il costo per camera venduta mostra quanto pesano le partenze rispetto alle notti' è impreciso, il costo per camera venduta da solo non separa le partenze; proposta: 'nel reparto camere le partenze per camera venduta, lette accanto al costo del reparto, mostrano quanto pesano le partenze rispetto alle notti'",
+        "Primo paragrafo (non del mio ambito): 'il prossimo aggiornamento è previsto per il 9 marzo 2027' è la prossima diffusione ISTAT (quarto trimestre), non necessariamente la revisione di questi dati provvisori; valutare 'la prossima diffusione ISTAT è prevista per il 9 marzo 2027'",
+        "Varietà della settimana (per SEO director e capo redattore): l'azione 2 è vicina al 18 novembre (notti con eventi escluse dalla promozione Black Friday, stessi Sei Nazioni e Pasqua) e al 13 novembre (tariffa per soggiorni di più notti nei feriali); qui il controllo è diverso (calcolo per notte e sconti per durata sui soggiorni che attraversano il picco), ma le date citate sono le stesse",
+        "Antitrust (9 ter): nessun livello di prezzo né percentuale da applicare, azioni sui dati del singolo hotel"
+      ],
+      "ruolo_ricavia": "Ricavia definisce la strategia tariffaria per singola data seguendo i picchi di domanda: un soggiorno lungo che comincia in una notte feriale e attraversa un sabato di evento è il caso in cui conviene verificare che ogni notte paghi la propria tariffa, e il pick-up controllato ogni settimana mostra se questi soggiorni crescono davvero nelle notti di febbraio e marzo"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema nuovo: nessun articolo degli ultimi 14 giorni ha la permanenza media in hotel come keyword o come tesi (7 novembre: presenze a Roma tra hotel ed extralberghiero; 13 novembre: stagionalità e tariffa per data); keyword dell'albergatore inserita in apertura e in un h3, collegamenti interni verificati",
+      "correzioni": [
+        "slug: permanenza-media-hotel-istat (4 parole, senza date, unico rispetto a journal/, registro e scartati)",
+        "categoria: dati confermata (la causa della notizia è un dato ISTAT)",
+        "title_seo: 'Permanenza media in hotel: meno arrivi, più notti · Ricavia' (59 caratteri, contati con script), keyword all'inizio, diverso da ogni title di tools/seo.json e di journal/",
+        "description: 153 caratteri (contati con script), senza punto finale, senza … e senza cifre: i dati ISTAT del trimestre sono provvisori, quindi le percentuali restano solo nel corpo",
+        "keyword: principale 'permanenza media hotel', 4 secondarie",
+        "related_intro e related: /journal/bassa-stagione-hotel-roma-tariffe/ e /indicatori/, nessuno dei due ripete un collegamento del corpo",
+        "apertura, prima frase: 'ma ognuno si ferma più notti' diventa 'ma la loro permanenza media sale' per inserire la keyword; nessun fatto, numero o fonte cambiato (la crescita della permanenza discende da arrivi −3,1% e presenze +1,7%, citati nella frase dopo)",
+        "primo h3: 'I dati ISTAT del terzo trimestre: meno arrivi, più notti' diventa 'I dati ISTAT del terzo trimestre: meno arrivi negli hotel, permanenza media più lunga'",
+        "collegamenti interni del corpo: 2 naturali (/journal/presenze-hotel-roma-extralberghiero/, /journal/sei-nazioni-hotel-roma-tariffe/), entrambi pubblicati in journal/ e nella forma /journal/<slug>/, più /consulenza/ nel paragrafo Ricavia (non conteggiato): nessuna modifica"
+      ],
+      "segnalazioni": [
+        "Varietà (come già segnalato dal revenue manager): l'azione 2 usa Sei Nazioni e Pasqua del 28 marzo, già presenti negli articoli del 13 e del 18 novembre; la keyword e la tesi sono diverse (permanenza media e tariffa per notte sui soggiorni che attraversano il picco), quindi per me non è duplicato, ma il capo redattore valuti la ripetizione delle stesse date",
+        "Il titolo-hook di lavoro ('ISTAT, terzo trimestre: ... Il soggiorno si allunga') è del virality director: se lo cambia, il title_seo resta valido perché non dipende dal titolo",
+        "'Roma' non è nel title_seo di proposito: il dato è nazionale e il legame con Roma è una lettura (CNR); Roma compare nel corpo e nei related"
+      ],
+      "ruolo_ricavia": "Chi cerca come misurare la permanenza media e il suo effetto sul margine ha come passo successivo naturale la consulenza su costi e margine (/consulenza/), già nel paragrafo Ricavia: la riclassificazione USALI del reparto camere mostra se le notti in più arrivano al GOP"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "La notizia ha un aggancio concreto per l'albergatore (il soggiorno lungo che comincia in una notte feriale e attraversa un sabato) che il titolo di lavoro non mostrava; il titolo di lavoro era inoltre dello stesso tipo e quasi della stessa costruzione di quello del 7 novembre (dato più contrasto 'in calo, ma più notti'), quindi cambio di taglio: conseguenza",
+      "correzioni": [
+        "titolo: 'ISTAT, terzo trimestre: negli hotel meno arrivi e più notti. Il soggiorno si allunga' diventa 'Più notti per ospite in hotel nei dati ISTAT: il sabato rischia la tariffa del mercoledì' (88 caratteri, tipo conseguenza, senza punto finale, nessun numero perché i dati ISTAT sono provvisori); la promessa è mantenuta dalla sezione su Roma (soggiorno di quattro notti dal mercoledì, tariffa della notte di arrivo applicata a tutto il soggiorno) e dall'azione 2",
+        "sottotitolo: scritto in due frasi (fatto ISTAT dichiarato provvisorio, poi cosa trova il lettore), senza punto finale e senza lo schema 'Cosa..., perché..., come...' usato da molti sottotitoli recenti",
+        "alternative_titolo: tre tagli diversi dal titolo e tra loro: domanda (permanenza media del tuo hotel, 88 caratteri), dato con fonte e provvisorietà dichiarata (+5,3% di notti degli stranieri, 85), contrasto italiani e stranieri (86)",
+        "mood: serio",
+        "frase citabile: 'Un soggiorno più lungo vale di più solo se ogni sua notte ha la tariffa giusta' diventa 'Un soggiorno più lungo riduce le partenze, non il valore del sabato': il blockquote arriva dopo il paragrafo sui costi, quindi la nuova frase chiude entrambi i ragionamenti (partenze e tariffa per notte) con un contrasto concreto, senza numeri; 'tariffa giusta' era generico e ripeteva la voce del box 'Ogni notte del soggiorno ha la sua tariffa'"
+      ],
+      "segnalazioni": [
+        "Varietà: tra gli ultimi titoli prevalgono contrasto (17, 19, 23 novembre) e dato con fonte (13, 18 novembre); la conseguenza è uscita il 21 novembre, ma con struttura diversa. Il titolo del 7 novembre ('Banca d'Italia: presenze a Roma in calo del 4%, ma negli hotel crescono le notti vendute') era il più vicino al titolo di lavoro: per questo ho cambiato taglio",
+        "Il titolo non nomina Roma, come il title_seo: il dato è nazionale e il legame con Roma è una lettura (CNR); 'il sabato rischia' descrive una condizione dell'articolo ('se il tuo sistema applica a tutto il soggiorno la tariffa della notte di arrivo'), non una certezza: il capo redattore valuti se preferisce l'alternativa a domanda, più neutra",
+        "La description del SEO director comincia con la stessa frase del titolo di lavoro ('ISTAT, terzo trimestre: negli hotel meno arrivi e più notti'): descrive lo stesso articolo, quindi va bene così; lo segnalo solo perché il titolo è cambiato",
+        "Le segnalazioni del revenue manager sul paragrafo Ricavia ('costo per camera venduta') e sul 'prossimo aggiornamento' del 9 marzo 2027 sono fuori dal mio ambito e restano aperte per il capo redattore"
+      ],
+      "ruolo_ricavia": "Dal punto di vista del racconto il caso che il lettore ricorda è il sabato venduto alla tariffa del mercoledì: Ricavia controlla con una prenotazione di prova che ogni notte di un soggiorno lungo abbia la sua tariffa, sul sito diretto e sulle OTA, e misura con la riclassificazione USALI del reparto camere se le partenze in meno arrivano davvero al margine"
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina da archivio stock (foto vera, gratuita, non generata con AI): una valigia ferma accanto alla finestra di una camera racconta il soggiorno che si allunga, tema della bozza; la libreria non ha una foto senza persone che mostri la durata del soggiorno, solo camere vuote (una già usata il 18 novembre) e reception con persone riconoscibili",
+      "correzioni": [
+        "immagine.fonte: stock, id 1620215 ('Stylish suitcase near curtains'), licenza gratuita, aiGenerated false verificato con stock_get; anteprima guardata prima della scelta",
+        "immagine.scheda, alt, libreria (riserva assets/img/c0d93aa676.webp, guardata nel repo) e alt_libreria compilati; testo_sovrapposto null, prompt null",
+        "Scartate dopo aver guardato le anteprime: valigia aperta sul letto (id 4075650) e valigie in camera (4075652, 4075645, 3075224), toni beige e marroni dominanti e camera già al centro della copertina del 18 novembre; asciugamani piegati (20148723), cartoncino con testo; reception della libreria (d264766f83), persone riconoscibili; tetti di Roma (9dc9005512), coppi rossi dominanti e copertina dell'8 novembre"
+      ],
+      "segnalazioni": [
+        "Riserva della libreria (c0d93aa676, camera con letto matrimoniale): non usata come copertina né come riserva negli ultimi 10 articoli; la panca ai piedi del letto è bordeaux scuro, un accento piccolo e non un tono dominante",
+        "La foto stock non mostra un hotel riconoscibile: è una camera qualsiasi con una valigia, scelta di proposito per non legare l'immagine a un hotel nominato",
+        "Libreria da ampliare: manca una foto senza persone di dettagli del soggiorno in camera (valigia, armadio aperto con abiti appesi, carrello delle pulizie di fermata)",
+        "Fonte stock: nessuna nota AI da aggiungere in fondo all'articolo (regole comuni, 9 ter, punto 2)"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo la valigia ferma in camera è la notte in più che il tuo hotel incassa: Ricavia la legge nei dati, con la permanenza media per mercato e canale e la tariffa di ogni notte del soggiorno, non nell'occupazione di un solo giorno"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "correzioni": [
+        "titolo: 'Più notti per ospite in hotel nei dati ISTAT: il sabato rischia la tariffa del mercoledì' diventa 'ISTAT, più notti per ospite in hotel: nei soggiorni lunghi controlla la tariffa del sabato': il rischio dipende dalla configurazione del singolo hotel ('se il tuo sistema applica...'), non dal dato ISTAT; il nuovo titolo tiene il caso del sabato come controllo da fare, senza presentarlo come rischio generale",
+        "primo paragrafo: 'Sono dati provvisori: il prossimo aggiornamento è previsto per il 9 marzo 2027' diventa 'Sono dati provvisori, e la prossima diffusione ISTAT sui flussi turistici è prevista per il 9 marzo 2027': il 9 marzo è la prossima uscita del comunicato (verificato oggi sulla pagina ISTAT), non per forza la revisione di questi dati (segnalazione del revenue manager)",
+        "sezione Roma: 'Se a Roma la composizione è simile' diventa 'Se questa composizione vale anche per gli hotel di Roma nel 2026': il dato CNR è del 2025 e su tutte le strutture ricettive; la frase ora dice qual è la condizione",
+        "paragrafo sui costi: 'e si misura solo nel conto economico del tuo hotel' diventa 'e solo il conto economico del tuo hotel la misura' (verbo attivo, niente si impersonale)",
+        "paragrafo Ricavia riscritto: tolta la frase imprecisa sul 'costo per camera venduta' (segnalazione del revenue manager) e la riclassificazione USALI per reparto con chiusura su /consulenza/, già usate con parole quasi uguali il 19 novembre; ora voci 4.1 n. 3 (strategia tariffaria su stagionalità e picchi) e n. 12 (report mensile con ADR, RevPAR, GOP e GOPPAR, ammessi perché l'articolo tocca i costi), chiusura su /revenue-management/; RevPAR, GOP e GOPPAR con la glossa alla prima menzione"
+      ],
+      "segnalazioni": [
+        "Per l'editore: verificare sul PDF ISTAT che i dati del trimestre siano dichiarati provvisori (la pagina del comunicato letta oggi non lo dice in modo esplicito; fonti.md e revenue manager lo riportano)",
+        "Per l'editore: lunghezza vicina al limite (circa 1.085 parole con il paragrafo Ricavia): nessuna aggiunta",
+        "Ripetizione delle date (Sei Nazioni, Pasqua 28 marzo) già usate il 13 e il 18 novembre: accettata, perché qui servono solo come esempio per un controllo diverso (calcolo per notte e sconti per durata dentro un soggiorno), senza ripetere le date nel testo; la prossima bozza che usa il primo trimestre 2027 scelga altri esempi"
+      ],
+      "ruolo_ricavia": "Fuse le frasi di revenue manager (strategia tariffaria per singola data, sabato dentro un soggiorno lungo) e di SEO director, virality director e art director (verificare che le notti in più arrivino al margine), con le sole pratiche dichiarate 4.1 n. 3 e n. 12",
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED; tesi condizionata, valore nel metodo: permanenza media propria, tariffa per notte nei soggiorni che attraversano un picco, partenze per camera venduta)",
+        "[x] Ogni numero ha fonte o è dichiarato (dati ISTAT con link al comunicato e al PDF; permanenza media dichiarata come calcolo Ricavia sui valori ISTAT, ricontrollata: stranieri 3,31 contro 3,11, italiani 3,83 contro 3,70; quota straniera a Roma dal CNR su dati ISTAT)",
+        "[x] Fonti citate con link; nessuna copia o parafrasi stretta",
+        "[x] Ruolo di Ricavia presente, 1 paragrafo, utile e non pubblicitario (voci 4.1 n. 3 e n. 12, diverse dai paragrafi della settimana)",
+        "[x] Regole di brand e di copy di CLAUDE.md rispettate (dopo le correzioni di forma: tu al lettore, nessun punto finale, sigle con glossa, nessun verbo vietato)",
+        "[x] Tono coerente con la matrice del mood (dati economici, serio)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; durata del soggiorno mai trattata, azioni diverse dal 7, 13, 18 e 19 novembre)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo né percentuale da applicare, azioni sul singolo hotel e sui suoi dati, foto stock vera senza nota AI)",
+        "[x] Da 700 a 1.100 parole, struttura completa (circa 1.085 parole con il paragrafo Ricavia, 4 h3, apertura, impatto, 3 azioni, In breve)"
+      ]
+    }
+  ],
+  "keyword": {
+    "principale": "permanenza media hotel",
+    "secondarie": [
+      "dati ISTAT flussi turistici hotel",
+      "arrivi e presenze hotel",
+      "durata del soggiorno hotel",
+      "tariffa per notte soggiorni lunghi"
+    ]
+  },
+  "alternative_titolo": [
+    "Soggiorni più lunghi negli hotel italiani: quante notti si ferma l'ospite del tuo hotel?",
+    "Dato provvisorio ISTAT: negli hotel gli stranieri trascorrono il 5,3% di notti in più",
+    "Italiani in calo, stranieri per più notti: nei dati ISTAT degli hotel cresce la durata"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dato economico (flussi turistici ISTAT): la matrice ammette serio o provocatorio, ma il corpo ha un registro di servizio e la tesi per Roma è una lettura condizionata, con tutti gli indicatori a '?': un tono provocatorio prometterebbe più di quanto l'articolo dimostra"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 1620215,
+      "titolo": "Stylish suitcase near curtains",
+      "anteprima": "https://img.magnific.com/free-photo/stylish-suitcase-near-curtains_23-2147746354.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: una valigia rigida grigio chiaro in piedi sul pavimento di una camera, accanto alla finestra, tra una tenda bianca trasparente e un tendaggio grigio scuro; la valigia ferma nella camera racconta l'ospite che si ferma più notti, il tema della permanenza media; nessuna persona, nessuna scritta leggibile, nessun marchio\nInquadratura: frontale e statica, valigia nella metà destra e nella fascia centrale, ampio spazio negativo luminoso della tenda a sinistra, pavimento sotto; l'anteprima è già vicina al 16:9, il ritaglio social toglie solo una striscia sottile di tenda in alto e di pavimento in basso, la valigia è intera, ruote comprese\nLuce: naturale di giorno, diffusa e controluce attraverso la tenda, ombre morbide sulle rigature della valigia\nPalette: bianchi e grigi freddi dominanti, grigio-azzurro del guscio vicino a #3CCDFA desaturato; il legno del pavimento è un accento caldo in basso, non un tono dominante; niente rosso, nessun filtro\nAtmosfera: seria e quieta, il soggiorno che continua; diversa dalla camera vuota del 18 novembre e da tutte le copertine recenti (piazza con templi, sedute d'imbarco, personale ai piani, porto, campanello della reception, palco, cupola sul Foro)",
+    "libreria": "assets/img/c0d93aa676.webp",
+    "alt_libreria": "Camera d'hotel con letto matrimoniale bianco al centro, due lampade accese sui comodini, panca ai piedi del letto e tende chiare alla finestra",
+    "testo_sovrapposto": null
+  }
+}
