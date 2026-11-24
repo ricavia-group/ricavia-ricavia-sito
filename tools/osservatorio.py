@@ -378,7 +378,7 @@ def andamento(an):
     if len(tr) >= 5:
         vv = [v for v, _ in tr.values()]
         lo, hi = int(min(vv) * 0.85 // 10 * 10), max(vv) * 1.04
-        YP = lambda v: 38 - (v - lo) / (hi - lo) * 32
+        YP = lambda v: 39 - (v - lo) / (hi - lo) * 18  # metà bassa del grafico: gli arrivi stanno in alto
         ya = sorted(tr)
         for a_, b_ in zip(ya, ya[1:]):
             if int(b_) - int(a_) != 1:
