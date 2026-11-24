@@ -2,7 +2,8 @@
 (function(){try{
 /* il nome cercato dall'Osservatorio arriva già scritto nell'Hotel Score; il messaggio nei contatti */
 try{var hf=document.getElementById('hsForm'),hv=sessionStorage.getItem('hs-n');if(hf&&hf.n&&hv){sessionStorage.removeItem('hs-n');if(!hf.n.value)hf.n.value=hv}
-var cf=document.getElementById('ctForm'),cv=sessionStorage.getItem('o2-msg');if(cf&&cf.msg&&cv){sessionStorage.removeItem('o2-msg');if(!cf.msg.value)cf.msg.value=cv}}catch(_){}
+var cf=document.getElementById('ctForm'),cv=sessionStorage.getItem('o2-msg'),ch=sessionStorage.getItem('o2-hotel');if(cf&&cf.msg&&cv){sessionStorage.removeItem('o2-msg');if(!cf.msg.value)cf.msg.value=cv}
+if(cf&&cf.struttura&&ch){sessionStorage.removeItem('o2-hotel');if(!cf.struttura.value)cf.struttura.value=ch}}catch(_){}
 
 /* 16 (22/11): sul telefono la barra Hotel Score sparisce mentre si scrive in una casella, per non coprire suggerimenti e tasti */
 var MB=document.querySelector('.z-mbar');if(MB){document.addEventListener('focusin',function(e){if(e.target.matches&&e.target.matches('input:not([type=checkbox]):not([type=radio]),textarea,select'))MB.classList.add('scr')});document.addEventListener('focusout',function(){MB.classList.remove('scr')})}
@@ -20,7 +21,7 @@ var MESI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agos
 var gm=function(iso){var p=iso.split('-');return +p[2]+' '+MESI[+p[1]-1]};
 function vis(el,fn,thr){if(!el)return;if(!('IntersectionObserver' in window))return fn();var o=new IntersectionObserver(function(es){if(es[0].isIntersecting){o.disconnect();fn()}},{root:ROOT,threshold:thr||.2});o.observe(el)}
 function vai(el,off){if(!el)return;off=off==null?120:off;if(MP){var y=el.getBoundingClientRect().top+scrollY-off;if(window.__lenis)window.__lenis.scrollTo(y);else scrollTo({top:y,behavior:'smooth'})}else pg.scrollTo({top:el.getBoundingClientRect().top-pg.getBoundingClientRect().top+pg.scrollTop-off+60,behavior:'smooth'})}
-function scrivici(t){try{sessionStorage.setItem('o2-msg',t)}catch(_){}var cf=document.getElementById('ctForm');if(cf&&cf.msg)cf.msg.value=t;var a=$('#o2Ct');if(a)a.click()}
+function scrivici(t,h){try{sessionStorage.setItem('o2-msg',t);if(h)sessionStorage.setItem('o2-hotel',h)}catch(_){}var cf=document.getElementById('ctForm');if(cf&&cf.msg)cf.msg.value=t;if(h&&cf&&cf.struttura)cf.struttura.value=h;var a=$('#o2Ct');if(a)a.click()}
 function lev(a,b){if(Math.abs(a.length-b.length)>8)return 99;var v=[],i,j;for(j=0;j<=b.length;j++)v[j]=j;for(i=1;i<=a.length;i++){var p=v[0];v[0]=i;for(j=1;j<=b.length;j++){var t=v[j];v[j]=Math.min(v[j]+1,v[j-1]+1,p+(a[i-1]===b[j-1]?0:1));p=t}}return v[b.length]}
 
 /* ---------- dati caricati quando servono ---------- */
@@ -62,7 +63,7 @@ function cercaVia(t,dove){vie().then(function(){var r=trovaVie(t);
 if(vf){vf.q.addEventListener('focus',vie,{once:true});vf.addEventListener('submit',function(e){e.preventDefault();cercaVia(vf.q.value.trim())});
   $$('.o2-ex button').forEach(function(b){b.addEventListener('click',function(){vf.q.value=b.dataset.v;cercaVia(b.dataset.v)})})}
 pg.addEventListener('click',function(e){var b=e.target.closest('[data-v]');if(b&&vr&&vr.contains(b)){vf.q.value=b.dataset.v;cercaVia(b.dataset.v)}
-  var m=e.target.closest('[data-o2-msg]');if(m){e.preventDefault();scrivici(m.dataset.o2Msg)}
+  var m=e.target.closest('[data-o2-msg]');if(m){e.preventDefault();scrivici(m.dataset.o2Msg,m.dataset.o2Hotel)}
   var h=e.target.closest('[data-o2-hs]');if(h){e.preventDefault();var a=$('#o2Hs');if(a)a.click()}});
 function vaiChat(fuoco){var s=$('#o2-hotel');if(!s)return;vai(s,90);if(fuoco)setTimeout(function(){var i=$('#o2-hotel .ch-in');if(i)i.focus({preventScroll:true})},800)}
 /* 16 (22/11): sull'Osservatorio la barra del telefono non porta fuori dalla pagina ma alla chat, e sparisce quando la chat è in vista */

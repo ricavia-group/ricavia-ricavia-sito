@@ -281,6 +281,8 @@ sec('kpi',function(){Acur=-1;Asel(0);clearInterval(At);At=setInterval(function()
       var nome=el.nome.value.trim(),tel=el.tel.value.trim(),mail=el.email.value.trim();
       var q=function(n){return el[n]&&el[n].value?el[n].value.trim():''};
       var L=[['Nome',nome],['Telefono',tel],['Email',mail],['Tipo di struttura ricettiva',q('tipo')||'Da indicare'],['Camere',q('camere')||'Da indicare'],['Ruolo',q('ruolo')||'Da indicare'],['Città',q('citta')||'Da indicare'],['Giorno e orario','Scelti nel calendario Google']];
+      /* nome dell'hotel e messaggio (anche quelli preparati dall'Osservatorio): il nome collega la richiesta all'hotel nel CRM */
+      if(q('struttura'))L.push(['Struttura ricettiva',q('struttura')]);if(q('msg'))L.push(['Messaggio',q('msg')]);
       var esc=function(t){return t.replace(/</g,'&lt;')};
       var fin=function(m){$('ctOk').querySelector('h3').textContent="Ultimo passo: scegli giorno e orario";
         $('ctOkTx').innerHTML='Grazie <b>'+esc(nome)+'</b>. Nel calendario che si è aperto scegli l\'orario che preferisci: ricevi subito a <b>'+esc(mail)+'</b> l\'invito con il link della videochiamata. Se il calendario non si è aperto, usa il tasto qui sotto'+(m==='sent'?'':'. Nella tua email trovi anche la richiesta già compilata per info@ricavia.com: premi Invia per completarla');
