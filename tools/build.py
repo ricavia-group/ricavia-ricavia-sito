@@ -295,6 +295,30 @@ def os_block(pid, content):
     return content[:at] + sec + content[at:]
 
 
+def journal_rivista(content):
+    """/journal/ come rivista: storia in evidenza, altre letture, ultimi articoli, poi le sei guide storiche."""
+    def sost(h, vecchio, nuovo):
+        assert vecchio in h, 'Journal: "%s" non trovato in #pg-journal' % vecchio
+        return h.replace(vecchio, nuovo, 1)
+    n = NUOVI[:12]
+    lista = '<div class="jr-list jr-new"><h2 class="jr-lbl">In evidenza</h2><div class="jr-cov">' + journal.scheda(n[0], True)
+    if n[1:4]:
+        lista += '<div class="jr-sec"><h2 class="jr-lbl">Altre letture</h2>' + ''.join(journal.scheda(a) for a in n[1:4]) + '</div>'
+    lista += '</div>'
+    if n[4:]:
+        lista += '<h2 class="jr-lbl">Ultimi articoli</h2><div class="jr-grid jr-lat">' + ''.join(journal.scheda(a) for a in n[4:]) + '</div>'
+    lista += '</div>\n    '
+    # la prima guida storica perde l'evidenza: diventa una scheda come le altre cinque
+    content = sost(content, '<b>Leggi l’articolo →</b>', '<b>Leggi →</b>')
+    content = sost(content, '<div class="jr-list"><article class="jr-ft ar" data-cat="zone">',
+                   lista + '<h2 class="jr-lbl jr-lbl-g">Guide e approfondimenti</h2><div class="jr-list jr-old"><article class="jr-cd ar" data-cat="zone">')
+    content = sost(content, '<span class="jr-ed">Rivista digitale</span>',
+                   '<span class="jr-ed">Aggiornato al %s</span>' % journal.data_italiana(max(a['data'] for a in NUOVI)))
+    arch = '<nav class="jr-arch" aria-label="Archivio del Journal"><span>Archivio</span>' + ''.join(
+        '<a href="/journal/archivio/%s/">%s %s</a>' % (m, MESI_IT[int(m[5:]) - 1].capitalize(), m[:4]) for m in MESI_NUOVI) + '</nav>'
+    return sost(content, '<a class="jr-zl"', arch + '<a class="jr-zl"')
+
+
 def page(pid, slug, title):
     is_home = pid == 'home'
     content = pages[pid]
@@ -309,12 +333,7 @@ def page(pid, slug, title):
         content = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
                          lambda m: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (m.group(1), ART_URL.get(m.group(1), '#'), m.group(2)), content)
     if pid == 'pg-journal' and NUOVI:
-        lista = '<div class="jr-list">' + journal.scheda(NUOVI[0], True) + (
-            '<div class="jr-grid">' + ''.join(journal.scheda(a) for a in NUOVI[1:12]) + '</div>' if NUOVI[1:] else '') + '</div>\n    '
-        content = content.replace('<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', lista + '<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', 1)
-        arch = '<nav class="jr-arch" aria-label="Archivio del Journal"><span>Archivio</span>' + ''.join(
-            '<a href="/journal/archivio/%s/">%s %s</a>' % (m, MESI_IT[int(m[5:]) - 1].capitalize(), m[:4]) for m in MESI_NUOVI) + '</nav>\n    '
-        content = content.replace('<div class="jz ar" id="os-zone">', arch + '<div class="jz ar" id="os-zone">', 1)
+        content = journal_rivista(content)
     if pid == 'pg-journal':  # l'iscrizione è sulla pagina dell'Osservatorio
         content = content.replace('href="#osForm"', 'href="/osservatorio/#osForm"')
     if pid in OS_BLOCKS:

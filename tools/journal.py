@@ -220,10 +220,12 @@ def template(a):
 def scheda(a, in_evidenza=False):
     return (
         '<article class="%s ar" data-cat="%s"><a class="jr-hit" href="/journal/%s/" aria-label="Leggi: %s"></a>'
-        '<figure class="jr-im"><img src="%s" alt="" loading="lazy"></figure>'
+        '<figure class="jr-im"><img src="%s" alt="" width="1600" height="900" %s></figure>'
         '<div class="jr-tx"><span class="jr-k">%s</span><h3>%s</h3><p>%s</p>'
         '<div class="jr-m"><span>%s</span><span>%d min di lettura</span><b>Leggi %s</b></div></div></article>'
     ) % ('jr-ft' if in_evidenza else 'jr-cd', a['categoria'], a['slug'], _e(a['titolo']), _hero(a),
+         # la copertina della storia in evidenza è nella prima schermata: si carica subito
+         'loading="eager" fetchpriority="high"' if in_evidenza else 'loading="lazy"',
          _e(CATEGORIE[a['categoria']]), _e(a['titolo']), _e(a['sottotitolo']), data_italiana(a['data']),
          a['minuti'], 'l’articolo →' if in_evidenza else '→')
 
