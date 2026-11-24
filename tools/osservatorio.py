@@ -349,22 +349,6 @@ def var(a, b):
     return ("+" if x > 0 else MENO if x < 0 else "") + f"{abs(x):.1f}".replace(".", ",") + "%"
 
 
-# Tariffa media degli alberghi di Roma (George 24/11: "fai un miscuglio", ricerca verificata del 24/11/2026).
-# 2014-2019: STR su alberghi Federalberghi, euro senza IVA e colazione (Gabetti, Hotel Report Q4 2020, tabella "Average Daily Rate")
-# 2020-2025: stima = 2019 STR × indice ISTAT dei prezzi dei servizi di alloggio nel Lazio (flusso 167_747, base 2015=100)
-# shortcut: valori scritti qui, da aggiornare a mano ogni anno quando escono l'indice ISTAT e i dati STR
-TARIFFA_STR = {"2014": 144.1, "2015": 152.4, "2016": 151.2, "2017": 148.6, "2018": 150.2, "2019": 153.8}
-ISTAT_ALLOGGI_LAZIO = {"2019": 107.4, "2020": 103.2, "2021": 105.5, "2022": 123.1, "2023": 145.1, "2024": 154.9, "2025": 156.3}
-
-
-def tariffa_roma():
-    """{anno: (euro, stimato)}: STR fino al 2019, poi il 2019 STR fatto crescere come l'indice ISTAT"""
-    t = {y: (v, False) for y, v in TARIFFA_STR.items()}
-    base = ISTAT_ALLOGGI_LAZIO["2019"]
-    t.update({y: (round(TARIFFA_STR["2019"] * i / base, 1), True) for y, i in ISTAT_ALLOGGI_LAZIO.items() if y != "2019"})
-    return t
-
-
 def andamento(an):
     """Grafico degli arrivi negli alberghi dal primo anno all'ultimo (George 22/11: "è bello vedere un grafico dal 2014 a oggi"):
     area con base zero, etichette sul 2019 (prima della pandemia), sull'anno più basso e sull'ultimo"""
@@ -378,32 +362,14 @@ def andamento(an):
     basso = min(an, key=an.get)
     nota = [y for y in dict.fromkeys(["2019", basso, anni[-1]]) if y in an]
     lab = "".join(f'<span class="o3-dmtl{" o3-dmtu" if y == anni[-1] else ""}" style="left:{X(y):.2f}%;bottom:{an[y] / mx * 85:.2f}%">{y}<b>{milioni(an[y])} mln</b></span>' for y in nota)
-    # seconda linea: tariffa media in euro, scala propria; piena dove è pubblicata (STR), tratteggiata dove è stimata (ISTAT)
-    tr = {y: v for y, v in tariffa_roma().items() if y in an}
-    prezzo, nota_p = "", ""
-    if len(tr) >= 5:
-        # scala propria che non parte da zero (George 24/11: "una linea fissa"): il salto dopo il 2021 deve vedersi
-        vv = [v for v, _ in tr.values()]
-        lo, hi = int(min(vv) * 0.9 // 10 * 10), max(vv) * 1.04
-        YP = lambda v: 38 - (v - lo) / (hi - lo) * 32
-        ya = sorted(tr)
-        vere = [y for y in ya if not tr[y][1]]
-        stime = [y for y in ya if tr[y][1]]
-        seg = lambda ys: " ".join(f"{X(y):.2f},{YP(tr[y][0]):.2f}" for y in ys)
-        prezzo = (f'<polyline points="{seg(vere)}" fill="none" stroke="#1D1D1F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>'
-                  + (f'<polyline points="{seg(vere[-1:] + stime)}" fill="none" stroke="#1D1D1F" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>' if stime and vere else ""))
-        lab += "".join(f'<span class="o3-dmtl o3-dmtp{"" if y == ya[0] else " o3-dmtu"}" style="left:{X(y):.2f}%;bottom:{(40 - YP(tr[y][0])) / 40 * 100:.2f}%">{y}<b>{eu(tr[y][0])}{" stima" if tr[y][1] else ""}</b></span>'
-                       for y in dict.fromkeys([ya[0], vere[-1], "2022" if "2022" in tr else ya[-1], ya[-1]]))
-        nota_p = (f'<p class="o3-dmnt"><i class="o3-lgk a"></i>Arrivi negli alberghi (ISTAT) <i class="o3-lgk p"></i>Tariffa media di una camera a Roma: '
-                  f'{vere[0]}-{vere[-1]} STR per Federalberghi, euro senza IVA e colazione; dal {stime[0]} stima, la tariffa del {vere[-1]} fatta crescere come l’indice ISTAT dei prezzi degli alloggi nel Lazio</p>')
-    return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma e tariffa media di una camera, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
+    return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'
             f'<svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Arrivi negli alberghi di Roma dal {anni[0]} al {anni[-1]}: '
             f'{milioni(an["2019"]) + " milioni nel 2019, " if "2019" in an else ""}{milioni(an[basso])} milioni nel {basso}, {milioni(an[anni[-1]])} milioni nel {anni[-1]}">'
             '<defs><linearGradient id="o3dmg" x1="0" x2="1"><stop offset="0" stop-color="#3CCDFA"/><stop offset=".7" stop-color="#1F2DD0"/><stop offset="1" stop-color="#724AF8"/></linearGradient>'
             '<linearGradient id="o3dma" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3CCDFA" stop-opacity=".22"/><stop offset="1" stop-color="#3CCDFA" stop-opacity="0"/></linearGradient></defs>'
             f'<path d="M0,40 L{pts.replace(" ", " L")} L100,40 Z" fill="url(#o3dma)"/>'
-            f'<polyline class="o3-trc" points="{pts}" fill="none" stroke="url(#o3dmg)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>{prezzo}</svg>'
-            f'{lab}</div><div class="o3-dmta"><span>{anni[0]}</span><span>{anni[-1]}</span></div>{nota_p}</div>')
+            f'<polyline class="o3-trc" points="{pts}" fill="none" stroke="url(#o3dmg)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>'
+            f'{lab}</div><div class="o3-dmta"><span>{anni[0]}</span><span>{anni[-1]}</span></div></div>')
 
 
 def flussi(d):
