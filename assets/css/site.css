@@ -6696,3 +6696,13 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 #pg-indicatori .ic-cta{display:inline-flex;gap:6px;margin-top:16px;font-size:14.5px;font-weight:600;color:#fff;text-decoration:none}
 #pg-indicatori .ic-cta:hover,#pg-indicatori .ic-cta:focus-visible{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 @media(max-width:480px){#pg-indicatori .ic-out{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* === 2.0 partner: testo ridotto === */
+/* tolta la scheda «Come misuriamo» (m): «Diventa partner» prende tutta la riga */
+#pg-partner .pn-bento{grid-template-areas:"c c c c p p" "b b b b b b"}
+@media(max-width:1000px){#pg-partner .pn-bento{grid-template-areas:"c c" "p p" "b b"}}
+@media(max-width:640px){#pg-partner .pn-bento{grid-template-areas:"c" "p" "b"}}
+/* senza «In 30 secondi» la didascalia dello schema toccava il titolo «I nostri partner» */
+#pg-partner .pn-list-s{padding-top:clamp(56px,6vw,96px)!important}
+/* l'indirizzo email in gradiente spariva sul fondo in gradiente della scheda */
+#pg-partner .mt-bento .pn-be p.ix-p a:not(.ap-btn){background:none!important;color:#fff!important;-webkit-text-fill-color:#fff!important;text-decoration:underline;text-underline-offset:3px}
