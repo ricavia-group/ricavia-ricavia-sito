@@ -382,16 +382,18 @@ def andamento(an):
     tr = {y: v for y, v in tariffa_roma().items() if y in an}
     prezzo, nota_p = "", ""
     if len(tr) >= 5:
-        pm = max(v for v, _ in tr.values()) * 1.08
-        YP = lambda v: 40 - v / pm * 34
+        # scala propria che non parte da zero (George 24/11: "una linea fissa"): il salto dopo il 2021 deve vedersi
+        vv = [v for v, _ in tr.values()]
+        lo, hi = int(min(vv) * 0.9 // 10 * 10), max(vv) * 1.04
+        YP = lambda v: 38 - (v - lo) / (hi - lo) * 32
         ya = sorted(tr)
         vere = [y for y in ya if not tr[y][1]]
         stime = [y for y in ya if tr[y][1]]
         seg = lambda ys: " ".join(f"{X(y):.2f},{YP(tr[y][0]):.2f}" for y in ys)
-        prezzo = (f'<polyline points="{seg(vere)}" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>'
-                  + (f'<polyline points="{seg(vere[-1:] + stime)}" fill="none" stroke="#1D1D1F" stroke-width="2" stroke-dasharray="4 4" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>' if stime and vere else ""))
-        lab += "".join(f'<span class="o3-dmtl o3-dmtp o3-dmtu" style="left:{X(y):.2f}%;bottom:{tr[y][0] / pm * 85:.2f}%">{y}<b>{eu(tr[y][0])}{" stima" if tr[y][1] else ""}</b></span>'
-                       for y in dict.fromkeys([vere[-1], ya[-1]]))
+        prezzo = (f'<polyline points="{seg(vere)}" fill="none" stroke="#1D1D1F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>'
+                  + (f'<polyline points="{seg(vere[-1:] + stime)}" fill="none" stroke="#1D1D1F" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>' if stime and vere else ""))
+        lab += "".join(f'<span class="o3-dmtl o3-dmtp{"" if y == ya[0] else " o3-dmtu"}" style="left:{X(y):.2f}%;bottom:{(40 - YP(tr[y][0])) / 40 * 100:.2f}%">{y}<b>{eu(tr[y][0])}{" stima" if tr[y][1] else ""}</b></span>'
+                       for y in dict.fromkeys([ya[0], vere[-1], "2022" if "2022" in tr else ya[-1], ya[-1]]))
         nota_p = (f'<p class="o3-dmnt"><i class="o3-lgk a"></i>Arrivi negli alberghi (ISTAT) <i class="o3-lgk p"></i>Tariffa media di una camera a Roma: '
                   f'{vere[0]}-{vere[-1]} STR per Federalberghi, euro senza IVA e colazione; dal {stime[0]} stima, la tariffa del {vere[-1]} fatta crescere come l’indice ISTAT dei prezzi degli alloggi nel Lazio</p>')
     return (f'<div class="o3-dmgr"><p>Arrivi negli alberghi di Roma e tariffa media di una camera, {anni[0]}-{anni[-1]}</p><div class="o3-dmtc">'

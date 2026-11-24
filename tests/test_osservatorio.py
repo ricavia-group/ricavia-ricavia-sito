@@ -299,7 +299,7 @@ class TestAndamento(unittest.TestCase):
         an['2020'] = 1800000
         h = osservatorio.andamento(an)
         self.assertEqual(h.count('class="o3-dmtl') - h.count('o3-dmtp'), 3)  # etichette degli arrivi
-        self.assertEqual(h.count('o3-dmtp'), 2)  # tariffa: 2019 pubblicato (STR) e ultimo anno stimato (ISTAT)
+        self.assertEqual(h.count('o3-dmtp'), 4)  # tariffa: primo anno, 2019 (STR), 2022 e ultimo anno (stime ISTAT)
         self.assertIn('stima', h)
         for y in ('2019', '2020', '2025'):
             self.assertIn(f'>{y}<b>', h)
