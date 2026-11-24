@@ -1,4 +1,8 @@
 (function(){
+// scheda senza copertina (immagine mancante): resta il fondo «Journal Ricavia», senza l'icona dell'immagine rotta
+function noimg(i){if(i&&i.closest&&i.closest('.jr-im'))i.style.visibility='hidden'}
+document.addEventListener('error',function(e){noimg(e.target)},true);
+[].forEach.call(document.querySelectorAll('.jr-im img'),function(i){if(i.complete&&i.getAttribute('src')&&!i.naturalWidth)noimg(i)});
 var pg=document.getElementById('pg-journal');if(!pg)return;
 var rd=document.getElementById('jrRd'),art=rd.querySelector('.jr-art'),bar=rd.querySelector('.jr-pr i'),nx=rd.querySelector('[data-jr-next]');
 document.body.appendChild(rd);
