@@ -287,6 +287,8 @@ def os_block(pid, content):
         # in Home le animazioni di comparsa usano un altro sistema: il blocco resta visibile
         sec = re.sub(r'class="([^"]*?) ?\bar\b', lambda m: 'class="%s' % m.group(1), sec).replace(' class=""', '')
     i = content.find('class="ix-faq"')
+    if i < 0:
+        i = content.find('id="faq"')  # home 2.0: il blocco va prima delle domande frequenti, non dopo </main>
     at = content.rfind('<section', 0, i) if i >= 0 else -1
     if at < 0:
         at = content.find('<footer class="ft')
