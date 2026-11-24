@@ -633,27 +633,61 @@ def percorso(d, omi):
             f'<p class="oz-s">{fonte}</p></div>')
 
 
-def apertura(d):
-    """Blocco della pagina Nuova apertura: le nove zone a confronto per chi apre o compra (fermata 10 del giro)."""
-    righe, omi = [], collections.defaultdict(list)
+def omi_zone(d):
+    omi = collections.defaultdict(list)
     for q in d.get("omi") or []:
         if q.get("vendita_min") and q.get("vendita_max"):
             omi[q["zona_sito"]].append(q)
+    return omi
+
+
+def vie_zone(rioni, hotel, vie):
+    """Ricerca per via di Nuova apertura (24/11): la zona di riferimento di una via viene dal rione o quartiere delle sue
+    strutture ricettive in hotel.json e dalla zona di quel rione nelle schede (rioni, la stessa regola dell'Osservatorio).
+    Una zona sola → (zona → vie); più zone delle nove → (via → zone, la più frequente prima); un rione senza zona → niente"""
+    vr = collections.defaultdict(collections.Counter)
+    for h in hotel:
+        v = re.sub(r"[\s,\-]+\d.*$", "", (h.get("i") or "").strip())  # i nomi del registro in vie.json non hanno cifre
+        if v in vie:
+            vr[v][rioni.get(h.get("z"))] += 1
+    uno, piu = collections.defaultdict(list), {}
+    for v, c in sorted(vr.items()):
+        if None in c:
+            continue
+        if len(c) == 1:
+            uno[next(iter(c))].append(v)
+        else:
+            piu[v] = [z for z, _ in c.most_common()]
+    return dict(uno), piu
+
+
+def apertura(d):
+    """Blocco della pagina Nuova apertura: le nove zone a confronto per chi apre o compra (fermata 10 del giro),
+    con sopra la ricerca per via (assets/js/15-apertura-via.js, nascosta senza JavaScript)."""
+    righe, omi = [], omi_zone(d)
+    uno, piu = d.get("vz") or ({}, {})
+    vz = json.dumps({"ver": d.get("ver", ""), "reg": d["registro"]["file"], "uno": uno, "piu": piu},
+                    ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     for z in sorted(d["zone"], key=lambda z: -((z["mercato"] or {}).get("sotto_8") or 0)):
         o, m = z["offerta"], z["mercato"] or {}
         dens = num(round(o["strutture"] / z["km2"])) if z.get("km2") else "n.d."
         righe.append(f'<tr><th scope="row">{E(z["nome"])}</th><td>{dens}</td><td>{num(o.get("alberghi", 0))}</td><td>{num(o.get("camere_alberghi", 0))}</td>'
                      f'<td>{str(m["sabato"]) + " €" if m.get("sabato") else "n.d."}</td><td>{dec(m["voto"]) if m.get("voto") else "n.d."}</td>'
                      f'<td><b>{pct(m["sotto_8"], False) if m.get("sotto_8") is not None else "n.d."}</b></td>{casa(omi.get(z["nome"]))}</tr>')
-    # prima il percorso a tappe, subito sotto «In 30 secondi», poi le nove zone a confronto
-    return (f'{percorso(d, omi)}<div class="ix-blk oz"><div class="ix-sh ar"><span class="ap-tag">Dall’Osservatorio · {data(d["aggiornato"])}</span>'
+    # 24/11: subito sotto «In 30 secondi» le nove zone con la ricerca per via; il percorso a tappe sta più in basso (percorso)
+    return (f'<div class="ix-blk oz"><div class="ix-sh ar"><span class="ap-tag">Dall’Osservatorio · {data(d["aggiornato"])}</span>'
             f'<h2>Dove aprire a Roma: nove zone a confronto</h2>'
             f'<p class="ix-p">Quanto è affollata ogni zona, quanto costa una camera il sabato e quanti alberghi hanno un voto sotto 8 su Booking. '
             f'Più alta è quella quota, più spazio c’è per un albergo che lavora meglio dei vicini</p></div>'
+            f'<form class="av-f" id="avForm" role="search" novalidate hidden><label for="avQ">Cerca una via o una piazza di Roma</label>'
+            f'<div class="av-in"><input id="avQ" name="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Per esempio Via Nazionale">'
+            f'<button type="submit" class="av-go">Cerca</button></div></form>'
+            f'<p class="av-st" id="avSt" role="status" aria-live="polite"></p><div class="av-r" id="avR" hidden></div>'
+            f'<script type="application/json" id="avDati">{vz}</script><div id="avTab">'
             f'<p class="oz-hint" aria-hidden="true">Scorri la tabella di lato →</p><div class="oz-w ar"><table class="oz-t"><thead><tr><th>Zona</th><th>Strutture ricettive per km²</th><th>Alberghi</th><th>Camere d’albergo</th>'
             f'<th>Sabato, valore mediano</th><th>Voto mediano</th><th>Alberghi sotto 8</th><th>Casa al m²</th><th>Rendimento lordo da affitto</th></tr></thead><tbody>{"".join(righe)}</tbody></table></div>'
             f'<p class="oz-s">Fonte: registro delle strutture ricettive di Roma Capitale ({E(d["registro"]["file"])}) e Booking, prezzi letti dal {data(d["letture_dal"])} '
-            f'al {data(d["aggiornato"])}, camera per 2 persone. Casa al m² e rendimento: quotazioni OMI dell’Agenzia delle Entrate, 1° semestre 2026, abitazioni civili in stato normale, valore mediano delle zone OMI della zona; il rendimento è l’affitto annuo diviso il prezzo, prima di tasse e spese</p>'
+            f'al {data(d["aggiornato"])}, camera per 2 persone. Casa al m² e rendimento: quotazioni OMI dell’Agenzia delle Entrate, 1° semestre 2026, abitazioni civili in stato normale, valore mediano delle zone OMI della zona; il rendimento è l’affitto annuo diviso il prezzo, prima di tasse e spese</p></div>'
             f'<p class="oz-c"><a class="z-btn" href="#pg-osservatorio">Le zone nell’Osservatorio <span class="arr">→</span></a></p></div>')
 
 
@@ -748,7 +782,8 @@ def main():
     with open(os.path.join(DATI, "osservatorio.json"), encoding="utf-8") as f:
         d = json.load(f)
     with open(os.path.join(DATI, "vie.json"), encoding="utf-8") as f:
-        d["vie"] = len(json.load(f))
+        vie = json.load(f)
+        d["vie"] = len(vie)
     with open(os.path.join(DATI, "mappa.json"), encoding="utf-8") as f:
         m = json.load(f)
         d["mappa_wh"] = f'{m["w"]}/{m["h"]}'
@@ -777,6 +812,8 @@ def main():
             d["indicatori"] = json.load(f)
     d["sabato100"], d["rioni"], d["righe"] = schede_dati(os.path.join(DATI, "schede"))
     d["zs"] = zp_schede(d["righe"], d["date"]["sabato"], d["aggiornato"])
+    with open(os.path.join(DATI, "hotel.json"), encoding="utf-8") as f:
+        d["vz"] = vie_zone(d["rioni"], json.load(f), vie)
     with open(os.path.join(DATI, "classifiche.json"), "w", encoding="utf-8", newline="") as f:
         json.dump(d["righe"], f, ensure_ascii=False, separators=(",", ":"))
     p = os.path.join(ROOT, "index.html")
@@ -788,6 +825,9 @@ def main():
     pa = re.compile(r"<!--oss:apertura-->.*?<!--/oss:apertura-->", re.S)
     assert pa.search(t), "segnaposto <!--oss:apertura--> mancante in index.html"
     t = pa.sub(lambda _: "<!--oss:apertura-->" + apertura(d) + "<!--/oss:apertura-->", t)
+    pp = re.compile(r"<!--oss:percorso-->.*?<!--/oss:percorso-->", re.S)
+    assert pp.search(t), "segnaposto <!--oss:percorso--> mancante in index.html"
+    t = pp.sub(lambda _: "<!--oss:percorso-->" + percorso(d, omi_zone(d)) + "<!--/oss:percorso-->", t)
     with open(p, "w", encoding="utf-8", newline="") as f:
         f.write(t)
     print("ok", d["aggiornato"], d["alberghi_letti"], "alberghi letti")
