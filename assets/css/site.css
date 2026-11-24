@@ -6371,8 +6371,8 @@ html.o2-nosc{overflow:hidden}
 #pg-journal .jr-old>.jr-grid{display:contents}
 /* filtro attivo: elenco uniforme, senza le etichette delle sezioni */
 #os-journal[data-f] .jr-lbl{display:none}
-#os-journal[data-f] .jr-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,28px);margin-bottom:clamp(18px,2vw,28px)}
-#os-journal[data-f] :is(.jr-cov,.jr-sec,.jr-grid){display:contents}
+#os-journal[data-f] .jr-all{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,28px)}
+#os-journal[data-f] :is(.jr-list,.jr-cov,.jr-sec,.jr-grid){display:contents}
 #os-journal[data-f] .jr-ft{display:flex;flex-direction:column}
 #os-journal[data-f] .jr-ft .jr-im{min-height:0!important;aspect-ratio:16/10!important}
 #os-journal[data-f] .jr-ft .jr-tx{padding:18px 20px 20px}
@@ -6398,11 +6398,12 @@ html.o2-nosc{overflow:hidden}
   #pg-journal .jr-mast .jr-dek{justify-self:start;margin-top:10px!important}
   #pg-journal .jr-ft{grid-template-columns:minmax(0,1fr)}
   #pg-journal .jr-ft .jr-im{min-height:0!important;aspect-ratio:16/9!important}
-  :is(#pg-journal,.jr-arp) .jr-grid,#pg-journal .jr-old,#os-journal[data-f] .jr-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  :is(#pg-journal,.jr-arp) .jr-grid,#pg-journal .jr-old,#os-journal[data-f] .jr-all{grid-template-columns:repeat(2,minmax(0,1fr))}
   #os-journal:not([data-f]) .jr-lat{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:620px){
   #pg-journal .jr-mast .jr-title{font-size:44px!important}
+  #pg-journal .jr-mast .jr-rule span:first-child{display:none}
   #pg-journal .jr-nav{display:block;padding:10px 0 12px}
   #pg-journal .jr-nav .jr-fl{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -24px;padding:2px 24px 4px}
   #pg-journal .jr-nav .jr-fl::-webkit-scrollbar{display:none}
@@ -6413,7 +6414,7 @@ html.o2-nosc{overflow:hidden}
   #pg-journal .jr-ft p{font-size:15px}
   #pg-journal .jr-ft .jr-m{margin-top:16px}
   /* sul telefono altre letture, ultimi articoli, guide, archivio e risultati filtrati diventano righe con miniatura */
-  #pg-journal .jr-sec,:is(#pg-journal,.jr-arp) .jr-grid,#pg-journal .jr-old,#os-journal[data-f] .jr-list{grid-template-columns:minmax(0,1fr);gap:0}
+  #pg-journal .jr-sec,:is(#pg-journal,.jr-arp) .jr-grid,#pg-journal .jr-old,#os-journal[data-f] .jr-all{grid-template-columns:minmax(0,1fr);gap:0}
   #pg-journal .jr-sec>.jr-lbl{margin:28px 0 6px}
   :is(#pg-journal .jr-sec,#pg-journal .jr-old,#os-journal[data-f],.jr-arp,#os-journal .jr-lat) :is(.jr-cd,.jr-ft){display:grid!important;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:start;padding:16px 0;background:none;box-shadow:none;border-radius:0!important;border-top:1px solid var(--zln);overflow:visible;transform:none!important}
   :is(#pg-journal .jr-sec,#pg-journal .jr-old,#os-journal[data-f],.jr-arp,#os-journal .jr-lat) :is(.jr-cd,.jr-ft) .jr-im{aspect-ratio:1/1!important;min-height:0!important;border-radius:10px}
@@ -6425,3 +6426,4 @@ html.o2-nosc{overflow:hidden}
   #pg-journal .jz-g dl{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:reduce){:is(#pg-journal,.jr-arp) :is(.jr-ft,.jr-cd,.jr-im img){transition:none!important;transform:none!important}}
+#pg-journal #os-journal .jr-off{display:none!important}
