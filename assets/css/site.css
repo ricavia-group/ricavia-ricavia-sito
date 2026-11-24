@@ -6310,7 +6310,7 @@ html.o2-nosc{overflow:hidden}
 
 /* === 2.0 home e spazi === */
 /* spazio tra menu chiuso (barra fissa alta 61px + safe area) e inizio pagina */
-:root{--sp-nav:calc(61px + env(safe-area-inset-top,0px));--sp-top:clamp(24px,calc(16px + 1.25vw),34px);--sp-after:clamp(20px,calc(16px + .8vw),27px);--sp-top-lg:clamp(20px,calc(15px + 1.2vw),30px);--sp-after-lg:clamp(16px,calc(14px + .6vw),22px)}
+:root{--sp-nav:calc(61px + env(safe-area-inset-top,0px));--sp-top:clamp(24px,calc(16px + 1.25vw),34px);--sp-after:clamp(24px,calc(16px + .8vw),27px);--sp-top-lg:clamp(20px,calc(15px + 1.2vw),30px);--sp-after-lg:clamp(16px,calc(14px + .6vw),22px)}
 :is(#revenue-management,#consulenza,#apertura,#pg-metodo,#pg-chi-siamo,#pg-partner,#pg-pagella,#pg-indicatori)>.ap-hero:first-child{padding-top:calc(var(--sp-nav) + var(--sp-top))!important}
 :is(#pg-privacy,#pg-cookie,#pg-termini)>.ap-hero:first-child{padding-top:calc(var(--sp-nav) + var(--sp-top-lg))!important}
 #contatti .ctp-in{padding-top:calc(var(--sp-nav) + var(--sp-top))!important}
