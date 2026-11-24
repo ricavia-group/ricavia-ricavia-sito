@@ -334,5 +334,17 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-24",
+    "slug": "permanenza-media-hotel-istat",
+    "tema": "istat-flussi-terzo-trimestre-2026-durata-soggiorno-hotel",
+    "keyword": "permanenza media hotel",
+    "categoria": "dati",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
