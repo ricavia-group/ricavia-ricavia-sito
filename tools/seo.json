@@ -15,9 +15,6 @@
       "title": "Aprire un hotel a Roma: business plan e consulenza · Ricavia",
       "description": "Vuoi aprire un hotel a Roma o nel Lazio? Ricavia ti affianca con studio di fattibilità, business plan, posizionamento, prezzi di lancio e tecnologia"
     },
-    "pg-metodo": {
-      "description": "Il metodo Ricavia per hotel indipendenti: ascolto, analisi di tariffe e costi, interventi prioritari e verifica dei risultati su GOP e GOPPAR"
-    },
     "pg-chi-siamo": {
       "description": "Conosci George Ghimici e Andrea Martella, fondatori di Ricavia: esperienza nell'ospitalità e nella distribuzione online al servizio degli hotel"
     },
@@ -143,7 +140,7 @@
         },
         {
           "label": "il metodo Ricavia",
-          "url": "/metodo/"
+          "url": "/#metodo"
         }
       ]
     }

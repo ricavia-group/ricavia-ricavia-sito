@@ -26,7 +26,6 @@ PAGES = [
     ('revenue-management', 'revenue-management', 'Revenue management per hotel a Roma · Ricavia'),
     ('consulenza', 'consulenza', 'Consulenza per hotel: margine, GOP e GOPPAR · Ricavia'),
     ('apertura', 'nuova-apertura', 'Nuova apertura di un hotel o di una struttura ricettiva · Ricavia'),
-    ('pg-metodo', 'metodo', 'Il metodo Ricavia: dal dato all\'utile · Ricavia'),
     ('pg-chi-siamo', 'chi-siamo', 'Chi siamo: i fondatori di Ricavia, Roma · Ricavia'),
     ('pg-partner', 'partner', 'Partner tecnologici hotel: PMS e channel manager · Ricavia'),
     ('contatti', 'contatti', 'Contatti: prenota una call conoscitiva · Ricavia'),
@@ -544,6 +543,8 @@ for _a in NUOVI:  # anteprime social già diffuse con il vecchio indirizzo
 for _s in RITIRATI:  # articoli ritirati: direttamente all'elenco
     VECCHI += [('/osservatorio/%s/' % _s, '/journal/'), ('/journal/%s/' % _s, '/journal/')]
 RED += [(v.rstrip('/'), n) for v, n in VECCHI if v.endswith('/')] + VECCHI
+# la pagina Metodo non c'è più (24/11/2026): i quattro passi stanno in «Come lavoriamo» della home
+RED += [('/metodo', '/#metodo'), ('/metodo/', '/#metodo')]
 open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % r for r in RED))
 # chiave IndexNow (Bing e altri motori): il file deve restare raggiungibile alla radice del sito
 INDEXNOW_KEY = '77a8078505659e943f2e417aafa1d9db'

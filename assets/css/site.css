@@ -6639,3 +6639,10 @@ main.jr-pgm .jr-arp{padding-top:0!important}
  .h3-cta .z-btn{width:100%;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){.h3-sl{transition:none;transform:none}.h3-show.gira .h3-tabs button[aria-selected="true"] i::after{animation:none}}
+
+/* === 2.0 nuova apertura senza spazi morti === */
+/* le sezioni avevano 180 px sopra e sotto (360 px di bianco tra due blocchi): ora circa la metà */
+#apertura .ap-sec.ix{padding-top:clamp(56px,6.5vw,96px)!important;padding-bottom:clamp(56px,6.5vw,96px)!important}
+#apertura #ap-form.ap-sec,#apertura .ap-sec.ap-faq{padding-top:0!important}
+#apertura #npVend{padding-top:clamp(40px,4.5vw,64px)!important;padding-bottom:clamp(40px,4.5vw,64px)!important}
+#apertura .ap-hero{padding-bottom:clamp(24px,3vw,40px)!important}
