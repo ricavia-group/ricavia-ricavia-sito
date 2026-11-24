@@ -6658,3 +6658,9 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 .o3-lgk{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin:0 6px 0 0}
 .o3-lgk.a{background:var(--zgr)}
 .o3-lgk.p{background:#1D1D1F;margin-left:12px}
+/* vetrina della home: link alla pagina mostrata e tasto Pausa/Riprendi sotto i nomi */
+.h3-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:520px}
+.h3-go{font-weight:600;font-size:14.5px;color:var(--zink);text-decoration:none}
+.h3-go:hover{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent}
+.h3-pp{font:inherit;font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid rgba(29,29,31,.18);background:#fff;color:var(--zink);cursor:pointer}
+.h3-pp:focus-visible,.h3-go:focus-visible{outline:2px solid #3CCDFA;outline-offset:2px}

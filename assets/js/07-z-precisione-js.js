@@ -76,12 +76,16 @@ var tabs=[].slice.call(S.querySelectorAll('[role=tab]')),sl=[].slice.call(S.quer
 var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 S.style.setProperty('--h3t',T/1000+'s');
 function riparti(){clearTimeout(tm);S.classList.remove('gira');void S.offsetWidth;if(stop||hover||RM||document.hidden||!vis)return;S.classList.add('gira');tm=setTimeout(function(){vai(i+1)},T)}
-function vai(k,fuoco){i=(k+tabs.length)%tabs.length;tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;sl[j].classList.toggle('on',on);sl[j].tabIndex=on?0:-1;sl[j].setAttribute('aria-hidden',on?'false':'true')});if(fuoco)tabs[i].focus();riparti()}
-function ferma(){stop=true;clearTimeout(tm);S.classList.add('ferma')}
+function vai(k,fuoco){i=(k+tabs.length)%tabs.length;tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;sl[j].classList.toggle('on',on);sl[j].tabIndex=on?0:-1;sl[j].setAttribute('aria-hidden',on?'false':'true')});if(go){go.href=sl[i].getAttribute('href');if(goT)goT.textContent=sl[i].getAttribute('data-go')||''}if(fuoco)tabs[i].focus();riparti()}
+var go=document.getElementById('h3Go'),goT=document.getElementById('h3GoT'),pp=document.getElementById('h3Pp');
+function tasto(){if(!pp)return;pp.textContent=stop?'Riprendi':'Pausa';pp.setAttribute('aria-pressed',stop?'true':'false');pp.setAttribute('aria-label',stop?'Fai ripartire lo scorrimento della vetrina':'Ferma lo scorrimento della vetrina')}
+function ferma(){stop=true;clearTimeout(tm);S.classList.add('ferma');tasto()}
+if(pp)pp.addEventListener('click',function(e){e.stopPropagation();if(stop){stop=false;S.classList.remove('ferma');tasto();riparti()}else ferma()});
+if(RM&&pp)pp.hidden=true;
 tabs.forEach(function(t,j){t.addEventListener('click',function(){ferma();vai(j)});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();ferma();vai(i+(e.key==='ArrowRight'?1:-1),true)}})});
 S.addEventListener('mouseenter',function(){hover=true;clearTimeout(tm);S.classList.add('ferma')});
 S.addEventListener('mouseleave',function(){hover=false;if(!stop){S.classList.remove('ferma');riparti()}});
-S.addEventListener('touchstart',ferma,{passive:true});S.addEventListener('focusin',ferma);
+S.addEventListener('touchstart',function(e){if(!e.target.closest('#h3Pp'))ferma()},{passive:true});S.addEventListener('focusin',function(e){if(!e.target.closest('#h3Pp'))ferma()});
 document.addEventListener('visibilitychange',riparti);
 if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;riparti()})}).observe(S);
 vai(0);

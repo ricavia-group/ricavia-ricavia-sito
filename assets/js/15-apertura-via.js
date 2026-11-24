@@ -71,3 +71,11 @@ Q.addEventListener('focus',function(){carica().catch(function(){})},{once:true})
 Q.addEventListener('input',function(){if(!Q.value.trim()){ultima='';tutte()}});
 F.addEventListener('submit',function(e){e.preventDefault();cerca(Q.value.trim())});
 }catch(_e){window.__DBG&&console.warn('apertura via',_e&&_e.message)}})();
+/* link diretti /nuova-apertura/#ap-form e #npPerc (24/11): la pagina si allunga mentre carica fasi, annunci e zone, e il primo salto
+   all'ancora finisce troppo in basso. Si ripete a caricamento concluso, solo se la persona non ha già scorso la pagina da sola */
+(function(){try{var h=location.hash;if(!/^#(ap-form|npPerc)$/.test(h))return;var mosso=false;
+['wheel','touchmove','keydown'].forEach(function(ev){window.addEventListener(ev,function(){mosso=true},{passive:true,once:true})});
+var vai=function(){if(mosso)return;var e=document.getElementById(h.slice(1));if(e)e.scrollIntoView({block:'start'})};
+var dopo=function(){setTimeout(vai,250);setTimeout(vai,1200)};
+if(document.readyState==='complete')dopo();else window.addEventListener('load',dopo);
+}catch(_e){}})();
