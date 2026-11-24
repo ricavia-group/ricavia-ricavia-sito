@@ -6670,3 +6670,7 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 #pg-chi-siamo .cs-bento{grid-template-areas:"c c c c q1 q1" "g g g g g g" "ce ce ce n n n" "q2 q2 a a a a"}
 @media(max-width:1000px){#pg-chi-siamo .cs-bento{grid-template-areas:"c c" "q1 q1" "g g" "ce ce" "n n" "q2 q2" "a a"}}
 @media(max-width:640px){#pg-chi-siamo .cs-bento{grid-template-areas:"c" "q1" "g" "ce" "n" "q2" "a"}}
+
+/* === 2.0 hotel score senza foto === */
+/* «Le cose da guardare» ha due schede su una griglia da tre: senza la foto sotto, le due schede prendono tutta la riga */
+@media(min-width:1001px){#pg-pagella .hs-pr{grid-template-columns:repeat(2,minmax(0,1fr))}}
