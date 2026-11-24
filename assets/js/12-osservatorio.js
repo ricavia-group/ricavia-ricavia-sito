@@ -160,9 +160,9 @@ function report(s){var v=s.voti||{},bk=s.booking||{},sc=s.scala,m=pz(s,'martedi'
     /* 2.9: dato più vecchio di 7 giorni; il giro notturno rilegge per primi gli hotel letti da più tempo (ordinaCoda) */
     (s.letto_il&&Date.now()-Date.parse(s.letto_il)>7*864e5?'<p class="o2-rd">Questi dati hanno più di 7 giorni: il tuo hotel è tra i primi delle prossime letture notturne</p>':'')+'</header>';
   /* 4.1 i voti */
-  h+='<section class="o2-rs"><h3>Il tuo Hotel Score</h3><div class="o2-rhs"><b>'+(s.hotel_score!=null?d1(s.hotel_score):'n.d.')+'</b><span>su 10, media di '+A.filter(function(a){return v[a[0]]!=null}).length+' aree su 6'+(s.hotel_score==null?'. La media compare con almeno 4 aree':'')+'</span></div><ul class="o2-rv">'+
-    A.map(function(a){var x=v[a[0]];return x==null?'<li class="na"><span>'+a[1]+'</span><i></i><b>in arrivo</b></li>':'<li><span>'+a[1]+'</span><i><u style="width:'+x*10+'%"></u></i><b>'+x+'</b></li>'}).join('')+'</ul>'+
-    '<p class="o2-rn">Canali e Sito entrano a dicembre. Il voto Foto conta le foto della pagina Booking</p></section>';
+  h+='<section class="o2-rs"><h3>Il tuo Hotel Score</h3><div class="o2-rhs"><b>'+(s.hotel_score!=null?d1(s.hotel_score):'n.d.')+'</b><span>su 10, media di '+A.filter(function(a){return v[a[0]]!=null}).length+' aree'+(s.hotel_score==null?'. La media compare con almeno 4 aree':'')+'</span></div><ul class="o2-rv">'+
+    A.map(function(a){var x=v[a[0]];return x==null?((a[0]==='canali'||a[0]==='sito')?'':'<li class="na"><span>'+a[1]+'</span><i></i><b>n.d.</b></li>'):'<li><span>'+a[1]+'</span><i><u style="width:'+x*10+'%"></u></i><b>'+x+'</b></li>'}).join('')+'</ul>'+
+    '<p class="o2-rn">Il voto Foto conta le foto della pagina Booking</p></section>';
   /* 4.11 la scala */
   if(sc){var su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
     h+='<section class="o2-rs"><h3>La tua posizione</h3><p class="o2-rbig"><b>'+sc.pos+'°</b> su '+sc.su+' alberghi a '+(s.stelle||'')+' stelle in '+esc(s.zona_sito||'')+'</p>'+
@@ -356,7 +356,25 @@ function pulisci(){$$('[data-tu]').forEach(function(x){x.parentNode.removeChild(
   $$('.o3-mia').forEach(function(x){x.classList.remove('o3-mia')});
   $$('.me1,.o3-io1').forEach(function(x){x.classList.remove('me1','o3-io1')});
   var io=$('#o2Io');io.hidden=true;io.innerHTML='';if(FC&&FINE0!=null)FC.innerHTML=FINE0;barra()}
-function spersonalizza(fuoco){ME=null;pulisci();try{var u=new URL(location.href);u.searchParams.delete('hotel');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
+/* 2.0, link della mail (?hotel=ID), quasi sempre dal telefono: nel primo schermo il suo hotel (voto, posizione tra i vicini, un prezzo), la call e sotto la chat.
+   Solo dati della scheda: una riga senza dato non compare. Dalla ricerca la scheda resta quella di prima */
+var MAIL=false,CASA=null,DOPO=null;
+function primo(s,zm){var bk=s.booking||{},st=s.set||{},r=[],p=[pzM('sabato'),pzM('martedi')].filter(function(q){return q&&q.prezzo!=null&&q.mediano!=null})[0];
+  if(bk.voto!=null)r.push(['Voto su Booking','<b>'+d1(bk.voto)+'</b>'+(bk.recensioni?' · '+num(bk.recensioni)+' recensioni':'')]);
+  if(s.confronto&&s.posizione&&s.su)r.push(['Tra i tuoi vicini','<b>'+s.posizione+'º su '+s.su+'</b> per voto'+(st.quanti?': tu e i '+num(st.quanti)+' alberghi simili più vicini'+(st.piu_lontano_m?', entro '+num(st.piu_lontano_m)+' m':''):'')]);
+  if(p)r.push([maiu(gg(p.arrivo,1)),'Tu <b>'+eu(p.prezzo)+'</b><br>Gli alberghi simili più vicini <b>'+eu(p.mediano)+'</b>']);
+  else{var k=['sabato','martedi'].filter(function(k){return mio(k)!=null&&zm&&zm[k]!=null})[0];if(k)r.push([maiu(gg(D.date[k],1)),'Tu <b>'+eu(mio(k))+'</b><br>La tua zona <b>'+eu(zm[k])+'</b>'])}
+  return '<h2 class="o3-nm">'+esc(ME.nome)+'</h2><p class="o3-chi">'+esc([s.indirizzo,s.zona_sito||s.zona||'Roma',s.stelle?s.stelle+(s.stelle===1?' stella':' stelle'):'',s.camere?s.camere+' camere':''].filter(Boolean).join(' · '))+'</p>'+
+    (r.length?'<dl class="o3-pr">'+r.map(function(x){return '<div><dt>'+esc(x[0])+'</dt><dd>'+x[1]+'</dd></div>'}).join('')+'</dl>':'')+
+    '<div class="o3-az"><button class="o3-btn" type="button" data-o2-msg="Vorrei prenotare la call conoscitiva per '+esc(ME.nome)+'"><span>Prenota la call conoscitiva</span></button><button class="o3-lnk" type="button" data-o3="togli">Cambia hotel</button></div>'+
+    '<p class="o2-src">Booking, camera per 2 adulti, letto il '+gg(s.letto_il)+(p?'. Alberghi simili: valore mediano di '+p.con_prezzo:'')+'. Nella chat qui sotto trovi i competitor, i prezzi e il report</p>'}
+/* la chat sale sotto la scheda e torna al suo posto con «Cambia hotel». Si sposta #o2Chat: prima o dopo 14-chat.js è sempre la finestra giusta */
+function chatSu(on){var c=document.getElementById('o2Chat'),io=$('#o2Io'),a=$('#o2Nav a[href="#o2-hotel"],#o2Nav a[href="#o2Chat"]');
+  document.documentElement.classList.toggle('o2-mail',!!MAIL);if(!c||!io)return;
+  if(on&&!CASA){CASA=c.parentNode;DOPO=c.nextSibling;io.parentNode.insertBefore(c,io.nextSibling)}
+  else if(!on&&CASA){CASA.insertBefore(c,DOPO);CASA=DOPO=null}
+  pg.classList.toggle('o2-mailc',!!CASA);if(a)a.setAttribute('href',CASA?'#o2Chat':'#o2-hotel')}
+function spersonalizza(fuoco){ME=null;MAIL=false;chatSu(false);pulisci();try{var u=new URL(location.href);u.searchParams.delete('hotel');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
   if(fuoco&&f){f.q.value='';f.q.focus()}}
 function tuOggi(){var dt=D.date,s=ME.s;
   put('notte',tu(s&&(s.prezzi||[]).length?'Del tuo hotel leggiamo tre date: '+gg(dt.martedi,1)+', '+gg(dt.sabato,1)+' e Capodanno. I tuoi prezzi sono nel blocco qui sotto':'I prezzi del tuo hotel non sono ancora letti: nel blocco qui sotto trovi la tua zona'));
@@ -365,7 +383,8 @@ function disegnaTu(){pulisci();if(!ME)return;
   var s=ME.s,hh=ME.h,R=D.roma,Z=zonaMia(),zm=Z&&Z.mercato,zf=Z&&Z.offerta,dt=D.date,gm=gg(dt.martedi,1),gs=gg(dt.sabato,1),cz=classZona(Z),letti=!!(s&&(s.prezzi||[]).length),n=s&&(s.set||{}).quanti||'';
   /* la scheda sotto la ricerca */
   var x='<div><p class="o2-tag">Il tuo hotel</p>';
-  if(s){var box=function(lbl,k){var v=mio(k);return '<div><small>'+esc(maiu(lbl))+'</small><b'+(v==null?' class="t"':'')+'>'+(v==null?esc(perche(k)):eu(v))+'</b><small>'+(zm&&zm[k]!=null?'la tua zona '+eu(zm[k]):'Roma '+eu(R[k]))+'</small></div>'};
+  if(s&&MAIL)x+=primo(s,zm);
+  else if(s){var box=function(lbl,k){var v=mio(k);return '<div><small>'+esc(maiu(lbl))+'</small><b'+(v==null?' class="t"':'')+'>'+(v==null?esc(perche(k)):eu(v))+'</b><small>'+(zm&&zm[k]!=null?'la tua zona '+eu(zm[k]):'Roma '+eu(R[k]))+'</small></div>'};
     x+='<h2>'+esc(ME.nome)+': ogni blocco qui sotto ora ha i tuoi numeri</h2><p class="o3-chi">'+esc([s.indirizzo,s.zona_sito||s.zona||'Roma',s.stelle?s.stelle+' stelle':'',s.camere?s.camere+' camere':''].filter(Boolean).join(' · '))+'</p>'+
       '<div class="o3-tre">'+box(gm,'martedi')+box(gs,'sabato')+'<div><small>Hotel Score</small><b'+(s.hotel_score==null?' class="t"':'')+'>'+(s.hotel_score==null?'non ancora calcolato':d1(s.hotel_score))+'</b><small>'+
       (cz?cz.pos+'º su '+cz.su+' nella tua zona':s.hotel_score==null?'servono più dati letti su Booking':'voto da 0 a 10')+'</small></div></div>';
@@ -400,7 +419,7 @@ function disegnaTu(){pulisci();if(!ME)return;
   /* chiusura */
   if(FC)FC.innerHTML=s?'<h2>'+esc(ME.nome)+': il confronto con i '+n+' alberghi più vicini è nella chat</h2><p>Prezzi, voti e posizione rispetto ai tuoi competitor, con il report completo via email</p><button class="o3-btn" type="button" data-o3="chat"><span>Parla con la chat del tuo hotel</span></button>'
     :'<h2>Vuoi questi numeri anche per '+esc(ME.nome)+'?</h2><p>Chiedi la lettura del tuo hotel: da quel momento ogni blocco della pagina mostra i tuoi prezzi accanto alla tua zona e a Roma</p><button class="o3-btn" type="button" data-o3="leggi"><span>Chiedi la lettura del tuo hotel</span></button>';
-  barra()}
+  chatSu(MAIL&&!!s);barra()}
 /* i tasti: chat vera (senza ricaricare), lettura per gli hotel non letti, cambia hotel, torna alla ricerca */
 pg.addEventListener('click',function(e){var b=e.target.closest('[data-o3]');if(!b)return;var a=b.dataset.o3;
   if(a==='chat'&&ME)apriChat(ME.id);
@@ -413,7 +432,7 @@ function barra(){if(!MEB)return;var io=$('#o2Io'),nb=NAV?Math.max(0,NAV.getBound
   MEB.style.top=nb+'px';MEB.classList.toggle('on',on);MEB.setAttribute('aria-hidden',on?'false':'true')}
 document.addEventListener('scroll',barra,{capture:true,passive:true});
 /* link personale delle mail: /osservatorio/?hotel=ID apre la pagina già sul suo hotel; la chat si apre con il tasto */
-try{var hq=new URL(location.href).searchParams.get('hotel');if(hq&&/^\d{1,10}$/.test(hq))personalizza(hq)}catch(_){}
+try{var hq=new URL(location.href).searchParams.get('hotel');if(hq&&/^\d{1,10}$/.test(hq)){MAIL=true;personalizza(hq)}}catch(_){}
 
 
 /* ---------- il sigillo Top 10 per il sito dell'hotel (6.3) ---------- */
