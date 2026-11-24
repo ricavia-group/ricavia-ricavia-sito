@@ -144,7 +144,19 @@ class TestDatiPercorso(unittest.TestCase):
         # le cinque fasi del servizio sono le cinque tappe: ogni tappa apre con la fase e cosa riceve il cliente
         fasi = re.findall(r'<div class="np-step" data-s="(\d)"><div class="np-fase"><span class="np-n">\d</span><div><h3>([^<]+)</h3><p><small>Cosa ricevi da noi</small>', h)
         self.assertEqual(fasi, [(str(i), f[0]) for i, f in enumerate(osservatorio.FASI)])
-        self.assertLess(tab.index('id="npPerc"'), tab.index('nove zone a confronto'))  # prima il percorso, poi la tabella
+        self.assertNotIn('id="npPerc"', tab)  # 24/11: il percorso ha il suo segnaposto, sotto le nove zone
+        self.assertLess(tab.index('id="avForm"'), tab.index('<table'))  # la ricerca per via sta sopra la tabella
+
+    def test_vie_zone(self):
+        """La zona di una via: una sola zona, più zone delle nove, oppure niente se un rione non ha zona"""
+        rioni = {'Monti': 'Monti', 'Castro Pretorio': 'Esquilino · Termini'}
+        hotel = [{'i': 'Via Nazionale 10', 'z': 'Castro Pretorio'}, {'i': 'Via Nazionale 200', 'z': 'Castro Pretorio'},
+                 {'i': 'Via Nazionale 51', 'z': 'Monti'}, {'i': 'Via Panisperna 3/A', 'z': 'Monti'},
+                 {'i': 'Via Po  - 39', 'z': 'Salario'}, {'i': 'Via Cavour 5', 'z': 'Monti'}, {'i': 'Via Cavour 9', 'z': 'Celio'},
+                 {'i': 'Via Assente 1', 'z': 'Monti'}]
+        uno, piu = osservatorio.vie_zone(rioni, hotel, {'Via Nazionale', 'Via Panisperna', 'Via Po', 'Via Cavour'})
+        self.assertEqual(uno, {'Monti': ['Via Panisperna']})
+        self.assertEqual(piu, {'Via Nazionale': ['Esquilino · Termini', 'Monti']})
 
 
 if __name__ == '__main__':
