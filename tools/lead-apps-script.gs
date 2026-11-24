@@ -236,7 +236,7 @@ function gg(t) { var d = new Date(t); return isNaN(d) ? '' : d.getDate() + ' ' +
 
 function htmlReport(s, link) {
   var v = s.voti || {}, set = s.set || {}, sc = s.scala;
-  var A = [['prezzi', 'Prezzi'], ['reputazione', 'Reputazione'], ['posizionamento', 'Posizionamento'], ['foto', 'Foto e contenuti'], ['canali', 'Canali'], ['sito', 'Sito e vendita diretta']];
+  var A = [['prezzi', 'Prezzi'], ['reputazione', 'Reputazione'], ['posizionamento', 'Posizionamento'], ['foto', 'Foto e contenuti']];
   var n = A.filter(function (a) { return v[a[0]] != null; }).length;
   var tab = function (testa, righe) {
     return '<table><tr>' + testa.map(function (t) { return '<th>' + t + '</th>'; }).join('') + '</tr>' +
@@ -250,9 +250,9 @@ function htmlReport(s, link) {
   h += '<p class="k">Hotel Score · Osservatorio Ricavia</p><h1>' + esc(s.nome) + '</h1>' +
     '<p>' + esc(s.indirizzo) + (s.zona_sito || s.zona ? ' · ' + esc(s.zona_sito || s.zona) : '') + (s.stelle ? ' · ' + s.stelle + ' stelle' : '') + (s.camere ? ' · ' + s.camere + ' camere' : '') + '</p>' +
     '<p class="m">Dati letti su Booking il ' + gg(s.letto_il) + '. Competitor: i ' + (set.quanti || 0) + ' alberghi simili più vicini' + (set.piu_lontano_m ? ', il più lontano a ' + num(set.piu_lontano_m) + ' m' : '') + '</p>';
-  h += '<h2>Il tuo Hotel Score</h2><p><span class="big">' + (s.hotel_score != null ? d1(s.hotel_score) : 'n.d.') + '</span> su 10, media di ' + n + ' aree su 6' + (s.hotel_score == null ? '. La media compare con almeno 4 aree' : '') + '</p>' +
-    tab(['Area', 'Voto'], A.map(function (a) { return [a[1], v[a[0]] != null ? v[a[0]] + ' su 10' : 'in arrivo']; })) +
-    '<p class="m">Canali e Sito sono in arrivo. Il voto Foto conta le foto della pagina Booking</p>';
+  h += '<h2>Il tuo Hotel Score</h2><p><span class="big">' + (s.hotel_score != null ? d1(s.hotel_score) : 'n.d.') + '</span> su 10, media di ' + n + ' aree' + (s.hotel_score == null ? '. La media compare con tutti e quattro i voti' : '') + '</p>' +
+    tab(['Area', 'Voto'], A.map(function (a) { return [a[1], v[a[0]] != null ? v[a[0]] + ' su 10' : 'n.d.']; })) +
+    '<p class="m">Il voto Foto conta le foto della pagina Booking</p>';
   if (sc) h += '<h2>La tua posizione</h2><p><b>' + sc.pos + '°</b> su ' + sc.su + ' alberghi a ' + (s.stelle || '') + ' stelle in ' + esc(s.zona_sito || '') + ', per Hotel Score</p>';
   var P = (s.prezzi || []).filter(function (p) { return ETI[p.etichetta]; });
   if (P.length) h += '<h2>Il tuo prezzo e quello dei competitor</h2>' + tab(['Data', 'Tu', 'Competitor, valore mediano', 'Dal più basso al più alto'], P.map(function (p) {

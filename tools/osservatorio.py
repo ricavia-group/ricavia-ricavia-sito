@@ -484,7 +484,7 @@ def hotel():
     passi = [("Scrivi il nome", "Lo troviamo nel registro di Roma Capitale"),
              ("Scegliamo i competitor", "Le strutture ricettive più vicine, simili per tipo e dimensione"),
              ("Leggiamo il mercato", "Voti, recensioni e prezzi su Booking, con fonte e data"),
-             ("Ricevi il report", "Un voto per area: 4 aree oggi, Canali e Sito in arrivo")]
+             ("Ricevi il report", "Un voto per area: prezzi, reputazione, foto e posizionamento")]
     return f'''<section class="o2-sec ap-dark2 o2-dk" id="o2-hotel"><div class="wrap"><div class="o2-hg2">
 <div><div class="o2-sh"><span class="o2-tag ar">Hotel Score</span><h2 class="ar">E il tuo hotel,<br>{g("rispetto ai competitor?")}</h2>
 <p class="ar">Scrivi il nome del tuo hotel: scegliamo le strutture ricettive più vicine e simili, leggiamo voti e prezzi e ti mandiamo l'Hotel Score con le cose da guardare. Gratis</p></div>
@@ -497,7 +497,7 @@ def hotel():
 
 
 def metodo():
-    regole = [("Le sei aree dell'Hotel Score", "Prezzi, Canali, Sito e vendita diretta, Reputazione, Foto e contenuti, Posizionamento. La media compare solo con almeno 4 voti su 6. Oggi calcoliamo Prezzi, Reputazione, Foto e Posizionamento: Canali e Sito sono in arrivo"),
+    regole = [("Le quattro aree dell'Hotel Score", "Prezzi, Reputazione, Foto e contenuti, Posizionamento. La media compare solo con tutti e quattro i voti. Canali e Sito e vendita diretta entreranno come nuove aree quando i dati saranno affidabili"),
               ("Ogni numero con fonte e data", "Accanto a ogni dato il giorno della lettura. Un dato che manca è dichiarato, mai stimato"),
               ("Valori mediani, mai medie", "Metà degli alberghi sta sopra, metà sotto. Un valore mediano compare solo con almeno 5 alberghi letti"),
               ("Il competitive set", "Le strutture ricettive più vicine, con stesso tipo, categoria vicina e dimensione simile"),
@@ -505,8 +505,7 @@ def metodo():
                "Un albergo senza camere in vendita su Booking non è per forza senza ospiti: è la disponibilità, non l’occupazione delle camere. Il prezzo del giorno è il prezzo mediano degli hotel ancora prenotabili"),
               ("I clienti Ricavia", "Compaiono nelle classifiche con una nota accanto al nome"),
               ("Le correzioni", "Puoi segnalare un dato sbagliato o chiedere di non comparire: una persona di Ricavia controlla ogni richiesta")]
-    arr = [("Dicembre", "Canali e Sito nell’Hotel Score", "Le ultime due aree: su quali OTA vende l’hotel e cosa offre il suo sito"),
-           ("Gennaio", "Gli hotel saliti di più", "La classifica di chi ha guadagnato più Hotel Score nel mese")]
+    arr = [("Gennaio","Gli hotel saliti di più", "La classifica di chi ha guadagnato più Hotel Score nel mese")]
     return f'''<section class="o2-sec o2-lt" id="o2-metodo"><div class="wrap"><div class="o2-mg">
 <div><div class="o2-sh"><span class="o2-tag ar">Il metodo</span><h2 class="ar">Regole {g("uguali per tutti")}</h2></div>
 <ol class="o2-rl">{"".join(f'<li class="ar"><em>{i + 1:02d}</em><b>{a}</b><span>{b}</span></li>' for i, (a, b) in enumerate(regole))}</ol>
