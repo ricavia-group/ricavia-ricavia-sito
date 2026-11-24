@@ -571,6 +571,7 @@ nf = nf.replace('<link rel="canonical" href="https://ricavia.com/">', '<meta nam
 nf = nf.replace('<meta name="robots" content="max-image-preview:large">', '')
 nf = re.sub(r'<title>.*?</title>', '<title>Pagina non trovata · Ricavia</title>', nf, count=1)
 nf = re.sub(r'<script type="application/ld\+json">.*?</script>', '', nf, flags=re.S)
+nf = re.sub(r'href="#(?=[^"])', 'href="/#', nf)  # sulla 404 le sezioni della home (#metodo, #servizi…) non esistono: si va alla home
 open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(nf)
 # alleggerimento: CSS senza regole inutilizzate e compresso, HTML senza spazi superflui
 if os.environ.get('RICAVIA_NO_MIN'):
