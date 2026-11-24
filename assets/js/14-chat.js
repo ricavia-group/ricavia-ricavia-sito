@@ -108,7 +108,7 @@ var R={
   score:{ok:function(s){return s.hotel_score!=null},
     r:function(s){var v=s.voti||{},A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto']].filter(function(x){return v[x[0]]!=null}).sort(function(x,y){return v[y[0]]-v[x[0]]});
       return ['Il tuo Hotel Score è <b>'+d1(s.hotel_score)+' su 10</b>, media di '+A.length+' aree: '+A.map(function(x){return x[1]+' '+v[x[0]]}).join(', '),
-        'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]+'. Canali e Sito sono in arrivo']}},
+        'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]]}},
   punto:{ok:function(s){return !!((s.booking||{}).voto&&s.voto&&s.voto.mediano!=null)},
     r:function(s){return ['Il tuo voto su Booking è '+d1(s.booking.voto)+', quello mediano dei tuoi competitor '+d1(s.voto.mediano),
       'Uno studio della Cornell University stima circa l’11% di tariffa in più per un punto su una scala da 1 a 5: sulla scala di Booking, da 1 a 10, un punto vale circa la metà. È un ordine di grandezza']}},
@@ -211,6 +211,8 @@ function sa(id){id=String(id);if(id===CUR||(S&&S.id_comune===id))return;
 window.RC={sa:sa,apri:function(id){var nv=document.getElementById('o2Nav');O.vai(W,(nv?(parseFloat(getComputedStyle(nv).top)||0)+nv.offsetHeight:90)+24);
   if(id)sa(id);inizio();setTimeout(function(){IN.focus({preventScroll:true})},RM?0:700)},nlu:NLU};
 
+/* 2.0: «Cerca il tuo hotel a Roma» dell'Hotel Score porta a /osservatorio/#o2Chat; la pagina cresce mentre carica, quindi a pagina pronta la finestra si rimette sotto il menu */
+if(location.hash==='#o2Chat')addEventListener('load',function(){setTimeout(function(){window.RC.apri()},250)});
 /* chi scrive prima che la conversazione sia partita (arrivato da ?hotel=ID o dalla ricerca) non deve sentirsi chiedere il nome: prima si carica il suo hotel */
 function prima(){var p=!PARTITA&&VIA?VIA:null;PARTITA=true;VIA=null;return p}
 FM.addEventListener('submit',function(e){e.preventDefault();e.stopPropagation();var t=IN.value.trim();if(!t)return;IN.value='';chips([]);bolla('ch-me',esc(t));var p=prima();
