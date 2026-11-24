@@ -6664,3 +6664,9 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 .h3-go:hover{background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent}
 .h3-pp{font:inherit;font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid rgba(29,29,31,.18);background:#fff;color:var(--zink);cursor:pointer}
 .h3-pp:focus-visible,.h3-go:focus-visible{outline:2px solid #3CCDFA;outline-offset:2px}
+
+/* === 2.0 chi siamo senza la foto della camera === */
+/* la casella della foto (p) non c'è più: «Gestire» prende tutta la riga, la citazione sale accanto a «Costruire» */
+#pg-chi-siamo .cs-bento{grid-template-areas:"c c c c q1 q1" "g g g g g g" "ce ce ce n n n" "q2 q2 a a a a"}
+@media(max-width:1000px){#pg-chi-siamo .cs-bento{grid-template-areas:"c c" "q1 q1" "g g" "ce ce" "n n" "q2 q2" "a a"}}
+@media(max-width:640px){#pg-chi-siamo .cs-bento{grid-template-areas:"c" "q1" "g" "ce" "n" "q2" "a"}}
