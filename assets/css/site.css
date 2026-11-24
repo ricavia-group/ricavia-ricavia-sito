@@ -6646,3 +6646,11 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 #apertura #ap-form.ap-sec,#apertura .ap-sec.ap-faq{padding-top:0!important}
 #apertura #npVend{padding-top:clamp(40px,4.5vw,64px)!important;padding-bottom:clamp(40px,4.5vw,64px)!important}
 #apertura .ap-hero{padding-bottom:clamp(24px,3vw,40px)!important}
+
+/* === 2.0 arrivi e tariffa === */
+/* seconda linea del grafico degli arrivi: tariffa media in euro (nera, tratteggiata dove è stimata) */
+.o3-dmtl.o3-dmtp b{color:var(--zink);-webkit-text-fill-color:var(--zink)}
+.o3-dmnt{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--zmu,#6e6e73)}
+.o3-lgk{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin:0 6px 0 0}
+.o3-lgk.a{background:var(--zgr)}
+.o3-lgk.p{background:#1D1D1F;margin-left:12px}
