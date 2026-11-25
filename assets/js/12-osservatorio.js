@@ -141,7 +141,7 @@ function apriChat(id){if(window.RC)window.RC.apri(id)}/* window.: RC qui sopra Ã
 
 /* affittacamere (25/11): stessa pagina, stesso report e stessa chat con le parole giuste, mai "hotel" riferito a loro */
 function AF(s){return !!s&&s.tipologia==='Guest House o Affittacamere'}
-function PA(s){return AF(s)?{tuo:'il tuo affittacamere',Tuo:'Il tuo affittacamere',simili:'affittacamere',uno:'affittacamere',score:'punteggio Ricavia',Score:'Punteggio Ricavia'}:{tuo:'il tuo hotel',Tuo:'Il tuo hotel',simili:'alberghi',uno:'albergo',score:'Hotel Score',Score:'Hotel Score'}}
+function PA(s){return AF(s)?{tuo:'il tuo affittacamere',Tuo:'Il tuo affittacamere',simili:'affittacamere',uno:'affittacamere',score:'Hotel Score',Score:'Hotel Score'}:{tuo:'il tuo hotel',Tuo:'Il tuo hotel',simili:'alberghi',uno:'albergo',score:'Hotel Score',Score:'Hotel Score'}}
 /* il report: si apre dalla conversazione o dal link nell'email (/osservatorio/?report=ID) */
 var rep=null;
 function chiudiRep(){if(!rep)return;rep.hidden=true;document.documentElement.classList.remove('o2-nosc');try{var u=new URL(location.href);u.searchParams.delete('report');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}}
