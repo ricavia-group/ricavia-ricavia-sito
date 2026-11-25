@@ -34,6 +34,8 @@ Non si aggiunge nessuna dicitura "generato con AI": ogni articolo è rivisto e a
 
 **Affidabili**, in ordine: fonti primarie (enti pubblici, ISTAT, Eurostat, Banca d'Italia, BCE, ENIT, Comune di Roma, Regione Lazio, Gazzetta Ufficiale, ministeri, aeroporti, compagnie aeree e ferroviarie, organizzatori di eventi, sindacati per gli scioperi, Commissione di garanzia scioperi); poi agenzie di stampa e testate nazionali e internazionali riconosciute; poi report pubblici di settore (STR/CoStar, report OTA, associazioni di categoria).
 
+**Dati propri: l'Osservatorio Ricavia.** I prezzi e la disponibilità che l'Osservatorio legge ogni sera su Booking sono una fonte affidabile per i fatti sul mercato degli hotel di Roma. Si leggono in `assets/data/indicatori.json` sul ramo `main` (campi `ultimo`, `per_tipo`, `calendario`, `zone_date`: mediane per zona, per tipo di struttura ricettiva e per notte, con il numero di hotel letti). Si citano così: "Osservatorio Ricavia, prezzi letti su Booking il GG mese AAAA", con il collegamento a `/osservatorio/`; in `fonti.md` l'editore è "Ricavia". Regole: solo valori aggregati (zona, tipo, Roma), mai il prezzo o il nome di un singolo hotel; una mediana con meno di 5 hotel letti non si usa; i prezzi descrivono il mercato e non sono mai un livello da applicare (sezione 9 ter, punto 1)
+
 **Non bastano da sole**: social network, blog anonimi, siti che non indicano autore o data, comunicati commerciali senza conferma.
 
 Ogni fonte ha titolo, editore, link e data. Una notizia che regge solo su fonti non affidabili si scarta.
