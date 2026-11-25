@@ -76,18 +76,18 @@ def hero(d):
 <button class="ap-back" type="button" data-ct-close>← Torna alla home</button>
 <div class="o2-hl">
 <span class="o2-tag">Osservatorio Ricavia · Roma</span>
-<h1 id="po-h">Il mercato degli alberghi di Roma, {g("visto dal tuo hotel")}</h1>
+<h1 id="po-h">Il mercato degli alberghi di Roma, {g("visto dal tuo hotel / affittacamere")}</h1>
 <p class="o2-lead">Prezzi letti ogni notte su Booking. Ultima lettura: {data(d["aggiornato"])}</p>
 <div class="o2-cerca">
-<form class="o2-f" id="o2Cerca" role="search" novalidate><label class="o3-lab" for="o2Q">Cerca il tuo hotel</label><div class="o2-in"><input id="o2Q" name="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Nome dell'hotel o CIN" aria-controls="o2Sug"><div class="o2-sug" id="o2Sug" role="listbox" hidden></div></div><button type="submit">Cerca <span class="arr">→</span></button></form>
-<small class="o3-sm">Un solo passaggio: ogni blocco della pagina aggiunge i numeri del tuo hotel accanto a quelli della tua zona e di Roma. Gratis, senza registrazione</small>
+<form class="o2-f" id="o2Cerca" role="search" novalidate><label class="o3-lab" for="o2Q">Cerca il tuo hotel / affittacamere</label><div class="o2-in"><input id="o2Q" name="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Nome dell'hotel / affittacamere o CIN" aria-controls="o2Sug"><div class="o2-sug" id="o2Sug" role="listbox" hidden></div></div><button type="submit">Cerca <span class="arr">→</span></button></form>
+<small class="o3-sm">Un solo passaggio: ogni blocco della pagina aggiunge i numeri del tuo hotel / affittacamere accanto a quelli della tua zona e di Roma. Gratis, senza registrazione</small>
 <div class="o2-nf" id="o2Nf" role="status" aria-live="polite" hidden></div>
 </div>
 <div class="o3-io" id="o2Io" hidden aria-live="polite"></div>
 </div>
 </div></section>
 <div class="o3-me" id="o3Me" aria-hidden="true"><div class="wrap"><p>La pagina parla di <b></b></p><button type="button" data-o3="chat">Apri la chat</button></div></div>
-<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Oggi</a><a href="#o2-prezzi">Prezzi</a><a href="#o3-case">Case vacanze</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-vie">Vie</a></div></nav>'''
+<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Oggi</a><a href="#o2-prezzi">Prezzi</a><a href="#o3-case">Case vacanze</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-hotel">Il tuo hotel / affittacamere</a><a href="#o2-vie">Vie</a></div></nav>'''
 
 
 def stanotte(d, oggi=None):
@@ -497,8 +497,8 @@ def schede_domanda(pa, mesi, ae):
 
 def fine():
     return ('<section class="o2-sec ap-dark2 o2-dk o3-fine" id="o3Fine"><div class="wrap"><div class="o3-card"><h2>Questi sono i numeri di Roma. ' + g("E i tuoi?") + '</h2>'
-            '<p>Cerca il tuo hotel: ogni blocco della pagina aggiunge i tuoi prezzi e la tua posizione accanto alla tua zona e a Roma</p>'
-            '<button class="o3-btn" type="button" data-o3="cerca"><span>Cerca il tuo hotel</span></button></div></div></section>')
+            '<p>Cerca il tuo hotel / affittacamere: ogni blocco della pagina aggiunge i tuoi prezzi e la tua posizione accanto alla tua zona e a Roma</p>'
+            '<button class="o3-btn" type="button" data-o3="cerca"><span>Cerca il tuo hotel / affittacamere</span></button></div></div></section>')
 
 
 
@@ -519,13 +519,13 @@ def hotel():
              ("Leggiamo il mercato", "Voti, recensioni e prezzi su Booking, con fonte e data"),
              ("Ricevi il report", "Un voto per area: prezzi, reputazione, foto e posizionamento")]
     return f'''<section class="o2-sec ap-dark2 o2-dk" id="o2-hotel"><div class="wrap"><div class="o2-hg2">
-<div><div class="o2-sh"><span class="o2-tag ar">Hotel Score</span><h2 class="ar">E il tuo hotel,<br>{g("rispetto ai competitor?")}</h2>
-<p class="ar">Scrivi il nome del tuo hotel: scegliamo le strutture ricettive più vicine e simili, leggiamo voti e prezzi e ti mandiamo l'Hotel Score con le cose da guardare. Gratis</p></div>
+<div><div class="o2-sh"><span class="o2-tag ar">Hotel Score</span><h2 class="ar">E il tuo hotel / affittacamere,<br>{g("rispetto ai competitor?")}</h2>
+<p class="ar">Scrivi il nome del tuo hotel / affittacamere: scegliamo le strutture ricettive più vicine e simili, leggiamo voti e prezzi e ti mandiamo l'Hotel Score con le cose da guardare. Gratis</p></div>
 <ol class="o2-st">{"".join(f'<li class="ar" style="--d:{.1 + i * .08:.2f}s"><em>{i + 1:02d}</em><b>{a}</b><span>{b}</span></li>' for i, (a, b) in enumerate(passi))}</ol>
 <a class="ap-btn solid ar" href="#o2-hotel">Calcola l'Hotel Score <span class="arr">→</span></a></div>
 <div class="o2-chat" id="o2Chat" aria-label="Conversazione dell'Hotel Score" aria-live="polite"><small>Hotel Score · dati veri letti su Booking</small>
-<p class="q show">Come si chiama il tuo hotel? Scrivi il nome o il CIN: ti mostro i tuoi competitor veri, con voti e prezzi</p>
-<form class="o2-cf o2-cq" id="o2ChatQ" novalidate><div class="o2-cqi"><input type="search" name="q" autocomplete="off" aria-label="Nome del tuo hotel o CIN" placeholder="Nome del tuo hotel o CIN"><div class="o2-sug" hidden></div></div><button type="submit">Cerca →</button></form></div>
+<p class="q show">Come si chiama il tuo hotel / affittacamere? Scrivi il nome o il CIN: ti mostro i tuoi competitor veri, con voti e prezzi</p>
+<form class="o2-cf o2-cq" id="o2ChatQ" novalidate><div class="o2-cqi"><input type="search" name="q" autocomplete="off" aria-label="Nome del tuo hotel / affittacamere o CIN" placeholder="Nome del tuo hotel / affittacamere o CIN"><div class="o2-sug" hidden></div></div><button type="submit">Cerca →</button></form></div>
 </div></div></section>'''
 
 

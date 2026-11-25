@@ -6726,3 +6726,8 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 #pg-chi-siamo .cs-tg .tmc:nth-child(3) h3{font-size:clamp(22px,1.9vw,26px)!important}
 }
 #pg-chi-siamo .cs-tg .tmc:nth-child(-n+2) p{font-size:15.5px!important}
+/* Osservatorio: scelta Hotel o Affittacamere sopra la casella di ricerca (George, 25/11) */
+#pg-osservatorio .o2-tipo{display:flex;gap:6px;margin:0 0 10px}
+#pg-osservatorio .o2-tipo button{height:36px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:transparent;color:var(--o2t);font:500 14px var(--zf);cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+#pg-osservatorio .o2-tipo button[aria-pressed="true"]{background:#fff;color:var(--zink);border-color:#fff}
+#pg-osservatorio .o2-tipo button:focus-visible{outline:2px solid #3CCDFA;outline-offset:2px}

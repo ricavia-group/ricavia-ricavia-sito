@@ -1,8 +1,8 @@
-/* La chat del tuo hotel nell'Osservatorio (George, 22/11: "la chat non è una chat"). Sembra una conversazione, ma non è intelligenza artificiale:
+/* La chat del tuo hotel / affittacamere nell'Osservatorio (George, 22/11: "la chat non è una chat"). Sembra una conversazione, ma non è intelligenza artificiale:
    - riconosce la domanda con assets/data/chat-qa.json (parole chiave pesate e frasi di esempio, testo normalizzato, errori di battitura tollerati)
-   - le risposte sul tuo hotel nascono dalla scheda assets/data/schede/<id>.json, le altre sono scritte nel file con i testi del sito
+   - le risposte sul tuo hotel / affittacamere nascono dalla scheda assets/data/schede/<id>.json, le altre sono scritte nel file con i testi del sito
    - sotto la soglia non inventa: passa la domanda al team con il modulo contatti già scritto
-   - dopo la terza risposta sul tuo hotel chiede l'email per l'analisi completa (stesso invio di prima: RK.deliver, tipo hotel-score)
+   - dopo la terza risposta sul tuo hotel / affittacamere chiede l'email per l'analisi completa (stesso invio di prima: RK.deliver, tipo hotel-score)
    Il riconoscimento gira anche in Node per le prove: tests/chat_qa.test.js. Gli attrezzi della pagina arrivano da window.O2 (12-osservatorio.js) */
 (function(){
 var SOGLIA=1.6,QV='2';/* QV: cambialo quando cambi chat-qa.json, /assets/ resta in cache un anno */
@@ -40,7 +40,7 @@ var W=document.createElement('div');W.className='ch-win';W.id='o2Chat';W.setAttr
 W.innerHTML='<div class="ch-hd"><span class="ch-av" aria-hidden="true"></span><div><b>Analista Ricavia</b><small><i class="ch-dot"></i>online</small></div></div>'+
   '<div class="ch-log" role="log" aria-live="polite" data-lenis-prevent></div>'+
   '<div class="ch-chips" aria-label="Domande suggerite" data-lenis-prevent hidden></div>'+
-  '<form class="ch-bar" novalidate><input class="ch-in" type="text" name="q" autocomplete="off" enterkeyhint="send" aria-label="Scrivi un messaggio" placeholder="Scrivi il nome del tuo hotel">'+
+  '<form class="ch-bar" novalidate><input class="ch-in" type="text" name="q" autocomplete="off" enterkeyhint="send" aria-label="Scrivi un messaggio" placeholder="Scrivi il nome del tuo hotel / affittacamere">'+
   '<button class="ch-go" type="submit" aria-label="Invia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></form>';
 old.parentNode.replaceChild(W,old);
 var LOG=W.querySelector('.ch-log'),CH=W.querySelector('.ch-chips'),FM=W.querySelector('.ch-bar'),IN=W.querySelector('.ch-in');
@@ -69,27 +69,32 @@ function fai(fn){Q=Q.then(fn).catch(function(e){window.__DBG&&console.warn('chat
 function chips(l){CH.innerHTML=l.map(function(c){return '<button type="button" class="ch-chip" data-k="'+esc(c[0])+'"><span>'+esc(c[1])+'</span></button>'}).join('');CH.hidden=!l.length;CH.scrollLeft=0;giu()}
 function tasto(t,msg){return {act:1,h:'<button type="button" class="ch-btn" data-ch-msg="'+esc(msg)+'">'+esc(t)+' →</button>'}}
 
-/* ---------- le risposte sul tuo hotel (stessi numeri del report) ---------- */
+/* ---------- le risposte sul tuo hotel / affittacamere (stessi numeri del report) ---------- */
 function sopra(p){return !!(p&&p.prezzo!=null&&p.mediano!=null)}
 function var1(a,b){return Math.round((a/b-1)*100)}
 function gm(iso){return iso?iso.slice(8,10)+'/'+iso.slice(5,7):''}
-function tabella(s){var m=pz(s,'martedi'),b=pz(s,'sabato'),io={nome:s.nome,voto:(s.booking||{}).voto,martedi:m&&m.prezzo,sabato:b&&b.prezzo,io:1};
+function tabella(s){if(O.af(s))return tabellaAf(s);var m=pz(s,'martedi'),b=pz(s,'sabato'),io={nome:s.nome,voto:(s.booking||{}).voto,martedi:m&&m.prezzo,sabato:b&&b.prezzo,io:1};
   var r=(s.competitor||[]).concat([io]).sort(function(x,y){return (y.voto||0)-(x.voto||0)});
   var cella=function(x,k,p){var v=x[k];return v!=null?eu(v):(x.io&&p&&p.motivo?'<em>'+esc(p.motivo)+'</em>':'n.d.')};
   return '<div class="ch-tw"><table class="ch-tb"><thead><tr><th>Albergo</th><th>Voto</th><th>'+(m?'Mar '+gm(m.arrivo):'Feriale')+'</th><th>'+(b?'Sab '+gm(b.arrivo):'Weekend')+'</th></tr></thead><tbody>'+
     r.map(function(x){return '<tr'+(x.io?' class="ch-io"':'')+'><td>'+esc(x.io?bel(x.nome)+' (tu)':x.nome)+'</td><td>'+d1(x.voto)+'</td><td>'+cella(x,'martedi',m)+'</td><td>'+cella(x,'sabato',b)+'</td></tr>'}).join('')+
     '</tbody></table></div><small class="ch-fs">Booking, una notte per 2 persone · letto il '+gg(s.letto_il)+'. Prezzo mancante: n.d.</small>'}
+/* affittacamere: prezzi non ancora letti, la tabella ha solo il voto */
+function tabellaAf(s){var r=(s.competitor||[]).concat([{nome:s.nome,voto:(s.booking||{}).voto,recensioni:(s.booking||{}).recensioni,io:1}]).sort(function(x,y){return (y.voto||0)-(x.voto||0)});
+  return '<div class="ch-tw"><table class="ch-tb"><thead><tr><th>Affittacamere</th><th>Voto</th><th>Recensioni</th></tr></thead><tbody>'+
+    r.map(function(x){return '<tr'+(x.io?' class="ch-io"':'')+'><td>'+esc(x.io?bel(x.nome)+' (tu)':x.nome)+'</td><td>'+d1(x.voto)+'</td><td>'+(x.recensioni!=null?num(x.recensioni):'n.d.')+'</td></tr>'}).join('')+
+    '</tbody></table></div><small class="ch-fs">Booking · letto il '+gg(s.letto_il)+'</small>'}
 function riga_sab(s){var m=pz(s,'martedi'),b=pz(s,'sabato');if(!b)return null;
   if(sopra(b)&&sopra(m))return 'Sabato '+gg(b.arrivo)+' chiedi '+eu(b.prezzo)+' contro '+eu(b.mediano)+(b.prezzo>m.prezzo?': il tuo weekend vale il '+var1(b.prezzo,m.prezzo)+'% più del martedì, quello dei competitor il '+var1(b.mediano,m.mediano)+'%':': il tuo sabato costa quanto il martedì, mentre i competitor salgono del '+var1(b.mediano,m.mediano)+'%');
   if(b.prezzo==null&&b.mediano!=null)return 'Sabato '+gg(b.arrivo)+' su Booking non sei più in vendita: o sei già pieno, o hai chiuso la vendita. I tuoi competitor chiedono '+eu(b.mediano);
   return null}
 var R={
   classifica:{ok:function(s){return !!(s.scala&&s.hotel_score!=null)},
-    r:function(s){var sc=s.scala,su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0],z=esc(s.zona_sito||s.zona||'Roma'),cat=s.stelle?' a '+s.stelle+' stelle':'',p='<b>'+sc.pos+'° su '+sc.su+'</b>';
-      return [una_di('classifica',['Per Hotel Score sei '+p+' tra gli alberghi'+cat+' di '+z,'Nella classifica dell’Hotel Score della tua zona sei '+p+', tra gli alberghi'+cat+' di '+z])+(sc.pos<=10?': sei nella Top 10 della tua zona e della tua categoria':''),
-        su?(su.hs-s.hotel_score<0.05?'Sei a pari punteggio con l’albergo al '+su.pos+'° posto: davanti va chi ha più recensioni':'L’albergo al '+su.pos+'° posto ha '+d1(su.hs)+': ti servono <b>'+d1(su.hs-s.hotel_score)+' punti</b> per salire di un posto'):'Davanti a te non c’è nessuno']}},
+    r:function(s){var W=O.pa(s),af=O.af(s),sc=s.scala,su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0],z=esc(s.zona_sito||s.zona||'Roma'),cat=s.stelle?' a '+s.stelle+' stelle':'',p='<b>'+sc.pos+'° su '+sc.su+'</b>';
+      return [una_di('classifica',af?['Per punteggio Ricavia sei '+p+' tra gli affittacamere di '+z,'Nella classifica del punteggio Ricavia della tua zona sei '+p+', tra gli affittacamere di '+z]:['Per Hotel Score sei '+p+' tra gli alberghi'+cat+' di '+z,'Nella classifica dell’Hotel Score della tua zona sei '+p+', tra gli alberghi'+cat+' di '+z])+(sc.pos<=10?': sei nella Top 10 della tua zona e della tua categoria':''),
+        su?(su.hs-s.hotel_score<0.05?'Sei a pari punteggio con l’'+W.uno+' al '+su.pos+'° posto: davanti va chi ha più recensioni':'L’'+W.uno+' al '+su.pos+'° posto ha '+d1(su.hs)+': ti servono <b>'+d1(su.hs-s.hotel_score)+' punti</b> per salire di un posto'):'Davanti a te non c’è nessuno']}},
   competitor:{ok:function(s){return !!(s.competitor&&s.competitor.length)},
-    r:function(s){var st=s.set||{};return [una_di('competitor',['Ecco i tuoi '+s.competitor.length+' competitor, gli alberghi simili più vicini','Questi sono gli alberghi con cui ti confronto: i '+s.competitor.length+' più vicini e simili a te'])+(st.piu_lontano_m?'. Il più lontano è a '+num(st.piu_lontano_m)+' metri':''),
+    r:function(s){var st=s.set||{},W=O.pa(s);return [una_di('competitor',['Ecco i tuoi '+s.competitor.length+' competitor, gli '+W.simili+' simili più vicini','Questi sono gli '+W.simili+' con cui ti confronto: i '+s.competitor.length+' più vicini e simili a te'])+(st.piu_lontano_m?'. Il più lontano è a '+num(st.piu_lontano_m)+' metri':''),
       {h:tabella(s),wide:1},s.posizione?'Per voto su Booking sei <b>'+s.posizione+'° su '+s.su+'</b> tra te e i tuoi competitor':null]}},
   prezzo:{ok:function(s){return sopra(pz(s,'martedi'))},
     r:function(s){var m=pz(s,'martedi');
@@ -107,7 +112,7 @@ var R={
       return o}},
   score:{ok:function(s){return s.hotel_score!=null},
     r:function(s){var v=s.voti||{},A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto']].filter(function(x){return v[x[0]]!=null}).sort(function(x,y){return v[y[0]]-v[x[0]]});
-      return ['Il tuo Hotel Score è <b>'+d1(s.hotel_score)+' su 10</b>, media di '+A.length+' aree: '+A.map(function(x){return x[1]+' '+v[x[0]]}).join(', '),
+      return ['Il tuo '+O.pa(s).score+' è <b>'+d1(s.hotel_score)+' su 10</b>, media di '+A.length+' aree: '+A.map(function(x){return x[1]+' '+v[x[0]]}).join(', '),
         'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]]}},
   punto:{ok:function(s){return !!((s.booking||{}).voto&&s.voto&&s.voto.mediano!=null)},
     r:function(s){return ['Il tuo voto su Booking è '+d1(s.booking.voto)+', quello mediano dei tuoi competitor '+d1(s.voto.mediano),
@@ -118,7 +123,7 @@ var R={
   migliorare:{ok:function(s){return !!(s.fatti&&s.fatti.length)},
     r:function(s){return ['Le cose da guardare, dai dati letti su Booking'].concat(s.fatti.slice(0,3).map(esc))}},
   report:{ok:function(){return true},
-    r:function(s){return ['Ecco il report completo di <b>'+esc(bel(s.nome))+'</b>: voti per area, prezzi, competitor e traguardi',{act:1,h:'<button type="button" class="ch-btn" data-ch="rep">Apri il report →</button>'}]}}};
+    r:function(s){return ['Ecco il report completo di <b>'+esc(bel(s.nome))+'</b>: voti per area, '+(O.af(s)?'':'prezzi, ')+'competitor e traguardi',{act:1,h:'<button type="button" class="ch-btn" data-ch="rep">Apri il report →</button>'}]}}};
 
 /* ---------- la conversazione ---------- */
 function prossime(v){var l=((v&&v.poi)||[]).concat(S?ORDINE.concat(['email','call']):['cos-e-hotel-score','dati-fonte','chi-siamo','call']),out=[],seen={};
@@ -126,11 +131,11 @@ function prossime(v){var l=((v&&v.poi)||[]).concat(S?ORDINE.concat(['email','cal
     if(x.tipo==='hotel'&&(!S||FATTE.indexOf(k)>-1||(R[k]&&!R[k].ok(S))||(k==='email'&&(EM||CHIESTA&&ST==='email'))))return;
     out.push(['v:'+k,x.chip])});return out}
 function presenta(s){var bk=s.booking||{},st=s.set||{},n=st.quanti||0,l=[
-  'Ho trovato <b>'+esc(bel(s.nome))+'</b>, '+esc(s.indirizzo||'')+(s.zona_sito||s.zona?', '+esc(s.zona_sito||s.zona):'')+': '+(s.camere?s.camere+' camere, ':'')+(s.stelle?s.stelle+' stelle':'albergo')+
+  'Ho trovato <b>'+esc(bel(s.nome))+'</b>, '+esc(s.indirizzo||'')+(s.zona_sito||s.zona?', '+esc(s.zona_sito||s.zona):'')+': '+(s.camere?s.camere+' camere, ':'')+(s.stelle?s.stelle+' stelle':O.af(s)?'affittacamere':'albergo')+
     (bk.voto?'. Su Booking hai <b>'+d1(bk.voto)+'</b>'+(bk.recensioni?' con '+num(bk.recensioni)+' recensioni':''):''),
-  s.confronto?'Ho già letto i tuoi '+n+' competitor, gli alberghi simili più vicini'+(st.piu_lontano_m?': il più lontano è a '+num(st.piu_lontano_m)+' metri da te':'')
-    :'Intorno a te ho letto solo '+n+' alberghi simili: per un confronto onesto ne servono almeno 5. Ti mostro quello che ho'];
-  if(Date.now()-new Date(s.letto_il).getTime()>7*864e5)l.push('I dati sono del '+gg(s.letto_il)+': il tuo hotel passa in cima alle prossime letture notturne');
+  s.confronto?'Ho già letto i tuoi '+n+' competitor, gli '+O.pa(s).simili+' simili più vicini'+(st.piu_lontano_m?': il più lontano è a '+num(st.piu_lontano_m)+' metri da te':'')
+    :'Intorno a te ho letto solo '+n+' '+O.pa(s).simili+' simili: per un confronto onesto ne servono almeno 5. Ti mostro quello che ho'];
+  if(Date.now()-new Date(s.letto_il).getTime()>7*864e5)l.push('I dati sono del '+gg(s.letto_il)+': '+O.pa(s).tuo+' passa in cima alle prossime letture notturne');
   l.push('Cosa vuoi sapere?');return dici(l)}
 function pronto(){ST='libero';IN.placeholder='Scrivi una domanda';IN.type='text';IN.removeAttribute('inputmode')}
 function carica(id){CUR=String(id);ST='carico';
@@ -162,15 +167,15 @@ function chiediEmail(k,t){CHIESTA=true;EK=k;ST='email';IN.type='email';IN.setAtt
 function rispondi(v,t){
   if(v.tipo==='hotel'){
     if(v.id==='email'){if(EM)return dici(['L’analisi completa l’ho già mandata a <b>'+esc(EM)+'</b>. Se non la trovi, guarda anche nella posta indesiderata']).then(function(){chips(prossime(v))});
-      if(S||H)return chiediEmail(S?'s':'nb',S?'Ti mando l’analisi completa con il PDF? Scrivimi la tua email':'Ti mandiamo il report appena leggiamo il tuo hotel. Scrivimi la tua email')}
+      if(S||H)return chiediEmail(S?'s':'nb',S?'Ti mando l’analisi completa con il PDF? Scrivimi la tua email':'Ti mandiamo il report appena leggiamo il tuo hotel / affittacamere. Scrivimi la tua email')}
     if(!S&&H)return dici(['Per '+esc(bel(H.n))+' non abbiamo ancora voti e prezzi letti su Booking: appena li leggiamo te li mostro']).then(function(){if(!EM)return chiediEmail('nb','Scrivimi la tua email e ti mandiamo il report appena è pronto');chips(prossime(null))});
-    if(!S){PEND=v.id;ST='nome';IN.placeholder='Scrivi il nome del tuo hotel';return una(una_di('nome',['Per risponderti mi serve il nome del tuo hotel: come si chiama?','Dimmi prima come si chiama il tuo hotel: poi ti rispondo con i suoi numeri']))}
+    if(!S){PEND=v.id;ST='nome';IN.placeholder='Scrivi il nome del tuo hotel / affittacamere';return una(una_di('nome',['Per risponderti mi serve il nome del tuo hotel / affittacamere: come si chiama?','Dimmi prima come si chiama il tuo hotel / affittacamere: poi ti rispondo con i suoi numeri']))}
     var q=R[v.id];if(!q||!q.ok(S))return dici(['Su questo, per '+esc(bel(S.nome))+', non ho ancora abbastanza dati letti su Booking']).then(function(){chips(prossime(v))});
     if(FATTE.indexOf(v.id)<0)FATTE.push(v.id);if(ORDINE.indexOf(v.id)>-1)NH++;
     return dici(q.r(S)).then(function(){if(!EM&&!CHIESTA&&NH>=DOPO_EMAIL)return chiediEmail('s','Ti mando l’analisi completa con il PDF? Scrivimi la tua email');chips(prossime(v))})}
   var l=una_di(v.id,v.risposte||[[]]).slice();if(v.bottone)l.push(tasto(v.bottone.t,v.bottone.msg+(v.bottone.msg.slice(-2)===': '&&t?t:'')));
-  if(v.azione==='cambia'){S=null;H=null;CUR=null;PEND=null;ST='nome';IN.placeholder='Scrivi il nome del tuo hotel';return dici(l).then(function(){chips([])})}
-  return dici(l).then(function(){if(v.azione==='nome'&&!S&&!H){ST='nome';IN.placeholder='Scrivi il nome del tuo hotel';return una('Come si chiama il tuo hotel? Scrivi il nome o il CIN: ti mostro i tuoi numeri').then(function(){chips(prossime(v))})}chips(prossime(v))})}
+  if(v.azione==='cambia'){S=null;H=null;CUR=null;PEND=null;ST='nome';IN.placeholder='Scrivi il nome del tuo hotel / affittacamere';return dici(l).then(function(){chips([])})}
+  return dici(l).then(function(){if(v.azione==='nome'&&!S&&!H){ST='nome';IN.placeholder='Scrivi il nome del tuo hotel / affittacamere';return una('Come si chiama il tuo hotel / affittacamere? Scrivi il nome o il CIN: ti mostro i tuoi numeri').then(function(){chips(prossime(v))})}chips(prossime(v))})}
 function email(t){var ck=[].slice.call(LOG.querySelectorAll('.ch-pv input')).pop();
   if(!O.emOk(t))return una('Controlla l’indirizzo email: mi sembra incompleto');
   if(!ck||!ck.checked){IN.value=t;return una('Per usare la tua email mi serve la spunta sulla privacy qui sopra: mettila e premi di nuovo invia')}
@@ -199,11 +204,11 @@ function gestisci(t){var n=norm(t);
 function tocca(k){var p=k.slice(2);
   if(k.indexOf('v:')===0&&QA.idx[p])return rispondi(QA.idx[p]);
   if(k.indexOf('h:')===0){var a=p.split(',').map(Number);return scegli(a[0],a)}
-  if(k==='x:no'){S=null;H=null;CUR=null;ST='nome';IN.placeholder='Scrivi il nome del tuo hotel';return una('Scrivimi il nome in un altro modo, anche solo una parola, oppure il CIN')}
+  if(k==='x:no'){S=null;H=null;CUR=null;ST='nome';IN.placeholder='Scrivi il nome del tuo hotel / affittacamere';return una('Scrivimi il nome in un altro modo, anche solo una parola, oppure il CIN')}
   if(k==='x:tardi'){pronto();return una('Va bene. Quando vuoi il PDF, scrivimi la tua email').then(function(){chips(prossime(null))})}}
 function inizio(){if(PARTITA)return;PARTITA=true;
   fai(function(){return qa().then(function(){if(VIA){var id=VIA;VIA=null;return carica(id)}
-    return dici(['Ciao, sono l’analista dell’Osservatorio Ricavia','Come si chiama il tuo hotel? Scrivi il nome o il CIN: ti dico dove sei in classifica, chi sono i tuoi competitor veri e come sono i tuoi prezzi']).then(function(){chips(prossime(null))})},
+    return dici(['Ciao, sono l’analista dell’Osservatorio Ricavia','Come si chiama il tuo hotel / affittacamere? Scrivi il nome o il CIN: ti dico dove sei in classifica, chi sono i tuoi competitor veri e come sono i tuoi prezzi']).then(function(){chips(prossime(null))})},
     function(){return dici(['La chat non si è caricata. Scrivici: ti risponde il team',tasto('Scrivi al team','Vorrei l’Hotel Score del mio hotel: ')])})})}
 /* hotel scelto nella ricerca in cima o con /osservatorio/?hotel=ID: la chat lo conosce già */
 function sa(id){id=String(id);if(id===CUR||(S&&S.id_comune===id))return;
@@ -211,7 +216,7 @@ function sa(id){id=String(id);if(id===CUR||(S&&S.id_comune===id))return;
 window.RC={sa:sa,apri:function(id){var nv=document.getElementById('o2Nav');O.vai(W,(nv?(parseFloat(getComputedStyle(nv).top)||0)+nv.offsetHeight:90)+24);
   if(id)sa(id);inizio();setTimeout(function(){IN.focus({preventScroll:true})},RM?0:700)},nlu:NLU};
 
-/* 2.0: «Cerca il tuo hotel a Roma» dell'Hotel Score porta a /osservatorio/#o2Chat; la pagina cresce mentre carica, quindi a pagina pronta la finestra si rimette sotto il menu */
+/* 2.0: «Cerca il tuo hotel / affittacamere a Roma» dell'Hotel Score porta a /osservatorio/#o2Chat; la pagina cresce mentre carica, quindi a pagina pronta la finestra si rimette sotto il menu */
 if(location.hash==='#o2Chat')addEventListener('load',function(){setTimeout(function(){window.RC.apri()},250)});
 /* chi scrive prima che la conversazione sia partita (arrivato da ?hotel=ID o dalla ricerca) non deve sentirsi chiedere il nome: prima si carica il suo hotel */
 function prima(){var p=!PARTITA&&VIA?VIA:null;PARTITA=true;VIA=null;return p}
