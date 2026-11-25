@@ -339,7 +339,7 @@ function clDisegna(){if(!CM)return;if(!CR){clDati().then(clDisegna,function(){})
   CM.querySelector('.o3-cn').textContent=L.length?num(L.length)+(L.length===1?' albergo':' alberghi')+' in questa classifica':'Nessun albergo con questi filtri';
   var tus=$('.o3-tus[data-b="hs"]');if(!tus)return;tus.innerHTML='';if(!ME)return;
   var me=CR.filter(function(r){return r[0]===id})[0],i=me?L.indexOf(me):-1;
-  tus.innerHTML=tu(!me?(AF(ME.s)?'Queste classifiche mettono in fila gli alberghi: il tuo affittacamere ha la sua posizione nel report':'Il tuo hotel / affittacamere non è ancora tra gli alberghi letti su Booking: le classifiche nascono da quella lettura')
+  tus.innerHTML=tu(!me?(AF(ME.s)?'Queste classifiche mettono in fila gli alberghi: il tuo hotel / affittacamere ha la sua posizione nel report':'Il tuo hotel / affittacamere non è ancora tra gli alberghi letti su Booking: le classifiche nascono da quella lettura')
     :!t.ok(me)?t.no:i<0?'Con questi filtri il tuo hotel / affittacamere non compare: '+(me[3]?'ha '+me[3]+' stelle ed ':'')+'è in '+esc(me[2]||'una zona di Roma')
     :'<b>'+(i+1)+'º su '+num(L.length)+'</b> in questa classifica · '+t.v(me))}
 if(CM){vis(CM,function(){clDati().catch(function(){})},0);
@@ -384,7 +384,7 @@ function chatSu(on){var c=document.getElementById('o2Chat'),io=$('#o2Io'),a=$('#
 function spersonalizza(fuoco){ME=null;MAIL=false;chatSu(false);pulisci();try{var u=new URL(location.href);u.searchParams.delete('hotel');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
   if(fuoco&&f){f.q.value='';f.q.focus()}}
 function tuOggi(){var dt=D.date,s=ME.s;
-  put('notte',tu(s&&(s.prezzi||[]).length?'Del tuo hotel / affittacamere leggiamo tre date: '+gg(dt.martedi,1)+', '+gg(dt.sabato,1)+' e Capodanno. I tuoi prezzi sono nel blocco qui sotto':(AF(s)?'I prezzi del tuo affittacamere non sono ancora letti: nel blocco qui sotto trovi gli alberghi della tua zona':'I prezzi del tuo hotel / affittacamere non sono ancora letti: nel blocco qui sotto trovi la tua zona')));
+  put('notte',tu(s&&(s.prezzi||[]).length?'Del tuo hotel / affittacamere leggiamo tre date: '+gg(dt.martedi,1)+', '+gg(dt.sabato,1)+' e Capodanno. I tuoi prezzi sono nel blocco qui sotto':(AF(s)?'I prezzi del tuo hotel / affittacamere non sono ancora letti: nel blocco qui sotto trovi gli alberghi della tua zona':'I prezzi del tuo hotel / affittacamere non sono ancora letti: nel blocco qui sotto trovi la tua zona')));
   put('notti',tu('Controlla il tuo prezzo per queste notti: sono le date in cui Roma vende a una tariffa più alta'))}
 function disegnaTu(){pulisci();if(!ME)return;
   var s=ME.s,hh=ME.h,R=D.roma,Z=zonaMia(),zm=Z&&Z.mercato,zf=Z&&Z.offerta,dt=D.date,gm=gg(dt.martedi,1),gs=gg(dt.sabato,1),cz=classZona(Z),letti=!!(s&&(s.prezzi||[]).length),n=s&&(s.set||{}).quanti||'';
@@ -424,7 +424,7 @@ function disegnaTu(){pulisci();if(!ME)return;
   /* (e) la domanda */
   put('domanda',tu(AF(s)&&zf?'Questa domanda la dividi anche con i '+num(zf.alberghi)+' alberghi di '+esc(Z.nome)+', che hanno '+num(zf.camere_alberghi)+' camere':zf?'Questa domanda la dividi con gli altri '+num(zf.alberghi-1)+' alberghi di '+esc(Z.nome)+': '+(s&&s.camere?'tu hai <b>'+s.camere+' camere</b> su '+num(zf.camere_alberghi)+' camere d’albergo della zona':'la zona ha '+num(zf.camere_alberghi)+' camere d’albergo'):'Questa domanda la dividi con i '+num(D.ra)+' alberghi di Roma'));
   /* chiusura */
-  if(FC)FC.innerHTML=s?'<h2>'+esc(ME.nome)+': il confronto con i '+n+' '+PA(s).simili+' più vicini è nella chat</h2><p>'+(AF(s)?'Voti':'Prezzi, voti')+' e posizione rispetto ai tuoi competitor, con il report completo via email</p><button class="o3-btn" type="button" data-o3="chat"><span>Parla con la chat del '+(AF(s)?'tuo affittacamere':'tuo hotel / affittacamere')+'</span></button>'
+  if(FC)FC.innerHTML=s?'<h2>'+esc(ME.nome)+': il confronto con i '+n+' '+PA(s).simili+' più vicini è nella chat</h2><p>'+(AF(s)?'Voti':'Prezzi, voti')+' e posizione rispetto ai tuoi competitor, con il report completo via email</p><button class="o3-btn" type="button" data-o3="chat"><span>Parla con la chat del '+'tuo hotel / affittacamere'+'</span></button>'
     :'<h2>Vuoi questi numeri anche per '+esc(ME.nome)+'?</h2><p>Chiedi la lettura del tuo hotel / affittacamere: da quel momento ogni blocco della pagina mostra i tuoi prezzi accanto alla tua zona e a Roma</p><button class="o3-btn" type="button" data-o3="leggi"><span>Chiedi la lettura del tuo hotel / affittacamere</span></button>';
   chatSu((MAIL||AF(s))&&!!s);barra()}
 /* i tasti: chat vera (senza ricaricare), lettura per gli hotel non letti, cambia hotel, torna alla ricerca */
