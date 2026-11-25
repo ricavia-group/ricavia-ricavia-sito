@@ -33,6 +33,13 @@ PAGES = [
     ('pg-journal', 'journal', 'Journal: mercato e prezzi degli hotel a Roma · Ricavia'),
     ('pg-pagella', 'hotel-score', 'Hotel Score gratuito per la tua struttura ricettiva · Ricavia'),
     ('pg-indicatori', 'indicatori', 'ADR, RevPAR, GOP e GOPPAR spiegati · Ricavia'),
+    # guide: una domanda per pagina, con definizione, formula, esempio e fonti
+    ('pg-occupazione', 'indicatori/occupazione-hotel', 'Occupazione di un hotel: come si calcola · Ricavia'),
+    ('pg-goppar-revpar', 'indicatori/goppar-revpar', 'GOPPAR e RevPAR: differenza e formule · Ricavia'),
+    ('pg-usali', 'indicatori/standard-usali', 'Standard USALI per hotel · Ricavia'),
+    ('pg-commissioni-ota', 'indicatori/commissioni-ota', 'Commissioni OTA e margine dell\'hotel · Ricavia'),
+    ('pg-tariffa', 'revenue-management/tariffa-hotel', 'Come decidere la tariffa di un hotel · Ricavia'),
+    ('pg-rm-esterno', 'revenue-management/revenue-manager-esterno', 'Revenue manager esterno: come valutarne il costo · Ricavia'),
     ('pg-privacy', 'privacy', 'Informativa privacy · Ricavia'),
     ('pg-cookie', 'cookie', 'Cookie policy · Ricavia'),
     ('pg-termini', 'termini', 'Termini di servizio · Ricavia'),
@@ -212,11 +219,16 @@ ORG = {
     "name": "Ricavia", "legalName": "Ricavia Group S.r.l.", "url": DOMAIN + "/",
     "logo": DOMAIN + "/assets/img/c3ed5d4eee.svg", "image": DOMAIN + "/assets/img/og-simbolo.jpg",
     "email": "info@ricavia.com", "vatID": "IT17726801008",
-    "description": "Revenue management e consulenza per hotel e strutture ricettive indipendenti",
+    # descrizione breve standard, identica al piè di pagina
+    "description": "Revenue management e consulenza per hotel e strutture ricettive indipendenti. Da Roma, in tutta Italia",
     # Sede legale già pubblicata nell'informativa privacy: nessun orario o recapito inventato.
     "address": {"@type": "PostalAddress", "streetAddress": "Via Francesco Gentile 135",
                 "postalCode": "00173", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
     "areaServed": {"@type": "Country", "name": "Italia"},
+    # I fondatori, come nella pagina Chi siamo (George 25/11)
+    "founder": [{"@type": "Person", "name": "George Ghimici", "jobTitle": "Co-founder"},
+                {"@type": "Person", "name": "Andrea Martella", "jobTitle": "Co-founder",
+                 "sameAs": ["https://www.linkedin.com/in/andrea-martella-375b1462/"]}],
     "knowsAbout": ["Revenue management alberghiero", "GOP", "GOPPAR", "USALI", "Distribuzione alberghiera"],
     # Profili ufficiali dell'azienda: collegano il sito ai profili che Google già mostra per "Ricavia"
     "sameAs": ["https://www.linkedin.com/company/ricaviagroup/", "https://www.instagram.com/ricaviagroup/",
@@ -231,18 +243,32 @@ SERVICES = {
 }
 
 
-def web_page(pid, title, url, desc):
+def web_page(pid, title, url, desc, content=''):
     kind = {'contatti': 'ContactPage', 'pg-chi-siamo': 'AboutPage', 'pg-osservatorio': 'CollectionPage', 'pg-journal': 'CollectionPage'}.get(pid, 'WebPage')
     data = {'@type': kind, '@id': url + '#webpage', 'url': url, 'name': title,
             'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
             'about': {'@id': DOMAIN + '/#org'}}
     if pid in SERVICES:
         data['mainEntity'] = {'@id': url + '#service'}
+    # date visibili nella pagina (riga della firma, <p class="gd-by" data-pub=… data-mod=…>)
+    by = re.search(r'<p class="gd-by[^"]*"([^>]*)>', content)
+    if by:
+        for k, v in re.findall(r'data-(pub|mod)="(\d{4}-\d{2}-\d{2})"', by.group(1)):
+            data['datePublished' if k == 'pub' else 'dateModified'] = v
+        data['author'] = {'@id': DOMAIN + '/#org'}
     return data
 
 
+# pagina superiore delle guide, per le briciole di pane (BreadcrumbList)
+PARENT = {'pg-occupazione': 'pg-indicatori', 'pg-goppar-revpar': 'pg-indicatori', 'pg-usali': 'pg-indicatori',
+          'pg-commissioni-ota': 'pg-indicatori', 'pg-tariffa': 'revenue-management', 'pg-rm-esterno': 'revenue-management'}
+PARENT_NAME = {'pg-indicatori': 'Indicatori', 'revenue-management': 'Revenue management'}
+
+
 def jsonld(pid, title, url, content, crumbs=None):
-    g = [web_page(pid, title, url, describe(pid))]
+    if crumbs is None and pid in PARENT:
+        crumbs = [(PARENT_NAME[PARENT[pid]], DOMAIN + URL[PARENT[pid]])]
+    g = [web_page(pid, title, url, describe(pid), content)]
     if pid == 'home':
         g.append(ORG)
         g.append({"@type": "WebSite", "@id": DOMAIN + "/#web", "url": DOMAIN + "/", "name": "Ricavia", "inLanguage": "it-IT", "publisher": {"@id": DOMAIN + "/#org"}})
@@ -327,7 +353,8 @@ def page(pid, slug, title):
     if not is_home:
         cls += ' mp-in mp-' + pid  # la pagina corrente, per le regole che valgono su una sola pagina (barra Hotel Score)
         content = content.replace(' aria-hidden="true"', ' aria-hidden="false"', 1)
-        content = re.sub(r'class="(app pgv|ctp pgv)"', lambda m: 'class="%s on"' % m.group(1), content, count=1)
+        # anche con classi in più dopo "pgv" (le guide hanno class="app pgv gd")
+        content = re.sub(r'class="(app pgv|ctp pgv)(?=[ "])', lambda m: 'class="%s on' % m.group(1), content, count=1)
         content = content.replace(' data-lenis-prevent', '', 1)
     if pid == 'pg-journal':
         content = content.replace('<div class="jr-rd" id="jrRd"', JR_CTA + '<div class="jr-rd" id="jrRd"', 1)

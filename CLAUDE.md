@@ -8,6 +8,7 @@ Leggi anche README.md per struttura e indirizzi delle pagine.
 - Prima di proporre una pubblicazione eseguire `python tools/check_seo.py`; gli URL pubblicati sono in README.md
 - Titoli e descrizioni SEO e gli slug degli articoli sono in `tools/seo.json`: uno slug pubblicato non cambia quando viene riscritto un titolo
 - Tutte le pagine sono in `index.html`. Le pagine interne sono `div.pgv` con id (`#revenue-management`, `#consulenza`, `#apertura`, `#contatti`, `#pg-metodo`, `#pg-chi-siamo`, `#pg-partner`, `#pg-pagella`, `#pg-osservatorio`, `#pg-journal`, `#pg-indicatori`, `#pg-privacy`, `#pg-cookie`, `#pg-termini`) aperte via hash.
+- Le sei guide (`#pg-occupazione`, `#pg-goppar-revpar`, `#pg-usali`, `#pg-commissioni-ota`, `#pg-tariffa`, `#pg-rm-esterno`) hanno `class="app pgv gd"`: le regole CSS delle pagine interne valgono anche per `.pgv.gd`, le date della riga `gd-by` (`data-pub`, `data-mod`) finiscono nel JSON-LD.
 - Stili tutti in `assets/css/site.css`. L'ordine delle regole conta: le regole in fondo al file sovrascrivono quelle prima. Le regole delle pagine interne usano il prefisso `:is(#revenue-management,#consulenza,…)`.
 - Variabili principali: `--zink` (nero testo/tasti), `--zgr` (gradiente brand), `--zf` (carattere Geist).
 - Script in `assets/js/`, caricati nell'ordine numerico.
