@@ -42,7 +42,7 @@ Conta tutto, spazi e ` · Ricavia` compresi. Prima di consegnare, verifica la lu
 
 ## 3. Criteri di decisione, in ordine di priorità
 
-1. **Nessuna cannibalizzazione**: controlla il registro e gli articoli pubblicati. Se esiste già un articolo sullo stesso tema e la stessa keyword negli ultimi 14 giorni, senza fatto nuovo, è duplicato
+1. **Nessuna cannibalizzazione**: controlla il registro e gli articoli pubblicati. Se esiste già un articolo sullo stesso tema e la stessa keyword negli ultimi 14 giorni, senza fatto nuovo, è duplicato. È duplicato anche un articolo con keyword diversa che ripete tesi e azioni di un articolo degli ultimi 14 giorni con un altro evento, un altro mercato o un altro numero: il fatto nuovo deve cambiare la domanda di Roma (vedi `giornalista.md`, sezione 5)
 2. **Intento di ricerca dell'albergatore, non del turista**: "sciopero treni Roma hotel cancellazioni" sì, "sciopero treni Roma orari" no
 3. **"Roma" o "Lazio" solo quando l'aggancio è reale**
 4. **Chiarezza prima dell'astuzia**: il title deve dire di cosa parla l'articolo
