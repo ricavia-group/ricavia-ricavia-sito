@@ -346,5 +346,17 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-25",
+    "slug": "feste-natale-capodanno-hotel-roma",
+    "tema": "calendario-feste-natale-capodanno-epifania-2026-27-roma",
+    "keyword": "feste hotel Roma",
+    "categoria": "prezzi",
+    "esito": "NO-GO",
+    "motivo": "Tema già trattato",
+    "bloccato_fino": "2026-12-09",
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
