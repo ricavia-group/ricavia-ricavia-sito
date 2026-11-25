@@ -79,7 +79,7 @@ def hero(d):
 <h1 id="po-h">Il mercato degli alberghi di Roma, {g("visto dal tuo hotel / affittacamere")}</h1>
 <p class="o2-lead">Prezzi letti ogni notte su Booking. Ultima lettura: {data(d["aggiornato"])}</p>
 <div class="o2-cerca">
-<form class="o2-f" id="o2Cerca" role="search" novalidate><label class="o3-lab" for="o2Q">Cerca il tuo hotel / affittacamere</label><div class="o2-in"><input id="o2Q" name="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Nome dell'hotel o CIN" aria-controls="o2Sug"><div class="o2-sug" id="o2Sug" role="listbox" hidden></div></div><button type="submit">Cerca <span class="arr">→</span></button></form>
+<form class="o2-f" id="o2Cerca" role="search" novalidate><label class="o3-lab" for="o2Q">Cerca il tuo hotel / affittacamere</label><div class="o2-in"><input id="o2Q" name="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Nome dell'hotel / affittacamere o CIN" aria-controls="o2Sug"><div class="o2-sug" id="o2Sug" role="listbox" hidden></div></div><button type="submit">Cerca <span class="arr">→</span></button></form>
 <small class="o3-sm">Un solo passaggio: ogni blocco della pagina aggiunge i numeri del tuo hotel / affittacamere accanto a quelli della tua zona e di Roma. Gratis, senza registrazione</small>
 <div class="o2-nf" id="o2Nf" role="status" aria-live="polite" hidden></div>
 </div>
