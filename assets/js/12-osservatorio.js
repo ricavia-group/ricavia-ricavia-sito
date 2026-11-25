@@ -257,7 +257,9 @@ function nastro(I){var tk=$('#o3Tk');if(!tk)return;var v=[],e=function(a,b){v.pu
   if(!v.length)return;var g=tk.querySelectorAll('.o3-tkg'),f=[].map.call(g[0].querySelectorAll('.o3-tkf'),function(x){return x.outerHTML}).join('');
   [].forEach.call(g,function(x){x.innerHTML=v.join('')+f})}
 /* il file cambia ogni giorno e /assets/ ha una cache di un anno: un indirizzo nuovo al giorno */
-if(OG)fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(I){var zd=ZT&&ZP&&zpOk(I.zone_date);if(zd){zpModello(zd);zpDisegna()}nastro(I);var h=oggi(I);if(!h)return;
+/* la data in testa alla pagina segue l'ultima lettura di indicatori.json: la pagina non si rigenera ogni notte */
+function ultimaLettura(I){var l=I&&I.ultimo&&I.ultimo.letto_il,p=$('.o2-lead');if(l&&p&&/Ultima lettura:/.test(p.textContent))p.textContent=p.textContent.replace(/Ultima lettura:.*$/,'Ultima lettura: '+gg(l))}
+if(OG)fetch('/assets/data/indicatori.json?v='+new Date().toISOString().slice(0,10)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(I){ultimaLettura(I);var zd=ZT&&ZP&&zpOk(I.zone_date);if(zd){zpModello(zd);zpDisegna()}nastro(I);var h=oggi(I);if(!h)return;
   var visti={};[].forEach.call(OG.querySelectorAll('.o3-blk.in'),function(s){visti[s.id]=1});OG.innerHTML=h;
   [].forEach.call(OG.querySelectorAll('.o3-blk'),function(s){if(visti[s.id])s.classList.add('in');else anima(s);if(navIO)navIO.observe(s)});conta(OG);if(ME)tuOggi()}).catch(function(){});
 /* punto 4: i prezzi medi salgono da 0 al valore quando entrano nello schermo; con meno movimento restano fermi */
