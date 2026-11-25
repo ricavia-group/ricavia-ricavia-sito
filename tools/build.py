@@ -12,6 +12,10 @@ OUT = os.path.join(ROOT, 'site')
 sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import journal
 DOMAIN = 'https://ricavia.com'
+# 13.1 e 14.1 della revisione del 21/11: chi arriva dalle mail su un articolo trova subito l'Hotel Score; la call è la seconda scelta
+JR_CTA = ('<div class="jr-cta"><p>Come sta il tuo hotel rispetto ai competitor della tua zona?</p>'
+          '<a class="z-btn" href="/hotel-score/">Il tuo Hotel Score gratuito <span class="arr">→</span></a>'
+          '<a class="jr-cta2" href="/contatti/">Oppure prenota una call conoscitiva</a></div>')
 JOURNAL = os.environ.get('RICAVIA_JOURNAL', os.path.join(ROOT, 'journal'))
 with open(os.path.join(ROOT, 'tools', 'seo.json'), encoding='utf-8') as f:
     SEO = json.load(f)
@@ -22,7 +26,6 @@ PAGES = [
     ('revenue-management', 'revenue-management', 'Revenue management per hotel a Roma · Ricavia'),
     ('consulenza', 'consulenza', 'Consulenza per hotel: margine, GOP e GOPPAR · Ricavia'),
     ('apertura', 'nuova-apertura', 'Nuova apertura di un hotel o di una struttura ricettiva · Ricavia'),
-    ('pg-metodo', 'metodo', 'Il metodo Ricavia: dal dato all\'utile · Ricavia'),
     ('pg-chi-siamo', 'chi-siamo', 'Chi siamo: i fondatori di Ricavia, Roma · Ricavia'),
     ('pg-partner', 'partner', 'Partner tecnologici hotel: PMS e channel manager · Ricavia'),
     ('contatti', 'contatti', 'Contatti: prenota una call conoscitiva · Ricavia'),
@@ -30,6 +33,13 @@ PAGES = [
     ('pg-journal', 'journal', 'Journal: mercato e prezzi degli hotel a Roma · Ricavia'),
     ('pg-pagella', 'hotel-score', 'Hotel Score gratuito per la tua struttura ricettiva · Ricavia'),
     ('pg-indicatori', 'indicatori', 'ADR, RevPAR, GOP e GOPPAR spiegati · Ricavia'),
+    # guide: una domanda per pagina, con definizione, formula, esempio e fonti
+    ('pg-occupazione', 'indicatori/occupazione-hotel', 'Occupazione di un hotel: come si calcola · Ricavia'),
+    ('pg-goppar-revpar', 'indicatori/goppar-revpar', 'GOPPAR e RevPAR: differenza e formule · Ricavia'),
+    ('pg-usali', 'indicatori/standard-usali', 'Standard USALI per hotel · Ricavia'),
+    ('pg-commissioni-ota', 'indicatori/commissioni-ota', 'Commissioni OTA e margine dell\'hotel · Ricavia'),
+    ('pg-tariffa', 'revenue-management/tariffa-hotel', 'Come decidere la tariffa di un hotel · Ricavia'),
+    ('pg-rm-esterno', 'revenue-management/revenue-manager-esterno', 'Revenue manager esterno: come valutarne il costo · Ricavia'),
     ('pg-privacy', 'privacy', 'Informativa privacy · Ricavia'),
     ('pg-cookie', 'cookie', 'Cookie policy · Ricavia'),
     ('pg-termini', 'termini', 'Termini di servizio · Ricavia'),
@@ -209,11 +219,16 @@ ORG = {
     "name": "Ricavia", "legalName": "Ricavia Group S.r.l.", "url": DOMAIN + "/",
     "logo": DOMAIN + "/assets/img/c3ed5d4eee.svg", "image": DOMAIN + "/assets/img/og-simbolo.jpg",
     "email": "info@ricavia.com", "vatID": "IT17726801008",
-    "description": "Revenue management e consulenza per hotel e strutture ricettive indipendenti",
+    # descrizione breve standard, identica al piè di pagina
+    "description": "Revenue management e consulenza per hotel e strutture ricettive indipendenti. Da Roma, in tutta Italia",
     # Sede legale già pubblicata nell'informativa privacy: nessun orario o recapito inventato.
     "address": {"@type": "PostalAddress", "streetAddress": "Via Francesco Gentile 135",
                 "postalCode": "00173", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
     "areaServed": {"@type": "Country", "name": "Italia"},
+    # I fondatori, come nella pagina Chi siamo (George 25/11)
+    "founder": [{"@type": "Person", "name": "George Ghimici", "jobTitle": "Co-founder"},
+                {"@type": "Person", "name": "Andrea Martella", "jobTitle": "Co-founder",
+                 "sameAs": ["https://www.linkedin.com/in/andrea-martella-375b1462/"]}],
     "knowsAbout": ["Revenue management alberghiero", "GOP", "GOPPAR", "USALI", "Distribuzione alberghiera"],
     # Profili ufficiali dell'azienda: collegano il sito ai profili che Google già mostra per "Ricavia"
     "sameAs": ["https://www.linkedin.com/company/ricaviagroup/", "https://www.instagram.com/ricaviagroup/",
@@ -228,18 +243,32 @@ SERVICES = {
 }
 
 
-def web_page(pid, title, url, desc):
+def web_page(pid, title, url, desc, content=''):
     kind = {'contatti': 'ContactPage', 'pg-chi-siamo': 'AboutPage', 'pg-osservatorio': 'CollectionPage', 'pg-journal': 'CollectionPage'}.get(pid, 'WebPage')
     data = {'@type': kind, '@id': url + '#webpage', 'url': url, 'name': title,
             'description': desc, 'inLanguage': 'it-IT', 'isPartOf': {'@id': DOMAIN + '/#web'},
             'about': {'@id': DOMAIN + '/#org'}}
     if pid in SERVICES:
         data['mainEntity'] = {'@id': url + '#service'}
+    # date visibili nella pagina (riga della firma, <p class="gd-by" data-pub=… data-mod=…>)
+    by = re.search(r'<p class="gd-by[^"]*"([^>]*)>', content)
+    if by:
+        for k, v in re.findall(r'data-(pub|mod)="(\d{4}-\d{2}-\d{2})"', by.group(1)):
+            data['datePublished' if k == 'pub' else 'dateModified'] = v
+        data['author'] = {'@id': DOMAIN + '/#org'}
     return data
 
 
+# pagina superiore delle guide, per le briciole di pane (BreadcrumbList)
+PARENT = {'pg-occupazione': 'pg-indicatori', 'pg-goppar-revpar': 'pg-indicatori', 'pg-usali': 'pg-indicatori',
+          'pg-commissioni-ota': 'pg-indicatori', 'pg-tariffa': 'revenue-management', 'pg-rm-esterno': 'revenue-management'}
+PARENT_NAME = {'pg-indicatori': 'Indicatori', 'revenue-management': 'Revenue management'}
+
+
 def jsonld(pid, title, url, content, crumbs=None):
-    g = [web_page(pid, title, url, describe(pid))]
+    if crumbs is None and pid in PARENT:
+        crumbs = [(PARENT_NAME[PARENT[pid]], DOMAIN + URL[PARENT[pid]])]
+    g = [web_page(pid, title, url, describe(pid), content)]
     if pid == 'home':
         g.append(ORG)
         g.append({"@type": "WebSite", "@id": DOMAIN + "/#web", "url": DOMAIN + "/", "name": "Ricavia", "inLanguage": "it-IT", "publisher": {"@id": DOMAIN + "/#org"}})
@@ -283,6 +312,8 @@ def os_block(pid, content):
         # in Home le animazioni di comparsa usano un altro sistema: il blocco resta visibile
         sec = re.sub(r'class="([^"]*?) ?\bar\b', lambda m: 'class="%s' % m.group(1), sec).replace(' class=""', '')
     i = content.find('class="ix-faq"')
+    if i < 0:
+        i = content.find('id="faq"')  # home 2.0: il blocco va prima delle domande frequenti, non dopo </main>
     at = content.rfind('<section', 0, i) if i >= 0 else -1
     if at < 0:
         at = content.find('<footer class="ft')
@@ -291,25 +322,46 @@ def os_block(pid, content):
     return content[:at] + sec + content[at:]
 
 
+def journal_rivista(content):
+    """/journal/ come rivista: storia in evidenza, altre letture, ultimi articoli, poi le sei guide storiche."""
+    def sost(h, vecchio, nuovo):
+        assert vecchio in h, 'Journal: "%s" non trovato in #pg-journal' % vecchio
+        return h.replace(vecchio, nuovo, 1)
+    n = NUOVI[:12]
+    lista = '<div class="jr-list jr-new"><h2 class="jr-lbl">In evidenza</h2><div class="jr-cov">' + journal.scheda(n[0], True)
+    if n[1:4]:
+        lista += '<div class="jr-sec"><h2 class="jr-lbl">Altre letture</h2>' + ''.join(journal.scheda(a) for a in n[1:4]) + '</div>'
+    lista += '</div>'
+    if n[4:]:
+        lista += '<h2 class="jr-lbl">Ultimi articoli</h2><div class="jr-grid jr-lat">' + ''.join(journal.scheda(a) for a in n[4:]) + '</div>'
+    lista += '</div>\n    '
+    # la prima guida storica perde l'evidenza: diventa una scheda come le altre cinque
+    content = sost(content, '<b>Leggi l’articolo →</b>', '<b>Leggi →</b>')
+    content = sost(content, '<div class="jr-list"><article class="jr-ft ar" data-cat="zone">',
+                   lista + '<h2 class="jr-lbl jr-lbl-g">Guide e approfondimenti</h2><div class="jr-list jr-old"><article class="jr-cd ar" data-cat="zone">')
+    content = sost(content, '<span class="jr-ed">Rivista digitale</span>',
+                   '<span class="jr-ed">Aggiornato al %s</span>' % journal.data_italiana(max(a['data'] for a in NUOVI)))
+    arch = '<nav class="jr-arch" aria-label="Archivio del Journal"><span>Archivio</span>' + ''.join(
+        '<a href="/journal/archivio/%s/">%s %s</a>' % (m, MESI_IT[int(m[5:]) - 1].capitalize(), m[:4]) for m in MESI_NUOVI) + '</nav>'
+    return sost(content, '<a class="jr-zl"', arch + '<a class="jr-zl"')
+
+
 def page(pid, slug, title):
     is_home = pid == 'home'
     content = pages[pid]
     cls = 'mp'
     if not is_home:
-        cls += ' mp-in'
+        cls += ' mp-in mp-' + pid  # la pagina corrente, per le regole che valgono su una sola pagina (barra Hotel Score)
         content = content.replace(' aria-hidden="true"', ' aria-hidden="false"', 1)
-        content = re.sub(r'class="(app pgv|ctp pgv)"', lambda m: 'class="%s on"' % m.group(1), content, count=1)
+        # anche con classi in più dopo "pgv" (le guide hanno class="app pgv gd")
+        content = re.sub(r'class="(app pgv|ctp pgv)(?=[ "])', lambda m: 'class="%s on' % m.group(1), content, count=1)
         content = content.replace(' data-lenis-prevent', '', 1)
     if pid == 'pg-journal':
+        content = content.replace('<div class="jr-rd" id="jrRd"', JR_CTA + '<div class="jr-rd" id="jrRd"', 1)
         content = re.sub(r'<button type="button" class="jr-hit" data-art="(a\d+)"([^>]*)></button>',
                          lambda m: '<a class="jr-hit" data-art="%s" href="%s"%s></a>' % (m.group(1), ART_URL.get(m.group(1), '#'), m.group(2)), content)
     if pid == 'pg-journal' and NUOVI:
-        lista = '<div class="jr-list">' + journal.scheda(NUOVI[0], True) + (
-            '<div class="jr-grid">' + ''.join(journal.scheda(a) for a in NUOVI[1:12]) + '</div>' if NUOVI[1:] else '') + '</div>\n    '
-        content = content.replace('<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', lista + '<div class="jr-list"><article class="jr-ft ar" data-cat="zone">', 1)
-        arch = '<nav class="jr-arch" aria-label="Archivio del Journal"><span>Archivio</span>' + ''.join(
-            '<a href="/journal/archivio/%s/">%s %s</a>' % (m, MESI_IT[int(m[5:]) - 1].capitalize(), m[:4]) for m in MESI_NUOVI) + '</nav>\n    '
-        content = content.replace('<div class="jz ar" id="os-zone">', arch + '<div class="jz ar" id="os-zone">', 1)
+        content = journal_rivista(content)
     if pid == 'pg-journal':  # l'iscrizione è sulla pagina dell'Osservatorio
         content = content.replace('href="#osForm"', 'href="/osservatorio/#osForm"')
     if pid in OS_BLOCKS:
@@ -410,7 +462,7 @@ def art_page(aid, art):
             {"@type": "ListItem", "position": 3, "name": title, "item": url}]}]}
     ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-journal'], re.S)
     parts = chrome + '<main class="jr-pgm"><a class="jr-back" href="/journal/">← Il Journal</a><article class="jr-art">' + body_html + '</article>' + \
-        '<div class="jr-cta"><p>Vuoi applicare questi dati al tuo hotel?</p><a class="z-btn" href="/contatti/">Prenota una call conoscitiva <span class="arr">→</span></a></div></main>' + \
+        JR_CTA + '</main>' + \
         (ft.group(0) if ft else '') + scripts
     parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-journal'))
     # ancore che negli articoli puntano a sezioni dell'Osservatorio
@@ -460,8 +512,8 @@ def archive_page(mese, articoli):
             {"@type": "ListItem", "position": 3, "name": h1, "item": url}]}]}
     ft = re.search(r'<footer class="ft z-ft[^"]*".*?</footer>', pages['pg-journal'], re.S)
     parts = chrome + '<main class="jr-pgm">' + \
-        '<div class="jr-arp"><a class="jr-back" href="/journal/">← Il Journal</a><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div></main>' % (
-            html.escape(h1), ''.join(journal.scheda(a) for a in articoli)) + (ft.group(0) if ft else '') + scripts
+        '<div class="jr-arp"><a class="jr-back" href="/journal/">← Il Journal</a><h1 class="jr-h1">%s</h1><div class="jr-grid">%s</div></div>%s</main>' % (
+            html.escape(h1), ''.join(journal.scheda(a) for a in articoli), JR_CTA) + (ft.group(0) if ft else '') + scripts
     parts = lazy(links(fix_assets(resolve_photos(parts)), 'pg-journal'))
     meta = '''<title>{t}</title>
 <meta name="description" content="{d}">
@@ -518,6 +570,8 @@ for _a in NUOVI:  # anteprime social già diffuse con il vecchio indirizzo
 for _s in RITIRATI:  # articoli ritirati: direttamente all'elenco
     VECCHI += [('/osservatorio/%s/' % _s, '/journal/'), ('/journal/%s/' % _s, '/journal/')]
 RED += [(v.rstrip('/'), n) for v, n in VECCHI if v.endswith('/')] + VECCHI
+# la pagina Metodo non c'è più (24/11/2026): i quattro passi stanno in «Come lavoriamo» della home
+RED += [('/metodo', '/#metodo'), ('/metodo/', '/#metodo')]
 open(os.path.join(OUT, '_redirects'), 'w').write(''.join('%s %s 301\n' % r for r in RED))
 # chiave IndexNow (Bing e altri motori): il file deve restare raggiungibile alla radice del sito
 INDEXNOW_KEY = '77a8078505659e943f2e417aafa1d9db'
@@ -545,6 +599,7 @@ nf = nf.replace('<link rel="canonical" href="https://ricavia.com/">', '<meta nam
 nf = nf.replace('<meta name="robots" content="max-image-preview:large">', '')
 nf = re.sub(r'<title>.*?</title>', '<title>Pagina non trovata · Ricavia</title>', nf, count=1)
 nf = re.sub(r'<script type="application/ld\+json">.*?</script>', '', nf, flags=re.S)
+nf = re.sub(r'href="#(?=[^"])', 'href="/#', nf)  # sulla 404 le sezioni della home (#metodo, #servizi…) non esistono: si va alla home
 open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(nf)
 # alleggerimento: CSS senza regole inutilizzate e compresso, HTML senza spazi superflui
 if os.environ.get('RICAVIA_NO_MIN'):

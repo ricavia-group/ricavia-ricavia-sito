@@ -15,11 +15,9 @@
       "title": "Aprire un hotel a Roma: business plan e consulenza · Ricavia",
       "description": "Vuoi aprire un hotel a Roma o nel Lazio? Ricavia ti affianca con studio di fattibilità, business plan, posizionamento, prezzi di lancio e tecnologia"
     },
-    "pg-metodo": {
-      "description": "Il metodo Ricavia per hotel indipendenti: ascolto, analisi di tariffe e costi, interventi prioritari e verifica dei risultati su GOP e GOPPAR"
-    },
     "pg-chi-siamo": {
-      "description": "Conosci George Ghimici e Andrea Martella, fondatori di Ricavia: esperienza nell'ospitalità e nella distribuzione online al servizio degli hotel"
+      "title": "Chi siamo: revenue management e consulenza a Roma · Ricavia",
+      "description": "Ricavia è una società romana di revenue management e consulenza per l'ospitalità indipendente: chi siamo, per quali hotel lavoriamo e come si inizia"
     },
     "pg-partner": {
       "description": "Le tecnologie utilizzate da Ricavia per gli hotel: PMS, channel manager, rate intelligence e pagamenti, scelti in funzione della strategia e del margine"
@@ -36,10 +34,28 @@
     },
     "pg-pagella": {
       "title": "Hotel Score gratuito per hotel a Roma e nel Lazio · Ricavia",
-      "description": "Richiedi l'Hotel Score gratuito di Ricavia per il tuo hotel a Roma o nel Lazio: sei aree di valutazione e tre priorità su cui intervenire"
+      "description": "Richiedi l'Hotel Score gratuito di Ricavia per il tuo hotel a Roma o nel Lazio: i voti della tua struttura ricettiva contro i competitor veri della tua zona"
     },
     "pg-indicatori": {
       "description": "Come calcolare ADR, RevPAR, GOP e GOPPAR di un hotel: formule, esempi e calcolatore interattivo per leggere ricavi, occupazione e margine operativo"
+    },
+    "pg-occupazione": {
+      "description": "Come si calcola l'occupazione di un hotel: formula camere vendute ÷ camere disponibili, esempio illustrativo e lettura insieme ad ADR e RevPAR"
+    },
+    "pg-goppar-revpar": {
+      "description": "Differenza tra RevPAR e GOPPAR: il primo misura il ricavo camere, il secondo il margine per camera disponibile. Formule, esempio e limiti del RevPAR"
+    },
+    "pg-usali": {
+      "description": "Che cos'è lo standard USALI per il conto economico degli hotel: chi lo pubblica, l'edizione in vigore e come la riclassificazione porta a GOP e GOPPAR"
+    },
+    "pg-commissioni-ota": {
+      "description": "Come le commissioni OTA riducono il ricavo netto e il GOP di un hotel: calcolo illustrativo, ricavo netto per canale e cosa controllare ogni notte"
+    },
+    "pg-tariffa": {
+      "description": "Come decidere la tariffa di un hotel: domanda attesa, competitive set, costo del canale, soggiorno minimo e controllo di occupazione, ADR e RevPAR"
+    },
+    "pg-rm-esterno": {
+      "description": "Come valutare il costo di un revenue manager esterno per il tuo hotel: il compenso accanto all'aumento di GOP, gli indicatori, il report e le domande da fare"
     },
     "pg-privacy": {
       "description": "Informativa sul trattamento dei dati personali di Ricavia Group S.r.l."
@@ -143,7 +159,7 @@
         },
         {
           "label": "il metodo Ricavia",
-          "url": "/metodo/"
+          "url": "/#metodo"
         }
       ]
     }
@@ -155,20 +171,10 @@
       "a3",
       "a6"
     ],
-    "revenue-management": [
-      "a4",
+    "pg-osservatorio": [
+      "a1",
       "a2",
       "a6"
-    ],
-    "consulenza": [
-      "a3",
-      "a5",
-      "a2"
-    ],
-    "apertura": [
-      "a1",
-      "a5",
-      "a3"
     ]
   }
 }

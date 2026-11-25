@@ -121,7 +121,7 @@ Struttura di ogni articolo, in quest'ordine:
 - Le fonti si linkano nel testo, sulla parola giusta: `<a href="https://...">secondo ENIT</a>`
 - Collegamenti interni nel corpo: 1 o 2 naturali, verso articoli o pagine pertinenti, più il collegamento di chiusura del paragrafo Ricavia (sezione 5), che non si conta. Le voci di `related` non ripetono un collegamento già presente nel corpo, se esiste un'alternativa pertinente
 - Due bozze della stessa giornata possono citare lo stesso fatto come contesto, ma un fatto usato come contesto in una bozza non diventa un articolo a sé nella stessa giornata
-- Collegamenti interni solo verso pagine che esistono: `/revenue-management/`, `/consulenza/`, `/nuova-apertura/`, `/metodo/`, `/indicatori/`, `/hotel-score/`, `/contatti/`, `/osservatorio/`, `/journal/` e gli articoli già pubblicati su `main`, sempre nella forma `/journal/<slug>/` (mai `/osservatorio/<slug>/`: quel percorso non esiste più). Mai verso un altro articolo della stessa giornata: se viene tolto, il collegamento si rompe e la build fallisce
+- Collegamenti interni solo verso pagine che esistono: `/revenue-management/`, `/consulenza/`, `/nuova-apertura/`, `/#metodo` (sezione «Come lavoriamo» della home: la pagina Metodo non esiste più dal 24/11/2026), `/indicatori/`, `/hotel-score/`, `/contatti/`, `/osservatorio/`, `/journal/` e gli articoli già pubblicati su `main`, sempre nella forma `/journal/<slug>/` (mai `/osservatorio/<slug>/`: quel percorso non esiste più). Mai verso un altro articolo della stessa giornata: se viene tolto, il collegamento si rompe e la build fallisce
 
 ## 8. Tono e mood
 

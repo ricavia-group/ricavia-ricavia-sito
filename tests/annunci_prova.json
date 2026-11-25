@@ -1,0 +1,5 @@
+{"aggiornato": "2026-11-22", "annunci": [
+  {"id": "prova-1", "fonte": "Portale di prova", "link": "https://example.com/annuncio-1", "titolo": "Albergo di prova con immobile", "zona_sito": "Esquilino · Termini", "area": "Via di prova", "tipo": "albergo", "stelle": 3, "camere": 20, "camere_stimate": false, "mq": null, "prezzo": 3000000, "vendita": "immobile e attività", "letto_il": "2026-11-22"},
+  {"id": "prova-2", "fonte": "Portale di prova", "link": "https://example.com/annuncio-2", "titolo": "Attività alberghiera di prova in affitto", "zona_sito": "Esquilino · Termini", "area": "Via di prova", "tipo": "albergo", "stelle": 2, "camere": 20, "camere_stimate": true, "mq": 700, "prezzo": 500000, "vendita": "solo attività", "letto_il": "2026-11-22"},
+  {"id": "prova-3", "fonte": "Altro portale di prova", "link": "javascript:alert(1)", "titolo": "Edificio di prova fuori dalle nove zone", "zona_sito": null, "area": "Fuori zona", "tipo": "altro", "stelle": null, "camere": 12, "camere_stimate": true, "mq": 400, "prezzo": 1200000, "vendita": "solo immobile", "letto_il": "2026-11-21"}
+]}

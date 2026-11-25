@@ -106,6 +106,8 @@ Su GitHub il workflow `.github/workflows/controlli.yml` (job `controlli`) esegue
 | Journal | `/journal/` |
 | Hotel Score | `/hotel-score/` |
 | Indicatori | `/indicatori/` |
+| Guide sugli indicatori | `/indicatori/occupazione-hotel/` · `/indicatori/goppar-revpar/` · `/indicatori/standard-usali/` · `/indicatori/commissioni-ota/` |
+| Guide sul revenue management | `/revenue-management/tariffa-hotel/` · `/revenue-management/revenue-manager-esterno/` |
 | Privacy e cookie | `/privacy/` · `/cookie/` |
 | Termini di servizio | `/termini/` |
 

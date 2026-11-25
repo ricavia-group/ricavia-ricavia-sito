@@ -28,6 +28,22 @@ class TestIndice(unittest.TestCase):
         self.assertIn('<nav class="jr-arch" aria-label="Archivio del Journal">', p)
         self.assertIn('<a href="/journal/archivio/2026-11/">Novembre 2026</a>', p)
 
+    def test_rivista(self):
+        for i in range(6):
+            crea_articolo(self.r, slug='r%d' % i, titolo='Titolo %d' % i, data='2026-11-%02d' % (i + 1))
+        p = leggi(costruisci(self.r), 'journal/index.html')
+        # storia in evidenza = la più recente, con la copertina caricata subito
+        self.assertRegex(p, r'<h2 class="jr-lbl">In evidenza</h2><div class="jr-cov"><article class="jr-ft ar" data-cat="mercato">'
+                            r'<a class="jr-hit" href="/journal/r5/"[^>]*></a><figure class="jr-im"><img [^>]*fetchpriority="high"')
+        letture = p[p.index('Altre letture'):p.index('Ultimi articoli')]
+        self.assertEqual([s for s in ('r4', 'r3', 'r2', 'r1') if '/journal/%s/' % s in letture], ['r4', 'r3', 'r2'])
+        self.assertIn('/journal/r0/', p[p.index('Ultimi articoli'):p.index('Guide e approfondimenti')])
+        # la prima guida storica non è più in evidenza; la testata usa la data vera, senza numero inventato
+        self.assertEqual(p.count('class="jr-ft ar"'), 1)
+        self.assertIn('<span class="jr-ed">Aggiornato al 6 novembre 2026</span>', p)
+        self.assertNotIn('Numero 01', p)
+        self.assertLess(p.index('class="jr-arch"'), p.index('class="jr-zl"'))
+
     def test_archivio_a_cavallo_dei_mesi(self):
         crea_articolo(self.r, slug='ott', titolo='Titolo ott', data='2026-10-31')
         crea_articolo(self.r, slug='nov', titolo='Titolo nov', data='2026-11-01')
@@ -45,7 +61,10 @@ class TestIndice(unittest.TestCase):
         self.assertIn('/journal/archivio/2026-11/', sm)
 
     def test_indice_invariato_senza_nuovi(self):
-        self.assertNotIn('jr-arch', leggi(costruisci(os.path.join(self.r, 'vuoto')), 'journal/index.html'))
+        p = leggi(costruisci(os.path.join(self.r, 'vuoto')), 'journal/index.html')
+        self.assertNotIn('jr-arch', p)
+        self.assertIn('<span class="jr-ed">Rivista digitale</span>', p)
+        self.assertIn('<article class="jr-ft ar" data-cat="zone">', p)
 
     def test_filtri_nuove_categorie(self):
         p = leggi(costruisci(os.path.join(self.r, 'vuoto')), 'journal/index.html')
