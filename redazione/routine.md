@@ -34,8 +34,9 @@ Cartella di lavoro: `/tmp/redazione-AAAA-MM-GG`. Ogni agente è un **sottoagente
 Ordine fisso:
 
 1. **Giornalista** (`redazione/agenti/giornalista.md`): ricerca web, `candidati.md`, 2 bozze in `1-<slug>/` e `2-<slug>/`, `note-giornalista.md`. Riceve il registro, le lezioni e l'elenco degli articoli già pubblicati (`journal/` e i 6 storici in `index.html`)
-2. **War room**, su entrambe le bozze, un sottoagente per ruolo e in quest'ordine: revenue manager, SEO director, virality director, art director. Ognuno aggiunge la sua voce al verbale e le sue note in `note-war-room.md`
-3. **Capo redattore**: GO, NO-GO o RIMANDA per ogni bozza, in `decisione-capo-redattore.md`
+2. **War room**, su entrambe le bozze, un sottoagente per ruolo e in quest'ordine: revenue manager, SEO director, virality director. Ognuno aggiunge la sua voce al verbale e le sue note in `note-war-room.md`
+3. **Capo redattore**: GO, NO-GO o RIMANDA per ogni bozza, in `decisione-capo-redattore.md`. Decide sul testo; la copertina non c'è ancora
+3 bis. **Art director**, solo sulle bozze con GO: sceglie la copertina e aggiunge la sua voce al verbale. Lavorare sull'immagine di una bozza che poi viene scartata consuma l'abbonamento senza risultato (decisione di George del 25/11/2026). Se la notizia tocca vittime o tragedie, l'art director applica il controllo di tono e immagine con il doppio dell'attenzione; nel dubbio usa la foto più neutra della libreria e lo scrive nel verbale
 4. **NO-GO**: il giornalista scrive la bozza sostitutiva dal primo candidato della riserva, che rifà tutta la war room e torna dal capo redattore. Massimo 2 sostituzioni al giorno
 5. **RIMANDA**: il giornalista riscrive una volta seguendo `rimanda-N.md`, la bozza rifà la war room, il capo redattore decide in modo definitivo
 6. **Editore**: lo fa questa sessione, seguendo `redazione/agenti/editore.md` alla lettera:
