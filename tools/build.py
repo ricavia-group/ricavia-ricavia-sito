@@ -225,6 +225,10 @@ ORG = {
     "address": {"@type": "PostalAddress", "streetAddress": "Via Francesco Gentile 135",
                 "postalCode": "00173", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
     "areaServed": {"@type": "Country", "name": "Italia"},
+    # I fondatori, come nella pagina Chi siamo (George 25/11)
+    "founder": [{"@type": "Person", "name": "George Ghimici", "jobTitle": "Co-founder"},
+                {"@type": "Person", "name": "Andrea Martella", "jobTitle": "Co-founder",
+                 "sameAs": ["https://www.linkedin.com/in/andrea-martella-375b1462/"]}],
     "knowsAbout": ["Revenue management alberghiero", "GOP", "GOPPAR", "USALI", "Distribuzione alberghiera"],
     # Profili ufficiali dell'azienda: collegano il sito ai profili che Google già mostra per "Ricavia"
     "sameAs": ["https://www.linkedin.com/company/ricaviagroup/", "https://www.instagram.com/ricaviagroup/",

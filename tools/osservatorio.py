@@ -87,7 +87,7 @@ def hero(d):
 </div>
 </div></section>
 <div class="o3-me" id="o3Me" aria-hidden="true"><div class="wrap"><p>La pagina parla di <b></b></p><button type="button" data-o3="chat">Apri la chat</button></div></div>
-<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Oggi</a><a href="#o2-prezzi">Prezzi</a><a href="#o3-case">Case vacanze</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-vie">Vie</a><a href="#o2-metodo">Metodo</a></div></nav>'''
+<nav class="o2-nav" id="o2Nav" aria-label="Sezioni dell'Osservatorio"><div class="wrap"><a href="#o3-notte">Oggi</a><a href="#o2-prezzi">Prezzi</a><a href="#o3-case">Case vacanze</a><a href="#o2-classifiche">Classifiche</a><a href="#o2-flussi">Domanda</a><a href="#o2-hotel">Il tuo hotel</a><a href="#o2-vie">Vie</a></div></nav>'''
 
 
 def stanotte(d, oggi=None):
@@ -530,18 +530,11 @@ def hotel():
 
 
 def metodo():
-    regole = [("Le quattro aree dell'Hotel Score", "Prezzi, Reputazione, Foto e contenuti, Posizionamento. La media compare solo con tutti e quattro i voti. Canali e Sito e vendita diretta entreranno come nuove aree quando i dati saranno affidabili"),
-              ("Ogni numero con fonte e data", "Accanto a ogni dato il giorno della lettura. Un dato che manca è dichiarato, mai stimato"),
-              ("Valori mediani, mai medie", "Metà degli alberghi sta sopra, metà sotto. Un valore mediano compare solo con almeno 5 alberghi letti"),
-              ("Il competitive set", "Le strutture ricettive più vicine, con stesso tipo, categoria vicina e dimensione simile"),
-              ("Alberghi senza camere e prezzo del giorno", "Ogni sera contiamo su Booking gli hotel di Roma ancora prenotabili per 2 adulti la notte dopo e li confrontiamo con gli alberghi del registro. "
-               "Un albergo senza camere in vendita su Booking non è per forza senza ospiti: è la disponibilità, non l’occupazione delle camere. Il prezzo del giorno è il prezzo mediano degli hotel ancora prenotabili"),
-              ("I clienti Ricavia", "Compaiono nelle classifiche con una nota accanto al nome"),
-              ("Le correzioni", "Puoi segnalare un dato sbagliato o chiedere di non comparire: una persona di Ricavia controlla ogni richiesta")]
+    # George 25/11: niente sezione Metodo; restano le correzioni (segnalazione e richiesta di non comparire)
     arr = [("Gennaio","Gli hotel saliti di più", "La classifica di chi ha guadagnato più Hotel Score nel mese")]
-    return f'''<section class="o2-sec o2-lt" id="o2-metodo"><div class="wrap"><div class="o2-mg">
-<div><div class="o2-sh"><span class="o2-tag ar">Il metodo</span><h2 class="ar">Regole {g("uguali per tutti")}</h2></div>
-<ol class="o2-rl">{"".join(f'<li class="ar"><em>{i + 1:02d}</em><b>{a}</b><span>{b}</span></li>' for i, (a, b) in enumerate(regole))}</ol>
+    return f'''<section class="o2-sec o2-lt" id="o2-correzioni"><div class="wrap"><div class="o2-mg">
+<div><div class="o2-sh"><span class="o2-tag ar">Correzioni</span><h2 class="ar">Un dato {g("da correggere?")}</h2></div>
+<ol class="o2-rl"><li class="ar"><em>01</em><b>Una persona controlla ogni richiesta</b><span>Puoi segnalare un dato sbagliato o chiedere di non comparire nell'Osservatorio</span></li></ol>
 <div class="o2-cor ar"><button type="button" data-o2-msg="Vorrei segnalare un dato sbagliato nell'Osservatorio: ">Segnala un dato sbagliato</button><button type="button" data-o2-msg="Vorrei chiedere di non far comparire la mia struttura ricettiva nell'Osservatorio: ">Chiedi di non comparire</button></div></div>
 <div><div class="o2-sh"><span class="o2-tag ar">In arrivo</span><h2 class="ar">L'Osservatorio {g("cresce ogni mese")}</h2></div>
 <ol class="o2-tl">{"".join(f'<li class="ar"><em>{q}</em><b>{a}</b><span>{b}</span></li>' for q, a, b in arr)}</ol></div>
