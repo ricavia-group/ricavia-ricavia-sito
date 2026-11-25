@@ -6715,3 +6715,14 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 :is(.gd-src,.ix-box,.ix-mem) li a{color:inherit;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .gd-links{margin:10px 0 0;font-size:15px;line-height:1.6;color:inherit}
 .gd-links a{color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+
+/* === chi siamo: i due fondatori in primo piano (George 25/11) === */
+/* George e Andrea a metà riga ciascuno, Lorenzo sotto su tutta la riga e più basso */
+@media(min-width:901px){
+#pg-chi-siamo .cs-tg{grid-template-columns:repeat(2,minmax(0,1fr))}
+#pg-chi-siamo .cs-tg .tmc:nth-child(3){grid-column:1/-1;min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:28px;align-items:center}
+#pg-chi-siamo .cs-tg .tmc:nth-child(3) .tm-i.big{grid-row:1/5;margin-bottom:0!important}
+#pg-chi-siamo .cs-tg .tmc:nth-child(3) small{margin-top:0!important}
+#pg-chi-siamo .cs-tg .tmc:nth-child(3) h3{font-size:clamp(22px,1.9vw,26px)!important}
+}
+#pg-chi-siamo .cs-tg .tmc:nth-child(-n+2) p{font-size:15.5px!important}
