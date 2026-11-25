@@ -79,10 +79,18 @@ if(MP&&location.hash==='#o2-hotel')setTimeout(function(){vaiChat(false)},700);
 
 /* ---------- la ricerca in cima: trovato l'hotel, ogni blocco della pagina aggiunge i suoi numeri (personalizza) ---------- */
 var f=$('#o2Cerca'),sug=$('#o2Sug'),nf=$('#o2Nf'),SI=-1,RIS=[];
+/* George 25/11: una sola casella, sopra la scelta Hotel o Affittacamere; la scelta decide dove cerca (anche la chat, che usa trovaHotel) */
+var TIPO='hotel';try{TIPO=sessionStorage.getItem('o2-tipo')||'hotel'}catch(_){}
+function delTipo(h){return TIPO==='affittacamere'?(h.t==='affittacamere'||h.t==='B&B'):(h.t==='albergo'||h.t==='residence')}
+if(f&&f.q){var tp=document.createElement('div'),fb=f.querySelector('.o2-f');tp.className='o2-tipo';tp.setAttribute('role','group');tp.setAttribute('aria-label','Che struttura ricettiva cerchi');
+  tp.innerHTML='<button type="button" data-tipo="hotel">Hotel</button><button type="button" data-tipo="affittacamere">Affittacamere</button>';
+  if(fb)fb.parentNode.insertBefore(tp,fb);else f.insertBefore(tp,f.firstChild);
+  var segnaTipo=function(){[].forEach.call(tp.children,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-tipo')===TIPO?'true':'false')});f.q.placeholder=TIPO==='affittacamere'?'Nome dell’affittacamere o CIN':'Nome dell’hotel o CIN'};
+  tp.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;TIPO=b.getAttribute('data-tipo');try{sessionStorage.setItem('o2-tipo',TIPO)}catch(_){}segnaTipo();if(f.q.value.trim())suggerisci();f.q.focus()});segnaTipo()}
 var DOM=/\?|^(come|quanto|quanti|quante|cosa|che cosa|perche|perché|dove|quando|chi|posso|si puo|si può|e possibile|è possibile)\b/i;
 var HL,HOT=null;function hotel(){if(!HL)HL=fetch('/assets/data/hotel.json?v='+(D.ver||'')).then(function(r){return r.json()}).then(function(d){HOT=d}).catch(function(){HOT=[]});return HL}
 function trovaHotel(t){var cc=t.replace(/[\s-]/g,'').toUpperCase();if(/^IT\d{6}[A-Z0-9]{6,}$/.test(cc)){var rc=[];(HOT||[]).forEach(function(h,i){if(h.c===cc)rc.push(i)});return rc}/* 1.1: si cerca anche per CIN */
-  var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});var pe=function(i){var h=HOT[i];return (h.r?0:2)+(h.t==='albergo'?0:1)};return r.sort(function(a,b){return pe(a)-pe(b)||norm(HOT[a].n).length-norm(HOT[b].n).length})}
+  var k=norm(t).replace(/^(hotel|albergo) /,'');if(!HOT||k.length<3)return [];var r=[];HOT.forEach(function(h,i){if(!delTipo(h))return;var n=norm(h.n);if(n===k||n.indexOf(k)>-1)r.push(i)});var pe=function(i){var h=HOT[i];return (h.r?0:2)+(h.t==='albergo'?0:1)};return r.sort(function(a,b){return pe(a)-pe(b)||norm(HOT[a].n).length-norm(HOT[b].n).length})}
 function bel(n){var P={di:1,de:1,del:1,della:1,delle:1,dei:1,al:1,alla:1,e:1,a:1,in:1,da:1,the:1,of:1,and:1};return n.toLowerCase().split(' ').map(function(w,i){return /^(?=[ivx]{2})x{0,3}(ix|iv|v?i{0,3})$/.test(w)?w.toUpperCase():i&&P[w]?w:w.charAt(0).toUpperCase()+w.slice(1)}).join(' ').replace(/b&b/gi,'B&B')}/* numeri romani (XX Settembre, Pio XI) restano maiuscoli */
 /* 2.8: struttura ricettiva che non abbiamo letto su Booking: chiede dove vende, il link e l'email; la richiesta arriva nel CRM come Hotel Score */
 function senzaDati(h){return '<form class="o2-cf o2-nb" data-n="'+esc(bel(h.n))+'" data-z="'+esc(h.z||'')+'" data-t="'+esc(h.t||'')+'" novalidate>'+
