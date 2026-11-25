@@ -38,6 +38,15 @@ Notizie pubblicate nelle ultime 24-72 ore, oppure eventi futuri annunciati di re
 - **Macro**: cambio euro/dollaro e euro/sterlina, inflazione, prezzi dell'energia, tassi, crolli o rialzi di borsa che toccano la propensione a viaggiare
 - **Geopolitica**: conflitti, chiusure di spazi aerei, restrizioni di viaggio, visti
 - **Normativa**: tassa di soggiorno, affitti brevi, CIN, norme sul lavoro nel turismo, fisco
+
+### Zona Termini, ogni settimana
+
+Richiesta di George del 25/11/2026. Ogni settimana, da lunedì a domenica, almeno un candidato ha l'angolo della zona Esquilino-Termini (rioni Esquilino e Castro Pretorio, la zona della stazione): la zona con più alberghi di Roma. Controlli il registro: se nella settimana è già uscito un articolo su Termini, non è obbligatorio un secondo.
+
+- **Notizie che spostano la domanda della zona**: stazione Termini e treni (alta velocità, scioperi, cantieri, orari), collegamenti con Fiumicino e Ciampino, eventi e congressi raggiungibili dalla stazione, cantieri e lavori pubblici nella zona con fonte del Comune, norme che toccano gli affittacamere, molto presenti nella zona
+- **Dati dell'Osservatorio** (`regole-comuni.md`, sezione 4): Termini contro Roma sulla stessa notte, il premio del weekend in zona, gli alberghi prenotabili, il prezzo per tipo di struttura ricettiva. Un articolo costruito sui dati dell'Osservatorio è ammesso quando la settimana non ha una notizia forte su Termini, alle stesse condizioni di ogni articolo: tesi revenue, fatto verificabile, azioni per il singolo hotel con i suoi dati
+- La keyword dell'articolo nomina la zona come la cerca un albergatore (per esempio "hotel zona Termini", "hotel Esquilino")
+- Se nessun candidato su Termini regge le regole, non lo proponi e lo scrivi in `note-giornalista.md`: la qualità viene prima della quota
 - **Meteo estremo** e calamità che colpiscono destinazioni concorrenti o l'Italia
 - **Dati di settore**: ISTAT, Eurostat, ENIT, aeroporti, STR/CoStar pubblici, report OTA
 
