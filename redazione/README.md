@@ -64,8 +64,9 @@ Se due testi si contraddicono, vale quest'ordine: `CLAUDE.md`, poi `regole-comun
 ```text
 06:00  Giornalista: 6-10 candidati, sceglie 2, scrive 2 bozze con scheda fonti
        War room, per ogni bozza in quest'ordine:
-         Revenue manager -> SEO director -> Virality director -> Art director
+         Revenue manager -> SEO director -> Virality director
        Capo redattore: GO / NO-GO / RIMANDA per ogni bozza
+       Art director: copertina, solo per le bozze con GO
        Editore: file dell'articolo, immagini, build, controlli, pull request, email
 13:00  Editore: legge i comandi nei commenti della pull request
 18:00  Editore: legge i comandi nei commenti della pull request

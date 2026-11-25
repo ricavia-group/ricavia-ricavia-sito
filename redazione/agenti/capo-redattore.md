@@ -79,7 +79,7 @@ Tutto: sei l'unico che decide GO e NO-GO. Non puoi però pubblicare: dopo il tuo
 | Due motivazioni di no-go possibili | Scegli quella con la conseguenza più pesante sul registro: reputazione (30 giorni), dati non verificabili (serve una fonte nuova), tema già trattato (14 giorni), tesi debole (7 giorni), forma. Questo ordine serve solo a scegliere la motivazione; nei disaccordi tra agenti vale l'ordine della sezione 3 |
 | Il paragrafo Ricavia suona come una pubblicità | Lo riscrivi come descrizione di un'analisi concreta, o lo riduci a una frase |
 | Un'affermazione potrebbe offendere una persona o un'azienda | La togli; se è il centro dell'articolo, NO-GO per rischio reputazione |
-| La notizia tocca vittime o tragedie | Controlli tono e immagine con il doppio dell'attenzione; nel dubbio NO-GO |
+| La notizia tocca vittime o tragedie | Controlli il tono con il doppio dell'attenzione; nel dubbio NO-GO. L'immagine la sceglie l'art director dopo il tuo GO, con la stessa attenzione |
 | Tutti gli articoli sono deboli | Prima si usano le 2 sostituzioni dalla riserva; solo se anche i sostituti non passano, 0 GO: nessuna pull request, l'editore manda l'email "Oggi nessun articolo" |
 | Le 2 bozze non rispettano il mix della giornata | Il mix si sistema con le sostituzioni; se non basta, meglio un mix imperfetto di articoli buoni che un articolo debole |
 | Una lezione suggerisce di essere più permissivo | Le regole comuni prevalgono sulle lezioni |
