@@ -10,6 +10,7 @@
  * 3. se è un Hotel Score dall'Osservatorio, l'albergatore riceve la mail con il link e il report in PDF;
  * 4. la stessa mail, con i dati del lead e il PDF, arriva a info@ricavia.com e alle persone del team.
  * Si usa GmailApp: MailApp non consegna le email inviate allo stesso indirizzo.
+ * Riceve anche {azione: 'visita', hotel, da} dalla pagina dell'Osservatorio aperta dal link della mail: vedi visita().
  *
  * Il repository del sito è pubblico: indirizzi del team e chiavi del CRM NON stanno qui ma nelle
  * Proprietà dello script (Impostazioni progetto > Proprietà script):
@@ -32,6 +33,12 @@ function destinatariTeam() {
 }
 
 function doPost(e) {
+  try {
+    var a = JSON.parse(e.postData.contents);
+    if (a && a.azione === 'visita') return risposta({ok: visita(a.hotel, a.da)});
+  } catch (err) {
+    return risposta({ok: false});
+  }
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
@@ -117,6 +124,29 @@ function mandaAlCrm(tipo, campi) {
     return 'CRM: aggiunto alla cronologia dell\'hotel ' + o.id_comune + (o.spostata ? ', spostato in Da chiamare' : '');
   } catch (err) {
     return 'CRM: non raggiungibile, lead solo nel foglio';
+  }
+}
+
+/**
+ * L'albergatore ha aperto la sua pagina dell'Osservatorio dal link della mail della campagna (?hotel=ID&da=mail1).
+ * Al CRM arrivano solo l'id dell'hotel e la tappa, controllati qui: nessun dato della persona o del dispositivo, nessuna riga nel foglio.
+ * Il CRM la scrive solo se quella mail è partita davvero, al massimo una volta ogni 12 ore.
+ */
+var TAPPE = ['mail1', 'mail2', 'mail3'];
+function visita(hotel, da) {
+  hotel = String(hotel == null ? '' : hotel);
+  da = String(da == null ? '' : da);
+  if (!/^\d{1,10}$/.test(hotel) || TAPPE.indexOf(da) < 0) return false;
+  var url = proprieta('CRM_URL'), token = proprieta('AGENTI_TOKEN');
+  if (!url || !token) return false;
+  try {
+    var r = UrlFetchApp.fetch(url.replace(/\/$/, '') + '/api/agenti/visita', {
+      method: 'post', contentType: 'application/json', muteHttpExceptions: true, headers: intestazioniCrm(token),
+      payload: JSON.stringify({id_comune: hotel, da: da})
+    });
+    return r.getResponseCode() === 200;
+  } catch (err) {
+    return false;
   }
 }
 
