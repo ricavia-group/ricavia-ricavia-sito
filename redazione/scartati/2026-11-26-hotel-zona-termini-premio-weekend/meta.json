@@ -1,0 +1,170 @@
+{
+  "titolo": "Hotel zona Termini: la mediana della zona non misura il premio del sabato del tuo hotel",
+  "tema": "osservatorio-zona-termini-esquilino-premio-weekend",
+  "categoria": "dati",
+  "tesi": "In una sola lettura dell'Osservatorio Ricavia (prezzi letti su Booking il 26 novembre 2026) la mediana della zona Stazione Termini sale poco dal martedì 1 dicembre al sabato 28 novembre (105 e 111 euro) e molto con il ponte del 5 dicembre (145 euro), come Roma nel suo insieme (133, 137 e 173), mentre l'Esquilino confinante mostra un sabato normale molto più caro del martedì (90 e 124 euro) e un ponte poco sopra (133); ogni mediana è calcolata su alberghi ancora prenotabili diversi da una notte all'altra e a distanze diverse dall'arrivo, quindi la mediana di zona descrive il mercato e non misura il premio del fine settimana di un hotel: il tuo hotel lo ricava dalla propria occupazione e ADR per giorno della settimana e dal pick-up del sabato confrontato con quello delle notti feriali alla stessa distanza dall'arrivo, e nelle notti di picco controlla anche quanti hotel comparabili hanno ancora camere in vendita, non solo i loro prezzi",
+  "fonti": [
+    {
+      "titolo": "Osservatorio Ricavia, prezzi per zona (indicatori.json, zone_date), prezzi letti su Booking il 26 novembre 2026",
+      "editore": "Ricavia",
+      "url": "https://ricavia.com/osservatorio/",
+      "data": "2026-11-26"
+    },
+    {
+      "titolo": "Dove conviene avere una struttura ricettiva a Roma: guida ragionata ai quartieri",
+      "editore": "Ricavia",
+      "url": "https://ricavia.com/journal/conviene-avere-struttura-ricettiva-roma-guida/",
+      "data": "2026-11-26"
+    }
+  ],
+  "slug": "hotel-zona-termini-premio-weekend",
+  "title_seo": "Hotel zona Termini: il premio del weekend · Ricavia",
+  "description": "Prezzi dell'Osservatorio Ricavia in zona Termini ed Esquilino per sabato, martedì e ponte: cosa dicono e come decidere il premio del weekend del tuo hotel",
+  "keyword": {
+    "principale": "hotel zona Termini",
+    "secondarie": [
+      "prezzi hotel zona Termini weekend",
+      "prezzi hotel Esquilino",
+      "premio del weekend hotel",
+      "Osservatorio prezzi hotel Roma"
+    ]
+  },
+  "related_intro": "Per decidere la tariffa del sabato con i dati del tuo hotel, approfondisci",
+  "related": [
+    {
+      "label": "lo stesso prezzo dal lunedì alla domenica tra i tre errori di prezzo",
+      "url": "/journal/tre-errori-prezzo-vediamo-settimana-strutture/"
+    },
+    {
+      "label": "come si calcolano occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Candidato 2 della lista, forza 2-3: candidato della settimana su Termini (richiesta di George del 25/11; nessun articolo su Termini dal 23 novembre), costruito sui dati dell'Osservatorio perché oggi non c'è una notizia forte sulla zona; il fatto verificabile è il confronto tra tre notti lette lo stesso giorno in due zone confinanti",
+      "correzioni": [],
+      "segnalazioni": [
+        "Tesi costruita su una sola lettura (26/11, zone_date letto alle 4.19): le tre notti hanno distanze diverse dall'arrivo (2, 5 e 9 giorni). Il testo lo dichiara come limite. Se il capo redattore lo ritiene troppo fragile, la bozza si può rifare tra una settimana con due o tre letture dello stesso giorno della settimana (per esempio i martedì e i sabati di dicembre e gennaio), che il file zone_date oggi non conserva",
+        "Gli alberghi prenotabili scendono sia per camere esaurite sia per soggiorni minimi che una ricerca per una notte esclude: dichiarato nel testo; per questo la voce Occupazione del 5 dicembre è scritta come lettura e va confermata dal revenue manager",
+        "I conteggi di alberghi per zona sommati danno 1.065 per il 1 dicembre, più dei 990 del registro: le zone di Booking possono sovrapporsi. Per questo il testo non calcola quote sul totale di Roma, ma solo confronti tra zone e la classifica per numero di alberghi letti",
+        "Percentuali calcolate da me sui valori dell'Osservatorio (arrotondate all'unità): 111/105 = +5,7%; 145/111 = +30,6%; 137/133 = +3,0%; 173/137 = +26,3%; 124/90 = +37,8%; 133/124 = +7,3%. Tutte le mediane hanno più di 5 alberghi letti (minimo 75)",
+        "Rischio antitrust (9 ter, punto 1): le mediane sono descritte come mercato, con la frase 'non sono un livello da applicare al tuo hotel'; le azioni sono tutte sui dati del singolo hotel. L'azione 3 chiede di controllare la disponibilità pubblica dei concorrenti, non di allinearsi",
+        "Sovrapposizione da valutare: il ponte dell'Immacolata è stato trattato l'8/11 (18 giorni fa) e il competitive set il 23/11 (Thompson Rome). Qui il ponte è solo una delle tre notti e il fatto nuovo è il dato di mercato per zona; il concetto di competitive set compare solo nell'azione 3, con un'azione nuova (disponibilità dei concorrenti, non prezzo)",
+        "La spiegazione sui segmenti della zona viene dalla guida storica alle zone (fonte interna, collegata nel testo) ed è scritta come ipotesi; roma.md segnala 'percezione della zona' e 'guerra dei prezzi' da non riprendere, e non le ho usate",
+        "Il nome 'Stazione Termini' è quello della zona di Booking; la keyword proposta per il SEO director è 'hotel zona Termini', già nel primo h3",
+        "Collegamenti interni: /osservatorio/ come citazione della fonte e /journal/conviene-avere-struttura-ricettiva-roma-guida/",
+        "Paragrafo Ricavia non scritto: regole-comuni, sezione 5, dice che si scrive solo per le bozze che arrivano al GO. Corpo di circa 920 parole",
+        "Categoria proposta dati (ultima uscita dati il 24/11); in alternativa zone. Decide il SEO director"
+      ],
+      "ruolo_ricavia": "Ricavia confronta tariffe, calendario e mix dei canali dell'hotel con il suo competitive set: in una zona con profili settimanali così diversi il premio del fine settimana parte dai dati dell'hotel e dai tre o quattro concorrenti davvero comparabili, non dalla media della zona (pratica 4.1 n. 6; chiusura adatta /hotel-score/)"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "DA RIVEDERE",
+      "motivo": "Numeri corretti, ma la tesi leggeva in una sola lettura «profili settimanali» di zona che la mediana degli alberghi ancora prenotabili non misura, e l'azione 2 dava una regola sbagliata sul premio del sabato; tesi, Impatto e azioni corretti, titolo e apertura da riallineare",
+      "correzioni": [
+        "Tesi in meta.json riscritta: da «due zone con profili settimanali opposti» a una lettura del mercato che non misura il premio del fine settimana, perché ogni mediana è calcolata su alberghi ancora prenotabili diversi e a distanze diverse dall'arrivo; aggiunto che la zona Stazione Termini segue l'andamento di Roma; la conclusione (il premio nasce dai dati del tuo hotel) è confermata",
+        "Corpo, sezione «Il sabato normale e il sabato del ponte»: «Due zone vicine, quindi, hanno un fine settimana di peso opposto» diventa «In questa lettura, quindi, due zone vicine mostrano un fine settimana di peso diverso» (una lettura non stabilisce un profilo opposto)",
+        "Corpo, sezione «Cosa dicono e cosa non dicono questi numeri»: aggiunta la frase «Ogni mediana è calcolata sugli alberghi ancora prenotabili quella notte, che cambiano da una notte all'altra: nella zona Stazione Termini sono 188 il sabato e 253 il martedì» (limite del meccanismo che il testo non dichiarava)",
+        "Stessa sezione: «Dentro la stessa area intorno alla stazione convivono profili settimanali diversi, e un premio del fine settimana uguale per tutti gli hotel della zona non esiste» diventa «Anche in una sola lettura due zone confinanti mostrano andamenti diversi, e la mediana di una zona non indica il premio del fine settimana di un singolo hotel»",
+        "Impatto, ADR: tolta la classificazione «profilo della zona Stazione Termini / dell'Esquilino» (non ricavabile da una lettura); finestra da «prossimi tre mesi» a «sabati senza eventi né festività delle prossime otto settimane»; resta «?» con motivazione sulla mediana",
+        "Impatto, Occupazione: segmento da «leisure italiano e visitatori del ponte» a «leisure del ponte» (la provenienza non ha fonte); aggiunto il limite dei soggiorni minimi; resta ↑ media per la notte del 5 dicembre rispetto a un sabato normale",
+        "Impatto, RevPAR: finestra allineata a ADR e Occupazione (notte del 5 dicembre e sabati normali), resta «?» perché l'ADR del singolo hotel non è noto; coerente con il glossario",
+        "Impatto, Mix di segmento: voce tolta, era un'ipotesi sui segmenti della zona e non un effetto del dato",
+        "Cosa fare, azione 1: tolto il criterio «se sabato e martedì sono vicini il tuo hotel segue la zona della stazione, altrimenti l'Esquilino»; tolti anche i ponti dal calcolo",
+        "Cosa fare, azione 2 riscritta: la regola originale («se la tariffa del sabato sale più dell'occupazione, il premio è troppo alto») è sbagliata, perché con un sabato quasi pieno porterebbe ad abbassare la tariffa nella notte di domanda più alta; ora il premio si decide dal pick-up del sabato confrontato con quello dei martedì alla stessa distanza dall'arrivo",
+        "Cosa fare, azione 3: confermata; ultima frase da «il ponte si vede nel numero di alberghi prenotabili» (si impersonale) a «l'Osservatorio registra il ponte anche nel numero di alberghi prenotabili»"
+      ],
+      "segnalazioni": [
+        "Numeri verificati su assets/data/indicatori.json (main, commit 671e3f7), campo zone_date letto il 26/11 alle 4.19: Stazione Termini 111 (188 alberghi), 105 (253), 145 (156); Esquilino 124 (84), 90 (120), 133 (75); Roma 137, 133, 173; 22 zone; nessun'altra zona arriva a 80 (massimo Spagna, 79). Percentuali corrette (5,7%, 30,6%, 3,0%, 26,3%, 37,8%, 7,3%); tutte le mediane con più di 5 alberghi. Giorni della settimana e distanze dall'arrivo (2, 5, 9) corretti",
+        "Due valori dell'Osservatorio per le stesse notti: per Roma zone_date dà 137 (28/11) e 133 (1/12), il campo calendario, letto alle 3.46-3.47, dà 138 e 134 (con 724 e 881 alberghi prenotabili). Differenza di 1 euro tra due letture: il testo usa coerentemente zone_date, ma conviene dire che i valori di Roma sono quelli della tabella delle zone, anche perché la bozza 1 della stessa giornata cita il calendario",
+        "Il gancio non è proprio della zona Termini: anche Roma nel suo insieme ha il sabato normale quasi uguale al martedì (+3%, meno del +6% di Termini) e il ponte molto sopra (+26%). L'apertura («la zona della stazione sale davvero solo con il ponte») e il titolo («il sabato normale vale quasi quanto il martedì») presentano come tratto di Termini l'andamento della città; la zona diversa è l'Esquilino. Titolo e apertura sono del virality director e del giornalista: da riallineare",
+        "Effetto composizione: nella stessa lettura molte zone centrali hanno il sabato molto più caro del martedì (Spagna 161 e 323, Pantheon 184 e 311, Trevi 162 e 272, Trastevere 118 e 219), mentre la mediana di Roma sale da 133 a 137. È il segno che le mediane cambiano soprattutto con l'insieme degli alberghi ancora prenotabili (righe delle zone: 1.065 il martedì, 820 il sabato), non con il premio dei singoli hotel. «Il sabato costa / vale» descrive la mediana degli alberghi rimasti in vendita, non il prezzo del sabato",
+        "Le zone di Booking si sovrappongono (somma 1.065 contro 990 del registro): Stazione Termini ed Esquilino possono contenere in parte gli stessi alberghi, quindi il confronto tra «due zone confinanti» è meno netto di come appare",
+        "Non metto il veto perché la tesi corretta regge (la mediana di zona descrive il mercato, il premio nasce dai dati del singolo hotel) e il testo dichiara già i limiti principali; ma senza il gancio su Termini l'articolo diventa un consiglio di metodo vicino a quelli del 13/11 (tariffa per data) e del 24/11 (tariffa del sabato). Se il capo redattore giudica il gancio non sostenibile, propongo di riproporlo quando l'Osservatorio conserverà più letture dello stesso giorno della settimana, come suggerisce il giornalista",
+        "Antitrust (9 ter, punto 1): con le correzioni nessuna azione indica livelli o percentuali da applicare; le mediane sono descritte come mercato. L'azione 3 riguarda la disponibilità pubblica dei concorrenti, non un allineamento"
+      ],
+      "ruolo_ricavia": "Ricavia controlla ogni settimana pick-up e occupazione a 90 giorni e imposta il premio del sabato confrontando il ritmo delle prenotazioni del sabato con quello delle notti feriali alla stessa distanza dall'arrivo, non con la mediana della zona (pratiche 4.1 n. 2 e 3)"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema e keyword nuovi (nessun articolo su Termini, sul premio del weekend o sulle mediane di zona dell'Osservatorio negli ultimi 14 giorni) e tesi diversa da quelle del 13/11 e del 24/11; keyword nell'apertura e in un h3, 2 collegamenti interni naturali. La sovrapposizione dell'azione 2 con articoli recenti la passo al capo redattore",
+      "correzioni": [
+        "slug: hotel-zona-termini-premio-weekend (5 parole, senza date), invece di hotel-zona-termini-prezzi-weekend: «prezzi weekend» porta la ricerca del turista che cerca un hotel economico, «premio del weekend» quella dell'albergatore",
+        "categoria: dati confermata (la causa dell'articolo è la lettura dell'Osservatorio; zone è l'alternativa, ma descrive l'effetto e non la causa)",
+        "title_seo: «Hotel zona Termini: il premio del weekend · Ricavia» (51 caratteri contati, keyword all'inizio, unico tra tools/seo.json e journal/); non riprende «il sabato vale quasi quanto il martedì», che il revenue manager segnala come andamento di tutta Roma e non della zona",
+        "description: 154 caratteri contati, senza punto finale; niente numeri (le mediane di una sola lettura restano nel corpo); diversa da ogni altra pagina",
+        "keyword: principale «hotel zona Termini» (proposta del giornalista, forma indicata in giornalista.md), secondarie «prezzi hotel zona Termini weekend», «prezzi hotel Esquilino», «premio del weekend hotel», «Osservatorio prezzi hotel Roma». La principale da sola ha anche un intento turistico: title, slug e description la orientano all'albergatore con «premio del weekend» e «il tuo hotel»",
+        "related_intro e related: /journal/tre-errori-prezzo-vediamo-settimana-strutture/ (stesso prezzo dal lunedì alla domenica, copiare l'hotel vicino invece dei comparabili) e /indicatori/; nessuno ripete i collegamenti del corpo (/osservatorio/, guida alle zone); /hotel-score/ lasciato libero per la chiusura del paragrafo Ricavia",
+        "Corpo, prima frase dell'apertura: «Nella zona di Termini il sabato normale…» diventa «Negli hotel della zona di Termini il sabato normale…» per inserire la keyword (fatti, numeri e fonti invariati). Il primo h3 «Hotel zona Termini: tre notti a confronto» contiene già la keyword: nessun h3 toccato"
+      ],
+      "segnalazioni": [
+        "Confronto con gli ultimi 14 giorni (manuale, sezione 5): 13/11 bassa stagione (tesi: tariffa per data invece di una tariffa di stagione; azioni: stagionalità mensile del tuo hotel, tariffa per data, sconto solo dove il pick-up è in ritardo alla stessa distanza dall'arrivo); 24/11 permanenza media (tariffa di ogni notte nei soggiorni che attraversano un picco); 23/11 competitive set (criteri per inserire un nuovo hotel). La tesi della bozza (la mediana di zona descrive il mercato e non misura il premio del weekend del tuo hotel) non è uscita, e l'azione 3 (quanti comparabili sono ancora prenotabili) è nuova. Per questo niente veto",
+        "Rischio da valutare (capo redattore): l'azione 2 (pick-up del sabato confrontato con il martedì alla stessa distanza dall'arrivo) ripete il meccanismo che il NO-GO del 25/11 conta già quattro volte nei 14 giorni (13/11 quasi alla lettera), e l'azione 1 è vicina alla misura della stagionalità del 13/11. Il fatto nuovo è una lettura del mercato, non un cambio della domanda di Roma (seo-director.md, sezione 3, punto 1): se il gancio su Termini non regge (revenue manager: Roma ha lo stesso andamento), l'articolo diventa un consiglio di metodo e il rischio di duplicato cresce",
+        "Apertura e titolo, non nel mio ambito: oltre al gancio segnalato dal revenue manager, l'apertura dice ancora «un andamento quasi opposto» per l'Esquilino, mentre il corpo corretto dice «diverso»; e «la media della zona» dove i dati sono mediane",
+        "Stesso fatto in due bozze della giornata: entrambe confrontano le loro notti con il ponte del 5 dicembre; per Roma la bozza 2 usa 173 euro da zone_date, la bozza 1 173 dal calendario, mentre per il 28/11 e il 1/12 i due campi danno 137/133 e 138/134 (revenue manager): se escono insieme conviene dichiarare in entrambe da quale tabella vengono i valori di Roma",
+        "Intento di ricerca: «hotel zona Termini» è anche una ricerca del turista; se il capo redattore preferisce una keyword solo dell'albergatore, l'alternativa è «premio del weekend hotel zona Termini», con meno ricerche"
+      ],
+      "ruolo_ricavia": "Dal punto di vista della ricerca, il passo successivo naturale per l'albergatore della zona Termini è l'Hotel Score (/hotel-score/), che confronta il suo hotel con i tre o quattro concorrenti davvero comparabili della zona invece che con la mediana di tutta la zona"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "DA RIVEDERE",
+      "motivo": "Il titolo di lavoro vendeva come tratto di Termini un andamento di tutta Roma: senza quel gancio la storia che resta (la mediana di zona non misura il premio del sabato del tuo hotel) è onesta ma debole, vicina ai consigli di metodo del 13/11 e del 24/11, e l'apertura racconta ancora il gancio caduto",
+      "correzioni": [
+        "titolo: da «Hotel zona Termini: il sabato normale vale quasi quanto il martedì, il ponte no» a «Hotel zona Termini: la mediana della zona non misura il premio del sabato del tuo hotel» (87 caratteri, tecnica contrasto tra la zona e il tuo hotel; dice la tesi corretta dal revenue manager e non attribuisce a Termini l'andamento di Roma, +3% e +26% contro +6% e +31%); diverso per taglio e parole da «…nei soggiorni lunghi controlla la tariffa del sabato» del 24/11, che era un titolo dato più azione",
+        "sottotitolo: scritto, dichiara che le tre notti sono una lettura dell'Osservatorio, nomina Termini, Esquilino e Roma e annuncia cosa le mediane dicono, cosa non misurano e l'azione sul pick-up",
+        "alternative_titolo: domanda (mediana della zona o pick-up, 90 caratteri), contrasto onesto tra zone «Termini come Roma, Esquilino diverso» con «una lettura» nel titolo (88), dato con fonte e lettura dichiarata nel titolo (Esquilino, mediana del sabato 38% sopra il martedì, 89)",
+        "mood: serio",
+        "Corpo, frase citabile: confermata senza modifiche («La zona ti dice come si muove il mercato intorno a te. Quanto vale il tuo sabato lo dice il tuo martedì»): contrasto senza numeri né nomi, coerente con la tesi corretta e con l'azione 2 (pick-up del sabato confrontato con il martedì)"
+      ],
+      "segnalazioni": [
+        "Apertura da riallineare (non nel mio ambito): «il sabato normale costa quasi quanto il martedì» e «la zona della stazione sale davvero solo con il ponte» presentano ancora come tratto di Termini l'andamento di tutta Roma, «un andamento quasi opposto» per l'Esquilino contraddice il corpo corretto («diverso»), «la media della zona» va detto mediana. Il nuovo titolo non promette quel gancio, ma apertura e titolo oggi dicono due cose diverse",
+        "Box «In breve»: le prime due voci («il sabato normale vale quasi quanto il martedì», «il sabato normale vale molto di più del martedì») ripetono il gancio caduto e parlano di «valore» dove il dato misura la mediana degli alberghi ancora in vendita (revenue manager, effetto composizione)",
+        "Forza del racconto: il revenue manager e il SEO director segnalano che senza il gancio su Termini l'articolo diventa un consiglio di metodo; dal punto di vista del racconto concordo, l'unico elemento nuovo e citabile è il contrasto con l'Esquilino, fragile per una lettura sola e zone che si sovrappongono. Riproporlo con più letture dello stesso giorno della settimana darebbe un titolo di dato più solido",
+        "Titolo-hook e title_seo («Hotel zona Termini: il premio del weekend») descrivono lo stesso articolo: nessun riallineamento; il titolo-hook usa «sabato» come il corpo, il title_seo «weekend» per la ricerca"
+      ],
+      "ruolo_ricavia": "Dal punto di vista del racconto, la promessa che il lettore porta via è che il suo sabato ha un valore proprio: Ricavia decide il premio del sabato dal ritmo delle prenotazioni del singolo hotel, confrontato con le sue notti feriali alla stessa distanza dall'arrivo, e usa la mediana della zona solo come descrizione del mercato"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "NO-GO",
+      "motivo": "Tema già trattato",
+      "bloccato_fino": "2026-12-10",
+      "griglia": [
+        "[ ] Tesi revenue chiara e corretta (revenue manager DA RIVEDERE: la tesi corretta regge solo come consiglio di metodo; il gancio su Termini cade perché la zona segue l'andamento di Roma, +6% e +31% contro +3% e +26%, e le mediane cambiano con l'insieme degli alberghi ancora prenotabili, 188 il sabato e 253 il martedì)",
+        "[x] Ogni numero ha fonte (zone_date ricontrollato da me: Stazione Termini 111, 105, 145 con 188, 253, 156 alberghi; Esquilino 124, 90, 133; percentuali corrette)",
+        "[x] Fonti citate con link, nessuna copia (Osservatorio e guida storica alle zone)",
+        "[ ] Ruolo di Ricavia (non scritto: con NO-GO non serve)",
+        "[ ] Regole di copy (apertura e box raccontano il gancio caduto: 'quasi quanto il martedì', 'quasi opposto', 'media' invece di mediana; titolo e apertura dicono due cose diverse)",
+        "[x] Tono coerente con la matrice (serio)",
+        "[ ] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED su tema e keyword, ma tesi e azioni sono già uscite: profilo per giorno della settimana e tariffa per data il 13/11 e il 24/11, pick-up confrontato alla stessa distanza dall'arrivo il 13/11 e in altri quattro articoli contati il 25/11, confronto con i comparabili il 23/11; il fatto nuovo descrive il mercato e non cambia la domanda di Roma)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende",
+        "[x] Rischi legali 9 ter (mediane come mercato, azioni sul singolo hotel)",
+        "[x] Da 700 a 1.100 parole, struttura completa (969 parole senza paragrafo Ricavia)"
+      ],
+      "correzioni": [],
+      "segnalazioni": [
+        "Non è RIMANDA: il problema non è la forma ma il fatto che regge l'articolo. Riallineare apertura e box al titolo lascerebbe un consiglio di metodo già pubblicato più volte negli ultimi 14 giorni",
+        "Due motivazioni possibili (tema già trattato, tesi debole): scelgo la più pesante (manuale, sezione 5). Non è 'dati non verificabili': i numeri sono corretti",
+        "Il tema torna proponibile prima del 10 dicembre solo con un fatto nuovo con fonte: più letture dell'Osservatorio dello stesso giorno della settimana e alla stessa distanza dall'arrivo che mostrino per Termini un andamento diverso da quello di Roma, oppure una notizia che cambia la domanda della zona",
+        "Riserva: nessun sostituto pronto per il GO oggi (Giro d'Italia proponibile dal 30/11 con la fonte primaria; Booking pagamenti livello 3 su una sola testata; easyJet non proponibile prima del 5/12; Venezia e energia deboli). Nessuna sostituzione",
+        "Lezione proposta: vedi decisione-capo-redattore.md"
+      ]
+    }
+  ],
+  "sottotitolo": "Tre notti lette dall'Osservatorio Ricavia a Termini, all'Esquilino e in tutta Roma: cosa dicono le mediane di zona, cosa non misurano e come decidi il premio del sabato con i dati del tuo hotel",
+  "alternative_titolo": [
+    "Hotel zona Termini: il premio del sabato lo decide la mediana della zona o il tuo pick-up?",
+    "Termini come Roma, Esquilino diverso: il sabato in una lettura dell'Osservatorio Ricavia",
+    "Esquilino, una lettura dell'Osservatorio Ricavia: mediana del sabato 38% sopra il martedì"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dati di mercato dell'Osservatorio: la matrice ammette serio o provocatorio, ma la tesi poggia su una sola lettura con limiti dichiarati e il corpo ha un registro di servizio; un taglio provocatorio sui prezzi di una zona letta da molti hotel vicini potrebbe anche sembrare un invito ad allinearsi (9 ter, punto 1)"
+  }
+}

@@ -358,5 +358,29 @@
     "bloccato_fino": "2026-12-09",
     "fonte_nuova_richiesta": false,
     "pubblicato": false
+  },
+  {
+    "data": "2026-11-26",
+    "slug": "scioperi-trasporti-roma-hotel-cancellazioni",
+    "tema": "scioperi-aeroporti-taxi-italo-14-16-dicembre-2026-roma",
+    "keyword": "scioperi trasporti Roma hotel",
+    "categoria": "trasporti",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-26",
+    "slug": "hotel-zona-termini-premio-weekend",
+    "tema": "osservatorio-zona-termini-esquilino-premio-weekend",
+    "keyword": "hotel zona Termini",
+    "categoria": "dati",
+    "esito": "NO-GO",
+    "motivo": "Tema già trattato",
+    "bloccato_fino": "2026-12-10",
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
