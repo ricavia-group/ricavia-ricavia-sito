@@ -81,6 +81,8 @@ if(MP&&location.hash==='#o2-hotel')setTimeout(function(){vaiChat(false)},700);
 var f=$('#o2Cerca'),sug=$('#o2Sug'),nf=$('#o2Nf'),SI=-1,RIS=[];
 /* George 25/11: una sola casella, sopra la scelta Hotel o Affittacamere; la scelta decide dove cerca (anche la chat, che usa trovaHotel) */
 var TIPO='hotel';try{TIPO=sessionStorage.getItem('o2-tipo')||'hotel'}catch(_){}
+/* aprendo la pagina di una struttura ricettiva la scelta Hotel / Affittacamere segue il suo tipo: «Cambia» cerca tra i simili */
+function impostaTipo(af){TIPO=af?'affittacamere':'hotel';try{sessionStorage.setItem('o2-tipo',TIPO)}catch(_){}if(typeof segnaTipo==='function')segnaTipo()}
 function delTipo(h){return TIPO==='affittacamere'?(h.t==='affittacamere'||h.t==='B&B'):(h.t==='albergo'||h.t==='residence')}
 if(f&&f.q){var tp=document.createElement('div'),fb=f.querySelector('.o2-f');tp.className='o2-tipo';tp.setAttribute('role','group');tp.setAttribute('aria-label','Che struttura ricettiva cerchi');
   tp.innerHTML='<button type="button" data-tipo="hotel">Hotel</button><button type="button" data-tipo="affittacamere">Affittacamere</button>';
@@ -362,7 +364,7 @@ function mio(k){var p=pzM(k);return p&&p.prezzo!=null?p.prezzo:null}
 function perche(k){var p=pzM(k);if(!p)return 'prezzo non letto';return MOT[p.motivo]||'prezzo non letto su Booking'}
 function zonaMia(){return ME&&ME.zi>-1?D.zone[ME.zi]:null}
 function classZona(Z){if(!ME||!Z)return null;var l=(D.hs||[]).filter(function(x){return x[2]===Z.nome}),i=l.map(function(x){return x[0]}).indexOf(ME.id);return i<0?null:{pos:i+1,su:l.length,lista:l}}
-function personalizza(id,h){var ok=function(s,hh){var zs=(s&&s.zona_sito)||(hh&&D.rioni[hh.z])||(s&&D.rioni[s.zona])||null,zi=-1;D.zone.forEach(function(z,i){if(z.nome===zs)zi=i});
+function personalizza(id,h){var ok=function(s,hh){impostaTipo(hh?(hh.t==='affittacamere'||hh.t==='B&B'):!!(s&&AF(s)));var zs=(s&&s.zona_sito)||(hh&&D.rioni[hh.z])||(s&&D.rioni[s.zona])||null,zi=-1;D.zone.forEach(function(z,i){if(z.nome===zs)zi=i});
     ME={id:String(id),s:s,h:hh,nome:s?bel(s.nome):bel(hh.n),zi:zi};
     try{var u=new URL(location.href);u.searchParams.set('hotel',id);history.replaceState(history.state,'',u.pathname+u.search+u.hash)}catch(_){}
     disegnaTu();if(s&&window.RC)window.RC.sa(String(id))};
