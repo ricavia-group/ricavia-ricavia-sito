@@ -1,0 +1,228 @@
+{
+  "titolo": "Scioperi dal 14 al 16 dicembre: per il tuo hotel il rischio è la camera cancellata tardi",
+  "tema": "scioperi-aeroporti-taxi-italo-14-16-dicembre-2026-roma",
+  "categoria": "trasporti",
+  "tesi": "Tra lunedì 14 e mercoledì 16 dicembre sono proclamati a Roma tre scioperi su tre modi diversi di arrivare e ripartire (personale di Aviation Services a Fiumicino e Ciampino per 24 ore il 14, taxi in tutta Italia con manifestazione a Roma il 15, personale Italo il 16), in tre notti feriali che l'Osservatorio Ricavia legge con quasi tutti gli alberghi prenotabili (937, 931 e 929 su 990) e prezzi mediani tra 116 e 129 euro: in notti così una camera cancellata all'ultimo trova difficilmente un altro ospite, mentre un ospite che non riesce a ripartire porta una notte in più; il tuo hotel protegge occupazione e ricavi contando arrivi e partenze esposti per giorno e mezzo di trasporto, proponendo a sciopero confermato agli ospiti con tariffa flessibile l'arrivo anticipato o un cambio verso notti con domanda e tariffa simili (non verso il ponte o le feste), preparando le indicazioni per il 15 senza taxi e decidendo ora la tariffa della notte in più, invece di abbassare le tariffe",
+  "fonti": [
+    {
+      "titolo": "Sciopero 4 dicembre, stop treni e mezzi pubblici: chi si ferma, orari e fasce di garanzia",
+      "editore": "Sky TG24",
+      "url": "https://tg24.sky.it/cronaca/2026/11/25/sciopero-4-dicembre-treni-mezzi",
+      "data": "2026-11-26"
+    },
+    {
+      "titolo": "Scioperi dicembre 2026, il calendario di treni, aerei e metro. Il 4 dicembre si ferma tutto?",
+      "editore": "Money.it",
+      "url": "https://www.money.it/scioperi-dicembre-2026-il-calendario-di-treni-aerei-e-metro-il-4-dicembre-si-ferma-tutto",
+      "data": "2026-11-26"
+    },
+    {
+      "titolo": "Sciopero nazionale dei tassisti il 15 dicembre, manifestazione a Roma",
+      "editore": "ANSA",
+      "url": "https://www.ansa.it/sito/notizie/topnews/2026/10/27/sciopero-nazionale-dei-tassisti-il-15-dicembre-manifestazione-a-roma_d9727416-8359-4b34-9e95-96f4c2387ede.html",
+      "data": "2026-11-26"
+    },
+    {
+      "titolo": "Osservatorio Ricavia, calendario dei prezzi e degli alberghi prenotabili (indicatori.json), prezzi letti su Booking il 26 novembre 2026",
+      "editore": "Ricavia",
+      "url": "https://ricavia.com/osservatorio/",
+      "data": "2026-11-26"
+    }
+  ],
+  "slug": "scioperi-trasporti-roma-hotel-cancellazioni",
+  "title_seo": "Scioperi trasporti a Roma: cancellazioni in hotel · Ricavia",
+  "description": "Scioperi di aeroporti, taxi e Italo dal 14 al 16 dicembre: quali arrivi e partenze del tuo hotel a Roma sono esposti e quando offrire un cambio di data",
+  "keyword": {
+    "principale": "scioperi trasporti Roma hotel",
+    "secondarie": [
+      "sciopero aeroporti Fiumicino Ciampino hotel",
+      "sciopero taxi Roma hotel",
+      "sciopero Italo hotel",
+      "cancellazioni hotel sciopero"
+    ]
+  },
+  "related_intro": "Per gestire cancellazioni e cambi di data nelle notti a rischio, approfondisci",
+  "related": [
+    {
+      "label": "il ponte dell'Immacolata e lo sciopero del 4 dicembre",
+      "url": "/journal/ponte-immacolata-hotel-roma-soggiorno-minimo/"
+    },
+    {
+      "label": "come si calcolano occupazione, ADR e RevPAR",
+      "url": "/indicatori/"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Candidato 1 della lista, forza 3: tre scioperi proclamati a Roma tra 18 e 20 giorni da oggi, non ancora trattati, con un dato dell'Osservatorio sulla domanda di quelle notti che cambia l'azione rispetto agli articoli sugli scioperi del 3 e dell'8 novembre (non solo contare le prenotazioni esposte, ma offrire il cambio di data in notti in cui una cancellazione tardiva non si rivende)",
+      "correzioni": [],
+      "segnalazioni": [
+        "Fonte primaria non raggiungibile oggi: il calendario della Commissione di garanzia (cgsse.it) e quello del MIT (scioperi.mit.gov.it) hanno risposto 503 e poi connessione chiusa, in più tentativi durante la ricerca di oggi. I fatti che reggono la tesi poggiano su due testate nazionali indipendenti e concordi, attribuite nel testo: Sky TG24 (25/11, 12.06) e Money.it (25/11, 10.51, che dichiara di riprendere l'osservatorio MIT aggiornato al 25/11). Lo sciopero ADR Security è in Money.it e Skuola.net, non in Sky TG24: due testate, la seconda meno autorevole. Da riverificare sulla fonte primaria prima del GO (regole-comuni, sezione 4)",
+        "Orario dei taxi diverso tra le fonti: ANSA (27/10, proclamazione) scrive 'intera giornata', Sky TG24 e Money.it 8-22. Il testo cita entrambe le versioni",
+        "Fasce ENAC 7-10 e 18-21: riportate da Sky TG24 per lo sciopero del 4 dicembre; sono le fasce ordinarie del trasporto aereo, ma la pagina ENAC dei voli garantiti per il 14 dicembre non è ancora pubblicata",
+        "Ambiguità di sigla: 'ADR Security' è il nome della società dei controlli di sicurezza negli aeroporti di Roma, 'ADR' nell'articolo è anche la tariffa media per camera venduta. Il SEO director e il virality director valutino se riformulare (per esempio 'il personale addetto ai controlli di sicurezza, ADR Security')",
+        "Su Aviation Services il testo dice solo che il personale sciopera: il comunicato FAST-Confsal sulla vertenza contiene accuse all'azienda, che non ho riportato (regole-comuni, sezione 9). L'adesione di un singolo sindacato non è nota: l'intensità resta bassa",
+        "Dati dell'Osservatorio: campo calendario di indicatori.json, letto il 26/11 tra le 3.48 e le 3.52; 'prenotabili' è il numero di alberghi con almeno una camera libera per 2 adulti e 1 notte, 990 è alberghi_registro. Le mediane descrivono il mercato e non sono un livello da applicare (9 ter, punto 1). Il confronto con sabato 5 dicembre è a una distanza dall'arrivo diversa (9 giorni contro 18-20): l'ho usato solo come ordine di grandezza della differenza tra notte di picco e notte feriale",
+        "La frase 'una camera che si libera il giorno prima trova meno facilmente un altro ospite' è una lettura, non un dato: il revenue manager la confermi o la attenui",
+        "Collegamenti interni: /osservatorio/ come citazione della fonte e /journal/sciopero-treni-hotel-roma-prenotazioni/. Lo sciopero del 4 dicembre è citato senza collegamento all'articolo dell'Immacolata (8/11), che lo aveva già trattato, per restare a 2 collegamenti",
+        "Paragrafo Ricavia non scritto: regole-comuni, sezione 5, dice che si scrive solo per le bozze che arrivano al GO. Senza il paragrafo il corpo è di circa 1.030 parole: il paragrafo finale deve restare breve (1.100 al massimo)",
+        "Categoria proposta trasporti (ultima uscita trasporti il 21/11); decide il SEO director"
+      ],
+      "ruolo_ricavia": "Ricavia aggiorna ogni giorno tariffe e disponibilità in base all'andamento delle prenotazioni: davanti a scioperi su notti di bassa domanda la leva è la politica di modifica delle prenotazioni, non il prezzo (pratica 4.1 n. 1, consiglio D)"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "Tesi corretta: in notti feriali a bassa compressione una cancellazione tardiva difficilmente si rivende, e la leva è la gestione delle prenotazioni esposte, non il prezzo; numeri dell'Osservatorio verificati, azioni riscritte perché ripetevano l'articolo del 3 novembre e trascuravano le partenze",
+      "correzioni": [
+        "Tesi in meta.json: aggiunte le partenze (ospiti che non riescono a ripartire, notte in più) e il limite del cambio di data verso notti simili; il resto della tesi del giornalista è confermato",
+        "Corpo, sezione «Tre scioperi, tre ospiti diversi», frase sul primo effetto dello sciopero aereo: aggiunto «e ospiti in partenza che possono chiedere una notte in più» (lo sciopero tocca anche le partenze, il meccanismo era incompleto)",
+        "Impatto, Occupazione: aggiunta una frase sugli ospiti che non riescono a ripartire, che compensano il calo solo in parte (direzione e intensità invariate, ↓ bassa)",
+        "Impatto, Durata del soggiorno: segmento da «business in treno» a «ospiti in viaggio in aereo il 14 e con Italo il 16», ragionamento esteso a chi non riesce a ripartire; resta «?» da monitorare",
+        "Impatto, Pick-up, ADR e RevPAR: confermati senza modifiche (coerenti con il glossario: occupazione ↓ con ADR = dà RevPAR ↓)",
+        "Cosa fare, azione 1: da «Separa gli arrivi per mezzo di trasporto» (13-16 dicembre) a «Conta arrivi e partenze esposti» (14-16 dicembre, per giorno e mezzo: aereo, taxi, Italo), con le partenze",
+        "Cosa fare, azione 2: il cambio di data ora parte a sciopero confermato, riguarda gli ospiti con tariffa flessibile e solo notti con domanda e tariffa simili (un cambio verso il ponte o le feste alle condizioni di una notte feriale cede una camera che vale di più); tolta la frase «una prenotazione spostata vale più di una prenotazione cancellata», già usata quasi identica nell'articolo del 3 novembre; le indicazioni per il 15 senza taxi sono entrate in questo messaggio",
+        "Cosa fare, azione 3: da «Prepara l'arrivo senza taxi del 15 dicembre» (azione sull'esperienza, simile al messaggio pre-arrivo del 10 novembre) a «Decidi ora la tariffa della notte in più» per gli ospiti bloccati in partenza il 14 e il 16, ricavo in più in notti a bassa domanda"
+      ],
+      "segnalazioni": [
+        "Numeri dell'Osservatorio verificati su assets/data/indicatori.json (main, commit 671e3f7), campo calendario, letto il 26/11 tra le 3.48 e le 3.51: 14/12 mediana 119 euro e 937 alberghi prenotabili, 15/12 129 e 931, 16/12 116 e 929, 5/12 173 e 676; alberghi_registro 990. Tutti corretti; 18, 19 e 20 giorni dall'arrivo corretti",
+        "Confronto con sabato 5 dicembre: è letto a 9 giorni dall'arrivo contro 18-20 e gonfia la differenza tra picco e feriale. Nello stesso file c'è un confronto più vicino per distanza: sabato 12 dicembre, letto a 16 giorni, 794 alberghi prenotabili e mediana 143 euro; le notti feriali vicine (domenica 13: 934, giovedì 17: 938) mostrano che le notti degli scioperi sono notti feriali ordinarie, non già indebolite dagli scioperi. Non correggo (paragrafo dei dati, fuori dal mio ambito): il giornalista o il capo redattore valutino di sostituire o affiancare il 5 con il 12 dicembre",
+        "«Molte camere libere» (apertura, secondo h3, In breve): il dato conta gli alberghi con almeno una camera libera, non le camere. La lettura regge, ma la formula precisa è «quasi tutti gli alberghi hanno camere libere», come nel corpo",
+        "Confermo la lettura del giornalista «una camera che si libera il giorno prima trova meno facilmente un altro ospite»: in notti a bassa compressione è il meccanismo corretto",
+        "«Lo sciopero di Italo tocca soprattutto i viaggi di lavoro in treno»: lettura senza fonte, e roma.md lascia aperto il peso del treno negli arrivi (domanda 16). Suggerisco di attenuare («tocca gli ospiti in treno a metà settimana, anche di lavoro»)",
+        "Punto finale nel corpo: «…uno che rinuncia la toglie.» (sezione «Tre scioperi, tre ospiti diversi») viola la regola dei testi senza punto finale; fuori dal mio ambito",
+        "Sigla ADR: il lettore incontra «ADR Security» prima di «ADR (tariffa media per camera venduta)» nell'Impatto; concordo con il giornalista sulla riformulazione («il personale dei controlli di sicurezza, ADR Security»)",
+        "Fonte primaria (Commissione di garanzia, MIT) non letta oggi: giudico solo la tesi, che regge anche se lo sciopero ADR Security viene tolto; la sufficienza delle fonti la decide il capo redattore. Se uno dei tre scioperi viene revocato prima del merge, l'articolo non si pubblica così com'è (9 bis)",
+        "Ripetizione: il paragrafo sullo sciopero del 4 dicembre e l'azione di contare le prenotazioni esposte richiamano l'articolo del 3 novembre; la differenza ora sta nelle partenze, nella notte in più e nel limite del cambio di data. Il SEO director valuti la sovrapposizione"
+      ],
+      "ruolo_ricavia": "Ricavia aggiorna ogni giorno tariffe e disponibilità in base all'andamento delle prenotazioni: nelle notti feriali toccate dagli scioperi il controllo quotidiano guarda prima cancellazioni, cambi di data e notti in più, e solo dopo la tariffa (pratica 4.1 n. 1)"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Tema non duplicato: nessun articolo sugli scioperi negli ultimi 14 giorni (dal 12/11) e tesi diversa da quella del 3/11 (là contare le prenotazioni esposte e rinviare la decisione sul prezzo, qui la cancellazione tardiva che non si rivende in notti a bassa domanda, il cambio di data verso notti simili e la notte in più); keyword dell'albergatore nell'apertura e in un h3, 2 collegamenti interni naturali",
+      "correzioni": [
+        "slug: scioperi-trasporti-roma-hotel-cancellazioni (5 parole, senza date; non scioperi-aeroporti-taxi-italo-hotel-roma, che lega l'URL ai tre scioperi e diventa impreciso se uno viene revocato o tolto, come lo sciopero ADR Security)",
+        "categoria: trasporti confermata (la causa della notizia sono gli scioperi; ultima uscita trasporti il 21/11)",
+        "title_seo: «Scioperi trasporti a Roma: cancellazioni in hotel · Ricavia» (59 caratteri contati, keyword all'inizio, diverso da «Sciopero treni e hotel a Roma: cosa controllare · Ricavia» del 3/11 e da ogni title di tools/seo.json e journal/)",
+        "description: 151 caratteri contati, senza punto finale e senza cifre provvisorie (nessun numero dell'Osservatorio); diversa da ogni altra pagina",
+        "keyword: principale «scioperi trasporti Roma hotel», secondarie «sciopero aeroporti Fiumicino Ciampino hotel», «sciopero taxi Roma hotel», «sciopero Italo hotel», «cancellazioni hotel sciopero» (intento dell'albergatore, non orari per il viaggiatore)",
+        "related_intro e related: ponte dell'Immacolata dell'8/11 (tratta lo sciopero del 4 dicembre, citato nel corpo senza collegamento) e /indicatori/; nessuno ripete i collegamenti del corpo (/osservatorio/, /journal/sciopero-treni-hotel-roma-prenotazioni/); /revenue-management/ lasciato libero per la chiusura del paragrafo Ricavia",
+        "Corpo, prima frase dell'apertura: «tre scioperi in tre giorni» diventa «tre scioperi dei trasporti in tre giorni» per inserire la keyword (fatti, numeri e fonti invariati)",
+        "Corpo, un h3: «Tre scioperi, tre ospiti diversi» diventa «Scioperi dei trasporti a Roma: tre ospiti diversi per il tuo hotel» (keyword in un h3; contenuto della sezione invariato)"
+      ],
+      "segnalazioni": [
+        "Sigla ADR (segnalazione del giornalista): l'ambiguità è reale. Il lettore incontra «ADR Security» nel primo paragrafo, prima di «ADR (tariffa media per camera venduta)» nell'Impatto: la prima comparsa della sigla nel testo non è l'indicatore e la glossa arriva dopo, contro la regola delle sigle (regole-comuni, sezione 6). Per la ricerca il danno è piccolo (ADR non è nella keyword), per il lettore no. La frase non è nel mio ambito: propongo «sciopera anche il personale addetto ai controlli di sicurezza negli stessi due aeroporti, dalle 10 alle 18» senza il nome della società, attribuito a Money.it come ora; se il capo redattore vuole il nome, «il personale dei controlli di sicurezza di ADR Security». Se la fonte primaria non conferma lo sciopero, la frase si toglie e l'ambiguità sparisce (il revenue manager conferma che la tesi regge anche senza)",
+        "Titolo di lavoro (virality director): «in tre notti con molte camere libere» descrive alberghi con almeno una camera libera, non camere (segnalazione del revenue manager); il title_seo non usa la formula",
+        "Stesso fatto in due bozze della giornata: la bozza 1 e la bozza 2 confrontano entrambe le loro notti con il ponte del 5 dicembre dell'Osservatorio. È ammesso come contesto (regole-comuni, sezione 7), ma il confronto con sabato 12 dicembre proposto dal revenue manager toglierebbe anche la sovrapposizione tra le due bozze",
+        "Punto finale nel corpo: «…uno che rinuncia la toglie.» nella sezione ora intitolata «Scioperi dei trasporti a Roma: tre ospiti diversi per il tuo hotel»; non è nel mio ambito",
+        "Lo sciopero del 4 dicembre è citato senza collegamento nel corpo per restare a 2 collegamenti naturali: l'articolo dell'Immacolata è in related",
+        "Fonte primaria (Commissione di garanzia, MIT) non letta: se uno dei tre scioperi viene revocato, il title_seo resta corretto perché non nomina i singoli scioperi; la description nomina aeroporti, taxi e Italo e in quel caso la riscrivo"
+      ],
+      "ruolo_ricavia": "Dal punto di vista della ricerca, il passo successivo naturale per l'albergatore che legge di scioperi e cancellazioni è /revenue-management/: Ricavia controlla ogni giorno cancellazioni, cambi di data e pick-up delle notti esposte prima di decidere la tariffa"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "La storia c'è e parla all'albergatore: il rischio degli scioperi non è la domanda che sparisce ma la camera cancellata tardi in notti feriali che il mercato non riempie; titolo riscritto perché «molte camere libere» contava alberghi e non camere",
+      "correzioni": [
+        "titolo: da «Scioperi dal 14 al 16 dicembre: aeroporti, taxi e Italo in tre notti con molte camere libere» a «Scioperi dal 14 al 16 dicembre: per il tuo hotel il rischio è la camera cancellata tardi» (88 caratteri, tecnica conseguenza; tolta la formula «molte camere libere», che descrive alberghi con almeno una camera libera e non camere; mantiene ciò che promette: apertura e Impatto dicono che il rischio è la prenotazione cancellata all'ultimo; tipo diverso dalla domanda del 3/11 sullo sciopero dei treni)",
+        "sottotitolo: scritto, con «quasi tutti gli alberghi letti dall'Osservatorio Ricavia hanno camere libere» (937, 931 e 929 su 990) e le tre azioni dell'articolo",
+        "alternative_titolo: domanda (notte in più per l'ospite che non riparte, 85 caratteri), dato con fonte nel titolo (oltre 920 alberghi su 990 prenotabili per l'Osservatorio Ricavia, 90), contrasto tra i tre giorni e i tre ospiti (87); nessuna somiglia ai titoli in journal/ e in pubblicati.md",
+        "mood: serio",
+        "Corpo, frase citabile: da «Nelle notti di picco una cancellazione libera una camera da rivendere. Nelle notti feriali di dicembre spesso la lascia vuota» a «Nelle notti in cui quasi ogni albergo ha camere libere, l'ospite già prenotato vale più di quello ancora da trovare». La precedente ripeteva quasi alla lettera le due frasi che la precedono e allargava a «le notti feriali di dicembre» un dato letto solo per il 14, 15 e 16; la nuova chiude il paragrafo dei dati con un contrasto, senza numeri, ed è diversa dalla citazione del 3/11 («Uno sciopero non si compensa con il prezzo…») e dalla frase tolta dal revenue manager («una prenotazione spostata vale più di una cancellata»)"
+      ],
+      "segnalazioni": [
+        "«Molte camere libere» compare ancora nell'apertura («Cadono su notti feriali con molte camere libere in città»), nell'h3 «Notti feriali con molte camere libere» e nel box («Le tre notti hanno molte camere libere in città»): non è nel mio ambito. Proposta coerente con titolo e sottotitolo: «quasi tutti gli alberghi hanno camere libere» (apertura e box) e «Notti feriali con quasi tutti gli alberghi prenotabili» (h3)",
+        "Box «In breve»: «Una cancellazione tardiva lascia la camera vuota» è un assoluto; con «spesso» o «in queste notti» resterebbe coerente con il corpo («rischia di diventare una camera vuota»)",
+        "Restano, già segnalati: il punto finale in «…uno che rinuncia la toglie.»; la sigla ADR Security prima della glossa di ADR; «Italo tocca soprattutto i viaggi di lavoro» senza fonte; il confronto con sabato 5 dicembre (il revenue manager propone sabato 12). Il titolo non nomina ADR Security né il 5 dicembre, quindi regge anche con queste correzioni",
+        "Il titolo nomina le date dei tre scioperi: se uno viene revocato prima del merge l'articolo non esce così com'è (9 bis) e il titolo si rivede con il corpo; il titolo resta vero anche se si toglie solo lo sciopero ADR Security, perché il 14 sciopera comunque il personale di Aviation Services",
+        "Titolo-hook e title_seo («Scioperi trasporti a Roma: cancellazioni in hotel») descrivono lo stesso articolo: nessun riallineamento"
+      ],
+      "ruolo_ricavia": "Dal punto di vista del racconto, il lettore ricorda il gesto concreto più del prezzo: Ricavia, nelle notti feriali toccate dagli scioperi, controlla ogni giorno cancellazioni e richieste di modifica e decide prima cosa offrire all'ospite già prenotato, poi la tariffa"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: in notti feriali con quasi tutti gli alberghi prenotabili una cancellazione tardiva difficilmente si rivende, la leva è l'ospite già prenotato e non il prezzo)",
+        "[x] Ogni numero ha fonte o è stima Ricavia (Osservatorio ricontrollato da me su indicatori.json, campo calendario, commit 671e3f7: 937, 931, 929 su 990; 119, 129, 116 e 173 euro; orari degli scioperi attribuiti a Sky TG24, Money.it e ANSA; nessuna stima)",
+        "[x] Fonti citate con link, nessuna copia (fonte primaria irraggiungibile oggi, verificato anche da me: cgsse.it e scioperi.mit.gov.it rispondono 503 o chiudono la connessione; i tre scioperi che reggono la tesi hanno due testate riconosciute e indipendenti attribuite nel testo, Sky TG24 e Money.it, più ANSA per i taxi; tolti i fatti con una sola testata o riferiti ad altra data: ADR Security, fasce ENAC, franchigia)",
+        "[x] Ruolo di Ricavia presente (un paragrafo, pratica 4.1 n. 1 non usata nella settimana del 23-26 novembre, chiusura /revenue-management/, non pubblicitario)",
+        "[x] Regole di brand e di copy (dopo le correzioni di forma: tolto il punto finale, 'molte camere libere' sostituito, assoluto del box attenuato, sigla ADR non più ambigua)",
+        "[x] Tono coerente con la matrice (serio, scioperi senza vittime)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; ultimi scioperi il 3/11 e l'8/11, tesi e azioni diverse: cambio di data verso notti simili, notte in più)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende (vertenza Aviation Services citata senza i giudizi del sindacato)",
+        "[x] Rischi legali 9 ter (mediane descritte come mercato, nessun livello di prezzo, azioni sul singolo hotel)",
+        "[x] Da 700 a 1.100 parole, struttura completa (1082 parole contate come tools/journal.py, paragrafo Ricavia compreso; 4 h3, apertura, impatto, azioni, In breve)"
+      ],
+      "correzioni": [
+        "Apertura: 'Roma ha tre scioperi' diventa 'a Roma sono proclamati tre scioperi' (le proclamazioni possono essere revocate); 'notti feriali con molte camere libere in città' diventa 'notti feriali in cui quasi tutti gli alberghi della città hanno camere libere' (il dato conta alberghi, non camere). Apertura coerente con il titolo",
+        "Primo paragrafo: tolto lo sciopero ADR Security (solo Money.it e Skuola.net, assente in Sky TG24, non confermato dalla mia ricerca; regole comuni sezione 4: una testata non basta, Skuola.net non è una testata nazionale riconosciuta); sparisce anche l'ambiguità con la sigla ADR",
+        "Primo paragrafo: tolta la frase sulle fasce di garanzia ENAC 7-10 e 18-21, che Sky TG24 riporta per lo sciopero del 4 dicembre e non per il 14 (pagina ENAC del 14 non pubblicata); Aviation Services ora attribuito a entrambe le testate, con l'effetto che Sky TG24 indica (assistenza ai passeggeri e riconsegna dei bagagli più lente)",
+        "Sezione 'tre ospiti': 'i voli nelle fasce garantite partono, gli altri possono subire ritardi o cancellazioni' diventa 'l'assistenza a terra può rallentare, con possibili ritardi' (lo sciopero è del personale di assistenza a terra: le fonti non parlano di voli cancellati)",
+        "Tolta la frase sulla franchigia natalizia del trasporto aereo, fatto di contorno con una sola fonte (Skuola.net), e la fonte dalla lista",
+        "Secondo h3: 'Notti feriali con molte camere libere' diventa 'Notti feriali con quasi tutti gli alberghi prenotabili'",
+        "Paragrafo dei dati: sabato 5 dicembre dichiarato 'letto a 9 giorni dall'arrivo invece di 18-20' (segnalazione del revenue manager; nessun numero nuovo)",
+        "'Lo sciopero di Italo tocca soprattutto i viaggi di lavoro' (senza fonte) diventa 'tocca gli ospiti che viaggiano in treno a metà settimana, anche per lavoro'",
+        "Tolto il punto finale in '…uno che rinuncia la toglie'",
+        "Impatto, Occupazione: 'Gli scioperi spostano o cancellano' diventa 'possono spostare o cancellare'",
+        "Lunghezza (1.183 parole dopo il paragrafo Ricavia): accorciati senza cambiare fatti né tesi il paragrafo sullo sciopero del 4 dicembre, la voce Durata del soggiorno, la voce ADR, la voce Occupazione (frase che ripeteva il paragrafo dei dati), l'azione 1 (frase sul messaggio di conferma) e l'azione 3 (ultima frase); tolte anche la frase 'Le tre notti hanno poca domanda già oggi' (ripete il dato che segue) e la coda 'che arriva stanco e senza un'alternativa pronta', per lasciare spazio all'eventuale nota sulla copertina generata",
+        "Box: 'Le tre notti hanno molte camere libere in città' diventa 'Le tre notti hanno quasi tutti gli alberghi prenotabili'; 'Una cancellazione tardiva lascia la camera vuota' (assoluto) diventa 'rischia di lasciare la camera vuota'",
+        "Paragrafo Ricavia scritto: fonde le frasi di giornalista, revenue manager, SEO director e virality director (pratica 4.1 n. 1, prima l'ospite già prenotato e poi la tariffa), chiusura /revenue-management/; parole e costruzione diverse dall'esempio 'Sciopero dei trasporti' di ricavia.md e dal paragrafo del 3/11",
+        "meta.json: tolto ADR Security dalla tesi; tolta Skuola.net da fonti"
+      ],
+      "segnalazioni": [
+        "Per l'editore: prima del merge ricontrollare su cgsse.it (o scioperi.mit.gov.it) che gli scioperi del 14 (Aviation Services, Fiumicino e Ciampino), del 15 (taxi) e del 16 dicembre (Italo) siano proclamati e non revocati. Se uno viene revocato o cambia, l'articolo non esce così com'è (regole comuni 9 bis): titolo, apertura e description nominano i tre giorni",
+        "Per l'editore: Money.it è una delle due testate che reggono la tesi; Sky TG24 conferma Aviation Services e Italo ma non indica i sindacati; i taxi hanno anche ANSA (orari diversi, citati entrambi)",
+        "Fatto di contorno con una sola testata, attribuito: 'lo sciopero può rallentare l'assistenza ai passeggeri e la riconsegna dei bagagli' (Sky TG24)"
+      ]
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock di Magnific (foto vera, gratuita, non generata con AI): pontili d'imbarco senza aereo su un piazzale vuoto. Racconta lo sciopero del 14 dicembre negli aeroporti, il primo e il più esposto dei tre, con un soggetto nuovo per il Journal (le copertine aeroportuali recenti mostrano aerei al gate il 4/11, un'ala in volo il 7/11, sedute vuote all'imbarco il 21/11; i binari sono usciti il 3/11 e il 10/11). La libreria non ha una foto pertinente: l'unica di trasporti (cb8c5b135f, corridoio di un terminal) ha persone in movimento, un cappotto rosso in primo piano come colore dominante e racconta un terminal affollato, l'opposto del tema",
+      "correzioni": [
+        "immagine: fonte stock, id 1017543 «Airport terminal boarding gate» (autore jannoon028, gratuita, aiGenerated false), scheda in 5 righe, testo_sovrapposto null",
+        "immagine.libreria (riserva): assets/img/9dc9005512.webp, tetti di Roma con la cupola di San Pietro (catalogo s027), non usata negli ultimi 10 articoli; la più neutra tra città e interni di hotel tra le foto libere, senza persone, senza scritte, cielo azzurro dominante",
+        "alt: «Due pontili d'imbarco ritirati e senza aereo sul piazzale vuoto di un aeroporto, in una giornata coperta»; alt_libreria scritto guardando il file del repo"
+      ],
+      "segnalazioni": [
+        "Nessuna nota AI in fondo all'articolo: la copertina è una foto vera dell'archivio stock (regole comuni, 9 ter, punto 2). Se l'editore passa alla riserva della libreria, copia alt_libreria in alt",
+        "Per l'editore: l'anteprima è già vicina al 16:9; nel ritaglio tenere i due pontili nella fascia centrale e la linea gialla di rullaggio intera a sinistra. Controllare sul file scaricato che sui pontili non compaiano numeri di gate o scritte leggibili: in anteprima non se ne leggono; se ci sono, usare la riserva",
+        "Soggetto mancante in libreria: un aeroporto o una stazione di Roma senza persone (Fiumicino, Ciampino, Termini) e un posteggio dei taxi senza insegne. Nell'archivio stock non c'è nulla di romano adatto: le ricerche «Fiumicino airport Rome» e «Roma Termini station» restituiscono altre città o foto con persone; «taxi rank Rome» solo taxi con insegne o persone in primo piano",
+        "Scartate: nastro bagagli (giallo dominante e un grande numero 3), banchi del check-in vuoti (scritte «Check-in Counter No. 22» leggibili), valigia bianca in un corridoio di terminal (soggetto troppo vicino alla valigia della copertina del 24/11), sedute vuote all'imbarco (troppo vicine al 21/11)"
+      ],
+      "ruolo_ricavia": "Dal punto di vista visivo, l'immagine mostra un'attesa e non un disagio: è il momento in cui Ricavia decide cosa offrire all'ospite già prenotato prima di toccare la tariffa"
+    }
+  ],
+  "sottotitolo": "Tre scioperi in tre notti feriali in cui quasi tutti gli alberghi letti dall'Osservatorio Ricavia hanno camere libere: quali arrivi e partenze sono esposti, quando proporre il cambio di data e quale tariffa decidere per la notte in più",
+  "alternative_titolo": [
+    "Sciopero negli aeroporti il 14 dicembre: hai la tariffa per l'ospite che non riparte?",
+    "Scioperi a metà dicembre: per l'Osservatorio Ricavia oltre 920 alberghi su 990 prenotabili",
+    "Aereo il 14, taxi il 15, Italo il 16: tre scioperi, tre ospiti diversi per il tuo hotel"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Scioperi dei trasporti senza vittime: la matrice ammette serio, o drammatico solo con impatto alto e certo; qui l'impatto è basso (occupazione ↓ bassa), le proclamazioni possono essere revocate e le fonti primarie non sono ancora lette, e il corpo ha un registro di servizio"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 1017543,
+      "titolo": "Airport terminal boarding gate",
+      "anteprima": "https://img.magnific.com/free-photo/airport-terminal-boarding-gate_1232-2995.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: due pontili d'imbarco ritirati e senza aereo sul piazzale vuoto di un aeroporto, con la linea gialla di rullaggio a sinistra e la pista lontana sullo sfondo; nessuna persona, nessuna livrea, nessuna scritta leggibile. Racconta lo sciopero del 14 dicembre negli aeroporti senza mostrare disagi o persone\nInquadratura: dall'alto, in diagonale, pontili a destra del centro e ampio spazio negativo grigio a sinistra e in alto; i pontili stanno nella fascia centrale, quindi il ritaglio 16:9 e quello social 1200×630 non li tagliano\nLuce: diurna, coperta e uniforme, senza ombre dure\nPalette: grigi neutri del cemento e dell'alluminio; giallo e arancio solo come accento piccolo nella linea di rullaggio e nei soffietti dei pontili, mai dominante\nAtmosfera: seria e sospesa, un'attesa ferma; nessun allarmismo, coerente con il mood serio",
+    "libreria": "assets/img/9dc9005512.webp",
+    "alt_libreria": "Tetti e terrazze di Roma con la cupola di San Pietro sullo sfondo, sotto un cielo azzurro con nuvole bianche",
+    "testo_sovrapposto": null
+  },
+  "alt": "Due pontili d'imbarco ritirati e senza aereo sul piazzale vuoto di un aeroporto, in una giornata coperta",
+  "data": "2026-11-26",
+  "autore": "Tito · Redazione Ricavia"
+}
