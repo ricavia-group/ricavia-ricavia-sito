@@ -451,7 +451,14 @@ function barra(){if(!MEB)return;var io=$('#o2Io'),nb=NAV?Math.max(0,NAV.getBound
   MEB.style.top=nb+'px';MEB.classList.toggle('on',on);MEB.setAttribute('aria-hidden',on?'false':'true')}
 document.addEventListener('scroll',barra,{capture:true,passive:true});
 /* link personale delle mail: /osservatorio/?hotel=ID apre la pagina già sul suo hotel; la chat si apre con il tasto */
-try{var hq=new URL(location.href).searchParams.get('hotel');if(hq&&/^\d{1,10}$/.test(hq)){MAIL=true;personalizza(hq)}}catch(_){}
+/* ?da=mail1 (2, 3): una sola segnalazione al CRM tramite l'Apps Script dei moduli, solo id e tappa (niente cookie, niente dati del dispositivo);
+   poi "da" esce dall'indirizzo, così un link condiviso o ricaricato non conta di nuovo */
+try{var uq=new URL(location.href),hq=uq.searchParams.get('hotel'),dq=uq.searchParams.get('da');
+  if(dq!==null){uq.searchParams.delete('da');history.replaceState(history.state,'',uq.pathname+uq.search+uq.hash)}
+  if(hq&&/^\d{1,10}$/.test(hq)){MAIL=true;
+    var epq=document.querySelector('meta[name="ricavia-lead-endpoint"]');
+    if(/^mail[123]$/.test(dq||'')&&epq&&navigator.sendBeacon)navigator.sendBeacon(epq.content.trim(),JSON.stringify({azione:'visita',hotel:hq,da:dq}));
+    personalizza(hq)}}catch(_){}
 
 
 /* ---------- il sigillo Top 10 per il sito dell'hotel (6.3) ---------- */
