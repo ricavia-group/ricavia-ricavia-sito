@@ -178,11 +178,16 @@ function report(s){var W=PA(s),af=AF(s),v=s.voti||{},bk=s.booking||{},sc=s.scala
   /* 4.1 i voti */
   h+='<section class="o2-rs"><h3>Il tuo '+W.score+'</h3><div class="o2-rhs"><b>'+(s.hotel_score!=null?d1(s.hotel_score):'n.d.')+'</b><span>su 10, media di '+A.filter(function(a){return v[a[0]]!=null}).length+' aree'+(s.hotel_score==null?'. La media compare con almeno '+(s.aree_min||4)+' aree':'')+'</span></div><ul class="o2-rv">'+
     A.map(function(a){var x=v[a[0]];return x==null?((a[0]==='canali'||a[0]==='sito'||af&&a[0]==='prezzi')?'':'<li class="na"><span>'+a[1]+'</span><i></i><b>n.d.</b></li>'):'<li><span>'+a[1]+'</span><i><u style="width:'+x*10+'%"></u></i><b>'+x+'</b></li>'}).join('')+'</ul>'+
-    '<p class="o2-rn">'+(af?'Per gli affittacamere la media usa tre aree: Reputazione, Posizionamento e Foto. ':'')+'Il voto Foto conta le foto della pagina Booking</p></section>';
+    /* Canali e Sito: una frase per area, solo per le aree con il voto (aree_testo da tools/oss_schede.py) */
+    ['canali','sito'].filter(function(k){return (s.aree_testo||{})[k]}).map(function(k){return '<p>'+(k==='sito'?'Sito':'Canali')+': '+esc(s.aree_testo[k])+'</p>'}).join('')+
+    '<p class="o2-rn">'+(af?'Per gli affittacamere la media non usa i Prezzi. ':'')+'Il voto Foto conta le foto della pagina Booking'+
+    (v.canali!=null||v.sito!=null?'. Canali e Sito: Booking, annunci di Inside Airbnb e ricerche di Ricavia sul sito ufficiale, velocità da telefono non misurata':'')+'</p></section>';
   /* 4.11 la scala */
   if(sc){var su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
     h+='<section class="o2-rs"><h3>La tua posizione</h3><p class="o2-rbig"><b>'+sc.pos+'°</b> su '+sc.su+(af?' affittacamere':' alberghi a '+(s.stelle||'')+' stelle')+' in '+esc(s.zona_sito||'')+'</p>'+
-      (su?(su.hs-s.hotel_score<0.05?'<p>Sei a pari punteggio con l’'+W.uno+' al '+su.pos+'° posto: davanti va chi ha più recensioni</p>':'<p>L’'+W.uno+' al '+su.pos+'° posto ha '+d1(su.hs)+' di '+W.score+': ti servono '+d1(su.hs-s.hotel_score)+' punti per salire di un posto</p>'):'<p>Sei il primo della tua zona e della tua categoria</p>')+'</section>'}
+      (su?(su.hs-s.hs_classifica<0.05?'<p>Sei a pari punteggio con l’'+W.uno+' al '+su.pos+'° posto: davanti va chi ha più recensioni</p>':'<p>L’'+W.uno+' al '+su.pos+'° posto ha '+d1(su.hs)+', tu '+d1(s.hs_classifica)+': ti servono '+d1(su.hs-s.hs_classifica)+' punti per salire di un posto</p>'):'<p>Sei il primo della tua zona e della tua categoria</p>')+
+      /* George, 26/11: classifiche e confronti tra hotel solo sulle aree lette su Booking per tutti */
+      '<p class="o2-rn">La posizione in classifica usa solo le '+(af?'3 aree lette su Booking: Reputazione, Posizionamento e Foto':'4 aree lette su Booking: Prezzi, Reputazione, Posizionamento e Foto')+'</p></section>'}
   h+=sezSigillo(s);
   /* 4.2 i prezzi e 4.14 il termometro di Capodanno */
   var P=[m,b,ev].filter(Boolean),mx=Math.max.apply(null,P.map(function(p){return Math.max(p.prezzo||0,p.mediano||0,1)}));

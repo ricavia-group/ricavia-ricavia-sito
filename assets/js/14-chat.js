@@ -89,10 +89,11 @@ function riga_sab(s){var m=pz(s,'martedi'),b=pz(s,'sabato');if(!b)return null;
   if(b.prezzo==null&&b.mediano!=null)return 'Sabato '+gg(b.arrivo)+' su Booking non sei più in vendita: o sei già pieno, o hai chiuso la vendita. I tuoi competitor chiedono '+eu(b.mediano);
   return null}
 var R={
-  classifica:{ok:function(s){return !!(s.scala&&s.hotel_score!=null)},
+  classifica:{ok:function(s){return !!(s.scala&&s.hs_classifica!=null)},
     r:function(s){var W=O.pa(s),af=O.af(s),sc=s.scala,su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0],z=esc(s.zona_sito||s.zona||'Roma'),cat=s.stelle?' a '+s.stelle+' stelle':'',p='<b>'+sc.pos+'° su '+sc.su+'</b>';
       return [una_di('classifica',af?['Per punteggio Ricavia sei '+p+' tra gli affittacamere di '+z,'Nella classifica del punteggio Ricavia della tua zona sei '+p+', tra gli affittacamere di '+z]:['Per Hotel Score sei '+p+' tra gli alberghi'+cat+' di '+z,'Nella classifica dell’Hotel Score della tua zona sei '+p+', tra gli alberghi'+cat+' di '+z])+(sc.pos<=10?': sei nella Top 10 della tua zona e della tua categoria':''),
-        su?(su.hs-s.hotel_score<0.05?'Sei a pari punteggio con l’'+W.uno+' al '+su.pos+'° posto: davanti va chi ha più recensioni':'L’'+W.uno+' al '+su.pos+'° posto ha '+d1(su.hs)+': ti servono <b>'+d1(su.hs-s.hotel_score)+' punti</b> per salire di un posto'):'Davanti a te non c’è nessuno']}},
+        su?(su.hs-s.hs_classifica<0.05?'Sei a pari punteggio con l’'+W.uno+' al '+su.pos+'° posto: davanti va chi ha più recensioni':'L’'+W.uno+' al '+su.pos+'° posto ha '+d1(su.hs)+', tu '+d1(s.hs_classifica)+': ti servono <b>'+d1(su.hs-s.hs_classifica)+' punti</b> per salire di un posto'):'Davanti a te non c’è nessuno',
+        'La classifica usa solo le '+(af?'3':'4')+' aree lette su Booking, uguali per tutti']}},
   competitor:{ok:function(s){return !!(s.competitor&&s.competitor.length)},
     r:function(s){var st=s.set||{},W=O.pa(s);return [una_di('competitor',['Ecco i tuoi '+s.competitor.length+' competitor, gli '+W.simili+' simili più vicini','Questi sono gli '+W.simili+' con cui ti confronto: i '+s.competitor.length+' più vicini e simili a te'])+(st.piu_lontano_m?'. Il più lontano è a '+num(st.piu_lontano_m)+' metri':''),
       {h:tabella(s),wide:1},s.posizione?'Per voto su Booking sei <b>'+s.posizione+'° su '+s.su+'</b> tra te e i tuoi competitor':null]}},
@@ -111,9 +112,9 @@ var R={
       else if(ev.prezzo==null)o.push('Su Booking a Capodanno non sei in vendita: o sei pieno, o non hai ancora aperto quelle date');
       return o}},
   score:{ok:function(s){return s.hotel_score!=null},
-    r:function(s){var v=s.voti||{},A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto']].filter(function(x){return v[x[0]]!=null}).sort(function(x,y){return v[y[0]]-v[x[0]]});
+    r:function(s){var v=s.voti||{},T=s.aree_testo||{},A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto'],['canali','Canali'],['sito','Sito']].filter(function(x){return v[x[0]]!=null}).sort(function(x,y){return v[y[0]]-v[x[0]]});
       return ['Il tuo '+O.pa(s).score+' è <b>'+d1(s.hotel_score)+' su 10</b>, media di '+A.length+' aree: '+A.map(function(x){return x[1]+' '+v[x[0]]}).join(', '),
-        'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]]}},
+        'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]].concat(['canali','sito'].filter(function(k){return T[k]}).map(function(k){return (k==='sito'?'Sito: ':'Canali: ')+esc(T[k])}))}},
   punto:{ok:function(s){return !!((s.booking||{}).voto&&s.voto&&s.voto.mediano!=null)},
     r:function(s){return ['Il tuo voto su Booking è '+d1(s.booking.voto)+', quello mediano dei tuoi competitor '+d1(s.voto.mediano),
       'Uno studio della Cornell University stima circa l’11% di tariffa in più per un punto su una scala da 1 a 5: sulla scala di Booking, da 1 a 10, un punto vale circa la metà. È un ordine di grandezza']}},
