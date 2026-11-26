@@ -111,9 +111,9 @@ var R={
       else if(ev.prezzo==null)o.push('Su Booking a Capodanno non sei in vendita: o sei pieno, o non hai ancora aperto quelle date');
       return o}},
   score:{ok:function(s){return s.hotel_score!=null},
-    r:function(s){var v=s.voti||{},A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto']].filter(function(x){return v[x[0]]!=null}).sort(function(x,y){return v[y[0]]-v[x[0]]});
+    r:function(s){var v=s.voti||{},T=s.aree_testo||{},A=[['prezzi','Prezzi'],['reputazione','Reputazione'],['posizionamento','Posizionamento'],['foto','Foto'],['canali','Canali'],['sito','Sito']].filter(function(x){return v[x[0]]!=null}).sort(function(x,y){return v[y[0]]-v[x[0]]});
       return ['Il tuo '+O.pa(s).score+' è <b>'+d1(s.hotel_score)+' su 10</b>, media di '+A.length+' aree: '+A.map(function(x){return x[1]+' '+v[x[0]]}).join(', '),
-        'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]]}},
+        'Il voto più alto è '+A[0][1]+', quello da cui ripartire è '+A[A.length-1][1]].concat(['canali','sito'].filter(function(k){return T[k]}).map(function(k){return (k==='sito'?'Sito: ':'Canali: ')+esc(T[k])}))}},
   punto:{ok:function(s){return !!((s.booking||{}).voto&&s.voto&&s.voto.mediano!=null)},
     r:function(s){return ['Il tuo voto su Booking è '+d1(s.booking.voto)+', quello mediano dei tuoi competitor '+d1(s.voto.mediano),
       'Uno studio della Cornell University stima circa l’11% di tariffa in più per un punto su una scala da 1 a 5: sulla scala di Booking, da 1 a 10, un punto vale circa la metà. È un ordine di grandezza']}},
