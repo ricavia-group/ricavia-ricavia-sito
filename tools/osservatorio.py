@@ -790,7 +790,8 @@ def schede_dati(cartella):
         if s.get("zona") and s.get("zona_sito"):
             rz[s["zona"]][s["zona_sito"]] += 1
         bk = s.get("booking") or {}
-        righe.append([str(s["id_comune"]), s.get("nome") or "", s.get("zona") or "", s.get("stelle"), s.get("hotel_score"),
+        # classifiche solo sulle aree lette su Booking per tutti (George, 26/11); hotel_score per le schede di prima
+        righe.append([str(s["id_comune"]), s.get("nome") or "", s.get("zona") or "", s.get("stelle"), s.get("hs_classifica", s.get("hotel_score")),
                       bk.get("voto"), bk.get("recensioni"), a, b])
     return ({"alzano": n[0], "uguale": n[1], "abbassano": n[2], "contati": sum(n)},
             {r: c.most_common(1)[0][0] for r, c in sorted(rz.items())}, righe)

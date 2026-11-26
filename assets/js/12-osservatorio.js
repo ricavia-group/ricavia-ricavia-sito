@@ -185,7 +185,9 @@ function report(s){var W=PA(s),af=AF(s),v=s.voti||{},bk=s.booking||{},sc=s.scala
   /* 4.11 la scala */
   if(sc){var su=sc.vicini.filter(function(x){return x.pos<sc.pos})[0];
     h+='<section class="o2-rs"><h3>La tua posizione</h3><p class="o2-rbig"><b>'+sc.pos+'°</b> su '+sc.su+(af?' affittacamere':' alberghi a '+(s.stelle||'')+' stelle')+' in '+esc(s.zona_sito||'')+'</p>'+
-      (su?(su.hs-s.hotel_score<0.05?'<p>Sei a pari punteggio con l’'+W.uno+' al '+su.pos+'° posto: davanti va chi ha più recensioni</p>':'<p>L’'+W.uno+' al '+su.pos+'° posto ha '+d1(su.hs)+' di '+W.score+': ti servono '+d1(su.hs-s.hotel_score)+' punti per salire di un posto</p>'):'<p>Sei il primo della tua zona e della tua categoria</p>')+'</section>'}
+      (su?(su.hs-s.hs_classifica<0.05?'<p>Sei a pari punteggio con l’'+W.uno+' al '+su.pos+'° posto: davanti va chi ha più recensioni</p>':'<p>L’'+W.uno+' al '+su.pos+'° posto ha '+d1(su.hs)+', tu '+d1(s.hs_classifica)+': ti servono '+d1(su.hs-s.hs_classifica)+' punti per salire di un posto</p>'):'<p>Sei il primo della tua zona e della tua categoria</p>')+
+      /* George, 26/11: classifiche e confronti tra hotel solo sulle aree lette su Booking per tutti */
+      '<p class="o2-rn">La posizione in classifica usa solo le '+(af?'3 aree lette su Booking: Reputazione, Posizionamento e Foto':'4 aree lette su Booking: Prezzi, Reputazione, Posizionamento e Foto')+'</p></section>'}
   h+=sezSigillo(s);
   /* 4.2 i prezzi e 4.14 il termometro di Capodanno */
   var P=[m,b,ev].filter(Boolean),mx=Math.max.apply(null,P.map(function(p){return Math.max(p.prezzo||0,p.mediano||0,1)}));

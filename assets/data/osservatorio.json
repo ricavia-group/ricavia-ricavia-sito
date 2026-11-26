@@ -461,18 +461,6 @@
   ],
   "hotel_score": [
    {
-    "nome": "BH Hotel",
-    "valore": 8.8,
-    "nota": "Esquilino · Termini · 3 stelle · 1.806 recensioni",
-    "id": "409202"
-   },
-   {
-    "nome": "Hotel Des Artistes Roma",
-    "valore": 8.8,
-    "nota": "Esquilino · Termini · 2 stelle · 1.534 recensioni",
-    "id": "369951"
-   },
-   {
     "nome": "Harry's Bar Trevi Hotel & Restaurant",
     "valore": 8.8,
     "nota": "Centro storico · 5 stelle · 1.056 recensioni",
@@ -483,18 +471,6 @@
     "valore": 8.8,
     "nota": "Centro storico · 4 stelle · 744 recensioni",
     "id": "402151"
-   },
-   {
-    "nome": "Hotel Emona Aquaeductus",
-    "valore": 8.5,
-    "nota": "Esquilino · Termini · 4 stelle · 1.876 recensioni",
-    "id": "369243"
-   },
-   {
-    "nome": "Hotel Domus Praetoria",
-    "valore": 8.5,
-    "nota": "Esquilino · Termini · 1 stelle · 1.677 recensioni",
-    "id": "369545"
    },
    {
     "nome": "Hotel Lunetta",
@@ -509,16 +485,40 @@
     "id": "369258"
    },
    {
-    "nome": "Hotel Ascot",
-    "valore": 8.3,
-    "nota": "Esquilino · Termini · 2 stelle · 1.153 recensioni",
-    "id": "369947"
+    "nome": "H10 Palazzo Galla",
+    "valore": 8.2,
+    "nota": "Centro storico · 4 stelle · 1.906 recensioni",
+    "id": "370011"
    },
    {
-    "nome": "Hotel Maximus",
+    "nome": "Hotel Emona Aquaeductus",
     "valore": 8.2,
-    "nota": "Esquilino · Termini · 3 stelle · 6.066 recensioni",
-    "id": "369608"
+    "nota": "Esquilino · Termini · 4 stelle · 1.876 recensioni",
+    "id": "369243"
+   },
+   {
+    "nome": "Hotel Domus Praetoria",
+    "valore": 8.2,
+    "nota": "Esquilino · Termini · 1 stelle · 1.677 recensioni",
+    "id": "369545"
+   },
+   {
+    "nome": "Hotel Des Artistes Roma",
+    "valore": 8.2,
+    "nota": "Esquilino · Termini · 2 stelle · 1.534 recensioni",
+    "id": "369951"
+   },
+   {
+    "nome": "Chapter Roma",
+    "valore": 8.2,
+    "nota": "Centro storico · 4 stelle · 895 recensioni",
+    "id": "369946"
+   },
+   {
+    "nome": "Hotel City Palazzo Dei Cardinali",
+    "valore": 8.0,
+    "nota": "Centro storico · 3 stelle · 1.724 recensioni",
+    "id": "369950"
    }
   ]
  },
@@ -821,24 +821,6 @@
  },
  "hs_tutti": [
   [
-   "409202",
-   "BH Hotel",
-   "Esquilino · Termini",
-   3,
-   8.8,
-   1806,
-   0
-  ],
-  [
-   "369951",
-   "Hotel Des Artistes Roma",
-   "Esquilino · Termini",
-   2,
-   8.8,
-   1534,
-   0
-  ],
-  [
    "370026",
    "Harry's Bar Trevi Hotel & Restaurant",
    "Centro storico",
@@ -854,24 +836,6 @@
    4,
    8.8,
    744,
-   0
-  ],
-  [
-   "369243",
-   "Hotel Emona Aquaeductus",
-   "Esquilino · Termini",
-   4,
-   8.5,
-   1876,
-   0
-  ],
-  [
-   "369545",
-   "Hotel Domus Praetoria",
-   "Esquilino · Termini",
-   1,
-   8.5,
-   1677,
    0
   ],
   [
@@ -893,30 +857,39 @@
    0
   ],
   [
-   "369947",
-   "Hotel Ascot",
-   "Esquilino · Termini",
-   2,
-   8.3,
-   1153,
-   0
-  ],
-  [
-   "369608",
-   "Hotel Maximus",
-   "Esquilino · Termini",
-   3,
-   8.2,
-   6066,
-   0
-  ],
-  [
    "370011",
    "H10 Palazzo Galla",
    "Centro storico",
    4,
    8.2,
    1906,
+   0
+  ],
+  [
+   "369243",
+   "Hotel Emona Aquaeductus",
+   "Esquilino · Termini",
+   4,
+   8.2,
+   1876,
+   0
+  ],
+  [
+   "369545",
+   "Hotel Domus Praetoria",
+   "Esquilino · Termini",
+   1,
+   8.2,
+   1677,
+   0
+  ],
+  [
+   "369951",
+   "Hotel Des Artistes Roma",
+   "Esquilino · Termini",
+   2,
+   8.2,
+   1534,
    0
   ],
   [
@@ -929,57 +902,12 @@
    0
   ],
   [
-   "369433",
-   "Yes Hotel Boutique Rome",
-   "Esquilino · Termini",
-   3,
-   8.2,
-   886,
-   0
-  ],
-  [
-   "369419",
-   "The Liberty Boutique Hotel",
-   "Esquilino · Termini",
-   4,
-   8.2,
-   871,
-   0
-  ],
-  [
-   "369891",
-   "Doria Palace Boutique Hotel",
-   "Esquilino · Termini",
-   4,
-   8.2,
-   610,
-   0
-  ],
-  [
-   "369541",
-   "Sophie Terrace Hotel",
-   "Esquilino · Termini",
-   3,
-   8.0,
-   2449,
-   0
-  ],
-  [
    "369950",
    "Hotel City Palazzo Dei Cardinali",
    "Centro storico",
    3,
    8.0,
    1724,
-   0
-  ],
-  [
-   "369900",
-   "Hotel Gea Di Vulcano",
-   "Esquilino · Termini",
-   3,
-   8.0,
-   1575,
    0
   ],
   [
@@ -1001,21 +929,21 @@
    0
   ],
   [
-   "369711",
-   "CC Palace Hotel",
+   "370006",
+   "Hotel Sol Levante",
    "Esquilino · Termini",
-   4,
+   1,
    8.0,
-   1120,
+   1200,
    0
   ],
   [
-   "369929",
-   "Hotel Suite Caesar",
+   "369947",
+   "Hotel Ascot",
    "Esquilino · Termini",
    2,
    8.0,
-   949,
+   1153,
    0
   ],
   [
@@ -1028,30 +956,12 @@
    0
   ],
   [
-   "369930",
-   "Hotel Principe Eugenio",
-   "Esquilino · Termini",
-   3,
-   8.0,
-   664,
-   0
-  ],
-  [
    "369464",
    "Hotel L'Orologio Roma - WTB Hotels",
    "Centro storico",
    4,
    8.0,
    614,
-   0
-  ],
-  [
-   "370037",
-   "Hotel Cellini",
-   "Esquilino · Termini",
-   3,
-   8.0,
-   490,
    0
   ],
   [
@@ -1064,57 +974,12 @@
    0
   ],
   [
-   "369645",
-   "Al Viminale Hill Inn & Hotel",
-   "Esquilino · Termini",
-   2,
-   8.0,
-   429,
-   0
-  ],
-  [
-   "369449",
-   "Hotel Orlanda",
-   "Esquilino · Termini",
-   2,
-   8.0,
-   379,
-   0
-  ],
-  [
-   "369410",
-   "The Hive Hotel",
-   "Esquilino · Termini",
-   4,
-   7.8,
-   5873,
-   0
-  ],
-  [
-   "369349",
-   "Hotel Serena srl",
+   "369608",
+   "Hotel Maximus",
    "Esquilino · Termini",
    3,
    7.8,
-   4741,
-   0
-  ],
-  [
-   "369747",
-   "Hotel Le Petit",
-   "Esquilino · Termini",
-   3,
-   7.8,
-   3639,
-   0
-  ],
-  [
-   "369219",
-   "Hotel Ciao",
-   "Esquilino · Termini",
-   1,
-   7.8,
-   2539,
+   6066,
    0
   ],
   [
@@ -1133,6 +998,15 @@
    3,
    7.8,
    1169,
+   0
+  ],
+  [
+   "369214",
+   "Hotel Camelia",
+   "Esquilino · Termini",
+   3,
+   7.8,
+   1075,
    0
   ],
   [
@@ -1163,6 +1037,24 @@
    0
   ],
   [
+   "369433",
+   "Yes Hotel Boutique Rome",
+   "Esquilino · Termini",
+   3,
+   7.8,
+   886,
+   0
+  ],
+  [
+   "369419",
+   "The Liberty Boutique Hotel",
+   "Esquilino · Termini",
+   4,
+   7.8,
+   871,
+   0
+  ],
+  [
    "369543",
    "Triviho Hotel",
    "Centro storico",
@@ -1181,21 +1073,21 @@
    0
   ],
   [
+   "369891",
+   "Doria Palace Boutique Hotel",
+   "Esquilino · Termini",
+   4,
+   7.8,
+   610,
+   0
+  ],
+  [
    "369841",
    "Palazzo Venere",
    "Centro storico",
    4,
    7.8,
    552,
-   0
-  ],
-  [
-   "369856",
-   "Hotel Oceania",
-   "Esquilino · Termini",
-   2,
-   7.8,
-   474,
    0
   ],
   [
@@ -1208,102 +1100,12 @@
    0
   ],
   [
-   "369958",
-   "Hotel Nord Nuova Roma",
-   "Esquilino · Termini",
-   3,
-   7.7,
-   2464,
-   0
-  ],
-  [
-   "369252",
-   "Hotel Lirico",
-   "Esquilino · Termini",
-   3,
-   7.7,
-   1857,
-   0
-  ],
-  [
-   "369432",
-   "Hotel Artemide",
-   "Esquilino · Termini",
-   4,
-   7.7,
-   1664,
-   0
-  ],
-  [
-   "369237",
-   "iQ Hotel Roma",
-   "Esquilino · Termini",
-   4,
-   7.7,
-   1615,
-   0
-  ],
-  [
-   "369477",
-   "Hotel Marcantonio",
-   "Esquilino · Termini",
-   2,
-   7.7,
-   1052,
-   0
-  ],
-  [
-   "369733",
-   "Crosti Hotel",
-   "Esquilino · Termini",
-   3,
-   7.6,
-   3168,
-   0
-  ],
-  [
-   "369516",
-   "Hotel Aberdeen",
-   "Esquilino · Termini",
-   3,
-   7.6,
-   2040,
-   0
-  ],
-  [
-   "369522",
-   "Hotel Mariano",
-   "Esquilino · Termini",
-   3,
-   7.6,
-   614,
-   0
-  ],
-  [
-   "369317",
-   "Hotel Ferrarese",
-   "Esquilino · Termini",
-   2,
-   7.5,
-   3703,
-   0
-  ],
-  [
-   "370030",
-   "Hotel San Remo",
+   "369541",
+   "Sophie Terrace Hotel",
    "Esquilino · Termini",
    3,
    7.5,
-   3417,
-   0
-  ],
-  [
-   "369535",
-   "The Cross Hotel",
-   "Esquilino · Termini",
-   3,
-   7.5,
-   2385,
+   2449,
    0
   ],
   [
@@ -1325,21 +1127,48 @@
    0
   ],
   [
-   "369126",
-   "Flower Garden Hotel",
+   "369900",
+   "Hotel Gea Di Vulcano",
    "Esquilino · Termini",
    3,
    7.5,
-   1947,
+   1575,
    0
   ],
   [
-   "369862",
-   "Hotel Magic",
+   "369386",
+   "Room Mate Collection Filippo, Rome-Fontana di Trevi",
+   "Centro storico",
+   4,
+   7.5,
+   1270,
+   0
+  ],
+  [
+   "369480",
+   "Hotel domus termini",
    "Esquilino · Termini",
-   2,
+   1,
    7.5,
    1249,
+   0
+  ],
+  [
+   "369546",
+   "Camplus Hotel Roma Centro",
+   "Esquilino · Termini",
+   3,
+   7.5,
+   1158,
+   0
+  ],
+  [
+   "369711",
+   "CC Palace Hotel",
+   "Esquilino · Termini",
+   4,
+   7.5,
+   1120,
    0
   ],
   [
@@ -1349,15 +1178,6 @@
    2,
    7.5,
    1047,
-   0
-  ],
-  [
-   "369714",
-   "Hotel Il Papavero",
-   "Esquilino · Termini",
-   1,
-   7.5,
-   894,
    0
   ],
   [
@@ -1379,15 +1199,6 @@
    0
   ],
   [
-   "369712",
-   "Hotel Windrose",
-   "Esquilino · Termini",
-   3,
-   7.5,
-   634,
-   0
-  ],
-  [
    "369660",
    "Trevi Palace Hotel",
    "Monti",
@@ -1397,57 +1208,48 @@
    0
   ],
   [
-   "369666",
-   "Hotel RomAntica",
+   "370037",
+   "Hotel Cellini",
+   "Esquilino · Termini",
+   3,
+   7.5,
+   490,
+   0
+  ],
+  [
+   "369449",
+   "Hotel Orlanda",
    "Esquilino · Termini",
    2,
-   7.4,
-   2217,
+   7.5,
+   379,
    0
   ],
   [
-   "369260",
-   "Bettoja Hotel Mediterraneo",
-   "Esquilino · Termini",
-   4,
-   7.3,
-   1485,
-   0
-  ],
-  [
-   "369790",
-   "Hotel Cathrine",
-   "Esquilino · Termini",
-   2,
-   7.3,
-   631,
-   0
-  ],
-  [
-   "369264",
-   "Hotel Latinum",
-   "Esquilino · Termini",
-   4,
-   7.3,
-   448,
-   0
-  ],
-  [
-   "369598",
-   "Hotel Milton Roma",
+   "369410",
+   "The Hive Hotel",
    "Esquilino · Termini",
    4,
    7.2,
-   8125,
+   5873,
    0
   ],
   [
-   "369492",
-   "Augusta Lucilla Palace",
+   "369349",
+   "Hotel Serena srl",
    "Esquilino · Termini",
-   4,
+   3,
    7.2,
-   4102,
+   4741,
+   0
+  ],
+  [
+   "369747",
+   "Hotel Le Petit",
+   "Esquilino · Termini",
+   3,
+   7.2,
+   3639,
    0
   ],
   [
@@ -1469,12 +1271,12 @@
    0
   ],
   [
-   "369887",
-   "Hotel Sonya",
+   "369219",
+   "Hotel Ciao",
    "Esquilino · Termini",
-   3,
+   1,
    7.2,
-   2838,
+   2539,
    0
   ],
   [
@@ -1487,12 +1289,12 @@
    0
   ],
   [
-   "369773",
-   "Hotel Piemonte",
-   "Esquilino · Termini",
-   3,
+   "369242",
+   "Hotel Delle Nazioni",
+   "Centro storico",
+   4,
    7.2,
-   1551,
+   1851,
    0
   ],
   [
@@ -1505,21 +1307,12 @@
    0
   ],
   [
-   "369139",
-   "Raeli Hotel Luce",
+   "369588",
+   "Central Lodge Hotel",
    "Esquilino · Termini",
-   4,
+   3,
    7.2,
-   1269,
-   0
-  ],
-  [
-   "369147",
-   "Hotel Orbis",
-   "Esquilino · Termini",
-   2,
-   7.2,
-   1064,
+   1222,
    0
   ],
   [
@@ -1541,48 +1334,12 @@
    0
   ],
   [
-   "369222",
-   "Hotel Eurorooms",
-   "Esquilino · Termini",
-   1,
-   7.2,
-   801,
-   0
-  ],
-  [
-   "369617",
-   "Hotel Katty",
-   "Esquilino · Termini",
-   1,
-   7.2,
-   747,
-   0
-  ],
-  [
    "370013",
    "Hotel La Ville Rome",
    null,
    4,
    7.2,
    741,
-   0
-  ],
-  [
-   "369580",
-   "Hotel Balilla",
-   "Esquilino · Termini",
-   3,
-   7.2,
-   734,
-   0
-  ],
-  [
-   "369898",
-   "Raeli Hotel Archimede",
-   "Esquilino · Termini",
-   4,
-   7.2,
-   710,
    0
   ],
   [
@@ -1595,30 +1352,30 @@
    0
   ],
   [
-   "370062",
-   "Madison Hotel",
+   "369856",
+   "Hotel Oceania",
+   "Esquilino · Termini",
+   2,
+   7.2,
+   474,
+   0
+  ],
+  [
+   "369944",
+   "LH Hotel Andreotti",
    "Esquilino · Termini",
    3,
    7.0,
-   4457,
+   3987,
    0
   ],
   [
-   "369628",
-   "Hotel Leone",
+   "369958",
+   "Hotel Nord Nuova Roma",
    "Esquilino · Termini",
-   1,
+   3,
    7.0,
-   2339,
-   0
-  ],
-  [
-   "369310",
-   "Hotel Diocleziano",
-   "Esquilino · Termini",
-   4,
-   7.0,
-   2195,
+   2464,
    0
   ],
   [
@@ -1640,21 +1397,30 @@
    0
   ],
   [
-   "369203",
-   "Hotel Villafranca",
-   "Esquilino · Termini",
-   4,
-   7.0,
-   1390,
-   0
-  ],
-  [
-   "369825",
-   "Floris Hotel",
+   "369252",
+   "Hotel Lirico",
    "Esquilino · Termini",
    3,
    7.0,
-   1379,
+   1857,
+   0
+  ],
+  [
+   "369432",
+   "Hotel Artemide",
+   "Esquilino · Termini",
+   4,
+   7.0,
+   1664,
+   0
+  ],
+  [
+   "369237",
+   "iQ Hotel Roma",
+   "Esquilino · Termini",
+   4,
+   7.0,
+   1615,
    0
   ],
   [
@@ -1664,15 +1430,6 @@
    3,
    7.0,
    1325,
-   0
-  ],
-  [
-   "369532",
-   "Hotel Varese",
-   "Esquilino · Termini",
-   3,
-   7.0,
-   1258,
    0
   ],
   [
@@ -1694,33 +1451,6 @@
    0
   ],
   [
-   "370002",
-   "Hotel Nardizzi Americana",
-   "Esquilino · Termini",
-   2,
-   7.0,
-   1149,
-   0
-  ],
-  [
-   "369896",
-   "Hotel Morgana",
-   "Esquilino · Termini",
-   4,
-   7.0,
-   1123,
-   0
-  ],
-  [
-   "369557",
-   "Hotel Valentino Palace",
-   "Esquilino · Termini",
-   3,
-   7.0,
-   1099,
-   0
-  ],
-  [
    "369683",
    "Palazzo Navona Hotel",
    "Centro storico",
@@ -1739,12 +1469,21 @@
    0
   ],
   [
-   "369596",
-   "Hotel Villa Delle Rose",
+   "369477",
+   "Hotel Marcantonio",
    "Esquilino · Termini",
-   3,
+   2,
    7.0,
-   1064,
+   1052,
+   0
+  ],
+  [
+   "369929",
+   "Hotel Suite Caesar",
+   "Esquilino · Termini",
+   2,
+   7.0,
+   949,
    0
   ],
   [
@@ -1784,15 +1523,6 @@
    0
   ],
   [
-   "398767",
-   "Hotel Genova",
-   "Esquilino · Termini",
-   4,
-   7.0,
-   845,
-   0
-  ],
-  [
    "369356",
    "Esposizione Boutique",
    "Monti",
@@ -1820,6 +1550,15 @@
    0
   ],
   [
+   "369522",
+   "Hotel Mariano",
+   "Esquilino · Termini",
+   3,
+   7.0,
+   614,
+   0
+  ],
+  [
    "369657",
    "Argentina Residenza Style Hotel",
    "Centro storico",
@@ -1838,21 +1577,21 @@
    0
   ],
   [
-   "369972",
-   "Hotel San Marco",
-   "Esquilino · Termini",
-   3,
-   7.0,
-   465,
-   0
-  ],
-  [
    "369364",
    "Hotel Scenario",
    "Centro storico",
    3,
    7.0,
    441,
+   0
+  ],
+  [
+   "369645",
+   "Al Viminale Hill Inn & Hotel",
+   "Esquilino · Termini",
+   2,
+   7.0,
+   429,
    0
   ],
   [
@@ -1892,21 +1631,12 @@
    0
   ],
   [
-   "369893",
-   "Hotel Columbia",
+   "369317",
+   "Hotel Ferrarese",
    "Esquilino · Termini",
-   3,
-   7.0,
-   169,
-   0
-  ],
-  [
-   "369826",
-   "Hotel d'Este",
-   "Esquilino · Termini",
-   3,
+   2,
    6.8,
-   3560,
+   3703,
    0
   ],
   [
@@ -1928,12 +1658,21 @@
    0
   ],
   [
-   "369206",
-   "Hotel Miami",
+   "370030",
+   "Hotel San Remo",
    "Esquilino · Termini",
    3,
    6.8,
-   2801,
+   3417,
+   0
+  ],
+  [
+   "369754",
+   "Hotel Fenicia",
+   "Esquilino · Termini",
+   2,
+   6.8,
+   2870,
    0
   ],
   [
@@ -1946,12 +1685,12 @@
    0
   ],
   [
-   "369443",
-   "Hotel Igea",
+   "369535",
+   "The Cross Hotel",
    "Esquilino · Termini",
    3,
    6.8,
-   2574,
+   2385,
    0
   ],
   [
@@ -1961,15 +1700,6 @@
    4,
    6.8,
    2297,
-   0
-  ],
-  [
-   "369609",
-   "Hotel Patria",
-   "Esquilino · Termini",
-   3,
-   6.8,
-   2018,
    0
   ],
   [
@@ -1988,6 +1718,15 @@
    3,
    6.8,
    1987,
+   0
+  ],
+  [
+   "369126",
+   "Flower Garden Hotel",
+   "Esquilino · Termini",
+   3,
+   6.8,
+   1947,
    0
   ],
   [
@@ -2027,6 +1766,15 @@
    0
   ],
   [
+   "369862",
+   "Hotel Magic",
+   "Esquilino · Termini",
+   2,
+   6.8,
+   1249,
+   0
+  ],
+  [
    "369780",
    "Hotel Raganelli",
    null,
@@ -2042,24 +1790,6 @@
    3,
    6.8,
    1118,
-   0
-  ],
-  [
-   "369471",
-   "Hotel Aristotele",
-   "Esquilino · Termini",
-   2,
-   6.8,
-   1090,
-   0
-  ],
-  [
-   "369781",
-   "Hotel Rimini",
-   "Esquilino · Termini",
-   3,
-   6.8,
-   1064,
    0
   ],
   [
@@ -2081,12 +1811,12 @@
    0
   ],
   [
-   "369229",
-   "Leon's Place Hotel In Rome",
+   "369763",
+   "Hotel Milo",
    "Esquilino · Termini",
-   4,
+   3,
    6.8,
-   1003,
+   994,
    0
   ],
   [
@@ -2117,6 +1847,24 @@
    0
   ],
   [
+   "369714",
+   "Hotel Il Papavero",
+   "Esquilino · Termini",
+   1,
+   6.8,
+   894,
+   0
+  ],
+  [
+   "369170",
+   "Hotel Dell'Urbe",
+   "Esquilino · Termini",
+   2,
+   6.8,
+   842,
+   0
+  ],
+  [
    "369280",
    "Glam Luxury Rome",
    "Monti",
@@ -2126,39 +1874,12 @@
    0
   ],
   [
-   "369952",
-   "Lumi Hotel",
-   "Esquilino · Termini",
-   1,
-   6.8,
-   742,
-   0
-  ],
-  [
-   "369760",
-   "Hotel Martini",
+   "369712",
+   "Hotel Windrose",
    "Esquilino · Termini",
    3,
    6.8,
-   513,
-   0
-  ],
-  [
-   "369420",
-   "La Reggia dei Principi",
-   "Esquilino · Termini",
-   2,
-   6.8,
-   426,
-   0
-  ],
-  [
-   "369469",
-   "Hotel Ariston",
-   "Esquilino · Termini",
-   4,
-   6.8,
-   402,
+   634,
    0
   ],
   [
@@ -2189,120 +1910,21 @@
    0
   ],
   [
-   "369583",
-   "Raeli Hotel Lazio",
+   "369445",
+   "The St. Regis Rome",
    "Esquilino · Termini",
-   3,
-   6.7,
-   1756,
+   5,
+   6.8,
+   200,
    0
   ],
   [
-   "369425",
-   "Hotel Domus Mea",
-   "Esquilino · Termini",
-   3,
-   6.7,
-   1659,
-   0
-  ],
-  [
-   "369805",
-   "Hotel Elide",
-   "Esquilino · Termini",
-   3,
-   6.7,
-   1418,
-   0
-  ],
-  [
-   "370000",
-   "The Britannia Hotel",
-   "Esquilino · Termini",
-   4,
-   6.7,
-   1286,
-   0
-  ],
-  [
-   "370006",
-   "Hotel Sol Levante",
-   "Esquilino · Termini",
-   1,
-   6.7,
-   1200,
-   0
-  ],
-  [
-   "369644",
-   "Hotel Everest Inn Rome",
-   "Esquilino · Termini",
-   2,
-   6.7,
-   922,
-   0
-  ],
-  [
-   "369925",
-   "Hotel Gioberti",
-   "Esquilino · Termini",
-   4,
-   6.7,
-   768,
-   0
-  ],
-  [
-   "369993",
-   "Viminale View Hotel",
-   "Esquilino · Termini",
-   3,
-   6.7,
-   633,
-   0
-  ],
-  [
-   "369851",
-   "Bettoja Hotel Atlantico",
-   "Esquilino · Termini",
-   4,
-   6.7,
-   609,
-   0
-  ],
-  [
-   "369584",
-   "Hotel Moscatello",
-   "Esquilino · Termini",
-   1,
-   6.7,
-   363,
-   0
-  ],
-  [
-   "369774",
-   "Hotel Planet",
-   "Esquilino · Termini",
-   2,
-   6.6,
-   1965,
-   0
-  ],
-  [
-   "369999",
-   "Hotel Argentina",
-   "Esquilino · Termini",
-   3,
-   6.6,
-   1812,
-   0
-  ],
-  [
-   "369525",
-   "Hotel Impero",
-   "Esquilino · Termini",
+   "369205",
+   "Hotel Villa San Pio",
+   null,
    3,
    6.5,
-   4997,
+   3208,
    0
   ],
   [
@@ -2324,12 +1946,30 @@
    0
   ],
   [
+   "369998",
+   "Alpi Hotel",
+   "Esquilino · Termini",
+   4,
+   6.5,
+   1643,
+   0
+  ],
+  [
    "369495",
    "Hotel Diplomatic",
    "Prati · Vaticano",
    3,
    6.5,
    1539,
+   0
+  ],
+  [
+   "369260",
+   "Bettoja Hotel Mediterraneo",
+   "Esquilino · Termini",
+   4,
+   6.5,
+   1485,
    0
   ],
   [
@@ -2360,21 +2000,21 @@
    0
   ],
   [
+   "369247",
+   "Hotel Palladium Palace",
+   "Esquilino · Termini",
+   4,
+   6.5,
+   1166,
+   0
+  ],
+  [
    "369453",
    "Hotel Barocco",
    "Centro storico",
    4,
    6.5,
    1094,
-   0
-  ],
-  [
-   "369214",
-   "Hotel Camelia",
-   "Esquilino · Termini",
-   3,
-   6.5,
-   1075,
    0
   ],
   [
@@ -2387,30 +2027,21 @@
    0
   ],
   [
-   "369789",
-   "Hotel Castelfidardo",
-   "Esquilino · Termini",
-   1,
-   6.5,
-   808,
-   0
-  ],
-  [
-   "369328",
-   "La Griffe Hotel Roma",
-   "Esquilino · Termini",
-   5,
-   6.5,
-   805,
-   0
-  ],
-  [
    "369852",
    "Hotel Degli Aranci",
    "Flaminio · Parioli",
    4,
    6.5,
    713,
+   0
+  ],
+  [
+   "369790",
+   "Hotel Cathrine",
+   "Esquilino · Termini",
+   2,
+   6.5,
+   631,
    0
   ],
   [
@@ -2423,12 +2054,12 @@
    0
   ],
   [
-   "369750",
-   "Raeli Hotel Lux",
+   "369289",
+   "Hotel Robinson",
    "Esquilino · Termini",
-   4,
+   2,
    6.5,
-   568,
+   563,
    0
   ],
   [
@@ -2450,6 +2081,15 @@
    0
   ],
   [
+   "369264",
+   "Hotel Latinum",
+   "Esquilino · Termini",
+   4,
+   6.5,
+   448,
+   0
+  ],
+  [
    "370053",
    "Palazzo Ripetta",
    "Centro storico",
@@ -2465,15 +2105,6 @@
    4,
    6.5,
    341,
-   0
-  ],
-  [
-   "369637",
-   "Hotel Assisi",
-   "Esquilino · Termini",
-   3,
-   6.5,
-   335,
    0
   ],
   [
@@ -2504,111 +2135,30 @@
    0
   ],
   [
-   "370032",
-   "Hotel Alex Square",
-   "Esquilino · Termini",
-   3,
-   6.4,
-   983,
-   0
-  ],
-  [
-   "369779",
-   "Hotel Quirinale",
+   "369598",
+   "Hotel Milton Roma",
    "Esquilino · Termini",
    4,
-   6.3,
-   5013,
+   6.2,
+   8125,
    0
   ],
   [
-   "369759",
-   "Hotel Marisa",
-   "Esquilino · Termini",
-   3,
-   6.3,
-   3822,
-   0
-  ],
-  [
-   "369160",
-   "Hotel California",
-   "Esquilino · Termini",
-   3,
-   6.3,
-   3336,
-   0
-  ],
-  [
-   "369710",
-   "Hotel Virginia",
-   "Esquilino · Termini",
-   2,
-   6.3,
-   2580,
-   0
-  ],
-  [
-   "369480",
-   "Hotel domus termini",
-   "Esquilino · Termini",
-   1,
-   6.3,
-   1249,
-   0
-  ],
-  [
-   "369546",
-   "Camplus Hotel Roma Centro",
-   "Esquilino · Termini",
-   3,
-   6.3,
-   1158,
-   0
-  ],
-  [
-   "369254",
-   "Hotel Giolitti",
-   "Esquilino · Termini",
-   3,
-   6.3,
-   643,
-   0
-  ],
-  [
-   "407797",
-   "Hotel XX Settembre",
-   "Esquilino · Termini",
-   3,
-   6.3,
-   479,
-   0
-  ],
-  [
-   "369123",
-   "Hotel Corot",
-   "Esquilino · Termini",
-   3,
-   6.3,
-   331,
-   0
-  ],
-  [
-   "369766",
-   "Hotel Napoleon",
+   "369492",
+   "Augusta Lucilla Palace",
    "Esquilino · Termini",
    4,
-   6.3,
-   306,
+   6.2,
+   4102,
    0
   ],
   [
-   "369560",
-   "Hotel Milani",
+   "369350",
+   "Raeli Hotel Siracusa",
    "Esquilino · Termini",
    3,
    6.2,
-   3175,
+   3107,
    0
   ],
   [
@@ -2621,21 +2171,30 @@
    0
   ],
   [
-   "370007",
-   "Gioberti Art Hotel",
+   "369887",
+   "Hotel Sonya",
    "Esquilino · Termini",
-   4,
+   3,
    6.2,
-   2160,
+   2838,
    0
   ],
   [
-   "369141",
-   "Hotel Mascagni",
+   "369613",
+   "Hotel Agorà",
    "Esquilino · Termini",
+   3,
+   6.2,
+   2777,
+   0
+  ],
+  [
+   "369497",
+   "Atlante Star Hotel",
+   "Prati · Vaticano",
    4,
    6.2,
-   1932,
+   2368,
    0
   ],
   [
@@ -2648,12 +2207,30 @@
    0
   ],
   [
-   "369677",
-   "Hotel Terminal",
+   "369597",
+   "Hotel Novecento",
    "Esquilino · Termini",
    3,
    6.2,
-   1385,
+   1625,
+   0
+  ],
+  [
+   "369773",
+   "Hotel Piemonte",
+   "Esquilino · Termini",
+   3,
+   6.2,
+   1551,
+   0
+  ],
+  [
+   "369548",
+   "DEM Hotel",
+   "Monti",
+   2,
+   6.2,
+   1379,
    0
   ],
   [
@@ -2663,6 +2240,15 @@
    4,
    6.2,
    1272,
+   0
+  ],
+  [
+   "369139",
+   "Raeli Hotel Luce",
+   "Esquilino · Termini",
+   4,
+   6.2,
+   1269,
    0
   ],
   [
@@ -2684,30 +2270,21 @@
    0
   ],
   [
-   "369588",
-   "Central Lodge Hotel",
-   "Esquilino · Termini",
-   3,
-   6.2,
-   1222,
-   0
-  ],
-  [
-   "369591",
-   "Demetra Hotel",
-   "Esquilino · Termini",
-   4,
-   6.2,
-   1113,
-   0
-  ],
-  [
    "369536",
    "Orazio Palace Hotel",
    "Prati · Vaticano",
    4,
    6.2,
    1067,
+   0
+  ],
+  [
+   "369147",
+   "Hotel Orbis",
+   "Esquilino · Termini",
+   2,
+   6.2,
+   1064,
    0
   ],
   [
@@ -2738,15 +2315,6 @@
    0
   ],
   [
-   "369170",
-   "Hotel Dell'Urbe",
-   "Esquilino · Termini",
-   2,
-   6.2,
-   842,
-   0
-  ],
-  [
    "369118",
    "Monti 66 Hotel",
    "Monti",
@@ -2756,12 +2324,48 @@
    0
   ],
   [
+   "369222",
+   "Hotel Eurorooms",
+   "Esquilino · Termini",
+   1,
+   6.2,
+   801,
+   0
+  ],
+  [
+   "369617",
+   "Hotel Katty",
+   "Esquilino · Termini",
+   1,
+   6.2,
+   747,
+   0
+  ],
+  [
+   "369580",
+   "Hotel Balilla",
+   "Esquilino · Termini",
+   3,
+   6.2,
+   734,
+   0
+  ],
+  [
    "398383",
    "Hotel Marco Polo Rome",
    "Esquilino · Termini",
    3,
    6.2,
    713,
+   0
+  ],
+  [
+   "369898",
+   "Raeli Hotel Archimede",
+   "Esquilino · Termini",
+   4,
+   6.2,
+   710,
    0
   ],
   [
@@ -2780,24 +2384,6 @@
    3,
    6.2,
    690,
-   0
-  ],
-  [
-   "402115",
-   "Hotel principe",
-   "Esquilino · Termini",
-   2,
-   6.2,
-   683,
-   0
-  ],
-  [
-   "369513",
-   "Hotel Altavilla 9",
-   "Esquilino · Termini",
-   1,
-   6.2,
-   678,
    0
   ],
   [
@@ -2828,12 +2414,12 @@
    0
   ],
   [
-   "369663",
-   "Hotel Giugiù",
+   "369941",
+   "Hotel Royal Court",
    "Esquilino · Termini",
-   1,
+   4,
    6.2,
-   506,
+   460,
    0
   ],
   [
@@ -2843,6 +2429,15 @@
    3,
    6.2,
    209,
+   0
+  ],
+  [
+   "370062",
+   "Madison Hotel",
+   "Esquilino · Termini",
+   3,
+   6.0,
+   4457,
    0
   ],
   [
@@ -2864,12 +2459,30 @@
    0
   ],
   [
+   "369793",
+   "Hotel Cherubini",
+   "Esquilino · Termini",
+   1,
+   6.0,
+   3177,
+   0
+  ],
+  [
    "369905",
    "Hotel Smeraldo",
    "Centro storico",
    3,
    6.0,
    2615,
+   0
+  ],
+  [
+   "369628",
+   "Hotel Leone",
+   "Esquilino · Termini",
+   1,
+   6.0,
+   2339,
    0
   ],
   [
@@ -2891,6 +2504,15 @@
    0
   ],
   [
+   "369310",
+   "Hotel Diocleziano",
+   "Esquilino · Termini",
+   4,
+   6.0,
+   2195,
+   0
+  ],
+  [
    "369705",
    "Hotel Grifo",
    "Monti",
@@ -2900,12 +2522,12 @@
    0
   ],
   [
-   "370027",
-   "Hotel Big Bang",
+   "369284",
+   "Raeli Hotel Floridia",
    "Esquilino · Termini",
-   1,
+   3,
    6.0,
-   1984,
+   1741,
    0
   ],
   [
@@ -2945,15 +2567,6 @@
    0
   ],
   [
-   "369519",
-   "Hotel Ferrari",
-   "Esquilino · Termini",
-   2,
-   6.0,
-   1431,
-   0
-  ],
-  [
    "370048",
    "Albani Hotel Roma",
    null,
@@ -2963,12 +2576,12 @@
    0
   ],
   [
-   "369437",
-   "Hotel Scott House",
+   "369203",
+   "Hotel Villafranca",
    "Esquilino · Termini",
-   3,
+   4,
    6.0,
-   1391,
+   1390,
    0
   ],
   [
@@ -2978,6 +2591,24 @@
    4,
    6.0,
    1389,
+   0
+  ],
+  [
+   "369825",
+   "Floris Hotel",
+   "Esquilino · Termini",
+   3,
+   6.0,
+   1379,
+   0
+  ],
+  [
+   "369532",
+   "Hotel Varese",
+   "Esquilino · Termini",
+   3,
+   6.0,
+   1258,
    0
   ],
   [
@@ -3008,6 +2639,15 @@
    0
   ],
   [
+   "370002",
+   "Hotel Nardizzi Americana",
+   "Esquilino · Termini",
+   2,
+   6.0,
+   1149,
+   0
+  ],
+  [
    "369655",
    "Hotel Anacapri",
    "Esquilino · Termini",
@@ -3017,12 +2657,12 @@
    0
   ],
   [
-   "369182",
-   "Hotel Everest",
+   "369896",
+   "Hotel Morgana",
    "Esquilino · Termini",
-   2,
+   4,
    6.0,
-   1073,
+   1123,
    0
   ],
   [
@@ -3116,12 +2756,39 @@
    0
   ],
   [
+   "398767",
+   "Hotel Genova",
+   "Esquilino · Termini",
+   4,
+   6.0,
+   845,
+   0
+  ],
+  [
    "369194",
    "Fragrance Hotel St. Peter",
    null,
    3,
    6.0,
    770,
+   0
+  ],
+  [
+   "369752",
+   "Hotel Caracciolo",
+   "Esquilino · Termini",
+   3,
+   6.0,
+   720,
+   0
+  ],
+  [
+   "370017",
+   "Hotel donna Francesca",
+   "Esquilino · Termini",
+   1,
+   6.0,
+   626,
    0
   ],
   [
@@ -3134,12 +2801,12 @@
    0
   ],
   [
-   "369152",
-   "Hotel PRINCIPE AMEDEO",
+   "369972",
+   "Hotel San Marco",
    "Esquilino · Termini",
-   2,
+   3,
    6.0,
-   568,
+   465,
    0
   ],
   [
@@ -3161,6 +2828,15 @@
    0
   ],
   [
+   "369603",
+   "Hotel d’Inghilterra Roma – Starhotels Collezione",
+   "Centro storico",
+   5,
+   6.0,
+   358,
+   0
+  ],
+  [
    "369307",
    "Hotel Charter",
    "Esquilino · Termini",
@@ -3179,30 +2855,12 @@
    0
   ],
   [
-   "369924",
-   "Hotel Galileo",
+   "369893",
+   "Hotel Columbia",
    "Esquilino · Termini",
    3,
    6.0,
-   254,
-   0
-  ],
-  [
-   "369595",
-   "Hotel Washington",
-   "Esquilino · Termini",
-   2,
-   6.0,
-   222,
-   0
-  ],
-  [
-   "369907",
-   "Hotel Best Roma",
-   "Esquilino · Termini",
-   4,
-   6.0,
-   143,
+   169,
    0
   ],
   [
@@ -3233,12 +2891,39 @@
    0
   ],
   [
-   "369754",
-   "Hotel Fenicia",
+   "369826",
+   "Hotel d'Este",
    "Esquilino · Termini",
-   2,
+   3,
    5.8,
-   2870,
+   3560,
+   0
+  ],
+  [
+   "369206",
+   "Hotel Miami",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   2801,
+   0
+  ],
+  [
+   "369443",
+   "Hotel Igea",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   2574,
+   0
+  ],
+  [
+   "369429",
+   "Raeli Hotel Regio",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   2529,
    0
   ],
   [
@@ -3248,6 +2933,15 @@
    2,
    5.8,
    2429,
+   0
+  ],
+  [
+   "369609",
+   "Hotel Patria",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   2018,
    0
   ],
   [
@@ -3323,15 +3017,6 @@
    0
   ],
   [
-   "369989",
-   "Hotel Concorde",
-   "Esquilino · Termini",
-   2,
-   5.8,
-   1225,
-   0
-  ],
-  [
    "369549",
    "The Code Hotel",
    "Centro storico",
@@ -3359,6 +3044,15 @@
    0
   ],
   [
+   "369781",
+   "Hotel Rimini",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   1064,
+   0
+  ],
+  [
    "369505",
    "Hotel Principe Torlonia",
    null,
@@ -3368,21 +3062,30 @@
    0
   ],
   [
-   "369763",
-   "Hotel Milo",
+   "370039",
+   "Relais Manzoni",
    "Esquilino · Termini",
    3,
    5.8,
-   994,
+   1029,
    0
   ],
   [
-   "369997",
-   "Hotel Altavilla Dieci",
+   "369229",
+   "Leon's Place Hotel In Rome",
    "Esquilino · Termini",
-   1,
+   4,
    5.8,
-   860,
+   1003,
+   0
+  ],
+  [
+   "369447",
+   "Bettoja Hotel Massimo d'Azeglio",
+   "Esquilino · Termini",
+   4,
+   5.8,
+   938,
    0
   ],
   [
@@ -3404,21 +3107,30 @@
    0
   ],
   [
+   "369952",
+   "Lumi Hotel",
+   "Esquilino · Termini",
+   1,
+   5.8,
+   742,
+   0
+  ],
+  [
+   "369870",
+   "Hotel Tempio Di Pallade",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   703,
+   0
+  ],
+  [
    "369736",
    "Hotel 4 Coronati",
    null,
    2,
    5.8,
    683,
-   0
-  ],
-  [
-   "370017",
-   "Hotel donna Francesca",
-   "Esquilino · Termini",
-   1,
-   5.8,
-   626,
    0
   ],
   [
@@ -3458,21 +3170,21 @@
    0
   ],
   [
+   "369760",
+   "Hotel Martini",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   513,
+   0
+  ],
+  [
    "409736",
    "Parioli Cube Hotel",
    "Flaminio · Parioli",
    4,
    5.8,
    479,
-   0
-  ],
-  [
-   "369861",
-   "Hotel Champagne Palace",
-   "Esquilino · Termini",
-   4,
-   5.8,
-   438,
    0
   ],
   [
@@ -3485,12 +3197,12 @@
    0
   ],
   [
-   "369635",
-   "Hotel Philia",
+   "369420",
+   "La Reggia dei Principi",
    "Esquilino · Termini",
-   3,
+   2,
    5.8,
-   424,
+   426,
    0
   ],
   [
@@ -3503,21 +3215,21 @@
    0
   ],
   [
+   "369469",
+   "Hotel Ariston",
+   "Esquilino · Termini",
+   4,
+   5.8,
+   402,
+   0
+  ],
+  [
    "369853",
    "Hotel Silva",
    null,
    3,
    5.8,
    361,
-   0
-  ],
-  [
-   "370052",
-   "Hotel Giada Roma",
-   "Esquilino · Termini",
-   1,
-   5.8,
-   354,
    0
   ],
   [
@@ -3539,12 +3251,21 @@
    0
   ],
   [
-   "369445",
-   "The St. Regis Rome",
-   "Esquilino · Termini",
+   "369530",
+   "W Rome",
+   "Via Veneto",
    5,
    5.8,
-   200,
+   288,
+   0
+  ],
+  [
+   "369735",
+   "Hotel Campidoglio",
+   "Esquilino · Termini",
+   3,
+   5.8,
+   220,
    0
   ],
   [
@@ -3575,78 +3296,6 @@
    0
   ],
   [
-   "369998",
-   "Alpi Hotel",
-   "Esquilino · Termini",
-   4,
-   5.7,
-   1643,
-   0
-  ],
-  [
-   "369386",
-   "Room Mate Collection Filippo, Rome-Fontana di Trevi",
-   "Centro storico",
-   4,
-   5.7,
-   1270,
-   0
-  ],
-  [
-   "369247",
-   "Hotel Palladium Palace",
-   "Esquilino · Termini",
-   4,
-   5.7,
-   1166,
-   0
-  ],
-  [
-   "369488",
-   "Hotel Casali",
-   "Esquilino · Termini",
-   2,
-   5.7,
-   878,
-   0
-  ],
-  [
-   "369397",
-   "Hotel Tex",
-   "Esquilino · Termini",
-   3,
-   5.7,
-   694,
-   0
-  ],
-  [
-   "369289",
-   "Hotel Robinson",
-   "Esquilino · Termini",
-   2,
-   5.7,
-   563,
-   0
-  ],
-  [
-   "369350",
-   "Raeli Hotel Siracusa",
-   "Esquilino · Termini",
-   3,
-   5.5,
-   3107,
-   0
-  ],
-  [
-   "369613",
-   "Hotel Agorà",
-   "Esquilino · Termini",
-   3,
-   5.5,
-   2777,
-   0
-  ],
-  [
    "369192",
    "Hotel Mosaic Central Rome",
    "Monti",
@@ -3674,21 +3323,30 @@
    0
   ],
   [
-   "369242",
-   "Hotel Delle Nazioni",
-   "Centro storico",
-   4,
-   5.5,
-   1851,
-   0
-  ],
-  [
-   "369597",
-   "Hotel Novecento",
+   "369583",
+   "Raeli Hotel Lazio",
    "Esquilino · Termini",
    3,
    5.5,
-   1625,
+   1756,
+   0
+  ],
+  [
+   "369425",
+   "Hotel Domus Mea",
+   "Esquilino · Termini",
+   3,
+   5.5,
+   1659,
+   0
+  ],
+  [
+   "369805",
+   "Hotel Elide",
+   "Esquilino · Termini",
+   3,
+   5.5,
+   1418,
    0
   ],
   [
@@ -3701,6 +3359,15 @@
    0
   ],
   [
+   "370000",
+   "The Britannia Hotel",
+   "Esquilino · Termini",
+   4,
+   5.5,
+   1286,
+   0
+  ],
+  [
    "369673",
    "Hotel Sisto V",
    null,
@@ -3710,12 +3377,30 @@
    0
   ],
   [
+   "369157",
+   "Hotel Aventino",
+   null,
+   3,
+   5.5,
+   932,
+   0
+  ],
+  [
    "369335",
    "Hotel Adriatic",
    "Prati · Vaticano",
    2,
    5.5,
    925,
+   0
+  ],
+  [
+   "369644",
+   "Hotel Everest Inn Rome",
+   "Esquilino · Termini",
+   2,
+   5.5,
+   922,
    0
   ],
   [
@@ -3737,12 +3422,30 @@
    0
   ],
   [
+   "369925",
+   "Hotel Gioberti",
+   "Esquilino · Termini",
+   4,
+   5.5,
+   768,
+   0
+  ],
+  [
    "399045",
    "The Glam",
    "Monti",
    4,
    5.5,
    767,
+   0
+  ],
+  [
+   "409729",
+   "Cloud 7 Roma Hotel",
+   "Centro storico",
+   3,
+   5.5,
+   741,
    0
   ],
   [
@@ -3755,12 +3458,30 @@
    0
   ],
   [
+   "369993",
+   "Viminale View Hotel",
+   "Esquilino · Termini",
+   3,
+   5.5,
+   633,
+   0
+  ],
+  [
    "370024",
    "Relais Villa Coppedè",
    null,
    4,
    5.5,
    614,
+   0
+  ],
+  [
+   "369851",
+   "Bettoja Hotel Atlantico",
+   "Esquilino · Termini",
+   4,
+   5.5,
+   609,
    0
   ],
   [
@@ -3773,21 +3494,21 @@
    0
   ],
   [
-   "369941",
-   "Hotel Royal Court",
-   "Esquilino · Termini",
-   4,
-   5.5,
-   460,
-   0
-  ],
-  [
    "369210",
    "Hotel Alessandrino",
    null,
    3,
    5.5,
    410,
+   0
+  ],
+  [
+   "369584",
+   "Hotel Moscatello",
+   "Esquilino · Termini",
+   1,
+   5.5,
+   363,
    0
   ],
   [
@@ -3863,66 +3584,12 @@
    0
   ],
   [
-   "369944",
-   "LH Hotel Andreotti",
+   "369525",
+   "Hotel Impero",
    "Esquilino · Termini",
    3,
-   5.3,
-   3987,
-   0
-  ],
-  [
-   "369793",
-   "Hotel Cherubini",
-   "Esquilino · Termini",
-   1,
-   5.3,
-   3177,
-   0
-  ],
-  [
-   "369284",
-   "Raeli Hotel Floridia",
-   "Esquilino · Termini",
-   3,
-   5.3,
-   1741,
-   0
-  ],
-  [
-   "369137",
-   "Hotel Lella",
-   "Esquilino · Termini",
-   2,
-   5.3,
-   1018,
-   0
-  ],
-  [
-   "369520",
-   "Hotel Tito",
-   "Esquilino · Termini",
-   3,
-   5.3,
-   962,
-   0
-  ],
-  [
-   "369752",
-   "Hotel Caracciolo",
-   "Esquilino · Termini",
-   3,
-   5.3,
-   720,
-   0
-  ],
-  [
-   "369474",
-   "Hotel Farini",
-   "Esquilino · Termini",
-   1,
-   5.3,
-   559,
+   5.2,
+   4997,
    0
   ],
   [
@@ -3932,15 +3599,6 @@
    3,
    5.2,
    2787,
-   0
-  ],
-  [
-   "369429",
-   "Raeli Hotel Regio",
-   "Esquilino · Termini",
-   3,
-   5.2,
-   2529,
    0
   ],
   [
@@ -4016,6 +3674,15 @@
    0
   ],
   [
+   "369238",
+   "Hotel Meridiana",
+   "Esquilino · Termini",
+   2,
+   5.2,
+   1167,
+   0
+  ],
+  [
    "369665",
    "River Palace Hotel",
    "Flaminio · Parioli",
@@ -4034,30 +3701,21 @@
    0
   ],
   [
+   "369471",
+   "Hotel Aristotele",
+   "Esquilino · Termini",
+   2,
+   5.2,
+   1090,
+   0
+  ],
+  [
    "369934",
    "Hotel Anfiteatro Flavio",
    "Monti",
    3,
    5.2,
    1074,
-   0
-  ],
-  [
-   "370039",
-   "Relais Manzoni",
-   "Esquilino · Termini",
-   3,
-   5.2,
-   1029,
-   0
-  ],
-  [
-   "369447",
-   "Bettoja Hotel Massimo d'Azeglio",
-   "Esquilino · Termini",
-   4,
-   5.2,
-   938,
    0
   ],
   [
@@ -4079,6 +3737,24 @@
    0
   ],
   [
+   "369789",
+   "Hotel Castelfidardo",
+   "Esquilino · Termini",
+   1,
+   5.2,
+   808,
+   0
+  ],
+  [
+   "369328",
+   "La Griffe Hotel Roma",
+   "Esquilino · Termini",
+   5,
+   5.2,
+   805,
+   0
+  ],
+  [
    "369912",
    "Cressy",
    "Esquilino · Termini",
@@ -4097,12 +3773,12 @@
    0
   ],
   [
-   "369870",
-   "Hotel Tempio Di Pallade",
+   "402115",
+   "Hotel principe",
    "Esquilino · Termini",
-   3,
+   2,
    5.2,
-   703,
+   683,
    0
   ],
   [
@@ -4112,6 +3788,15 @@
    3,
    5.2,
    675,
+   0
+  ],
+  [
+   "369173",
+   "Hotel Donatello",
+   "Esquilino · Termini",
+   3,
+   5.2,
+   670,
    0
   ],
   [
@@ -4139,6 +3824,24 @@
    3,
    5.2,
    604,
+   0
+  ],
+  [
+   "369750",
+   "Raeli Hotel Lux",
+   "Esquilino · Termini",
+   4,
+   5.2,
+   568,
+   0
+  ],
+  [
+   "369637",
+   "Hotel Assisi",
+   "Esquilino · Termini",
+   3,
+   5.2,
+   335,
    0
   ],
   [
@@ -4178,30 +3881,39 @@
    0
   ],
   [
-   "369735",
-   "Hotel Campidoglio",
+   "369779",
+   "Hotel Quirinale",
    "Esquilino · Termini",
-   3,
-   5.2,
-   220,
+   4,
+   5.0,
+   5013,
    0
   ],
   [
-   "369664",
-   "Hotel Oriente",
+   "369759",
+   "Hotel Marisa",
    "Esquilino · Termini",
-   2,
-   5.2,
-   129,
-   0
-  ],
-  [
-   "369205",
-   "Hotel Villa San Pio",
-   null,
    3,
    5.0,
-   3208,
+   3822,
+   0
+  ],
+  [
+   "369160",
+   "Hotel California",
+   "Esquilino · Termini",
+   3,
+   5.0,
+   3336,
+   0
+  ],
+  [
+   "369710",
+   "Hotel Virginia",
+   "Esquilino · Termini",
+   2,
+   5.0,
+   2580,
    0
   ],
   [
@@ -4277,6 +3989,15 @@
    0
   ],
   [
+   "370001",
+   "The Republic",
+   "Esquilino · Termini",
+   4,
+   5.0,
+   786,
+   0
+  ],
+  [
    "369537",
    "G55 Design Hotel",
    "Centro storico",
@@ -4286,12 +4007,12 @@
    0
   ],
   [
-   "369855",
-   "Hotel Mirage",
+   "369254",
+   "Hotel Giolitti",
    "Esquilino · Termini",
-   2,
+   3,
    5.0,
-   621,
+   643,
    0
   ],
   [
@@ -4322,12 +4043,57 @@
    0
   ],
   [
+   "369230",
+   "Hotel Sweet Home",
+   "Esquilino · Termini",
+   2,
+   5.0,
+   531,
+   0
+  ],
+  [
+   "369686",
+   "Hotel Torino",
+   "Esquilino · Termini",
+   4,
+   5.0,
+   530,
+   0
+  ],
+  [
+   "407797",
+   "Hotel XX Settembre",
+   "Esquilino · Termini",
+   3,
+   5.0,
+   479,
+   0
+  ],
+  [
+   "369632",
+   "The Independent Hotel",
+   "Esquilino · Termini",
+   4,
+   5.0,
+   451,
+   0
+  ],
+  [
    "369507",
    "Hotel Family House",
    "Esquilino · Termini",
    1,
    5.0,
    450,
+   0
+  ],
+  [
+   "369634",
+   "Hotel MontReal",
+   "Esquilino · Termini",
+   3,
+   5.0,
+   361,
    0
   ],
   [
@@ -4349,6 +4115,15 @@
    0
   ],
   [
+   "369123",
+   "Hotel Corot",
+   "Esquilino · Termini",
+   3,
+   5.0,
+   331,
+   0
+  ],
+  [
    "369304",
    "Hotel Rinascimento",
    "Centro storico",
@@ -4367,12 +4142,30 @@
    0
   ],
   [
+   "369766",
+   "Hotel Napoleon",
+   "Esquilino · Termini",
+   4,
+   5.0,
+   306,
+   0
+  ],
+  [
    "369555",
    "Hotel Royal Bissolati",
    "Centro storico",
    4,
    5.0,
    282,
+   0
+  ],
+  [
+   "369792",
+   "Mercure Roma Centro Saint John",
+   "Esquilino · Termini",
+   4,
+   5.0,
+   253,
    0
   ],
   [
@@ -4394,21 +4187,21 @@
    0
   ],
   [
+   "369560",
+   "Hotel Milani",
+   "Esquilino · Termini",
+   3,
+   4.8,
+   3175,
+   0
+  ],
+  [
    "369607",
    "Hotel Barrett",
    "Centro storico",
    3,
    4.8,
    2720,
-   0
-  ],
-  [
-   "369497",
-   "Atlante Star Hotel",
-   "Prati · Vaticano",
-   4,
-   4.8,
-   2368,
    0
   ],
   [
@@ -4421,6 +4214,24 @@
    0
   ],
   [
+   "370007",
+   "Gioberti Art Hotel",
+   "Esquilino · Termini",
+   4,
+   4.8,
+   2160,
+   0
+  ],
+  [
+   "369141",
+   "Hotel Mascagni",
+   "Esquilino · Termini",
+   4,
+   4.8,
+   1932,
+   0
+  ],
+  [
    "369696",
    "Hotel Fiorenza",
    "Esquilino · Termini",
@@ -4430,12 +4241,21 @@
    0
   ],
   [
-   "369724",
-   "Raeli Hotel Noto",
+   "369800",
+   "Hotel Dei Mille",
    "Esquilino · Termini",
    3,
    4.8,
-   1606,
+   1723,
+   0
+  ],
+  [
+   "369937",
+   "Hotel Lazzari",
+   "Esquilino · Termini",
+   1,
+   4.8,
+   1561,
    0
   ],
   [
@@ -4448,21 +4268,30 @@
    0
   ],
   [
-   "369548",
-   "DEM Hotel",
-   "Monti",
-   2,
+   "369677",
+   "Hotel Terminal",
+   "Esquilino · Termini",
+   3,
    4.8,
-   1379,
+   1385,
    0
   ],
   [
-   "369238",
-   "Hotel Meridiana",
+   "369591",
+   "Demetra Hotel",
    "Esquilino · Termini",
-   2,
+   4,
    4.8,
-   1167,
+   1113,
+   0
+  ],
+  [
+   "369590",
+   "Hotel Indipendenza",
+   "Esquilino · Termini",
+   1,
+   4.8,
+   1059,
    0
   ],
   [
@@ -4502,12 +4331,21 @@
    0
   ],
   [
-   "369173",
-   "Hotel Donatello",
+   "369513",
+   "Hotel Altavilla 9",
    "Esquilino · Termini",
-   3,
+   1,
    4.8,
-   670,
+   678,
+   0
+  ],
+  [
+   "369928",
+   "The Guardian",
+   "Esquilino · Termini",
+   4,
+   4.8,
+   650,
    0
   ],
   [
@@ -4526,6 +4364,15 @@
    3,
    4.8,
    517,
+   0
+  ],
+  [
+   "369306",
+   "Cambridge Hotel",
+   "Esquilino · Termini",
+   3,
+   4.8,
+   379,
    0
   ],
   [
@@ -4565,75 +4412,12 @@
    0
   ],
   [
-   "370001",
-   "The Republic",
-   "Esquilino · Termini",
-   4,
-   4.7,
-   786,
-   0
-  ],
-  [
-   "369619",
-   "Hotel Altavilla",
-   "Esquilino · Termini",
-   2,
-   4.7,
-   615,
-   0
-  ],
-  [
-   "369230",
-   "Hotel Sweet Home",
-   "Esquilino · Termini",
-   2,
-   4.7,
-   531,
-   0
-  ],
-  [
-   "369686",
-   "Hotel Torino",
-   "Esquilino · Termini",
-   4,
-   4.7,
-   530,
-   0
-  ],
-  [
-   "369632",
-   "The Independent Hotel",
-   "Esquilino · Termini",
-   4,
-   4.7,
-   451,
-   0
-  ],
-  [
-   "369634",
-   "Hotel MontReal",
+   "369241",
+   "Hotel Center 1",
    "Esquilino · Termini",
    3,
-   4.7,
-   361,
-   0
-  ],
-  [
-   "369603",
-   "Hotel d’Inghilterra Roma – Starhotels Collezione",
-   "Centro storico",
-   5,
-   4.7,
-   358,
-   0
-  ],
-  [
-   "369792",
-   "Mercure Roma Centro Saint John",
-   "Esquilino · Termini",
-   4,
-   4.7,
-   253,
+   4.5,
+   2161,
    0
   ],
   [
@@ -4646,30 +4430,21 @@
    0
   ],
   [
-   "369800",
-   "Hotel Dei Mille",
-   "Esquilino · Termini",
-   3,
-   4.5,
-   1723,
-   0
-  ],
-  [
-   "369937",
-   "Hotel Lazzari",
-   "Esquilino · Termini",
-   1,
-   4.5,
-   1561,
-   0
-  ],
-  [
    "369670",
    "Hotel San Valentino",
    "Prati · Vaticano",
    3,
    4.5,
    1548,
+   0
+  ],
+  [
+   "369519",
+   "Hotel Ferrari",
+   "Esquilino · Termini",
+   2,
+   4.5,
+   1431,
    0
   ],
   [
@@ -4682,12 +4457,30 @@
    0
   ],
   [
+   "369437",
+   "Hotel Scott House",
+   "Esquilino · Termini",
+   3,
+   4.5,
+   1391,
+   0
+  ],
+  [
    "369849",
    "Numa Rome Barberini",
    "Via Veneto",
    3,
    4.5,
    1288,
+   0
+  ],
+  [
+   "369872",
+   "Hotel Aphrodite",
+   "Esquilino · Termini",
+   4,
+   4.5,
+   1284,
    0
   ],
   [
@@ -4709,24 +4502,6 @@
    0
   ],
   [
-   "369231",
-   "H10 Roma Città",
-   null,
-   4,
-   4.5,
-   1060,
-   0
-  ],
-  [
-   "369590",
-   "Hotel Indipendenza",
-   "Esquilino · Termini",
-   1,
-   4.5,
-   1059,
-   0
-  ],
-  [
    "369953",
    "Hotel Laura",
    null,
@@ -4736,12 +4511,12 @@
    0
   ],
   [
-   "369928",
-   "The Guardian",
+   "369678",
+   "Hotel Demetra Capitolina",
    "Esquilino · Termini",
-   4,
+   2,
    4.5,
-   650,
+   934,
    0
   ],
   [
@@ -4754,21 +4529,21 @@
    0
   ],
   [
-   "369306",
-   "Cambridge Hotel",
+   "369924",
+   "Hotel Galileo",
    "Esquilino · Termini",
    3,
    4.5,
-   379,
+   254,
    0
   ],
   [
-   "369530",
-   "W Rome",
-   "Via Veneto",
-   5,
+   "369595",
+   "Hotel Washington",
+   "Esquilino · Termini",
+   2,
    4.5,
-   288,
+   222,
    0
   ],
   [
@@ -4781,48 +4556,21 @@
    0
   ],
   [
-   "369241",
-   "Hotel Center 1",
-   "Esquilino · Termini",
-   3,
-   4.3,
-   2161,
-   0
-  ],
-  [
-   "369872",
-   "Hotel Aphrodite",
+   "369907",
+   "Hotel Best Roma",
    "Esquilino · Termini",
    4,
-   4.3,
-   1284,
+   4.5,
+   143,
    0
   ],
   [
-   "369678",
-   "Hotel Demetra Capitolina",
-   "Esquilino · Termini",
-   2,
-   4.3,
-   934,
-   0
-  ],
-  [
-   "369157",
-   "Hotel Aventino",
-   null,
-   3,
-   4.3,
-   932,
-   0
-  ],
-  [
-   "409729",
-   "Cloud 7 Roma Hotel",
+   "370066",
+   "The Rome EDITION",
    "Centro storico",
-   3,
-   4.3,
-   741,
+   5,
+   4.5,
+   102,
    0
   ],
   [
@@ -4871,6 +4619,15 @@
    0
   ],
   [
+   "369989",
+   "Hotel Concorde",
+   "Esquilino · Termini",
+   2,
+   4.2,
+   1225,
+   0
+  ],
+  [
    "369933",
    "Hotel Max",
    "Esquilino · Termini",
@@ -4886,6 +4643,15 @@
    1,
    4.2,
    1000,
+   0
+  ],
+  [
+   "369997",
+   "Hotel Altavilla Dieci",
+   "Esquilino · Termini",
+   1,
+   4.2,
+   860,
    0
   ],
   [
@@ -4925,12 +4691,21 @@
    0
   ],
   [
-   "369315",
-   "Hotel Euro Quiris",
+   "369635",
+   "Hotel Philia",
+   "Esquilino · Termini",
+   3,
+   4.2,
+   424,
+   0
+  ],
+  [
+   "370052",
+   "Hotel Giada Roma",
    "Esquilino · Termini",
    1,
    4.2,
-   579,
+   354,
    0
   ],
   [
@@ -4958,15 +4733,6 @@
    3,
    4.2,
    138,
-   0
-  ],
-  [
-   "369740",
-   "LH Hotel Excel Roma Montemario",
-   null,
-   4,
-   4.0,
-   4343,
    0
   ],
   [
@@ -5006,6 +4772,24 @@
    0
   ],
   [
+   "369488",
+   "Hotel Casali",
+   "Esquilino · Termini",
+   2,
+   4.0,
+   878,
+   0
+  ],
+  [
+   "369397",
+   "Hotel Tex",
+   "Esquilino · Termini",
+   3,
+   4.0,
+   694,
+   0
+  ],
+  [
    "369388",
    "Venustas Roma Hotel",
    "Prati · Vaticano",
@@ -5033,15 +4817,6 @@
    0
   ],
   [
-   "370057",
-   "The Caesar Roma",
-   null,
-   4,
-   4.0,
-   532,
-   0
-  ],
-  [
    "370068",
    "Hotel Benedetto",
    null,
@@ -5060,12 +4835,12 @@
    0
   ],
   [
-   "370066",
-   "The Rome EDITION",
-   "Centro storico",
-   5,
-   3.7,
-   102,
+   "369861",
+   "Hotel Champagne Palace",
+   "Esquilino · Termini",
+   4,
+   3.8,
+   438,
    0
   ],
   [
@@ -5075,6 +4850,33 @@
    2,
    3.5,
    1912,
+   0
+  ],
+  [
+   "369137",
+   "Hotel Lella",
+   "Esquilino · Termini",
+   2,
+   3.5,
+   1018,
+   0
+  ],
+  [
+   "369520",
+   "Hotel Tito",
+   "Esquilino · Termini",
+   3,
+   3.5,
+   962,
+   0
+  ],
+  [
+   "369474",
+   "Hotel Farini",
+   "Esquilino · Termini",
+   1,
+   3.5,
+   559,
    0
   ],
   [
@@ -5105,12 +4907,21 @@
    0
   ],
   [
-   "369768",
-   "Hotel Nizza",
+   "369664",
+   "Hotel Oriente",
    "Esquilino · Termini",
-   3,
+   2,
+   3.2,
+   129,
+   0
+  ],
+  [
+   "369855",
+   "Hotel Mirage",
+   "Esquilino · Termini",
+   2,
    3.0,
-   1396,
+   621,
    0
   ],
   [
@@ -5123,12 +4934,21 @@
    0
   ],
   [
-   "369942",
-   "Hotel Beauty Palace - Vertex Group",
+   "369768",
+   "Hotel Nizza",
+   "Esquilino · Termini",
+   3,
+   2.5,
+   1396,
+   0
+  ],
+  [
+   "369619",
+   "Hotel Altavilla",
    "Esquilino · Termini",
    2,
-   2.6,
-   1445,
+   2.5,
+   615,
    0
   ]
  ]
