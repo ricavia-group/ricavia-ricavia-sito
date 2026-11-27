@@ -36,4 +36,6 @@
   }
   if(pg.classList.contains('on'))carica();
   pg.addEventListener('pgopen',carica);
+  // sulla pagina pubblicata la classe "on" arriva dopo questo script e senza "pgopen": ricontrollo al caricamento
+  window.addEventListener('load',function(){if(pg.classList.contains('on'))carica()});
 })();
