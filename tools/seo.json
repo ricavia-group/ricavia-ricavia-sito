@@ -65,6 +65,10 @@
     },
     "pg-termini": {
       "description": "Termini di servizio di ricavia.com e degli strumenti di Ricavia Group S.r.l.: uso del sito, proprietà intellettuale, pubblicazione sui social e responsabilità"
+    },
+    "pg-dormire-termini": {
+      "title": "Dove dormire vicino alla stazione Termini a Roma · Ricavia",
+      "description": "Alberghi vicino alla stazione Termini di Roma, dal più vicino al più lontano: stelle, indirizzo e pagina Booking.com degli hotel di Esquilino e Castro Pretorio"
     }
   },
   "archive": {

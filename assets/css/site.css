@@ -6731,3 +6731,23 @@ main.jr-pgm .jr-arp{padding-top:0!important}
 #pg-osservatorio .o2-tipo button{height:36px;padding:0 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:transparent;color:var(--o2t);font:500 14px var(--zf);cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
 #pg-osservatorio .o2-tipo button[aria-pressed="true"]{background:#fff;color:var(--zink);border-color:#fff}
 #pg-osservatorio .o2-tipo button:focus-visible{outline:2px solid #3CCDFA;outline-offset:2px}
+
+/* Dormire vicino a Termini (pagina per i viaggiatori, /dormire-vicino-termini/) */
+#pg-dormire-termini .vt-in p{margin:0;max-width:46em;font-size:17px;line-height:1.65;color:#33364a}
+#pg-dormire-termini .vt-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin:44px 0 0;padding-bottom:18px;border-bottom:1px solid var(--zln)}
+#pg-dormire-termini #vtN{margin:0;font-size:16px;font-weight:600;color:var(--zink)}
+#pg-dormire-termini .vt-f{display:flex;flex-wrap:wrap;gap:8px}
+#pg-dormire-termini .vt-f button{font:500 14px/1 var(--zf);padding:10px 16px;border-radius:99px;border:1px solid var(--zln);background:#fff;color:var(--zink);cursor:pointer;transition:border-color .3s}
+#pg-dormire-termini .vt-f button:hover{border-color:var(--zink)}
+#pg-dormire-termini .vt-f button[aria-pressed=true]{background:var(--zink);border-color:var(--zink);color:#fff}
+#pg-dormire-termini .vt-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
+#pg-dormire-termini .vt-h{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0;padding:22px 0;border-bottom:1px solid var(--zln)}
+#pg-dormire-termini .vt-h::before{content:none}
+#pg-dormire-termini .vt-h h3{margin:0;font-size:19px;font-weight:600;letter-spacing:-.02em;color:var(--zink)}
+#pg-dormire-termini .vt-h p{margin:4px 0 0;font-size:15px;line-height:1.5;color:#33364a}
+#pg-dormire-termini .vt-h p span{color:var(--zmu)}
+#pg-dormire-termini .vt-h .vt-st{margin:2px 0 0;font-size:13px;letter-spacing:.12em;background:var(--zgr);-webkit-background-clip:text;background-clip:text;color:transparent}
+#pg-dormire-termini .vt-h .ap-btn{flex:none;padding:11px 18px!important;font-size:14px!important}
+#pg-dormire-termini .vt-nt{margin:36px 0 0;max-width:52em;font-size:14px;line-height:1.6;color:var(--zmu)}
+@media(max-width:900px){#pg-dormire-termini .vt-l{grid-template-columns:1fr}}
+@media(max-width:560px){#pg-dormire-termini .vt-h{flex-direction:column;align-items:flex-start;gap:14px}}

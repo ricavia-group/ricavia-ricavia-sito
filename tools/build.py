@@ -43,6 +43,8 @@ PAGES = [
     ('pg-privacy', 'privacy', 'Informativa privacy · Ricavia'),
     ('pg-cookie', 'cookie', 'Cookie policy · Ricavia'),
     ('pg-termini', 'termini', 'Termini di servizio · Ricavia'),
+    # per i viaggiatori: alberghi vicino alla stazione con il tasto per Booking.com (fuori dal menu per ora)
+    ('pg-dormire-termini', 'dormire-vicino-termini', 'Dove dormire vicino alla stazione Termini a Roma · Ricavia'),
 ]
 PAGES = [(pid, slug, SEO['pages'].get(pid, {}).get('title', title)) for pid, slug, title in PAGES]
 if set(SEO['pages']) != {pid for pid, _, _ in PAGES}:
