@@ -110,6 +110,7 @@ Su GitHub il workflow `.github/workflows/controlli.yml` (job `controlli`) esegue
 | Guide sul revenue management | `/revenue-management/tariffa-hotel/` · `/revenue-management/revenue-manager-esterno/` |
 | Privacy e cookie | `/privacy/` · `/cookie/` |
 | Termini di servizio | `/termini/` |
+| Dormire vicino a Termini (viaggiatori, fuori dal menu) | `/dormire-vicino-termini/` · elenco in `assets/data/termini-hotel.json`, rigenerato con `python tools/viaggiatori.py` |
 
 Le sei pagine articolo storiche e quelle nuove sono sotto `/journal/`; sitemap e redirect vengono generati dalla build. I vecchi hash della Home sono conservati come collegamenti compatibili.
 
