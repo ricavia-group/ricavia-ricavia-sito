@@ -1,0 +1,215 @@
+{
+  "slug": "affitti-brevi-zona-termini-camere-hotel",
+  "categoria": "zone",
+  "titolo": "Affitti brevi in zona Termini: il tuo hotel compete con un appartamento o con una camera?",
+  "tema": "zona-termini-affitti-brevi-camere-airbnb",
+  "keyword": {
+    "principale": "affitti brevi zona Termini",
+    "secondarie": [
+      "hotel zona Termini",
+      "camere Airbnb Termini",
+      "affitti brevi Esquilino",
+      "hotel Esquilino concorrenza extralberghiero"
+    ]
+  },
+  "tesi": "Nei dati di Inside Airbnb del 17 settembre 2026, letti per zona dall'Osservatorio Ricavia, intorno alla stazione Termini l'affitto breve è fatto in larga parte di camere e non di case intere (camere al 41% all'Esquilino e al 54% a Castro Pretorio, contro circa il 20% di Roma; le due zone raccolgono circa un quinto delle camere su Airbnb della città con meno di un decimo degli annunci, calcolo Ricavia), nella stessa area che su Booking ha più alberghi prenotabili: per l'ospite in transito l'alternativa al tuo hotel è una camera, venduta in parte su un canale dove le camere d'albergo di Roma sono poche (78 annunci attivi); il tuo hotel confronta il prezzo finale delle notti feriali anche con due o tre camere private vicine, decide con i propri dati se un canale in più aggiunge notti vendute o sposta solo prenotazioni dirette pagando commissioni, e rende chiari nell'annuncio i servizi che contano per l'ospite in transito, invece di abbassare le tariffe",
+  "fonti": [
+    {
+      "titolo": "Get the Data · Rome, Lazio, Italy (dati del 17 settembre 2026)",
+      "editore": "Inside Airbnb",
+      "url": "https://insideairbnb.com/get-the-data/",
+      "data": "2026-11-27"
+    },
+    {
+      "titolo": "Osservatorio · case vacanze e affitti brevi per zona, su dati Inside Airbnb",
+      "editore": "Ricavia",
+      "url": "https://ricavia.com/osservatorio/",
+      "data": "2026-11-27"
+    },
+    {
+      "titolo": "Osservatorio · prezzi letti su Booking il 27 novembre 2026, alberghi prenotabili per zona",
+      "editore": "Ricavia",
+      "url": "https://ricavia.com/osservatorio/",
+      "data": "2026-11-27"
+    },
+    {
+      "titolo": "Dove conviene avere una struttura ricettiva a Roma: guida ragionata ai quartieri",
+      "editore": "Ricavia",
+      "url": "https://ricavia.com/journal/conviene-avere-struttura-ricettiva-roma-guida/",
+      "data": "2026-11-27"
+    }
+  ],
+  "verbale": [
+    {
+      "agente": "giornalista",
+      "esito": "CONSEGNATA",
+      "motivo": "Candidato 1 della lista, forza 3, unica bozza della giornata: candidato della settimana sulla zona Termini (nessun articolo su Termini pubblicato dal 23/11, il 26/11 è NO-GO), costruito su un dato strutturale della zona diverso da quello di Roma (quota di camere tra gli annunci Airbnb) e non su mediane di prezzo di una sola lettura",
+      "correzioni": [],
+      "segnalazioni": [
+        "Fonte: Inside Airbnb è un progetto indipendente (livello 3), non una fonte primaria; conta annunci, non prenotazioni. L'ho verificato oggi sul file originale del 17 settembre 2026: con il criterio dell'Osservatorio ottengo 26.202 annunci attivi, come assets/data/airbnb.json. Esquilino e Castro Pretorio vengono invece dall'elaborazione per rione dell'Osservatorio (assets/data/airbnb.json): non ho il GeoJSON dei rioni per rifarla",
+        "Dati di settembre, pubblicati sull'Osservatorio dal 22/11 (sezione voluta da George): non è una notizia delle ultime 72 ore. La propongo come articolo di zona sui dati dell'Osservatorio, ammesso dal manuale quando la settimana non ha una notizia forte su Termini (oggi non l'ho trovata: lavori RFI a Termini già conclusi o minori, nessuna delibera o cantiere nuovo con fonte)",
+        "Lezione del 26/11: il fatto non è un confronto di prezzi tra notti, ma la composizione dell'offerta, e la zona si muove in modo diverso da Roma (camere 41% e 54% contro circa 20%). Il conteggio degli alberghi su Booking del 27/11 serve solo a descrivere la zona, senza mediane",
+        "Blocco del registro: il tema 'osservatorio-zona-termini-esquilino-premio-weekend' è bloccato fino al 10/12 per tema già trattato. Questa bozza ha la stessa keyword principale (hotel zona Termini) ma tema, fatto e azioni diversi (composizione dell'offerta extralberghiera, canale, servizi; nessun premio del weekend, nessuna mediana di prezzo): il SEO director verifichi che non sia un duplicato",
+        "Sovrapposizioni: il 7/11 (Banca d'Italia) indicava già di includere l'extralberghiero nel competitive set e il 23/11 (Thompson) il confronto per tipologia di camera; qui l'azione 1 è un controllo di prezzo finale su due o tre camere private, le azioni 2 (canale e commissioni) e 3 (servizi per l'ospite in transito) sono nuove. Revenue manager e capo redattore valutino se l'azione 1 è troppo vicina",
+        "Camere d'albergo su Airbnb: 78 attive è la categoria 'Hotel room' di Inside Airbnb; alcuni hotel o affittacamere possono pubblicare come 'camera privata', per questo il testo dice 'le camere d'albergo sono poche' e non 'gli hotel sono assenti'",
+        "Nessun numero sulle commissioni di Airbnb per gli hotel: non ho una fonte primaria letta oggi, l'articolo parla solo di 'una commissione in più'",
+        "Calcoli miei (arrotondati, dichiarati 'calcolo Ricavia'): circa 660 e 410 camere, circa un quinto delle camere di Roma (19,9%), meno di uno su dieci degli annunci (9,0%), più di 5.300 camere in appartamento a Roma (5.384)",
+        "Antitrust (9 ter): nessun livello di prezzo, nessun invito agli hotel della zona; le azioni usano i dati del singolo hotel. Nessun giudizio su Airbnb o sugli host (9 ter, punti 5 e 8)",
+        "Mix della giornata: la bozza non guarda avanti (nessun periodo tra 2 settimane e 6 mesi legato al fatto); con una sola bozza il vincolo 'almeno 1 su 2' non si applica, lo segnalo per completezza"
+      ],
+      "ruolo_ricavia": "Ricavia lavora sul mix dei canali e sulla parità tra sito e OTA: davanti a un canale nuovo confronta le notti feriali che l'hotel non vende con la commissione che pagherebbe per venderle"
+    },
+    {
+      "agente": "revenue-manager",
+      "esito": "APPROVED",
+      "motivo": "La tesi regge: intorno a Termini l'offerta extralberghiera su Airbnb è fatta in larga parte di camere, quindi l'ospite in transito confronta camera con camera; i numeri tornano con assets/data/airbnb.json e indicatori.json e le azioni sono per il singolo hotel, senza tagli di prezzo",
+      "correzioni": [
+        "Tesi confermata; corretto solo '(78 attive)' in '(78 annunci attivi)': Inside Airbnb conta annunci, non camere",
+        "Apertura, seconda frase: 'spesso su un canale' diventa 'in parte su un canale'. I dati non dicono quanto spesso il confronto avviene su Airbnb, e il corpo dice già 'in parte'",
+        "Impatto, ADR: la finestra 'notti feriali con molti alberghi prenotabili' diventa 'prossimi mesi, soprattutto le notti in cui il tuo hotel ha più camere libere'. Il confronto tra giorni della settimana non è nel corpo e verrebbe da una sola lettura (lezione del 26/11). 'Camere in appartamento' diventa 'camere private della zona'",
+        "Impatto, mix di canale: 'una parte della domanda di camere passa da un canale' diventa 'una parte dell'offerta di camere è su un canale'. Inside Airbnb conta annunci, non prenotazioni, come dice la sezione 'Cosa dicono e cosa non dicono questi dati'",
+        "Impatto, costi di distribuzione: da '↑ bassa' a '?'. L'effetto nasce da una scelta dell'hotel e non dalla notizia, e l'intensità non ha base: senza una fonte sulla commissione il saldo dipende da dove arrivano le notti (in più, dal sito diretto, da altre OTA). Riscritto il ragionamento",
+        "Cosa fare adesso, azione 1: aggiunta la frase 'Il confronto serve a capire la scelta dell'ospite, non a seguire il prezzo delle camere private'. Senza questa frase l'azione poteva diventare un invito a inseguire i ribassi, l'errore tipico della zona Termini (roma.md)"
+      ],
+      "segnalazioni": [
+        "Numeri verificati: Roma 26.202 annunci attivi, case intere 79,5%; Esquilino 1.613 e 59,0%; Castro Pretorio 756 e 45,9%, la quota più bassa tra le 69 zone con almeno 30 annunci; camere circa 661 e 409, prime due zone per numero di camere (poi Aurelio, circa 330); insieme 19,9% delle camere e 9,0% degli annunci. Booking, lettura del 27/11 alle 04:39: Stazione Termini 243 e Esquilino 118 per martedì 1 dicembre, prime due su 22 zone. Non ho potuto rifare il conteggio delle 78 camere d'albergo e delle 5.384 camere: viene dal file originale di Inside Airbnb letto dal giornalista e non è in airbnb.json",
+        "Il dato '78 contro più di 5.300 camere in appartamento' e 'trova soprattutto camere in appartamento' (sezione 'Una camera contro un'altra camera'): la categoria di Inside Airbnb è 'camera privata' o 'camera condivisa', che include anche camere di B&B e affittacamere. Più preciso 'camere private o condivise' accanto al numero. Il resto del corpo e il box In breve usano 'camera in appartamento' come descrizione del prodotto: è plausibile ma non viene dai dati. Non l'ho cambiato perché è fuori dalle mie sezioni; decide il capo redattore",
+        "Frase citabile (virality director): 'È una camera, venduta su un altro canale' dice più dei dati. Molte camere private della zona possono essere anche su Booking come affittacamere o B&B, e il corpo scrive 'in parte su un canale'. Proposta: 'venduta spesso anche su un altro canale' o una frase senza il canale",
+        "Le azioni utili sono 3. L'azione 1 è vicina al 7/11 (extralberghiero nel competitive set) ma diversa nel merito: qui il confronto è con le camere private e sul prezzo finale, e l'articolo del 7/11 parlava di appartamenti e case vacanza",
+        "Effetto per gli hotel moderato e strutturale, senza una data: è un articolo di zona sui dati, non una notizia. La scelta del pubblico e la freschezza del dato (settembre) le decide il capo redattore",
+        "Il paragrafo Ricavia mescola la seconda persona ('il tuo hotel') e il condizionale riferito all'hotel ('che pagherebbe'): la frase regge, ma il capo redattore controlli la voce quando fonde il paragrafo"
+      ],
+      "ruolo_ricavia": "Prima di aprire un canale nuovo, Ricavia mette a confronto per ogni notte le camere che l'hotel non vende con la commissione che pagherebbe per venderle lì, e decide il mix dei canali guardando quante notti arrivano da ogni canale e a quale costo"
+    },
+    {
+      "agente": "seo-director",
+      "esito": "APPROVED",
+      "motivo": "Non è un duplicato: il tema bloccato fino al 10/12 (premio del weekend su mediane di prezzo di una sola lettura) ha tesi e azioni diverse da questa bozza (composizione dell'offerta extralberghiera su Airbnb, canale e commissioni, servizi per l'ospite in transito); ho spostato la keyword principale su «affitti brevi zona Termini» per distinguere l'intento e il tema dalla bozza del 26/11",
+      "correzioni": [
+        "slug: affitti-brevi-zona-termini-camere-hotel (6 parole, senza date, unico tra journal/, tools/seo.json, registro e scartati) al posto di hotel-zona-termini-affitti-brevi-camere: la keyword principale va in testa e lo slug non riprende l'attacco «hotel-zona-termini» del tema bloccato",
+        "categoria: zone confermata (la causa è la composizione dell'offerta in una zona; dati è l'alternativa, ma qui l'Osservatorio è lo strumento e non il fatto). Nessun articolo pubblicato ha ancora la categoria zone",
+        "title_seo: «Affitti brevi in zona Termini: camere contro hotel · Ricavia» (60 caratteri contati, keyword all'inizio, unico; diverso da «Affitti brevi a Roma: adempimenti da verificare · Ricavia» di tools/seo.json)",
+        "description: 157 caratteri contati, senza punto finale e senza numeri; diversa da ogni altra pagina",
+        "keyword: principale «affitti brevi zona Termini» al posto di «hotel zona Termini». Motivi: «hotel zona Termini» è soprattutto la ricerca del turista che cerca un albergo vicino alla stazione (criterio 2 del manuale), ed è la keyword della bozza del 26/11 bloccata fino al 10/12. «hotel zona Termini» resta tra le secondarie, con «camere Airbnb Termini», «affitti brevi Esquilino», «hotel Esquilino concorrenza extralberghiero»",
+        "related_intro e related: /journal/presenze-hotel-roma-extralberghiero/ (extralberghiero e competitive set, 7/11) e /hotel-score/ (prezzi, canali e reputazione dell'hotel da dati pubblici); nessuno ripete i collegamenti del corpo (/osservatorio/, guida alle zone, /revenue-management/ di chiusura)",
+        "Corpo, prima frase dell'apertura: «Vicino alla stazione Termini l'affitto breve…» diventa «Nella zona della stazione Termini l'affitto breve…» per inserire la keyword (fatti, numeri e fonti invariati)",
+        "Corpo, primo h3: «Esquilino e Castro Pretorio: le camere in affitto breve» diventa «Affitti brevi in zona Termini: le camere di Esquilino e Castro Pretorio» per inserire la keyword (stessi rioni, nessun fatto nuovo). Gli altri h3 non toccati",
+        "Collegamenti interni del corpo controllati: 2 naturali (/osservatorio/, /journal/conviene-avere-struttura-ricettiva-roma-guida/) più la chiusura /revenue-management/; tutti esistono, nessuno verso un articolo della giornata"
+      ],
+      "segnalazioni": [
+        "Confronto con il tema bloccato (osservatorio-zona-termini-esquilino-premio-weekend, NO-GO 26/11 fino al 10/12): là il fatto erano le mediane di prezzo di Booking per tre notti lette lo stesso giorno, la tesi il premio del weekend del singolo hotel e le azioni il profilo per giorno della settimana, il pick-up del sabato contro il martedì e i comparabili ancora prenotabili. Qui il fatto è la composizione degli annunci Airbnb per rione (Inside Airbnb, 17/09), la zona si muove in modo diverso da Roma (camere 41% e 54% contro circa 20%), e le azioni sono il confronto con le camere private sul prezzo finale, il conto di un canale nuovo e i servizi per l'ospite in transito. Nessuna mediana di prezzo, nessun confronto tra notti. Tema diverso, non un duplicato: per questo niente veto",
+        "Ultimi 14 giorni (dal 13/11): nessun articolo pubblicato o proposto su affitti brevi, Airbnb, canali o Termini oltre al 26/11. L'articolo del 7/11 (extralberghiero nel competitive set) è fuori dalla finestra e parlava di appartamenti, non di camere; il 23/11 (Thompson) confronta per tipologia di camera un nuovo hotel, non l'extralberghiero",
+        "Stessa keyword principale del 26/11 se il capo redattore preferisce tenere «hotel zona Termini»: la bozza del 26/11 non è pubblicata, quindi non c'è cannibalizzazione sul sito, ma l'intento resta più turistico; in quel caso l'apertura contiene già «hotel» solo nella seconda frase e servirebbe un'altra correzione",
+        "Fuori dal mio ambito, a sostegno del revenue manager: «camere in appartamento» (corpo e box In breve) non è la categoria di Inside Airbnb, che conta «camere private o condivise», anche di B&B e affittacamere. Il box e la seconda sezione usano l'espressione come descrizione del prodotto",
+        "Freschezza: i dati sono di settembre e la sezione dell'Osservatorio è online dal 22/11. Per la ricerca il contenuto è strutturale e regge nel tempo, ma non è una notizia: decide il capo redattore"
+      ],
+      "ruolo_ricavia": "Dal punto di vista della ricerca, l'albergatore che arriva cercando affitti brevi in zona Termini vuole sapere se aprire un canale nuovo: il passo successivo naturale è la pagina sul revenue management (/revenue-management/), dove Ricavia descrive il lavoro su mix dei canali e parità tra sito e OTA"
+    },
+    {
+      "agente": "virality-director",
+      "esito": "APPROVED",
+      "motivo": "C'è una storia da raccontare: nella zona di Termini l'alternativa extralberghiera al tuo hotel è spesso una camera e non un appartamento, un contrasto concreto che l'albergatore della zona riconosce e ripete; titolo a domanda, tipo non usato negli articoli pubblicati dal 18/11",
+      "correzioni": [
+        "Frase citabile: «Vicino alla stazione l'alternativa al tuo hotel spesso non è un appartamento. È una camera, venduta su un altro canale» diventa «Vicino alla stazione l'alternativa al tuo hotel spesso non è un appartamento. È un'altra camera». Tolto «venduta su un altro canale», come chiesto da revenue manager e SEO director: Inside Airbnb conta annunci, molte camere private possono essere anche su Booking, e il corpo dice «in parte su un canale». Struttura della frase e contrasto invariati, nessun numero né nome",
+        "titolo: «Affitti brevi in zona Termini: il tuo hotel compete con un appartamento o con una camera?» (89 caratteri, domanda) al posto del titolo di lavoro «Hotel zona Termini: su Airbnb il tuo concorrente è una camera, non un appartamento», che riprendeva l'attacco «Hotel zona Termini:» della bozza del 26/11 bloccata fino al 10/12. Unico tra journal/, storici, tools/seo.json, registro e scartati; la keyword principale è in testa, coerente con il title_seo",
+        "sottotitolo: scritto (due frasi, senza punto finale); «molti annunci» e non «la maggior parte», perché all'Esquilino le case intere sono ancora il 59%",
+        "alternative_titolo: tre tagli diversi, dato con fonte nel titolo (Castro Pretorio sopra la metà, 54%), contrasto (resto di Roma contro Termini), conseguenza (canale nuovo e notti in più); tutte entro 90 caratteri",
+        "mood: serio"
+      ],
+      "segnalazioni": [
+        "Titolo a domanda: la risposta nell'articolo è sfumata (all'Esquilino gli annunci sono ancora in maggioranza case intere, a Castro Pretorio prevalgono le camere). Il titolo non promette una risposta assoluta e il corpo la dà con i numeri; se il capo redattore preferisce un titolo affermativo, l'alternativa di contrasto usa «spesso»",
+        "La frase citabile ora chiude il ragionamento della sezione «Una camera contro un'altra camera» e non riprende più il paragrafo sul canale che la precede direttamente: la posizione regge perché il paragrafo sul canale fa parte della stessa sezione",
+        "Sostengo la segnalazione di revenue manager e SEO director su «camera in appartamento» nel corpo e nel box (la categoria di Inside Airbnb è «camera privata o condivisa»): per questo titolo, sottotitolo e frase citabile dicono solo «camera»",
+        "Contenuto strutturale su dati di settembre, non una notizia: la scelta spetta al capo redattore"
+      ],
+      "ruolo_ricavia": "Dal punto di vista del racconto, il paragrafo Ricavia chiude la domanda del titolo con un controllo concreto: prima di inseguire le camere private sul prezzo o di aprire un canale nuovo, Ricavia conta le notti che l'hotel non vende e il costo per venderle"
+    },
+    {
+      "agente": "capo-redattore",
+      "esito": "GO",
+      "motivo": null,
+      "griglia": [
+        "[x] Tesi revenue chiara e corretta (revenue manager APPROVED: intorno a Termini l'offerta Airbnb è in larga parte di camere, 41% all'Esquilino e 54% a Castro Pretorio contro circa il 20% di Roma, quindi l'ospite in transito confronta camera con camera; azioni per il singolo hotel, nessun taglio di prezzo)",
+        "[x] Ogni numero ha fonte (ricontrollati da me: airbnb.json per Roma 26.202 e 79,5%, Esquilino 1.613 e 59,0%, Castro Pretorio 756 e 45,9%, camere circa 661 e 409, prime due zone, poi Aurelio 330; indicatori.json zone_date letto il 27/11 alle 04:39 per Stazione Termini 243 ed Esquilino 118, prime due su 22; il file originale Inside Airbnb del 17/09, riletto da me oggi, dà 20.818 case intere, 5.320 camere private, 64 condivise, 78 camere d'albergo attive su 200: i numeri 78 e 5.384 tornano; calcoli dichiarati 'calcolo Ricavia', arrotondati, senza decimali di stima)",
+        "[x] Fonti citate con link, nessuna copia (Inside Airbnb, livello 3, attribuita nel testo con i limiti dichiarati: conta annunci, non prenotazioni; Osservatorio Ricavia con collegamento; guida storica alle zone, citazione breve tra caporali)",
+        "[x] Ruolo di Ricavia presente, un paragrafo, utile e non pubblicitario (pratica 4.1 n. 5, mix dei canali e parità, non usata nella settimana dal 23/11; voce in terza persona senza condizionale; un solo collegamento di chiusura a /revenue-management/)",
+        "[x] Regole di brand e di copy di CLAUDE.md (dopo correzioni di forma: 'camere in appartamento' allineato alla categoria Inside Airbnb, nessun punto finale, nessun verbo vietato, tu al lettore, glossa ADR presente)",
+        "[x] Tono coerente con la matrice (serio, dati di mercato)",
+        "[x] Non ripete un tema degli ultimi 14 giorni (SEO director APPROVED; verificato: diverso dal tema bloccato fino al 10/12, che usava mediane Booking di una lettura e il premio del weekend; azione 1 confronta camere private sul prezzo finale, diversa dal 7/11, fuori finestra, e dal 23/11, tipologia contro tipologia con un nuovo hotel; azioni 2 e 3 nuove; la zona si muove diversamente da Roma, come chiede la lezione del 26/11)",
+        "[x] Nessuna affermazione negativa su persone, hotel o aziende nominate (Airbnb, Inside Airbnb e Booking nominati solo per descrivere fatti)",
+        "[x] Rischi legali 9 ter (nessun livello di prezzo, l'azione 1 dice di non seguire il prezzo delle camere private; nessun consiglio legale o fiscale; attribuzione CC BY a Inside Airbnb presente con link)",
+        "[x] Da 700 a 1.100 parole, struttura completa (1.093 parole contate come tools/journal.py, paragrafo Ricavia compreso; 5 h3, apertura, impatto, 3 azioni, In breve con 4 voci parallele)"
+      ],
+      "correzioni": [
+        "Corpo, sezione 'Una camera contro un'altra camera': 'una camera in un appartamento, cioè lo stesso prodotto' diventa 'una camera privata o condivisa, cioè il prodotto più vicino a quello'; 'camera in appartamento' diventa 'camera privata' nella scelta dell'ospite; '78 contro più di 5.300 camere in appartamento' diventa '78 annunci contro più di 5.300 camere private o condivise', e 'trova soprattutto camere in appartamento' diventa 'trova soprattutto camere private'. Motivo: la categoria di Inside Airbnb è 'camera privata o condivisa' e non dice se la camera è in un appartamento, in un B&B o in un affittacamere (segnalazione di revenue manager, SEO director e virality director)",
+        "Box In breve: 'La camera in appartamento compete con la tua camera d'albergo' diventa 'La camera privata compete con la tua camera d'albergo' (stessa costruzione delle altre voci)",
+        "Primo paragrafo: Inside Airbnb 'pubblica gli annunci' diventa 'pubblica i dati degli annunci' (il progetto pubblica dati, non annunci)",
+        "Sezione 'Cosa dicono e cosa non dicono questi dati': 'I dati sono di settembre, nel pieno della stagione' diventa 'I dati sono del 17 settembre 2026': 'nel pieno della stagione' non ha fonte e il criterio degli annunci attivi guarda ai dodici mesi",
+        "Stessa sezione: tolta la coda 'e in parte su un canale dove le camere d'albergo di Roma sono poche', che ripeteva alla lettera l'apertura (lunghezza: il corpo con il paragrafo Ricavia arrivava a 1.111 parole)",
+        "Citazione dell'Osservatorio riportata al formato delle regole comuni (sezione 4): 'Nella lettura dell'Osservatorio Ricavia, prezzi letti su Booking il 27 novembre 2026'",
+        "Paragrafo Ricavia riscritto: tolti il condizionale 'che pagherebbe' e la frase impersonale 'il confronto parte', voce in terza persona ('Ricavia lavora', 'confronta'), pratica 4.1 n. 5, chiusura con /revenue-management/; formule diverse dai paragrafi del 24/11 e del 26/11 e dagli esempi di ricavia.md"
+      ],
+      "segnalazioni": [
+        "Per l'editore: fonte di livello 3. Inside Airbnb (licenza CC BY 4.0) regge il fatto centrale; nessuna fonte primaria pubblica sulla composizione degli annunci Airbnb esiste. L'ho riletta oggi sul file originale (visualisations/listings.csv del 17/09/2026): 26.202 annunci attivi, 20.818 case intere, 5.320 camere private, 64 condivise, 78 camere d'albergo attive su 200. Da indicare nella pull request",
+        "Per l'editore: i valori per rione (Esquilino, Castro Pretorio) vengono solo dall'elaborazione dell'Osservatorio (assets/data/airbnb.json, tools/airbnb_zone.py); né il giornalista né io abbiamo potuto rifarla senza il GeoJSON dei rioni. Prima del merge controllare che airbnb.json su main abbia ancora i dati del 17/09/2026: se l'Osservatorio passa a un file Inside Airbnb più recente, i numeri dell'articolo non coincidono più con la pagina linkata",
+        "Per l'editore: il conteggio di Booking (243 e 118 alberghi per martedì 1 dicembre) è una lettura datata del 27/11 e resta corretto anche se l'articolo esce dopo il 1/12; non va aggiornato con letture successive",
+        "Per l'editore: il corpo ha 1.093 parole. Se l'art director sceglie una copertina generata e realistica, la nota di 9 ter punto 2 porta il conteggio a circa 1.099: resta nel limite, ma ogni altra aggiunta va compensata. Copertina senza loghi di Airbnb, Booking o altri marchi (9 ter, punto 8)",
+        "Contenuto strutturale e non notizia: dati di settembre, sezione dell'Osservatorio online dal 22/11. Ammesso dal manuale del giornalista (sezione 'Zona Termini, ogni settimana': articolo sui dati dell'Osservatorio quando la settimana non ha una notizia forte su Termini); la lezione del 26/11 è rispettata perché la zona ha una composizione diversa da Roma e non si usano mediane di prezzo",
+        "Quadro della giornata: una sola bozza, legata a Roma, non guarda avanti e non è macro. Il vincolo 'almeno 1 su 2 guarda avanti' non si può rispettare: nessun candidato della riserva regge oggi un GO (Vasco Rossi fuori finestra fino al 6/12 e senza fonte dell'organizzatore; energia ARERA oltre i 7 giorni e tema del 3/11; imposta di soggiorno senza fonte primaria e con il contributo di soggiorno uscito il 17/11). Meglio un mix imperfetto che un articolo debole: nessuna sostituzione",
+        "Titolo a domanda tenuto: il corpo risponde con i numeri (Esquilino 41% camere, Castro Pretorio 54%) e il sottotitolo dice 'molti', non 'la maggior parte'"
+      ]
+    },
+    {
+      "agente": "art-director",
+      "esito": "APPROVED",
+      "motivo": "Copertina dall'archivio stock di Magnific (foto vera, gratuita, non generata con AI): Santa Maria Maggiore e i palazzi dell'Esquilino indicano subito la zona dell'articolo senza loghi né marchi, come chiede il capo redattore; la libreria non ha foto della zona Termini o dell'Esquilino",
+      "correzioni": [],
+      "segnalazioni": [
+        "Libreria: nessuna foto di Termini, dell'Esquilino o di un palazzo residenziale romano; le camere d'albergo non ancora usate sono pertinenti al confronto camera contro camera ma non indicano la zona. Soggetti da aggiungere alla libreria: stazione Termini (esterno, senza insegne), palazzi dell'Esquilino e piazza Vittorio",
+        "Scartate dopo aver guardato le anteprime: tastierino a codice su una porta verde acqua (id 1179516, simbolo del self check-in ma colore fuori palette e tema più generico della zona); palazzi del centro di Roma al tramonto (id 403007909, premium, cielo arancio e persone in basso); citofono (id 1239096, rischio di nomi leggibili)",
+        "Per l'editore: nel ritaglio 16:9 e in social.jpg tenere la cima del campanile e la base della facciata dentro l'immagine, togliendo cielo in alto; la foto è grande (circa 14,7 MB in jpg) e regge il ritaglio",
+        "Riserva: assets/img/941717e0f5.webp (camera d'hotel neutra), non usata come copertina o riserva negli ultimi 10 articoli; non serve la nota sull'immagine generata"
+      ],
+      "ruolo_ricavia": "Ricavia guarda il tuo hotel dentro la sua zona: la foto mostra l'isolato in cui l'ospite in transito sceglie tra la tua camera e una camera privata a pochi passi"
+    }
+  ],
+  "title_seo": "Affitti brevi in zona Termini: camere contro hotel · Ricavia",
+  "description": "Affitti brevi in zona Termini: su Airbnb molti annunci sono camere, non case intere. Con quale offerta compete il tuo hotel e quando un canale nuovo conviene",
+  "related_intro": "Per confrontare il tuo hotel con l'offerta della zona, approfondisci",
+  "related": [
+    {
+      "label": "Presenze a Roma: il calo dell'extralberghiero e gli hotel",
+      "url": "/journal/presenze-hotel-roma-extralberghiero/"
+    },
+    {
+      "label": "Hotel Score: prezzi, canali e reputazione del tuo hotel",
+      "url": "/hotel-score/"
+    }
+  ],
+  "sottotitolo": "All'Esquilino e a Castro Pretorio molti annunci su Airbnb sono camere, non case intere. Cosa cambia nel confronto con il tuo hotel e quando un canale nuovo porta notti in più",
+  "alternative_titolo": [
+    "Dati Inside Airbnb: a Castro Pretorio più di metà degli annunci sono camere, non case",
+    "Affitti brevi: nel resto di Roma un appartamento, intorno a Termini spesso una camera",
+    "Camere su Airbnb in zona Termini: un canale nuovo conviene solo se porta notti in più"
+  ],
+  "mood": {
+    "scelta": "serio",
+    "perche": "Dati di mercato sulla composizione dell'offerta di una zona: la matrice ammette serio o provocatorio, ma il corpo ha un registro serio e i dati contano annunci, non prenotazioni; un titolo provocatorio direbbe più di quanto mostrano"
+  },
+  "immagine": {
+    "fonte": "stock",
+    "stock": {
+      "id": 29220991,
+      "titolo": "Santa Maria Maggiore in Rome Italy",
+      "anteprima": "https://img.magnific.com/free-photo/santa-maria-maggiore-rome-italy_1268-20512.jpg"
+    },
+    "prompt": null,
+    "scheda": "Soggetto: la basilica di Santa Maria Maggiore all'Esquilino, a pochi minuti a piedi dalla stazione Termini, con il campanile e la facciata settecentesca, affiancata dai palazzi del rione con file regolari di finestre: il quartiere dove camere d'albergo e camere private convivono negli stessi isolati; nessuna persona riconoscibile, nessun logo, nessuna insegna di Airbnb, Booking o altri marchi\nInquadratura: dal basso e leggermente laterale, edifici nella metà inferiore e grande cielo nella metà superiore come spazio negativo; il campanile a destra del centro\nLuce: giorno coperto, luce diffusa e neutra\nPalette: cielo grigio-azzurro, facciate in travertino e ocra chiara; nessun tono rosso dominante\nAtmosfera: seria e documentaria, coerente con il mood serio\nRitaglio: per il 16:9 e per social.jpg tenere la base della facciata e la cima del campanile dentro la fascia centrale, togliendo cielo in alto e il meno possibile in basso",
+    "libreria": "assets/img/941717e0f5.webp",
+    "alt_libreria": "Camera d'hotel con letto matrimoniale, panca ai piedi del letto, pareti in marmo chiaro e armadi grigi",
+    "testo_sovrapposto": null
+  },
+  "alt": "La basilica di Santa Maria Maggiore all'Esquilino con il campanile e i palazzi del rione, sotto un cielo coperto",
+  "data": "2026-11-27",
+  "autore": "Tito · Redazione Ricavia"
+}
