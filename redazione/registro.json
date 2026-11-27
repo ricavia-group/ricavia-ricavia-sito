@@ -369,7 +369,7 @@
     "motivo": null,
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
-    "pubblicato": false
+    "pubblicato": true
   },
   {
     "data": "2026-11-26",
@@ -380,6 +380,18 @@
     "esito": "NO-GO",
     "motivo": "Tema già trattato",
     "bloccato_fino": "2026-12-10",
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
+  },
+  {
+    "data": "2026-11-27",
+    "slug": "affitti-brevi-zona-termini-camere-hotel",
+    "tema": "zona-termini-affitti-brevi-camere-airbnb",
+    "keyword": "affitti brevi zona Termini",
+    "categoria": "zone",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": false
   }
