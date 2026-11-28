@@ -394,5 +394,17 @@
     "bloccato_fino": null,
     "fonte_nuova_richiesta": false,
     "pubblicato": true
+  },
+  {
+    "data": "2026-11-28",
+    "slug": "mostra-velazquez-roma-hotel",
+    "tema": "mostra-velazquez-palazzo-barberini-primavera-2027",
+    "keyword": "mostra Velázquez Roma hotel",
+    "categoria": "eventi",
+    "esito": "GO",
+    "motivo": null,
+    "bloccato_fino": null,
+    "fonte_nuova_richiesta": false,
+    "pubblicato": false
   }
 ]
